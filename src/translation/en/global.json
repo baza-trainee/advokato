@@ -1,0 +1,9 @@
+{
+  "loading": "Loading...",
+  "header": {
+    "nav": {
+      "welcome": "welcome",
+      "home": "home"
+    }
+  }
+}
