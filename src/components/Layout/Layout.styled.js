@@ -5,11 +5,11 @@ export const UlStyled = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: ${({ theme }) => theme.color.mainBGColor};
+  background-color: #000;
   height: 50px;
 
   a {
-    color: ${({ theme }) => theme.color.mainTextColor};
+    color: #fff;
   }
 `;
 
@@ -48,14 +48,4 @@ export const LangButton = styled.button`
     transition: color var(--animation-duration) var(--timing-function);
     color: #a1232b;
   }
-`;
-
-export const ThemeButton = styled.button`
-  margin-right: 70px;
-
-  border: none;
-  background-color: inherit;
-  fill: red;
-  stroke: red;
-  cursor: pointer;
 `;

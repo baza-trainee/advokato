@@ -2,19 +2,13 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import PropTypes from 'prop-types';
 
-import { Icon } from '../Icon';
-import { UlStyled, LangButton, ThemeButton } from './Layout.styled';
+import { UlStyled, LangButton } from './Layout.styled';
 
-export const Layout = ({
-  toggleTheme,
-  isDarkTheme,
-  activeLang,
-  toggleLanguage,
-}) => {
+export const Layout = ({ activeLang, toggleLanguage }) => {
   const [t, i18n] = useTranslation('global');
 
   // Loading.dots();
@@ -57,14 +51,6 @@ export const Layout = ({
         </LangButton>
       </div>
 
-      <ThemeButton onClick={toggleTheme} aria-label="theme">
-        {isDarkTheme ? (
-          <Icon id="moon" width={20} height={20} />
-        ) : (
-          <Icon id="sun" width={20} height={20} />
-        )}
-      </ThemeButton>
-
       <Suspense fallback={<p>{t('loading')}</p>}>
         <Outlet />
       </Suspense>
@@ -73,8 +59,6 @@ export const Layout = ({
 };
 
 Layout.propTypes = {
-  toggleTheme: PropTypes.func.isRequired,
-  isDarkTheme: PropTypes.bool.isRequired,
   activeLang: PropTypes.string.isRequired,
   toggleLanguage: PropTypes.func.isRequired,
 };
