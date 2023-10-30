@@ -45,7 +45,7 @@ export const LangButton = styled.button`
 
   &:hover,
   &:focus {
-    transition: color 500ms;
+    transition: color var(--animation-duration) var(--timing-function);
     color: #a1232b;
   }
 `;

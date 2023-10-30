@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import PropTypes from 'prop-types';
 
 import { Icon } from '../Icon';
@@ -14,6 +16,11 @@ export const Layout = ({
   toggleLanguage,
 }) => {
   const [t, i18n] = useTranslation('global');
+
+  // Loading.dots();
+  // Loading.remove();
+  // Notify.success('text');
+  // Notify.failure('text');
 
   return (
     <div>
