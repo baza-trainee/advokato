@@ -2,8 +2,8 @@
   "loading": "Loading...",
   "header": {
     "nav": {
-      "welcome": "welcome",
-      "home": "home"
+      "home": "Home",
+      "company": "Сompany"
     }
   }
 }

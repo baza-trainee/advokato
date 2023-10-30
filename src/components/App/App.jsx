@@ -5,8 +5,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
 const Layout = lazy(() => import('../Layout'));
-const WelcomePage = lazy(() => import('../../pages/WelcomePage'));
 const HomePage = lazy(() => import('../../pages/HomePage'));
+const CompanyPage = lazy(() => import('../../pages/CompanyPage'));
 
 export const App = () => {
   const [t, i18n] = useTranslation('global');
@@ -50,8 +50,8 @@ export const App = () => {
             <Layout activeLang={activeLang} toggleLanguage={toggleLanguage} />
           }
         >
-          <Route index element={<WelcomePage />} />
-          <Route path="home" element={<HomePage />} />
+          <Route index element={<HomePage />} />
+          <Route path="company" element={<CompanyPage />} />
         </Route>
       </Routes>
     </Suspense>

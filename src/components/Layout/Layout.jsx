@@ -4,9 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { Loading } from 'notiflix/build/notiflix-loading-aio';
-import PropTypes from 'prop-types';
 
-import { UlStyled, LangButton } from './Layout.styled';
+import { HeaderStyled, UlStyled, LangButton } from './Layout.styled';
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
   const [t, i18n] = useTranslation('global');
@@ -17,48 +16,69 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
   // Notify.failure('text');
 
   return (
-    <div>
-      <UlStyled>
-        <li>
-          <NavLink to="/" aria-label="welcome">
-            {t('header.nav.welcome')}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/home" aria-label="home">
-            {t('header.nav.home')}
-          </NavLink>
-        </li>
-      </UlStyled>
+    <>
+      <HeaderStyled>
+        <nav>
+          <UlStyled>
+            <li>
+              <NavLink to="/" aria-label="home">
+                {t('header.nav.home')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/company" aria-label="company">
+                {t('header.nav.company')}
+              </NavLink>
+            </li>
 
-      <div>
-        <LangButton
-          onClick={() => toggleLanguage('ua')}
-          aria-label="lang-ua"
-          activeLang={activeLang}
-          currentLang="ua"
-        >
-          UA
-        </LangButton>
+            <li>
+              <NavLink to="#" aria-label="practice">
+                Практики
+              </NavLink>
+            </li>
 
-        <LangButton
-          onClick={() => toggleLanguage('en')}
-          aria-label="lang-en"
-          activeLang={activeLang}
-          currentLang="en"
-        >
-          EN
-        </LangButton>
-      </div>
+            <li>
+              <NavLink to="#" aria-label="news">
+                Новини
+              </NavLink>
+            </li>
 
-      <Suspense fallback={<p>{t('loading')}</p>}>
-        <Outlet />
-      </Suspense>
-    </div>
+            <li>
+              <NavLink to="#" aria-label="contacts">
+                Контакти
+              </NavLink>
+            </li>
+          </UlStyled>
+        </nav>
+
+        <div>
+          <LangButton
+            onClick={() => toggleLanguage('ua')}
+            aria-label="lang-ua"
+            activeLang={activeLang}
+            currentLang="ua"
+          >
+            UA
+          </LangButton>
+
+          <LangButton
+            onClick={() => toggleLanguage('en')}
+            aria-label="lang-en"
+            activeLang={activeLang}
+            currentLang="en"
+          >
+            EN
+          </LangButton>
+        </div>
+      </HeaderStyled>
+
+      <main>
+        <Suspense fallback={<p>{t('loading')}</p>}>
+          <Outlet />
+        </Suspense>
+      </main>
+
+      <footer>footer content</footer>
+    </>
   );
-};
-
-Layout.propTypes = {
-  activeLang: PropTypes.string.isRequired,
-  toggleLanguage: PropTypes.func.isRequired,
 };

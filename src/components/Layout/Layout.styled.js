@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
 
+export const HeaderStyled = styled.header`
+  background-color: #000;
+`;
+
 export const UlStyled = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: #000;
+
   height: 50px;
 
   a {
@@ -21,6 +25,7 @@ export const LangButton = styled.button`
   font-weight: 700;
   line-height: 1.29;
   cursor: pointer;
+  color: #fff;
 
   &:first-of-type {
     margin-right: 6px;
@@ -43,9 +48,9 @@ export const LangButton = styled.button`
     }
   }};
 
-  &:hover,
+  /* &:hover,
   &:focus {
     transition: color var(--animation-duration) var(--timing-function);
     color: #a1232b;
-  }
+  } */
 `;
