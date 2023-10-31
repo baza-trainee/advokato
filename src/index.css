@@ -4,6 +4,13 @@
 
   --media-tablet: '(min-width: 768px)';
   --media-desktop: '(min-width: 1440px)';
+
+  --darkBackground: #0b0c0c;
+  --mainText: #333333;
+  --white: #ffffff;
+  --auxiliary_1: #e8d5b5;
+  --auxiliary_2: #c51f4b;
+  --mainGrey: #98a5b1;
 }
 
 * {
