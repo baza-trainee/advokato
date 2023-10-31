@@ -6,10 +6,10 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "prod": "npm i && npm run build && npm run preview",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prod": "npm i && npm run build"
   },
   "dependencies": {
     "@emotion/styled": "11.11.0",
