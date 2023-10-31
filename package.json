@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
+    "prod": "npm i && npm build && npm preview",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
