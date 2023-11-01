@@ -5,7 +5,7 @@ export const HomePage = () => {
     <>
       <HomeHero />
 
-      <section>Company main section</section>
+      <section style={{height:'100vh',backgroundColor:"black",position:"relative",top:"-20vh",color:"white"}}>Company main section</section>
 
       <section>Company second section</section>
 
