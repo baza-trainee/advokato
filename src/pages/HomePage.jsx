@@ -1,11 +1,12 @@
-import { HomeHero } from '../components/HomeHero';
+import { HomeHero } from "../components/HomeHero";
+import { Owner } from "../components/Owner/Owner";
 
 export const HomePage = () => {
   return (
     <>
       <HomeHero />
 
-      <section>Company main section</section>
+      <Owner />
 
       <section>Company second section</section>
 
