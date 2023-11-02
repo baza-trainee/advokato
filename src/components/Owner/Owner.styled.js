@@ -69,7 +69,7 @@ export const CompanyBox = styled.div`
 
 export const ImageStyled = styled.img`
   display: block;
-  background-image: url("/src/components/Owner/img/photo-owner.jpg");
+  background-image: url("/src/assets/images/homePage/photo-owner.jpg");
   background-repeat: no-repeat;
   object-fit: cover;
   -webkit-background-size: cover;
