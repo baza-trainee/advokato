@@ -1,13 +1,21 @@
 import { HomeHero } from "../components/HomeHero";
-import { Information } from "../components/Information";
-import { Owner } from "../components/Owner/Owner";
-
+import {Information} from "../components/Information"
 export const HomePage = () => {
 	return (
 		<>
 			<HomeHero />
 
-			<Owner />
+      <section
+        style={{
+          height: "100vh",
+          backgroundColor: "black",
+          position: "relative",
+          top: "-20vh",
+          color: "white",
+        }}
+      >
+        Company main section
+      </section>
 
 			<Information />
 
