@@ -2,19 +2,19 @@ import { Flip } from "gsap/Flip";
 // Функції анімації появи тексту на титульній сторінці
 export const textAnimate = (state,state1,state2)=>{
         Flip.to(state, {
-            duration: 12,
+            duration: 3,
             transform: "scale(0)",
             transformOrigin: "top left",
             opacity: 0,
           });
           Flip.to(state1, {
-            duration: 7,
+            duration: 3,
             transform: "translateX(-570px)",
             opacity: 0,
             delay: 2,
           });
           Flip.to(state2, {
-            duration: 7,
+            duration: 3,
             transform: "translateX(530px)",
             opacity: 0,
             delay: 2,

@@ -48,12 +48,12 @@ export const HomeHero = () => {
         <img className="sky" src={sky} alt="sky" />
         <img className="buildings" src={bg_buildings} alt="scyscrapers" />
         <HomeTextElement>
-          <TitleText ref={ref}>
+           <TitleText ref={ref}>
             <span>{t("titleText1")},&nbsp;</span>
             <span>{t("titleText2")},</span>
             <span>{t("titleText3")}</span>
           </TitleText>
-          <TextSubtitle>
+         <TextSubtitle>
             <div className="item2">{t("subTitleText2")}</div>
             <div className="item1">{t("subTitleText1")}</div>
           </TextSubtitle>

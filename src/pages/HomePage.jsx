@@ -1,37 +1,27 @@
 import { HomeHero } from "../components/HomeHero";
-import {Information} from "../components/Information"
+import { Information } from "../components/Information";
+import { Owner } from "../components/Owner/Owner";
+
 export const HomePage = () => {
-	return (
-		<>
-			<HomeHero />
+  return (
+    <>
+      <HomeHero />
+      {/* <Owner />
+      <Information /> */}
 
-      <section
-        style={{
-          height: "100vh",
-          backgroundColor: "black",
-          position: "relative",
-          top: "-20vh",
-          color: "white",
-        }}
-      >
-        Company main section
-      </section>
+      <section>Practice section</section>
 
-			<Information />
+      <section>Team section</section>
 
-			<section>Practice section</section>
+      <section>ProBono section</section>
 
-			<section>Team section</section>
+      <section>Achievement section</section>
 
-			<section>ProBono section</section>
+      <section>Clients section</section>
 
-			<section>Achievement section</section>
-
-			<section>Clients section</section>
-
-			<section>FeedBack section</section>
-		</>
-	);
+      <section>FeedBack section</section>
+    </>
+  );
 };
 
 export default HomePage;

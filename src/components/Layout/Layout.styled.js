@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { flexBox } from "../../styles/mixins";
+import { flexBox, mainButton, secondaryButton } from "../../styles/mixins";
 import { index } from "../HomeHero/HomeHero.styled";
 
 export const HeaderStyled = styled.header`
@@ -120,7 +120,8 @@ export const ConsultElement = styled.div`
   }
 `;
 export const ConsultButton = styled.button`
-  border: 1px solid #f3eff5;
+${secondaryButton}
+border: 1px solid #f3eff5;
   border-radius: 48px;
   background: none;
   padding: 16px 24px;
