@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { container, mainButton, secondaryButton } from "../../styles/mixins";
 
+
 export const SectionStyled = styled.section`
 	height: 100vh;
 	background-color: grey;

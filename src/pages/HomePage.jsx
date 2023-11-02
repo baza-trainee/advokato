@@ -1,12 +1,13 @@
 import { HomeHero } from "../components/HomeHero";
 import { Information } from "../components/Information";
+import { Owner } from "../components/Owner/Owner";
 
 export const HomePage = () => {
 	return (
 		<>
 			<HomeHero />
 
-			<section>Company main section</section>
+			<Owner />
 
 			<Information />
 
