@@ -50,13 +50,8 @@ export const mainButton = () => {
         &[disabled] {
           color: var(--greyText);   
           cursor: not-allowed;
-        
-        &:hover,
-        &:focus {
-          color: var(--greyText);
           background-color: var(--darkBackground);
           border: 1px solid var(--greyText);
-          }
         }
     `;
 };
@@ -88,14 +83,9 @@ export const secondaryButton = () => {
         }
 
         &[disabled] {
-          color: var(--greyText);   
-          cursor: not-allowed;
-        
-        &:hover,
-        &:focus {
           color: var(--greyText);
-          background-color: #1c1c21;          
-          }
+          background-color: #1c1c21;    
+          cursor: not-allowed;
         }
     `;
 };
