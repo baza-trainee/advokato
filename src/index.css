@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
@@ -16,6 +16,7 @@
 	--accentLink: #e8d5b5;
 	--accentText: #c51f4b;
 	--greyText: #98a5b1;
+	--headerBackground:#0b0c0c4d;
 }
 
 * {

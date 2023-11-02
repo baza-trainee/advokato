@@ -6,8 +6,8 @@ export const HomePage = () => {
   return (
     <>
       <HomeHero />
-      {/* <Owner />
-      <Information /> */}
+      <Owner />
+      <Information />
 
       <section>Practice section</section>
 
