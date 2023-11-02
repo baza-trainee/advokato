@@ -1,6 +1,5 @@
 import { HomeHero } from "../components/HomeHero";
-import { index } from "../components/HomeHero/HomeHero.styled";
-
+import {Information} from "../components/Information"
 export const HomePage = () => {
 	return (
 		<>
