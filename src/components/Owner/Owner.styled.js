@@ -10,8 +10,6 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
   ${container};
   height: 100vh;
-  position:relative;
-  top:-20vh;
   display: flex;
   justify-content: space-between;
   padding: 0 !important;
