@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import {
+  flexBox,
   container,
   secondaryButton,
   device,
@@ -8,6 +9,7 @@ import {
   fontDesktop,
 } from "../../styles/mixins";
 import "../../index.css";
+import {imageOwner} from "./variables/index";
 
 export const SectionStyled = styled.section`
   height: 100vh;
@@ -78,10 +80,8 @@ export const TextStyled = styled.div`
 `;
 
 export const CompanyBox = styled.div`
-  display: flex;
+  ${flexBox}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 57.6%;
 `;
 
@@ -91,8 +91,7 @@ export const ImageBoxStyled = styled.div`
 `;
 
 export const ImageStyled = styled.img`
-  display: block;
-  background-image: var(--imageOwner);
+  background-image: url(${imageOwner}) ;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: cover;
