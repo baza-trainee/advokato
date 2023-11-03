@@ -102,6 +102,7 @@ export const secondaryButton = () => {
 
 export const fontDesktop = () => {
 	return `
+        font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
         line-height: calc(35 / 22);      
@@ -124,6 +125,7 @@ export const fontMobile = () => {
     `;
 };
 
+
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -140,3 +142,4 @@ export const device = {
   laptop: `(min-width: ${size.laptop})`,
   desktop: `(min-width: ${size.desktop})`,
 };
+
