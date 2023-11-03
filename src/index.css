@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans&family=PT+Sans&family=Raleway:wght@400;600;700&display=swap');
+
 :root {
+  --Montserrat: 'Montserrat', sans-serif;
+  --OpenSans: 'Open Sans', sans-serif;
+  --PTSans: 'PT Sans', sans-serif;
+  --Raleway: 'Raleway', sans-serif;
+
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 500ms;
 
@@ -11,6 +18,8 @@
   --auxiliary_1: #e8d5b5;
   --auxiliary_2: #c51f4b;
   --mainGrey: #98a5b1;
+
+  --imageOwner: url("/src/assets/images/homePage/photo-owner.jpg");
 }
 
 * {
