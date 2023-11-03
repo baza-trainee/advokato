@@ -1,4 +1,10 @@
-import {SectionStyled,Container,HomeTextElement,TitleText,TextSubtitle,} from "./HomeHero.styled";
+import {
+  SectionStyled,
+  Container,
+  HomeTextElement,
+  TitleText,
+  TextSubtitle,
+} from "./HomeHero.styled";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,13 +14,13 @@ import { useTranslation } from "react-i18next";
 import bg_buildings from "../../images/sean-pollock-PhYq704ffdA-unsplash 1.png";
 import sky from "../../images/sky_bg1.jpg";
 import { textAnimate, textAnimate1 } from "./functions_animation/textAnimate";
-// Титульна сторінка
+
 export const HomeHero = () => {
   const [t, i18n] = useTranslation("global");
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(Flip);
   let titleImageAnime = gsap.timeline();
-  // Анімація будівель і неба
+
   useEffect(() => {
     titleImageAnime
       .to(".sky", { scale: 1, x: "-1vw", duration: 8 })
@@ -27,7 +33,7 @@ export const HomeHero = () => {
       scrub: 1,
     });
   }, [titleImageAnime]);
-// Анімація появи текста
+
   const ref = useRef();
   useLayoutEffect(() => {
     let mm = gsap.matchMedia();
