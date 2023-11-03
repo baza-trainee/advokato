@@ -102,6 +102,7 @@ export const secondaryButton = () => {
 
 export const fontDesktop = () => {
 	return `
+        font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
         line-height: calc(35 / 22);      

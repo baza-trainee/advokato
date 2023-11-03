@@ -16,8 +16,9 @@ export const Container = styled.div`
 
 export const TitleStyled = styled.h2`
 	@media screen and (min-width: 1440px) {
-		width: 860px;
+		width: 960px;
 		margin-bottom: 72px;
+		font-family: Montserrat, sans-serif;
 		font-size: 40px;
 		font-weight: 500;
 		line-height: calc(56 / 40);
@@ -25,6 +26,8 @@ export const TitleStyled = styled.h2`
 `;
 
 export const CardWraper = styled.div`
+	position: relative;
+
 	@media screen and (min-width: 1440px) {
 		${flexBox};
 		gap: 120px;
