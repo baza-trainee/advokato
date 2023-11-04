@@ -1,83 +1,95 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { Suspense, useState } from "react";
+import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import "animate.css";
 
-import { HeaderStyled, UlStyled, LangButton } from './Layout.styled';
+import logoImg from "../../images/statusLogo.png";
+import {
+  HeaderStyled,
+  UlStyled,
+  LangButton,
+  ConsultButton,
+  ConsultElement,
+  PhonesDiv,
+  HamburgerMenu,
+} from "./Layout.styled";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
-  const [t, i18n] = useTranslation('global');
-
-  // Loading.dots();
-  // Loading.remove();
-  // Notify.success('text');
-  // Notify.failure('text');
+  const [t, i18n] = useTranslation("global");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <HeaderStyled>
+        <NavLink to="/" aria-label="home">
+          <img src={logoImg} alt="logoImage" />
+        </NavLink>
         <nav>
           <UlStyled>
             <li>
               <NavLink to="/" aria-label="home">
-                {t('header.nav.home')}
+                {t("header.nav.home")}
               </NavLink>
             </li>
             <li>
               <NavLink to="/company" aria-label="company">
-                {t('header.nav.company')}
+                {t("header.nav.company")}
               </NavLink>
             </li>
-
             <li>
               <NavLink to="#" aria-label="practice">
-                Практики
+                {t("header.nav.practice")}
               </NavLink>
             </li>
-
             <li>
               <NavLink to="#" aria-label="news">
-                Новини
+                {t("header.nav.news")}
               </NavLink>
             </li>
-
             <li>
               <NavLink to="#" aria-label="contacts">
-                Контакти
+                {t("header.nav.contacts")}
               </NavLink>
             </li>
           </UlStyled>
         </nav>
-
         <div>
           <LangButton
-            onClick={() => toggleLanguage('ua')}
+            onClick={() =>
+              activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
+            }
             aria-label="lang-ua"
             activeLang={activeLang}
             currentLang="ua"
           >
-            UA
-          </LangButton>
-
-          <LangButton
-            onClick={() => toggleLanguage('en')}
-            aria-label="lang-en"
-            activeLang={activeLang}
-            currentLang="en"
-          >
-            EN
+            {activeLang.toUpperCase()}
           </LangButton>
         </div>
+        <HamburgerMenu
+          className={`${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className={`${isOpen ? "open" : ""}`}></span>
+        </HamburgerMenu>
+        <ConsultElement>
+          <ConsultButton
+            className="animate__animated animate__pulse animate__infinite infinite 
+          animate__slower	3s"
+          >
+            {t("header.btnAppoitment")} ➡
+          </ConsultButton>
+          <PhonesDiv>
+            <span>+38 (0512) 37 73 73</span>
+            <span>+38 (093) 373 73 03</span>
+          </PhonesDiv>
+        </ConsultElement>
       </HeaderStyled>
-
       <main>
-        <Suspense fallback={<p>{t('loading')}</p>}>
+        <Suspense fallback={<p>{t("loading")}</p>}>
           <Outlet />
         </Suspense>
       </main>
-
       <footer>footer content</footer>
     </>
   );

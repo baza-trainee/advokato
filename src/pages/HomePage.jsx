@@ -1,14 +1,14 @@
 import { HomeHero } from "../components/HomeHero";
+import { Information } from "../components/Information";
 import { Owner } from "../components/Owner/Owner";
 
 export const HomePage = () => {
+
   return (
     <>
       <HomeHero />
-
       <Owner />
-
-      <section>Company second section</section>
+      <Information />
 
       <section>Practice section</section>
 
@@ -23,6 +23,7 @@ export const HomePage = () => {
       <section>FeedBack section</section>
     </>
   );
+
 };
 
 export default HomePage;
