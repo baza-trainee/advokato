@@ -126,14 +126,25 @@ export const fontMobile = () => {
     `;
 };
 
-export const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1280px",
-  desktop: "1440px",
+export const fontSectionTitle = () => {
+  return `     
+        font-family: var(--Montserrat);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: calc(56 / 40);  
+        letter-spacing: 0em;    
+    `;
 };
+
+export const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1280px',
+  desktop: '1440px',
+};
+
 export const device = {
   mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileM})`,

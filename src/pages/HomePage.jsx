@@ -1,16 +1,16 @@
-import { HomeHero } from "../components/HomeHero";
-import { Information } from "../components/Information";
-import { Owner } from "../components/Owner/Owner";
+import { HomeHero } from '../components/HomeHero';
+import { Information } from '../components/Information';
+import { Owner } from '../components/Owner/Owner';
+import { Practice } from '../components/Practice';
 
 export const HomePage = () => {
-
   return (
     <>
       <HomeHero />
       <Owner />
       <Information />
 
-      <section>Practice section</section>
+      <Practice />
 
       <section>Team section</section>
 
@@ -23,7 +23,6 @@ export const HomePage = () => {
       <section>FeedBack section</section>
     </>
   );
-
 };
 
 export default HomePage;

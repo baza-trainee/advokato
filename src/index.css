@@ -9,22 +9,14 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 500ms;
 
-  --media-tablet: "(min-width: 768px)";
-  --media-desktop: "(min-width: 1440px)";
-
-  --darkBackground: #0b0c0c;
-  --mainText: #333333;
-  --lightText: #fefefe;
-  --lightBackgroung: #f1f2f4;
-  --accentLink: #e8d5b5;
-  --accentText: #c51f4b;
-  --greyText: #98a5b1;
-
-  --headerBackground: #0b0c0c4d;
-  --white: #ffffff;
-  --auxiliary_1: #e8d5b5;
-  --auxiliary_2: #c51f4b;
-  --mainGrey: #98a5b1;
+	--darkBackground: #0b0c0c;
+	--mainText: #333333;
+	--lightText: #fefefe;
+	--lightBackgroung: #f1f2f4;
+	--accentLink: #e8d5b5;
+	--accentText: #c51f4b;
+	--greyText: #98a5b1;
+	--headerBackground:#0b0c0c4d;
 }
 
 * {
