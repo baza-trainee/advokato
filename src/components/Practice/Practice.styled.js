@@ -40,7 +40,7 @@ export const PracticeTitle = styled.h3`
   font-family: Raleway;
   font-size: 32px;
   font-weight: 400;
-  line-height: 45px;
+  line-height: calc(45 / 32);
   letter-spacing: 0em;
 
   color: var(--lightText);
@@ -50,7 +50,7 @@ export const PracticeDesc = styled.p`
   font-family: Raleway;
   font-size: 18px;
   font-weight: 400;
-  line-height: 27px;
+  line-height: calc(27 / 18);
   letter-spacing: 0em;
 
   color: var(--lightText);
