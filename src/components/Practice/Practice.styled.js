@@ -19,6 +19,7 @@ export const TitleStyled = styled.h2`
 
 export const PracticeWrp = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 
