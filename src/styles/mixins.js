@@ -125,6 +125,16 @@ export const fontMobile = () => {
     `;
 };
 
+export const fontSectionTitle = () => {
+	return `     
+        font-family: Montserrat;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: calc(56 / 40);  
+        letter-spacing: 0em;    
+    `;
+};
+
 
 export const size = {
   mobileS: '320px',

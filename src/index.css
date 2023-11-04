@@ -8,9 +8,6 @@
 	--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	--animation-duration: 300ms;
 
-	--media-tablet: "(min-width: 768px)";
-	--media-desktop: "(min-width: 1440px)";
-
 	--darkBackground: #0b0c0c;
 	--mainText: #333333;
 	--lightText: #fefefe;
