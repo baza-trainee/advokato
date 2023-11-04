@@ -6,7 +6,7 @@ export const LiStyled = styled.li`
   align-items: center;
   padding: 17px 0 23px 0;
 
-  font-family: Raleway;
+  font-family: var(--Raleway);
   font-size: 32px;
   font-weight: 400;
   line-height: calc(45 / 32);
@@ -24,7 +24,7 @@ export const LiStyled = styled.li`
   span {
     margin-right: 32px;
 
-    font-family: Montserrat;
+    font-family: var(--Montserrat);
     font-size: 16px;
     line-height: calc(19 / 16);
     letter-spacing: 2px;

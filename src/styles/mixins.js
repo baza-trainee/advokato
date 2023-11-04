@@ -128,7 +128,7 @@ export const fontMobile = () => {
 
 export const fontSectionTitle = () => {
   return `     
-        font-family: Montserrat;
+        font-family: var(--Montserrat);
         font-size: 40px;
         font-weight: 500;
         line-height: calc(56 / 40);  

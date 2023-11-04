@@ -37,7 +37,7 @@ export const ImageStyled = styled.img`
 export const PracticeTitle = styled.h3`
   margin-bottom: 24px;
 
-  font-family: Raleway;
+  font-family: var(--Raleway);
   font-size: 32px;
   font-weight: 400;
   line-height: calc(45 / 32);
@@ -47,7 +47,7 @@ export const PracticeTitle = styled.h3`
 `;
 
 export const PracticeDesc = styled.p`
-  font-family: Raleway;
+  font-family: var(--Raleway);
   font-size: 18px;
   font-weight: 400;
   line-height: calc(27 / 18);
