@@ -136,6 +136,16 @@ export const fontSectionTitle = () => {
     `;
 };
 
+export const fontSectionText = () => {
+  return `     
+        font-family: var(--PTSans);
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 35.2px;  
+        letter-spacing: 0em;    
+    `;
+};
+
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
