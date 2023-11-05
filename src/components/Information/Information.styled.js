@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { container, flexBox, fontDesktop } from "../../styles/mixins";
+import { container, device, flexBox, fontDesktop } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	background-color: var(--lightBackgroung);
@@ -8,14 +8,14 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
 	${container};
 
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		padding-top: 132px;
 		padding-bottom: 64px;
 	}
 `;
 
 export const TitleStyled = styled.h2`
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		width: 960px;
 		margin-bottom: 72px;
 		font-family: Montserrat, sans-serif;
@@ -28,7 +28,7 @@ export const TitleStyled = styled.h2`
 export const CardWraper = styled.div`
 	position: relative;
 
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		${flexBox};
 		gap: 120px;
 		margin-bottom: 176px;
@@ -36,7 +36,7 @@ export const CardWraper = styled.div`
 `;
 
 export const ImgWraper = styled.div`
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		min-width: 548px;
 		border-radius: 24px;
 		overflow: hidden;
@@ -44,7 +44,7 @@ export const ImgWraper = styled.div`
 `;
 
 export const Text = styled.p`
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		${fontDesktop};
 	}
 `;

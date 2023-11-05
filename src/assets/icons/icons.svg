@@ -21,5 +21,10 @@
         <symbol id="icon-arrow-up" viewBox="0 0 32 32">
             <path  d="M2.462 0v4.923h21.145l-23.606 23.606 3.471 3.471 23.606-23.606v21.145h4.923v-29.538h-29.538z"></path>
         </symbol>
+
+        <!-- arrow-right -->        
+        <symbol id="icon-arrow-right" viewBox="0 0 17 12">
+            <path d="M10.3616 0L16.5 5.99997L15.5111 6.9666L15.5039 6.95955L10.3471 12L9.35822 11.0334L13.8084 6.6835H0.5V5.31648H13.8229L9.37272 0.96663L10.3616 0Z"></path>
+        </symbol>
     </defs>
 </svg>
