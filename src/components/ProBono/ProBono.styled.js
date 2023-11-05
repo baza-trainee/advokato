@@ -5,41 +5,45 @@ import {index} from "../HomeHero/variables/index"
 export const SectionStyled = styled.section`
 background:var(--darkBackground);
 color:var(--lightText);
+width:100%;
 height:1796px;
-width:98.7vw;
-padding: 132px 160px;;
+padding: 132px 0 132px 0;
 `
 export const Container = styled.div`
   ${container};
   ${flexBox};
   flex-direction: column;
-  width:100%;
+  width:80%;
+  gap:116px;
   `
 export const BlockWrapper = styled.div`
 ${flexBox};
 gap:10%;
+opacity:${props => props.second ? 0 : 1};
+transition:.1s;
 `
   export const LeftSide = styled.div`
    width:50%;
-
+   img{
+    width:548px;
+    height:700px;
+   }
   
   `
   export const RightSide = styled.div`
-  width:50%;
+  width:40%;
+  img{
+    width:456px;
+    height:700px;
+  }
   `
 export const BonoHeader = styled.h1`
 ${fontSectionTitle};
-line-height: 56px;  
 `
 
-export const BonoText = styled.p`
+export const BonoText = styled.div`
 ${fontSectionText}
-padding-bottom:116px ;
+padding-bottom:30px ;
 `
-export const BonoImg = styled.div`
-width:100%;
-   img{
-    width:456px;
-    height:700px;
-   }
-`
+
+
