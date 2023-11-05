@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { device } from "../../../styles/mixins";
 
 export const ArticleStyled = styled.article`
 	width: ${props => props.width};
@@ -12,7 +13,7 @@ export const ArticleStyled = styled.article`
 `;
 
 export const TitleStyled = styled.h5`
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 		margin-bottom: 20px;
 		color: var(--accentText);
 		font-size: 18px;
@@ -21,6 +22,6 @@ export const TitleStyled = styled.h5`
 `;
 
 export const Text = styled.p`
-	@media screen and (min-width: 1440px) {
+	@media screen and (${device.desktop}) {
 	}
 `;
