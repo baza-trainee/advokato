@@ -2,6 +2,7 @@ import { HomeHero } from '../components/HomeHero';
 import { Information } from '../components/Information';
 import { Owner } from '../components/Owner/Owner';
 import { Practice } from '../components/Practice';
+import ProBono from '../components/ProBono/ProBono';
 
 export const HomePage = () => {
   return (
@@ -14,7 +15,7 @@ export const HomePage = () => {
 
       <section>Team section</section>
 
-      <section>ProBono section</section>
+      <ProBono/>
 
       <section>Achievement section</section>
 

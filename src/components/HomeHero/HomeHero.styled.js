@@ -62,7 +62,7 @@ export const HomeTextElement = styled.div`
   width: 85%;
   font-weight: 700;
   color: var(--lightText);
-  @media screen and ${device.laptop} {
+  @media screen and (${device.laptop}) {
     margin: 10vh auto;
   }
 `;
@@ -72,7 +72,7 @@ flex-wrap: wrap;
   font-family:Montserat;
   font-size:calc(${index}*2);
   font-weight:700;
-  Line height:121.9px;
+  line-height:121.9px;
   margin-bottom:5vh;
   width:100%;
   @media screen and (${device.tablet}) {
