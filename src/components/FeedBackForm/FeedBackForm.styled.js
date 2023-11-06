@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
-import { container, device, flexBox, fontSectionTitle, secondaryButton } from "../../styles/mixins";
+import {
+	container,
+	device,
+	flexBox,
+	fontSectionTitle,
+	fontDesktop,
+	secondaryButton,
+} from "../../styles/mixins";
 
 export const Container = styled.div`
 	${container};
@@ -48,11 +55,6 @@ export const ButtonStyled = styled.button`
 	&:focus {
 		color: var(--mainText);
 		background-color: transparent;
-		transition: fill var(--timing-function) var(--animation-duration);
-
-		svg {
-			fill: var(--mainText);
-		}
 	}
 
 	&:active {
@@ -65,4 +67,53 @@ export const ButtonStyled = styled.button`
 			fill: var(--greyText);
 		}
 	}
+
+	svg {
+		transition: fill var(--timing-function) var(--animation-duration);
+		fill: currentColor;
+	}
+`;
+
+export const InputWraper = styled.div`
+	width: 844px;
+	display: flex;
+	gap: 40px;
+`;
+
+export const LabelWraper = styled.div`
+	width: 844px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin-bottom: 23px;
+	${fontDesktop};
+`;
+
+export const Input = styled.input`
+	margin-top: 24px;
+	padding: 0 0 18px 0;
+	background-color: inherit;
+	border: none;
+	border-bottom: 1px solid #1c1c21;
+	font-family: "PT Sans", sans-serif;
+	font-size: 18px;
+	line-height: calc(27 / 18);
+
+	&::placeholder {
+		color: var(--greyText);
+		font-family: "Raleway", sans-serif;
+	}
+
+	&:focus {
+		outline: none;
+	}
+`;
+
+export const ErrorsStyled = styled.p`
+	margin-top: 5px;
+	height: 20px;
+	color: var(--accentText);
+	${fontDesktop};
+	font-size: 16px;
+	line-height: calc(20 / 16);
 `;
