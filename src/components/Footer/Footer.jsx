@@ -7,12 +7,7 @@ export const Footer = () => {
 				<nav>
 					<List>
 						<li>
-							<Link
-								to="/"
-								activeClassName="active_link"
-							>
-								Головна
-							</Link>
+							<Link to="/">Головна</Link>
 						</li>
 						<li>
 							<Link to="/company">Компанія</Link>

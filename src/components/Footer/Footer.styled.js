@@ -50,8 +50,8 @@ export const Link = styled(NavLink)`
 		width: 100%;
 	}
 
-	&.active_link {
-		color: var(--accentText);
+	&.active {
+		color: var(--accentLink);
 		&::before {
 			width: 100%;
 		}
