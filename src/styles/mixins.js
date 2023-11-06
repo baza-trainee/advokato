@@ -102,6 +102,7 @@ export const secondaryButton = () => {
 
 export const fontDesktop = () => {
 	return `
+        font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
         line-height: calc(35 / 22);      
@@ -122,4 +123,42 @@ export const fontMobile = () => {
         font-weight: 400;
         line-height: 1.3;        
     `;
+};
+
+export const fontSectionTitle = () => {
+	return `     
+        font-family: var(--Montserrat);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: calc(56 / 40);  
+        letter-spacing: 0em;    
+    `;
+};
+
+export const fontSectionText = () => {
+  return `     
+        font-family: var(--PTSans);
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 35.2px;  
+        letter-spacing: 0em;    
+    `;
+};
+
+export const size = {
+	mobileS: "320px",
+	mobileM: "375px",
+	mobileL: "425px",
+	tablet: "768px",
+	laptop: "1280px",
+	desktop: "1440px",
+};
+
+export const device = {
+	mobileS: `min-width: ${size.mobileS}`,
+	mobileM: `min-width: ${size.mobileM}`,
+	mobileL: `min-width: ${size.mobileL}`,
+	tablet: `min-width: ${size.tablet}`,
+	laptop: `min-width: ${size.laptop}`,
+	desktop: `min-width: ${size.desktop}`,
 };

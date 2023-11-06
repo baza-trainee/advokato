@@ -5,7 +5,14 @@ import { useTranslation } from "react-i18next";
 import "animate.css";
 
 import logoImg from "../../images/statusLogo.png";
-import {HeaderStyled,UlStyled,LangButton,ConsultButton,ConsultElement,PhonesDiv,HamburgerMenu,
+import {
+  HeaderStyled,
+  UlStyled,
+  LangButton,
+  ConsultButton,
+  ConsultElement,
+  PhonesDiv,
+  HamburgerMenu,
 } from "./Layout.styled";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {

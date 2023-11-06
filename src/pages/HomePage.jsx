@@ -1,37 +1,42 @@
+
 import { HomeHero } from "../components/HomeHero";
-import {Information} from "../components/Information"
+import { Information } from "../components/Information";
+import { Owner } from "../components/Owner/Owner";
+import { Practice } from "../components/Practice";
+import { FeedBackForm } from "../components/FeedBackForm";
+import ProBono from "../components/ProBono/ProBono";
+import ClientsBlock from "../components/ClientsBlock"
+
+
+
+
+
+
 export const HomePage = () => {
 	return (
 		<>
 			<HomeHero />
-
-      <section
-        style={{
-          height: "100vh",
-          backgroundColor: "black",
-          position: "relative",
-          top: "-20vh",
-          color: "white",
-        }}
-      >
-        Company main section
-      </section>
-
+			<Owner />
 			<Information />
 
-			<section>Practice section</section>
+			<Practice />
 
 			<section>Team section</section>
 
-			<section>ProBono section</section>
+
+      <ProBono />
+
+		
 
 			<section>Achievement section</section>
 
-			<section>Clients section</section>
 
-			<section>FeedBack section</section>
-		</>
-	);
+      <ClientsBlock/>
+
+      <FeedBackForm />
+    </>
+  );
+
 };
 
 export default HomePage;

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans&family=PT+Sans&family=Raleway:wght@400;600;700&display=swap");
 
 :root {
-	--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	--animation-duration: 300ms;
+	--Montserrat: "Montserrat", sans-serif;
+	--OpenSans: "Open Sans", sans-serif;
+	--PTSans: "PT Sans", sans-serif;
+	--Raleway: "Raleway", sans-serif;
 
-	--media-tablet: "(min-width: 768px)";
-	--media-desktop: "(min-width: 1440px)";
+	--timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	--animation-duration: 500ms;
 
 	--darkBackground: #0b0c0c;
 	--mainText: #333333;
@@ -16,6 +16,7 @@
 	--accentLink: #e8d5b5;
 	--accentText: #c51f4b;
 	--greyText: #98a5b1;
+	--headerBackground: #0b0c0c4d;
 }
 
 * {
@@ -38,6 +39,8 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	color: var(--mainText);
+	background-color: var(--lightBackgroung);
+	font-family: Raleway, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(27 / 18);
@@ -65,6 +68,15 @@ ul {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+button {
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 img,

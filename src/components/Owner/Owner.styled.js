@@ -1,10 +1,20 @@
 import styled from "@emotion/styled";
-import { container, secondaryButton } from "../../styles/mixins";
+import {
+  flexBox,
+  container,
+  secondaryButton,
+  device,
+  fontMobile,
+  fontTablet,
+  fontDesktop,
+} from "../../styles/mixins";
 import "../../index.css";
+// import {imageOwner} from "./variables/index";
 
 export const SectionStyled = styled.section`
+  height: 100vh;
   background-color: var(--darkBackground);
-  color: var(--white);
+  color: var(--lightText);
 `;
 
 export const Container = styled.div`
@@ -12,14 +22,17 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  padding: 0 !important;
   max-width: inherit !important;
+
+  @media screen and (${device.mobileL}) {
+    padding: 0;
+  }
 `;
 
 export const TextStyled = styled.div`
   h3 {
-    font-family: "Raleway";
-    font-size: 32px;
+    font-family: var(--Raleway);
+    font-size: clamp(18px, 2vw, 32px);
     font-weight: 400;
     line-height: 45px;
     letter-spacing: 0em;
@@ -27,8 +40,8 @@ export const TextStyled = styled.div`
   }
 
   span {
-    font-family: "Raleway, san-serif";
-    font-size: 64px;
+    font-family: var(--Raleway);
+    font-size: clamp(32px, 3.5vw, 64px);
     font-weight: 700;
     line-height: 90px;
     letter-spacing: 0em;
@@ -36,48 +49,69 @@ export const TextStyled = styled.div`
   }
 
   p {
-    font-family: "PT Sans";
-    font-size: 22px;
+    font-family: var(--PTSans);
+    font-size: clamp(14px, 1.5vw, 28px);
     font-weight: 400;
     line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
-    width: 484px;
     margin: 40px 0;
+  }
+
+  @media screen and (${device.mobileS}) {
+    ${fontMobile};
+  }
+
+  @media screen and (${device.tablet}) {
+    p {
+      ${fontTablet};
+    }
+    max-width: 484px;
+    width: 80%;
+  }
+
+  @media screen and (${device.desktop}) {
+    p {
+      ${fontDesktop};
+    }
   }
 `;
 
 export const CompanyBox = styled.div`
-  display: flex;
+  ${flexBox}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 57.6%;
+`;
+
+export const ImageBoxStyled = styled.div`
+  width: 42.4%;
+  background: bisque;
 `;
 
 export const ImageStyled = styled.img`
-  display: block;
-  background-image: url(/public/images/photo-owner.jpg);
+  ${'' /* background-image: url(${imageOwner}) ; */}
   background-repeat: no-repeat;
-  min-width: 611px;
-  height: auto;
+  -webkit-background-size: contain;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const ButtonStyled = styled.button`
   ${secondaryButton};
-  background: var(--darkBackground);
-  border: 1px solid var(--white);
-  font-family: "Raleway";
-  font-size: 18px;
+  font-family: var(--Raleway);
+  font-size: clamp(12px, 1.4vw, 24px);
   font-weight: 600;
   line-height: 27px;
-  letter-spacing: 0em;
+  letter-spacing: 0px;
   text-align: left;
   display: flex;
   align-items: center;
+  background: var(--darkBackground);
+  border: 1px solid var(--lightText);
 
   svg {
-    fill: var(--white);
+    fill: var(--lightText);
     width: 16px;
     height: 12px;
     margin-left: 10px;

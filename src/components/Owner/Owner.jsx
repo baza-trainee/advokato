@@ -2,10 +2,14 @@ import {
   SectionStyled,
   Container,
   CompanyBox,
+  ImageBoxStyled,
   ImageStyled,
   TextStyled,
   ButtonStyled,
 } from "./Owner.styled";
+
+import {imageOwner} from "./variables/index";
+// import { Icon } from "../Icon";
 
 export const Owner = () => {
   return (
@@ -33,8 +37,9 @@ export const Owner = () => {
             </ButtonStyled>
           </TextStyled>
         </CompanyBox>
-
-        <ImageStyled />
+        <ImageBoxStyled>
+          <ImageStyled src={ imageOwner} alt="photo-owner"/>
+        </ImageBoxStyled>
       </Container>
     </SectionStyled>
   );
