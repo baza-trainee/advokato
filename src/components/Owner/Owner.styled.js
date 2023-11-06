@@ -9,12 +9,12 @@ import {
   fontDesktop,
 } from "../../styles/mixins";
 import "../../index.css";
-import {imageOwner} from "./variables/index";
+// import {imageOwner} from "./variables/index";
 
 export const SectionStyled = styled.section`
   height: 100vh;
   background-color: var(--darkBackground);
-  color: var(--white);
+  color: var(--lightText);
 `;
 
 export const Container = styled.div`
@@ -74,8 +74,6 @@ export const TextStyled = styled.div`
     p {
       ${fontDesktop};
     }
-    max-width: 484px;
-    width: 80%;
   }
 `;
 
@@ -91,7 +89,7 @@ export const ImageBoxStyled = styled.div`
 `;
 
 export const ImageStyled = styled.img`
-  background-image: url(${imageOwner}) ;
+  ${'' /* background-image: url(${imageOwner}) ; */}
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: cover;
@@ -110,10 +108,10 @@ export const ButtonStyled = styled.button`
   display: flex;
   align-items: center;
   background: var(--darkBackground);
-  border: 1px solid var(--white);
+  border: 1px solid var(--lightText);
 
   svg {
-    fill: var(--white);
+    fill: var(--lightText);
     width: 16px;
     height: 12px;
     margin-left: 10px;
