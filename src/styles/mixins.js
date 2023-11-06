@@ -1,11 +1,11 @@
 export const flexBox = () => {
-  return `display: flex;
+	return `display: flex;
         justify-content: center;
         align-items: center;`;
 };
 
 export const container = () => {
-  return `width: 100%;
+	return `width: 100%;
         margin: 0 auto;
         padding: 0 20px;
     
@@ -20,7 +20,7 @@ export const container = () => {
 };
 
 export const mainButton = () => {
-  return `  
+	return `  
         padding: 20px 32px;
         color: #ffffff;
         background-color: var(--darkBackground);
@@ -62,7 +62,7 @@ export const mainButton = () => {
 };
 
 export const secondaryButton = () => {
-  return `  
+	return `  
         padding: 12px 24px;
         color: var(--lightText);
         background-color: #1c1c21;
@@ -101,8 +101,7 @@ export const secondaryButton = () => {
 };
 
 export const fontDesktop = () => {
-  return `
-        font-family: PT Sans, sans-serif;
+	return `
         font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
@@ -111,7 +110,7 @@ export const fontDesktop = () => {
 };
 
 export const fontTablet = () => {
-  return `
+	return `
         font-size: 20px;
         font-weight: 500;
         line-height: 1.3;        
@@ -119,7 +118,7 @@ export const fontTablet = () => {
 };
 
 export const fontMobile = () => {
-  return `
+	return `
         font-size: 14px;
         font-weight: 400;
         line-height: 1.3;        
@@ -127,7 +126,7 @@ export const fontMobile = () => {
 };
 
 export const fontSectionTitle = () => {
-  return `     
+	return `     
         font-family: var(--Montserrat);
         font-size: 40px;
         font-weight: 500;
@@ -147,19 +146,19 @@ export const fontSectionText = () => {
 };
 
 export const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1280px',
-  desktop: '1440px',
+	mobileS: "320px",
+	mobileM: "375px",
+	mobileL: "425px",
+	tablet: "768px",
+	laptop: "1280px",
+	desktop: "1440px",
 };
 
 export const device = {
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  desktop: `(min-width: ${size.desktop})`,
+	mobileS: `min-width: ${size.mobileS}`,
+	mobileM: `min-width: ${size.mobileM}`,
+	mobileL: `min-width: ${size.mobileL}`,
+	tablet: `min-width: ${size.tablet}`,
+	laptop: `min-width: ${size.laptop}`,
+	desktop: `min-width: ${size.desktop}`,
 };
