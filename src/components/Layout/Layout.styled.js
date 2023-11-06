@@ -14,7 +14,7 @@ export const HeaderStyled = styled.header`
   font-family: Montserrat;
   color: var(--lightText);
   background-color: var(--headerBackground);
-  backdrop-filter: blur(20px);
+  backdrop-filter: ${props=>props.top?0:"blur(20px)"};
   z-index: 20;
   @media screen and (${device.tablet}) {
     height: calc((${index}) * 5.4);

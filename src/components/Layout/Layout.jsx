@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -18,10 +18,20 @@ import {
 export const Layout = ({ activeLang, toggleLanguage }) => {
   const [t, i18n] = useTranslation("global");
   const [isOpen, setIsOpen] = useState(false);
-
+  const [top, setTop] = useState(true);
+  useEffect(() => {
+    const scrollHandler = () => {
+      setTop(window.scrollY <= 200);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    scrollHandler();
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
   return (
     <>
-      <HeaderStyled>
+      <HeaderStyled top={top}>
         <NavLink to="/" aria-label="home">
           <img src={logoImg} alt="logoImage" />
         </NavLink>

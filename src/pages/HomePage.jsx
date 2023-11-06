@@ -5,6 +5,7 @@ import { Practice } from "../components/Practice";
 import { FeedBackForm } from "../components/FeedBackForm";
 import ProBono from "../components/ProBono/ProBono";
 import ClientsBlock from "../components/ClientsBlock"
+import ClientReviews from "../components/ClientReviews";
 
 export const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ export const HomePage = () => {
       <section>Achievement section</section>
 
       <ClientsBlock/>
+	  <ClientReviews/>
 
       <FeedBackForm />
     </>

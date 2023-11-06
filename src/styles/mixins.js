@@ -145,6 +145,25 @@ export const fontSectionText = () => {
     `;
 };
 
+export const fontReviewName = () => {
+	return `     
+        font-family: var(--Montserrat);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 42px;  
+        letter-spacing: 0em;    
+    `;
+};
+
+export const fontReview = () => {
+	return `     
+        font-family: var(--Raleway);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;  
+        letter-spacing: 0em;    
+    `;
+};
 export const size = {
 	mobileS: "320px",
 	mobileM: "375px",
