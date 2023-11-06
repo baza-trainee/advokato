@@ -9,7 +9,7 @@ export const Footer = () => {
 						<li>
 							<Link
 								to="/"
-								activeClassName="active_link"
+								
 							>
 								Головна
 							</Link>
