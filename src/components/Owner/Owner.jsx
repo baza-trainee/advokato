@@ -8,7 +8,8 @@ import {
   ButtonStyled,
 } from "./Owner.styled";
 
-import { Icon } from "../Icon";
+import {imageOwner} from "./variables/index";
+// import { Icon } from "../Icon";
 
 export const Owner = () => {
   return (
@@ -37,7 +38,7 @@ export const Owner = () => {
           </TextStyled>
         </CompanyBox>
         <ImageBoxStyled>
-          <ImageStyled />
+          <ImageStyled src={ imageOwner} alt="photo-owner"/>
         </ImageBoxStyled>
       </Container>
     </SectionStyled>
