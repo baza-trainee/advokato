@@ -8,6 +8,7 @@ import {
 	secondaryButton,
 } from "../../styles/mixins";
 
+
 export const Container = styled.div`
 	${container};
 
@@ -55,6 +56,13 @@ export const ButtonStyled = styled.button`
 	&:focus {
 		color: var(--mainText);
 		background-color: transparent;
+
+		transition: fill var(--timing-function) var(--animation-duration);
+
+		svg {
+			fill: var(--mainText);
+		}
+
 	}
 
 	&:active {
@@ -67,6 +75,7 @@ export const ButtonStyled = styled.button`
 			fill: var(--greyText);
 		}
 	}
+
 
 	svg {
 		transition: fill var(--timing-function) var(--animation-duration);
@@ -116,4 +125,5 @@ export const ErrorsStyled = styled.p`
 	${fontDesktop};
 	font-size: 16px;
 	line-height: calc(20 / 16);
+
 `;
