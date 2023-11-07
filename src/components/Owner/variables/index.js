@@ -1,1 +1,1 @@
-export const imageOwner = "/src/assets/images/homePage/photo-owner.jpg";
+export const imageOwner = "/src/assets/images/owner-section/photo-owner.jpg";
