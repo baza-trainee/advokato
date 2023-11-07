@@ -1,1 +1,1 @@
-export { default } from './TeamGallery';
+export * from "./TeamGallery";

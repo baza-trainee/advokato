@@ -15,6 +15,7 @@ export const SectionStyled = styled.section`
   padding: 112px 0;
   background: var(--darkBackground);
 `;
+
 export const ClientsBlockHeader = styled.h1`
   ${fontSectionTitle};
   color: var(--lightText);
@@ -25,6 +26,7 @@ export const SliderWrapper = styled.div`
   margin: 0 auto;
   max-width: 80%;
 `;
+
 export const StyledSlider = styled(Slider)`
   .slick-dots li button:before {
     color: white;

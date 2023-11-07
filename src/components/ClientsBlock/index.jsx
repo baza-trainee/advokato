@@ -1,1 +1,1 @@
-export { default } from './ClientsBlock';
+export * from './ClientsBlock';

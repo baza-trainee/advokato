@@ -15,6 +15,7 @@ export const SectionStyled = styled.section`
   height: 1796px;
   padding: 132px 0 132px 0;
 `;
+
 export const Container = styled.div`
   ${container};
   ${flexBox};
@@ -37,6 +38,7 @@ export const LeftSide = styled.div`
     height: 700px;
   }
 `;
+
 export const RightSide = styled.div`
   width: 40%;
   img {
@@ -48,13 +50,12 @@ export const RightSide = styled.div`
   opacity: ${(props) => (props.second ? 0 : 1)};
   transition: 0.1s;
 `;
+
 export const BonoHeader = styled.h1`
   ${fontSectionTitle};
 `;
- 
 
 export const BonoText = styled.div`
   ${fontSectionText}
   padding-bottom:30px;
 `;
-
