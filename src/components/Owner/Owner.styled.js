@@ -12,8 +12,8 @@ import "../../index.css";
 // import {imageOwner} from "./variables/index";
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -30vh;
+  position:relative;
+  top:-30vh;
   height: 100vh;
   background-color: var(--darkBackground);
   color: var(--lightText);

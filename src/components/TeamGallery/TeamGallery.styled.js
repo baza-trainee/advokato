@@ -88,7 +88,7 @@ export const CardName = styled.h3`
   top: 65%;
   left: 5%;
 `;
-export const CardRole = styled.p`
+export const CardRole = styled.div`
   position: absolute;
   top: 70%;
   left: 5%;
