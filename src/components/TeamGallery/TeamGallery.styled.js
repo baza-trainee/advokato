@@ -7,6 +7,8 @@ import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
 import arrowRight from "../../images/ClientsBlock/arrowRight.png";
 
 export const SectionStyled = styled.section`
+  position: relative;
+  top: -30vh; 
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
@@ -90,13 +92,14 @@ export const CardRole = styled.p`
   position: absolute;
   top: 70%;
   left: 5%;
-  hr {
+  &::after {
+    content:"";
     width: 80px;
     height: 4px;
-    border: none;
+    border: 3px solid var(--accentLink);
     border-radius: 10px;
-    background-color: var(--accentLink);
     position: absolute;
     left: 0;
+    top:4.5vh;
   }
 `;

@@ -15,16 +15,11 @@ export default function SliderItems() {
         <StyledSlider {...settings}>
           {TeamData.map((elem) => {
             return (
-              <>
-                <TeamMateCardWrapper key={elem.id}>
-                  <img src={elem.image} alt={elem.name} />
-                  <CardName>{elem.name}</CardName>
-                  <CardRole>
-                    {elem.role}
-                    <hr />
-                  </CardRole>
-                </TeamMateCardWrapper>
-              </>
+              <TeamMateCardWrapper key={elem.id}>
+                <img src={elem.image} alt={elem.name} />
+                <CardName>{elem.name}</CardName>
+                <CardRole>{elem.role}</CardRole>
+              </TeamMateCardWrapper>
             );
           })}
         </StyledSlider>
