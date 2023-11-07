@@ -9,7 +9,6 @@ import {
   fontDesktop,
 } from "../../styles/mixins";
 import "../../index.css";
-// import {imageOwner} from "./variables/index";
 
 export const SectionStyled = styled.section`
   position: relative;
@@ -91,7 +90,6 @@ export const ImageBoxStyled = styled.div`
 `;
 
 export const ImageStyled = styled.img`
-  ${"" /* background-image: url(${imageOwner}) ; */}
   background-repeat: no-repeat;
   -webkit-background-size: contain;
   background-size: cover;
@@ -101,26 +99,45 @@ export const ImageStyled = styled.img`
 
 export const ButtonStyled = styled.button`
   ${secondaryButton};
+  ${flexBox};
   font-family: var(--Raleway);
   font-size: clamp(12px, 1.4vw, 24px);
   font-weight: 600;
   line-height: 27px;
   letter-spacing: 0px;
   text-align: left;
-  display: flex;
-  align-items: center;
+
   background: var(--darkBackground);
-  border: 1px solid var(--lightText);
+  border: 1px solid var(--greyText);
 
   svg {
-    fill: var(--lightText);
-    width: 16px;
-    height: 12px;
     margin-left: 10px;
   }
 
+  &:active {
+    background: #e1e1e1 !important;
+    color: var(--mainText);
+
+    svg {
+      fill: var(--mainText);
+    }
+  }
+
+  &:hover {
+    color: var(--mainText) !important;
+  }
+
   &:hover svg {
-    fill: var(--darkBackground);
+    fill: var(--mainText);
     transition: fill var(--timing-function) var(--animation-duration);
+  }
+
+  &[disabled] {
+    color: var(--greyText);
+    background: var(--darkBackground);
+
+    svg {
+      fill: var(--greyText);
+    }
   }
 `;
