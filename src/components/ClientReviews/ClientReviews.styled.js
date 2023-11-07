@@ -20,6 +20,7 @@ export const SectionStyled = styled.section`
   padding: 140px 110px;
   background: var(--darkBackground);
 `;
+
 export const ClientsBlockHeader = styled.h1`
   ${fontSectionTitle};
   color: var(--lightText);
@@ -30,6 +31,7 @@ export const SliderWrapper = styled.div`
   margin: 0 auto;
   max-width: 80%;
 `;
+
 export const StyledSlider = styled(Slider)`
   .slick-track {
     display: flex;
@@ -74,6 +76,7 @@ export const ClientCardWrapper = styled.div`
   color: var(--reviewText);
   padding: 20px 40px;
 `;
+
 export const CardHeader = styled.div`
   ${flexBox}
   gap:3vw;
@@ -82,6 +85,7 @@ export const CardHeader = styled.div`
     height: 80px;
   }
 `;
+
 export const CardRecvisits = styled.div`
   margin: 1vh auto;
 `;
@@ -89,9 +93,11 @@ export const CardRecvisits = styled.div`
 export const ClientName = styled.p`
   ${fontReviewName}
 `;
+
 export const ClientRole = styled.p`
   ${fontReview}
 `;
+
 export const ClientReview = styled.p`
   ${fontReview}
   padding:3vh auto;

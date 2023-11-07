@@ -5,7 +5,6 @@ import {
   fontSectionText,
   fontSectionTitle,
 } from "../../styles/mixins";
-import { index } from "../HomeHero/variables/index";
 
 export const SectionStyled = styled.section`
   position: relative;
@@ -16,6 +15,7 @@ export const SectionStyled = styled.section`
   height: 1796px;
   padding: 132px 0 132px 0;
 `;
+
 export const Container = styled.div`
   ${container};
   ${flexBox};
@@ -23,12 +23,14 @@ export const Container = styled.div`
   width: 80%;
   gap: 116px;
 `;
+
 export const BlockWrapper = styled.div`
   ${flexBox};
   gap: 10%;
   opacity: ${(props) => (props.second ? 0 : 1)};
   transition: 0.1s;
 `;
+
 export const LeftSide = styled.div`
   width: 50%;
   img {
@@ -36,13 +38,19 @@ export const LeftSide = styled.div`
     height: 700px;
   }
 `;
+
 export const RightSide = styled.div`
   width: 40%;
   img {
     width: 456px;
     height: 700px;
   }
+  ${flexBox};
+  gap: 10%;
+  opacity: ${(props) => (props.second ? 0 : 1)};
+  transition: 0.1s;
 `;
+
 export const BonoHeader = styled.h1`
   ${fontSectionTitle};
 `;

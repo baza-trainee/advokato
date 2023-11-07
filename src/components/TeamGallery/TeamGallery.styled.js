@@ -8,7 +8,7 @@ import arrowRight from "../../images/ClientsBlock/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30vh; 
+  top: -30vh;
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
@@ -16,10 +16,12 @@ export const SectionStyled = styled.section`
   color: var(--lightText);
   padding-top: 10vh;
 `;
+
 export const TeamBlockHeader = styled.div`
   ${fontSectionTitle};
   margin: 0vh 20vw;
 `;
+
 export const TeamBlockSubTitle = styled.p`
   ${fontSectionText}
   margin: 3vh 20vw;
@@ -30,6 +32,7 @@ export const SliderWrapper = styled.div`
   margin: 0 auto;
   max-width: 100%;
 `;
+
 export const StyledSlider = styled(Slider)`
   .slick-track {
     display: flex;
@@ -68,7 +71,7 @@ export const StyledSlider = styled(Slider)`
   }
   .slick-slide {
     img {
-      height: 650px;
+      height: 85vh;
     }
   }
   .slick-active {
@@ -83,23 +86,25 @@ export const StyledSlider = styled(Slider)`
 export const TeamMateCardWrapper = styled.div`
   position: relative;
 `;
+
 export const CardName = styled.h3`
   position: absolute;
   top: 65%;
   left: 5%;
 `;
-export const CardRole = styled.p`
+
+export const CardRole = styled.div`
   position: absolute;
   top: 70%;
   left: 5%;
   &::after {
-    content:"";
+    content: "";
     width: 80px;
     height: 4px;
     border: 3px solid var(--accentLink);
     border-radius: 10px;
     position: absolute;
     left: 0;
-    top:4.5vh;
+    top: 4.5vh;
   }
 `;

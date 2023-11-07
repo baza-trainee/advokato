@@ -5,7 +5,7 @@ import {
   TeamBlockSubTitle,
 } from "./TeamGallery.styled";
 
-const TeamGallery = () => {
+export const TeamGallery = () => {
   return (
     <>
       <SectionStyled>
@@ -19,4 +19,3 @@ const TeamGallery = () => {
     </>
   );
 };
-export default TeamGallery;

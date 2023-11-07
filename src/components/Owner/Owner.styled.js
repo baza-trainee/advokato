@@ -13,18 +13,17 @@ import "../../index.css";
 export const SectionStyled = styled.section`
   position: relative;
   top: -30vh;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--darkBackground);
   color: var(--lightText);
 `;
 
 export const Container = styled.div`
   ${container};
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: space-between;
-  max-width: inherit !important;
-
+  /* max-width: inherit !important; */
   @media screen and (${device.mobileL}) {
     padding: 0;
   }
@@ -90,11 +89,10 @@ export const ImageBoxStyled = styled.div`
 `;
 
 export const ImageStyled = styled.img`
-  background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
 
 export const ButtonStyled = styled.button`

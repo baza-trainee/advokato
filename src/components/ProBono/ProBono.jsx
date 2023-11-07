@@ -13,15 +13,17 @@ import {
 import trident from "../../images/trident_photo.png";
 import armor from "../../images/boss_armor.png";
 
-export default function ProBono() {
+export const ProBono = () => {
   gsap.registerPlugin(ScrollTrigger);
   let tl = gsap.timeline();
   useLayoutEffect(() => {
-    tl.to(".elem1", {opacity:0,duration:3})
-    .to(".elem2", {opacity:1,duration:3});
+    tl.to(".elem1", { opacity: 0, duration: 3 }).to(".elem2", {
+      opacity: 1,
+      duration: 3,
+    });
     ScrollTrigger.create({
       animation: tl,
-        trigger: ".triggerTop",
+      trigger: ".triggerTop",
       start: "top 0%",
       end: "bottom -50%",
       scrub: 1,
@@ -80,4 +82,4 @@ export default function ProBono() {
       </SectionStyled>
     </>
   );
-}
+};
