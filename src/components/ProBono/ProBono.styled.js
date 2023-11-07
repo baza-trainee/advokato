@@ -22,13 +22,13 @@ export const Container = styled.div`
 
 export const BlockWrapper = styled.div`
   ${flexBox};
-  gap: 10%;
+  gap: 116px;
   opacity: ${(props) => (props.second ? 0 : 1)};
   transition: 0.1s;
 `;
 
 export const LeftSide = styled.div`
-  width: 50%;
+  width: 548px;
   img {
     width: 548px;
     height: 700px;
@@ -36,15 +36,15 @@ export const LeftSide = styled.div`
 `;
 
 export const RightSide = styled.div`
-  width: 40%;
+  width: 532px;
   img {
     width: 456px;
     height: 700px;
   }
   ${flexBox};
   flex-direction: column;
-  gap: 10%;
-  opacity: ${(props) => (props.second ? 0 : 1)};
+  /* gap: 10%; */
+  /* opacity: ${(props) => (props.second ? 0 : 1)}; */
 `;
 
 export const BonoHeader = styled.h1`

@@ -13,7 +13,6 @@ export const SectionStyled = styled.section`
   top: calc((${index}) * -19);
   left: 0;
   overflow: hidden;
-  width: 100%;
   height: 100vh;
   z-index: 0;
   &::after {
@@ -66,7 +65,7 @@ export const HomeTextElement = styled.div`
   ${flexBox};
   flex-direction: column;
   margin: 35vh auto;
-  width: 85%;
+  width: 100%;
   font-weight: 700;
   color: var(--lightText);
   @media screen and (${device.laptop}) {
@@ -86,7 +85,7 @@ export const TitleText = styled.div`
   }
   @media screen and (${device.laptop}) {
     justify-content: flex-start;
-    margin: 30vh 12vw 5vh 0;
+    margin: 30vh auto 5vh;
     font-size: 100px;
   }
 `;
