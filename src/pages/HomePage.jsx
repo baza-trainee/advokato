@@ -6,6 +6,7 @@ import { FeedBackForm } from "../components/FeedBackForm";
 import ProBono from "../components/ProBono/ProBono";
 import ClientsBlock from "../components/ClientsBlock"
 import ClientReviews from "../components/ClientReviews";
+import TeamGallery from "../components/TeamGallery";
 
 export const HomePage = () => {
   return (
@@ -16,7 +17,7 @@ export const HomePage = () => {
 
       <Practice />
 
-      <section>Team section</section>
+      <TeamGallery/>
 
       <ProBono />
 
@@ -26,7 +27,7 @@ export const HomePage = () => {
 	  <ClientReviews/>
 
       <FeedBackForm />
-    </>
+</>
   );
 };
 
