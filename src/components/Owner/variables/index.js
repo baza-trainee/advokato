@@ -1,1 +1,0 @@
-export const imageOwner = "/src/assets/images/owner-section/photo-owner.jpg";
