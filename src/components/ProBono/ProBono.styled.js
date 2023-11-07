@@ -18,10 +18,6 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   ${container};
-  ${flexBox};
-  flex-direction: column;
-  width: 80%;
-  gap: 116px;
 `;
 
 export const BlockWrapper = styled.div`
@@ -46,9 +42,9 @@ export const RightSide = styled.div`
     height: 700px;
   }
   ${flexBox};
+  flex-direction: column;
   gap: 10%;
   opacity: ${(props) => (props.second ? 0 : 1)};
-  transition: 0.1s;
 `;
 
 export const BonoHeader = styled.h1`
@@ -57,5 +53,4 @@ export const BonoHeader = styled.h1`
 
 export const BonoText = styled.div`
   ${fontSectionText}
-  padding-bottom:30px;
 `;

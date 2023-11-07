@@ -1,5 +1,6 @@
 import SliderItems from "./SliderItems/SliderItems";
 import {
+  Container,
   SectionStyled,
   TeamBlockHeader,
   TeamBlockSubTitle,
@@ -9,11 +10,13 @@ export const TeamGallery = () => {
   return (
     <>
       <SectionStyled>
-        <TeamBlockHeader>Наша професійна команда</TeamBlockHeader>
-        <TeamBlockSubTitle>
-          Ключовим активом нашої адвокатської компанії є наша досвідчена та
-          висококваліфікована команда юристів.
-        </TeamBlockSubTitle>
+        <Container>
+          <TeamBlockHeader>Наша професійна команда</TeamBlockHeader>
+          <TeamBlockSubTitle>
+            Ключовим активом нашої адвокатської компанії є наша досвідчена та
+            висококваліфікована команда юристів.
+          </TeamBlockSubTitle>
+        </Container>
         <SliderItems />
       </SectionStyled>
     </>

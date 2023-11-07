@@ -1,4 +1,4 @@
-import topManagerPhoto from "../../../images/TeamBlock/topManager.png";
+import topManagerPhoto from "../../../assets/images/teamSlider-section/topManager.png";
 
 const TeamData = [
   {
