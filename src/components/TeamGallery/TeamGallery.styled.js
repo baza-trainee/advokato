@@ -7,6 +7,8 @@ import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
 import arrowRight from "../../images/ClientsBlock/arrowRight.png";
 
 export const SectionStyled = styled.section`
+  position: relative;
+  top: -30vh;
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
@@ -86,7 +88,7 @@ export const CardName = styled.h3`
   top: 65%;
   left: 5%;
 `;
-export const CardRole = styled.p`
+export const CardRole = styled.div`
   position: absolute;
   top: 70%;
   left: 5%;
