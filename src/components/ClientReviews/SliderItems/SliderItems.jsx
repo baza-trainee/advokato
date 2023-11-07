@@ -1,4 +1,13 @@
-import { CardHeader, CardRecvisits, ClientCardWrapper, ClientName, ClientReview, ClientRole, SliderWrapper, StyledSlider } from "../ClientReviews.styled";
+import {
+  CardHeader,
+  CardRecvisits,
+  ClientCardWrapper,
+  ClientName,
+  ClientReview,
+  ClientRole,
+  SliderWrapper,
+  StyledSlider,
+} from "../ClientReviews.styled";
 import ClientsData from "../ClientsData/ClientsData";
 
 import { settings } from "../ClientsData/SliderSettings";

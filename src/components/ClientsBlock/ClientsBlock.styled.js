@@ -8,6 +8,8 @@ import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
 import arrowRight from "../../images/ClientsBlock/arrowRight.png";
 
 export const SectionStyled = styled.section`
+  position: relative;
+  top: -30vh;
   width: 100%;
   height: 512px;
   padding: 112px 0;
