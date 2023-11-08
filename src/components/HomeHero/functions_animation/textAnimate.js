@@ -9,13 +9,13 @@ export const textAnimate = (state, state1, state2) => {
   });
   Flip.to(state1, {
     duration: 3,
-    transform: "translateX(-590px)",
+    transform: "translateX(0px)",
     opacity: 0,
     delay: 2,
   });
   Flip.to(state2, {
     duration: 3,
-    transform: "translateX(500px)",
+    transform: "translateX(0px)",
     opacity: 0,
     delay: 2,
   });

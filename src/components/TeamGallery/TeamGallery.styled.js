@@ -15,7 +15,6 @@ export const SectionStyled = styled.section`
   top: -30vh;
   background: var(--darkBackground);
   color: var(--lightText);
-  width: 100%;
   height: 94vh;
   color: var(--lightText);
   padding-top: 10vh;
@@ -27,10 +26,17 @@ export const Container = styled.div`
 
 export const TeamBlockHeader = styled.div`
   ${fontSectionTitle};
+  position: relative;
+  top: 0px;
+  left: 160px;
+  max-width: 572px;
 `;
 
 export const TeamBlockSubTitle = styled.p`
   ${fontSectionText}
+  position:relative;
+  top: 0px;
+  left: 160px;
   margin: 0 0 1vh;
   max-width: 552px;
 `;
