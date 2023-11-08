@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { flexBox, secondaryButton, device, fontLayoutMenu, fontReview, fontLayoutCall } from "../../styles/mixins";
-import { index } from "../HomeHero/variables/index";
 
 export const HeaderStyled = styled.header`
   ${flexBox};
@@ -9,7 +8,7 @@ export const HeaderStyled = styled.header`
   position: sticky;
   top: 0;
   left: 0;
-  height: calc((${index}) * 19);
+  height: 140px;
   padding: 0 3vw;
   ${fontLayoutMenu}
   color: var(--lightText);
@@ -17,7 +16,7 @@ export const HeaderStyled = styled.header`
   backdrop-filter: ${(props) => (props.top ? 0 : "blur(20px)")};
   z-index: 20;
   @media screen and (${device.tablet}) {
-    height: calc((${index}) * 5.4);
+    height: 140px;
   }
 `;
 
@@ -29,9 +28,7 @@ export const UlStyled = styled.ul`
     width: 600px;
     height: 50px;
     a {
-      font-weight: 400;
-      font-size: calc(${index}*.8);
-      line-height: 32.4px;
+      
       color: var(--lightText);
     }
   }

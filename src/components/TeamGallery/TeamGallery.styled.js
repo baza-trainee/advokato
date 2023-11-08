@@ -12,12 +12,12 @@ import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30vh;
+  top: -30.2vh;
   background: var(--darkBackground);
   color: var(--lightText);
-  height: 94vh;
+  height: 92vh;
   color: var(--lightText);
-  padding-top: 10vh;
+  /* padding-top: 10vh; */
 `;
 
 export const Container = styled.div`
@@ -28,21 +28,21 @@ export const TeamBlockHeader = styled.div`
   ${fontSectionTitle};
   position: relative;
   top: 0px;
-  left: 160px;
+  left: 0px;
   max-width: 572px;
 `;
 
 export const TeamBlockSubTitle = styled.p`
   ${fontSectionText}
   position:relative;
-  top: 0px;
-  left: 160px;
+  top: 20px;
+  left: 0px;
   margin: 0 0 1vh;
   max-width: 552px;
 `;
 
 export const SliderWrapper = styled.div`
-  margin: 0 auto;
+  margin: 60px auto;
   max-width: 100%;
 `;
 
@@ -93,7 +93,7 @@ export const StyledSlider = styled(Slider)`
     }
   }
   .slick-active {
-    transition: 2.5s;
+    transition: 2s;
   }
   .slick-active:hover {
     transform: scale(1.01);
@@ -107,13 +107,13 @@ export const TeamMateCardWrapper = styled.div`
 
 export const CardName = styled.h3`
   position: absolute;
-  top: 45%;
+  top: 55%;
   left: 5%;
 `;
 
 export const CardRole = styled.div`
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 5%;
   &::after {
     content: "";

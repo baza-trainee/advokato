@@ -9,7 +9,7 @@ import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30vh;
+  top: -30.5vh;
   width: 100%;
   height: 512px;
   padding: 112px 0;
@@ -26,7 +26,10 @@ export const ClientsBlockHeader = styled.h1`
   margin: 2vh 0;
 `;
 
-export const SliderWrapper = styled.div``;
+export const SliderWrapper = styled.div`
+/* position:relative;
+left:1vw; */
+`;
 
 export const StyledSlider = styled(Slider)`
   margin: 0 4.5vw;
@@ -35,15 +38,15 @@ export const StyledSlider = styled(Slider)`
     width: 8vw;
     height: 8vw;
     left: -4.5vw;
-    top: 16vh;
+    top: 12vh;
     z-index: 1;
   }
   .slick-next {
     background: url(${arrowRight}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: 64.5vw;
-    top: 16vh;
+    left: 61vw;
+    top: 12vh;
     z-index: 1;
   }
   .slick-next::before {
@@ -59,7 +62,7 @@ export const StyledSlider = styled(Slider)`
     width: 15px;
   }
   .slick-slide {
-    margin: 0 1.2vw;
+    margin: 0 1vw;
     img {
       max-width: 100%;
     }

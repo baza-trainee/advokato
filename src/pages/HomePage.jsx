@@ -17,9 +17,9 @@ export const HomePage = () => {
       <Practice />
       <TeamGallery />
       <ProBono />
-      <section>Achievement section</section>
+      {/* <section>Achievement section</section> */}
       <ClientsBlock />
-      <ClientReviews />
+      {/* <ClientReviews /> */}
       <FeedBackForm />
     </>
   );

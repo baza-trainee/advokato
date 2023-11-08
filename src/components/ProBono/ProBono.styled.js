@@ -8,23 +8,26 @@ import {
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30vh;
+  top: -30.3vh;
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
   height: 1796px;
-  padding: 132px 0 132px 0;
+  padding: 160px 0px 160px 0px;
 `;
 
 export const Container = styled.div`
   ${container};
-`;
+  `;
 
 export const BlockWrapper = styled.div`
   ${flexBox};
   gap: 116px;
   opacity: ${(props) => (props.second ? 0 : 1)};
   transition: 0.1s;
+  :last-child{
+    margin-top: 100px;
+  }
 `;
 
 export const LeftSide = styled.div`
@@ -36,15 +39,13 @@ export const LeftSide = styled.div`
 `;
 
 export const RightSide = styled.div`
-  width: 532px;
+  width: 456px;
   img {
     width: 456px;
     height: 700px;
   }
   ${flexBox};
   flex-direction: column;
-  /* gap: 10%; */
-  /* opacity: ${(props) => (props.second ? 0 : 1)}; */
 `;
 
 export const BonoHeader = styled.h1`
