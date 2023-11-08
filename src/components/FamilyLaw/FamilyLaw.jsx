@@ -1,9 +1,32 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { SectionStyled } from './FamilyLaw.styled';
 
 export const FamilyLaw = () => {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            block: 'start',
+            inline: 'nearest',
+            behavior: 'smooth',
+          });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
   return (
-    <SectionStyled id="familyLaw">
-      <h2>Family Law</h2>
+    <SectionStyled>
+      <h2 id="familyLaw">Family Law</h2>
 
       <div>
         Адвокатська компанія "STATUS" надає повний спектр послуг в сфері

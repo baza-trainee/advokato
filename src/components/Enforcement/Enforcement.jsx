@@ -1,9 +1,32 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { SectionStyled } from './Enforcement.styled';
 
 export const Enforcement = () => {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            block: 'start',
+            inline: 'nearest',
+            behavior: 'smooth',
+          });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
   return (
-    <SectionStyled id="enforcement">
-      <h2>Enforcement</h2>
+    <SectionStyled>
+      <h2 id="enforcement">Enforcement</h2>
 
       <div>
         Ефективний юридичний супровід виконавчого провадження неможливий без

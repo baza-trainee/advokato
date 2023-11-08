@@ -1,9 +1,32 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { SectionStyled } from './IntellectualProperty.styled';
 
 export const IntellectualProperty = () => {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            block: 'start',
+            inline: 'nearest',
+            behavior: 'smooth',
+          });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
   return (
-    <SectionStyled id="intellectualProperty">
-      <h2>Intellectual Property</h2>
+    <SectionStyled>
+      <h2 id="intellectualProperty">Intellectual Property</h2>
 
       <div>
         Наша практика інтелектуальної власності зосереджується на наданні послуг

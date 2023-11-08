@@ -19,9 +19,7 @@ export const Practice = () => {
   const navigate = useNavigate();
 
   const handleClickProductCard = () => {
-    navigate('/practice#civilProcess', {
-      state: currentPractice,
-    });
+    navigate(`/practice#${currentPractice.key}`);
   };
 
   if (practiceArray.length > 0) {

@@ -5,7 +5,7 @@ export const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   centerMode: true,
-  centerPadding: "300px",
+  centerPadding: "190px",
   autoplay: true,
   speed: 500,
   autoplaySpeed: 3000,

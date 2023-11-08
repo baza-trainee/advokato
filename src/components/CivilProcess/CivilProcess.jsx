@@ -1,9 +1,32 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { SectionStyled } from './CivilProcess.styled';
 
 export const CivilProcess = () => {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            block: 'start',
+            inline: 'nearest',
+            behavior: 'smooth',
+          });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
   return (
-    <SectionStyled id="civilProcess">
-      <h2>Civil Process</h2>
+    <SectionStyled>
+      <h2 id="civilProcess">Civil Process</h2>
 
       <div>
         Цивільне право - галузь права, предметом якого є майнові та особисті

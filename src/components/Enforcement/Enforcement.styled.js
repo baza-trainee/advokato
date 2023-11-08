@@ -8,5 +8,6 @@ export const SectionStyled = styled.section`
 
   h2 {
     margin-bottom: 30px;
+    scroll-margin-top: 150px;
   }
 `;
