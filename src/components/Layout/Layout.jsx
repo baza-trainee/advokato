@@ -1,24 +1,25 @@
 import { Suspense, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+
 import { useTranslation } from 'react-i18next';
 import 'animate.css';
 
-import logoImg from "../../assets/images/layout-section/statusLogo.png";
+import logoImg from '../../assets/images/layout-section/statusLogo.png';
 import {
-	HeaderStyled,
-	UlStyled,
-	LangButton,
-	ConsultButton,
-	ConsultElement,
-	PhonesDiv,
-	HamburgerMenu,
-} from "./Layout.styled";
-import { Footer } from "../Footer/Footer";
+  HeaderStyled,
+  UlStyled,
+  NavLinkStyled,
+  LangButton,
+  ConsultButton,
+  ConsultElement,
+  PhonesDiv,
+  HamburgerMenu,
+} from './Layout.styled';
+import { Footer } from '../Footer/Footer';
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
-
-  const [t, i18n] = useTranslation("global");
+  const [t, i18n] = useTranslation('global');
   const [isOpen, setIsOpen] = useState(false);
   const [top, setTop] = useState(true);
   useEffect(() => {
@@ -37,32 +38,33 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
         <NavLink to="/" aria-label="home">
           <img src={logoImg} alt="logoImage" />
         </NavLink>
+
         <nav>
           <UlStyled>
             <li>
-              <NavLink to="/" aria-label="home">
+              <NavLinkStyled to="/" aria-label="home">
                 {t('header.nav.home')}
-              </NavLink>
+              </NavLinkStyled>
             </li>
             <li>
-              <NavLink to="/company" aria-label="company">
+              <NavLinkStyled to="/company" aria-label="company">
                 {t('header.nav.company')}
-              </NavLink>
+              </NavLinkStyled>
             </li>
             <li>
-              <NavLink to="/practice" aria-label="practice">
+              <NavLinkStyled to="/practice" aria-label="practice">
                 {t('header.nav.practice')}
-              </NavLink>
+              </NavLinkStyled>
             </li>
             <li>
-              <NavLink to="#" aria-label="news">
+              <NavLinkStyled to="#" aria-label="news">
                 {t('header.nav.news')}
-              </NavLink>
+              </NavLinkStyled>
             </li>
             <li>
-              <NavLink to="#" aria-label="contacts">
+              <NavLinkStyled to="#" aria-label="contacts">
                 {t('header.nav.contacts')}
-              </NavLink>
+              </NavLinkStyled>
             </li>
           </UlStyled>
         </nav>
@@ -89,21 +91,21 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
             className="animate__animated animate__pulse animate__infinite infinite 
 
           animate__slower	3s"
-					>
-						{t("header.btnAppoitment")} ➡
-					</ConsultButton>
-					<PhonesDiv>
-						<span>+38 (0512) 37 73 73</span>
-						<span>+38 (093) 373 73 03</span>
-					</PhonesDiv>
-				</ConsultElement>
-			</HeaderStyled>
-			<main>
-				<Suspense fallback={<p>{t("loading")}</p>}>
-					<Outlet />
-				</Suspense>
-			</main>
-			<Footer />
-		</>
-	);
+          >
+            {t('header.btnAppoitment')} ➡
+          </ConsultButton>
+          <PhonesDiv>
+            <span>+38 (0512) 37 73 73</span>
+            <span>+38 (093) 373 73 03</span>
+          </PhonesDiv>
+        </ConsultElement>
+      </HeaderStyled>
+      <main>
+        <Suspense fallback={<p>{t('loading')}</p>}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
+    </>
+  );
 };
