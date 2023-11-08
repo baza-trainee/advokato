@@ -13,17 +13,14 @@ import "../../index.css";
 export const SectionStyled = styled.section`
   position: relative;
   top: -30vh;
-  /* height: 100vh; */
   background-color: var(--darkBackground);
   color: var(--lightText);
 `;
 
 export const Container = styled.div`
   ${container};
-  /* height: 100vh; */
   display: flex;
   justify-content: space-between;
-  /* max-width: inherit !important; */
   @media screen and (${device.mobileL}) {
     padding: 0;
   }
