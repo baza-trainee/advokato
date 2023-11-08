@@ -92,6 +92,12 @@ export const StyledSlider = styled(Slider)`
       top: -5vh;
     }
   }
+  .slick-center{
+    width: 1120px;
+  }
+  .slick-center img {
+  max-width:1120px;
+}
   .slick-active {
     transition: 2s;
   }

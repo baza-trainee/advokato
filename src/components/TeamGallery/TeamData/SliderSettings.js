@@ -6,6 +6,7 @@ export const settings = {
   slidesToScroll: 1,
   centerMode: true,
   centerPadding: "230px",
+  variableWidth: true,
   autoplay: true,
   speed: 500,
   autoplaySpeed: 3000,

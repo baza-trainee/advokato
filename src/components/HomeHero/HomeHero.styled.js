@@ -41,7 +41,7 @@ export const TitleText = styled.div`
   width: 100%;
   justify-content: flex-start;
   position: relative;
-  top: 312px;
+  top: 300px;
 `;
 
 export const TextSubtitle = styled.div`
@@ -58,5 +58,5 @@ export const TextSubtitle = styled.div`
     text-align: justify;
   }
   position: relative;
-  top: 400px;
+  top: 390px;
 `;

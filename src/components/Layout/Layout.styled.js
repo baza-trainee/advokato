@@ -119,13 +119,20 @@ export const ConsultElement = styled.div`
 `;
 
 export const ConsultButton = styled.button`
-  ${secondaryButton}
+  ${secondaryButton};
+  ${flexBox};
+  gap:10px;
   width: 288px;
   height:52px;
   padding: 16px 24px;
   background: none;
   border: 1px solid var(--lightText);
   border-radius: 48px;
+  &:hover{
+    svg {
+      fill: var(--mainText);
+    }
+  }
 `;
 
 export const PhonesDiv = styled.div`

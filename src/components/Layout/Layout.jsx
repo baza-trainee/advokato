@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import "animate.css";
 
 import logoImg from "../../assets/images/layout-section/statusLogo.png";
+import { Icon } from "../Icon";
 import {
   HeaderStyled,
   UlStyled,
@@ -86,10 +87,15 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
         <ConsultElement>
           <ConsultButton
             className="animate__animated animate__pulse animate__infinite infinite 
-
           animate__slower	3s"
           >
-            {t("header.btnAppoitment")} ➡
+            {t("header.btnAppoitment")}
+            <Icon
+              id={"icon-header-arrow-right"}
+              width={16}
+              height={12}
+              fill={"#fefefe"}
+            />
           </ConsultButton>
           <PhonesDiv>
             <span>+38 (0512) 37 73 73</span>

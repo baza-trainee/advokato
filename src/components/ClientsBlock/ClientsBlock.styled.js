@@ -68,3 +68,5 @@ export const StyledSlider = styled(Slider)`
     }
   }
 `;
+
+
