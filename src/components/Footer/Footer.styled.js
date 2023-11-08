@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
-import { container, device, flexBox, fontDesktop } from "../../styles/mixins";
+import { container, device, flexBox } from "../../styles/mixins";
 
 export const FooterStyled = styled.footer`
 	background-color: var(--darkBackground);
@@ -16,13 +16,41 @@ export const Container = styled.div`
 	}
 `;
 
+export const FlexWraper = styled.ul`
+	display: flex;
+	gap: 140px;
+	justify-content: space-between;
+`;
+
 export const List = styled.ul`
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
 `;
 
-export const Link = styled(NavLink)`
+export const SocialList = styled.ul`
+	${flexBox};
+	justify-content: start;
+	gap: 29px;
+	margin-top: 28px;
+	margin-bottom: 25px;
+	padding-left: 5px;
+`;
+
+export const SocialLink = styled(Link)`
+	&:hover,
+	&:focus {
+		transition: fill var(--timing-function) var(--animation-duration),
+			transform var(--timing-function) var(--animation-duration);
+
+		svg {
+			fill: var(--accentLink);
+			transform: scale(1.05);
+		}
+	}
+`;
+
+export const LinkStyled = styled(NavLink)`
 	font-family: var(--Montserrat);
 	font-size: 18px;
 	line-height: calc(32.4 / 18);
@@ -56,4 +84,47 @@ export const Link = styled(NavLink)`
 			width: 100%;
 		}
 	}
+`;
+
+export const Text = styled.p`
+	margin-bottom: 16px;
+	font-family: var(--Montserrat);
+	line-height: calc(32.4 / 18);
+	color: var(--lightText);
+`;
+
+export const TextLink = styled.p`
+	margin-bottom: 16px;
+	font-family: var(--Montserrat);
+	line-height: calc(32.4 / 18);
+	color: var(--lightText);
+	transition: color var(--timing-function) var(--animation-duration);
+
+	&:hover,
+	&:focus {
+		color: var(--accentLink);
+	}
+`;
+
+export const PolicyText = styled(Link)`
+	display: flex;
+	margin-bottom: 24px;
+	font-family: var(--Montserrat);
+	line-height: calc(32.4 / 18);
+	color: var(--lightText);
+	text-decoration: underline;
+	text-underline-offset: 3.5px;
+	transition: color var(--timing-function) var(--animation-duration);
+
+	&:hover,
+	&:focus {
+		color: var(--accentLink);
+	}
+`;
+
+export const Line = styled.div`
+	margin-bottom: 28px;
+	width: 100%;
+	height: 1px;
+	background-color: var(--lightText);
 `;

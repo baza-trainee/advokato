@@ -49,7 +49,6 @@ export const FeedBackForm = () => {
 	const onSubmit = data => {
 		alert(JSON.stringify(data));
 		reset();
-
 	};
 
 	return (
@@ -57,7 +56,6 @@ export const FeedBackForm = () => {
 			<Container>
 				<TitleStyled>{`Зв'яжіться з нами`}</TitleStyled>
 				<Email>acstatus.mk@gmail.com</Email>
-
 
 				<form
 					autoComplete="off"
@@ -116,7 +114,6 @@ export const FeedBackForm = () => {
 						disabled={!isValid || !isDirty}
 					>
 						Відправити
-
 						<Icon
 							id={"icon-arrow-right"}
 							width={16}
