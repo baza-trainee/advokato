@@ -1,12 +1,12 @@
-import profInstrument from "../../../images/ClientsBlock/profinstr-1 2.png";
-import viGrand from "../../../images/ClientsBlock/vigrand 2.png";
-import evoDrive from "../../../images/ClientsBlock/evodrive 2.png";
+import profInstrument from "../../../assets/images/clients-section/profinstr-1 2.png";
+import viGrand from "../../../assets/images/clients-section/vigrand 2.png";
+import evoDrive from "../../../assets/images/clients-section/evodrive 2.png";
 
 export const ClientsData = [
   {
     id: 1,
     title: "Prof инструмент",
-    image: profInstrument ,
+    image: profInstrument,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const ClientsData = [
   {
     id: 4,
     title: "Prof инструмент",
-    image: profInstrument ,
+    image: profInstrument,
   },
   {
     id: 5,
@@ -33,5 +33,4 @@ export const ClientsData = [
     title: "EvoDrive",
     image: evoDrive,
   },
-  
 ];

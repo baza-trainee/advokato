@@ -4,20 +4,19 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "animate.css";
 
-import logoImg from "../../images/statusLogo.png";
+import logoImg from "../../assets/images/layout-section/statusLogo.png";
 import {
-	HeaderStyled,
-	UlStyled,
-	LangButton,
-	ConsultButton,
-	ConsultElement,
-	PhonesDiv,
-	HamburgerMenu,
+  HeaderStyled,
+  UlStyled,
+  LangButton,
+  ConsultButton,
+  ConsultElement,
+  PhonesDiv,
+  HamburgerMenu,
 } from "./Layout.styled";
 import { Footer } from "../Footer/Footer";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
-
   const [t, i18n] = useTranslation("global");
   const [isOpen, setIsOpen] = useState(false);
   const [top, setTop] = useState(true);
@@ -89,21 +88,21 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
             className="animate__animated animate__pulse animate__infinite infinite 
 
           animate__slower	3s"
-					>
-						{t("header.btnAppoitment")} ➡
-					</ConsultButton>
-					<PhonesDiv>
-						<span>+38 (0512) 37 73 73</span>
-						<span>+38 (093) 373 73 03</span>
-					</PhonesDiv>
-				</ConsultElement>
-			</HeaderStyled>
-			<main>
-				<Suspense fallback={<p>{t("loading")}</p>}>
-					<Outlet />
-				</Suspense>
-			</main>
-			<Footer />
-		</>
-	);
+          >
+            {t("header.btnAppoitment")} ➡
+          </ConsultButton>
+          <PhonesDiv>
+            <span>+38 (0512) 37 73 73</span>
+            <span>+38 (093) 373 73 03</span>
+          </PhonesDiv>
+        </ConsultElement>
+      </HeaderStyled>
+      <main>
+        <Suspense fallback={<p>{t("loading")}</p>}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
+    </>
+  );
 };

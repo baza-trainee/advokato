@@ -1,10 +1,14 @@
 import styled from "@emotion/styled";
-import { fontSectionText, fontSectionTitle } from "../../styles/mixins";
+import {
+  container,
+  fontSectionText,
+  fontSectionTitle,
+} from "../../styles/mixins";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
-import arrowRight from "../../images/ClientsBlock/arrowRight.png";
+import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
+import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
@@ -12,19 +16,22 @@ export const SectionStyled = styled.section`
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
-  height: 1044px;
+  height: 94vh;
   color: var(--lightText);
   padding-top: 10vh;
 `;
 
+export const Container = styled.div`
+  ${container};
+`;
+
 export const TeamBlockHeader = styled.div`
   ${fontSectionTitle};
-  margin: 0vh 20vw;
 `;
 
 export const TeamBlockSubTitle = styled.p`
   ${fontSectionText}
-  margin: 3vh 20vw;
+  margin: 0 0 1vh;
   max-width: 552px;
 `;
 
@@ -42,16 +49,16 @@ export const StyledSlider = styled(Slider)`
     background: url(${arrowLeft}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: 7vw;
-    top: 47vh;
+    left: 5vw;
+    top: 35vh;
     z-index: 1;
   }
   .slick-next {
     background: url(${arrowRight}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: 88vw;
-    top: 47vh;
+    left: 90vw;
+    top: 35vh;
     z-index: 1;
   }
   .slick-next::before {
@@ -71,7 +78,12 @@ export const StyledSlider = styled(Slider)`
   }
   .slick-slide {
     img {
-      height: 85vh;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      position: relative;
+      top: -5vh;
     }
   }
   .slick-active {
@@ -79,7 +91,7 @@ export const StyledSlider = styled(Slider)`
   }
   .slick-active:hover {
     transform: scale(1.01);
-    transition: 1s;
+    transition: 0.5s;
   }
 `;
 
@@ -89,13 +101,13 @@ export const TeamMateCardWrapper = styled.div`
 
 export const CardName = styled.h3`
   position: absolute;
-  top: 65%;
+  top: 45%;
   left: 5%;
 `;
 
 export const CardRole = styled.div`
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 5%;
   &::after {
     content: "";

@@ -1,4 +1,4 @@
-import clientPhoto from "../../../images/ClientsBlock/clientPhoto.png";
+import clientPhoto from "../../../assets/images/clients-section/clientPhoto.png";
 
  const ClientsData = [
   {
