@@ -20,10 +20,8 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   ${container};
-  /* height: 100vh; */
   display: flex;
   justify-content: space-between;
-  /* max-width: inherit !important; */
   @media screen and (${device.mobileL}) {
     padding: 0;
   }
