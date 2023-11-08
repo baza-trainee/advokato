@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
-import { flexBox, secondaryButton, device, fontLayoutMenu, fontReview, fontLayoutCall } from "../../styles/mixins";
+import {
+  flexBox,
+  secondaryButton,
+  device,
+  fontLayoutMenu,
+  fontReview,
+  fontLayoutCall,
+} from "../../styles/mixins";
 
 export const HeaderStyled = styled.header`
   ${flexBox};
@@ -9,28 +16,24 @@ export const HeaderStyled = styled.header`
   top: 0;
   left: 0;
   height: 140px;
-  padding: 0 3vw;
   ${fontLayoutMenu}
   color: var(--lightText);
   background-color: var(--headerBackground);
   backdrop-filter: ${(props) => (props.top ? 0 : "blur(20px)")};
   z-index: 20;
-  @media screen and (${device.tablet}) {
-    height: 140px;
+  img{
+    width:152px;
+    height:auto;
   }
 `;
 
 export const UlStyled = styled.ul`
-  display: none;
-  @media screen and (${device.laptop}) {
-    ${flexBox};
-    gap: 3vw;
-    width: 600px;
-    height: 50px;
-    a {
-      
-      color: var(--lightText);
-    }
+  ${flexBox};
+  gap: 44px;
+  width: 600px;
+  height: 28px;
+  a {
+    color: var(--lightText);
   }
 `;
 
@@ -118,6 +121,7 @@ export const ConsultElement = styled.div`
 export const ConsultButton = styled.button`
   ${secondaryButton}
   width: 288px;
+  height:52px;
   padding: 16px 24px;
   background: none;
   border: 1px solid var(--lightText);

@@ -8,28 +8,23 @@ import {
 
 export const SectionStyled = styled.section`
   position: relative;
+  top: -140px;
   left: 0;
   overflow: hidden;
-  z-index: 0;
-  top: -140px;
-  margin: 0;
-  padding: 0;
-  height: 1170px;
+  height: 1340px;
+  img {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
 `;
 
 export const Container = styled.div`
   ${container};
-  img {
-    position: absolute;
-    left: 0;
-    top: -10vh;
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: -1;
-    overflow: hidden;
-  }
 `;
 
 export const HomeTextElement = styled.div`
@@ -52,20 +47,16 @@ export const TitleText = styled.div`
 export const TextSubtitle = styled.div`
   ${fontSectionText};
   ${flexBox};
-  flex-direction: column;
   gap: 140px;
   white-space: wrap;
   width: 100%;
   opacity: 1;
   div {
-    text-align: center;
     width: 500px;
     height: 108px;
     opacity: 1;
-    width: 500px;
     text-align: justify;
   }
-  flex-direction: row;
   position: relative;
   top: 400px;
 `;

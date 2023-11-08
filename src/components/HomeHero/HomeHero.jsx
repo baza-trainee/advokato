@@ -13,9 +13,9 @@ export const HomeHero = () => {
   const [t, i18n] = useTranslation("global");
   
   return (
-    <SectionStyled>
-      <Container>
-        <img src={bgImage} alt="bgImage" />
+    <SectionStyled> 
+      <img src={bgImage} alt="bgImage" />
+      <Container> 
         <HomeTextElement>
           <TitleText>
             <span>{t("titleText1")},&nbsp;</span>

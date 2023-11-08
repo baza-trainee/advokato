@@ -8,7 +8,7 @@ import {
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30.3vh;
+  top: -30.4vh;
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
