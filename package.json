@@ -9,7 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prod": "npm i && npm run build"
+    "prod": "npm i && npm run build",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "@emotion/styled": "11.11.0",

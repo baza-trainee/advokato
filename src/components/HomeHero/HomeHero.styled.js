@@ -63,7 +63,7 @@ export const HomeTextElement = styled.div`
   font-weight: 700;
   color: var(--lightText);
   @media screen and (${device.laptop}) {
-    margin: 10vh auto;
+  margin: 10vh auto;
   }
 `;
 export const TitleText = styled.div`

@@ -10,3 +10,7 @@
 ## notification and loader
 
 - [notiflix](https://notiflix.github.io/)
+
+## firebase deploy
+- npm run build
+- npm run deploy

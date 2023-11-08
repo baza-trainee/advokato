@@ -9,7 +9,7 @@ export const textAnimate = (state, state1, state2) => {
   });
   Flip.to(state1, {
     duration: 3,
-    transform: "translateX(-570px)",
+    transform: "translateX(-500px)",
     opacity: 0,
     delay: 2,
   });

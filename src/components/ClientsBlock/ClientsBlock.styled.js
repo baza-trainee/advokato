@@ -8,11 +8,14 @@ import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
 import arrowRight from "../../images/ClientsBlock/arrowRight.png";
 
 export const SectionStyled = styled.section`
+  position: relative;
+  top: -30vh;
   width: 100%;
   height: 512px;
   padding: 112px 0;
   background: var(--darkBackground);
 `;
+
 export const ClientsBlockHeader = styled.h1`
   ${fontSectionTitle};
   color: var(--lightText);
@@ -23,6 +26,7 @@ export const SliderWrapper = styled.div`
   margin: 0 auto;
   max-width: 80%;
 `;
+
 export const StyledSlider = styled(Slider)`
   .slick-dots li button:before {
     color: white;
