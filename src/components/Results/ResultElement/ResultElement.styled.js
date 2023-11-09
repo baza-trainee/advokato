@@ -83,4 +83,8 @@ export const ArrowBlock = styled.div`
   right: 0;
   top: 40px;
   cursor: pointer;
+
+  svg {
+    fill: #969395;
+  }
 `;

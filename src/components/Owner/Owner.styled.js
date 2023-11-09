@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   flexBox,
   container,
@@ -7,13 +7,10 @@ import {
   fontMobile,
   fontTablet,
   fontDesktop,
-} from "../../styles/mixins";
-import "../../index.css";
+} from '../../styles/mixins';
+import '../../index.css';
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -48vh;
-  /* height: 100vh; */
   background-color: var(--darkBackground);
   color: var(--lightText);
 `;
@@ -83,7 +80,6 @@ export const CompanyBox = styled.div`
 
 export const ImageBoxStyled = styled.div`
   width: 42.4%;
-  background: bisque;
 `;
 
 export const ImageStyled = styled.img`

@@ -20,7 +20,13 @@ export const ResultElement = () => {
         <ContentStyled key={item.id}>
           <WrapperStyled>
             <ResultItemStyled>
-              <ImageStyled src={item.imageUrl} alt="photo-result " />
+              <ImageStyled
+                src={item.imageUrl}
+                width={464}
+                height={380}
+                alt="photo-result"
+              />
+
               <ResultText>
                 <h3>{item.title}</h3>
                 <p className="desc">{item.desc}</p>
@@ -32,7 +38,11 @@ export const ResultElement = () => {
             </ResultItemStyled>
           </WrapperStyled>
           <ArrowBlock>
-            <Icon id={"icon-arrow-up"} width={14} height={12}  fill={"#969395"}/>
+            <Icon
+              id={"icon-arrow-up"}
+              width={14}
+              height={12}
+            />
           </ArrowBlock>
         </ContentStyled>
       ))}

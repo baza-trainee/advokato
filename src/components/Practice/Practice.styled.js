@@ -6,8 +6,6 @@ import {
 } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -30vh;
   padding: 132px 0;
   background-color: var(--darkBackground);
 `;

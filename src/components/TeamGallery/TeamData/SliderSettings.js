@@ -1,6 +1,6 @@
 export const settings = {
   dots: false,
-  arrows: true,
+  arrows: false,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,

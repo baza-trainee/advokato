@@ -14,8 +14,8 @@ import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
 import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -30.08vh;
+  /* position: relative;
+  top: -30.08vh; */
   width: 100%;
   height: 774px;
   padding: 140px 0;
