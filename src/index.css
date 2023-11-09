@@ -12,7 +12,7 @@
   --darkBackground: #0b0c0c;
   --mainText: #333333;
   --lightText: #fefefe;
-  --lightBackgroung: #f1f2f4;
+  --lightBackground: #f1f2f4;
   --accentLink: #e8d5b5;
   --accentText: #c51f4b;
   --greyText: #98a5b1;
@@ -41,7 +41,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: var(--mainText);
-  background-color: var(--lightBackgroung);
+  background-color: var(--lightBackground);
   font-family: Raleway, sans-serif;
   font-size: 18px;
   font-weight: 400;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   container,
   device,
@@ -6,12 +6,11 @@ import {
   fontSectionTitle,
   fontDesktop,
   secondaryButton,
-} from "../../styles/mixins";
+} from '../../styles/mixins';
 
 export const Container = styled.div`
   ${container};
-  /* position: relative;
-  top: -30vh; */
+
   @media screen and (${device.desktop}) {
     padding-top: 132px;
     padding-bottom: 132px;
@@ -32,7 +31,7 @@ export const Email = styled.h2`
     ${fontSectionTitle};
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 5px;
@@ -102,13 +101,13 @@ export const Input = styled.input`
   background-color: inherit;
   border: none;
   border-bottom: 1px solid #1c1c21;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 18px;
   line-height: calc(27 / 18);
 
   &::placeholder {
     color: var(--greyText);
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   &:focus {
