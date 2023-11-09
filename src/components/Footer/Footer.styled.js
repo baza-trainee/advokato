@@ -38,6 +38,10 @@ export const SocialList = styled.ul`
 `;
 
 export const SocialLink = styled(Link)`
+	svg {
+		fill: var(--lightText);
+	}
+
 	&:hover,
 	&:focus {
 		transition: fill var(--timing-function) var(--animation-duration),
@@ -94,7 +98,7 @@ export const Text = styled.p`
 `;
 
 export const TextLink = styled.p`
-	margin-bottom: 16px;
+	margin-bottom: ${props => props.marginBottom || "16px"};
 	font-family: var(--Montserrat);
 	line-height: calc(32.4 / 18);
 	color: var(--lightText);

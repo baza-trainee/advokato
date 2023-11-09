@@ -54,7 +54,7 @@ export const FeedBackForm = () => {
 	return (
 		<section>
 			<Container>
-				<TitleStyled>{`Зв'яжіться з нами`}</TitleStyled>
+				<TitleStyled>Зв'яжіться з нами</TitleStyled>
 				<Email>acstatus.mk@gmail.com</Email>
 
 				<form
