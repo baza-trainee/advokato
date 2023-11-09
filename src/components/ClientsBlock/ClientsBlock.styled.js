@@ -35,11 +35,11 @@ export const ClientsSliderContainer = styled.div`
 `;
 
 export const StyledSlider = styled(Slider)`
-	width: 1000px;
-	margin: 0 17px;
+	width: 970px;
+	margin: 0 12px;
 	.slick-slide {
 		width: 300px;
 		height: auto;
-		margin: 0 17px;
+		margin: 0 12px;
 	}
 `;
