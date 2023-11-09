@@ -80,7 +80,6 @@ export const CompanyBox = styled.div`
 
 export const ImageBoxStyled = styled.div`
   width: 42.4%;
-  background: bisque;
 `;
 
 export const ImageStyled = styled.img`
