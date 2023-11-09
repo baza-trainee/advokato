@@ -1,6 +1,14 @@
-import styled from "@emotion/styled";
-import { flexBox, secondaryButton, device, fontLayoutMenu, fontReview, fontLayoutCall } from "../../styles/mixins";
-import { index } from "../HomeHero/variables/index";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
+import {
+  flexBox,
+  secondaryButton,
+  device,
+  fontLayoutMenu,
+  fontReview,
+  fontLayoutCall,
+} from '../../styles/mixins';
+import { index } from '../HomeHero/variables/index';
 
 export const HeaderStyled = styled.header`
   ${flexBox};
@@ -11,11 +19,13 @@ export const HeaderStyled = styled.header`
   left: 0;
   height: calc((${index}) * 19);
   padding: 0 3vw;
-  ${fontLayoutMenu}
+
+  ${fontLayoutMenu};
   color: var(--lightText);
   background-color: var(--headerBackground);
-  backdrop-filter: ${(props) => (props.top ? 0 : "blur(20px)")};
+  backdrop-filter: ${props => (props.top ? 0 : 'blur(20px)')};
   z-index: 20;
+
   @media screen and (${device.tablet}) {
     height: calc((${index}) * 5.4);
   }
@@ -23,17 +33,25 @@ export const HeaderStyled = styled.header`
 
 export const UlStyled = styled.ul`
   display: none;
+
   @media screen and (${device.laptop}) {
     ${flexBox};
     gap: 3vw;
     width: 600px;
     height: 50px;
+
     a {
       font-weight: 400;
       font-size: calc(${index}*.8);
       line-height: 32.4px;
       color: var(--lightText);
     }
+  }
+`;
+
+export const NavLinkStyled = styled(NavLink)`
+  &.active {
+    color: var(--accentLink);
   }
 `;
 
@@ -45,9 +63,11 @@ export const HamburgerMenu = styled.div`
   height: 10vh;
   transition-duration: 1s;
   cursor: pointer;
+
   @media screen and (${device.laptop}) {
     display: none;
   }
+
   span {
     position: absolute;
     width: 40px;
@@ -57,8 +77,9 @@ export const HamburgerMenu = styled.div`
     transition-duration: 0.25s;
     transition-delay: 0.25s;
   }
+
   span:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -10px;
     left: 0;
@@ -69,8 +90,9 @@ export const HamburgerMenu = styled.div`
     transition-duration: 0.25s;
     transition: transform 0.25s, top 0.25s 0.25s;
   }
+
   span:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 10px;
     left: 0;
@@ -81,16 +103,19 @@ export const HamburgerMenu = styled.div`
     transition-duration: 0.25s;
     transition: transform 0.25s, top 0.25s 0.25s;
   }
+
   span.open {
     transition-duration: 0.1s;
     transition-delay: 0.3s;
     background: transparent;
   }
+
   span.open:before {
     top: 0;
     transform: rotateZ(-45deg);
     transition: top 0.25s, transform 0.25s 0.25s;
   }
+
   span.open:after {
     top: 0;
     transform: rotateZ(45deg);
@@ -110,6 +135,7 @@ export const LangButton = styled.button`
 
 export const ConsultElement = styled.div`
   width: 288px;
+
   button,
   span {
     ${fontLayoutCall}
