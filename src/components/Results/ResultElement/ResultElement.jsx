@@ -42,7 +42,6 @@ export const ResultElement = () => {
               id={"icon-arrow-up"}
               width={14}
               height={12}
-              fill={"#969395"}
             />
           </ArrowBlock>
         </ContentStyled>
