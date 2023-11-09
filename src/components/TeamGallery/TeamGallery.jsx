@@ -23,22 +23,28 @@ export const TeamGallery = () => {
 
 			<SliderItems ref={arrowRef} />
 			<button
+				aria-label="Scroll slider left"
 				onClick={() => arrowRef.current.slickPrev()}
 				className="prev"
 				type="button"
 			>
 				<img
 					src={arrowLeft}
+					height={60}
+					width={60}
 					alt="arrowLeft"
 				/>
 			</button>
 			<button
+				aria-label="Scroll slider right"
 				onClick={() => arrowRef.current.slickNext()}
 				className="next"
 				type="button"
 			>
 				<img
 					src={arrowRight}
+					height={60}
+					width={60}
 					alt="arrowRight"
 				/>
 			</button>

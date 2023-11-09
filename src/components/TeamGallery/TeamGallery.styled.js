@@ -40,7 +40,7 @@ export const TeamBlockHeader = styled.div`
 `;
 
 export const TeamBlockSubTitle = styled.p`
-	${fontSectionText}
+	${fontSectionText};
 	max-width: 552px;
 `;
 
