@@ -47,10 +47,12 @@ export const RightSide = styled.div`
 	flex-direction: column;
 `;
 
-export const BonoHeader = styled.h1`
+export const BonoHeader = styled.h2`
 	${fontSectionTitle};
+	margin: 20px 0;
 `;
 
-export const BonoText = styled.div`
+export const BonoText = styled.p`
 	${fontSectionText};
+	margin-bottom: 40px;
 `;

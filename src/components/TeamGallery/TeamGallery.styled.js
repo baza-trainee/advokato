@@ -33,7 +33,7 @@ export const Container = styled.div`
 	${container};
 `;
 
-export const TeamBlockHeader = styled.div`
+export const TeamBlockHeader = styled.h1`
 	${fontSectionTitle};
 	max-width: 572px;
 	padding: 5vh 0 1vh;

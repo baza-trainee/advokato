@@ -14,7 +14,7 @@ export const Container = styled.div`
 	${container};
 `;
 
-export const ClientsBlockHeader = styled.h1`
+export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
 	color: var(--lightText);
 	margin: 2vh 0;
@@ -34,7 +34,7 @@ export const ClientsSliderContainer = styled.div`
 
 export const StyledSlider = styled(Slider)`
 	width: 970px;
-	margin-left: 23px;
+	margin-left: 20px;
 	margin-right: 0px;
 	.slick-slide {
 		width: 300px;
