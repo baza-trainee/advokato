@@ -29,7 +29,7 @@ export const SliderWrapper = styled.div`
 export const SliderArrow = styled.div``;
 
 export const ClientsSliderContainer = styled.div`
-	${flexBox}
+	${flexBox};
 	align-items: center;
 	justify-content: space-evenly;
 `;

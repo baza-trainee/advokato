@@ -22,6 +22,8 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							<TeamMateCardWrapper key={elem.id}>
 								<img
 									src={elem.image}
+									height={732}
+									width={1120}
 									alt={elem.name}
 								/>
 								<CardName>{elem.name}</CardName>

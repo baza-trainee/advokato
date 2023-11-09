@@ -127,7 +127,7 @@ export const ConsultElement = styled.div`
   width: 288px;
 
   button,
-  span {
+  a {
     ${fontLayoutCall}
     color: var(--lightText);
     cursor: pointer;
@@ -144,11 +144,6 @@ export const ConsultButton = styled.button`
   background: none;
   border: 1px solid var(--lightText);
   border-radius: 48px;
-  &:hover{
-    svg {
-      fill: var(--mainText);
-    }
-  }
 `;
 
 export const PhonesDiv = styled.div`

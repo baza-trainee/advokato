@@ -23,9 +23,8 @@ export const Container = styled.div`
 export const BlockWrapper = styled.div`
 	${flexBox};
 	gap: 116px;
-	opacity: ${props => (props.second ? 0 : 1)};
 	transition: 0.1s;
-	:last-child {
+	:last-of-type {
 		margin-top: 100px;
 	}
 `;

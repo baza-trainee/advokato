@@ -15,6 +15,8 @@ export const SliderItems = React.forwardRef((props, ref) => {
 					return (
 						<img
 							key={elem.id}
+							height={180}
+							width={300}
 							src={elem.image}
 							alt={elem.title}
 						/>
