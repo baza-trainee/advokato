@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Icon } from "../Icon";
 import {
 	Container,
@@ -92,6 +91,7 @@ export const Footer = () => {
 							</li>
 						</List>
 					</nav>
+
 					<div>
 						<PolicyText
 							to={policyLink}
@@ -108,36 +108,38 @@ export const Footer = () => {
 							Правила користування сайтом
 						</PolicyText>
 					</div>
-					<div>
+					<FlexWraper
+						flexDirection="column"
+						gap="0"
+					>
 						<Text>ADVOCATE COMPANY «STATUS»</Text>
-						<Link
+						<TextLink
 							to={address}
 							target="_blank"
 							rel="noopener nofollow noreferrer"
 							aria-label="address"
 						>
-							<TextLink>
-								Вул. Нікольська 19, м. Миколаїв, <br /> Україна
-							</TextLink>
-						</Link>
-						<Link
+							Вул. Нікольська 19, м. Миколаїв, <br /> Україна
+						</TextLink>
+						<TextLink
 							to="tel:+380512377373"
 							aria-label="tel"
+							marginbottom="0"
 						>
-							<TextLink marginBottom="0">+38 (0512) 37 73 73</TextLink>
-						</Link>
-						<Link
+							+38 (0512) 37 73 73
+						</TextLink>
+						<TextLink
 							to="tel:+380933737303"
 							aria-label="tel"
 						>
-							<TextLink>+38 (093) 373 73 03</TextLink>
-						</Link>
-						<Link
+							+38 (093) 373 73 03
+						</TextLink>
+						<TextLink
 							to="mailto:acstatus.mk@gmail.com"
 							aria-label="mail"
 						>
-							<TextLink>acstatus.mk@gmail.com</TextLink>
-						</Link>
+							acstatus.mk@gmail.com
+						</TextLink>
 						<SocialList>
 							{socialLinks.map((link, index) => (
 								<li key={index}>
@@ -156,7 +158,7 @@ export const Footer = () => {
 								</li>
 							))}
 						</SocialList>
-					</div>
+					</FlexWraper>
 				</FlexWraper>
 				<Line />
 				<Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>

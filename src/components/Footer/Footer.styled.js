@@ -16,10 +16,11 @@ export const Container = styled.div`
 	}
 `;
 
-export const FlexWraper = styled.ul`
+export const FlexWraper = styled.div`
 	display: flex;
-	gap: 140px;
-	justify-content: space-between;
+	flex-direction: ${props => props.flexDirection || "row"};
+	gap: ${props => props.gap || "140px"};
+	justify-content: center;
 `;
 
 export const List = styled.ul`
@@ -32,7 +33,7 @@ export const SocialList = styled.ul`
 	${flexBox};
 	justify-content: start;
 	gap: 29px;
-	margin-top: 28px;
+	margin-top: 17px;
 	margin-bottom: 25px;
 	padding-left: 5px;
 `;
@@ -97,8 +98,8 @@ export const Text = styled.p`
 	color: var(--lightText);
 `;
 
-export const TextLink = styled.p`
-	margin-bottom: ${props => props.marginBottom || "16px"};
+export const TextLink = styled(Link)`
+	margin-bottom: ${props => props.marginbottom || "16px"};
 	font-family: var(--Montserrat);
 	line-height: calc(32.4 / 18);
 	color: var(--lightText);
