@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
+import { container, fontSectionTitle } from "../../styles/mixins";
 
-import arrowLeft from "../../images/ClientsBlock/arrowLeft.png";
-import arrowRight from "../../images/ClientsBlock/arrowRight.png";
+import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
+import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
@@ -16,35 +16,34 @@ export const SectionStyled = styled.section`
   background: var(--darkBackground);
 `;
 
+export const Container = styled.div`
+  ${container};
+`;
+
 export const ClientsBlockHeader = styled.h1`
   ${fontSectionTitle};
   color: var(--lightText);
-  margin: 1vh 5vw;
+  margin: 2vh 0;
 `;
 
-export const SliderWrapper = styled.div`
-  margin: 0 auto;
-  max-width: 80%;
-`;
+export const SliderWrapper = styled.div``;
 
 export const StyledSlider = styled(Slider)`
-  .slick-dots li button:before {
-    color: white;
-  }
+  margin: 0 4.5vw;
   .slick-prev {
     background: url(${arrowLeft}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: -5vw;
-    top: 18vh;
+    left: -4.5vw;
+    top: 16vh;
     z-index: 1;
   }
   .slick-next {
     background: url(${arrowRight}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: 80vw;
-    top: 18vh;
+    left: 64.5vw;
+    top: 16vh;
     z-index: 1;
   }
   .slick-next::before {
@@ -59,8 +58,10 @@ export const StyledSlider = styled(Slider)`
     height: 15px;
     width: 15px;
   }
-  & .slick-slide img {
-    max-width: 24vw;
-    margin: 0 20px;
+  .slick-slide {
+    margin: 0 1.2vw;
+    img {
+      max-width: 100%;
+    }
   }
 `;

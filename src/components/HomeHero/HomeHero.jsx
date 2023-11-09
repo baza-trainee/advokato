@@ -5,14 +5,14 @@ import {
   TitleText,
   TextSubtitle,
 } from "./HomeHero.styled";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import { useTranslation } from "react-i18next";
 
-import bg_buildings from "../../images/sean-pollock-PhYq704ffdA-unsplash 1.png";
-import sky from "../../images/sky_bg1.jpg";
+import bg_buildings from "../../assets/images/homeHero-section/sean-pollock-PhYq704ffdA-unsplash 1.png";
+import sky from "../../assets/images/homeHero-section/sky_bg1.jpg";
 import { textAnimate, textAnimate1 } from "./functions_animation/textAnimate";
 
 export const HomeHero = () => {
@@ -23,8 +23,8 @@ export const HomeHero = () => {
 
   useEffect(() => {
     titleImageAnime
-      .to(".sky", { scale: 1, x: "-1vw", duration: 8 })
-      .from(".buildings", { scale: 1, y: 0, opacity: 1, duration: 7 });
+      .to(".sky", { scale: 1, x: "-1vw", duration: 3 })
+      .from(".buildings", { scale: 1, y: 0, opacity: 1, duration: 2 });
     ScrollTrigger.create({
       animation: titleImageAnime,
       trigger: ".imgWrapper",

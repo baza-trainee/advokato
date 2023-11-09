@@ -125,6 +125,36 @@ export const fontMobile = () => {
     `;
 };
 
+export const fontLayoutMenu = () => {
+	return `     
+        font-family: var(--Montserrat);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32.4px;  
+        letter-spacing: 0em;    
+    `;
+};
+
+export const fontLayoutCall = () => {
+	return `     
+        font-family: var(--Montserrat);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17.07px;  
+        letter-spacing: 0em;    
+    `;
+};
+
+export const fontHeroTitle = () => {
+	return `     
+        font-family: var(--Montserrat);
+        font-size: 100px;
+        font-weight: 700;
+        line-height: 121.9px;  
+        letter-spacing: 0em;    
+    `;
+};
+
 export const fontSectionTitle = () => {
 	return `     
         font-family: var(--Montserrat);

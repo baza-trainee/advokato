@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { container, flexBox } from "../../styles/mixins";
+import {
+  container,
+  flexBox,
+  fontHeroTitle,
+  fontSectionText,
+} from "../../styles/mixins";
 import { index } from "./variables";
 import { device } from "../../styles/mixins";
 
@@ -9,7 +14,6 @@ export const SectionStyled = styled.section`
   left: 0;
   overflow: hidden;
   height: 100vh;
-  width: 100%;
   z-index: 0;
   &::after {
     content: "";
@@ -31,6 +35,7 @@ export const SectionStyled = styled.section`
     height: 115vh;
   }
 `;
+
 export const Container = styled.div`
   ${container};
   img {
@@ -55,38 +60,38 @@ export const Container = styled.div`
     transform: scale(2) translateY(50vh);
   }
 `;
+
 export const HomeTextElement = styled.div`
   ${flexBox};
   flex-direction: column;
   margin: 35vh auto;
-  width: 85%;
+  width: 100%;
   font-weight: 700;
   color: var(--lightText);
   @media screen and (${device.laptop}) {
-  margin: 10vh auto;
+    margin: 10vh auto;
   }
 `;
+
 export const TitleText = styled.div`
-${flexBox};
-flex-wrap: wrap;
-  font-family:Montserat;
-  font-size:calc(${index}*2);
-  font-weight:700;
-  line-height:121.9px;
-  margin-bottom:5vh;
-  width:100%;
+  ${fontHeroTitle};
+  ${flexBox};
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5vh;
   @media screen and (${device.tablet}) {
-      margin:15vh 0 5vh 0;
-      font-size:50px;
-    }
-    @media screen and (${device.laptop}) {
-      justify-content: flex-start;
-      margin:25vh auto 5vh;
-      font-size:100px;
+    margin: 15vh 0 5vh 0;
+    font-size: 50px;
+  }
+  @media screen and (${device.laptop}) {
+    justify-content: flex-start;
+    margin: 30vh auto 5vh;
+    font-size: 100px;
   }
 `;
 
 export const TextSubtitle = styled.div`
+  ${fontSectionText};
   ${flexBox};
   flex-direction: column;
   gap: 10vh;
@@ -97,8 +102,6 @@ export const TextSubtitle = styled.div`
     text-align: center;
     margin: 0 3vw 0 0;
     padding: 0 3vw;
-    font-family: PTSans;
-    font-size: calc(${index}*1.1);
     width: 100%;
     height: 108px;
     opacity: 1;
