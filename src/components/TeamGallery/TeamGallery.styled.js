@@ -21,10 +21,10 @@ export const SectionStyled = styled.section`
 		top: 55%;
 	}
 	.next {
-		right: 80px;
+		right: 3vw;
 	}
 	.prev {
-		left: 80px;
+		left: 3vw;
 	}
 `;
 
