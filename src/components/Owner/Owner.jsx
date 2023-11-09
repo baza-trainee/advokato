@@ -43,7 +43,7 @@ export const Owner = () => {
           </TextStyled>
         </CompanyBox>
         <ImageBoxStyled>
-          <ImageStyled src={imageOwner} alt="photo-owner" />
+          <ImageStyled src={imageOwner} width={611} height={900} alt="photo-owner" />
         </ImageBoxStyled>
       </Container>
     </SectionStyled>
