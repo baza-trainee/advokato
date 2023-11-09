@@ -15,7 +15,7 @@ import arrowRight from "../../assets/images/clients-section/arrowRight.png";
 
 export const SectionStyled = styled.section`
   position: relative;
-  top: -30vh;
+  top: -30.08vh;
   width: 100%;
   height: 774px;
   padding: 140px 0;
@@ -48,15 +48,15 @@ export const StyledSlider = styled(Slider)`
     width: 8vw;
     height: 8vw;
     left: -1vw;
-    top: 34vh;
+    top: 25vh;
     z-index: 1;
   }
   .slick-next {
     background: url(${arrowRight}) no-repeat;
     width: 8vw;
     height: 8vw;
-    left: 69vw;
-    top: 34vh;
+    left: 68vw;
+    top: 25vh;
     z-index: 1;
   }
   .slick-next::before {

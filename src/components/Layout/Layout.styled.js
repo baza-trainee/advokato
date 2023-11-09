@@ -1,3 +1,4 @@
+
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import {
@@ -7,8 +8,7 @@ import {
   fontLayoutMenu,
   fontReview,
   fontLayoutCall,
-} from '../../styles/mixins';
-import { index } from '../HomeHero/variables/index';
+} from "../../styles/mixins";
 
 export const HeaderStyled = styled.header`
   ${flexBox};
@@ -17,35 +17,25 @@ export const HeaderStyled = styled.header`
   position: sticky;
   top: 0;
   left: 0;
-  height: calc((${index}) * 19);
-  padding: 0 3vw;
-
-  ${fontLayoutMenu};
+  height: 140px;
+  ${fontLayoutMenu}
   color: var(--lightText);
   background-color: var(--headerBackground);
   backdrop-filter: ${props => (props.top ? 0 : 'blur(20px)')};
   z-index: 20;
-
-  @media screen and (${device.tablet}) {
-    height: calc((${index}) * 5.4);
+  img{
+    width:152px;
+    height:auto;
   }
 `;
 
 export const UlStyled = styled.ul`
-  display: none;
-
-  @media screen and (${device.laptop}) {
-    ${flexBox};
-    gap: 3vw;
-    width: 600px;
-    height: 50px;
-
-    a {
-      font-weight: 400;
-      font-size: calc(${index}*.8);
-      line-height: 32.4px;
-      color: var(--lightText);
-    }
+  ${flexBox};
+  gap: 44px;
+  width: 600px;
+  height: 28px;
+  a {
+    color: var(--lightText);
   }
 `;
 
@@ -147,6 +137,7 @@ export const ConsultElement = styled.div`
 export const ConsultButton = styled.button`
   ${secondaryButton}
   width: 288px;
+  height:52px;
   padding: 16px 24px;
   background: none;
   border: 1px solid var(--lightText);

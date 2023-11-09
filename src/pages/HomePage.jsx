@@ -20,7 +20,7 @@ export const HomePage = () => {
       <ProBono />
       <Results />
       <ClientsBlock />
-      <ClientReviews />
+      {/* <ClientReviews /> */}
       <FeedBackForm />
     </>
   );
