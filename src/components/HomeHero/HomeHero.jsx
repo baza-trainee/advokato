@@ -1,32 +1,29 @@
 import {
   SectionStyled,
   Container,
-  HomeTextElement,
-  TitleText,
-  TextSubtitle,
-} from "./HomeHero.styled";
-import { useTranslation } from "react-i18next";
-
-import bgImage from "../../assets/images/homeHero-section/sean-pollock-PhYq704ffdA-unsplash 1 (1).jpg"
+  MainTitleStyled,
+  SubtitleStyled,
+} from './HomeHero.styled';
+import { useTranslation } from 'react-i18next';
 
 export const HomeHero = () => {
-  const [t, i18n] = useTranslation("global");
-  
+  const [t, i18n] = useTranslation('global');
+
   return (
-    <SectionStyled> 
-      <img src={bgImage} alt="bgImage" />
-      <Container> 
-        <HomeTextElement>
-          <TitleText>
-            <span>{t("titleText1")},&nbsp;</span>
-            <span>{t("titleText2")},</span>
-            <span>{t("titleText3")}</span>
-          </TitleText>
-          <TextSubtitle>
-            <div>{t("subTitleText2")}</div>
-            <div>{t("subTitleText1")}</div>
-          </TextSubtitle>
-        </HomeTextElement>
+    <SectionStyled>
+      <Container>
+        <MainTitleStyled>
+          <span>
+            {t('titleText1')},&nbsp;
+            {t('titleText2')},
+          </span>
+          {t('titleText3')}
+        </MainTitleStyled>
+
+        <div>
+          <SubtitleStyled>{t('subTitleText2')}</SubtitleStyled>
+          <SubtitleStyled>{t('subTitleText1')}</SubtitleStyled>
+        </div>
       </Container>
     </SectionStyled>
   );

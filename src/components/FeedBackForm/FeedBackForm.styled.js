@@ -10,8 +10,8 @@ import {
 
 export const Container = styled.div`
   ${container};
-  position: relative;
-  top: -30vh;
+  /* position: relative;
+  top: -30vh; */
   @media screen and (${device.desktop}) {
     padding-top: 132px;
     padding-bottom: 132px;
