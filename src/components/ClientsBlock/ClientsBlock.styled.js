@@ -1,15 +1,13 @@
-import styled from "@emotion/styled";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { container, fontSectionTitle } from "../../styles/mixins";
+import styled from '@emotion/styled';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { container, fontSectionTitle } from '../../styles/mixins';
 
-import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
-import arrowRight from "../../assets/images/clients-section/arrowRight.png";
+import arrowLeft from '../../assets/images/clients-section/arrowLeft.png';
+import arrowRight from '../../assets/images/clients-section/arrowRight.png';
 
 export const SectionStyled = styled.section`
-  /* position: relative;
-  top: -30.5vh; */
   width: 100%;
   height: 512px;
   padding: 112px 0;
@@ -27,7 +25,7 @@ export const ClientsBlockHeader = styled.h1`
 `;
 
 export const SliderWrapper = styled.div`
-/* position:relative;
+  /* position:relative;
 left:1vw; */
 `;
 
@@ -50,13 +48,13 @@ export const StyledSlider = styled(Slider)`
     z-index: 1;
   }
   .slick-next::before {
-    content: "";
+    content: '';
     display: block;
     height: 15px;
     width: 15px;
   }
   .slick-prev::before {
-    content: "";
+    content: '';
     display: block;
     height: 15px;
     width: 15px;

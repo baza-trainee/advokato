@@ -1,23 +1,20 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   container,
   fontSectionText,
   fontSectionTitle,
-} from "../../styles/mixins";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
-import arrowRight from "../../assets/images/clients-section/arrowRight.png";
+} from '../../styles/mixins';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import arrowLeft from '../../assets/images/clients-section/arrowLeft.png';
+import arrowRight from '../../assets/images/clients-section/arrowRight.png';
 
 export const SectionStyled = styled.section`
-  /* position: relative;
-  top: -30.2vh; */
   background: var(--darkBackground);
   color: var(--lightText);
   height: 92vh;
   color: var(--lightText);
-  /* padding-top: 10vh; */
 `;
 
 export const Container = styled.div`
@@ -68,13 +65,13 @@ export const StyledSlider = styled(Slider)`
     z-index: 1;
   }
   .slick-next::before {
-    content: "";
+    content: '';
     display: block;
     height: 15px;
     width: 15px;
   }
   .slick-prev::before {
-    content: "";
+    content: '';
     display: block;
     height: 15px;
     width: 15px;
@@ -116,7 +113,7 @@ export const CardRole = styled.div`
   top: 60%;
   left: 5%;
   &::after {
-    content: "";
+    content: '';
     width: 80px;
     height: 4px;
     border: 3px solid var(--accentLink);

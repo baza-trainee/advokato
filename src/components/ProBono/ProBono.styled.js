@@ -1,14 +1,12 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   container,
   flexBox,
   fontSectionText,
   fontSectionTitle,
-} from "../../styles/mixins";
+} from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  /* position: relative;
-  top: -30.4vh; */
   background: var(--darkBackground);
   color: var(--lightText);
   width: 100%;
@@ -18,14 +16,14 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   ${container};
-  `;
+`;
 
 export const BlockWrapper = styled.div`
   ${flexBox};
   gap: 116px;
-  opacity: ${(props) => (props.second ? 0 : 1)};
+  opacity: ${props => (props.second ? 0 : 1)};
   transition: 0.1s;
-  :last-child{
+  :last-child {
     margin-top: 100px;
   }
 `;
@@ -53,5 +51,5 @@ export const BonoHeader = styled.h1`
 `;
 
 export const BonoText = styled.div`
-  ${fontSectionText}
+  ${fontSectionText};
 `;
