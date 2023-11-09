@@ -11,8 +11,8 @@ import {
 import "../../index.css";
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -48vh;
+  /* position: relative;
+  top: -48vh; */
   /* height: 100vh; */
   background-color: var(--darkBackground);
   color: var(--lightText);

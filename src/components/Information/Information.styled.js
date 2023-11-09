@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { container, device, flexBox, fontDesktop } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -30vh;
+  /* position: relative;
+  top: -30vh; */
   background-color: var(--lightBackgroung);
 `;
 
