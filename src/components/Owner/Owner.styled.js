@@ -100,16 +100,16 @@ export const ImageStyled = styled.img`
 export const ButtonStyled = styled.button`
   ${secondaryButton};
   ${flexBox};
-/*   
+
   font-family: var(--Raleway);
-  font-size: clamp(12px, 1.4vw, 24px);
+  font-size: 18px;
   font-weight: 600;
-  line-height: 27px;
+  line-height: calc(27 / 18);
   letter-spacing: 0px;
   text-align: left;
 
   background: var(--darkBackground);
-  border: 1px solid var(--greyText); */
+  border: 1px solid var(--greyText);
 
   svg {
     margin-left: 10px;
