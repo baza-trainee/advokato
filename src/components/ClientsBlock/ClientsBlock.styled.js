@@ -41,4 +41,7 @@ export const StyledSlider = styled(Slider)`
 		height: auto;
 		margin-right: 24px;
 	}
+	.slick-slider {
+  overflow: hidden;
+}
 `;
