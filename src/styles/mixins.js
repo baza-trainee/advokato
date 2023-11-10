@@ -100,8 +100,11 @@ export const secondaryButton = () => {
           color: var(--mainText);
           fill: var(--mainText);
           background-color: #ffffff;        
+          svg {
+            fill: var(--mainText);
+          }
         }
-
+        
         &:active {
           color: var(--mainText);
           fill: var(--mainText);
