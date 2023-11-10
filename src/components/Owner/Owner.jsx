@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 import {
   SectionStyled,
@@ -8,10 +8,10 @@ import {
   ImageStyled,
   TextStyled,
   ButtonStyled,
-} from "./Owner.styled";
+} from './Owner.styled';
 
-import imageOwner from "/src/assets/images/owner-section/photo-owner.webp";
-import { Icon } from "../Icon";
+import imageOwner from '/src/assets/images/owner-section/photo-owner.webp';
+import { Icon } from '../Icon';
 
 export const Owner = () => {
   return (
@@ -19,8 +19,11 @@ export const Owner = () => {
       <Container>
         <CompanyBox>
           <TextStyled>
-            <h3>Адвокатська компанія</h3>
-            <span>«STATUS»</span>
+            <h3>
+              Адвокатська компанія
+              <span>«STATUS»</span>
+            </h3>
+            
             <p>
               Маючи надійну команду юристів і адвокатів, ми надаємо повний
               спектр юридичних послуг у корпоративній, цивільно-правовій,
@@ -33,17 +36,18 @@ export const Owner = () => {
 
             <ButtonStyled>
               Записатися на консультацію
-              <Icon
-                id={"icon-arrow-right"}
-                width={16}
-                height={12}
-                fill={"#fefefe"}
-              />
+              <Icon id={'icon-arrow-right'} width={16} height={12} />
             </ButtonStyled>
           </TextStyled>
         </CompanyBox>
+
         <ImageBoxStyled>
-          <ImageStyled src={imageOwner} width={611} height={900} alt="photo-owner" />
+          <ImageStyled
+            src={imageOwner}
+            width={611}
+            height={900}
+            alt="photo-owner"
+          />
         </ImageBoxStyled>
       </Container>
     </SectionStyled>

@@ -1,68 +1,44 @@
-import styled from '@emotion/styled';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { container, fontSectionTitle } from '../../styles/mixins';
-
-import arrowLeft from '../../assets/images/clients-section/arrowLeft.png';
-import arrowRight from '../../assets/images/clients-section/arrowRight.png';
+import styled from "@emotion/styled";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
-  width: 100%;
-  height: 512px;
-  padding: 112px 0;
-  background: var(--darkBackground);
+	height: 512px;
+	padding: 112px 0;
+	background: var(--darkBackground);
 `;
 
 export const Container = styled.div`
-  ${container};
+	${container};
 `;
 
 export const ClientsBlockHeader = styled.h1`
-  ${fontSectionTitle};
-  color: var(--lightText);
-  margin: 2vh 0;
+	${fontSectionTitle};
+	color: var(--lightText);
+	margin: 2vh 0;
 `;
 
 export const SliderWrapper = styled.div`
-  /* position:relative;
-left:1vw; */
+	min-width: 0px;
+`;
+
+export const SliderArrow = styled.div``;
+
+export const ClientsSliderContainer = styled.div`
+	${flexBox};
+	align-items: center;
+	justify-content: space-evenly;
 `;
 
 export const StyledSlider = styled(Slider)`
-  margin: 0 4.5vw;
-  .slick-prev {
-    background: url(${arrowLeft}) no-repeat;
-    width: 8vw;
-    height: 8vw;
-    left: -4.5vw;
-    top: 12vh;
-    z-index: 1;
-  }
-  .slick-next {
-    background: url(${arrowRight}) no-repeat;
-    width: 8vw;
-    height: 8vw;
-    left: 61vw;
-    top: 12vh;
-    z-index: 1;
-  }
-  .slick-next::before {
-    content: '';
-    display: block;
-    height: 15px;
-    width: 15px;
-  }
-  .slick-prev::before {
-    content: '';
-    display: block;
-    height: 15px;
-    width: 15px;
-  }
-  .slick-slide {
-    margin: 0 1vw;
-    img {
-      max-width: 100%;
-    }
-  }
+	width: 970px;
+	margin-left: 23px;
+	margin-right: 0px;
+	.slick-slide {
+		width: 300px;
+		height: auto;
+		margin-right: 24px;
+	}
 `;

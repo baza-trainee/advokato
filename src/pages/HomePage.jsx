@@ -10,20 +10,20 @@ import { ClientReviews } from "../components/ClientReviews";
 import { TeamGallery } from "../components/TeamGallery";
 
 export const HomePage = () => {
-  return (
-    <>
-      <HomeHero />
-      <Owner />
-      <Information />
-      <Practice />
-      <TeamGallery />
-      <ProBono />
-      <Results />
-      <ClientsBlock />
-      {/* <ClientReviews /> */}
-      <FeedBackForm />
-    </>
-  );
+	return (
+		<>
+			<HomeHero />
+			<Owner />
+			<Information />
+			<Practice />
+			<TeamGallery />
+			<ProBono />
+			<Results />
+			<ClientsBlock />
+			{/* <ClientReviews /> */}
+			<FeedBackForm />
+		</>
+	);
 };
 
 export default HomePage;

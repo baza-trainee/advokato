@@ -27,33 +27,42 @@ export const container = () => {
 export const mainButton = () => {
   return `  
         padding: 20px 32px;
+
         color: #ffffff;
+        fill: #ffffff;
         background-color: var(--darkBackground);
-        cursor: pointer;
         border: 1px solid var(--greyText);
+        cursor: pointer;
+
         font-family: inherit;
         font-size: 18px;
         font-weight: 500;
         line-height: calc(22 / 18);
         text-align: center;
         border-radius: 48px;
-        transition: color var(--timing-function) var(--animation-duration), border var(--timing-function) var(--animation-duration), background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, border, background-color;
+        transition-duration: var(--timing-function) var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
           color: var(--mainText);
+          fill: var(--mainText);
           background-color: #ffffff;
           border: 1px solid #ffffff;
         }
 
         &:active {
           color: var(--mainText);
+          fill: var(--mainText);
           background-color: #e1e1e1; 
           border: 1px solid #e1e1e1;
         }
 
         &[disabled] {
           color: var(--greyText);   
+          fill: var(--greyText);
           cursor: not-allowed;
         
         &:hover,
@@ -69,36 +78,46 @@ export const mainButton = () => {
 export const secondaryButton = () => {
   return `  
         padding: 12px 24px;
+
         color: var(--lightText);
+        fill: var(--lightText);
         background-color: #1c1c21;
-        cursor: pointer;
         border: none;
+        cursor: pointer;
+
         font-family: inherit;
         font-size: 14px;
         font-weight: 500;
         line-height: calc(17 / 14);
         text-align: center;
         border-radius: 50px;
-        transition: color var(--timing-function) var(--animation-duration), background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
           color: var(--mainText);
+          fill: var(--mainText);
           background-color: #ffffff;        
         }
-
+        
         &:active {
           color: var(--mainText);
+          fill: var(--mainText);
           background-color: #e1e1e1;        
         }
 
         &[disabled] {
           color: var(--greyText);   
+          fill: var(--mainText);
           cursor: not-allowed;
         
         &:hover,
         &:focus {
           color: var(--greyText);
+          fill: var(--mainText);
           background-color: #1c1c21;          
           }
         }
@@ -131,7 +150,7 @@ export const fontMobile = () => {
 };
 
 export const fontLayoutMenu = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 18px;
         font-weight: 400;
@@ -141,7 +160,7 @@ export const fontLayoutMenu = () => {
 };
 
 export const fontLayoutCall = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 14px;
         font-weight: 500;
@@ -151,7 +170,7 @@ export const fontLayoutCall = () => {
 };
 
 export const fontHeroTitle = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 100px;
         font-weight: 700;
