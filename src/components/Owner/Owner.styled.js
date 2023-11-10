@@ -19,38 +19,46 @@ export const Container = styled.div`
   ${container};
   display: flex;
   justify-content: space-between;
+
   @media screen and (${device.mobileL}) {
     padding: 0;
   }
 `;
 
 export const TextStyled = styled.div`
+  width: 484px;
+
   h3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+
     font-family: var(--Raleway);
-    font-size: clamp(18px, 2vw, 32px);
+    font-size: 32px;
     font-weight: 400;
-    line-height: 45px;
+    line-height: calc(45 / 32);
     letter-spacing: 0em;
     text-align: left;
   }
 
   span {
     font-family: var(--Raleway);
-    font-size: clamp(32px, 3.5vw, 64px);
+    font-size: 64px;
     font-weight: 700;
-    line-height: 90px;
+    line-height: calc(90 / 60);
     letter-spacing: 0em;
     text-align: left;
   }
 
   p {
+    margin-bottom: 72px;
+
     font-family: var(--PTSans);
-    font-size: clamp(14px, 1.5vw, 28px);
+    font-size: 22px;
     font-weight: 400;
-    line-height: 35px;
+    line-height: calc(35 / 22);
     letter-spacing: 0em;
     text-align: left;
-    margin: 40px 0;
   }
 
   @media screen and (${device.mobileS}) {
@@ -73,7 +81,7 @@ export const TextStyled = styled.div`
 `;
 
 export const CompanyBox = styled.div`
-  ${flexBox}
+  ${flexBox};
   flex-direction: column;
   width: 57.6%;
 `;
@@ -92,6 +100,7 @@ export const ImageStyled = styled.img`
 export const ButtonStyled = styled.button`
   ${secondaryButton};
   ${flexBox};
+/*   
   font-family: var(--Raleway);
   font-size: clamp(12px, 1.4vw, 24px);
   font-weight: 600;
@@ -100,36 +109,10 @@ export const ButtonStyled = styled.button`
   text-align: left;
 
   background: var(--darkBackground);
-  border: 1px solid var(--greyText);
+  border: 1px solid var(--greyText); */
 
   svg {
     margin-left: 10px;
-  }
-
-  &:active {
-    background: #e1e1e1 !important;
-    color: var(--mainText);
-
-    svg {
-      fill: var(--mainText);
-    }
-  }
-
-  &:hover {
-    color: var(--mainText) !important;
-  }
-
-  &:hover svg {
-    fill: var(--mainText);
-    transition: fill var(--timing-function) var(--animation-duration);
-  }
-
-  &[disabled] {
-    color: var(--greyText);
-    background: var(--darkBackground);
-
-    svg {
-      fill: var(--greyText);
-    }
+    fill: inherit;
   }
 `;
