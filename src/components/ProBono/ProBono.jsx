@@ -36,12 +36,12 @@ export const ProBono = () => {
               </BonoText>
             </LeftSide>
             <RightSide>
-              <img src={trident} alt="trident_image" />
+              <img height={700} src={trident} alt="trident_image" />
             </RightSide>
           </BlockWrapper>
           <BlockWrapper>
             <LeftSide>
-              <img src={armor} alt="armor_image" />
+              <img height={700} src={armor} alt="armor_image" />
             </LeftSide>
             <RightSide>
               <BonoText>
