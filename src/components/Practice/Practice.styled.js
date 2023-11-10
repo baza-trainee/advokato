@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { container, fontSectionTitle } from '../../styles/mixins';
+import {
+  container,
+  fontSectionTitle,
+  secondaryButton,
+} from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   padding: 132px 0;
@@ -47,6 +51,8 @@ export const PracticeTitle = styled.h3`
 `;
 
 export const PracticeDesc = styled.p`
+  margin-bottom: 20px;
+
   font-family: var(--Raleway);
   font-size: 18px;
   font-weight: 400;
@@ -54,4 +60,8 @@ export const PracticeDesc = styled.p`
   letter-spacing: 0em;
 
   color: var(--lightText);
+`;
+
+export const ButtonStyled = styled.button`
+  ${secondaryButton};
 `;

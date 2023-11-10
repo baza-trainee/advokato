@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   SectionStyled,
   Container,
@@ -8,8 +10,8 @@ import {
   ButtonStyled,
 } from "./Owner.styled";
 
-import {imageOwner} from "./variables/index";
-// import { Icon } from "../Icon";
+import imageOwner from "/src/assets/images/owner-section/photo-owner.webp";
+import { Icon } from "../Icon";
 
 export const Owner = () => {
   return (
@@ -31,14 +33,17 @@ export const Owner = () => {
 
             <ButtonStyled>
               Записатися на консультацію
-              <svg viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.3616 0L16.5 5.99997L15.5111 6.9666L15.5039 6.95955L10.3471 12L9.35822 11.0334L13.8084 6.6835H0.5V5.31648H13.8229L9.37272 0.96663L10.3616 0Z" />
-              </svg>
+              <Icon
+                id={"icon-arrow-right"}
+                width={16}
+                height={12}
+                fill={"#fefefe"}
+              />
             </ButtonStyled>
           </TextStyled>
         </CompanyBox>
         <ImageBoxStyled>
-          <ImageStyled src={ imageOwner} alt="photo-owner"/>
+          <ImageStyled src={imageOwner} width={611} height={900} alt="photo-owner" />
         </ImageBoxStyled>
       </Container>
     </SectionStyled>

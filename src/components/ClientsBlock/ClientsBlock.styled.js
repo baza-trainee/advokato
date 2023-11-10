@@ -1,75 +1,68 @@
-import styled from "@emotion/styled";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
-import { index } from "../HomeHero/variables";
-import { device } from "../../styles/mixins";
+import styled from '@emotion/styled';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { container, fontSectionTitle } from '../../styles/mixins';
 
-import arrowLeft from "../../images/ClientsBlock/arrowLeft.png"
-import arrowRight from "../../images/ClientsBlock/arrowRight.png"
-
+import arrowLeft from '../../assets/images/clients-section/arrowLeft.png';
+import arrowRight from '../../assets/images/clients-section/arrowRight.png';
 
 export const SectionStyled = styled.section`
-  width:100%;
-  height:512px;
+  width: 100%;
+  height: 512px;
   padding: 112px 0;
-background:var(--darkBackground);
-`
+  background: var(--darkBackground);
+`;
+
 export const Container = styled.div`
   ${container};
-  ${flexBox};
-  flex-direction: column;
-  `
+`;
+
 export const ClientsBlockHeader = styled.h1`
-${fontSectionTitle};
-color:var(--lightText);
-margin:1vh 5vw;
-`
+  ${fontSectionTitle};
+  color: var(--lightText);
+  margin: 2vh 0;
+`;
 
 export const SliderWrapper = styled.div`
-margin:0 auto;
-max-width: 80%;
-`
+  /* position:relative;
+left:1vw; */
+`;
+
 export const StyledSlider = styled(Slider)`
-  .slick-dots li button:before {
-  color:white;
- }
- .slick-prev {
-  background: url(${arrowLeft}) no-repeat;
-  width:8vw;
-  height:8vw;
-  left: -5vw;
-  top: 18vh;
-  z-index: 1;
-}
-.slick-next {
-  background: url(${arrowRight}) no-repeat;
-  width:8vw;
-  height:8vw;
-  left: 80vw;
-  top: 18vh;
-  z-index: 1;
-}
-.slick-next::before {
-      content: "";
-      display: block;
-      height: 15px;
-      width: 15px;
-}
-.slick-prev::before {
-      content: "";
-      display: block;
-      height: 15px;
-      width: 15px;
-}
-
-  & .slick-slide img {
-      max-width: 24vw;
-    margin:0 20px;
+  margin: 0 4.5vw;
+  .slick-prev {
+    background: url(${arrowLeft}) no-repeat;
+    width: 8vw;
+    height: 8vw;
+    left: -4.5vw;
+    top: 12vh;
+    z-index: 1;
+  }
+  .slick-next {
+    background: url(${arrowRight}) no-repeat;
+    width: 8vw;
+    height: 8vw;
+    left: 61vw;
+    top: 12vh;
+    z-index: 1;
+  }
+  .slick-next::before {
+    content: '';
+    display: block;
+    height: 15px;
+    width: 15px;
+  }
+  .slick-prev::before {
+    content: '';
+    display: block;
+    height: 15px;
+    width: 15px;
+  }
+  .slick-slide {
+    margin: 0 1vw;
+    img {
+      max-width: 100%;
     }
-
-    
-      
-  
+  }
 `;

@@ -1,6 +1,3 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
 import {
   BlockWrapper,
   BonoHeader,
@@ -10,28 +7,15 @@ import {
   RightSide,
   SectionStyled,
 } from "./ProBono.styled";
-import trident from "../../images/trident_photo.png";
-import armor from "../../images/boss_armor.png";
+import trident from "../../assets/images/proBono-section/trident_photo.png";
+import armor from "../../assets/images/proBono-section/boss_armor.png";
 
-export default function ProBono() {
-  gsap.registerPlugin(ScrollTrigger);
-  let tl = gsap.timeline();
-  useLayoutEffect(() => {
-    tl.to(".elem1", {opacity:0,duration:3})
-    .to(".elem2", {opacity:1,duration:3});
-    ScrollTrigger.create({
-      animation: tl,
-        trigger: ".triggerTop",
-      start: "top 0%",
-      end: "bottom -50%",
-      scrub: 1,
-    });
-  }, [tl]);
+export const ProBono = () => {
   return (
     <>
-      <SectionStyled className="triggerTop">
+      <SectionStyled>
         <Container>
-          <BlockWrapper className="elem1">
+          <BlockWrapper>
             <LeftSide>
               <BonoHeader>ProBono</BonoHeader>
               <BonoText>
@@ -55,7 +39,7 @@ export default function ProBono() {
               <img src={trident} alt="trident_image" />
             </RightSide>
           </BlockWrapper>
-          <BlockWrapper second className="elem2">
+          <BlockWrapper>
             <LeftSide>
               <img src={armor} alt="armor_image" />
             </LeftSide>
@@ -80,4 +64,4 @@ export default function ProBono() {
       </SectionStyled>
     </>
   );
-}
+};
