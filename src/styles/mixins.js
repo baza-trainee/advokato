@@ -80,13 +80,19 @@ export const secondaryButton = () => {
         text-align: center;
         border-radius: 50px;
         transition: color var(--timing-function) var(--animation-duration), background-color var(--timing-function) var(--animation-duration);
+        svg {
+          fill: var(--lightText);
+        }
 
         &:hover,
         &:focus {
           color: var(--mainText);
           background-color: #ffffff;        
+          svg {
+            fill: var(--mainText);
+          }
         }
-
+        
         &:active {
           color: var(--mainText);
           background-color: #e1e1e1;        

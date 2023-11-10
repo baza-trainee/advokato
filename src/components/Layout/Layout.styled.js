@@ -127,7 +127,7 @@ export const ConsultElement = styled.div`
   width: 288px;
 
   button,
-  span {
+  a {
     ${fontLayoutCall}
     color: var(--lightText);
     cursor: pointer;
@@ -135,7 +135,9 @@ export const ConsultElement = styled.div`
 `;
 
 export const ConsultButton = styled.button`
-  ${secondaryButton}
+  ${secondaryButton};
+  ${flexBox};
+  gap:10px;
   width: 288px;
   height:52px;
   padding: 16px 24px;
