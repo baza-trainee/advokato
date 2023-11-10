@@ -40,10 +40,10 @@ export const mainButton = () => {
         line-height: calc(22 / 18);
         text-align: center;
         border-radius: 48px;
-        transition: color var(--timing-function) var(--animation-duration), 
-                    fill var(--timing-function) var(--animation-duration), 
-                    border var(--timing-function) var(--animation-duration), 
-                    background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, border, background-color;
+        transition-duration: var(--timing-function) var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
@@ -91,18 +91,16 @@ export const secondaryButton = () => {
         line-height: calc(17 / 14);
         text-align: center;
         border-radius: 50px;
-        transition: color var(--timing-function) var(--animation-duration), 
-                    fill var(--timing-function) var(--animation-duration), 
-                    background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
           color: var(--mainText);
           fill: var(--mainText);
           background-color: #ffffff;        
-          svg {
-            fill: var(--mainText);
-          }
         }
         
         &:active {
