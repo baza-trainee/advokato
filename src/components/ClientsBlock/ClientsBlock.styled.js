@@ -1,4 +1,3 @@
-
 import styled from "@emotion/styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,7 +8,6 @@ export const SectionStyled = styled.section`
 	height: 512px;
 	padding: 112px 0;
 	background: var(--darkBackground);
-
 `;
 
 export const Container = styled.div`
@@ -36,10 +34,11 @@ export const ClientsSliderContainer = styled.div`
 
 export const StyledSlider = styled(Slider)`
 	width: 970px;
-	margin: 0 12px;
+	margin-left: 23px;
+	margin-right: 0px;
 	.slick-slide {
 		width: 300px;
 		height: auto;
-		margin: 0 12px;
+		margin-right: 24px;
 	}
 `;
