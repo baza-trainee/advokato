@@ -16,18 +16,14 @@ import {
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false);
 
-	function handleAccept() {
+	const handleAccept = () => {
 		setLocalStorage("cookie_consent", "granted");
 		setShowPanel(false);
-	}
+	};
 
-	function handleClose() {
+	const handleClose = () => {
 		setShowPanel(false);
-	}
-
-	function openModal() {
-		handleClose();
-	}
+	};
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -46,6 +42,7 @@ const CookiesPanel = () => {
 						width={24}
 						height={24}
 						onClick={() => handleClose()}
+						aria-label="Close"
 					/>
 					<BannerWrap>
 						<p>
@@ -54,7 +51,7 @@ const CookiesPanel = () => {
 							натисніть ОК. Більше інформації в{" "}
 							<PolicyLink
 								href="#"
-								onClick={() => openModal()}
+								aria-label="Open Cookie Policy"
 							>
 								Політика конфіденційності
 							</PolicyLink>
@@ -62,6 +59,7 @@ const CookiesPanel = () => {
 						<ButtonOk
 							type="button"
 							onClick={() => handleAccept()}
+							aria-label="accept cookies"
 						>
 							Ok
 						</ButtonOk>
