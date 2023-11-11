@@ -18,6 +18,7 @@ import {
 	HamburgerMenu,
 } from "./Layout.styled";
 import { Footer } from "../Footer/Footer";
+import { CookiesPanel } from "../CookiesPanel";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
@@ -113,7 +114,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						aria-label="Записатися на консультацію"
 						type="button"
 						onClick={() => alert("HelloWorld")}
-						className="animate__animated animate__pulse animate__infinite infinite 
+						className="animate__animated animate__pulse animate__infinite infinite
           animate__slower	3s"
 					>
 						{t("header.btnAppoitment")}
@@ -135,6 +136,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 				</Suspense>
 			</main>
 			<Footer />
+			<CookiesPanel />
 		</>
 	);
 };
