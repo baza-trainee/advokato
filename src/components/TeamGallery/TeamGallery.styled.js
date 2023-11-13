@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import {
 	container,
 	fontSectionText,
@@ -19,6 +19,9 @@ export const SectionStyled = styled.section`
 	button {
 		position: absolute;
 		top: 55%;
+		fill: none;
+		stroke: #f3eff5;
+		stroke-width: 2;
 	}
 	.next {
 		right: 3vw;
@@ -26,7 +29,6 @@ export const SectionStyled = styled.section`
 	.prev {
 		left: 3vw;
 	}
-
 `;
 
 export const Container = styled.div`
@@ -74,7 +76,6 @@ export const StyledSlider = styled(Slider)`
 		transform: scale(1.01);
 		transition: 0.5s;
 	}
-
 `;
 
 export const TeamMateCardWrapper = styled.div`

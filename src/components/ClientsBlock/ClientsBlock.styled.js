@@ -6,7 +6,7 @@ import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	height: 512px;
-	padding: 112px 0;
+	padding: 132px 0;
 	background: var(--darkBackground);
 `;
 
@@ -17,14 +17,20 @@ export const Container = styled.div`
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
 	color: var(--lightText);
-	margin: 2vh 0;
+	margin-bottom: 40px;
 `;
 
 export const SliderWrapper = styled.div`
 	min-width: 0px;
 `;
 
-export const SliderArrow = styled.div``;
+export const SliderArrow = styled.div`
+	button {
+		fill: none;
+		stroke: #f3eff5;
+		stroke-width: 2;
+	}
+`;
 
 export const ClientsSliderContainer = styled.div`
 	${flexBox};
@@ -41,7 +47,10 @@ export const StyledSlider = styled(Slider)`
 		height: auto;
 		margin-right: 24px;
 	}
+	.slick-slide:hover {
+        transform: scale(1.01);
+	}
 	.slick-slider {
-  overflow: hidden;
-}
+		overflow: hidden;
+	}
 `;
