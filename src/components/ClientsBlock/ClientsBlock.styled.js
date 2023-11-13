@@ -2,7 +2,12 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
+import {
+	container,
+	flexBox,
+	fontSectionTitle,
+	sliderArrow,
+} from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	height: 512px;
@@ -25,11 +30,7 @@ export const SliderWrapper = styled.div`
 `;
 
 export const SliderArrow = styled.div`
-	button {
-		fill: none;
-		stroke: #f3eff5;
-		stroke-width: 2;
-	}
+	${sliderArrow};
 `;
 
 export const ClientsSliderContainer = styled.div`
@@ -45,15 +46,14 @@ export const StyledSlider = styled(Slider)`
 	.slick-slide {
 		width: 300px;
 		height: auto;
-		border:1px solid var(--reviewText);
+		border: 1px solid var(--reviewText);
 		border-radius: 20px;
 		margin-right: 24px;
 	}
 
-	 .slick-slide img:hover {
-        transform: scale(1.2);
-		transition:1s;
-		cursor: pointer;
+	.slick-slide img:hover {
+		transform: scale(1.2);
+		transition: 1s;
 	}
 	.slick-slider {
 		overflow: hidden;

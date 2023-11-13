@@ -218,6 +218,25 @@ export const fontReview = () => {
         letter-spacing: 0em;    
     `;
 };
+
+export const sliderArrow = () => {
+  return `
+  button {
+		fill: none;
+		stroke: var(--reviewText);
+		stroke-width: 2;
+	}
+	button:hover {
+		fill: var(--btnBgHover);
+		stroke: var(--mainText);
+	}
+	button:active {
+		fill: var(--btnBgPressed);
+		stroke: var(--mainText);
+	}
+  `;
+};  
+
 export const size = {
   mobileS: '320px',
   mobileM: '375px',

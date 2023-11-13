@@ -5,6 +5,7 @@ import {
 	fontReview,
 	fontReviewName,
 	fontSectionTitle,
+	sliderArrow,
 } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
@@ -30,11 +31,7 @@ export const SliderWrapper = styled.div`
 	${flexBox};
 	width: 1132px;
 	height: 472px;
-	button {
-		fill: none;
-		stroke: #f3eff5;
-		stroke-width: 2;
-	}
+	${sliderArrow};
 `;
 
 export const ClientCardWrapper = styled.div`
