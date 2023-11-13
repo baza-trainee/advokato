@@ -7,9 +7,7 @@ import {
 	SliderArrow,
 } from "./ClientsBlock.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
-
-import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
-import arrowRight from "../../assets/images/clients-section/arrowRight.png";
+import { Icon } from "../Icon";
 
 export const ClientsBlock = () => {
 	const arrowRef = useRef();
@@ -25,11 +23,10 @@ export const ClientsBlock = () => {
 							onClick={() => arrowRef.current.slickPrev()}
 							type="button"
 						>
-							<img
-								src={arrowLeft}
-								height={60}
+							<Icon
+								id={"icon-slider-arrow-left"}
 								width={60}
-								alt="arrowLeft"
+								height={60}
 							/>
 						</button>
 					</SliderArrow>
@@ -40,11 +37,10 @@ export const ClientsBlock = () => {
 							onClick={() => arrowRef.current.slickNext()}
 							type="button"
 						>
-							<img
-								src={arrowRight}
-								height={60}
+							<Icon
+								id={"icon-slider-arrow-right"}
 								width={60}
-								alt="arrowRight"
+								height={60}
 							/>
 						</button>
 					</SliderArrow>

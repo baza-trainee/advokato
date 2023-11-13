@@ -6,8 +6,7 @@ import {
 	TeamBlockHeader,
 	TeamBlockSubTitle,
 } from "./TeamGallery.styled";
-import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
-import arrowRight from "../../assets/images/clients-section/arrowRight.png";
+import { Icon } from "../Icon";
 
 export const TeamGallery = () => {
 	const arrowRef = useRef();
@@ -28,11 +27,10 @@ export const TeamGallery = () => {
 				className="prev"
 				type="button"
 			>
-				<img
-					src={arrowLeft}
-					height={60}
+				<Icon
+					id={"icon-slider-arrow-left"}
 					width={60}
-					alt="arrowLeft"
+					height={60}
 				/>
 			</button>
 			<button
@@ -41,11 +39,10 @@ export const TeamGallery = () => {
 				className="next"
 				type="button"
 			>
-				<img
-					src={arrowRight}
-					height={60}
+				<Icon
+					id={"icon-slider-arrow-right"}
 					width={60}
-					alt="arrowRight"
+					height={60}
 				/>
 			</button>
 		</SectionStyled>
