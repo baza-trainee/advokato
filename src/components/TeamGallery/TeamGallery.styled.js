@@ -3,6 +3,7 @@ import {
 	container,
 	fontSectionText,
 	fontSectionTitle,
+	sliderArrow,
 } from "../../styles/mixins";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,12 +17,10 @@ export const SectionStyled = styled.section`
 	overflow: hidden;
 	position: relative;
 	top: -0.1vh;
+	${sliderArrow};
 	button {
 		position: absolute;
 		top: 55%;
-		fill: none;
-		stroke: #f3eff5;
-		stroke-width: 2;
 	}
 	.next {
 		right: 3vw;
