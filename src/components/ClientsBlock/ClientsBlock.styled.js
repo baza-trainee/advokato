@@ -45,10 +45,15 @@ export const StyledSlider = styled(Slider)`
 	.slick-slide {
 		width: 300px;
 		height: auto;
+		border:1px solid var(--reviewText);
+		border-radius: 20px;
 		margin-right: 24px;
 	}
-	.slick-slide:hover {
-        transform: scale(1.01);
+
+	 .slick-slide img:hover {
+        transform: scale(1.2);
+		transition:1s;
+		cursor: pointer;
 	}
 	.slick-slider {
 		overflow: hidden;
