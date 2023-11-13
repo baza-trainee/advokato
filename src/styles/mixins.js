@@ -28,8 +28,8 @@ export const mainButton = () => {
   return `  
         padding: 20px 32px;
 
-        color: #ffffff;
-        fill: #ffffff;
+        color: var(--btnBgHover);
+        fill: var(--btnBgHover);
         background-color: var(--darkBackground);
         border: 1px solid var(--greyText);
         cursor: pointer;
@@ -49,15 +49,15 @@ export const mainButton = () => {
         &:focus {
           color: var(--mainText);
           fill: var(--mainText);
-          background-color: #ffffff;
-          border: 1px solid #ffffff;
+          background-color: var(--btnBgHover);
+          border: 1px solid var(--btnBgHover);
         }
 
         &:active {
           color: var(--mainText);
           fill: var(--mainText);
-          background-color: #e1e1e1; 
-          border: 1px solid #e1e1e1;
+          background-color: var(--btnBgPressed); 
+          border: 1px solid var(--btnBgPressed);
         }
 
         &[disabled] {
@@ -81,7 +81,7 @@ export const secondaryButton = () => {
 
         color: var(--lightText);
         fill: var(--lightText);
-        background-color: #1c1c21;
+        background-color: var(--darkGrey);
         border: none;
         cursor: pointer;
 
@@ -100,13 +100,13 @@ export const secondaryButton = () => {
         &:focus {
           color: var(--mainText);
           fill: var(--mainText);
-          background-color: #ffffff;        
+          background-color: var(--btnBgHover);        
         }
         
         &:active {
           color: var(--mainText);
           fill: var(--mainText);
-          background-color: #e1e1e1;        
+          background-color: var(--btnBgPressed);        
         }
 
         &[disabled] {
@@ -118,7 +118,7 @@ export const secondaryButton = () => {
         &:focus {
           color: var(--greyText);
           fill: var(--mainText);
-          background-color: #1c1c21;          
+          background-color: var(--darkGrey);          
           }
         }
     `;
