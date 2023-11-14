@@ -5,6 +5,11 @@ import {
 	setLocalStorage,
 } from "../../helpers/localStorageHelper";
 
+import { Modal } from "../Modal";
+import { PdfViewer } from "../PdfViewer";
+
+import pdfFile from "../../assets/documents/test_privacy_policy.pdf";
+
 import {
 	Panel,
 	IconClose,
@@ -15,6 +20,7 @@ import {
 
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false);
+	const [modalActive, setModalActive] = useState(false);
 
 	const handleAccept = () => {
 		setLocalStorage("cookie_consent", "granted");
@@ -35,6 +41,12 @@ const CookiesPanel = () => {
 
 	return (
 		<>
+			<Modal
+				active={modalActive}
+				setActive={setModalActive}
+			>
+				<PdfViewer pdfFile={pdfFile} />
+			</Modal>
 			{showPanel && (
 				<Panel>
 					<IconClose
@@ -51,6 +63,9 @@ const CookiesPanel = () => {
 							натисніть ОК. Більше інформації в{" "}
 							<PolicyLink
 								href="#"
+								onClick={() => {
+									setModalActive(true);
+								}}
 								aria-label="Open Cookie Policy"
 							>
 								Політика конфіденційності

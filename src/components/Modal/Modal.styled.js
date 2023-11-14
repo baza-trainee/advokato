@@ -35,6 +35,8 @@ export const ModalContainer = styled.div`
 	height: 80vh;
 	background-color: #fff;
 	border-radius: 5px;
+
+	overflow: scroll;
 `;
 
 export const IconClose = styled(Icon)`
