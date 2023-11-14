@@ -21,6 +21,7 @@ export const Container = styled.div`
 
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
+	line-height: 56px;
 	color: var(--lightText);
 	margin-bottom: 40px;
 `;
@@ -45,12 +46,15 @@ export const StyledSlider = styled(Slider)`
 	margin-right: 0px;
 	.slick-slide {
 		width: 300px;
-		height: auto;
+		height: 180px;
 		border: 1px solid var(--reviewText);
 		border-radius: 20px;
 		margin-right: 24px;
 	}
-
+	.slick-slide img {
+		width: 300px;
+		height: 180px;
+	}
 	.slick-slide img:hover {
 		transform: scale(1.2);
 		transition: 1s;
