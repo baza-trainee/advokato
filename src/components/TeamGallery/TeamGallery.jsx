@@ -22,7 +22,7 @@ export const TeamGallery = () => {
 
 			<SliderItems ref={arrowRef} />
 			<button
-				aria-label="Scroll slider left"
+				aria-label="Перелистування слайдера вліво"
 				onClick={() => arrowRef.current.slickPrev()}
 				className="prev"
 				type="button"
@@ -34,7 +34,7 @@ export const TeamGallery = () => {
 				/>
 			</button>
 			<button
-				aria-label="Scroll slider right"
+				aria-label="Перелистування слайдера вправо"
 				onClick={() => arrowRef.current.slickNext()}
 				className="next"
 				type="button"

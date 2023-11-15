@@ -18,8 +18,7 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-	max-width: 1440px;
-	padding: 0 148px 0 160px;
+	${container};
 `;
 
 export const ClientsBlockHeader = styled.h2`
