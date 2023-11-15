@@ -17,7 +17,7 @@ import { options } from "../ClientsData/SliderSettings";
 export const SliderItems = React.forwardRef((props, ref) => {
 	return (
 		<Splide
-			aria-label="Advokato Clients Slider"
+			aria-label="Слайдер відгуків клієнтів"
 			ref={ref}
 			options={options}
 		>
