@@ -19,6 +19,7 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
 	${container};
+	padding: 0 148px 0 160px;
 `;
 
 export const ClientsBlockHeader = styled.h2`
