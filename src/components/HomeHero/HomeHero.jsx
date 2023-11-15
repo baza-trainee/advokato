@@ -12,12 +12,8 @@ export const HomeHero = () => {
   return (
     <SectionStyled>
       <Container>
-        <MainTitleStyled>
-          <span>
-            {t('titleText1')},&nbsp;
-            {t('titleText2')},
-          </span>
-          {t('titleText3')}
+        <MainTitleStyled> 
+        {t('titleText')}
         </MainTitleStyled>
 
         <div>

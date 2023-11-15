@@ -2,11 +2,16 @@ import styled from "@emotion/styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { container, flexBox, fontSectionTitle } from "../../styles/mixins";
+import {
+	container,
+	flexBox,
+	fontSectionTitle,
+	sliderArrow,
+} from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	height: 512px;
-	padding: 112px 0;
+	padding: 132px 0;
 	background: var(--darkBackground);
 `;
 
@@ -16,15 +21,18 @@ export const Container = styled.div`
 
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
+	line-height: 56px;
 	color: var(--lightText);
-	margin: 2vh 0;
+	margin-bottom: 40px;
 `;
 
 export const SliderWrapper = styled.div`
 	min-width: 0px;
 `;
 
-export const SliderArrow = styled.div``;
+export const SliderArrow = styled.div`
+	${sliderArrow};
+`;
 
 export const ClientsSliderContainer = styled.div`
 	${flexBox};
@@ -38,7 +46,20 @@ export const StyledSlider = styled(Slider)`
 	margin-right: 0px;
 	.slick-slide {
 		width: 300px;
-		height: auto;
+		height: 180px;
+		border: 1px solid var(--reviewText);
+		border-radius: 20px;
 		margin-right: 24px;
+	}
+	.slick-slide img {
+		width: 300px;
+		height: 180px;
+	}
+	.slick-slide img:hover {
+		transform: scale(1.2);
+		transition: 1s;
+	}
+	.slick-slider {
+		overflow: hidden;
 	}
 `;

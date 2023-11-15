@@ -1,117 +1,73 @@
 import styled from "@emotion/styled";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import {
-  container,
-  flexBox,
-  fontReview,
-  fontReviewName,
-  fontSectionTitle,
+	container,
+	flexBox,
+	fontReview,
+	fontReviewName,
+	fontSectionTitle,
+	sliderArrow,
 } from "../../styles/mixins";
 
-import arrowLeft from "../../assets/images/clients-section/arrowLeft.png";
-import arrowRight from "../../assets/images/clients-section/arrowRight.png";
-
 export const SectionStyled = styled.section`
-  /* position: relative;
-  top: -30.08vh; */
-  width: 100%;
-  height: 774px;
-  padding: 140px 0;
-  background: var(--darkBackground);
+	width: 100%;
+	height: 804px;
+	background: var(--darkBackground);
+	position: relative;
+	top: -0.2vh;
 `;
 
 export const Container = styled.div`
-  ${container};
+	${container};
+	padding: 132px 0;
 `;
 
-export const ClientsBlockHeader = styled.h1`
-  ${fontSectionTitle};
-  color: var(--lightText);
-  margin: 2vh 0;
+export const ClientsBlockHeader = styled.h2`
+	${fontSectionTitle};
+	color: var(--lightText);
+	margin-bottom: 40px;
 `;
 
 export const SliderWrapper = styled.div`
-  width: 74vw;
-`;
-
-export const StyledSlider = styled(Slider)`
-  margin: 0 1vw;
-  .slick-track {
-    display: flex;
-    align-items: center;
-    margin-left: 4vw;
-  }
-  .slick-prev {
-    background: url(${arrowLeft}) no-repeat;
-    width: 8vw;
-    height: 8vw;
-    left: -1vw;
-    top: 25vh;
-    z-index: 1;
-  }
-  .slick-next {
-    background: url(${arrowRight}) no-repeat;
-    width: 8vw;
-    height: 8vw;
-    left: 68vw;
-    top: 25vh;
-    z-index: 1;
-  }
-  .slick-next::before {
-    content: "";
-    display: block;
-    height: 15px;
-    width: 15px;
-  }
-  .slick-prev::before {
-    content: "";
-    display: block;
-    height: 15px;
-    width: 15px;
-  }
-  .slick-slide {
-    margin: 0 4vw;
-    width: 440px;
-    height: 442px;
-    img {
-      max-width: 100%;
-    }
-  }
+	${flexBox};
+	width: 1132px;
+	height: 472px;
+	${sliderArrow};
 `;
 
 export const ClientCardWrapper = styled.div`
-  width: 440px;
-  height: 442px;
-  border-radius: 12px;
-  background-color: var(--darkGrey);
-  color: var(--reviewText);
-  padding: 20px 40px;
+	width: 440px;
+	height: 470px;
+	border-radius: 24px;
+	border: 1px solid var(--reviewText);
+	background-color: var(--darkGrey);
+	color: var(--reviewText);
+	padding: 60px 40px;
+	margin: 0 auto;
 `;
 
 export const CardHeader = styled.div`
-  ${flexBox}
-  gap:3vw;
-  img {
-    width: 5.9vw;
-    height: 5.9vw;
-  }
+	${flexBox}
+	width:360px;
+	height: 120px;
+	gap: 20px;
+	img {
+		width: 80px;
+		height: 80px;
+	}
 `;
 
-export const CardRecvisits = styled.div`
-  margin: 1vh auto;
-`;
+export const CardRecvisits = styled.div``;
 
 export const ClientName = styled.p`
-  ${fontReviewName}
+	${fontReviewName}
 `;
 
 export const ClientRole = styled.p`
-  ${fontReview}
+	${fontReview}
 `;
 
 export const ClientReview = styled.p`
-  ${fontReview}
-  padding:3vh auto;
+	${fontReview}
+	width:360px;
+	margin-top: 28px;
 `;

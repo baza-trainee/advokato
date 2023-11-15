@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import {
   container,
-  flexBox,
   fontHeroTitle,
   fontSectionText,
 } from '../../styles/mixins';
@@ -9,14 +8,14 @@ import bgImage from '../../assets/images/homeHero-section/hero-bg.jpg';
 
 export const SectionStyled = styled.section`
   height: 100vh;
-
+  
   background-image: url(${bgImage});
   background-size: cover;
 `;
 
 export const Container = styled.div`
   ${container};
-
+  padding-top: calc(132px + 140px);
   div {
     display: flex;
     justify-content: space-between;
@@ -24,10 +23,8 @@ export const Container = styled.div`
 `;
 
 export const MainTitleStyled = styled.h1`
-  ${flexBox};
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-top: calc(132px + 140px);
+  width:820px;
+  height:244px;
   margin-bottom: 68px;
 
   ${fontHeroTitle};
@@ -37,7 +34,9 @@ export const MainTitleStyled = styled.h1`
 export const SubtitleStyled = styled.h2`
   width: 500px;
   height: 108px;
-
+  :last-of-type {
+    width: 480px;
+  }
   ${fontSectionText};
   color: var(--lightText);
 `;

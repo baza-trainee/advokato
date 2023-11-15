@@ -19,6 +19,8 @@
   --headerBackground: #0b0c0c4d;
   --darkGrey: #1c1c21;
   --reviewText: #f3eff5;
+  --btnBgHover: #ffffff;
+  --btnBgPressed: #e1e1e1;
 }
 
 * {
