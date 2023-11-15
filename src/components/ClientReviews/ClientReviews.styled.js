@@ -18,7 +18,7 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-	${container};
+	max-width: 1440px;
 	padding: 0 148px 0 160px;
 `;
 
