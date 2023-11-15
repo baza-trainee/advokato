@@ -9,6 +9,7 @@ import {
 } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
+	${flexBox};
 	width: 100%;
 	height: 804px;
 	background: var(--darkBackground);
@@ -17,18 +18,20 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-	${container};
-	padding: 132px 0;
+	max-width: 1440px;
+	padding: 0 148px 0 160px;
 `;
 
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
+	width: 162px;
 	color: var(--lightText);
 	margin-bottom: 40px;
 `;
 
 export const SliderWrapper = styled.div`
 	${flexBox};
+	gap: 40px;
 	width: 1132px;
 	height: 472px;
 	${sliderArrow};
@@ -36,7 +39,7 @@ export const SliderWrapper = styled.div`
 
 export const ClientCardWrapper = styled.div`
 	width: 440px;
-	height: 470px;
+	height: 472px;
 	border-radius: 24px;
 	border: 1px solid var(--reviewText);
 	background-color: var(--darkGrey);

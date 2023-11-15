@@ -16,7 +16,7 @@ export const ClientReviews = () => {
 				<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
 				<SliderWrapper>
 					<button
-						aria-label="Scroll slider left"
+						aria-label="Перелистування слайдера вліво"
 						type="button"
 						onClick={e => ref.current.go("-1")}
 					>
@@ -28,7 +28,7 @@ export const ClientReviews = () => {
 					</button>
 					<SliderItems ref={ref} />
 					<button
-						aria-label="Scroll slider right"
+						aria-label="Перелистування слайдера вправо"
 						type="button"
 						onClick={e => ref.current.go("+1")}
 					>

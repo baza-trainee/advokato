@@ -19,8 +19,8 @@ export const ClientsBlock = () => {
 				<ClientsSliderContainer>
 					<SliderArrow>
 						<button
-							aria-label="Scroll slider left"
-							onClick={() => arrowRef.current.slickPrev()}
+							aria-label="Перелистування слайдера вліво"
+							onClick={() => arrowRef.current.go("-1")}
 							type="button"
 						>
 							<Icon
@@ -33,8 +33,8 @@ export const ClientsBlock = () => {
 					<SliderItems ref={arrowRef} />
 					<SliderArrow>
 						<button
-							aria-label="Scroll slider right"
-							onClick={() => arrowRef.current.slickNext()}
+							aria-label="Перелистування слайдера вправо"
+							onClick={() => arrowRef.current.go("+1")}
 							type="button"
 						>
 							<Icon
