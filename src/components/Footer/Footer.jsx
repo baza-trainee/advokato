@@ -52,7 +52,7 @@ export const Footer = () => {
 							<li>
 								<LinkStyled
 									to="/"
-									aria-label="link to main page"
+									aria-label="посилання на головну сторінку"
 								>
 									Головна
 								</LinkStyled>
@@ -60,15 +60,15 @@ export const Footer = () => {
 							<li>
 								<LinkStyled
 									to="/company"
-									aria-label="link to company page"
+									aria-label="посилання на сторінку компанії"
 								>
 									Компанія
 								</LinkStyled>
 							</li>
 							<li>
 								<LinkStyled
-									to="/company"
-									aria-label="link to practices page"
+									to="/practice"
+									aria-label="посилання на сторінку практики"
 								>
 									Практики
 								</LinkStyled>
@@ -76,7 +76,7 @@ export const Footer = () => {
 							<li>
 								<LinkStyled
 									to="/company"
-									aria-label="link to news page"
+									aria-label="посилання на сторінку новин"
 								>
 									Новини
 								</LinkStyled>
@@ -84,7 +84,7 @@ export const Footer = () => {
 							<li>
 								<LinkStyled
 									to="/company"
-									aria-label="link to contacts page"
+									aria-label="посилання на сторінку контактів"
 								>
 									Контакти
 								</LinkStyled>
@@ -96,14 +96,14 @@ export const Footer = () => {
 						<PolicyText
 							to={policyLink}
 							target="_blank"
-							aria-label="link to privacy policy"
+							aria-label="посилання на політику конфіденційності"
 						>
 							Політика конфіденційності
 						</PolicyText>
 						<PolicyText
 							to={termsLink}
 							target="_blank"
-							aria-label="link to terms of use of the site"
+							aria-label="посилання на умови користування сайтом"
 						>
 							Правила користування сайтом
 						</PolicyText>
@@ -117,26 +117,26 @@ export const Footer = () => {
 							to={address}
 							target="_blank"
 							rel="noopener nofollow noreferrer"
-							aria-label="address"
+							aria-label="адреса компанії"
 						>
 							Вул. Нікольська 19, м. Миколаїв, <br /> Україна
 						</TextLink>
 						<TextLink
 							to="tel:+380512377373"
-							aria-label="tel"
+							aria-label="телефон компанії"
 							marginbottom="0"
 						>
 							+38 (0512) 37 73 73
 						</TextLink>
 						<TextLink
 							to="tel:+380933737303"
-							aria-label="tel"
+							aria-label="телефон компанії"
 						>
 							+38 (093) 373 73 03
 						</TextLink>
 						<TextLink
 							to="mailto:acstatus.mk@gmail.com"
-							aria-label="mail"
+							aria-label="електронна пошта компанії"
 						>
 							acstatus.mk@gmail.com
 						</TextLink>

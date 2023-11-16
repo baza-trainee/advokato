@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
@@ -19,7 +19,7 @@ const schema = yup.object({
 		.string()
 		.required("Це поле є обов’язковим")
 		.min(2, "Має бути мінімум 2 символи")
-		.max(50, "Має бути не більше 50 символів"),
+		.max(40, "Має бути не більше 40 символів"),
 	tel: yup
 		.string()
 		.required("Номер телефону обов'язковий")
@@ -34,7 +34,7 @@ const schema = yup.object({
 		.min(8, "Має бути мінімум 8 символів")
 		.max(700, "Має бути не більше 700 символів"),
 });
-// rere ererer gg ffr gffg gb fdf bg
+
 export const FeedBackForm = () => {
 	const {
 		register,
@@ -55,7 +55,12 @@ export const FeedBackForm = () => {
 		<section>
 			<Container>
 				<TitleStyled>Зв'яжіться з нами</TitleStyled>
-				<Email>acstatus.mk@gmail.com</Email>
+				<Link
+					to="mailto:acstatus.mk@gmail.com"
+					aria-label="електронна пошта компанії"
+				>
+					<Email>acstatus.mk@gmail.com</Email>
+				</Link>
 
 				<form
 					autoComplete="off"
