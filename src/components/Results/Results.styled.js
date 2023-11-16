@@ -1,15 +1,13 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   container,
   flexBox,
   fontSectionTitle,
   fontSectionText,
-} from "../../styles/mixins";
-import "../../index.css";
+} from '../../styles/mixins';
+import '../../index.css';
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -30vh;
   padding: 132px 160px;
   background-color: var(--lightBackground);
   color: var(--lightText);

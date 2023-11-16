@@ -1,11 +1,17 @@
 export const flexBox = () => {
-  return `display: flex;
+	return `display: flex;
         justify-content: center;
         align-items: center;`;
 };
 
+export const flexColumn = () => {
+	return `flex-direction: column;
+	justify-content: space-between;
+	width: 100%;`;
+};
+
 export const container = () => {
-  return `width: 100%;
+	return `width: 100%;
         margin: 0 auto;
         padding-left: 20px;
         padding-right: 20px;
@@ -25,35 +31,44 @@ export const container = () => {
 };
 
 export const mainButton = () => {
-  return `  
+	return `  
         padding: 20px 32px;
-        color: #ffffff;
+
+        color: var(--btnBgHover);
+        fill: var(--btnBgHover);
         background-color: var(--darkBackground);
-        cursor: pointer;
         border: 1px solid var(--greyText);
+        cursor: pointer;
+
         font-family: inherit;
         font-size: 18px;
         font-weight: 500;
         line-height: calc(22 / 18);
         text-align: center;
         border-radius: 48px;
-        transition: color var(--timing-function) var(--animation-duration), border var(--timing-function) var(--animation-duration), background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, border, background-color;
+        transition-duration: var(--timing-function) var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
           color: var(--mainText);
-          background-color: #ffffff;
-          border: 1px solid #ffffff;
+          fill: var(--mainText);
+          background-color: var(--btnBgHover);
+          border: 1px solid var(--btnBgHover);
         }
 
         &:active {
           color: var(--mainText);
-          background-color: #e1e1e1; 
-          border: 1px solid #e1e1e1;
+          fill: var(--mainText);
+          background-color: var(--btnBgPressed); 
+          border: 1px solid var(--btnBgPressed);
         }
 
         &[disabled] {
           color: var(--greyText);   
+          fill: var(--greyText);
           cursor: not-allowed;
         
         &:hover,
@@ -67,46 +82,56 @@ export const mainButton = () => {
 };
 
 export const secondaryButton = () => {
-  return `  
+	return `  
         padding: 12px 24px;
+
         color: var(--lightText);
-        background-color: #1c1c21;
-        cursor: pointer;
+        fill: var(--lightText);
+        background-color: var(--darkGrey);
         border: none;
+        cursor: pointer;
+
         font-family: inherit;
         font-size: 14px;
         font-weight: 500;
         line-height: calc(17 / 14);
         text-align: center;
         border-radius: 50px;
-        transition: color var(--timing-function) var(--animation-duration), background-color var(--timing-function) var(--animation-duration);
+
+        transition-property: color, fill, background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
 
         &:hover,
         &:focus {
           color: var(--mainText);
-          background-color: #ffffff;        
+          fill: var(--mainText);
+          background-color: var(--btnBgHover);        
         }
-
+        
         &:active {
           color: var(--mainText);
-          background-color: #e1e1e1;        
+          fill: var(--mainText);
+          background-color: var(--btnBgPressed);        
         }
 
         &[disabled] {
           color: var(--greyText);   
+          fill: var(--mainText);
           cursor: not-allowed;
         
         &:hover,
         &:focus {
           color: var(--greyText);
-          background-color: #1c1c21;          
+          fill: var(--mainText);
+          background-color: var(--darkGrey);          
           }
         }
     `;
 };
 
 export const fontDesktop = () => {
-  return `
+	return `
         font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
@@ -115,7 +140,7 @@ export const fontDesktop = () => {
 };
 
 export const fontTablet = () => {
-  return `
+	return `
         font-size: 20px;
         font-weight: 500;
         line-height: 1.3;        
@@ -123,7 +148,7 @@ export const fontTablet = () => {
 };
 
 export const fontMobile = () => {
-  return `
+	return `
         font-size: 14px;
         font-weight: 400;
         line-height: 1.3;        
@@ -161,7 +186,7 @@ export const fontHeroTitle = () => {
 };
 
 export const fontSectionTitle = () => {
-  return `     
+	return `     
         font-family: var(--Montserrat);
         font-size: 40px;
         font-weight: 500;
@@ -171,7 +196,7 @@ export const fontSectionTitle = () => {
 };
 
 export const fontSectionText = () => {
-  return `     
+	return `     
         font-family: var(--PTSans);
         font-size: 22px;
         font-weight: 400;
@@ -181,7 +206,7 @@ export const fontSectionText = () => {
 };
 
 export const fontReviewName = () => {
-  return `     
+	return `     
         font-family: var(--Montserrat);
         font-size: 28px;
         font-weight: 400;
@@ -191,7 +216,7 @@ export const fontReviewName = () => {
 };
 
 export const fontReview = () => {
-  return `     
+	return `     
         font-family: var(--Raleway);
         font-size: 18px;
         font-weight: 400;
@@ -199,20 +224,39 @@ export const fontReview = () => {
         letter-spacing: 0em;    
     `;
 };
+
+export const sliderArrow = () => {
+	return `
+  button {
+		fill: none;
+		stroke: var(--reviewText);
+		stroke-width: 2;
+	}
+	button:hover {
+		fill: var(--btnBgHover);
+		stroke: var(--mainText);
+	}
+	button:active {
+		fill: var(--btnBgPressed);
+		stroke: var(--mainText);
+	}
+  `;
+};
+
 export const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1280px',
-  desktop: '1440px',
+	mobileS: "320px",
+	mobileM: "375px",
+	mobileL: "425px",
+	tablet: "768px",
+	laptop: "1280px",
+	desktop: "1440px",
 };
 
 export const device = {
-  mobileS: `min-width: ${size.mobileS}`,
-  mobileM: `min-width: ${size.mobileM}`,
-  mobileL: `min-width: ${size.mobileL}`,
-  tablet: `min-width: ${size.tablet}`,
-  laptop: `min-width: ${size.laptop}`,
-  desktop: `min-width: ${size.desktop}`,
+	mobileS: `min-width: ${size.mobileS}`,
+	mobileM: `min-width: ${size.mobileM}`,
+	mobileL: `min-width: ${size.mobileL}`,
+	tablet: `min-width: ${size.tablet}`,
+	laptop: `min-width: ${size.laptop}`,
+	desktop: `min-width: ${size.desktop}`,
 };
