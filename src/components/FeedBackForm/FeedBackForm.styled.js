@@ -52,6 +52,10 @@ export const ButtonStyled = styled.button`
 		border var(--timing-function) var(--animation-duration),
 		background-color var(--timing-function) var(--animation-duration);
 
+	svg {
+		fill: var(--lightText);
+	}
+
 	&:hover,
 	&:focus {
 		color: var(--mainText);
@@ -119,7 +123,7 @@ export const Input = styled.input`
 export const ErrorsStyled = styled.p`
 	margin-top: 5px;
 	height: 20px;
-	color: var(--accentText);
+	color: ${props => props.color || "var(--accentText)"};
 	${fontDesktop};
 	font-size: 16px;
 	line-height: calc(20 / 16);
