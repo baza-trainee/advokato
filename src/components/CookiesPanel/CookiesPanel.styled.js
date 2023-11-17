@@ -31,6 +31,8 @@ export const ButtonOk = styled.button`
 
 	font-family: var(--Montserrat);
 	font-size: 28px;
+	line-height: 42px;
+
 	transition: all var(--animation-duration) var(--timing-function);
 
 	&:hover,
