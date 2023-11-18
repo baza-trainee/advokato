@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
@@ -19,7 +19,7 @@ const schema = yup.object({
 		.string()
 		.required("Це поле є обов’язковим")
 		.min(2, "Має бути мінімум 2 символи")
-		.max(50, "Має бути не більше 50 символів"),
+		.max(40, "Має бути не більше 40 символів"),
 	tel: yup
 		.string()
 		.required("Номер телефону обов'язковий")
@@ -34,7 +34,7 @@ const schema = yup.object({
 		.min(8, "Має бути мінімум 8 символів")
 		.max(700, "Має бути не більше 700 символів"),
 });
-// rere ererer gg ffr gffg gb fdf bg
+
 export const FeedBackForm = () => {
 	const {
 		register,
@@ -47,7 +47,13 @@ export const FeedBackForm = () => {
 	});
 
 	const onSubmit = data => {
-		alert(JSON.stringify(data));
+		const trimmedData = {
+			name: data.name.trim(),
+			tel: data.tel,
+			question: data.question.trim(),
+		};
+
+		alert(JSON.stringify(trimmedData));
 		reset();
 	};
 
@@ -55,7 +61,12 @@ export const FeedBackForm = () => {
 		<section>
 			<Container>
 				<TitleStyled>Зв'яжіться з нами</TitleStyled>
-				<Email>acstatus.mk@gmail.com</Email>
+				<Link
+					to="mailto:acstatus.mk@gmail.com"
+					aria-label="електронна пошта компанії"
+				>
+					<Email>acstatus.mk@gmail.com</Email>
+				</Link>
 
 				<form
 					autoComplete="off"
@@ -63,10 +74,11 @@ export const FeedBackForm = () => {
 				>
 					<InputWraper>
 						<LabelWraper>
-							<label>Ваше ім’я</label>
+							<label htmlFor="name">Ваше ім’я</label>
 							<Input
 								{...register("name")}
 								type="text"
+								id="name"
 								placeholder="Введіть ім’я"
 								valid={isValid}
 								invalid={isDirty && !isValid}
@@ -75,10 +87,11 @@ export const FeedBackForm = () => {
 						</LabelWraper>
 
 						<LabelWraper>
-							<label>Ваш телефон</label>
+							<label htmlFor="tel">Ваш телефон</label>
 							<Input
 								{...register("tel")}
 								type="tel"
+								id="tel"
 								placeholder="Введіть телефон"
 								valid={isValid}
 								invalid={isDirty && !isValid}
@@ -86,11 +99,9 @@ export const FeedBackForm = () => {
 							/>
 
 							{errors.tel && isDirty ? (
-								<ErrorsStyled style={{ color: "#c51f4b" }}>{errors.tel?.message}</ErrorsStyled>
+								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
 							) : isValid && isDirty ? (
-								<ErrorsStyled style={{ color: "#3cbc81" }}>
-									Це правильний формат телефона
-								</ErrorsStyled>
+								<ErrorsStyled color="#3cbc81">Це правильний формат телефона</ErrorsStyled>
 							) : (
 								""
 							)}
@@ -98,10 +109,11 @@ export const FeedBackForm = () => {
 					</InputWraper>
 
 					<LabelWraper>
-						<label>Ваше питання</label>
+						<label htmlFor="question">Ваше питання</label>
 						<Input
 							{...register("question")}
 							type="text"
+							id="question"
 							placeholder="Введіть питання"
 							valid={isValid}
 							invalid={isDirty && !isValid}
@@ -112,13 +124,13 @@ export const FeedBackForm = () => {
 					<ButtonStyled
 						type="submit"
 						disabled={!isValid || !isDirty}
+						aria-label="Відправити данні форми"
 					>
 						Відправити
 						<Icon
 							id={"icon-arrow-right"}
 							width={16}
 							height={12}
-							fill={"#fefefe"}
 						/>
 					</ButtonStyled>
 				</form>
