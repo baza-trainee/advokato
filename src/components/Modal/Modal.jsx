@@ -40,7 +40,7 @@ const Modal = ({ active, setActive, children }) => {
 					width={24}
 					height={24}
 					onClick={() => handleClose()}
-					aria-label="Close modal window"
+					aria-label="Закрити модальне вікно"
 				/>
 				{children}
 			</ModalContainer>
