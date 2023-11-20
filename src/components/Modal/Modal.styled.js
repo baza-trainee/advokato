@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { Icon } from "../Icon";
+import { flexBox } from "../../styles/mixins";
 
 export const Overlay = styled.div`
 	position: fixed;
@@ -9,9 +10,7 @@ export const Overlay = styled.div`
 	width: 100vw;
 	height: 100vh;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	${flexBox};
 
 	opacity: ${props => (props.active ? 1 : 0)};
 	pointer-events: ${props => (props.active ? "auto" : "none")};

@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
 
-import {
-	getLocalStorage,
-	setLocalStorage,
-} from "../../helpers/localStorageHelper";
-
 import { Modal } from "../Modal";
 import { PdfViewer } from "../PdfViewer";
 
@@ -21,22 +16,32 @@ import {
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false);
 	const [modalActive, setModalActive] = useState(false);
+	const [cookieConsent, setCookieConsent] = useState();
 
 	const handleAccept = () => {
-		setLocalStorage("cookie_consent", "granted");
+		document.cookie = "cookiesAccepted=true; max-age=31536000;";
+		setCookieConsent(true);
 		setShowPanel(false);
 	};
 
 	const handleClose = () => {
 		setShowPanel(false);
+		setCookieConsent(false);
+		sessionStorage.setItem("cookiesAccepted", "false");
 	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			if (getLocalStorage("cookie_consent") === undefined) {
-				setShowPanel(true);
-			}
-		}, 4000);
+		const consentCookie = document.cookie
+			.split("; ")
+			.find(row => row.startsWith("cookiesAccepted="));
+
+		const cookieSessionDeny = sessionStorage.getItem("cookiesAccepted");
+
+		if (consentCookie) {
+			setCookieConsent(true);
+		} else if (cookieSessionDeny === null) {
+			setTimeout(() => setShowPanel(true), 4000);
+		}
 	}, []);
 
 	return (
@@ -54,7 +59,8 @@ const CookiesPanel = () => {
 						width={24}
 						height={24}
 						onClick={() => handleClose()}
-						aria-label="Close"
+						role="close-button"
+						aria-label="Закрити панель"
 					/>
 					<BannerWrap>
 						<p>
@@ -66,7 +72,7 @@ const CookiesPanel = () => {
 								onClick={() => {
 									setModalActive(true);
 								}}
-								aria-label="Open Cookie Policy"
+								aria-label="Відкрити політику конфіденційності"
 							>
 								Політика конфіденційності
 							</PolicyLink>
@@ -74,7 +80,7 @@ const CookiesPanel = () => {
 						<ButtonOk
 							type="button"
 							onClick={() => handleAccept()}
-							aria-label="accept cookies"
+							aria-label="Прийняти обробку кукіс"
 						>
 							Ok
 						</ButtonOk>
