@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
+	Section,
 	ButtonStyled,
 	Container,
 	Email,
@@ -58,9 +59,9 @@ export const FeedBackForm = () => {
 	};
 
 	return (
-		<section>
+		<Section>
 			<Container>
-				<TitleStyled>Зв'яжіться з нами</TitleStyled>
+				<TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
 				<Link
 					to="mailto:acstatus.mk@gmail.com"
 					aria-label="електронна пошта компанії"
@@ -101,7 +102,9 @@ export const FeedBackForm = () => {
 							{errors.tel && isDirty ? (
 								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
 							) : isValid && isDirty ? (
-								<ErrorsStyled color="#3cbc81">Це правильний формат телефона</ErrorsStyled>
+								<ErrorsStyled color="#3cbc81">
+									Це правильний формат телефона
+								</ErrorsStyled>
 							) : (
 								""
 							)}
@@ -135,6 +138,6 @@ export const FeedBackForm = () => {
 					</ButtonStyled>
 				</form>
 			</Container>
-		</section>
+		</Section>
 	);
 };

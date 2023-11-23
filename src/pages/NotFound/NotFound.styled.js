@@ -24,8 +24,8 @@ export const TopBackground = styled.div`
 `;
 
 export const Title = styled.p`
-	margin-top: 212px;
-	margin-bottom: 40px;
+	margin-top: 240px;
+	margin-bottom: 56px;
 
 	font-family: var(--Montserrat);
 	font-size: 300px;
@@ -34,7 +34,7 @@ export const Title = styled.p`
 `;
 
 export const Text = styled.p`
-	margin-bottom: 100px;
+	margin-bottom: 88px;
 
 	font-family: var(--Raleway);
 	font-size: 32px;
@@ -43,7 +43,7 @@ export const Text = styled.p`
 `;
 
 export const Button = styled(Link)`
-	margin-bottom: 72px;
+	margin-bottom: 100px;
 
 	${flexBox};
 	gap: 12px;

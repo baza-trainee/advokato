@@ -8,11 +8,13 @@ import {
 	secondaryButton,
 } from "../../styles/mixins";
 
-export const Container = styled.div`
+export const Section = styled.section`
 	${container};
+`;
 
+export const Container = styled.div`
 	@media screen and (${device.desktop}) {
-		margin: 132px 0 0;
+		margin: 132px 0;
 	}
 `;
 
