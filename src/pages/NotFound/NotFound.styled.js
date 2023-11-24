@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { flexBox, fontSectionTitle, mainButton } from "../../styles/mixins";
+import { flexBox, mainButton } from "../../styles/mixins";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -7,7 +7,9 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 119px;
+	padding: 0 60px;
+
+	background-color: var(--lightBackground);
 `;
 
 export const TopBackground = styled.div`
@@ -22,23 +24,26 @@ export const TopBackground = styled.div`
 `;
 
 export const Title = styled.p`
-	margin-top: 340px;
-	margin-bottom: 40px;
+	margin-top: 240px;
+	margin-bottom: 56px;
 
-	font-family: Montserrat;
-	font-size: 200px;
+	font-family: var(--Montserrat);
+	font-size: 300px;
 	font-weight: 700;
-	line-height: 244px;
+	line-height: 366px;
 `;
 
 export const Text = styled.p`
-	${fontSectionTitle}
-	margin-bottom: 60px;
+	margin-bottom: 88px;
+
+	font-family: var(--Raleway);
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 45px;
 `;
 
 export const Button = styled(Link)`
-	margin-top: 60px;
-	margin-bottom: 164px;
+	margin-bottom: 100px;
 
 	${flexBox};
 	gap: 12px;
@@ -46,4 +51,5 @@ export const Button = styled(Link)`
 	${mainButton};
 	font-weight: 600;
 	line-height: 27px;
+	transition: all var(--timing-function) var(--animation-duration);
 `;
