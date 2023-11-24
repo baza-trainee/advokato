@@ -1,33 +1,26 @@
 import styled from "@emotion/styled";
 import {
 	container,
+	fontReview,
 	fontSectionText,
 	fontSectionTitle,
+	fontSliderCardName,
 	sliderArrow,
 } from "../../styles/mixins";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "@splidejs/react-splide/css";
+
+const index = () => {
+	return `calc(1vw + 1vh)`;
+};
 
 export const SectionStyled = styled.section`
+	height: 900px;
+	padding-top: 132px;
 	background: var(--darkBackground);
-	color: var(--lightText);
-	height: 92vh;
 	color: var(--lightText);
 	overflow: hidden;
 	position: relative;
 	top: -0.1vh;
-	${sliderArrow};
-	button {
-		position: absolute;
-		top: 55%;
-	}
-	.next {
-		right: 3vw;
-	}
-	.prev {
-		left: 3vw;
-	}
 `;
 
 export const Container = styled.div`
@@ -37,43 +30,37 @@ export const Container = styled.div`
 export const TeamBlockHeader = styled.h1`
 	${fontSectionTitle};
 	max-width: 572px;
-	padding: 5vh 0 1vh;
 `;
 
 export const TeamBlockSubTitle = styled.p`
 	${fontSectionText};
 	max-width: 552px;
+	/* line-height: 25px; */
+	margin: 24px 0 20px;
 `;
 
-export const SliderWrapper = styled.div`
-	margin: 2vh 0;
-`;
-
-export const StyledSlider = styled(Slider)`
-	.slick-slide:not(.slick-active) {
+export const TeamSliderContainer = styled.div`
+	position: relative;
+	.splide__slide.is-active {
+		opacity: 1;
+		transition: 1s;
+	}
+	.splide__slide.is-active:hover {
+		transform: scale(1.01);
+	}
+	.splide__slide {
 		opacity: 0.3;
 	}
-	.slick-slide {
-		width: 1120px;
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-			object-fit: cover;
-		}
-	}
-	.slick-center {
-		width: 1120px;
-	}
-	.slick-center img {
-		max-width: 1120px;
-	}
-	.slick-active {
-		transition: 2s;
-	}
-	.slick-active:hover {
-		transform: scale(1.01);
-		transition: 0.5s;
+`;
+
+export const SliderArrow = styled.div`
+	${sliderArrow};
+	position: absolute;
+	top: 45%;
+	left: 3.5%;
+	z-index: 20;
+	&:last-of-type {
+		left: 92.5%;
 	}
 `;
 
@@ -81,24 +68,29 @@ export const TeamMateCardWrapper = styled.div`
 	position: relative;
 `;
 
-export const CardName = styled.h3`
+export const CardRecvisiteWrapper = styled.div`
 	position: absolute;
-	top: 55%;
-	left: 5%;
+	left: 60px;
+	bottom: 96px;
+	width: 320px;
+	height: 88px;
+`;
+
+export const CardName = styled.h3`
+	${fontSliderCardName};
+	color: var(--lightText);
 `;
 
 export const CardRole = styled.div`
-	position: absolute;
-	top: 60%;
-	left: 5%;
+	${fontReview};
+	color: var(--lightText);
 	&::after {
 		content: "";
 		width: 80px;
-		height: 4px;
-		border: 3px solid var(--accentLink);
+		border: 2px solid var(--accentLink);
 		border-radius: 10px;
 		position: absolute;
 		left: 0;
-		top: 4.5vh;
+		top: 84px;
 	}
 `;

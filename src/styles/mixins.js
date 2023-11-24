@@ -225,6 +225,16 @@ export const fontReview = () => {
     `;
 };
 
+export const fontSliderCardName = () => {
+	return `     
+        font-family: var(--Raleway);
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 44.8px;  
+        letter-spacing: 0em;    
+    `;
+};
+
 export const sliderArrow = () => {
 	return `
   button {
