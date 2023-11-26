@@ -5,6 +5,7 @@ import { container, device, flexBox } from "../../styles/mixins";
 export const FooterStyled = styled.footer`
 	background-color: var(--darkBackground);
 	border-radius: 24px 24px 0 0;
+	margin-top: -140px;
 `;
 
 export const Container = styled.div`

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
+	Section,
 	ButtonStyled,
 	Container,
 	Email,
@@ -58,11 +59,11 @@ export const FeedBackForm = () => {
 	};
 
 	return (
-		<section>
+		<Section>
 			<Container>
-				<TitleStyled>Зв'яжіться з нами</TitleStyled>
+				<TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
 				<Link
-					to="mailto:acstatus.mk@gmail.com"
+					to="mailto:lilyaka@ukr.net"
 					aria-label="електронна пошта компанії"
 				>
 					<Email>acstatus.mk@gmail.com</Email>
@@ -135,6 +136,6 @@ export const FeedBackForm = () => {
 					</ButtonStyled>
 				</form>
 			</Container>
-		</section>
+		</Section>
 	);
 };
