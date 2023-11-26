@@ -63,7 +63,7 @@ export const FeedBackForm = () => {
 			<Container>
 				<TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
 				<Link
-					to="mailto:acstatus.mk@gmail.com"
+					to="mailto:lilyaka@ukr.net"
 					aria-label="електронна пошта компанії"
 				>
 					<Email>acstatus.mk@gmail.com</Email>
@@ -102,9 +102,7 @@ export const FeedBackForm = () => {
 							{errors.tel && isDirty ? (
 								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
 							) : isValid && isDirty ? (
-								<ErrorsStyled color="#3cbc81">
-									Це правильний формат телефона
-								</ErrorsStyled>
+								<ErrorsStyled color="#3cbc81">Це правильний формат телефона</ErrorsStyled>
 							) : (
 								""
 							)}
