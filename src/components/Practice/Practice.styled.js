@@ -65,3 +65,13 @@ export const PracticeDesc = styled.p`
 export const ButtonStyled = styled.button`
   ${secondaryButton};
 `;
+
+export const ExtraInfoWrpStyled = styled.div`
+  p {
+    margin-bottom: 30px;
+    
+    text-align: justify;
+    color: red;
+    text-indent: 30px;
+  }
+`;
