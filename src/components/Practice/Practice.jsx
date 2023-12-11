@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { practiceArray } from './practiceArray';
+import { parseToParagraphs } from '../../helpers';
+import { Modal } from '../Modal';
 import { PracticeList } from './PracticeList';
 import {
   SectionStyled,
@@ -13,18 +15,52 @@ import {
   PracticeTitle,
   PracticeDesc,
   ButtonStyled,
+  ExtraInfoWrpStyled,
 } from './Practice.styled';
 export const Practice = () => {
+  const { pathname, hash, key } = useLocation();
   const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
-  const navigate = useNavigate();
+  const [modalActive, setModalActive] = useState(false);
 
-  const handleClickProductCard = () => {
-    navigate(`/practice#${currentPractice.key}`);
-  };
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            block: 'start',
+            inline: 'nearest',
+            behavior: 'smooth',
+          });
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
+  useEffect(() => {
+    if (!modalActive) {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [modalActive]);
 
   if (practiceArray.length > 0) {
     return (
-      <SectionStyled>
+      <SectionStyled id="practice">
+        {modalActive && (
+          <Modal active={modalActive} setActive={setModalActive}>
+            {currentPractice.extraInfo !== '' ? (
+              <ExtraInfoWrpStyled>
+                {parseToParagraphs(currentPractice.extraInfo)}
+              </ExtraInfoWrpStyled>
+            ) : (
+              <p>no text</p>
+            )}
+          </Modal>
+        )}
+
         <Container>
           <TitleStyled>
             Злагоджена команда юристів Status здатна вирішувати складні завдання
@@ -45,7 +81,7 @@ export const Practice = () => {
               <PracticeDesc>{currentPractice?.desc}</PracticeDesc>
 
               <ButtonStyled
-                onClick={handleClickProductCard}
+                onClick={() => setModalActive(true)}
                 type="button"
                 aria-label="read more info"
               >
