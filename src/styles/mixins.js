@@ -28,8 +28,8 @@ export const container = () => {
         }
 
         @media screen and (min-width: 1440px) {
-          padding-left: 80px;
-          padding-right: 80px;
+          padding-left: 160px;
+          padding-right: 160px;
         }
     `;
 };

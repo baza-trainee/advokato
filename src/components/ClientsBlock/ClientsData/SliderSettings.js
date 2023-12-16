@@ -5,7 +5,7 @@ export const options = {
 	drag: "free",
 	type: "loop",
 	height: "180px",
-	width: "1800px",
+	width: "1640px",
 	gap:"32px",
 	perPage: 5,
 	perMove: 1,
