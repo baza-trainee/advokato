@@ -17,8 +17,10 @@ export const Results = () => {
 
   useEffect(() => {
     if (hash === '') {
-      window.scrollTo(0, 0);
-    } else {
+      return window.scrollTo(0, 0);
+    }
+    console.log(hash);
+    if (hash === '#news') {
       setTimeout(() => {
         ref.current.scrollIntoView({
           block: 'start',

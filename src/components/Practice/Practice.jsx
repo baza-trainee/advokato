@@ -25,14 +25,16 @@ export const Practice = () => {
   const { hash } = useLocation();
   const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
   const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
-  const ref = useRef();
+  const refPractice = useRef();
 
   useEffect(() => {
     if (hash === '') {
-      window.scrollTo(0, 0);
-    } else {
+      return window.scrollTo(0, 0);
+    }
+
+    if (hash === '#practice') {
       setTimeout(() => {
-        ref.current.scrollIntoView({
+        refPractice.current.scrollIntoView({
           block: 'start',
           inline: 'nearest',
           behavior: 'smooth',
@@ -43,7 +45,7 @@ export const Practice = () => {
 
   if (practiceArray.length > 0) {
     return (
-      <SectionStyled ref={ref}>
+      <SectionStyled ref={refPractice}>
         <Container>
           <TitleStyled>
             Злагоджена команда юристів Status здатна вирішувати складні завдання
