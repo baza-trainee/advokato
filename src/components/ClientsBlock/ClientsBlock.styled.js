@@ -1,51 +1,60 @@
-import styled from '@emotion/styled';
-import {
-  container,
-  flexBox,
-  fontSectionTitle,
-  sliderArrow,
-} from '../../styles/mixins';
+import styled from "@emotion/styled";
+import { flexBox, fontSectionTitle, sliderArrow } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
-  ${flexBox};
-  height: 512px;
-  background: var(--darkBackground);
-`;
-
-export const Container = styled.div`
-  ${container};
-  max-width: 1440px;
+	height: 512px;
+	background: var(--darkBackground);
 `;
 
 export const ClientsBlockHeader = styled.h2`
-  ${fontSectionTitle};
-  width: 275px;
-  color: var(--lightText);
-  margin-bottom: 40px;
+	${fontSectionTitle};
+	color: var(--lightText);
+	padding: 132px 160px 40px;
 `;
 
 export const SliderArrow = styled.div`
-  ${sliderArrow};
+	${sliderArrow};
+	position: absolute;
+	button{
+		top:50%;
+	}
+	left: 7%;
+	z-index: 10;
+	&:last-of-type {
+		left: 90%;
+	}
 `;
 
 export const ClientsSliderContainer = styled.div`
-  ${flexBox};
-  gap: 24px;
+		${flexBox};
+		gap:32px;
+		overflow: hidden;	
+		position: relative;
+		.splide__slide {
+		${flexBox}
+		opacity: 1;
+		transition: 1s;
+	}
+
+	.splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
+	.splide__slide.is-active {
+		opacity: 0.3;
+	}
 `;
 
 export const ClientCardWrapper = styled.div`
-  ${flexBox};
-  width: 300px;
-  height: 180px;
-  border-radius: 20px;
-  border: 1px solid var(--reviewText);
-  margin: 0 auto;
-  img {
-    width: 300px;
-    height: 180px;
-    &:hover {
-      transform: scale(1.2);
-      transition: 1s;
-    }
-  }
+	${flexBox};
+	width: 302px;
+	height: 180px;
+	border-radius: 20px;
+	border: 1px solid var(--reviewText);
+	cursor: pointer;
+	img {
+		width: 300px;
+		height: 180px;
+		&:hover {
+			transform: scale(1.2);
+			transition: 1s;
+		}
+	}
 `;

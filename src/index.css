@@ -52,7 +52,6 @@ body {
 
 main {
   position: relative;
-  top: -140px;
 }
 
 h1,
@@ -95,3 +94,14 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
+@media screen and (min-width:1024px) {
+  main{
+    top: -120px;
+  }
+};
+@media screen and (min-width:1200px) {
+  main{
+    top: -140px;
+  }
+};

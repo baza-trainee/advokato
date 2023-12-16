@@ -21,10 +21,15 @@ export const container = () => {
           padding-left: 40px;
           padding-right: 40px;
         }
+        
+        @media screen and (min-width: 1024px) {
+          padding-left: 120px;
+          padding-right: 120px;
+        }
 
         @media screen and (min-width: 1440px) {
-          padding-left: 80px;
-          padding-right: 80px;
+          padding-left: 160px;
+          padding-right: 160px;
         }
     `;
 };
@@ -253,19 +258,21 @@ export const sliderArrow = () => {
 };
 
 export const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1280px',
-  desktop: '1440px',
+	mobileS: "320px",
+	mobileM: "375px",
+	mobileL: "425px",
+	tablet: "1024px",
+	burger: "1200px",
+	laptop: "1280px",
+	desktop: "1440px",
 };
 
 export const device = {
-  mobileS: `min-width: ${size.mobileS}`,
-  mobileM: `min-width: ${size.mobileM}`,
-  mobileL: `min-width: ${size.mobileL}`,
-  tablet: `min-width: ${size.tablet}`,
-  laptop: `min-width: ${size.laptop}`,
-  desktop: `min-width: ${size.desktop}`,
+	mobileS: `min-width: ${size.mobileS}`,
+	mobileM: `min-width: ${size.mobileM}`,
+	mobileL: `min-width: ${size.mobileL}`,
+	tablet: `min-width: ${size.tablet}`,
+	burger: `min-width: ${size.burger}`,
+	laptop: `min-width: ${size.laptop}`,
+	desktop: `min-width: ${size.desktop}`,
 };

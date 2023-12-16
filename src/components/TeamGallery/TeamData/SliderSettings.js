@@ -12,4 +12,9 @@ export const options = {
 	perMove: 1,
 	speed: 1000,
 	interval: 4000,
+	breakpoints: {
+		320: {
+			perPage: 1,
+		},
+	},
 };
