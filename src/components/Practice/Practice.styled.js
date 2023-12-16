@@ -1,9 +1,5 @@
 import styled from '@emotion/styled';
-import {
-  container,
-  fontSectionTitle,
-  secondaryButton,
-} from '../../styles/mixins';
+import { container, fontSectionTitle } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   padding: 132px 0;
@@ -21,9 +17,12 @@ export const TitleStyled = styled.h2`
   color: var(--lightText);
 `;
 
+export const PracticeDescWrp = styled.div`
+  margin-bottom: 28px;
+`;
+
 export const PracticeWrp = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
 `;
 
@@ -51,6 +50,7 @@ export const PracticeTitle = styled.h3`
 `;
 
 export const PracticeDesc = styled.p`
+  display: inline;
   margin-bottom: 20px;
 
   font-family: var(--Raleway);
@@ -58,18 +58,35 @@ export const PracticeDesc = styled.p`
   font-weight: 400;
   line-height: calc(27 / 18);
   letter-spacing: 0em;
-
   color: var(--lightText);
+
+  &:first-of-type {
+    display: ${({ isShowMoreDesc }) => {
+      if (isShowMoreDesc) {
+        return 'block';
+      }
+    }};
+  }
 `;
 
-export const ButtonStyled = styled.button`
-  ${secondaryButton};
+export const MoreButtonStyled = styled.button`
+  display: inline;
+  margin-left: 10px;
+
+  font-family: var(--Raleway);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: calc(27 / 18);
+  letter-spacing: 0em;
+  color: var(--greyText);
+  border: none;
+  background-color: inherit;
 `;
 
 export const ExtraInfoWrpStyled = styled.div`
   p {
     margin-bottom: 30px;
-    
+
     text-align: justify;
     color: red;
     text-indent: 30px;
