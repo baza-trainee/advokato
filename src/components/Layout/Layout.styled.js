@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import {
+  container,
   flexBox,
   device,
   fontLayoutMenu,
@@ -9,18 +10,26 @@ import {
 } from '../../styles/mixins';
 
 export const HeaderStyled = styled.header`
-  ${flexBox};
-  flex-wrap: wrap;
-  justify-content: space-around;
   position: sticky;
   top: 0;
   left: 0;
-  height: 140px;
-  ${fontLayoutMenu}
-  color: var(--lightText);
+  z-index: 20;
+
   background-color: var(--headerBackground);
   backdrop-filter: ${props => (props.top ? 0 : 'blur(20px)')};
-  z-index: 20;
+`;
+
+export const Container = styled.div`
+  ${container};
+  ${flexBox};
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 140px;
+  max-width: 1440px;
+
+  ${fontLayoutMenu}
+  color: var(--lightText);
+
   img {
     width: 152px;
     height: auto;

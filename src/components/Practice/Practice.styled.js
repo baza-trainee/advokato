@@ -8,10 +8,15 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   ${container};
+
+  max-width: 1120px;
+  margin: 0 auto;
 `;
 
 export const TitleStyled = styled.h2`
   margin-bottom: 40px;
+  max-width: 1116px;
+  min-height: 120px;
 
   ${fontSectionTitle};
   color: var(--lightText);

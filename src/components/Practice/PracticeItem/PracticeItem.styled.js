@@ -4,12 +4,14 @@ export const LiStyled = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 17px 0 23px 0;
+  max-width: 548px;
+  min-height: 64px;
 
   font-family: var(--Raleway);
   font-size: 32px;
   font-weight: 400;
   line-height: calc(45 / 32);
+  word-spacing: -0.05ch;
   letter-spacing: 0em;
 
   color: var(--greyText);
