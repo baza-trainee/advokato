@@ -21,6 +21,7 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							<img
 								height={180}
 								width={300}
+								onClick={() => window.open(`${elem.url}`)}
 								src={elem.image}
 								alt={elem.title}
 							/>

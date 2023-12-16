@@ -4,20 +4,21 @@ import { Outlet, NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "animate.css";
 
-import logoImg from "../../assets/images/layout-section/statusLogo.png";
+import logoImg from "../../assets/images/layout-section/Logo.png";
 import { Icon } from "../Icon";
 import {
 	HeaderStyled,
-	UlStyled,
-	NavLinkStyled,
 	LangButton,
 	ConsultButton,
 	ConsultElement,
 	PhonesDiv,
 	HamburgerMenu,
+	PhoneBurger,
 } from "./Layout.styled";
 import { Footer } from "../Footer/Footer";
 import { CookiesPanel } from "../CookiesPanel";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { Menu } from "../Menu";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
@@ -37,6 +38,16 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	return (
 		<>
 			<HeaderStyled top={top}>
+				
+				<PhoneBurger>
+					<Icon
+						id={"phoneButton"}
+						className="animate__animated animate__pulse animate__infinite infinite
+          animate__slower	3s"
+						width={56}
+						height={56}
+					/>
+				</PhoneBurger>
 				<NavLink
 					to="/"
 					aria-label="home"
@@ -45,55 +56,13 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						onClick={() =>
 							location.pathname === "/" ? window.location.reload() : null
 						}
+						width={152}
+						height={60}
 						src={logoImg}
 						alt="logoImage"
 					/>
 				</NavLink>
-
-				<nav>
-					<UlStyled>
-						<li>
-							<NavLinkStyled
-								to="/"
-								aria-label="home"
-							>
-								{t("header.nav.home")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="/company"
-								aria-label="company"
-							>
-								{t("header.nav.company")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="/practice"
-								aria-label="practice"
-							>
-								{t("header.nav.practice")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="#"
-								aria-label="news"
-							>
-								{t("header.nav.news")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="#"
-								aria-label="contacts"
-							>
-								{t("header.nav.contacts")}
-							</NavLinkStyled>
-						</li>
-					</UlStyled>
-				</nav>
+				<Menu />
 				<div>
 					<LangButton
 						onClick={() =>
@@ -102,6 +71,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						aria-label="lang-ua"
 						activeLang={activeLang}
 						currentLang="ua"
+						desktop="desktop"
 					>
 						{activeLang.toUpperCase()}
 					</LangButton>
@@ -112,6 +82,13 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 				>
 					<span className={`${isOpen ? "open" : ""}`}></span>
 				</HamburgerMenu>
+				<BurgerMenu
+					isOpen={isOpen}
+					setIsOpen={setIsOpen}
+					top={top}
+					activeLang={activeLang}
+					toggleLanguage={toggleLanguage}
+				/>
 				<ConsultElement>
 					<ConsultButton
 						aria-label="Записатися на консультацію"
@@ -128,7 +105,6 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						/>
 					</ConsultButton>
 					<PhonesDiv>
-						<a href="tel:+38 (0512) 37 73 73">+38 (0512) 37 73 73</a>
 						<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
 					</PhonesDiv>
 				</ConsultElement>

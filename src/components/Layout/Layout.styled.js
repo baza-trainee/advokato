@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
 import {
 	flexBox,
 	secondaryButton,
@@ -11,36 +10,28 @@ import {
 
 export const HeaderStyled = styled.header`
 	${flexBox};
-	flex-wrap: wrap;
-	justify-content: space-around;
 	position: sticky;
 	top: 0;
 	left: 0;
-	height: 140px;
+	height: 120px;
 	${fontLayoutMenu}
 	color: var(--lightText);
 	background-color: var(--headerBackground);
 	backdrop-filter: ${props => (props.top ? 0 : "blur(20px)")};
 	z-index: 20;
 	img {
-		width: 152px;
-		height: auto;
+		margin:0 334px;
+		width: 180px;
+		height: 80px;
 	}
-`;
-
-export const UlStyled = styled.ul`
-	${flexBox};
-	gap: 44px;
-	width: 600px;
-	height: 28px;
-	a {
-		color: var(--lightText);
-	}
-`;
-
-export const NavLinkStyled = styled(NavLink)`
-	&.active {
-		color: var(--accentLink);
+	@media screen and (${device.burger}) {
+		height: 140px;
+		justify-content: space-around;
+		img {
+			margin: 0;
+			width: 152px;
+			height: 60px;
+		}
 	}
 `;
 
@@ -48,23 +39,24 @@ export const HamburgerMenu = styled.div`
 	display: block;
 	position: relative;
 	top: 5vh;
-	width: 50px;
+	width: 42px;
 	height: 10vh;
 	transition-duration: 1s;
 	cursor: pointer;
 
-	@media screen and (${device.laptop}) {
+	@media screen and (${device.burger}) {
 		display: none;
 	}
 
 	span {
 		position: absolute;
-		width: 40px;
-		height: 5px;
+		width: 42px;
+		height: 3px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition-delay: 0.25s;
+		z-index: 50;
 	}
 
 	span:before {
@@ -72,8 +64,8 @@ export const HamburgerMenu = styled.div`
 		position: absolute;
 		top: -10px;
 		left: 0;
-		width: 40px;
-		height: 5px;
+		width: 42px;
+		height: 3px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
@@ -85,8 +77,8 @@ export const HamburgerMenu = styled.div`
 		position: absolute;
 		top: 10px;
 		left: 0;
-		width: 40px;
-		height: 5px;
+		width: 42px;
+		height: 3px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
@@ -113,24 +105,33 @@ export const HamburgerMenu = styled.div`
 `;
 
 export const LangButton = styled.button`
+	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
 	${fontReview};
 	width: 52px;
 	height: 48px;
+	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
 	background-color: inherit;
 	border: 1px solid var(--lightText);
 	border-radius: 8px;
 	cursor: pointer;
+	@media screen and (${device.burger}) {
+		display: block;
+	}
 `;
 
 export const ConsultElement = styled.div`
-	width: 288px;
+	display: none;
+	@media screen and (${device.burger}) {
+		display: block;
+		width: 288px;
 
-	button,
-	a {
-		${fontLayoutCall}
-		color: var(--lightText);
-		cursor: pointer;
+		button,
+		a {
+			${fontLayoutCall}
+			color: var(--lightText);
+			cursor: pointer;
+		}
 	}
 `;
 
@@ -151,4 +152,16 @@ export const PhonesDiv = styled.div`
 	justify-content: space-evenly;
 	margin: 1vh auto 0;
 	max-width: 100%;
+`;
+
+export const PhoneBurger = styled.div`
+	display: block;
+	svg {
+		fill: none;
+		stroke: var(--reviewText);
+		stroke-width: 2px;
+	}
+	@media screen and (${device.burger}) {
+		display: none;
+	}
 `;

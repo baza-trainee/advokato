@@ -35,7 +35,6 @@ export const TeamBlockHeader = styled.h1`
 export const TeamBlockSubTitle = styled.p`
 	${fontSectionText};
 	max-width: 552px;
-	/* line-height: 25px; */
 	margin: 24px 0 20px;
 `;
 
@@ -58,7 +57,7 @@ export const SliderArrow = styled.div`
 	position: absolute;
 	top: 45%;
 	left: 3.5%;
-	z-index: 20;
+	z-index: 10;
 	&:last-of-type {
 		left: 92.5%;
 	}
