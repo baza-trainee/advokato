@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { container, fontSectionTitle } from '../../styles/mixins';
+import { fontSectionTitle } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   padding: 132px 0;
@@ -7,10 +7,8 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-  ${container};
-
-  max-width: 1120px;
   margin: 0 auto;
+  width: 1120px;
 `;
 
 export const TitleStyled = styled.h2`

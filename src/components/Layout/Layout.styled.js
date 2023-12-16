@@ -23,7 +23,7 @@ export const Container = styled.div`
   ${container};
   ${flexBox};
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 140px;
   max-width: 1440px;
 
