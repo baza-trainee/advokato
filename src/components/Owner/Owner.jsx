@@ -44,7 +44,7 @@ export const Owner = () => {
         <ImageBoxStyled>
           <ImageStyled
             src={imageOwner}
-            width={611}
+            width={610}
             height={900}
             alt="photo-owner"
           />
