@@ -1,3 +1,7 @@
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import { ResultElement } from './ResultElement/ResultElement';
 import {
   Container,
   SectionStyled,
@@ -5,13 +9,28 @@ import {
   TitleStyled,
   SubheadingStyled,
   ResultBlock,
-} from "./Results.styled";
-
-import { ResultElement } from "./ResultElement/ResultElement";
+} from './Results.styled';
 
 export const Results = () => {
+  const { hash } = useLocation();
+  const ref = useRef();
+
+  useEffect(() => {
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        ref.current.scrollIntoView({
+          block: 'start',
+          inline: 'nearest',
+          behavior: 'smooth',
+        });
+      }, 0);
+    }
+  }, [hash]);
+
   return (
-    <SectionStyled>
+    <SectionStyled ref={ref}>
       <Container>
         <TitleBlock>
           <TitleStyled>

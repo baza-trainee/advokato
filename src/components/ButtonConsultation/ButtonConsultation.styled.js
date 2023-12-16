@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { flexBox, secondaryButton } from '../../styles/mixins';
 
-export const DivStyled = styled.div``;
-
 export const ButtonStyled = styled.button`
   ${secondaryButton};
   ${flexBox};
@@ -11,6 +9,6 @@ export const ButtonStyled = styled.button`
   height: 52px;
   padding: 16px 24px;
   background: none;
-  border: 1px solid var(--lightText);
+  border: 1px solid var(--reviewText);
   border-radius: 48px;
 `;

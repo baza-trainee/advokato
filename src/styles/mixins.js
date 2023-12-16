@@ -95,7 +95,7 @@ export const secondaryButton = () => {
         border: none;
         cursor: pointer;
 
-        font-family: inherit;
+        font-family: var(--Montserrat);
         font-size: 14px;
         font-weight: 500;
         line-height: calc(17 / 14);
@@ -258,21 +258,21 @@ export const sliderArrow = () => {
 };
 
 export const size = {
-	mobileS: "320px",
-	mobileM: "375px",
-	mobileL: "425px",
-	tablet: "1024px",
-	burger: "1200px",
-	laptop: "1280px",
-	desktop: "1440px",
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '1024px',
+  burger: '1200px',
+  laptop: '1280px',
+  desktop: '1440px',
 };
 
 export const device = {
-	mobileS: `min-width: ${size.mobileS}`,
-	mobileM: `min-width: ${size.mobileM}`,
-	mobileL: `min-width: ${size.mobileL}`,
-	tablet: `min-width: ${size.tablet}`,
-	burger: `min-width: ${size.burger}`,
-	laptop: `min-width: ${size.laptop}`,
-	desktop: `min-width: ${size.desktop}`,
+  mobileS: `min-width: ${size.mobileS}`,
+  mobileM: `min-width: ${size.mobileM}`,
+  mobileL: `min-width: ${size.mobileL}`,
+  tablet: `min-width: ${size.tablet}`,
+  burger: `min-width: ${size.burger}`,
+  laptop: `min-width: ${size.laptop}`,
+  desktop: `min-width: ${size.desktop}`,
 };

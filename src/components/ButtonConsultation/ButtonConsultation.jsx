@@ -6,7 +6,7 @@ import { Modal } from '../Modal';
 import { Icon } from '../Icon';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
-export const ButtonConsultation = ({ className }) => {
+export const ButtonConsultation = ({ className, customStyles }) => {
   const [t, i18n] = useTranslation('global');
   // const [modalActive, setModalActive] = useState(false);
 
@@ -35,6 +35,7 @@ export const ButtonConsultation = ({ className }) => {
         type="button"
         onClick={() => alert('HelloWorld')}
         className={className}
+        style={customStyles}
       >
         {t('header.btnAppoitment')}
         <Icon id={'icon-header-arrow-right'} width={16} height={12} />
@@ -45,4 +46,5 @@ export const ButtonConsultation = ({ className }) => {
 
 ButtonConsultation.propTypes = {
   className: PropTypes.string,
+  customStyles: PropTypes.object,
 };
