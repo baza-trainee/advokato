@@ -95,13 +95,13 @@ svg {
   height: auto;
 }
 
-@media screen and (min-width:1024px) {
-  main{
+@media screen and (min-width: 1024px) {
+  main {
     top: -120px;
   }
-};
-@media screen and (min-width:1200px) {
-  main{
+}
+@media screen and (min-width: 1200px) {
+  main {
     top: -140px;
   }
-};
+}

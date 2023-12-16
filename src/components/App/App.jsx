@@ -7,6 +7,7 @@ import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio'
 const Layout = lazy(() => import('../Layout'));
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const CompanyPage = lazy(() => import('../../pages/CompanyPage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
 const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
 
 export const App = () => {
@@ -53,6 +54,7 @@ export const App = () => {
         >
           <Route index element={<HomePage />} />
           <Route path="company" element={<CompanyPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

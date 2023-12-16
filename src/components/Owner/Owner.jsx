@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import { ButtonConsultation } from '../ButtonConsultation';
 import {
   SectionStyled,
   Container,
@@ -7,11 +6,9 @@ import {
   ImageBoxStyled,
   ImageStyled,
   TextStyled,
-  ButtonStyled,
 } from './Owner.styled';
 
 import imageOwner from '/src/assets/images/owner-section/photo-owner.webp';
-import { Icon } from '../Icon';
 
 export const Owner = () => {
   return (
@@ -23,7 +20,7 @@ export const Owner = () => {
               Адвокатська компанія
               <span>«STATUS»</span>
             </h3>
-            
+
             <p>
               Маючи надійну команду юристів і адвокатів, ми надаємо повний
               спектр юридичних послуг у корпоративній, цивільно-правовій,
@@ -34,10 +31,15 @@ export const Owner = () => {
               організаціям.
             </p>
 
-            <ButtonStyled>
-              Записатися на консультацію
-              <Icon id={'icon-arrow-right'} width={16} height={12} />
-            </ButtonStyled>
+            <ButtonConsultation
+              customStyles={{
+                padding: '20px 32px',
+                width: '364px',
+                height: '64px',
+                fontSize: '18px',
+                lineHeight: 'calc(27 / 18)',
+              }}
+            />
           </TextStyled>
         </CompanyBox>
 

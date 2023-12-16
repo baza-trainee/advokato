@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -21,31 +22,30 @@ import {
 
 export const Practice = () => {
   const [t, i18n] = useTranslation('global');
-  const { pathname, hash, key } = useLocation();
+  const { hash } = useLocation();
   const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
   const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
+  const refPractice = useRef();
 
   useEffect(() => {
     if (hash === '') {
-      window.scrollTo(0, 0);
-    } else {
+      return window.scrollTo(0, 0);
+    }
+
+    if (hash === '#practice') {
       setTimeout(() => {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            block: 'start',
-            inline: 'nearest',
-            behavior: 'smooth',
-          });
-        }
+        refPractice.current.scrollIntoView({
+          block: 'start',
+          inline: 'nearest',
+          behavior: 'smooth',
+        });
       }, 0);
     }
-  }, [pathname, hash, key]);
+  }, [hash]);
 
   if (practiceArray.length > 0) {
     return (
-      <SectionStyled id="practice">
+      <SectionStyled ref={refPractice}>
         <Container>
           <TitleStyled>
             Злагоджена команда юристів Status здатна вирішувати складні завдання
