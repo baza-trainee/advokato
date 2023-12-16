@@ -1,14 +1,10 @@
 import styled from '@emotion/styled';
-import {
-  container,
-  fontHeroTitle,
-  fontSectionText,
-} from '../../styles/mixins';
+import { container, fontHeroTitle, fontSectionText } from '../../styles/mixins';
 import bgImage from '../../assets/images/homeHero-section/hero-bg.jpg';
 
 export const SectionStyled = styled.section`
   height: 100vh;
-  
+
   background-image: url(${bgImage});
   background-size: cover;
 `;
@@ -16,6 +12,8 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
   ${container};
   padding-top: calc(132px + 140px);
+  max-width: 1440px;
+  
   div {
     display: flex;
     justify-content: space-between;
@@ -23,8 +21,8 @@ export const Container = styled.div`
 `;
 
 export const MainTitleStyled = styled.h1`
-  width:820px;
-  height:244px;
+  width: 820px;
+  height: 244px;
   margin-bottom: 68px;
 
   ${fontHeroTitle};

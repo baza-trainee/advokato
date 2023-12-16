@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { practiceArray } from './practiceArray';
-import { parseToParagraphs } from '../../helpers';
-import { Modal } from '../Modal';
+// import { parseToParagraphs } from '../../helpers';
 import { PracticeList } from './PracticeList';
+import { ButtonConsultation } from '../ButtonConsultation';
 import {
   SectionStyled,
   Container,
@@ -13,14 +14,16 @@ import {
   PracticeInfo,
   ImageStyled,
   PracticeTitle,
+  PracticeDescWrp,
   PracticeDesc,
-  ButtonStyled,
-  ExtraInfoWrpStyled,
+  MoreButtonStyled,
 } from './Practice.styled';
+
 export const Practice = () => {
+  const [t, i18n] = useTranslation('global');
   const { pathname, hash, key } = useLocation();
   const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
-  const [modalActive, setModalActive] = useState(false);
+  const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
 
   useEffect(() => {
     if (hash === '') {
@@ -40,27 +43,9 @@ export const Practice = () => {
     }
   }, [pathname, hash, key]);
 
-  useEffect(() => {
-    if (!modalActive) {
-      document.body.style.overflowY = 'auto';
-    }
-  }, [modalActive]);
-
   if (practiceArray.length > 0) {
     return (
       <SectionStyled id="practice">
-        {modalActive && (
-          <Modal active={modalActive} setActive={setModalActive}>
-            {currentPractice.extraInfo !== '' ? (
-              <ExtraInfoWrpStyled>
-                {parseToParagraphs(currentPractice.extraInfo)}
-              </ExtraInfoWrpStyled>
-            ) : (
-              <p>no text</p>
-            )}
-          </Modal>
-        )}
-
         <Container>
           <TitleStyled>
             Злагоджена команда юристів Status здатна вирішувати складні завдання
@@ -78,15 +63,29 @@ export const Practice = () => {
 
               <PracticeTitle>{currentPractice?.title}</PracticeTitle>
 
-              <PracticeDesc>{currentPractice?.desc}</PracticeDesc>
+              <PracticeDescWrp>
+                <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
+                  {currentPractice?.desc}
+                </PracticeDesc>
 
-              <ButtonStyled
-                onClick={() => setModalActive(true)}
-                type="button"
-                aria-label="read more info"
-              >
-                Детальніше
-              </ButtonStyled>
+                {isShowMoreDesc && (
+                  <PracticeDesc>{currentPractice?.extraInfo}</PracticeDesc>
+                )}
+
+                {currentPractice?.extraInfo && (
+                  <MoreButtonStyled
+                    onClick={() => setIsShowMoreDesc(prev => !prev)}
+                    type="button"
+                    aria-label="read more info"
+                  >
+                    {isShowMoreDesc
+                      ? t('practiceSection.hideButton')
+                      : t('practiceSection.moreButton')}
+                  </MoreButtonStyled>
+                )}
+              </PracticeDescWrp>
+
+              <ButtonConsultation />
             </PracticeInfo>
 
             <PracticeList

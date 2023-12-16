@@ -1,6 +1,7 @@
-import { ListStyled } from './PracticeList.styled';
+import PropTypes from 'prop-types';
 
 import { PracticeItem } from '../PracticeItem';
+import { ListStyled } from './PracticeList.styled';
 
 export const PracticeList = ({
   practiceArray,
@@ -13,11 +14,16 @@ export const PracticeList = ({
         <PracticeItem
           key={idx}
           item={item}
-          idx={idx + 1}
           currentPractice={currentPractice}
           setCurrentPractice={setCurrentPractice}
         />
       ))}
     </ListStyled>
   );
+};
+
+PracticeList.propTypes = {
+  practiceArray: PropTypes.array.isRequired,
+  currentPractice: PropTypes.object.isRequired,
+  setCurrentPractice: PropTypes.func.isRequired,
 };
