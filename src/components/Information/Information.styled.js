@@ -11,6 +11,7 @@ export const Container = styled.div`
   @media screen and (${device.desktop}) {
     padding-top: 132px;
     padding-bottom: 64px;
+    max-width: 1440px;
   }
 `;
 

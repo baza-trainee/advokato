@@ -38,7 +38,6 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	return (
 		<>
 			<HeaderStyled top={top}>
-				
 				<PhoneBurger>
 					<Icon
 						id={"phoneButton"}

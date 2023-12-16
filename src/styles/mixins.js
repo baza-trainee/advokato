@@ -1,17 +1,17 @@
 export const flexBox = () => {
-	return `display: flex;
+  return `display: flex;
         justify-content: center;
         align-items: center;`;
 };
 
 export const flexColumn = () => {
-	return `flex-direction: column;
+  return `flex-direction: column;
 	justify-content: space-between;
 	width: 100%;`;
 };
 
 export const container = () => {
-	return `width: 100%;
+  return `width: 100%;
         margin: 0 auto;
         padding-left: 20px;
         padding-right: 20px;
@@ -28,15 +28,14 @@ export const container = () => {
         }
 
         @media screen and (min-width: 1440px) {
-          max-width: 1440px;
-          padding-left: 160px;
-          padding-right: 160px;
+          padding-left: 80px;
+          padding-right: 80px;
         }
     `;
 };
 
 export const mainButton = () => {
-	return `  
+  return `  
         padding: 20px 32px;
 
         color: var(--btnBgHover);
@@ -87,7 +86,7 @@ export const mainButton = () => {
 };
 
 export const secondaryButton = () => {
-	return `  
+  return `  
         padding: 12px 24px;
 
         color: var(--lightText);
@@ -136,7 +135,7 @@ export const secondaryButton = () => {
 };
 
 export const fontDesktop = () => {
-	return `
+  return `
         font-family: PT Sans, sans-serif;
         font-size: 22px;
         font-weight: 400;
@@ -145,7 +144,7 @@ export const fontDesktop = () => {
 };
 
 export const fontTablet = () => {
-	return `
+  return `
         font-size: 20px;
         font-weight: 500;
         line-height: 1.3;        
@@ -153,7 +152,7 @@ export const fontTablet = () => {
 };
 
 export const fontMobile = () => {
-	return `
+  return `
         font-size: 14px;
         font-weight: 400;
         line-height: 1.3;        
@@ -161,7 +160,7 @@ export const fontMobile = () => {
 };
 
 export const fontLayoutMenu = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 18px;
         font-weight: 400;
@@ -171,7 +170,7 @@ export const fontLayoutMenu = () => {
 };
 
 export const fontLayoutCall = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 14px;
         font-weight: 500;
@@ -181,7 +180,7 @@ export const fontLayoutCall = () => {
 };
 
 export const fontHeroTitle = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 100px;
         font-weight: 700;
@@ -191,7 +190,7 @@ export const fontHeroTitle = () => {
 };
 
 export const fontSectionTitle = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 40px;
         font-weight: 500;
@@ -201,7 +200,7 @@ export const fontSectionTitle = () => {
 };
 
 export const fontSectionText = () => {
-	return `     
+  return `     
         font-family: var(--PTSans);
         font-size: 22px;
         font-weight: 400;
@@ -211,7 +210,7 @@ export const fontSectionText = () => {
 };
 
 export const fontReviewName = () => {
-	return `     
+  return `     
         font-family: var(--Montserrat);
         font-size: 28px;
         font-weight: 400;
@@ -221,7 +220,7 @@ export const fontReviewName = () => {
 };
 
 export const fontReview = () => {
-	return `     
+  return `     
         font-family: var(--Raleway);
         font-size: 18px;
         font-weight: 400;
@@ -231,7 +230,7 @@ export const fontReview = () => {
 };
 
 export const fontSliderCardName = () => {
-	return `     
+  return `     
         font-family: var(--Raleway);
         font-size: 32px;
         font-weight: 400;
@@ -241,7 +240,7 @@ export const fontSliderCardName = () => {
 };
 
 export const sliderArrow = () => {
-	return `
+  return `
   button {
 		fill: none;
 		stroke: var(--reviewText);

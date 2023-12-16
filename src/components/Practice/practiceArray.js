@@ -1,11 +1,11 @@
-import one from '../../assets/images/practice-section/1.jpg';
-import two from '../../assets/images/practice-section/2.jpeg';
-import three from '../../assets/images/practice-section/3.jpg';
-import four from '../../assets/images/practice-section/4.jpeg';
-import five from '../../assets/images/practice-section/5.jpg';
-import six from '../../assets/images/practice-section/6.jpg';
-import seven from '../../assets/images/practice-section/7.jpeg';
-import eight from '../../assets/images/practice-section/8.jpeg';
+import one from '../../assets/images/practice-section/corporative.jpeg';
+import two from '../../assets/images/practice-section/civil.jpeg';
+import three from '../../assets/images/practice-section/vikonavche.jpeg';
+import four from '../../assets/images/practice-section/criminalne.jpeg';
+import five from '../../assets/images/practice-section/smart.jpeg';
+import six from '../../assets/images/practice-section/family.jpeg';
+import seven from '../../assets/images/practice-section/admin.jpeg';
+import eight from '../../assets/images/practice-section/business.jpeg';
 
 export const practiceArray = [
   {
