@@ -1,30 +1,20 @@
+import PropTypes from 'prop-types';
 import { LiStyled } from './PracticeItem.styled';
-import { Icon } from '../../Icon';
 
-export const PracticeItem = ({
-  item,
-  idx,
-  currentPractice,
-  setCurrentPractice,
-}) => {
+export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
   return (
     <LiStyled
       onClick={() => setCurrentPractice(item)}
+      onMouseOver={() => setCurrentPractice(item)}
       className={item.id === currentPractice.id ? 'active' : null}
     >
-      <p>
-        <span>{idx < 10 ? `0${idx}` : idx}</span>
-
-        {item?.title}
-      </p>
-
-      <Icon
-        id={
-          item.id === currentPractice.id ? 'icon-arrow-down' : 'icon-arrow-up'
-        }
-        width={13}
-        height={13}
-      />
+      <p>{item?.title}</p>
     </LiStyled>
   );
+};
+
+PracticeItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  currentPractice: PropTypes.object.isRequired,
+  setCurrentPractice: PropTypes.func.isRequired,
 };

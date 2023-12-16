@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import {
@@ -15,6 +15,17 @@ import ClientsData from "../ClientsData/ClientsData";
 import { options } from "../ClientsData/SliderSettings";
 
 export const SliderItems = React.forwardRef((props, ref) => {
+	const [openReview, setOpenReview] = useState();
+	const[closeReview,setCloseReview] = useState(false);
+	useEffect(()=>{
+		let timer=null;
+		if(closeReview===true){
+			 timer = setTimeout(() => {
+				setOpenReview(null);
+			}, 3000);
+		}
+		  return () => clearTimeout(timer);
+	},[openReview,closeReview])
 	return (
 		<Splide
 			aria-label="Слайдер відгуків клієнтів"
@@ -24,7 +35,10 @@ export const SliderItems = React.forwardRef((props, ref) => {
 			{ClientsData.map(elem => {
 				return (
 					<SplideSlide key={elem.id}>
-						<ClientCardWrapper>
+						<ClientCardWrapper
+						 heightText={openReview === elem.id?true:false}
+						 onMouseLeave={()=>setCloseReview(true)}
+						 >
 							<CardHeader>
 								<img
 									src={elem.image}
@@ -37,7 +51,22 @@ export const SliderItems = React.forwardRef((props, ref) => {
 									<ClientRole>{elem.role}</ClientRole>
 								</CardRecvisits>
 							</CardHeader>
-							<ClientReview>{elem.review}</ClientReview>
+							<ClientReview>
+								{openReview === elem.id
+									? elem.review
+									: elem.review.slice(0, 320)}
+								{elem.review.length > 320 ? (
+									<button
+										onClick={() =>
+											openReview !== elem.id
+												? setOpenReview(elem.id)&setCloseReview(false)
+												: setOpenReview(null)
+										}
+									>
+										&nbsp;{openReview !== elem.id ?"..." + " Далі" : "Згорнути"}
+									</button>
+								) : null}
+							</ClientReview>
 						</ClientCardWrapper>
 					</SplideSlide>
 				);

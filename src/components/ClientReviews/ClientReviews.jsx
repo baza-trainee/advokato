@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import {
 	ClientsBlockHeader,
-	Container,
 	SectionStyled,
+	SliderArrow,
 	SliderWrapper,
 } from "./ClientReviews.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
@@ -10,11 +10,12 @@ import { Icon } from "../Icon";
 
 export const ClientReviews = () => {
 	const ref = useRef();
+
 	return (
 		<SectionStyled>
-			<Container>
 				<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
 				<SliderWrapper>
+				<SliderArrow>
 					<button
 						aria-label="Перелистування слайдера вліво"
 						type="button"
@@ -26,7 +27,9 @@ export const ClientReviews = () => {
 							height={60}
 						/>
 					</button>
+					</SliderArrow>
 					<SliderItems ref={ref} />
+					<SliderArrow>
 					<button
 						aria-label="Перелистування слайдера вправо"
 						type="button"
@@ -38,8 +41,8 @@ export const ClientReviews = () => {
 							height={60}
 						/>
 					</button>
+					</SliderArrow>
 				</SliderWrapper>
-			</Container>
 		</SectionStyled>
 	);
 };

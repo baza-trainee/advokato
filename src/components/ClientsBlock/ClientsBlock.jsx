@@ -2,7 +2,6 @@ import { useRef } from "react";
 import {
 	ClientsBlockHeader,
 	ClientsSliderContainer,
-	Container,
 	SectionStyled,
 	SliderArrow,
 } from "./ClientsBlock.styled";
@@ -14,7 +13,6 @@ export const ClientsBlock = () => {
 
 	return (
 		<SectionStyled>
-			<Container>
 				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
 				<ClientsSliderContainer>
 					<SliderArrow>
@@ -45,7 +43,6 @@ export const ClientsBlock = () => {
 						</button>
 					</SliderArrow>
 				</ClientsSliderContainer>
-			</Container>
 		</SectionStyled>
 	);
 };

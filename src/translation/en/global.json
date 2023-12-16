@@ -4,13 +4,17 @@
     "nav": {
       "home": "Home",
       "company": "Сompany",
-      "practice":"Practice",
-      "news":"News",
-      "contacts":"Contacts"
+      "practice": "Practice",
+      "news": "News",
+      "contacts": "Contacts"
     },
-    "btnAppoitment":"Make an appointment"
+    "btnAppoitment": "Make an appointment"
   },
-  "titleText":"Trust,expertise, result",
-  "subTitleText2":"We help private clients, state-owned companies, small and large businesses to decide legal issues of any complexity.",
-  "subTitleText1":"We help to anticipate the necessary changes and thus avoid difficult situations in the future."
+  "titleText": "Trust,expertise, result",
+  "subTitleText2": "We help private clients, state-owned companies, small and large businesses to decide legal issues of any complexity.",
+  "subTitleText1": "We help to anticipate the necessary changes and thus avoid difficult situations in the future.",
+  "practiceSection": {
+    "moreButton": "More",
+    "hideButton": "Collapse"
+  }
 }
