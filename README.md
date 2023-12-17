@@ -1,3 +1,7 @@
+## server docs
+
+- [swagger](https://advocato-backend.vercel.app/swagger-ui)
+
 ## translate
 
 - [i18next](https://react.i18next.com/)

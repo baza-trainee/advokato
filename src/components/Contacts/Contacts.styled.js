@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { fontSectionTitle } from '../../styles/mixins';
+import { fontSectionTitle, fontSectionText } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   padding-top: 132px;
@@ -24,6 +24,13 @@ export const TitleStyled = styled.h2`
 
 export const CenterWrp = styled.div`
   display: flex;
+  justify-content: space-between;
+
+  p {
+    min-height: 36px;
+
+    ${fontSectionText};
+  }
 `;
 
 export const LeftSide = styled.div`

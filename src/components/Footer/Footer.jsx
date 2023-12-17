@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
+
 import { PdfViewer } from '../PdfViewer';
 import { Modal } from '../Modal';
 import { SocialList } from '../SocialList';
@@ -23,8 +26,10 @@ const address =
 const currentYear = new Date().getFullYear();
 
 export const Footer = () => {
+  const [t, i18n] = useTranslation('global');
   const [modalActive, setModalActive] = useState(false);
   const [selectedPdfFile, setSelectedPdfFile] = useState(null);
+  const location = useLocation();
 
   return (
     <FooterStyled>
@@ -33,48 +38,58 @@ export const Footer = () => {
           <PdfViewer pdfFile={selectedPdfFile} />
         </Modal>
 
-        <FlexWraper>
-          <nav>
-            <List>
-              <li>
-                <LinkStyled to="/" aria-label="посилання на головну сторінку">
-                  Головна
-                </LinkStyled>
-              </li>
-              <li>
-                <LinkStyled
-                  to="/company"
-                  aria-label="посилання на сторінку компанії"
-                >
-                  Компанія
-                </LinkStyled>
-              </li>
-              <li>
-                <LinkStyled
-                  to="/practice"
-                  aria-label="посилання на сторінку практики"
-                >
-                  Практики
-                </LinkStyled>
-              </li>
-              <li>
-                <LinkStyled
-                  to="/company"
-                  aria-label="посилання на сторінку новин"
-                >
-                  Новини
-                </LinkStyled>
-              </li>
-              <li>
-                <LinkStyled
-                  to="/company"
-                  aria-label="посилання на сторінку контактів"
-                >
-                  Контакти
-                </LinkStyled>
-              </li>
-            </List>
-          </nav>
+        <FlexWraper
+          justifyContent={
+            location.pathname === '/contacts' ? 'space-between' : null
+          }
+        >
+          {location.pathname !== '/contacts' && (
+            <nav>
+              <List>
+                <li>
+                  <LinkStyled to="/" aria-label="посилання на головну сторінку">
+                    {t('header.nav.home')}
+                  </LinkStyled>
+                </li>
+                <li>
+                  <LinkStyled
+                    to="/company"
+                    aria-label="посилання на сторінку компанії"
+                  >
+                    {t('header.nav.company')}
+                  </LinkStyled>
+                </li>
+                <li>
+                  <LinkStyled
+                    to="/#practice"
+                    aria-label="посилання на сторінку практики"
+                  >
+                    {t('header.nav.practice')}
+                  </LinkStyled>
+                </li>
+                <li>
+                  <LinkStyled
+                    to="/#news"
+                    aria-label="посилання на сторінку новин"
+                  >
+                    {t('header.nav.news')}
+                  </LinkStyled>
+                </li>
+                <li>
+                  <LinkStyled
+                    to="/contacts"
+                    aria-label="посилання на сторінку контактів"
+                  >
+                    {t('header.nav.contacts')}
+                  </LinkStyled>
+                </li>
+              </List>
+            </nav>
+          )}
+
+          {location.pathname === '/contacts' && (
+            <Text>ADVOCATE COMPANY «STATUS»</Text>
+          )}
 
           <div>
             <PolicyText
@@ -98,36 +113,40 @@ export const Footer = () => {
               Правила користування сайтом
             </PolicyText>
           </div>
-          <FlexWraper flexDirection="column" gap="0">
-            <Text>ADVOCATE COMPANY «STATUS»</Text>
-            <TextLink
-              to={address}
-              target="_blank"
-              rel="noopener nofollow noreferrer"
-              aria-label="адреса компанії"
-            >
-              Вул. Нікольська 19, м. Миколаїв, <br /> Україна
-            </TextLink>
-            <TextLink
-              to="tel:+380512377373"
-              aria-label="телефон компанії"
-              marginbottom="0"
-            >
-              +38 (0512) 37 73 73
-            </TextLink>
-            <TextLink to="tel:+380933737303" aria-label="телефон компанії">
-              +38 (093) 373 73 03
-            </TextLink>
-            <TextLink
-              to="mailto:acstatus.mk@gmail.com"
-              aria-label="електронна пошта компанії"
-            >
-              acstatus.mk@gmail.com
-            </TextLink>
 
-            <SocialList />
-          </FlexWraper>
+          {location.pathname !== '/contacts' && (
+            <FlexWraper flexDirection="column" gap="0">
+              <Text>ADVOCATE COMPANY «STATUS»</Text>
+              <TextLink
+                to={address}
+                target="_blank"
+                rel="noopener nofollow noreferrer"
+                aria-label="адреса компанії"
+              >
+                Вул. Нікольська 19, м. Миколаїв, <br /> Україна
+              </TextLink>
+              <TextLink
+                to="tel:+380512377373"
+                aria-label="телефон компанії"
+                marginbottom="0"
+              >
+                +38 (0512) 37 73 73
+              </TextLink>
+              <TextLink to="tel:+380933737303" aria-label="телефон компанії">
+                +38 (093) 373 73 03
+              </TextLink>
+              <TextLink
+                to="mailto:acstatus.mk@gmail.com"
+                aria-label="електронна пошта компанії"
+              >
+                acstatus.mk@gmail.com
+              </TextLink>
+
+              <SocialList />
+            </FlexWraper>
+          )}
         </FlexWraper>
+
         <Line />
         <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
       </Container>

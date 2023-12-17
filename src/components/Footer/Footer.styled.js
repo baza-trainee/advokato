@@ -21,7 +21,7 @@ export const FlexWraper = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
   gap: ${props => props.gap || '140px'};
-  justify-content: center;
+  justify-content: ${props => props.justifyContent || 'center'};
 `;
 
 export const List = styled.ul`

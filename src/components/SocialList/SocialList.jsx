@@ -4,18 +4,19 @@ import { SocialListStyled, SocialLink } from './SocialList.styled';
 import { media } from './SocialData';
 import { Icon } from '../Icon';
 
-export const SocialList = ({ currentFill, hoverFill }) => {
+export const SocialList = ({ contacts, currentfill2, hoverfill2 }) => {
+  console.log(contacts);
   return (
     <SocialListStyled>
-      {media.map(({ url, iconId }, index) => (
+      {contacts.map(({ url, iconId }, index) => (
         <li key={index}>
           <SocialLink
             to={url}
             target="_blank"
             aria-label={iconId}
             rel="noopener nofollow noreferrer"
-            currentFill={currentFill}
-            hoverFill={hoverFill}
+            currentfill2={currentfill2}
+            hoverfill2={hoverfill2}
           >
             <Icon id={iconId} width={30} height={30} />
           </SocialLink>
@@ -26,6 +27,7 @@ export const SocialList = ({ currentFill, hoverFill }) => {
 };
 
 SocialList.propTypes = {
-  currentFill: PropTypes.string,
-  hoverFill: PropTypes.string,
+  contacts: PropTypes.array.isRequired,
+  currentfill2: PropTypes.string,
+  hoverfill2: PropTypes.string,
 };
