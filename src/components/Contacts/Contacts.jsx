@@ -41,7 +41,7 @@ export const Contacts = () => {
 
             <p>{contacts[5]?.mail}</p>
 
-            <SocialList currentfill2={'#333333'} contacts={contacts} />
+            <SocialList currentfill={'#333333'} contacts={contacts} />
           </LeftSide>
 
           <GoogleMap data={data} />

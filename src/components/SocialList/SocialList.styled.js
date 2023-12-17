@@ -15,7 +15,7 @@ export const SocialListStyled = styled.ul`
 export const SocialLink = styled(Link)`
   svg {
     fill: var(--lightText);
-    fill: ${({ currentfill2 }) => (currentfill2 ? currentfill2 : null)};
+    fill: ${({ currentfill }) => (currentfill ? currentfill : null)};
   }
 
   &:hover,
@@ -25,7 +25,7 @@ export const SocialLink = styled(Link)`
 
     svg {
       fill: var(--accentLink);
-      fill: ${({ hoverfill2 }) => (hoverfill2 ? hoverfill2 : null)};
+      fill: ${({ hoverfill }) => (hoverfill ? hoverfill : null)};
       transform: scale(1.05);
     }
   }
