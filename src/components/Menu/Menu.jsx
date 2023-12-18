@@ -24,7 +24,7 @@ export const Menu = ({side}) => {
 						</li>
 						<li>
 							<NavLinkStyled
-								to="/practice"
+								to="/#practice"
 								aria-label="practice"
 							>
 								{t("header.nav.practice")}

@@ -13,36 +13,36 @@ export const ClientsBlock = () => {
 
 	return (
 		<SectionStyled>
-				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
-				<ClientsSliderContainer>
-					<SliderArrow>
-						<button
-							aria-label="Перелистування слайдера вліво"
-							onClick={() => arrowRef.current.go("-1")}
-							type="button"
-						>
-							<Icon
-								id={"icon-slider-arrow-left"}
-								width={60}
-								height={60}
-							/>
-						</button>
-					</SliderArrow>
-					<SliderItems ref={arrowRef} />
-					<SliderArrow>
-						<button
-							aria-label="Перелистування слайдера вправо"
-							onClick={() => arrowRef.current.go("+1")}
-							type="button"
-						>
-							<Icon
-								id={"icon-slider-arrow-right"}
-								width={60}
-								height={60}
-							/>
-						</button>
-					</SliderArrow>
-				</ClientsSliderContainer>
+			<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			<ClientsSliderContainer>
+				<SliderArrow>
+					<button
+						aria-label="Перелистування слайдера вліво"
+						onClick={() => arrowRef.current.go("-1")}
+						type="button"
+					>
+						<Icon
+							id={"icon-slider-arrow-left"}
+							width={60}
+							height={60}
+						/>
+					</button>
+				</SliderArrow>
+				<SliderItems ref={arrowRef} />
+				<SliderArrow>
+					<button
+						aria-label="Перелистування слайдера вправо"
+						onClick={() => arrowRef.current.go("+1")}
+						type="button"
+					>
+						<Icon
+							id={"icon-slider-arrow-right"}
+							width={60}
+							height={60}
+						/>
+					</button>
+				</SliderArrow>
+			</ClientsSliderContainer>
 		</SectionStyled>
 	);
 };

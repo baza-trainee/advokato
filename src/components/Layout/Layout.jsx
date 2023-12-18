@@ -1,5 +1,5 @@
 import { Suspense, useState, useEffect } from "react";
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import "animate.css";
@@ -25,6 +25,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [top, setTop] = useState(true);
 	const location = useLocation();
+	const navigate = useNavigate();
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -53,7 +54,9 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 				>
 					<img
 						onClick={() =>
-							location.pathname === "/" ? window.location.reload() : null
+							(location.pathname === "/") & (location.hash !== "")
+								? navigate("/")
+								: window.location.reload()
 						}
 						width={152}
 						height={60}

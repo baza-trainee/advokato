@@ -43,6 +43,7 @@ export const Practice = () => {
     }
   }, [pathname, hash, key]);
 
+
   if (practiceArray.length > 0) {
     return (
       <SectionStyled id="practice">
