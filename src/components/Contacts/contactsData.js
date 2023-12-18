@@ -1,7 +1,7 @@
 export const data = [
   {
     id: '1',
-    address: 'Київ',
+    address: 'м. Київ',
     coords: {
       description: 'Вул. Велика Васильківська 21',
       position: {
@@ -12,7 +12,7 @@ export const data = [
   },
   {
     id: '2',
-    address: 'Миколаїв',
+    address: 'м. Миколаїв',
     coords: {
       description: 'Вул. Нікольська 19',
       position: {
@@ -23,7 +23,7 @@ export const data = [
   },
   {
     id: '3',
-    address: 'Одеса',
+    address: 'м. Одеса',
     coords: {
       description: 'Площа 10 квітня 1',
       position: {
@@ -33,3 +33,13 @@ export const data = [
     },
   },
 ];
+
+const contactsData = {
+  id: '1',
+  city_name: 'м. Київ',
+  address: 'Вул. Велика Васильківська 21',
+  coords: {
+    lat: '46.440298744339735',
+    lng: '30.755951896799907',
+  },
+};

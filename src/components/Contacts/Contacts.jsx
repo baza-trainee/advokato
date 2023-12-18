@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
 import { GoogleMap } from './GoogleMap';
 
+import { getContent } from '../../api/';
 import { data } from './contactsData';
 import { SocialList } from '../SocialList';
+import { AddressList } from './AddressList';
 import {
   SectionStyled,
   Container,
@@ -11,6 +14,20 @@ import {
 } from './Contacts.styled';
 
 export const Contacts = () => {
+  const [cities, setCities] = useState([]);
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getContent('contacts');
+
+      setCities(prev => data.cities);
+      setContacts(prev => data.contacts);
+    };
+
+    getData();
+  }, []);
+
   return (
     <SectionStyled>
       <Container>
@@ -18,28 +35,13 @@ export const Contacts = () => {
 
         <CenterWrp>
           <LeftSide>
-            <ul>
-              <li>
-                <p>
-                  Вул. Велика Васильківська 21, офіс 307, Печерський район, м.
-                  Київ, Україна
-                </p>
-              </li>
+            <AddressList cities={cities} />
 
-              <li>
-                <p>Вул. Нікольська 19, м. Миколаїв, Україна </p>
-              </li>
+            <p>{contacts[4]?.phone}</p>
 
-              <li>
-                <p>Площа 10 квітня 1, м. Одеса, Україна </p>
-              </li>
-            </ul>
+            <p>{contacts[5]?.mail}</p>
 
-            <p>+38 (093) 373 73 03</p>
-
-            <p>acstatus.mk@gmail.com</p>
-
-            <SocialList currentFill={'#333333'} />
+            <SocialList currentfill={'#333333'} contacts={contacts} />
           </LeftSide>
 
           <GoogleMap data={data} />
