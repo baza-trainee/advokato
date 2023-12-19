@@ -8,7 +8,7 @@ export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
       onMouseOver={() => setCurrentPractice(item)}
       className={item.id === currentPractice.id ? 'active' : null}
     >
-      <p>{item?.title}</p>
+      <p>{item?.specialization_name}</p>
     </LiStyled>
   );
 };

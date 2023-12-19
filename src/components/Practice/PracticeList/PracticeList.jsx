@@ -4,13 +4,13 @@ import { PracticeItem } from '../PracticeItem';
 import { ListStyled } from './PracticeList.styled';
 
 export const PracticeList = ({
-  practiceArray,
+  practices,
   currentPractice,
   setCurrentPractice,
 }) => {
   return (
     <ListStyled>
-      {practiceArray.map((item, idx) => (
+      {practices.map((item, idx) => (
         <PracticeItem
           key={idx}
           item={item}
@@ -23,7 +23,7 @@ export const PracticeList = ({
 };
 
 PracticeList.propTypes = {
-  practiceArray: PropTypes.array.isRequired,
+  practices: PropTypes.array.isRequired,
   currentPractice: PropTypes.object.isRequired,
   setCurrentPractice: PropTypes.func.isRequired,
 };

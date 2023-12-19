@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { practiceArray } from './practiceArray';
-// import { parseToParagraphs } from '../../helpers';
+import { parseToParagraphs } from '../../helpers';
 import { PracticeList } from './PracticeList';
 import { ButtonConsultation } from '../ButtonConsultation';
+import { getContent } from '../../api';
 import {
   SectionStyled,
   Container,
@@ -17,15 +16,30 @@ import {
   PracticeTitle,
   PracticeDescWrp,
   PracticeDesc,
+  PracticeDescFull,
   MoreButtonStyled,
 } from './Practice.styled';
 
 export const Practice = () => {
   const [t, i18n] = useTranslation('global');
   const { hash } = useLocation();
-  const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
   const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
   const refPractice = useRef();
+  const [practices, setPractices] = useState([]);
+  const [currentPractice, setCurrentPractice] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getContent('specializations');
+
+      setPractices(prev => data);
+      setCurrentPractice(prev => data[0]);
+    };
+
+    getData();
+  }, []);
+
+  console.log(practices);
 
   useEffect(() => {
     if (hash === '') {
@@ -43,7 +57,7 @@ export const Practice = () => {
     }
   }, [hash]);
 
-  if (practiceArray.length > 0) {
+  if (practices.length > 0) {
     return (
       <SectionStyled ref={refPractice}>
         <Container>
@@ -55,24 +69,30 @@ export const Practice = () => {
           <PracticeWrp>
             <PracticeInfo>
               <ImageStyled
-                src={currentPractice?.imageUrl}
+                src={currentPractice?.specialization_photo}
                 width={456}
                 height={320}
                 alt="picture about practice"
               />
 
-              <PracticeTitle>{currentPractice?.title}</PracticeTitle>
+              <PracticeTitle>
+                {currentPractice?.specialization_name}
+              </PracticeTitle>
 
               <PracticeDescWrp>
                 <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
-                  {currentPractice?.desc}
+                  {currentPractice?.specialization_description}
                 </PracticeDesc>
 
                 {isShowMoreDesc && (
-                  <PracticeDesc>{currentPractice?.extraInfo}</PracticeDesc>
+                  <PracticeDescFull>
+                    {parseToParagraphs(
+                      currentPractice?.specialization_description_full
+                    )}
+                  </PracticeDescFull>
                 )}
 
-                {currentPractice?.extraInfo && (
+                {currentPractice?.specialization_description_full && (
                   <MoreButtonStyled
                     onClick={() => setIsShowMoreDesc(prev => !prev)}
                     type="button"
@@ -89,7 +109,7 @@ export const Practice = () => {
             </PracticeInfo>
 
             <PracticeList
-              practiceArray={practiceArray}
+              practices={practices}
               currentPractice={currentPractice}
               setCurrentPractice={setCurrentPractice}
             />

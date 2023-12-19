@@ -63,12 +63,22 @@ export const PracticeDesc = styled.p`
   letter-spacing: 0em;
   color: var(--lightText);
 
-  &:first-of-type {
-    display: ${({ isShowMoreDesc }) => {
-      if (isShowMoreDesc) {
-        return 'block';
-      }
-    }};
+  display: ${({ isShowMoreDesc }) => (isShowMoreDesc ? 'block' : null)};
+`;
+
+export const PracticeDescFull = styled.div`
+  p {
+    font-family: var(--Raleway);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: calc(27 / 18);
+    letter-spacing: 0em;
+    text-indent: 20px;
+    color: var(--lightText);
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 10px;
   }
 `;
 
