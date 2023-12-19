@@ -5,7 +5,7 @@ export const UlStyled = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 384px;
+  max-width: 415px;
   list-style: square;
   margin-left: 20px;
 

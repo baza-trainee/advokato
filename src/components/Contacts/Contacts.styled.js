@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 import { fontSectionTitle, fontSectionText } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  padding-top: 132px;
-  padding-bottom: 120px;
+  padding: 132px;
 
   border-top: 140px solid var(--darkBackground);
 `;
@@ -25,6 +24,7 @@ export const TitleStyled = styled.h2`
 export const CenterWrp = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 600px;
 
   p {
     min-height: 36px;
