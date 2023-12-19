@@ -39,8 +39,6 @@ export const Practice = () => {
     getData();
   }, []);
 
-  console.log(practices);
-
   useEffect(() => {
     if (hash === '') {
       return window.scrollTo(0, 0);
@@ -56,6 +54,8 @@ export const Practice = () => {
       }, 0);
     }
   }, [hash]);
+
+  const createMarkup = htmlString => ({ __html: htmlString });
 
   if (practices.length > 0) {
     return (
@@ -83,13 +83,21 @@ export const Practice = () => {
                 <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
                   {currentPractice?.specialization_description}
                 </PracticeDesc>
-
+                {/* 
                 {isShowMoreDesc && (
                   <PracticeDescFull>
                     {parseToParagraphs(
                       currentPractice?.specialization_description_full
                     )}
                   </PracticeDescFull>
+                )} */}
+
+                {isShowMoreDesc && (
+                  <PracticeDescFull
+                    dangerouslySetInnerHTML={createMarkup(
+                      currentPractice?.specialization_description_full
+                    )}
+                  />
                 )}
 
                 {currentPractice?.specialization_description_full && (
