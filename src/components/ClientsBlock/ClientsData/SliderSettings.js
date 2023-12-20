@@ -6,7 +6,7 @@ export const options = {
 	type: "loop",
 	height: "180px",
 	width: "1640px",
-	gap:"32px",
+	gap: "32px",
 	perPage: 5,
 	perMove: 1,
 	speed: 1000,

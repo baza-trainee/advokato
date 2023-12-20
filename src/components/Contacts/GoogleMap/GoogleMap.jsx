@@ -12,7 +12,7 @@ import { containerStyle, MarkerWrp } from './GoogleMap.styled';
 const { VITE_VERCEL_GOOGLE_MAP_API_KEY } = import.meta.env;
 const options = { closeBoxURL: '', enableEventPropagation: true };
 
-export const GoogleMap = ({ data }) => {
+export const GoogleMap = ({ cities }) => {
   const [activeMarker, setActiveMarker] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -22,7 +22,7 @@ export const GoogleMap = ({ data }) => {
   const handleOnLoad = map => {
     const bounds = new google.maps.LatLngBounds();
 
-    data.forEach(({ coords: { position } }) => bounds.extend(position));
+    cities.forEach(({ coords }) => bounds.extend(coords));
 
     map.fitBounds(bounds);
   };
@@ -34,7 +34,7 @@ export const GoogleMap = ({ data }) => {
     setActiveMarker(marker);
   };
 
-  if (isLoaded && data.length > 0) {
+  if (isLoaded && cities.length > 0) {
     return (
       <GMap
         onLoad={handleOnLoad}
@@ -42,16 +42,16 @@ export const GoogleMap = ({ data }) => {
         zoom={10}
         onClick={() => setActiveMarker(null)}
       >
-        {data.map(({ id, coords: { position, description } }) => (
+        {cities.map(({ id, coords, address }) => (
           <Marker
             key={id}
-            position={position}
+            position={coords}
             onClick={() => handleActiveMarker(id)}
           >
             {activeMarker === id && (
               <InfoBox options={options}>
                 <MarkerWrp>
-                  <p>{description}</p>
+                  <p>{address}</p>
                 </MarkerWrp>
               </InfoBox>
             )}
@@ -63,5 +63,5 @@ export const GoogleMap = ({ data }) => {
 };
 
 GoogleMap.propTypes = {
-  data: PropTypes.array.isRequired,
+  cities: PropTypes.array.isRequired,
 };

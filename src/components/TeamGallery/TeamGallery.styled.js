@@ -11,7 +11,7 @@ import {
 import "@splidejs/react-splide/css";
 
 export const SectionStyled = styled.section`
-	height: 1096px;
+	height: 900px;
 	padding-top: 132px;
 	background: var(--darkBackground);
 	color: var(--lightText);
@@ -36,7 +36,7 @@ export const TeamBlockSubTitle = styled.p`
 	margin: 24px 0 20px;
 `;
 
-export const TeamSliderContainer = styled.div`	
+export const TeamSliderContainer = styled.div`
 	${flexBox};
 	max-width: 1856px;
 	height: fit-content;
@@ -50,7 +50,8 @@ export const TeamSliderContainer = styled.div`
 	.splide__slide.is-active:hover {
 		transform: scale(1.01);
 	}
-	.splide__slide.is-next,.splide__slide.is-prev {
+	.splide__slide.is-next,
+	.splide__slide.is-prev {
 		opacity: 0.3;
 	}
 `;
@@ -68,9 +69,9 @@ export const SliderArrow = styled.div`
 
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
-	img{
-		width:100%;
-		height:100%;
+	img {
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 	}
 `;
@@ -86,7 +87,7 @@ export const CardRecvisiteWrapper = styled.div`
 export const CardName = styled.h3`
 	${fontSliderCardName};
 	color: var(--lightText);
-	width:100%;
+	width: 100%;
 `;
 
 export const CardRole = styled.div`

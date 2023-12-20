@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const containerStyle = {
-  width: '500px',
+  width: '548px',
   height: '600px',
 };
 

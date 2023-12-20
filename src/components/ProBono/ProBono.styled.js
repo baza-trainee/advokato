@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import {
 	container,
 	flexBox,
-	flexColumn,
 	fontSectionText,
 	fontSectionTitle,
 } from "../../styles/mixins";
@@ -19,38 +18,48 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
 	${container};
-	padding:132px 160px;
+	max-width: 1440px;
+	padding: 132px 160px;
 `;
 
 export const BlockWrapper = styled.div`
 	${flexBox};
 	justify-content: space-between;
-	width:1120px;
-	height:572px;
+	width: 1120px;
+	height: 572px;
+	margin: 40px auto;
+	img {
+		border-radius: 24px;
+	}
 `;
 
 export const LeftSide = styled.div`
-	width:500px;
-	height:572px;
+	position: relative;
+	width: 500px;
+	height: 572px;
 `;
 
 export const RightSide = styled.div`
-	width:500px;
-	height:572px;
+	position: relative;
+	width: 500px;
+	height: 572px;
 `;
 
-export const LeftTextWrapper = styled.div`
-	
-`;
-export const RightTextWrapper = styled.div`
-	
+export const TextWrapper = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 `;
 
 export const BonoHeader = styled.h2`
 	${fontSectionTitle};
-	margin-bottom: 40px;
 `;
 
-export const BonoText = styled.p`
+export const BonoText = styled.div`
 	${fontSectionText};
+	p {
+		margin-top: 10px;
+	}
 `;

@@ -13,14 +13,14 @@ import { getContent } from "../../api/fetchContent";
 
 export const TeamGallery = () => {
 	const arrowRef = useRef();
-	const [data,setData] =useState();
-	useEffect(()=>{
-		const getData = async()=>{
-			const result = await getContent("https://advocato-backend.vercel.app/api/v1/our-team")
-			setData(result.team)
-		}
-		getData()
-	},[])
+	const [data, setData] = useState();
+
+	useEffect(() => {
+		getContent("https://advocato-backend.vercel.app/api/v1/our-team").then(
+			res => setData(res.team),
+		);
+	}, []);
+
 	return (
 		<SectionStyled>
 			<Container>
@@ -30,37 +30,40 @@ export const TeamGallery = () => {
 					висококваліфікована команда юристів.
 				</TeamBlockSubTitle>
 			</Container>
-			{data?.length>0&&
-			<TeamSliderContainer>
-			<SliderArrow>
-			<button
-				aria-label="Перелистування слайдера вліво"
-				onClick={() => arrowRef.current.go("-1")}
-				type="button"
-			>
-				<Icon
-					id={"icon-slider-arrow-left"}
-					width={60}
-					height={60}
-				/>
-			</button>
-			</SliderArrow>
-			<SliderItems ref={arrowRef} data={data} />
-			<SliderArrow>
-			<button
-				aria-label="Перелистування слайдера вправо"
-				onClick={() => arrowRef.current.go("+1")}
-				type="button"
-			>
-				<Icon
-					id={"icon-slider-arrow-right"}
-					width={60}
-					height={60}
-				/>
-			</button>
-			</SliderArrow>
-			</TeamSliderContainer>
-			}
+			{data?.length > 0 && (
+				<TeamSliderContainer>
+					<SliderArrow>
+						<button
+							aria-label="Перелистування слайдера вліво"
+							onClick={() => arrowRef.current.go("-1")}
+							type="button"
+						>
+							<Icon
+								id={"icon-slider-arrow-left"}
+								width={60}
+								height={60}
+							/>
+						</button>
+					</SliderArrow>
+					<SliderItems
+						ref={arrowRef}
+						data={data}
+					/>
+					<SliderArrow>
+						<button
+							aria-label="Перелистування слайдера вправо"
+							onClick={() => arrowRef.current.go("+1")}
+							type="button"
+						>
+							<Icon
+								id={"icon-slider-arrow-right"}
+								width={60}
+								height={60}
+							/>
+						</button>
+					</SliderArrow>
+				</TeamSliderContainer>
+			)}
 		</SectionStyled>
 	);
 };

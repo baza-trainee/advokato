@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { GoogleMap } from './GoogleMap';
 
 import { getContent } from '../../api/';
-import { data } from './contactsData';
 import { SocialList } from '../SocialList';
 import { AddressList } from './AddressList';
 import {
@@ -34,17 +33,24 @@ export const Contacts = () => {
         <TitleStyled>ADVOCATE COMPANY «STATUS»</TitleStyled>
 
         <CenterWrp>
-          <LeftSide>
-            <AddressList cities={cities} />
+          {contacts.length > 0 && (
+            <>
+              <LeftSide>
+                <AddressList cities={cities} />
 
-            <p>{contacts[4]?.phone}</p>
+                <p>{contacts[0]?.contacts[0]?.phone}</p>
 
-            <p>{contacts[5]?.mail}</p>
+                <p>{contacts[0]?.contacts[1]?.mail}</p>
 
-            <SocialList currentfill={'#333333'} contacts={contacts} />
-          </LeftSide>
+                <SocialList
+                  currentfill={'#333333'}
+                  media={contacts[0]?.social}
+                />
+              </LeftSide>
 
-          <GoogleMap data={data} />
+              <GoogleMap cities={cities} />
+            </>
+          )}
         </CenterWrp>
       </Container>
     </SectionStyled>

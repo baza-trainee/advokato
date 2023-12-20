@@ -14,17 +14,17 @@ import { options } from "../ClientsData/SliderSettings";
 
 export const SliderItems = React.forwardRef((props, ref) => {
 	const [openReview, setOpenReview] = useState();
-	const[closeReview,setCloseReview] = useState(false);
-	const {data} = props;
-	useEffect(()=>{
-		let timer=null;
-		if(closeReview===true){
-			 timer = setTimeout(() => {
+	const [closeReview, setCloseReview] = useState(false);
+	const { data } = props;
+	useEffect(() => {
+		let timer = null;
+		if (closeReview === true) {
+			timer = setTimeout(() => {
 				setOpenReview(null);
 			}, 3000);
 		}
-		  return () => clearTimeout(timer);
-	},[openReview,closeReview])
+		return () => clearTimeout(timer);
+	}, [openReview, closeReview]);
 
 	return (
 		<Splide
@@ -36,9 +36,9 @@ export const SliderItems = React.forwardRef((props, ref) => {
 				return (
 					<SplideSlide key={elem.id}>
 						<ClientCardWrapper
-						 heightText={openReview === elem.id?true:false}
-						 onMouseLeave={()=>setCloseReview(true)}
-						 >
+							heightText={openReview === elem.id ? true : false}
+							onMouseLeave={() => setCloseReview(true)}
+						>
 							<CardHeader>
 								<img
 									src={elem.photo_path}
@@ -57,14 +57,14 @@ export const SliderItems = React.forwardRef((props, ref) => {
 									: elem.description.slice(0, 320)}
 								{elem.description.length > 320 ? (
 									<button
-										onClick={() =>
-											{openReview !== elem.id
-												? setOpenReview(elem.id)&setCloseReview(false)
-												: setOpenReview(null)
-											}
-										}
+										onClick={() => {
+											openReview !== elem.id
+												? setOpenReview(elem.id) & setCloseReview(false)
+												: setOpenReview(null);
+										}}
 									>
-										&nbsp;{openReview !== elem.id ?"..." + " Далі" : "Згорнути"}
+										&nbsp;
+										{openReview !== elem.id ? "..." + " Далі" : "Згорнути"}
 									</button>
 								) : null}
 							</ClientReview>
