@@ -4,6 +4,7 @@ import { GoogleMap } from './GoogleMap';
 import { getContent } from '../../api/';
 import { SocialList } from '../SocialList';
 import { AddressList } from './AddressList';
+import { LoadingAnimated } from '../LoadingAnimated';
 import {
   SectionStyled,
   Container,
@@ -15,13 +16,17 @@ import {
 export const Contacts = () => {
   const [cities, setCities] = useState([]);
   const [contacts, setContacts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(prev => true);
       const data = await getContent('contacts');
 
       setCities(prev => data.cities);
       setContacts(prev => data.contacts);
+
+      setIsLoading(prev => false);
     };
 
     getData();
@@ -33,7 +38,9 @@ export const Contacts = () => {
         <TitleStyled>ADVOCATE COMPANY «STATUS»</TitleStyled>
 
         <CenterWrp>
-          {contacts.length > 0 && (
+          {isLoading && <LoadingAnimated />}
+
+          {contacts.length > 0 && !isLoading && (
             <>
               <LeftSide>
                 <AddressList cities={cities} />
