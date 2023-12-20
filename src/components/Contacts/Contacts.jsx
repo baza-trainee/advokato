@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { GoogleMap } from './GoogleMap';
 
 import { getContent } from '../../api/';
-import { data } from './contactsData';
 import { SocialList } from '../SocialList';
 import { AddressList } from './AddressList';
 import {
