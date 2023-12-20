@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { parseToParagraphs } from '../../helpers';
+// import { parseToParagraphs } from '../../helpers';
 import { PracticeList } from './PracticeList';
 import { ButtonConsultation } from '../ButtonConsultation';
 import { getContent } from '../../api';
@@ -22,9 +22,9 @@ import {
 
 export const Practice = () => {
   const [t, i18n] = useTranslation('global');
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
   const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
-  const refPractice = useRef();
+  const ref = useRef();
   const [practices, setPractices] = useState([]);
   const [currentPractice, setCurrentPractice] = useState([]);
 
@@ -46,26 +46,26 @@ export const Practice = () => {
 
     if (hash === '#practice') {
       setTimeout(() => {
-        refPractice.current.scrollIntoView({
+        ref.current.scrollIntoView({
           block: 'start',
           inline: 'nearest',
           behavior: 'smooth',
         });
       }, 0);
     }
-  }, [hash]);
+  }, [pathname, hash]);
 
   const createMarkup = htmlString => ({ __html: htmlString });
 
-  if (practices.length > 0) {
-    return (
-      <SectionStyled ref={refPractice}>
-        <Container>
-          <TitleStyled>
-            Злагоджена команда юристів Status здатна вирішувати складні завдання
-            у різних сферах.
-          </TitleStyled>
+  return (
+    <SectionStyled ref={ref}>
+      <Container>
+        <TitleStyled>
+          Злагоджена команда юристів Status здатна вирішувати складні завдання у
+          різних сферах.
+        </TitleStyled>
 
+        {practices.length > 0 && (
           <PracticeWrp>
             <PracticeInfo>
               <ImageStyled
@@ -122,8 +122,8 @@ export const Practice = () => {
               setCurrentPractice={setCurrentPractice}
             />
           </PracticeWrp>
-        </Container>
-      </SectionStyled>
-    );
-  }
+        )}
+      </Container>
+    </SectionStyled>
+  );
 };

@@ -19,6 +19,8 @@ export const Contacts = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const getData = async () => {
       setIsLoading(prev => true);
       const data = await getContent('contacts');
