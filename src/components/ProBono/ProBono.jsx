@@ -17,9 +17,9 @@ export const ProBono = () => {
 		<>
 			<SectionStyled>
 				<Container>
+					<BonoHeader>ProBono</BonoHeader>
 					<BlockWrapper>
 						<LeftSide>
-							<BonoHeader>ProBono</BonoHeader>
 							<LeftTextWrapper>
 								<BonoText>
 									Адвокатська компанія СТАТУС із міста Миколаїв з перших місяців

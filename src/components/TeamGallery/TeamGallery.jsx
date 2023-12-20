@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SliderItems } from "./SliderItems/SliderItems";
 import {
 	Container,
@@ -9,9 +9,18 @@ import {
 	TeamSliderContainer,
 } from "./TeamGallery.styled";
 import { Icon } from "../Icon";
+import { getContent } from "../../api/fetchContent";
 
 export const TeamGallery = () => {
 	const arrowRef = useRef();
+	const [data,setData] =useState();
+	useEffect(()=>{
+		const getData = async()=>{
+			const result = await getContent("https://advocato-backend.vercel.app/api/v1/our-team")
+			setData(result.team)
+		}
+		getData()
+	},[])
 	return (
 		<SectionStyled>
 			<Container>
@@ -21,6 +30,7 @@ export const TeamGallery = () => {
 					висококваліфікована команда юристів.
 				</TeamBlockSubTitle>
 			</Container>
+			{data?.length>0&&
 			<TeamSliderContainer>
 			<SliderArrow>
 			<button
@@ -35,7 +45,7 @@ export const TeamGallery = () => {
 				/>
 			</button>
 			</SliderArrow>
-			<SliderItems ref={arrowRef} />
+			<SliderItems ref={arrowRef} data={data} />
 			<SliderArrow>
 			<button
 				aria-label="Перелистування слайдера вправо"
@@ -50,6 +60,7 @@ export const TeamGallery = () => {
 			</button>
 			</SliderArrow>
 			</TeamSliderContainer>
+			}
 		</SectionStyled>
 	);
 };

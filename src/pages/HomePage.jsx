@@ -9,6 +9,7 @@ import { ClientsBlock } from "../components/ClientsBlock";
 import { ClientReviews } from "../components/ClientReviews";
 import { TeamGallery } from "../components/TeamGallery";
 
+
 export const HomePage = () => {
 	return (
 		<>

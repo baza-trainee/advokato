@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import {
   flexBox,
   container,
-  secondaryButton,
   device,
   fontMobile,
   fontTablet,
@@ -97,27 +96,4 @@ export const ImageStyled = styled.img`
   max-width: 100%;
   height: auto;
   object-fit: cover;
-`;
-
-export const ButtonStyled = styled.button`
-  ${secondaryButton};
-  ${flexBox};
-  padding: 20px 32px;
-  width: 364px;
-  height: 64px;
-
-  font-family: var(--Raleway);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: calc(27 / 18);
-  letter-spacing: 0px;
-  text-align: left;
-
-  background: var(--darkBackground);
-  border: 1px solid var(--greyText);
-
-  svg {
-    margin-left: 10px;
-    fill: inherit;
-  }
 `;

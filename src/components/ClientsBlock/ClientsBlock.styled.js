@@ -18,10 +18,10 @@ export const SliderArrow = styled.div`
 	button{
 		top:50%;
 	}
-	left: 7%;
+	left: 5%;
 	z-index: 10;
 	&:last-of-type {
-		left: 90%;
+		left: 92%;
 	}
 `;
 
