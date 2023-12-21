@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	ClientsBlockHeader,
 	ClientsSliderContainer,
@@ -6,14 +6,23 @@ import {
 	SliderArrow,
 } from "./ClientsBlock.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
+import { getContent } from "../../api";
 import { Icon } from "../Icon";
 
 export const ClientsBlock = () => {
 	const arrowRef = useRef();
+	const [data, setData] = useState();
+
+	useEffect(() => {
+		getContent("https://advocato-backend.vercel.app/api/v1/clients").then(res =>
+			setData(res),
+		);
+	}, []);
 
 	return (
 		<SectionStyled>
-				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			{data?.length > 0 && (
 				<ClientsSliderContainer>
 					<SliderArrow>
 						<button
@@ -28,7 +37,10 @@ export const ClientsBlock = () => {
 							/>
 						</button>
 					</SliderArrow>
-					<SliderItems ref={arrowRef} />
+					<SliderItems
+						ref={arrowRef}
+						data={data}
+					/>
 					<SliderArrow>
 						<button
 							aria-label="Перелистування слайдера вправо"
@@ -43,6 +55,7 @@ export const ClientsBlock = () => {
 						</button>
 					</SliderArrow>
 				</ClientsSliderContainer>
+			)}
 		</SectionStyled>
 	);
 };

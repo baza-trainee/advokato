@@ -91,9 +91,9 @@ export const SliderArrow = styled.div`
 	${sliderArrow};
 	position: absolute;
 	top: calc(50%-40px);
-	left: 7%;
+	left: 5%;
 	z-index: 10;
 	&:last-of-type {
-		left: 90%;
+		left: 92%;
 	}
 `;

@@ -1,4 +1,3 @@
-// import topManagerPhoto from "../../../assets/images/teamSlider-section/topManager.png";
 import topManagerPhoto from "../../../assets/images/teamSlider-section/top_manager.jpg";
 
 

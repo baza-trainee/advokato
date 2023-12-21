@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import {
 	container,
 	flexBox,
-	flexColumn,
 	fontSectionText,
 	fontSectionTitle,
 } from "../../styles/mixins";
@@ -10,62 +9,57 @@ import {
 export const SectionStyled = styled.section`
 	${flexBox};
 	width: 100%;
-	height: 1796px;
+	height: fit-content;
 	background: var(--darkBackground);
 	color: var(--lightText);
 	position: relative;
-	top: -0.2vh;
+	top: -0.4vh;
 `;
 
 export const Container = styled.div`
 	${container};
-	height: 1532px;
+	max-width: 1440px;
+	padding: 132px 160px;
 `;
 
 export const BlockWrapper = styled.div`
 	${flexBox};
-	gap: 116px;
-	:last-of-type {
-		margin-top: 132px;
+	justify-content: space-between;
+	width: 1120px;
+	height: 572px;
+	margin: 40px auto;
+	img {
+		border-radius: 24px;
 	}
 `;
 
 export const LeftSide = styled.div`
-	${flexBox};
-	flex-direction: column;
-	align-items: start;
-	gap: 40px;
-	width: 548px;
-	height: 700px;
-	img {
-		width: 548px;
-		height: 700px;
-	}
+	position: relative;
+	width: 500px;
+	height: 572px;
 `;
 
 export const RightSide = styled.div`
-	width: 456px;
-	img {
-		width: 456px;
-		height: 700px;
-	}
+	position: relative;
+	width: 500px;
+	height: 572px;
 `;
 
-export const LeftTextWrapper = styled.div`
-	${flexBox};
-	${flexColumn};
-	height: 549px;
-`;
-export const RightTextWrapper = styled.div`
-	${flexBox};
-	${flexColumn};
-	height: 514px;
+export const TextWrapper = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 `;
 
 export const BonoHeader = styled.h2`
 	${fontSectionTitle};
 `;
 
-export const BonoText = styled.p`
+export const BonoText = styled.div`
 	${fontSectionText};
+	p {
+		margin-top: 10px;
+	}
 `;
