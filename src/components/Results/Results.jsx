@@ -12,14 +12,14 @@ import {
 } from './Results.styled';
 
 export const Results = () => {
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
   const ref = useRef();
 
   useEffect(() => {
     if (hash === '') {
       return window.scrollTo(0, 0);
     }
-    console.log(hash);
+
     if (hash === '#news') {
       setTimeout(() => {
         ref.current.scrollIntoView({
@@ -29,7 +29,7 @@ export const Results = () => {
         });
       }, 0);
     }
-  }, [hash]);
+  }, [pathname, hash]);
 
   return (
     <SectionStyled ref={ref}>
