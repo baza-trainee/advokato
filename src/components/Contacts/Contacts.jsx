@@ -42,7 +42,7 @@ export const Contacts = () => {
         <CenterWrp>
           {isLoading && <LoadingAnimated />}
 
-          {contacts.length > 0 && !isLoading && (
+          {contacts?.length > 0 && !isLoading && (
             <>
               <LeftSide>
                 <AddressList cities={cities} />
