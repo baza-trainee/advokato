@@ -44,7 +44,7 @@ export const App = () => {
   };
 
   return (
-    <Suspense fallback={<p>{t('loading')}</p>}>
+    <Suspense>
       <Routes>
         <Route
           path="/"
