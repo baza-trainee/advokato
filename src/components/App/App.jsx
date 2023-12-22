@@ -16,7 +16,7 @@ export const App = () => {
 
   useEffect(() => {
     NotiflixLoading.init({
-      backgroundColor: '#98a5b1',
+      backgroundColor: '#98a5b173',
       svgSize: '110px',
       svgColor: '#0b0c0c',
       clickToClose: false,
@@ -44,7 +44,7 @@ export const App = () => {
   };
 
   return (
-    <Suspense fallback={<p>{t('loading')}</p>}>
+    <Suspense>
       <Routes>
         <Route
           path="/"
