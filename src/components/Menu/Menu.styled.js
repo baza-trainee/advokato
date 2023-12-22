@@ -14,7 +14,7 @@ export const UlStyled = styled.ul`
     ${flexBox};
     gap: 44px;
     width: 600px;
-    height: 28px;
+    height: 24px;
   }
 `;
 

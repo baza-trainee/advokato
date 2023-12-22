@@ -8,30 +8,30 @@ import {
 } from '../../styles/mixins';
 
 export const HeaderStyled = styled.header`
-  ${flexBox};
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 120px;
-  ${fontLayoutMenu}
-  color: var(--lightText);
-  background-color: var(--headerBackground);
-  backdrop-filter: ${props => (props.top ? 0 : 'blur(20px)')};
-  z-index: 20;
-  img {
-    margin: 0 334px;
-    width: 180px;
-    height: 80px;
-  }
-  @media screen and (${device.burger}) {
-    height: 140px;
-    justify-content: space-around;
-    img {
-      margin: 0;
-      width: 152px;
-      height: 60px;
-    }
-  }
+	${flexBox};
+	position: sticky;
+	top: 0;
+	left: 0;
+	height: 120px;
+	${fontLayoutMenu}
+	color: var(--lightText);
+	background-color: var(--headerBackground);
+	backdrop-filter: ${props => (props.top ? 0 : "blur(20px)")};
+	z-index: 20;
+	img {
+		margin: 0 334px;
+		width: 180px;
+		height: 80px;
+	}
+	@media screen and (${device.burger}) {
+		height: 88px;
+		justify-content: space-around;
+		img {
+			margin: 0;
+			width: 152px;
+			height: 56px;
+		}
+	}
 `;
 
 export const HamburgerMenu = styled.div`
@@ -104,41 +104,44 @@ export const HamburgerMenu = styled.div`
 `;
 
 export const LangButton = styled.button`
-  display: ${props => (props.desktop === 'desktop' ? 'none;' : 'block')};
-  ${fontReview};
-  width: 52px;
-  height: 48px;
-  margin: ${props => (props.burger ? '136px 0 0 40px' : '0')};
-  color: var(--lightText);
-  background-color: inherit;
-  border: 1px solid var(--lightText);
-  border-radius: 8px;
-  cursor: pointer;
-  @media screen and (${device.burger}) {
-    display: block;
-  }
+	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
+	${fontReview};
+	width: 48px;
+	height: 48px;
+	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
+	color: var(--lightText);
+	background-color: inherit;
+	border: 1px solid var(--lightText);
+	border-radius: 8px;
+	cursor: pointer;
+	@media screen and (${device.burger}) {
+		display: block;
+	}
 `;
 
 export const ConsultElement = styled.div`
-  display: none;
-  @media screen and (${device.burger}) {
-    display: block;
-    width: 288px;
+	display: none;
+	@media screen and (${device.burger}) {
+		${flexBox};
+		flex-direction:column;
+		width: 260px;
+		margin-top: 12px;
+		text-align: center;
 
-    button,
-    a {
-      ${fontLayoutCall}
-      color: var(--lightText);
-      cursor: pointer;
-    }
-  }
+		button,
+		a {
+			${fontLayoutCall}
+			width:260px;
+			height:36px;
+			padding:8px 12px;
+			color: var(--lightText);
+			cursor: pointer;
+		}
+	}
 `;
 
 export const PhonesDiv = styled.div`
-  ${flexBox};
-  justify-content: space-evenly;
-  margin: 1vh auto 0;
-  max-width: 100%;
+	max-width: 100%;
 `;
 
 export const PhoneBurger = styled.div`
