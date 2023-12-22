@@ -4,36 +4,31 @@ import PropTypes from 'prop-types';
 
 import { Modal } from '../Modal';
 import { Icon } from '../Icon';
+import { Calendar } from './Calendar';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
 export const ButtonConsultation = ({ className, customStyles }) => {
   const [t, i18n] = useTranslation('global');
-  // const [modalActive, setModalActive] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
 
-  // useEffect(() => {
-  //   if (!modalActive) {
-  //     document.body.style.overflowY = 'auto';
-  //   }
-  // }, [modalActive]);
+  useEffect(() => {
+    if (!modalActive) {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [modalActive]);
 
   return (
     <>
-      {/* {modalActive && (
-          <Modal active={modalActive} setActive={setModalActive}>
-            {currentPractice.extraInfo !== '' ? (
-              <ExtraInfoWrpStyled>
-                {parseToParagraphs(currentPractice.extraInfo)}
-              </ExtraInfoWrpStyled>
-            ) : (
-              <p>no text</p>
-            )}
-          </Modal>
-        )} */}
+      {modalActive && (
+        <Modal active={modalActive} setActive={setModalActive}>
+          <Calendar />
+        </Modal>
+      )}
 
       <ButtonStyled
         aria-label="Записатися на консультацію"
         type="button"
-        onClick={() => alert('HelloWorld')}
+        onClick={() => setModalActive(prev => !prev)}
         className={className}
         style={customStyles}
       >
