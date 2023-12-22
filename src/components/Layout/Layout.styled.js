@@ -124,7 +124,7 @@ export const ConsultElement = styled.div`
 	@media screen and (${device.burger}) {
 		${flexBox};
 		flex-direction:column;
-		/* width: 260px; */
+		width: 260px;
 		margin-top: 12px;
 		text-align: center;
 
