@@ -133,7 +133,7 @@ export const ConsultElement = styled.div`
 			${fontLayoutCall}
 			width:260px;
 			height:36px;
-			padding:8px 12px;
+			padding:8px 10px;
 			color: var(--lightText);
 			cursor: pointer;
 		}
