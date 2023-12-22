@@ -7,7 +7,13 @@ import 'animate.css';
 import logoImg from '../../assets/images/layout-section/Logo.png';
 import { ButtonConsultation } from '../ButtonConsultation';
 import { Icon } from '../Icon';
+import { Footer } from '../Footer/Footer';
+import { CookiesPanel } from '../CookiesPanel';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
+import { Menu } from '../Menu';
+import { LoadingAnimated } from '../LoadingAnimated';
 import {
+  MainStyled,
   HeaderStyled,
   LangButton,
   ConsultElement,
@@ -15,10 +21,6 @@ import {
   HamburgerMenu,
   PhoneBurger,
 } from './Layout.styled';
-import { Footer } from '../Footer/Footer';
-import { CookiesPanel } from '../CookiesPanel';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { Menu } from '../Menu';
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
   const [t, i18n] = useTranslation('global');
@@ -116,11 +118,11 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
         </ConsultElement>
       </HeaderStyled>
 
-      <main>
-        <Suspense fallback={<p>{t('loading')}</p>}>
+      <MainStyled>
+        <Suspense fallback={<LoadingAnimated />}>
           <Outlet />
         </Suspense>
-      </main>
+      </MainStyled>
 
       <Footer />
 
