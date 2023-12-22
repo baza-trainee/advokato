@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { getContent } from '../../api';
-import { Modal } from '../Modal';
+import { ModalFromRoot } from '../ModalFromRoot';
 import { Icon } from '../Icon';
 import { Calendar } from './Calendar';
 import { ButtonStyled } from './ButtonConsultation.styled';
@@ -30,7 +30,7 @@ export const ButtonConsultation = ({ className, customStyles }) => {
       // setIsLoading(prev => false);
     };
 
-    getData();
+    // getData();
   }, []);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export const ButtonConsultation = ({ className, customStyles }) => {
       // setIsLoading(prev => false);
     };
 
-    getData();
+    // getData();
   }, []);
 
   useEffect(() => {
@@ -54,18 +54,23 @@ export const ButtonConsultation = ({ className, customStyles }) => {
       // setIsLoading(prev => false);
     };
 
-    getData();
+    // getData();
   }, []);
 
   console.log(specialization);
   console.log(lawyers);
   console.log(schedule);
+
+  const toggleModal = () => {
+    document.body.style.overflowY = 'hidden';
+    setModalActive(prev => !prev);
+  };
   return (
     <>
       {modalActive && (
-        <Modal active={modalActive} setActive={setModalActive}>
-          <Calendar />
-        </Modal>
+        <ModalFromRoot toggleModal={toggleModal}>
+          <Calendar setModalActive={setModalActive} />
+        </ModalFromRoot>
       )}
 
       <ButtonStyled
