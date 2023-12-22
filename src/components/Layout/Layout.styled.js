@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
-	flexBox,
-	device,
-	fontLayoutMenu,
-	fontReview,
-	fontLayoutCall,
-} from "../../styles/mixins";
+  flexBox,
+  device,
+  fontLayoutMenu,
+  fontReview,
+  fontLayoutCall,
+} from '../../styles/mixins';
 
 export const HeaderStyled = styled.header`
 	${flexBox};
@@ -35,72 +35,72 @@ export const HeaderStyled = styled.header`
 `;
 
 export const HamburgerMenu = styled.div`
-	display: block;
-	position: relative;
-	top: 5vh;
-	width: 42px;
-	height: 10vh;
-	transition-duration: 1s;
-	cursor: pointer;
+  display: block;
+  position: relative;
+  top: 5vh;
+  width: 42px;
+  height: 10vh;
+  transition-duration: 1s;
+  cursor: pointer;
 
-	@media screen and (${device.burger}) {
-		display: none;
-	}
+  @media screen and (${device.burger}) {
+    display: none;
+  }
 
-	span {
-		position: absolute;
-		width: 42px;
-		height: 3px;
-		background-color: var(--lightText);
-		border-radius: 20px;
-		transition-duration: 0.25s;
-		transition-delay: 0.25s;
-		z-index: 50;
-	}
+  span {
+    position: absolute;
+    width: 42px;
+    height: 3px;
+    background-color: var(--lightText);
+    border-radius: 20px;
+    transition-duration: 0.25s;
+    transition-delay: 0.25s;
+    z-index: 50;
+  }
 
-	span:before {
-		content: "";
-		position: absolute;
-		top: -10px;
-		left: 0;
-		width: 42px;
-		height: 3px;
-		background-color: var(--lightText);
-		border-radius: 20px;
-		transition-duration: 0.25s;
-		transition: transform 0.25s, top 0.25s 0.25s;
-	}
+  span:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    background-color: var(--lightText);
+    border-radius: 20px;
+    transition-duration: 0.25s;
+    transition: transform 0.25s, top 0.25s 0.25s;
+  }
 
-	span:after {
-		content: "";
-		position: absolute;
-		top: 10px;
-		left: 0;
-		width: 42px;
-		height: 3px;
-		background-color: var(--lightText);
-		border-radius: 20px;
-		transition-duration: 0.25s;
-		transition: transform 0.25s, top 0.25s 0.25s;
-	}
+  span:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    background-color: var(--lightText);
+    border-radius: 20px;
+    transition-duration: 0.25s;
+    transition: transform 0.25s, top 0.25s 0.25s;
+  }
 
-	span.open {
-		transition-duration: 0.1s;
-		transition-delay: 0.3s;
-		background: transparent;
-	}
+  span.open {
+    transition-duration: 0.1s;
+    transition-delay: 0.3s;
+    background: transparent;
+  }
 
-	span.open:before {
-		top: 0;
-		transform: rotateZ(-45deg);
-		transition: top 0.25s, transform 0.25s 0.25s;
-	}
+  span.open:before {
+    top: 0;
+    transform: rotateZ(-45deg);
+    transition: top 0.25s, transform 0.25s 0.25s;
+  }
 
-	span.open:after {
-		top: 0;
-		transform: rotateZ(45deg);
-		transition: top 0.4s, transform 0.25s 0.25s;
-	}
+  span.open:after {
+    top: 0;
+    transform: rotateZ(45deg);
+    transition: top 0.4s, transform 0.25s 0.25s;
+  }
 `;
 
 export const LangButton = styled.button`
@@ -145,13 +145,17 @@ export const PhonesDiv = styled.div`
 `;
 
 export const PhoneBurger = styled.div`
-	display: block;
-	svg {
-		fill: none;
-		stroke: var(--reviewText);
-		stroke-width: 2px;
-	}
-	@media screen and (${device.burger}) {
-		display: none;
-	}
+  display: block;
+  svg {
+    fill: none;
+    stroke: var(--reviewText);
+    stroke-width: 2px;
+  }
+  @media screen and (${device.burger}) {
+    display: none;
+  }
+`;
+
+export const MainStyled = styled.main`
+  min-height: calc(100dvh - 508px);
 `;
