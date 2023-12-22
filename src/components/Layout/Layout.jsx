@@ -109,7 +109,6 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
               'animate__animated animate__pulse animate__infinite infinite animate__slower	3s'
             }
           />
-
           <PhonesDiv>
             <a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
           </PhonesDiv>

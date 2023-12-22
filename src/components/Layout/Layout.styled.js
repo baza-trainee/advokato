@@ -24,12 +24,12 @@ export const HeaderStyled = styled.header`
 		height: 80px;
 	}
 	@media screen and (${device.burger}) {
-		height: 140px;
+		height: 88px;
 		justify-content: space-around;
 		img {
 			margin: 0;
 			width: 152px;
-			height: 60px;
+			height: 56px;
 		}
 	}
 `;
@@ -106,7 +106,7 @@ export const HamburgerMenu = styled.div`
 export const LangButton = styled.button`
 	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
 	${fontReview};
-	width: 52px;
+	width: 48px;
 	height: 48px;
 	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
@@ -122,12 +122,18 @@ export const LangButton = styled.button`
 export const ConsultElement = styled.div`
 	display: none;
 	@media screen and (${device.burger}) {
-		display: block;
-		width: 288px;
+		${flexBox};
+		flex-direction:column;
+		width: 260px;
+		margin-top: 12px;
+		text-align: center;
 
 		button,
 		a {
 			${fontLayoutCall}
+			width:260px;
+			height:36px;
+			padding:8px 10px;
 			color: var(--lightText);
 			cursor: pointer;
 		}
@@ -135,9 +141,6 @@ export const ConsultElement = styled.div`
 `;
 
 export const PhonesDiv = styled.div`
-	${flexBox};
-	justify-content: space-evenly;
-	margin: 1vh auto 0;
 	max-width: 100%;
 `;
 
