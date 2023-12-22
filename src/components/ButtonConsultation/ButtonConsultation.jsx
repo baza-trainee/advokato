@@ -6,6 +6,7 @@ import { getContent } from '../../api';
 import { ModalFromRoot } from '../ModalFromRoot';
 import { Icon } from '../Icon';
 import { Calendar } from './Calendar';
+import { AppointmentForm } from './AppointmentForm';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
 export const ButtonConsultation = ({ className, customStyles }) => {
@@ -57,9 +58,9 @@ export const ButtonConsultation = ({ className, customStyles }) => {
     // getData();
   }, []);
 
-  console.log(specialization);
-  console.log(lawyers);
-  console.log(schedule);
+  // console.log(specialization);
+  // console.log(lawyers);
+  // console.log(schedule);
 
   const toggleModal = () => {
     document.body.style.overflowY = 'hidden';
@@ -68,8 +69,9 @@ export const ButtonConsultation = ({ className, customStyles }) => {
   return (
     <>
       {modalActive && (
-        <ModalFromRoot toggleModal={toggleModal}>
-          <Calendar setModalActive={setModalActive} />
+        <ModalFromRoot toggleModal={toggleModal} align={'flex-start'}>
+          {/* <Calendar setModalActive={setModalActive} /> */}
+          <AppointmentForm />
         </ModalFromRoot>
       )}
 

@@ -21,8 +21,8 @@ export const Input = ({
         {...register(name, options)}
         type={type}
         placeholder={placeholder}
-        // role="presentation"
-        // autocomplete="off"
+        role="presentation"
+        autocomplete="off"
       />
 
       {!isObjectEmpty(errors) && <ErrorText>{errors[name]?.message}</ErrorText>}

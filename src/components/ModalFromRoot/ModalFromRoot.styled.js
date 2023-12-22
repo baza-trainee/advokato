@@ -22,6 +22,14 @@ export const ModalDiv = styled.div`
   div {
     position: relative;
   }
+
+  align-items: ${({ align }) => {
+    if (align === 'center') {
+      return 'center';
+    } else {
+      return align;
+    }
+  }};
 `;
 
 export const CloseBtn = styled.button`

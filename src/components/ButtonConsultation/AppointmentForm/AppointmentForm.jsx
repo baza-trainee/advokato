@@ -6,7 +6,12 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 import { SchemaEn, SchemaUa } from './validationSchema';
 import { Input } from './Input';
-import { FormStyled, ButtonSubmit } from './AppointmentForm.styled';
+import {
+  FormWrp,
+  FormStyled,
+  ButtonWrp,
+  ButtonSubmit,
+} from './AppointmentForm.styled';
 
 const DEFAULT_VALUES = {
   firstName: '',
@@ -34,11 +39,12 @@ export const AppointmentForm = () => {
 
   const onErrors = data => {
     console.log('form onErrors', data);
-    Notify.failure(t('orderPayment.form.requiredError'));
+    // Notify.failure(t('orderPayment.form.requiredError'));
   };
 
   return (
-    <>
+    <FormWrp>
+      <h2>{t('appointmentForm.firstTitle')}</h2>
       <FormStyled
         onSubmit={handleSubmit(onSubmit, onErrors)}
         autoComplete="off"
@@ -47,7 +53,8 @@ export const AppointmentForm = () => {
           register={register}
           name="firstName"
           type="text"
-          placeholder={t('authForm.firstName')}
+          label={t('appointmentForm.inputFirstName')}
+          placeholder={t('appointmentForm.inputFirstName')}
           errors={errors}
         />
 
@@ -55,7 +62,8 @@ export const AppointmentForm = () => {
           register={register}
           name="lastName"
           type="text"
-          placeholder={t('authForm.firstName')}
+          label={t('appointmentForm.inputLastName')}
+          placeholder={t('appointmentForm.inputLastName')}
           errors={errors}
         />
 
@@ -63,7 +71,8 @@ export const AppointmentForm = () => {
           register={register}
           name="phone"
           type="text"
-          placeholder={t('authForm.firstName')}
+          label={t('appointmentForm.inputPhone')}
+          placeholder={t('appointmentForm.inputPhone')}
           errors={errors}
         />
 
@@ -71,14 +80,21 @@ export const AppointmentForm = () => {
           register={register}
           name="email"
           type="text"
-          placeholder={t('authForm.firstName')}
+          label={t('appointmentForm.inputEmail')}
+          placeholder={t('appointmentForm.inputEmail')}
           errors={errors}
         />
 
-        <ButtonSubmit type="submit" aria-label="submit button">
-          {t('authForm.signUpButton')}
-        </ButtonSubmit>
+        <ButtonWrp>
+          <ButtonSubmit type="submit" aria-label="submit button">
+            {t('appointmentForm.submitButton')}
+          </ButtonSubmit>
+
+          <ButtonSubmit type="button" aria-label="cancel button">
+            {t('appointmentForm.cancelButton')}
+          </ButtonSubmit>
+        </ButtonWrp>
       </FormStyled>
-    </>
+    </FormWrp>
   );
 };

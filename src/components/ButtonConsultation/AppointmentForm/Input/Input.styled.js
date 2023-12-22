@@ -1,22 +1,28 @@
 import styled from '@emotion/styled';
-// import { fontDesktopMaxM, fontDesktopS } from '../../styles/mixins';
+import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
   width: 100%;
+
+  p {
+    margin-bottom: 8px;
+    height: 36px;
+
+    ${fontDesktop};
+    color: var(--mainText);
+  }
 `;
 
 export const InputStyled = styled.input`
   position: relative;
-  padding: 5px 6px;
+  padding: 15px 16px;
   width: 100%;
   height: 40px;
 
-  /* ${fontDesktopMaxM}; */
-  font-weight: 500;
   color: black;
   background-color: pink;
-  border: none;
+  border: 1px solid var(--greyText);
 
   border-radius: 0;
   &[type='search'] {
@@ -28,8 +34,7 @@ export const InputStyled = styled.input`
     top: 0;
     left: 0;
     transform: translate(5px, 6px);
-    /* ${fontDesktopS}; */
-    color: green;
+    color: var(--greyText);
   }
 
   &:focus {

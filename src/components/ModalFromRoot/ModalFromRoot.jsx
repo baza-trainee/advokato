@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
 import { ModalDiv, CloseBtn } from './ModalFromRoot.styled';
 
-export const ModalFromRoot = ({ toggleModal, children }) => {
+export const ModalFromRoot = ({ toggleModal, align = 'center', children }) => {
   const modalRoot = document.getElementById('root-modal');
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const ModalFromRoot = ({ toggleModal, children }) => {
   };
 
   return createPortal(
-    <ModalDiv id={'modalClose'} onClick={closeModal}>
+    <ModalDiv id={'modalClose'} align={align} onClick={closeModal}>
       <div>
         <CloseBtn onClick={toggleModal} type="button" aria-label="Close">
           <Icon id="close" width={24} height={24} />
@@ -38,4 +38,5 @@ export const ModalFromRoot = ({ toggleModal, children }) => {
 ModalFromRoot.propTypes = {
   toggleModal: PropTypes.func,
   children: PropTypes.element.isRequired,
+  align: PropTypes.string,
 };

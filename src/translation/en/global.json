@@ -16,5 +16,27 @@
   "practiceSection": {
     "moreButton": "More",
     "hideButton": "Collapse"
+  },
+  "appointmentForm": {
+    "firstTitle": "Contact Information",
+    "inputFirstName": "First Name",
+    "inputLastName": "Last Name",
+    "inputPhone": "Phone",
+    "inputEmail": "E-mail",
+    "privacyTitle": "I grant permission for the processing of personal data.",
+    "privacyButton": "Privacy Policy.",
+    "nextButton": "Continue",
+    "cancelButton": "Cancel",
+    "skipButton": "Skip",
+    "submitButton": "Send",
+    "secondTitle": "Make an appointment for a consultation",
+    "specializationSelectTitle": "Select specialization",
+    "specializationSelectDefault": "Specialization",
+    "lawyerSelectTitle": "Select a lawyer",
+    "lawyerSelectDefault": "Lawyer",
+    "thirdTitle": "Select Date",
+    "fourthTitle": "Select time",
+    "successTitle": "Congratulations!",
+    "successText": "You have successfully signed up for a consultation. We will contact you shortly."
   }
 }
