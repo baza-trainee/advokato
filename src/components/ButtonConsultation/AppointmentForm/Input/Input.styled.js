@@ -3,7 +3,7 @@ import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
-  width: 100%;
+  width: 480px;
 
   p {
     height: 36px;

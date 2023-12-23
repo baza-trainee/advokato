@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { getContent } from '../../api';
 import { ModalFromRoot } from '../ModalFromRoot';
 import { Icon } from '../Icon';
-import { Calendar } from './Calendar';
 import { AppointmentForm } from './AppointmentForm';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
@@ -58,7 +57,6 @@ export const ButtonConsultation = ({ className, customStyles }) => {
     <>
       {modalActive && (
         <ModalFromRoot toggleModal={toggleModal} align={'flex-start'}>
-          {/* <Calendar setModalActive={setModalActive} /> */}
           <AppointmentForm setModalActive={setModalActive} />
         </ModalFromRoot>
       )}

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import PropTypes from 'prop-types';
 
@@ -11,6 +10,7 @@ import { SchemaEn, SchemaUa } from './validationSchema';
 import { Input } from './Input';
 import { Checkbox } from './Checkbox';
 import { Select } from './Select';
+import { Calendar } from '../Calendar';
 import { ModalFromRoot } from '../../ModalFromRoot';
 import { PdfViewer } from '../../PdfViewer';
 import {
@@ -40,6 +40,7 @@ export const AppointmentForm = ({ setModalActive }) => {
     handleSubmit,
     getValues,
     setValue,
+    trigger,
     formState: { errors, isValid, touchedFields },
   } = useForm({
     mode: 'onChange',
@@ -49,9 +50,11 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
+  const [currentPartForm, setCurrentPartForm] = useState(1);
   const [specialization, setSpecialization] = useState([]);
   const [currentSpec, setCurrentSpec] = useState('');
   const [lawyers, setLawyers] = useState([]);
+  const [schedule, setSchedule] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -89,12 +92,28 @@ export const AppointmentForm = ({ setModalActive }) => {
     getData();
   }, [currentSpec]);
 
+  useEffect(() => {
+    const getData = async () => {
+      if (currentPartForm != 3) {
+        return;
+      }
+
+      const lawyerId = getValues('lawyer_id');
+      const data = await getContent(`schedule?lawyer_id=${lawyerId}`);
+
+      if (data) {
+        setSchedule(prev => data);
+      }
+    };
+
+    getData();
+  }, [currentPartForm, getValues]);
+
   const toggleModal = () => {
     setIsOpenDoc(prev => !prev);
   };
 
   const onChangeSelectSpec = id => {
-    console.log('id = ', id);
     setCurrentSpec(prev => id);
 
     setValue('specialization_id', id, {
@@ -103,11 +122,17 @@ export const AppointmentForm = ({ setModalActive }) => {
   };
 
   const onChangeSelectLaw = id => {
-    console.log('id = ', id);
-
     setValue('lawyer_id', id, {
       shouldValidate: true,
     });
+  };
+
+  const onNextButton = () => {
+    trigger();
+
+    if (isValid) {
+      setCurrentPartForm(prev => prev + 1);
+    }
   };
 
   const onSubmit = async formData => {
@@ -117,7 +142,6 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const onErrors = data => {
     console.log('form onErrors', data);
-    // Notify.failure(t('orderPayment.form.requiredError'));
   };
 
   return (
@@ -135,85 +159,110 @@ export const AppointmentForm = ({ setModalActive }) => {
       )}
 
       <FormWrp>
-        <h2>{t('appointmentForm.firstTitle')}</h2>
-
         <FormStyled
           onSubmit={handleSubmit(onSubmit, onErrors)}
           autoComplete="off"
         >
-          <Input
-            register={register}
-            name="firstName"
-            type="text"
-            label={t('appointmentForm.inputFirstName')}
-            placeholder={t('appointmentForm.inputFirstName')}
-            errors={errors}
-            isValid={isValid}
-            touchedFields={touchedFields}
-          />
+          {currentPartForm === 1 && (
+            <>
+              <h2>{t('appointmentForm.firstTitle')}</h2>
 
-          <Input
-            register={register}
-            name="lastName"
-            type="text"
-            label={t('appointmentForm.inputLastName')}
-            placeholder={t('appointmentForm.inputLastName')}
-            errors={errors}
-            isValid={isValid}
-            touchedFields={touchedFields}
-          />
+              <Input
+                register={register}
+                name="firstName"
+                type="text"
+                label={t('appointmentForm.inputFirstName')}
+                placeholder={t('appointmentForm.inputFirstName')}
+                errors={errors}
+                isValid={isValid}
+                touchedFields={touchedFields}
+              />
 
-          <Input
-            register={register}
-            name="phone"
-            type="text"
-            label={t('appointmentForm.inputPhone')}
-            placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
-            errors={errors}
-            isValid={isValid}
-            touchedFields={touchedFields}
-          />
+              <Input
+                register={register}
+                name="lastName"
+                type="text"
+                label={t('appointmentForm.inputLastName')}
+                placeholder={t('appointmentForm.inputLastName')}
+                errors={errors}
+                isValid={isValid}
+                touchedFields={touchedFields}
+              />
 
-          <Input
-            register={register}
-            name="email"
-            type="text"
-            label={t('appointmentForm.inputEmail')}
-            placeholder={'xxx@xxx'}
-            errors={errors}
-            isValid={isValid}
-            touchedFields={touchedFields}
-          />
+              <Input
+                register={register}
+                name="phone"
+                type="text"
+                label={t('appointmentForm.inputPhone')}
+                placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
+                errors={errors}
+                isValid={isValid}
+                touchedFields={touchedFields}
+              />
 
-          <Checkbox
-            register={register}
-            setIsChecked={setIsChecked}
-            isChecked={isChecked}
-            toggleModal={toggleModal}
-            errors={errors}
-          />
+              <Input
+                register={register}
+                name="email"
+                type="text"
+                label={t('appointmentForm.inputEmail')}
+                placeholder={'xxx@xxx'}
+                errors={errors}
+                isValid={isValid}
+                touchedFields={touchedFields}
+              />
 
-          <Select
-            onChangeSelect={onChangeSelectSpec}
-            label={t('appointmentForm.specializationSelectTitle')}
-            defaultValue={t('appointmentForm.specializationSelectDefault')}
-            options={specialization}
-          />
+              <Checkbox
+                register={register}
+                setIsChecked={setIsChecked}
+                isChecked={isChecked}
+                toggleModal={toggleModal}
+                errors={errors}
+              />
+            </>
+          )}
 
-          <Select
-            onChangeSelect={onChangeSelectLaw}
-            label={t('appointmentForm.lawyerSelectTitle')}
-            defaultValue={t('appointmentForm.lawyerSelectDefault')}
-            options={lawyers}
-          />
+          {currentPartForm === 2 && (
+            <>
+              <h2>{t('appointmentForm.secondTitle')}</h2>
+
+              <Select
+                onChangeSelect={onChangeSelectSpec}
+                label={t('appointmentForm.specializationSelectTitle')}
+                defaultValue={t('appointmentForm.specializationSelectDefault')}
+                options={specialization}
+              />
+
+              <Select
+                onChangeSelect={onChangeSelectLaw}
+                label={t('appointmentForm.lawyerSelectTitle')}
+                defaultValue={t('appointmentForm.lawyerSelectDefault')}
+                options={lawyers}
+              />
+            </>
+          )}
+
+          {currentPartForm === 3 && (
+            <>
+              <Calendar schedule={schedule} setValue={setValue} />
+            </>
+          )}
 
           <ButtonWrp>
-            {/* <ButtonSubmit type="submit" aria-label="submit button">
-              {t('appointmentForm.submitButton')}
-            </ButtonSubmit> */}
-            <ButtonSubmit type="submit" aria-label="next step button">
-              {t('appointmentForm.nextButton')}
-            </ButtonSubmit>
+            {(currentPartForm === 1 || currentPartForm === 2) && (
+              <ButtonSubmit
+                onClick={onNextButton}
+                type="button"
+                aria-label="next step button"
+              >
+                {t('appointmentForm.nextButton')}
+              </ButtonSubmit>
+            )}
+
+            {currentPartForm === 3 && (
+              <ButtonSubmit type="submit" aria-label="submit button">
+                {t('appointmentForm.submitButton')}
+              </ButtonSubmit>
+            )}
 
             <ButtonCancel
               onClick={() => setModalActive(false)}

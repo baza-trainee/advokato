@@ -7,18 +7,17 @@ import {
 
 export const FormWrp = styled.div`
   padding-top: 124px;
-  padding-right: 164px;
+  padding-right: 95px;
   padding-bottom: 60px;
-  padding-left: 164px;
+  padding-left: 95px;
   width: 800px;
   min-height: 1076px;
 
   background-color: white;
 
   h2 {
-    margin-bottom: 40px;
     height: 48px;
-    width: 471px;
+    min-width: 471px;
 
     ${fontSectionTitle};
     text-align: center;
