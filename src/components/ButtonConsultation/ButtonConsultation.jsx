@@ -71,7 +71,7 @@ export const ButtonConsultation = ({ className, customStyles }) => {
       {modalActive && (
         <ModalFromRoot toggleModal={toggleModal} align={'flex-start'}>
           {/* <Calendar setModalActive={setModalActive} /> */}
-          <AppointmentForm />
+          <AppointmentForm setModalActive={setModalActive} />
         </ModalFromRoot>
       )}
 

@@ -32,8 +32,10 @@ export const Practice = () => {
     const getData = async () => {
       const data = await getContent('specializations');
 
-      setPractices(prev => data);
-      setCurrentPractice(prev => data[0]);
+      if (data) {
+        setPractices(prev => data);
+        setCurrentPractice(prev => data[0]);
+      }
     };
 
     getData();

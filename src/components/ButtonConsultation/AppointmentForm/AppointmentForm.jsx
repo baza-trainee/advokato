@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import PropTypes from 'prop-types';
 
 import { SchemaEn, SchemaUa } from './validationSchema';
 import { Input } from './Input';
 import { Checkbox } from './Checkbox';
-import { Modal } from '../../Modal';
+import { Select } from './Select';
 import { ModalFromRoot } from '../../ModalFromRoot';
 import { PdfViewer } from '../../PdfViewer';
 import {
@@ -28,7 +29,7 @@ const DEFAULT_VALUES = {
   isAccept: false,
 };
 
-export const AppointmentForm = () => {
+export const AppointmentForm = ({ setModalActive }) => {
   const [t, i18n] = useTranslation('global');
 
   const {
@@ -43,10 +44,16 @@ export const AppointmentForm = () => {
   });
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
-  const [modalActive, setModalActive] = useState(false);
+  const [isOpenDoc, setIsOpenDoc] = useState(false);
+  const [specialization, setSpecialization] = useState([]);
 
   const toggleModal = () => {
-    setModalActive(prev => !prev);
+    setIsOpenDoc(prev => !prev);
+  };
+
+  const onChangeSelect = e => {
+    console.log('e', e);
+    // setSpecialization(prev => !prev);
   };
 
   const onSubmit = async formData => {
@@ -61,7 +68,7 @@ export const AppointmentForm = () => {
 
   return (
     <>
-      {modalActive && (
+      {isOpenDoc && (
         <ModalFromRoot
           toggleModal={toggleModal}
           root="root-docs"
@@ -75,11 +82,12 @@ export const AppointmentForm = () => {
 
       <FormWrp>
         <h2>{t('appointmentForm.firstTitle')}</h2>
+
         <FormStyled
           onSubmit={handleSubmit(onSubmit, onErrors)}
           autoComplete="off"
         >
-          <Input
+          {/* <Input
             register={register}
             name="firstName"
             type="text"
@@ -129,6 +137,13 @@ export const AppointmentForm = () => {
             isChecked={isChecked}
             toggleModal={toggleModal}
             errors={errors}
+          /> */}
+
+          <Select
+            onChangeSelect={onChangeSelect}
+            label={t('appointmentForm.specializationSelectTitle')}
+            defaultValue={t('appointmentForm.specializationSelectDefault')}
+            options={'sssss'}
           />
 
           <ButtonWrp>
@@ -139,7 +154,11 @@ export const AppointmentForm = () => {
               {t('appointmentForm.nextButton')}
             </ButtonSubmit>
 
-            <ButtonCancel type="button" aria-label="cancel button">
+            <ButtonCancel
+              onClick={() => setModalActive(false)}
+              type="button"
+              aria-label="cancel button"
+            >
               {t('appointmentForm.cancelButton')}
             </ButtonCancel>
           </ButtonWrp>
@@ -147,4 +166,8 @@ export const AppointmentForm = () => {
       </FormWrp>
     </>
   );
+};
+
+AppointmentForm.propTypes = {
+  setModalActive: PropTypes.func.isRequired,
 };
