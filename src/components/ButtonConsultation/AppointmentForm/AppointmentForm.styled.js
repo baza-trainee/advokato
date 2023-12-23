@@ -11,7 +11,7 @@ export const FormWrp = styled.div`
   padding-bottom: 60px;
   padding-left: 164px;
   width: 800px;
-  height: 1076px;
+  min-height: 1076px;
 
   background-color: white;
 

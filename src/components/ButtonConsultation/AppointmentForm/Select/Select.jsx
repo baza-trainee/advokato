@@ -8,6 +8,12 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
   const [isOpenList, setIsOpenList] = useState(false);
   const [value, setValue] = useState('');
 
+  useEffect(() => {
+    setValue(prev => '');
+  }, [options]);
+
+  // console.log(options);
+
   // useEffect(() => {
   //   if (!isOpenList) {
   //     return;
@@ -20,11 +26,15 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
   // }, [isOpenList]);
 
   const handleClickOption = ({ target }) => {
-    const value = target.getAttribute('id');
-
+    const elementId = target.getAttribute('id');
     setIsOpenList(prev => false);
-    onChangeSelect(value);
-    setValue(prev => value);
+
+    const { name, specialization_name } = options.find(
+      item => item.id == elementId
+    );
+
+    setValue(prev => name || specialization_name);
+    onChangeSelect(elementId);
   };
 
   return (
@@ -50,21 +60,21 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
         )}
       </ButtonStyled>
 
-      {isOpenList && (
+      {isOpenList && options?.length > 0 && (
         <ul onClick={handleClickOption}>
-          <OptionsItem
-            id="Sara Jesika"
-            className={value === 'Sara Jesika' ? 'isChecked' : null}
-          >
-            Sara Jesika
-          </OptionsItem>
-
-          <OptionsItem
-            id="Marry Stoliar"
-            className={value === 'Marry Stoliar' ? 'isChecked' : null}
-          >
-            Marry Stoliar
-          </OptionsItem>
+          {options.map(({ id, specialization_name, name }) => (
+            <OptionsItem
+              key={id}
+              id={id}
+              className={
+                value === specialization_name || value === name
+                  ? 'isChecked'
+                  : null
+              }
+            >
+              {specialization_name || name}
+            </OptionsItem>
+          ))}
         </ul>
       )}
     </LabelStyled>
@@ -73,6 +83,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
 
 Select.propTypes = {
   label: PropTypes.string,
+  defaultValue: PropTypes.string,
   onChangeSelect: PropTypes.func.isRequired,
-  options: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
 };

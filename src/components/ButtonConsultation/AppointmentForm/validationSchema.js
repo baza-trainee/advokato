@@ -13,13 +13,11 @@ export const SchemaUa = yup
       .trim()
       .max(15, 'Надто довге прізвищє! Максимум 15 символів'),
 
-    phone: yup
-      .string('Має бути текстовим')
-      .required('Обов`язкове поле'),
-      // .matches(
-      //   REGEX_PHONE,
-      //   'Введіть телефон в наступному форматі (066) 777-30-77'
-      // ),
+    phone: yup.string('Має бути текстовим').required('Обов`язкове поле'),
+    // .matches(
+    //   REGEX_PHONE,
+    //   'Введіть телефон в наступному форматі (066) 777-30-77'
+    // ),
 
     email: yup
       .string('Має бути текстовим')
@@ -31,6 +29,10 @@ export const SchemaUa = yup
       .bool()
       .oneOf([true], 'Має бути погоджено')
       .required('Обов`язкове поле'),
+
+    specialization_id: yup.number(),
+
+    lawyer_id: yup.number(),
   })
   .required();
 
@@ -65,5 +67,9 @@ export const SchemaEn = yup
       .bool()
       .oneOf([true], 'Must be agreed')
       .required('Required field'),
+
+    specialization_id: yup.number(),
+
+    lawyer_id: yup.number(),
   })
   .required();

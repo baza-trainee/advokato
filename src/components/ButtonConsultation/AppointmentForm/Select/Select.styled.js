@@ -5,12 +5,9 @@ export const LabelStyled = styled.label`
   position: relative;
 
   p {
+    margin-bottom: 8px;
     height: 36px;
     ${fontDesktop};
-  }
-
-  p:first-of-type {
-    margin-bottom: 8px;
     color: var(--mainText);
   }
 `;
@@ -46,9 +43,6 @@ export const OptionsItem = styled.li`
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--timing-function);
     background-color: var(--accentLink);
-  }
-
-  &:not(:last-of-type) {
   }
 
   &.isChecked {

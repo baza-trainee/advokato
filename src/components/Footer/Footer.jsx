@@ -38,9 +38,10 @@ export const Footer = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await getContent('contacts');
-
-      // setCities(prev => data.cities);
-      setContacts(prev => data.contacts);
+      if (data) {
+        // setCities(prev => data.cities);
+        setContacts(prev => data.contacts);
+      }
     };
 
     getData();
@@ -156,7 +157,7 @@ export const Footer = () => {
               >
                 acstatus.mk@gmail.com
               </TextLink>
-              
+
               {contacts.length > 0 && (
                 <SocialList media={contacts[0]?.social} />
               )}

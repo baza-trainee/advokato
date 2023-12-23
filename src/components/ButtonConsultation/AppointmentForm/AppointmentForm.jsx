@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,6 +6,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import PropTypes from 'prop-types';
 
+import { getContent } from '../../../api';
 import { SchemaEn, SchemaUa } from './validationSchema';
 import { Input } from './Input';
 import { Checkbox } from './Checkbox';
@@ -27,6 +28,8 @@ const DEFAULT_VALUES = {
   phone: '',
   email: '',
   isAccept: false,
+  specialization_id: 0,
+  lawyer_id: 0,
 };
 
 export const AppointmentForm = ({ setModalActive }) => {
@@ -36,6 +39,7 @@ export const AppointmentForm = ({ setModalActive }) => {
     register,
     handleSubmit,
     getValues,
+    setValue,
     formState: { errors, isValid, touchedFields },
   } = useForm({
     mode: 'onChange',
@@ -46,14 +50,64 @@ export const AppointmentForm = ({ setModalActive }) => {
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
   const [specialization, setSpecialization] = useState([]);
+  const [currentSpec, setCurrentSpec] = useState('');
+  const [lawyers, setLawyers] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const dataSpec = await getContent('lawyer-specs');
+
+      if (dataSpec) {
+        setSpecialization(prev => [
+          ...dataSpec,
+          {
+            id: dataSpec.length + 1,
+            specialization_name: 'Інше',
+          },
+        ]);
+      }
+
+      const dataLaw = await getContent('lawyers');
+      if (dataLaw) {
+        setLawyers(prev => dataLaw);
+      }
+    };
+
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const dataLaw = await getContent(
+        `lawyers?specialization_id=${currentSpec}`
+      );
+      if (dataLaw) {
+        setLawyers(prev => dataLaw);
+      }
+    };
+
+    getData();
+  }, [currentSpec]);
 
   const toggleModal = () => {
     setIsOpenDoc(prev => !prev);
   };
 
-  const onChangeSelect = e => {
-    console.log('e', e);
-    // setSpecialization(prev => !prev);
+  const onChangeSelectSpec = id => {
+    console.log('id = ', id);
+    setCurrentSpec(prev => id);
+
+    setValue('specialization_id', id, {
+      shouldValidate: true,
+    });
+  };
+
+  const onChangeSelectLaw = id => {
+    console.log('id = ', id);
+
+    setValue('lawyer_id', id, {
+      shouldValidate: true,
+    });
   };
 
   const onSubmit = async formData => {
@@ -87,7 +141,7 @@ export const AppointmentForm = ({ setModalActive }) => {
           onSubmit={handleSubmit(onSubmit, onErrors)}
           autoComplete="off"
         >
-          {/* <Input
+          <Input
             register={register}
             name="firstName"
             type="text"
@@ -137,13 +191,20 @@ export const AppointmentForm = ({ setModalActive }) => {
             isChecked={isChecked}
             toggleModal={toggleModal}
             errors={errors}
-          /> */}
+          />
 
           <Select
-            onChangeSelect={onChangeSelect}
+            onChangeSelect={onChangeSelectSpec}
             label={t('appointmentForm.specializationSelectTitle')}
             defaultValue={t('appointmentForm.specializationSelectDefault')}
-            options={'sssss'}
+            options={specialization}
+          />
+
+          <Select
+            onChangeSelect={onChangeSelectLaw}
+            label={t('appointmentForm.lawyerSelectTitle')}
+            defaultValue={t('appointmentForm.lawyerSelectDefault')}
+            options={lawyers}
           />
 
           <ButtonWrp>

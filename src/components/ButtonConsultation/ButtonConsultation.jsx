@@ -25,18 +25,6 @@ export const ButtonConsultation = ({ className, customStyles }) => {
   useEffect(() => {
     const getData = async () => {
       // setIsLoading(prev => true);
-      const data = await getContent('lawyer-specs');
-      setSpecialization(prev => data);
-
-      // setIsLoading(prev => false);
-    };
-
-    // getData();
-  }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      // setIsLoading(prev => true);
       const data = await getContent('lawyers'); //'lawyers?specialization_id=1'
       setLawyers(prev => data);
 
