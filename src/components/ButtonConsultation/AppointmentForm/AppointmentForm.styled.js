@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { flexBox, fontSectionTitle } from '../../../styles/mixins';
+import {
+  flexBox,
+  secondaryButton,
+  fontSectionTitle,
+} from '../../../styles/mixins';
 
 export const FormWrp = styled.div`
   padding-top: 124px;
@@ -25,7 +29,7 @@ export const FormWrp = styled.div`
 export const FormStyled = styled.form`
   ${flexBox};
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 `;
 
 export const ButtonWrp = styled.div`
@@ -35,10 +39,28 @@ export const ButtonWrp = styled.div`
 `;
 
 export const ButtonSubmit = styled.button`
+  ${secondaryButton};
+  width: 288px;
+  height: 52px;
+
   &:hover,
   &:focus {
-    cursor: pointer;
-    transition: background-color 500ms;
-    background-color: red;
+    border: 1px solid var(--darkBackground);
+  }
+`;
+
+export const ButtonCancel = styled.button`
+  ${secondaryButton};
+  width: 288px;
+  height: 52px;
+
+  color: var(--mainText);
+  background-color: inherit;
+  border: 1px solid var(--darkBackground);
+
+  &:hover,
+  &:focus {
+    color: var(--lightText);
+    background-color: var(--darkBackground);
   }
 `;

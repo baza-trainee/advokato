@@ -12,6 +12,8 @@ export const Input = ({
   errors,
   options = {},
   children,
+  isValid,
+  touchedFields,
 }) => {
   return (
     <LabelStyled>
@@ -23,6 +25,9 @@ export const Input = ({
         placeholder={placeholder}
         role="presentation"
         autocomplete="off"
+        isValid={isValid}
+        error={errors[name]?.message}
+        touch={touchedFields[name]}
       />
 
       {!isObjectEmpty(errors) && <ErrorText>{errors[name]?.message}</ErrorText>}
@@ -38,6 +43,8 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   errors: PropTypes.object.isRequired,
+  touchedFields: PropTypes.object.isRequired,
   options: PropTypes.object,
   children: PropTypes.node,
+  isValid: PropTypes.bool,
 };

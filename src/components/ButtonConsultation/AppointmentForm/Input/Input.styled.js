@@ -6,10 +6,12 @@ export const LabelStyled = styled.label`
   width: 100%;
 
   p {
-    margin-bottom: 8px;
     height: 36px;
-
     ${fontDesktop};
+  }
+
+  p:first-of-type {
+    margin-bottom: 8px;
     color: var(--mainText);
   }
 `;
@@ -18,11 +20,26 @@ export const InputStyled = styled.input`
   position: relative;
   padding: 15px 16px;
   width: 100%;
-  height: 40px;
+  height: 56px;
 
-  color: black;
-  background-color: pink;
+  font-family: var(--Montserrat);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.94px;
+  letter-spacing: 0em;
+  color: var(--mainText);
+  background-color: inherit;
   border: 1px solid var(--greyText);
+
+  border-color: ${({ isValid, error, touch }) => {
+    if (!error && touch) {
+      return 'var(--trueText);';
+    }
+
+    if (!isValid && error) {
+      return 'var(--accentText);';
+    }
+  }};
 
   border-radius: 0;
   &[type='search'] {
@@ -30,15 +47,16 @@ export const InputStyled = styled.input`
   }
 
   &::placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(5px, 6px);
+    font-family: var(--Montserrat);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    letter-spacing: 0em;
     color: var(--greyText);
   }
 
   &:focus {
-    outline: 2px solid yellow;
+    outline: 2px solid var(--mainText);
   }
 `;
 
@@ -46,9 +64,7 @@ export const ErrorText = styled.p`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(40px);
+  transform: translateY(95px);
 
-  font-size: 12px;
-  line-height: 1.3;
-  color: red;
+  color: var(--accentText);
 `;

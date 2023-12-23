@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,18 +7,25 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 import { SchemaEn, SchemaUa } from './validationSchema';
 import { Input } from './Input';
+import { Checkbox } from './Checkbox';
+import { Modal } from '../../Modal';
+import { ModalFromRoot } from '../../ModalFromRoot';
+import { PdfViewer } from '../../PdfViewer';
 import {
   FormWrp,
   FormStyled,
   ButtonWrp,
   ButtonSubmit,
+  ButtonCancel,
 } from './AppointmentForm.styled';
+import pdfFile from '../../../assets/documents/test_privacy_policy.pdf';
 
 const DEFAULT_VALUES = {
   firstName: '',
   lastName: '',
   phone: '',
   email: '',
+  isAccept: false,
 };
 
 export const AppointmentForm = () => {
@@ -26,11 +34,20 @@ export const AppointmentForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    getValues,
+    formState: { errors, isValid, touchedFields },
   } = useForm({
+    mode: 'onChange',
     defaultValues: DEFAULT_VALUES,
     resolver: yupResolver(i18n.language === 'en' ? SchemaEn : SchemaUa),
   });
+
+  const [isChecked, setIsChecked] = useState(getValues('isAccept'));
+  const [modalActive, setModalActive] = useState(false);
+
+  const toggleModal = () => {
+    setModalActive(prev => !prev);
+  };
 
   const onSubmit = async formData => {
     // Loading.dots();
@@ -43,58 +60,91 @@ export const AppointmentForm = () => {
   };
 
   return (
-    <FormWrp>
-      <h2>{t('appointmentForm.firstTitle')}</h2>
-      <FormStyled
-        onSubmit={handleSubmit(onSubmit, onErrors)}
-        autoComplete="off"
-      >
-        <Input
-          register={register}
-          name="firstName"
-          type="text"
-          label={t('appointmentForm.inputFirstName')}
-          placeholder={t('appointmentForm.inputFirstName')}
-          errors={errors}
-        />
+    <>
+      {modalActive && (
+        <ModalFromRoot
+          toggleModal={toggleModal}
+          root="root-docs"
+          overlayId=""
+          padding="20px"
+          align="flex-start"
+        >
+          <PdfViewer pdfFile={pdfFile} />
+        </ModalFromRoot>
+      )}
 
-        <Input
-          register={register}
-          name="lastName"
-          type="text"
-          label={t('appointmentForm.inputLastName')}
-          placeholder={t('appointmentForm.inputLastName')}
-          errors={errors}
-        />
+      <FormWrp>
+        <h2>{t('appointmentForm.firstTitle')}</h2>
+        <FormStyled
+          onSubmit={handleSubmit(onSubmit, onErrors)}
+          autoComplete="off"
+        >
+          <Input
+            register={register}
+            name="firstName"
+            type="text"
+            label={t('appointmentForm.inputFirstName')}
+            placeholder={t('appointmentForm.inputFirstName')}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+          />
 
-        <Input
-          register={register}
-          name="phone"
-          type="text"
-          label={t('appointmentForm.inputPhone')}
-          placeholder={t('appointmentForm.inputPhone')}
-          errors={errors}
-        />
+          <Input
+            register={register}
+            name="lastName"
+            type="text"
+            label={t('appointmentForm.inputLastName')}
+            placeholder={t('appointmentForm.inputLastName')}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+          />
 
-        <Input
-          register={register}
-          name="email"
-          type="text"
-          label={t('appointmentForm.inputEmail')}
-          placeholder={t('appointmentForm.inputEmail')}
-          errors={errors}
-        />
+          <Input
+            register={register}
+            name="phone"
+            type="text"
+            label={t('appointmentForm.inputPhone')}
+            placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+          />
 
-        <ButtonWrp>
-          <ButtonSubmit type="submit" aria-label="submit button">
-            {t('appointmentForm.submitButton')}
-          </ButtonSubmit>
+          <Input
+            register={register}
+            name="email"
+            type="text"
+            label={t('appointmentForm.inputEmail')}
+            placeholder={'xxx@xxx'}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+          />
 
-          <ButtonSubmit type="button" aria-label="cancel button">
-            {t('appointmentForm.cancelButton')}
-          </ButtonSubmit>
-        </ButtonWrp>
-      </FormStyled>
-    </FormWrp>
+          <Checkbox
+            register={register}
+            setIsChecked={setIsChecked}
+            isChecked={isChecked}
+            toggleModal={toggleModal}
+            errors={errors}
+          />
+
+          <ButtonWrp>
+            {/* <ButtonSubmit type="submit" aria-label="submit button">
+              {t('appointmentForm.submitButton')}
+            </ButtonSubmit> */}
+            <ButtonSubmit type="submit" aria-label="next step button">
+              {t('appointmentForm.nextButton')}
+            </ButtonSubmit>
+
+            <ButtonCancel type="button" aria-label="cancel button">
+              {t('appointmentForm.cancelButton')}
+            </ButtonCancel>
+          </ButtonWrp>
+        </FormStyled>
+      </FormWrp>
+    </>
   );
 };

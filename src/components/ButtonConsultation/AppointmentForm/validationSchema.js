@@ -1,36 +1,35 @@
 import * as yup from 'yup';
+import { REGEX_EMAIL, REGEX_PHONE } from '../../../constants';
 
 export const SchemaUa = yup
   .object({
     firstName: yup
       .string('Має бути текстовим')
       .trim()
-      .min(2, 'Коротке імʼя! Мінімум 2 символа')
-      .max(15, 'Надто довге імʼя! Максимум 15 символів')
-      .required('Обов`язкове поле'),
+      .max(15, 'Надто довге імʼя! Максимум 15 символів'),
 
     lastName: yup
       .string('Має бути текстовим')
       .trim()
-      .min(2, 'Коротке прізвищє! Мінімум 2 символа')
-      .max(15, 'Надто довге прізвищє! Максимум 15 символів')
-      .required('Обов`язкове поле'),
+      .max(15, 'Надто довге прізвищє! Максимум 15 символів'),
 
-    phone: yup.string('Має бути текстовим'),
+    phone: yup
+      .string('Має бути текстовим')
+      .required('Обов`язкове поле'),
+      // .matches(
+      //   REGEX_PHONE,
+      //   'Введіть телефон в наступному форматі (066) 777-30-77'
+      // ),
 
     email: yup
       .string('Має бути текстовим')
       .trim()
-      .min(6, 'Коротка адреса! Мінімум 6 символів')
       .max(50, 'Надто довга адреса! Максимум 50 символів')
-      //   .matches(
-      //     REGEX_EMAIL_FIRST_PART,
-      //     'Мають бути тільки англійські літери і @ також можна цифри _-.'
-      //   )
-      //   .matches(
-      //     REGEX_EMAIL_SECOND_PART,
-      //     'домен складається з англійських літер, цифр та - .'
-      //   )
+      .matches(REGEX_EMAIL, 'Не правильний формат адреси'),
+
+    isAccept: yup
+      .bool()
+      .oneOf([true], 'Має бути погоджено')
       .required('Обов`язкове поле'),
   })
   .required();
@@ -40,32 +39,31 @@ export const SchemaEn = yup
     firstName: yup
       .string('Must be text')
       .trim()
-      .min(2, 'Short name! Minimum 2 characters')
-      .max(15, 'Name too long! Maximum 15 characters')
-      .required('Required field'),
+      .max(15, 'Name too long! Maximum 15 characters'),
 
     lastName: yup
       .string('Must be text')
       .trim()
-      .min(2, 'Short name! Minimum 2 characters')
-      .max(15, 'Name too long! Maximum 15 characters')
-      .required('Required field'),
+      .max(15, 'Name too long! Maximum 15 characters'),
 
-    phone: yup.string('Must be text'),
+    phone: yup
+      .string('Must be text')
+      .required('Обов`язкове поле')
+      .matches(
+        REGEX_PHONE,
+        'Enter the phone in the following format (066) 777-30-77'
+      ),
 
     email: yup
       .string('Must be text')
       .trim()
       .min(6, 'Short address! Minimum 6 characters')
       .max(50, 'Address too long! Maximum 50 characters')
-      //   .matches(
-      //     REGEX_EMAIL_FIRST_PART,
-      //     'There should be only English letters and @, numbers _-.'
-      //   )
-      //   .matches(
-      //     REGEX_EMAIL_SECOND_PART,
-      //     'domain consists of English letters, numbers and - .'
-      //   )
+      .matches(REGEX_EMAIL, 'Invalid address format'),
+
+    isAccept: yup
+      .bool()
+      .oneOf([true], 'Must be agreed')
       .required('Required field'),
   })
   .required();

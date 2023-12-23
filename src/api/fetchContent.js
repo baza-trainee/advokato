@@ -9,5 +9,8 @@ export const getContent = async path => {
     .then(response => {
       return response.data;
     })
-    .catch(error => console.log('getContent: ', error));
+    .catch(error => {
+      console.log('getContent: ', error);
+      // alert('щось пішло не так. Перезавантаж сторінку або зайди пізніше');
+    });
 };

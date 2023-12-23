@@ -30,6 +30,14 @@ export const ModalDiv = styled.div`
       return align;
     }
   }};
+
+  padding: ${({ padding }) => {
+    if (padding) {
+      return padding;
+    } else {
+      return null;
+    }
+  }};
 `;
 
 export const CloseBtn = styled.button`
