@@ -5,7 +5,7 @@ import { device } from "../../styles/mixins";
 export const Panel = styled.div`
 	position: fixed;
 	bottom: 27px;
-	padding: 24px 12px;
+	padding: 40px 30px 24px 30px;
 	max-width: 272px;
 
 	background: var(--darkBackground);
@@ -18,7 +18,7 @@ export const Panel = styled.div`
 
 	@media screen and (min-width: 768px) {
 		bottom: 56px;
-		padding: 27px 32px;
+		padding: 28px 32px;
 		max-width: 648px;
 
 		font-size: 14px;
@@ -71,19 +71,12 @@ export const BannerWrap = styled.div`
 
 export const IconClose = styled(Icon)`
 	position: absolute;
-	width: 12px;
-	height: 12px;
-	top: 8px;
-	right: 8px;
+	width: 16px;
+	height: 16px;
+	top: 16px;
+	right: 16px;
 	cursor: pointer;
 	stroke: var(--lightText);
-
-	@media screen and (min-width: 768px) {
-		width: 16px;
-		height: 16px;
-		top: 12px;
-		right: 12px;
-	}
 
 	@media screen and (${device.desktop}) {
 		width: 24px;
