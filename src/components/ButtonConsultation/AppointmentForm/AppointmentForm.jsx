@@ -30,6 +30,8 @@ const DEFAULT_VALUES = {
   isAccept: false,
   specialization_id: 0,
   lawyer_id: 0,
+  appointment_date: '',
+  appointment_time: ''
 };
 
 export const AppointmentForm = ({ setModalActive }) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Calendar as ReactCalendar } from 'react-calendar';
 import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
@@ -10,24 +10,35 @@ import { DivStyled } from './Calendar.styled';
 const MEETS = new Set(['2023-09-09', '2023-09-12', '2023-09-22']);
 
 export const Calendar = ({ schedule, setValue }) => {
-  console.log('schedule ', schedule);
-  
   const [t, i18n] = useTranslation('global');
   const [today, setToday] = useState(new Date());
   const [currentDate, setCurrentDate] = useState(
     format(new Date(), 'yyyy-MM-dd')
   );
-  const [hours, setHours] = useState([])
+  const [hours, setHours] = useState([]);
 
-  useState(()=>{
+  useEffect(() => {
+    const hours = schedule.find(item => item.date === currentDate);
 
+    if (hours) {
+      setHours(prev => hours.time);
+    }
+  }, [schedule, currentDate]);
 
+  const handleChangeDate = date => {
+    const changedDate = format(new Date(date), 'yyyy-MM-dd');
 
+    setValue('appointment_date', changedDate, {
+      shouldValidate: true,
+    });
 
-  },[currentDate])
+    setCurrentDate(prev => changedDate);
+  };
 
-  const handleChangeDate = e => {
-    console.log(e);
+  const handleClickTime = time => {
+    setValue('appointment_time', time, {
+      shouldValidate: true,
+    });
   };
 
   const checkDate = date => {
@@ -61,14 +72,20 @@ export const Calendar = ({ schedule, setValue }) => {
         }}
       />
 
-      <h2>{t('appointmentForm.fourthTitle')}</h2>
-      <div>
-        <ul>
-          <li>10-00</li>
-          <li>12-00</li>
-          <li>15-00</li>
-        </ul>
-      </div>
+      {hours.length > 0 && (
+        <>
+          <h2>{t('appointmentForm.fourthTitle')}</h2>
+          <div>
+            <ul>
+              {hours.map((time, idx) => (
+                <li key={idx} onClick={() => handleClickTime(time)}>
+                  {time}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
     </DivStyled>
   );
 };
