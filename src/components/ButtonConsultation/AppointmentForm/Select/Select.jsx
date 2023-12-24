@@ -12,27 +12,23 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
     setValue(prev => '');
   }, [options]);
 
-  // console.log(options);
+  useEffect(() => {
+    if (!isOpenList) {
+      return;
+    }
 
-  // useEffect(() => {
-  //   if (!isOpenList) {
-  //     return;
-  //   }
-
-  //   const timerId = setTimeout(() => {
-  //     setIsOpenList(prev => false);
-  //     clearTimeout(timerId);
-  //   }, 3000);
-  // }, [isOpenList]);
+    const timerId = setTimeout(() => {
+      setIsOpenList(prev => false);
+      clearTimeout(timerId);
+    }, 3000);
+  }, [isOpenList]);
 
   const handleClickOption = ({ target }) => {
     const elementId = target.getAttribute('id');
-    setIsOpenList(prev => false);
 
     const { name, specialization_name } = options.find(
       item => item.id == elementId
     );
-
     setValue(prev => name || specialization_name);
     onChangeSelect(elementId);
   };
@@ -60,7 +56,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
         )}
       </ButtonStyled>
 
-      {isOpenList && options?.length > 0 && (
+      {isOpenList && (
         <ul onClick={handleClickOption}>
           {options.map(({ id, specialization_name, name }) => (
             <OptionsItem
