@@ -55,7 +55,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
-  const [currentPartForm, setCurrentPartForm] = useState(5);
+  const [currentPartForm, setCurrentPartForm] = useState(2);
   const [specialization, setSpecialization] = useState([]);
   const [currentSpec, setCurrentSpec] = useState('');
   const [lawyers, setLawyers] = useState([]);
@@ -184,6 +184,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
     const data = {
       email: getValues('email') || null,
+      message: null,
       name: `${getValues('firstName')} ${getValues('lastName')}` || null,
       phone_number: getValues('phone'),
     };
@@ -309,7 +310,10 @@ export const AppointmentForm = ({ setModalActive }) => {
           {currentPartForm === 4 && <SuccessPage />}
 
           {currentPartForm === 5 && (
-            <FailurePage OnClickFunction={setCurrentPartForm} />
+            <FailurePage
+              OnClickFunction={setCurrentPartForm}
+              lawyer={getValues('lawyer_id')}
+            />
           )}
 
           <ButtonWrp>
