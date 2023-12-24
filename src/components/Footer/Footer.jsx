@@ -35,6 +35,8 @@ export const Footer = () => {
 
 	// const [cities, setCities] = useState([]);
 	const [contacts, setContacts] = useState([]);
+	const phone = contacts[0]?.contacts[0]?.phone;
+	const formattedPhone = phone ? phone.replace(/[^\d]/g, "") : "";
 
 	useEffect(() => {
 		const getData = async () => {
@@ -167,27 +169,31 @@ export const Footer = () => {
 						>
 							Вул. Нікольська 19, м. Миколаїв, <br /> Україна
 						</TextLink>
-						<TextLink
+						{/* <TextLink
 							to="tel:+380512377373"
 							aria-label="телефон компанії"
 							marginbottom="0"
 						>
 							+38 (0512) 37 73 73
-						</TextLink>
-						<TextLink
-							to="tel:+380933737303"
-							aria-label="телефон компанії"
-						>
-							+38 (093) 373 73 03
-						</TextLink>
-						<TextLink
-							to="mailto:acstatus.mk@gmail.com"
-							aria-label="електронна пошта компанії"
-						>
-							acstatus.mk@gmail.com
-						</TextLink>
+						</TextLink> */}
+						{contacts?.length > 0 && (
+							<>
+								<TextLink
+									to={`tel:+${formattedPhone}`}
+									aria-label="телефон компанії"
+								>
+									{phone}
+								</TextLink>
+								<TextLink
+									to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
+									aria-label="електронна пошта компанії"
+								>
+									{contacts[0]?.contacts[1]?.mail}
+								</TextLink>
 
-						{contacts?.length > 0 && <SocialList media={contacts[0]?.social} />}
+								<SocialList media={contacts[0]?.social} />
+							</>
+						)}
 					</FlexWraper>
 				</FlexWraper>
 
