@@ -5,20 +5,23 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import PropTypes from 'prop-types';
 
-import { getContent } from '../../../api';
+import { getContent, postContent } from '../../../api';
 import { SchemaEn, SchemaUa } from './validationSchema';
+import * as Constants from '../../../constants';
 import { Input } from './Input';
 import { Checkbox } from './Checkbox';
 import { Select } from './Select';
 import { Calendar } from '../Calendar';
 import { ModalFromRoot } from '../../ModalFromRoot';
 import { PdfViewer } from '../../PdfViewer';
+import { SuccessPage } from './SuccessPage';
+import { FailurePage } from './FailurePage';
 import {
   FormWrp,
   FormStyled,
   ButtonWrp,
-  ButtonSubmit,
-  ButtonCancel,
+  UpperButton,
+  LowerButton,
 } from './AppointmentForm.styled';
 import pdfFile from '../../../assets/documents/test_privacy_policy.pdf';
 
@@ -31,7 +34,7 @@ const DEFAULT_VALUES = {
   specialization_id: 0,
   lawyer_id: 0,
   appointment_date: '',
-  appointment_time: ''
+  appointment_time: '',
 };
 
 export const AppointmentForm = ({ setModalActive }) => {
@@ -52,7 +55,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
-  const [currentPartForm, setCurrentPartForm] = useState(1);
+  const [currentPartForm, setCurrentPartForm] = useState(5);
   const [specialization, setSpecialization] = useState([]);
   const [currentSpec, setCurrentSpec] = useState('');
   const [lawyers, setLawyers] = useState([]);
@@ -138,8 +141,62 @@ export const AppointmentForm = ({ setModalActive }) => {
   };
 
   const onSubmit = async formData => {
-    // Loading.dots();
-    console.log('formData ', formData);
+    Loading.dots();
+
+    const {
+      appointment_date,
+      appointment_time,
+      lawyer_id,
+      specialization_id,
+      email,
+      firstName,
+      lastName,
+      phone,
+    } = formData;
+
+    const data = {
+      appointment: {
+        appointment_date,
+        appointment_time,
+        lawyer_id,
+        specialization_id,
+      },
+      visitor: {
+        email: email || null,
+        name: `${firstName} ${lastName}`,
+        phone_number: phone,
+      },
+    };
+
+    const result = await postContent('appointment', data);
+
+    if (result?.message === Constants.APPOINTMENT_200) {
+      Loading.remove();
+      return setCurrentPartForm(4);
+    }
+
+    Loading.remove();
+    setCurrentPartForm(5);
+  };
+
+  const onSkipAllSteps = async () => {
+    Loading.dots();
+
+    const data = {
+      email: getValues('email') || null,
+      name: `${getValues('firstName')} ${getValues('lastName')}` || null,
+      phone_number: getValues('phone'),
+    };
+
+    const result = await postContent('feedback', data);
+
+    if (result?.success) {
+      Loading.remove();
+      return setCurrentPartForm(4);
+    }
+
+    Loading.remove();
+    setCurrentPartForm(5);
   };
 
   const onErrors = data => {
@@ -249,30 +306,48 @@ export const AppointmentForm = ({ setModalActive }) => {
             </>
           )}
 
+          {currentPartForm === 4 && <SuccessPage />}
+
+          {currentPartForm === 5 && (
+            <FailurePage OnClickFunction={setCurrentPartForm} />
+          )}
+
           <ButtonWrp>
             {(currentPartForm === 1 || currentPartForm === 2) && (
-              <ButtonSubmit
+              <UpperButton
                 onClick={onNextButton}
                 type="button"
                 aria-label="next step button"
               >
                 {t('appointmentForm.nextButton')}
-              </ButtonSubmit>
+              </UpperButton>
+            )}
+
+            {currentPartForm === 2 && (
+              <LowerButton
+                onClick={onSkipAllSteps}
+                type="button"
+                aria-label="skip button"
+              >
+                {t('appointmentForm.skipButton')}
+              </LowerButton>
             )}
 
             {currentPartForm === 3 && (
-              <ButtonSubmit type="submit" aria-label="submit button">
+              <UpperButton type="submit" aria-label="submit button">
                 {t('appointmentForm.submitButton')}
-              </ButtonSubmit>
+              </UpperButton>
             )}
 
-            <ButtonCancel
-              onClick={() => setModalActive(false)}
-              type="button"
-              aria-label="cancel button"
-            >
-              {t('appointmentForm.cancelButton')}
-            </ButtonCancel>
+            {(currentPartForm === 1 || currentPartForm === 3) && (
+              <LowerButton
+                onClick={() => setModalActive(false)}
+                type="button"
+                aria-label="cancel button"
+              >
+                {t('appointmentForm.cancelButton')}
+              </LowerButton>
+            )}
           </ButtonWrp>
         </FormStyled>
       </FormWrp>

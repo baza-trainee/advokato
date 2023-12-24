@@ -13,11 +13,13 @@ export const SchemaUa = yup
       .trim()
       .max(15, 'Надто довге прізвищє! Максимум 15 символів'),
 
-    phone: yup.string('Має бути текстовим').required('Обов`язкове поле'),
-    // .matches(
-    //   REGEX_PHONE,
-    //   'Введіть телефон в наступному форматі (066) 777-30-77'
-    // ),
+    phone: yup
+      .string('Має бути текстовим')
+      .matches(
+        REGEX_PHONE,
+        'Введіть телефон в наступному форматі +380...'
+      )
+      .required('Обов`язкове поле'),
 
     email: yup
       .string('Має бути текстовим')
@@ -50,11 +52,11 @@ export const SchemaEn = yup
 
     phone: yup
       .string('Must be text')
-      .required('Обов`язкове поле')
       .matches(
         REGEX_PHONE,
-        'Enter the phone in the following format (066) 777-30-77'
-      ),
+        'Enter the phone in the following format +380...'
+      )
+      .required('Обов`язкове поле'),
 
     email: yup
       .string('Must be text')

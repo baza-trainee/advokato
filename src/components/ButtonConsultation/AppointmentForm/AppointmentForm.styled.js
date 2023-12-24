@@ -7,9 +7,9 @@ import {
 
 export const FormWrp = styled.div`
   padding-top: 124px;
-  padding-right: 95px;
+  padding-right: 72px;
   padding-bottom: 60px;
-  padding-left: 95px;
+  padding-left: 72px;
   width: 800px;
   min-height: 1076px;
 
@@ -37,7 +37,7 @@ export const ButtonWrp = styled.div`
   gap: 30px;
 `;
 
-export const ButtonSubmit = styled.button`
+export const UpperButton = styled.button`
   ${secondaryButton};
   width: 288px;
   height: 52px;
@@ -48,7 +48,7 @@ export const ButtonSubmit = styled.button`
   }
 `;
 
-export const ButtonCancel = styled.button`
+export const LowerButton = styled.button`
   ${secondaryButton};
   width: 288px;
   height: 52px;

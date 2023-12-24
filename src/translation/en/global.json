@@ -21,7 +21,7 @@
     "firstTitle": "Contact Information",
     "inputFirstName": "First Name",
     "inputLastName": "Last Name",
-    "inputPhone": "Phone",
+    "inputPhone": "Phone *",
     "inputEmail": "E-mail",
     "privacyTitle": "I grant permission for the processing of personal data.",
     "privacyButton": "Privacy Policy.",
@@ -37,6 +37,9 @@
     "thirdTitle": "Select Date",
     "fourthTitle": "Select time",
     "successTitle": "Congratulations!",
-    "successText": "You have successfully signed up for a consultation. We will contact you shortly."
+    "successText": "You have successfully signed up for a consultation. We will contact you shortly.",
+    "failureTitle": "Sorry!",
+    "failureText": "There was an error. Please choose another consultation date.",
+    "returnButton": "Come back"
   }
 }

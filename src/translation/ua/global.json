@@ -21,7 +21,7 @@
     "firstTitle": "Контактна інформація",
     "inputFirstName": "Ім’я",
     "inputLastName": "Прізвище",
-    "inputPhone": "Телефон",
+    "inputPhone": "Телефон *",
     "inputEmail": "E-mail",
     "privacyTitle": "Надаю дозвіл на обробку персональних даних.",
     "privacyButton": "Політика конфіденційності.",
@@ -37,6 +37,11 @@
     "thirdTitle": "Обрати дату",
     "fourthTitle": "Обрати час",
     "successTitle": "Вітаємо!",
-    "successText": "Ви успішно записались на консультацію. Ми зв'яжемося з Вами найближчим часом."
+    "successTextOne": "Ви успішно записались на консультацію.",
+    "successTextTwo": "Ми зв'яжемося з Вами найближчим часом.",
+    "failureTitle": "Вибачте!",
+    "failureTextOne": "Виникла помилка.",
+    "failureTextTwo": "Будь ласка, оберіть іншу дату консультації.",
+    "returnButton": "Повернутись"
   }
 }

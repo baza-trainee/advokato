@@ -11,6 +11,24 @@ export const getContent = async path => {
     })
     .catch(error => {
       console.log('getContent: ', error);
-      // alert('щось пішло не так. Перезавантаж сторінку або зайди пізніше');
+    });
+};
+
+export const postContent = async (path, data) => {
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const dataString = JSON.stringify(data);
+
+  return await axios
+    .post(path, dataString, params)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log('postContent: ', error);
     });
 };
