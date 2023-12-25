@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const { VITE_PATH_TO_SERVER } = import.meta.env;
 axios.defaults.baseURL = VITE_PATH_TO_SERVER;
@@ -9,5 +9,27 @@ export const getContent = async path => {
     .then(response => {
       return response.data;
     })
-    .catch(error => console.log('getContent: ', error));
+    .catch(error => {
+      console.log('getContent: ', error);
+    });
 };
+
+export const postContent = async (path, data) => {
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const dataString = JSON.stringify(data);
+
+  return await axios
+    .post(path, dataString, params)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log('postContent: ', error);
+    });
+};
+

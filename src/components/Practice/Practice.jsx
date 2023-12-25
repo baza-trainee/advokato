@@ -32,8 +32,10 @@ export const Practice = () => {
     const getData = async () => {
       const data = await getContent('specializations');
 
-      setPractices(prev => data);
-      setCurrentPractice(prev => data[0]);
+      if (data) {
+        setPractices(prev => data);
+        setCurrentPractice(prev => data[0]);
+      }
     };
 
     getData();
@@ -83,14 +85,6 @@ export const Practice = () => {
                 <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
                   {currentPractice?.specialization_description}
                 </PracticeDesc>
-                {/* 
-                {isShowMoreDesc && (
-                  <PracticeDescFull>
-                    {parseToParagraphs(
-                      currentPractice?.specialization_description_full
-                    )}
-                  </PracticeDescFull>
-                )} */}
 
                 {isShowMoreDesc && (
                   <PracticeDescFull

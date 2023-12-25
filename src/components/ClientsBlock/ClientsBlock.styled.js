@@ -15,22 +15,22 @@ export const ClientsBlockHeader = styled.h2`
 export const SliderArrow = styled.div`
 	${sliderArrow};
 	position: absolute;
-	button{
-		top:50%;
+	button {
+		top: 50%;
 	}
-	left: 7%;
+	left: 5%;
 	z-index: 10;
 	&:last-of-type {
-		left: 90%;
+		left: 92%;
 	}
 `;
 
 export const ClientsSliderContainer = styled.div`
-		${flexBox};
-		gap:32px;
-		overflow: hidden;	
-		position: relative;
-		.splide__slide {
+	${flexBox};
+	gap: 32px;
+	overflow: hidden;
+	position: relative;
+	.splide__slide {
 		${flexBox}
 		opacity: 1;
 		transition: 1s;

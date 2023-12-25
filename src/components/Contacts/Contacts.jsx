@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { GoogleMap } from './GoogleMap';
+import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
+import { GoogleMap } from './GoogleMap';
 import { getContent } from '../../api/';
 import { SocialList } from '../SocialList';
 import { AddressList } from './AddressList';
-import { LoadingAnimated } from '../LoadingAnimated';
 import {
   SectionStyled,
   Container,
@@ -16,19 +16,18 @@ import {
 export const Contacts = () => {
   const [cities, setCities] = useState([]);
   const [contacts, setContacts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const getData = async () => {
-      setIsLoading(prev => true);
+      NotiflixLoading.dots();
       const data = await getContent('contacts');
 
       setCities(prev => data.cities);
       setContacts(prev => data.contacts);
 
-      setIsLoading(prev => false);
+      NotiflixLoading.remove();
     };
 
     getData();
@@ -40,9 +39,7 @@ export const Contacts = () => {
         <TitleStyled>ADVOCATE COMPANY «STATUS»</TitleStyled>
 
         <CenterWrp>
-          {isLoading && <LoadingAnimated />}
-
-          {contacts.length > 0 && !isLoading && (
+          {contacts?.length > 0 && (
             <>
               <LeftSide>
                 <AddressList cities={cities} />

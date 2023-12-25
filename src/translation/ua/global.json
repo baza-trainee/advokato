@@ -16,5 +16,32 @@
   "practiceSection": {
     "moreButton": "Далі",
     "hideButton": "Згорнути"
+  },
+  "appointmentForm": {
+    "firstTitle": "Контактна інформація",
+    "inputFirstName": "Ім’я",
+    "inputLastName": "Прізвище",
+    "inputPhone": "Телефон *",
+    "inputEmail": "E-mail",
+    "privacyTitle": "Надаю дозвіл на обробку персональних даних.",
+    "privacyButton": "Політика конфіденційності.",
+    "nextButton": "Продовжити",
+    "cancelButton": "Скасувати",
+    "skipButton": "Пропустити",
+    "submitButton": "Записатись",
+    "secondTitle": "Записатись на консультацію",
+    "specializationSelectTitle": "Обрати спеціалізацію",
+    "specializationSelectDefault": "Спеціалізація",
+    "lawyerSelectTitle": "Обрати спеціаліста",
+    "lawyerSelectDefault": "Спеціаліст",
+    "thirdTitle": "Обрати дату",
+    "fourthTitle": "Обрати час",
+    "successTitle": "Вітаємо!",
+    "successTextOne": "Ви успішно записались на консультацію.",
+    "successTextTwo": "Ми зв'яжемося з Вами найближчим часом.",
+    "failureTitle": "Вибачте!",
+    "failureTextOne": "Виникла помилка.",
+    "failureTextTwo": "Будь ласка, оберіть іншу дату консультації.",
+    "returnButton": "Повернутись"
   }
 }

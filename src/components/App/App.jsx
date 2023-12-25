@@ -1,7 +1,6 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
 const Layout = lazy(() => import('../Layout'));
@@ -16,25 +15,9 @@ export const App = () => {
 
   useEffect(() => {
     NotiflixLoading.init({
-      backgroundColor: '#98a5b1',
       svgSize: '110px',
       svgColor: '#0b0c0c',
       clickToClose: false,
-    });
-
-    Notify.init({
-      clickToClose: true,
-      borderRadius: '8px',
-      useIcon: false,
-      plainText: false,
-      fontSize: '14px',
-      failure: {
-        background: '#A1232B',
-      },
-      success: {
-        background: '#b8b8b8',
-        textColor: '#202020',
-      },
     });
   }, []);
 
@@ -44,7 +27,7 @@ export const App = () => {
   };
 
   return (
-    <Suspense fallback={<p>{t('loading')}</p>}>
+    <Suspense>
       <Routes>
         <Route
           path="/"

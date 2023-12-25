@@ -15,6 +15,7 @@
 	--lightBackground: #f1f2f4;
 	--accentLink: #e8d5b5;
 	--accentText: #c51f4b;
+	--trueText: #57C1A6;
 	--greyText: #98a5b1;
 	--headerBackground: #0b0c0c4d;
 	--darkGrey: #1c1c21;
@@ -59,15 +60,15 @@ main {
 	}
 
 	@media screen and (min-width: 1024px) {
-		top: -100px;
+		top: -80px;
 	}
 
 	@media screen and (min-width: 1200px) {
-		top: -120px;
+		top: -88px;
 	}
 
 	@media screen and (min-width: 1440px) {
-		top: -140px;
+		top: -88px;
 	}
 }
 

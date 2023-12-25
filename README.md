@@ -29,6 +29,13 @@
 - [docs - MarkerClusterer](https://github.com/JustFly1984/react-google-maps-api/blob/b768d0a528806bb5c40e66fc8564f94afeddff23/packages/react-google-maps-api/src/components/addons/MarkerClusterer.md)
 - [docs - InfoBox](https://github.com/JustFly1984/react-google-maps-api/blob/b768d0a528806bb5c40e66fc8564f94afeddff23/packages/react-google-maps-api/src/components/addons/InfoBox.md)
 
+## react-calendar
+
+- [Build and customize a simple calendar](https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/)
+- [How to mark particular dates in react-calender](https://stackoverflow.com/questions/60446117/how-to-mark-particular-dates-in-react-calender)
+- [example repo](https://github.com/wojtekmaj/react-calendar/wiki/Recipes)
+- [date library date-fns](https://date-fns.org/)
+
 ## firebase deploy
 
 - npm run build
