@@ -4,9 +4,9 @@ import { UlStyled } from './AddressList.styled';
 export const AddressList = ({ cities }) => {
   return (
     <UlStyled>
-      {cities.map(({ id, address, city_name }) => (
+      {cities.map(({ id, address }) => (
         <li key={id}>
-          <p>{`${address}, ${city_name}`}</p>
+          <p>{address}</p>
         </li>
       ))}
     </UlStyled>
