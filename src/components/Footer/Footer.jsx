@@ -157,8 +157,8 @@ export const Footer = () => {
               >
                 acstatus.mk@gmail.com
               </TextLink>
-
-              {contacts.length > 0 && (
+              
+              {contacts?.length > 0 && (
                 <SocialList media={contacts[0]?.social} />
               )}
             </FlexWraper>

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const { VITE_PATH_TO_SERVER } = import.meta.env;
 axios.defaults.baseURL = VITE_PATH_TO_SERVER;
@@ -32,3 +32,4 @@ export const postContent = async (path, data) => {
       console.log('postContent: ', error);
     });
 };
+

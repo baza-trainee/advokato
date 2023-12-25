@@ -85,14 +85,6 @@ export const Practice = () => {
                 <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
                   {currentPractice?.specialization_description}
                 </PracticeDesc>
-                {/* 
-                {isShowMoreDesc && (
-                  <PracticeDescFull>
-                    {parseToParagraphs(
-                      currentPractice?.specialization_description_full
-                    )}
-                  </PracticeDescFull>
-                )} */}
 
                 {isShowMoreDesc && (
                   <PracticeDescFull
