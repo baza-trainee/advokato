@@ -14,13 +14,10 @@ import {
 
 export const Calendar = ({ schedule, setValue }) => {
   const [t, i18n] = useTranslation('global');
-  const [today, setToday] = useState(new Date());
-  const [currentDate, setCurrentDate] = useState(
-    format(new Date(), 'yyyy-MM-dd')
-  );
+  const [currentDate, setCurrentDate] = useState('');
   const [currentTime, setCurrentTime] = useState('');
   const [hours, setHours] = useState([]);
-  const [datelist, setDateList] = useState([]);
+  const [dateList, setDateList] = useState([]);
 
   useEffect(() => {
     const arr = schedule.map(item => item.date);
@@ -55,14 +52,21 @@ export const Calendar = ({ schedule, setValue }) => {
     });
   };
 
-  const checkDate = date => {
+  const hideDates = date => {
     const result = format(new Date(date), 'yyyy-MM-dd');
-    const MEETS = new Set(datelist);
+    const MEETS = new Set(dateList);
 
     if (!MEETS.has(result)) {
-      return 'content';
+      return true;
     }
-    return null;
+  };
+
+  const checkDate = date => {
+    const result = format(new Date(date), 'yyyy-MM-dd');
+
+    if (result === currentDate) {
+      return 'current';
+    }
   };
 
   return (
@@ -71,21 +75,18 @@ export const Calendar = ({ schedule, setValue }) => {
 
       <ReactCalendar
         onChange={handleChangeDate}
-        value={today}
+        value={new Date()}
         locale={'uk'}
         tileDisabled={({ activeStartDate, date, view }) => {
+          if (view === 'month') {
+            return hideDates(date);
+          }
+        }}
+        tileClassName={({ activeStartDate, date, view }) => {
           if (view === 'month') {
             return checkDate(date);
           }
         }}
-        // tileContent={({ activeStartDate, date, view }) =>
-        //   view === 'month' && date.getDay() === 0 ? <p>Sunday!</p> : null
-        // }
-        // tileClassName={({ activeStartDate, date, view }) => {
-        //   if (view === 'month') {
-        //     return checkDate(date);
-        //   }
-        // }}
       />
 
       {hours.length > 0 && (

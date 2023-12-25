@@ -7,9 +7,93 @@ export const DivStyled = styled.div`
   align-items: center;
   justify-content: center;
 
-  .content {
-    background-color: pink;
-    color: red;
+  .react-calendar {
+    width: 692px;
+    border: 1px solid #969395;
+  }
+
+  .react-calendar__navigation {
+    height: 116px;
+    margin-bottom: 0;
+
+    border: 1px solid #969395;
+    background-color: #f3eff5;
+  }
+
+  .react-calendar__month-view__weekdays {
+    height: 116px;
+
+    border: 1px solid #969395;
+    background-color: #f3eff5;
+  }
+
+  .react-calendar__month-view__days {
+    height: 624px;
+  }
+
+  .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
+    font-family: var(--Raleway);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.8px;
+    letter-spacing: 0em;
+    text-transform: capitalize;
+    color: var(--mainText);
+  }
+
+  .react-calendar__month-view__weekdays__weekday,
+  .react-calendar__month-view__weekdays__weekday.react-calendar__month-view__weekdays__weekday--weekend {
+    ${flexBox};
+
+    font-family: var(--Raleway);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.8px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: var(--mainText);
+
+    abbr[title] {
+      text-decoration: none;
+    }
+  }
+
+  .react-calendar__tile.react-calendar__month-view__days__day,
+  .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
+    font-family: var(--Raleway);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.8px;
+    letter-spacing: 0em;
+    color: var(--mainText);
+
+    &[disabled] {
+      background-color: var(--lightText);
+      color: var(--greyText);
+
+      &:hover,
+      &:focus {
+        cursor: auto;
+        background-color: var(--lightText);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transition-property: background-color;
+      transition-duration: var(--animation-duration);
+      transition-timing-function: var(--timing-function);
+      background-color: var(--accentLink);
+    }
+
+    &.current {
+      color: var(--accentText);
+    }
+  }
+
+  .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+    width: 40px;
   }
 `;
 
