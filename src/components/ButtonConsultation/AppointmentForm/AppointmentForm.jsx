@@ -55,7 +55,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
-  const [currentPartForm, setCurrentPartForm] = useState(2);
+  const [currentPartForm, setCurrentPartForm] = useState(1);
   const [specialization, setSpecialization] = useState([]);
   const [currentSpec, setCurrentSpec] = useState('');
   const [lawyers, setLawyers] = useState([]);

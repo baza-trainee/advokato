@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { fontSectionTitle } from '../../../styles/mixins';
+import { flexBox, fontSectionTitle } from '../../../styles/mixins';
 
 export const DivStyled = styled.div`
   display: flex;
@@ -11,18 +11,60 @@ export const DivStyled = styled.div`
     background-color: pink;
     color: red;
   }
+`;
 
-  h2 {
-    margin-bottom: 40px;
-    height: 48px;
-    min-width: 471px;
+export const MainTitle = styled.h2`
+  margin-bottom: 40px;
+  height: 48px;
+  min-width: 471px;
 
-    ${fontSectionTitle};
-    text-align: center;
+  ${fontSectionTitle};
+  text-align: center;
+  color: var(--mainText);
+`;
+
+export const SecondaryTitle = styled.h2`
+  margin-top: 60px;
+  margin-bottom: 40px;
+  height: 48px;
+  min-width: 471px;
+
+  ${fontSectionTitle};
+  text-align: center;
+  color: var(--mainText);
+`;
+
+export const TimeList = styled.ul`
+  display: flex;
+  gap: 47px;
+  flex-wrap: wrap;
+  width: 692px;
+  margin-bottom: calc(72px - 52px);
+
+  li {
+    ${flexBox};
+    width: 100px;
+    height: 36px;
+
+    font-family: var(--Raleway);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.8px;
+    letter-spacing: 0em;
     color: var(--mainText);
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transition-property: background-color;
+      transition-duration: var(--animation-duration);
+      transition-timing-function: var(--timing-function);
+
+      background-color: var(--accentLink);
+    }
   }
 
-  h2:last-of-type {
-    margin-top: 60px;
+  li.currentTime {
+    color: var(--accentText);
   }
 `;

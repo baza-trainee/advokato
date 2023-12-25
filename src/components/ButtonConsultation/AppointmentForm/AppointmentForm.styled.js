@@ -7,9 +7,9 @@ import {
 
 export const FormWrp = styled.div`
   padding-top: 124px;
-  padding-right: 72px;
+  padding-right: 54px;
   padding-bottom: 60px;
-  padding-left: 72px;
+  padding-left: 54px;
   width: 800px;
   min-height: 1076px;
 
