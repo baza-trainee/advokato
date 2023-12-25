@@ -15,10 +15,6 @@ export const App = () => {
 
   useEffect(() => {
     NotiflixLoading.init({
-<<<<<<< HEAD
-=======
-      backgroundColor: '#98a5b173',
->>>>>>> dev
       svgSize: '110px',
       svgColor: '#0b0c0c',
       clickToClose: false,

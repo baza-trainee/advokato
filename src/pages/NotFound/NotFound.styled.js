@@ -42,7 +42,7 @@ export const TopBackground = styled.div`
 		height: 120px;
 	}
 	@media screen and (${device.desktop}) {
-		height: 140px;
+		height: 88px;
 	}
 `;
 

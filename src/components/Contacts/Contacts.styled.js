@@ -4,7 +4,7 @@ import { fontSectionTitle, fontSectionText } from '../../styles/mixins';
 export const SectionStyled = styled.section`
   padding: 132px;
 
-  border-top: 140px solid var(--darkBackground);
+  border-top: 88px solid var(--darkBackground);
 `;
 
 export const Container = styled.div`
