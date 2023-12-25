@@ -68,7 +68,8 @@ export const Text = styled.p`
 `;
 
 export const TextLink = styled(Link)`
-	margin-bottom: ${props => props.marginbottom || "16px"};
+	margin-bottom: 16px;
+	width: 290px;
 	font-family: var(--Montserrat);
 	line-height: calc(32.4 / 18);
 	color: var(--lightText);
