@@ -38,9 +38,10 @@ export const Footer = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await getContent('contacts');
-
-      // setCities(prev => data.cities);
-      setContacts(prev => data.contacts);
+      if (data) {
+        // setCities(prev => data.cities);
+        setContacts(prev => data.contacts);
+      }
     };
 
     getData();
