@@ -59,6 +59,18 @@ export const Practice = () => {
 
   const createMarkup = htmlString => ({ __html: htmlString });
 
+  const handleClickMoreButton = () => {
+    setIsShowMoreDesc(prev => !prev);
+
+    if (isShowMoreDesc) {
+      ref.current.scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <SectionStyled ref={ref}>
       <Container>
@@ -96,7 +108,7 @@ export const Practice = () => {
 
                 {currentPractice?.specialization_description_full && (
                   <MoreButtonStyled
-                    onClick={() => setIsShowMoreDesc(prev => !prev)}
+                    onClick={handleClickMoreButton}
                     type="button"
                     aria-label="read more info"
                   >
