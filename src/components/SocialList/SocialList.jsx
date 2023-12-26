@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-import { SocialListStyled, SocialLink } from './SocialList.styled';
+import { SocialListStyled, SocialLink, ItemStyled } from './SocialList.styled';
 import { Icon } from '../Icon';
 
 export const SocialList = ({ media, currentfill, hoverfill }) => {
   return (
     <SocialListStyled>
-      {media.map(({ url, title }, index) => (
-        <li key={index}>
+      {media.map(({ url, title, id }, index) => (
+        <ItemStyled key={index} position={id}>
           <SocialLink
             to={url}
             target="_blank"
@@ -18,7 +18,7 @@ export const SocialList = ({ media, currentfill, hoverfill }) => {
           >
             <Icon id={title} width={30} height={30} />
           </SocialLink>
-        </li>
+        </ItemStyled>
       ))}
     </SocialListStyled>
   );
