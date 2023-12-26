@@ -24,8 +24,8 @@ export const SliderItems = React.forwardRef((props, ref) => {
 					<SplideSlide key={elem.id}>
 						<TeamMateCardWrapper>
 							<NavLink
-								to="/practice"
-								aria-label="practice"
+								to="/company"
+								aria-label="company"
 								state={elem.id}
 							>
 								<img
