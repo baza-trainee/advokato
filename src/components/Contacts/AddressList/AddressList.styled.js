@@ -8,6 +8,10 @@ export const UlStyled = styled.ul`
   max-width: 415px;
   list-style: square;
   margin-left: 20px;
+`;
+
+export const ListItem = styled.li`
+  order: ${({ position }) => position};
 
   p {
     min-height: 36px;

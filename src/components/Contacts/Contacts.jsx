@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
+import { isObjectEmpty } from '../../helpers';
 import { GoogleMap } from './GoogleMap';
 import { getContent } from '../../api/';
 import { SocialList } from '../SocialList';
@@ -24,8 +25,10 @@ export const Contacts = () => {
       NotiflixLoading.dots();
       const data = await getContent('contacts');
 
-      setCities(prev => data.cities);
-      setContacts(prev => data.contacts);
+      if (!isObjectEmpty(data)) {
+        setCities(prev => data.cities);
+        setContacts(prev => data.contacts);
+      }
 
       NotiflixLoading.remove();
     };
