@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { UlStyled } from './AddressList.styled';
+import { UlStyled, ListItem } from './AddressList.styled';
 
 export const AddressList = ({ cities }) => {
   return (
     <UlStyled>
       {cities.map(({ id, address }) => (
-        <li key={id}>
+        <ListItem key={id} position={id}>
           <p>{address}</p>
-        </li>
+        </ListItem>
       ))}
     </UlStyled>
   );
