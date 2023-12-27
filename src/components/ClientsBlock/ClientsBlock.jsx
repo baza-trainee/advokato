@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
 	ClientsBlockHeader,
 	ClientsSliderContainer,
+	Container,
 	SectionStyled,
 	SliderArrow,
 } from "./ClientsBlock.styled";
@@ -21,7 +22,9 @@ export const ClientsBlock = () => {
 
 	return (
 		<SectionStyled>
+			<Container>
 			<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			</Container>
 			{data?.length > 0 && (
 				<ClientsSliderContainer>
 					<SliderArrow>

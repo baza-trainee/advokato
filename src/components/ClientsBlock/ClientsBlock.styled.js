@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
-import { flexBox, fontSectionTitle, sliderArrow } from "../../styles/mixins";
+import { container, flexBox, fontSectionTitle, sliderArrow } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	height: 512px;
 	background: var(--darkBackground);
+`;
+
+export const Container = styled.div`
+	max-width: 1440px;
+	margin: 0 auto;
 `;
 
 export const ClientsBlockHeader = styled.h2`
@@ -27,6 +32,8 @@ export const SliderArrow = styled.div`
 
 export const ClientsSliderContainer = styled.div`
 	${flexBox};
+	max-width: 1440px;
+    margin: 0 auto;
 	gap: 32px;
 	overflow: hidden;
 	position: relative;

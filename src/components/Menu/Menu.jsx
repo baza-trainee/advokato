@@ -27,7 +27,6 @@ export const Menu = ({ side }) => {
   }, [pathname, hash]);
 
   const handleClickNavButton = ({ target }) => {
-    console.log(target.getAttribute('aria-label'));
     setActive(prev => target.getAttribute('aria-label'));
   };
 
