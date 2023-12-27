@@ -36,6 +36,10 @@
 - [example repo](https://github.com/wojtekmaj/react-calendar/wiki/Recipes)
 - [date library date-fns](https://date-fns.org/)
 
+## other
+
+- [disable contextmenu](https://stackoverflow.com/questions/53810524/disable-contextmenu-in-reactjs)
+
 ## firebase deploy
 
 - npm run build

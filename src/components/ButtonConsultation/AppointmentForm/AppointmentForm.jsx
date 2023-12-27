@@ -23,7 +23,7 @@ import {
   UpperButton,
   LowerButton,
 } from './AppointmentForm.styled';
-import pdfFile from '../../../assets/documents/test_privacy_policy.pdf';
+import privacyPolicy from '../../../assets/documents/privacy-policy.pdf';
 
 const DEFAULT_VALUES = {
   firstName: '',
@@ -214,7 +214,7 @@ export const AppointmentForm = ({ setModalActive }) => {
           padding="20px"
           align="flex-start"
         >
-          <PdfViewer pdfFile={pdfFile} />
+          <PdfViewer pdfFile={privacyPolicy} />
         </ModalFromRoot>
       )}
 
