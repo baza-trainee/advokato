@@ -110,7 +110,7 @@ export const Practice = () => {
                   <MoreButtonStyled
                     onClick={handleClickMoreButton}
                     type="button"
-                    aria-label="read more info"
+                    aria-label="прочитати більше інформації"
                   >
                     {isShowMoreDesc
                       ? t('practiceSection.hideButton')
@@ -123,6 +123,7 @@ export const Practice = () => {
                 customStyles={{
                   padding: '16px 24px',
                   width: '288px',
+                  height: '52px',
                 }}
               />
             </PracticeInfo>
