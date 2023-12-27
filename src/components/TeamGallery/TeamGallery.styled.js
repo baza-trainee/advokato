@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import {
 	container,
+	device,
 	flexBox,
 	fontReview,
 	fontSectionText,
@@ -17,7 +18,7 @@ export const SectionStyled = styled.section`
 	color: var(--lightText);
 	overflow: hidden;
 	position: relative;
-`;
+	`;
 
 export const Container = styled.div`
 	${container};
@@ -37,7 +38,8 @@ export const TeamBlockSubTitle = styled.p`
 
 export const TeamSliderContainer = styled.div`
 	${flexBox};
-	max-width: 1856px;
+	max-width: 1440px;
+	margin: 0 auto;
 	height: fit-content;
 	overflow: hidden;
 	position: relative;
@@ -69,8 +71,8 @@ export const SliderArrow = styled.div`
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
 	img {
-		width: 100%;
-		height: 100%;
+		width: 1120px;
+		height: 600px;
 		object-fit: cover;
 	}
 `;
