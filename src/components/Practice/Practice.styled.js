@@ -89,6 +89,8 @@ export const PracticeDescFull = styled.div`
 `;
 
 export const MoreButtonStyled = styled.button`
+  width: 100px;
+  height: 24px;
   float: right;
 
   font-family: var(--Raleway);
@@ -96,6 +98,7 @@ export const MoreButtonStyled = styled.button`
   font-weight: 400;
   line-height: calc(27 / 18);
   letter-spacing: 0em;
+  text-align: right;
   color: var(--greyText);
   border: none;
   background-color: inherit;
