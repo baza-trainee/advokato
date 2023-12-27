@@ -49,6 +49,7 @@ export const ClientCardWrapper = styled.div`
 	border-radius: 20px;
 	border: 1px solid var(--reviewText);
 	cursor: pointer;
+	overflow: hidden;
 	img {
 		width: 300px;
 		height: 180px;

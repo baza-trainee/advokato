@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-// import { parseToParagraphs } from '../../helpers';
+import { isObjectEmpty } from '../../helpers';
 import { PracticeList } from './PracticeList';
 import { ButtonConsultation } from '../ButtonConsultation';
 import { getContent } from '../../api';
@@ -32,7 +32,7 @@ export const Practice = () => {
     const getData = async () => {
       const data = await getContent('specializations');
 
-      if (data) {
+      if (!isObjectEmpty(data)) {
         setPractices(prev => data);
         setCurrentPractice(prev => data[0]);
       }
@@ -58,6 +58,18 @@ export const Practice = () => {
   }, [pathname, hash]);
 
   const createMarkup = htmlString => ({ __html: htmlString });
+
+  const handleClickMoreButton = () => {
+    setIsShowMoreDesc(prev => !prev);
+
+    if (isShowMoreDesc) {
+      ref.current.scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <SectionStyled ref={ref}>
@@ -96,7 +108,7 @@ export const Practice = () => {
 
                 {currentPractice?.specialization_description_full && (
                   <MoreButtonStyled
-                    onClick={() => setIsShowMoreDesc(prev => !prev)}
+                    onClick={handleClickMoreButton}
                     type="button"
                     aria-label="read more info"
                   >
@@ -107,7 +119,12 @@ export const Practice = () => {
                 )}
               </PracticeDescWrp>
 
-              <ButtonConsultation />
+              <ButtonConsultation
+                customStyles={{
+                  padding: '16px 24px',
+                  width: '288px',
+                }}
+              />
             </PracticeInfo>
 
             <PracticeList

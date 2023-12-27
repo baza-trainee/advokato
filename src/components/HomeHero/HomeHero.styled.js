@@ -21,22 +21,22 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
   ${container};
   padding-top: calc(132px + 140px);
-  
   div {
-    display: flex;
-    justify-content: space-between;
-  }
+	  display: flex;
+	  justify-content: space-between;
+	}
 	${container};
 	padding-top: calc(132px + 120px);
 	div {
 		display: flex;
 		justify-content: space-between;
 	}
+	
 	@media screen and (${device.desktop}) {
 		max-width: 1440px;
 		padding-top: calc(132px + 140px);
 	}
-`;
+	`;
 
 export const MainTitleStyled = styled.h1`
 	${fontHeroTitle};

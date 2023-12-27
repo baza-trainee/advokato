@@ -56,11 +56,11 @@ main {
 	top: -52px;
 
 	@media screen and (min-width: 768px) {
-		top: -80px;
+		top: -120px;
 	}
 
 	@media screen and (min-width: 1024px) {
-		top: -80px;
+		top: -120px;
 	}
 
 	@media screen and (min-width: 1200px) {

@@ -17,7 +17,6 @@ export const SectionStyled = styled.section`
 	color: var(--lightText);
 	overflow: hidden;
 	position: relative;
-	top: -0.2vh;
 `;
 
 export const Container = styled.div`
