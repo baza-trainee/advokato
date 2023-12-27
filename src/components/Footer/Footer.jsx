@@ -17,8 +17,8 @@ import {
   Text,
   TextLink,
 } from './Footer.styled';
-import pdfFile from '../../assets/documents/test_privacy_policy.pdf';
-import pdfSiteRules from '../../assets/documents/site_rules.pdf';
+import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
+import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
 import { getContent } from '../../api/';
 import { isObjectEmpty } from '../../helpers';
 
@@ -144,7 +144,7 @@ export const Footer = () => {
               to="#"
               onClick={() => {
                 setModalActive(true);
-                setSelectedPdfFile(pdfFile);
+                setSelectedPdfFile(privacyPolicy);
               }}
               aria-label="посилання на політику конфіденційності"
             >
@@ -154,7 +154,7 @@ export const Footer = () => {
               to="#"
               onClick={() => {
                 setModalActive(true);
-                setSelectedPdfFile(pdfSiteRules);
+                setSelectedPdfFile(termsUseSite);
               }}
               aria-label="посилання на умови користування сайтом"
             >
