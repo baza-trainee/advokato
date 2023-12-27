@@ -21,7 +21,8 @@ export const FlexWraper = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
   gap: ${props => props.gap || '140px'};
-  justify-content: ${props => props.justifyContent || 'center'};
+  justify-content: ${({ path }) =>
+    path === '/contacts' ? 'space-between' : 'center'};
 `;
 
 export const List = styled.ul`
@@ -34,7 +35,8 @@ export const LinkStyled = styled(NavLink)`
   font-family: var(--Montserrat);
   font-size: 18px;
   line-height: calc(32.4 / 18);
-  color: var(--lightText);
+  color: ${({ current, active }) =>
+    current === active ? 'var(--accentLink)' : 'var(--lightText)'};
   position: relative;
   transition: color 0.3s ease-in-out;
 
@@ -48,7 +50,7 @@ export const LinkStyled = styled(NavLink)`
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 0;
+    width: ${({ current, active }) => (current === active ? '100%' : '0')};
     height: 2px;
     background-color: var(--accentLink);
     transition: width 0.3s ease-in-out;
@@ -57,13 +59,6 @@ export const LinkStyled = styled(NavLink)`
   &:hover::before {
     width: 100%;
   }
-
-  &.active {
-    color: var(--accentLink);
-    &::before {
-      width: 100%;
-    }
-  }
 `;
 
 export const Text = styled.p`
@@ -71,10 +66,18 @@ export const Text = styled.p`
   font-family: var(--Montserrat);
   line-height: calc(32.4 / 18);
   color: var(--lightText);
+
+  margin-left: ${({ path }) => (path === '/contacts' ? '100px' : null)};
+`;
+
+export const DocsWrp = styled.div`
+  margin-right: ${({ path }) => (path === '/contacts' ? '100px' : null)};
+  margin-bottom: ${({ path }) => (path === '/contacts' ? '48px' : null)};
 `;
 
 export const TextLink = styled(Link)`
-  margin-bottom: ${props => props.marginbottom || '16px'};
+  margin-bottom: 16px;
+  width: 290px;
   font-family: var(--Montserrat);
   line-height: calc(32.4 / 18);
   color: var(--lightText);

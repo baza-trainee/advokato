@@ -21,7 +21,8 @@ export const TitleStyled = styled.h2`
 `;
 
 export const PracticeDescWrp = styled.div`
-  margin-bottom: 28px;
+  margin-bottom: 12px;
+  overflow: hidden;
 `;
 
 export const PracticeWrp = styled.div`
@@ -48,28 +49,23 @@ export const PracticeTitle = styled.h3`
   font-weight: 400;
   line-height: calc(45 / 32);
   letter-spacing: 0em;
-
   color: var(--lightText);
 `;
 
 export const PracticeDesc = styled.p`
-  /* display: inline; */
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 
   font-family: var(--Raleway);
   font-size: 18px;
   font-weight: 400;
   line-height: calc(27 / 18);
   letter-spacing: 0em;
-  text-indent: 20px;
   color: var(--lightText);
 
   display: ${({ isShowMoreDesc }) => (isShowMoreDesc ? 'block' : null)};
 `;
 
 export const PracticeDescFull = styled.div`
-  display: inline;
-
   font-family: var(--Raleway);
   font-size: 18px;
   font-weight: 400;
@@ -79,25 +75,19 @@ export const PracticeDescFull = styled.div`
   color: var(--lightText);
 
   p:not(:last-of-type) {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   ul,
   ol {
     list-style-type: disc;
     margin-left: 30px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    /* display: inline; */
-    text-indent: 20px;
+    margin-bottom: 12px;
   }
 `;
 
 export const MoreButtonStyled = styled.button`
-  /* display: inline; */
-  margin-left: 10px;
+  float: right;
 
   font-family: var(--Raleway);
   font-size: 18px;
@@ -115,6 +105,5 @@ export const ExtraInfoWrpStyled = styled.div`
 
     text-align: justify;
     color: red;
-    text-indent: 30px;
   }
 `;

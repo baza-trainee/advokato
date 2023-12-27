@@ -30,3 +30,7 @@ export const SocialLink = styled(Link)`
     }
   }
 `;
+
+export const ItemStyled = styled.li`
+  order: ${({ position }) => position};
+`;

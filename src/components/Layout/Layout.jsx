@@ -22,6 +22,7 @@ import {
 	PhoneBurger,
 	Container,
 } from "./Layout.styled";
+import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
@@ -29,7 +30,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [top, setTop] = useState(true);
 	const location = useLocation();
 	const navigate = useNavigate();
-
+	
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -130,8 +131,9 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 					<Outlet />
 				</Suspense>
 			</MainStyled>
-
 			<Footer />
+
+			<ScrollUpButton />
 
 			<CookiesPanel />
 		</>
