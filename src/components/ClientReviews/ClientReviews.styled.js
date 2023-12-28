@@ -64,12 +64,19 @@ export const CardHeader = styled.div`
 	width: 360px;
 	height: fit-content;
 	gap: 20px;
+	overflow: hidden;
+`;
+export const ImageWrapper = styled.div`
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
 	img {
-		width: 80px;
-		height: 80px;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 `;
-
 export const CardRecvisits = styled.div`
 	width: 260px;
 `;
