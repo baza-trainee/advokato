@@ -35,6 +35,10 @@ export const Calendar = ({ schedule, setValue }) => {
   }, [schedule, currentDate]);
 
   const handleChangeDate = date => {
+    setValue('appointment_time', '', {
+      shouldValidate: true,
+    });
+
     const changedDate = format(new Date(date), 'yyyy-MM-dd');
 
     setValue('appointment_date', changedDate, {

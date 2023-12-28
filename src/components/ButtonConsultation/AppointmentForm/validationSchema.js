@@ -17,7 +17,7 @@ export const SchemaUa = yup
       .string('Має бути текстовим')
       .matches(
         REGEX_PHONE,
-        'Введіть телефон в наступному форматі +380...'
+        'Невалідний формат'
       )
       .required('Обов`язкове поле'),
 
@@ -54,7 +54,7 @@ export const SchemaEn = yup
       .string('Must be text')
       .matches(
         REGEX_PHONE,
-        'Enter the phone in the following format +380...'
+        'Invalid format'
       )
       .required('Обов`язкове поле'),
 
