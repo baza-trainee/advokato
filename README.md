@@ -36,6 +36,13 @@
 - [example repo](https://github.com/wojtekmaj/react-calendar/wiki/Recipes)
 - [date library date-fns](https://date-fns.org/)
 
+## react inner-html
+
+- [dangerouslySetInnerHTML](https://blog.logrocket.com/using-dangerouslysetinnerhtml-react-application/)
+- [How to safely use dangerouslySetInnerHTML in React](https://deadsimplechat.com/blog/how-to-safely-use-dangerouslysetinnerhtml-in-react/)
+- [dompurify](https://www.npmjs.com/package/dompurify)
+- [react-html-parser](https://www.npmjs.com/package/html-react-parser)
+
 ## other
 
 - [disable contextmenu](https://stackoverflow.com/questions/53810524/disable-contextmenu-in-reactjs)

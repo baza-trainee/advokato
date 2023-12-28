@@ -43,6 +43,7 @@ export const ImageStyled = styled.img`
 
 export const PracticeTitle = styled.h3`
   margin-bottom: 24px;
+  height: 36px;
 
   font-family: var(--Raleway);
   font-size: 32px;
