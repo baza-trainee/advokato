@@ -76,7 +76,7 @@ export const DocsWrp = styled.div`
 `;
 
 export const TextLink = styled(Link)`
-	margin-bottom: 16px;
+	margin-bottom: ${props => props.marginBottom || "16px"};
 	width: 290px;
 	font-family: var(--Montserrat);
 	line-height: calc(32.4 / 18);
@@ -109,6 +109,7 @@ export const PolicyText = styled(Link)`
 `;
 
 export const Line = styled.div`
+	margin-top: -10px;
 	margin-bottom: 28px;
 	width: 100%;
 	height: 1px;
