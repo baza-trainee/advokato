@@ -34,9 +34,9 @@ export const DivStyled = styled.div`
 
   .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     text-transform: capitalize;
     color: var(--mainText);
@@ -47,9 +47,9 @@ export const DivStyled = styled.div`
     ${flexBox};
 
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     text-transform: uppercase;
     color: var(--mainText);
@@ -62,9 +62,9 @@ export const DivStyled = styled.div`
   .react-calendar__tile.react-calendar__month-view__days__day,
   .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     color: var(--mainText);
 
