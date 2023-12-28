@@ -14,7 +14,7 @@ export const BurgerMenu = ({
 	useEffect(() => {
 		function ClickOut(e) {
 			if (!ref.current.contains(e.target)) {
-				setIsOpen(false);
+				setIsOpen(prev => !prev);
 			}
 		}
 		document.body.addEventListener("mousedown", ClickOut);
