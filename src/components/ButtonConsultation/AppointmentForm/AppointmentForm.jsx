@@ -19,6 +19,8 @@ import { FailurePage } from './FailurePage';
 import {
   FormWrp,
   FormStyled,
+  FirstPageTitle,
+  SecondPageTitle,
   ButtonWrp,
   UpperButton,
   LowerButton,
@@ -55,7 +57,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const [isChecked, setIsChecked] = useState(getValues('isAccept'));
   const [isOpenDoc, setIsOpenDoc] = useState(false);
-  const [currentPartForm, setCurrentPartForm] = useState(1);
+  const [currentPartForm, setCurrentPartForm] = useState(5);
   const [specialization, setSpecialization] = useState([]);
   const [currentSpec, setCurrentSpec] = useState('');
   const [lawyers, setLawyers] = useState([]);
@@ -225,7 +227,7 @@ export const AppointmentForm = ({ setModalActive }) => {
         >
           {currentPartForm === 1 && (
             <>
-              <h2>{t('appointmentForm.firstTitle')}</h2>
+              <FirstPageTitle>{t('appointmentForm.firstTitle')}</FirstPageTitle>
 
               <Input
                 register={register}
@@ -283,7 +285,9 @@ export const AppointmentForm = ({ setModalActive }) => {
 
           {currentPartForm === 2 && (
             <>
-              <h2>{t('appointmentForm.secondTitle')}</h2>
+              <SecondPageTitle>
+                {t('appointmentForm.secondTitle')}
+              </SecondPageTitle>
 
               <Select
                 onChangeSelect={onChangeSelectSpec}
