@@ -13,7 +13,7 @@ export const SuccessPage = () => {
       <p>{t('appointmentForm.successTextOne')}</p>
       <p>{t('appointmentForm.successTextTwo')}</p>
 
-      <Icon id="success" height={100} width={100} />
+      <Icon id="success" height={60} width={60} />
     </DivStyled>
   );
 };

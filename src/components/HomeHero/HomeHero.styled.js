@@ -4,26 +4,23 @@ import {
 	fontHeroTitle,
 	fontSectionText,
 	device,
-	flexBox,
 } from "../../styles/mixins";
 import bgImage from "../../assets/images/homeHero-section/hero-bg.jpg";
 
 export const SectionStyled = styled.section`
-  height: 100vh;
-
-  background-image: url(${bgImage});
-  background-size: cover;
 	height: 100vh;
 	background-image: url(${bgImage});
 	background-size: cover;
 `;
 
 export const Container = styled.div`
-  ${container};
-  padding-top: calc(132px + 140px);
-  div {
-	  display: flex;
-	  justify-content: space-between;
+	${container};
+	max-width: 1440px;
+	margin: 0 auto;
+	padding-top: calc(132px + 140px);
+	div {
+		display: flex;
+		justify-content: space-between;
 	}
 	${container};
 	padding-top: calc(132px + 120px);
@@ -31,12 +28,12 @@ export const Container = styled.div`
 		display: flex;
 		justify-content: space-between;
 	}
-	
+
 	@media screen and (${device.desktop}) {
 		max-width: 1440px;
 		padding-top: calc(132px + 140px);
 	}
-	`;
+`;
 
 export const MainTitleStyled = styled.h1`
 	${fontHeroTitle};

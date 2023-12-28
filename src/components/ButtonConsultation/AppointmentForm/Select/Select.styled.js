@@ -3,6 +3,7 @@ import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
+  margin-bottom: -4px;
 
   p {
     margin-bottom: 8px;

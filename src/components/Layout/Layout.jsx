@@ -20,8 +20,9 @@ import {
 	PhonesDiv,
 	HamburgerMenu,
 	PhoneBurger,
+	Container,
 } from "./Layout.styled";
-import { ScrollUpButton } from "../ScrollUpButton";
+import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
@@ -29,7 +30,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [top, setTop] = useState(true);
 	const location = useLocation();
 	const navigate = useNavigate();
-
+	
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -55,70 +56,74 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	return (
 		<>
 			<HeaderStyled top={top}>
-				<PhoneBurger>
-					<Icon
-						id={"phoneButton"}
-						className="animate__animated animate__pulse animate__infinite infinite
+				<Container>
+					<PhoneBurger>
+						<Icon
+							id={"phoneButton"}
+							className="animate__animated animate__pulse animate__infinite infinite
           animate__slower	3s"
-						width={56}
-						height={56}
-					/>
-				</PhoneBurger>
+							width={56}
+							height={56}
+						/>
+					</PhoneBurger>
 
-				<NavLink
-					to="/"
-					aria-label="home"
-				>
-					<img
-						onClick={handleClickLogoButton}
-						width={152}
-						height={60}
-						src={logoImg}
-						alt="logoImage"
-					/>
-				</NavLink>
-
-				<Menu />
-
-				<div>
-					<LangButton
-						onClick={() =>
-							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
-						}
-						aria-label="lang-ua"
-						activeLang={activeLang}
-						currentLang="ua"
-						desktop="desktop"
+					<NavLink
+						to="/"
+						aria-label="home"
 					>
-						{activeLang.toUpperCase()}
-					</LangButton>
-				</div>
+						<img
+							onClick={handleClickLogoButton}
+							width={152}
+							height={60}
+							src={logoImg}
+							alt="logoImage"
+						/>
+					</NavLink>
 
-				<HamburgerMenu
-					className={`${isOpen ? "open" : ""}`}
-					onClick={() => setIsOpen(!isOpen)}
-				>
-					<span className={`${isOpen ? "open" : ""}`}></span>
-				</HamburgerMenu>
+					<Menu />
 
-				<BurgerMenu
-					isOpen={isOpen}
-					setIsOpen={setIsOpen}
-					top={top}
-					activeLang={activeLang}
-					toggleLanguage={toggleLanguage}
-				/>
+					<div>
+						<LangButton
+							onClick={() =>
+								activeLang === "ua"
+									? toggleLanguage("en")
+									: toggleLanguage("ua")
+							}
+							aria-label="lang-ua"
+							activeLang={activeLang}
+							currentLang="ua"
+							desktop="desktop"
+						>
+							{activeLang.toUpperCase()}
+						</LangButton>
+					</div>
 
-				<ConsultElement>
-					<ButtonConsultation
-						className={
-							"animate__animated animate__pulse animate__infinite infinite animate__slower	3s"
-						}
+					<HamburgerMenu
+						className={`${isOpen ? "open" : ""}`}
+						onClick={() => setIsOpen(!isOpen)}
+					>
+						<span className={`${isOpen ? "open" : ""}`}></span>
+					</HamburgerMenu>
+
+					<BurgerMenu
+						isOpen={isOpen}
+						setIsOpen={setIsOpen}
+						top={top}
+						activeLang={activeLang}
+						toggleLanguage={toggleLanguage}
 					/>
-					<PhonesDiv>
-						<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
-					</PhonesDiv>
-				</ConsultElement>
+
+					<ConsultElement>
+						<ButtonConsultation
+							className={
+								"animate__animated animate__pulse animate__infinite infinite animate__slower	3s"
+							}
+						/>
+						<PhonesDiv>
+							<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
+						</PhonesDiv>
+					</ConsultElement>
+				</Container>
 			</HeaderStyled>
 
 			<MainStyled>
@@ -126,7 +131,6 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 					<Outlet />
 				</Suspense>
 			</MainStyled>
-
 			<Footer />
 
 			<ScrollUpButton />
