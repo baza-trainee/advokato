@@ -32,10 +32,8 @@ const CompanyPage = () => {
 			NotiflixLoading.dots();
 			const data = await getContent("/our-team?is_slider=false");
 
-			const rangedByIdTeam = data.team.toSorted((a, b) => a.id - b.id);
-
 			setAboutCompany(prev => data.company);
-			setTeam(prev => rangedByIdTeam);
+			setTeam(prev => data.team);
 			NotiflixLoading.remove();
 		};
 
