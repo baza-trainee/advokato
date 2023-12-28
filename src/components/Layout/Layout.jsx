@@ -80,7 +80,8 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						/>
 					</NavLink>
 
-					<Menu />
+						
+					<Menu setIsOpen={setIsOpen}/>
 
 					<div>
 						<LangButton
