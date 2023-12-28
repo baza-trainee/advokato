@@ -15,6 +15,11 @@ export const SectionStyled = styled.section`
 	top: -0.2vh;
 `;
 
+export const Container = styled.div`
+	max-width: 1440px;
+	margin: 0 auto;
+`;
+
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
 	padding: 132px 151px 40px;
@@ -24,7 +29,8 @@ export const ClientsBlockHeader = styled.h2`
 export const SliderWrapper = styled.div`
 	${flexBox};
 	gap: 32px;
-	max-width: 1856px;
+	max-width: 1440px;
+	margin: 0 auto;
 	height: fit-content;
 	overflow: hidden;
 	position: relative;

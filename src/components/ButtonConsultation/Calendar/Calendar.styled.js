@@ -6,14 +6,15 @@ export const DivStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: -4px;
 
   .react-calendar {
-    width: 692px;
+    width: 520px;
     border: 1px solid #969395;
   }
 
   .react-calendar__navigation {
-    height: 116px;
+    height: 76px;
     margin-bottom: 0;
 
     border: 1px solid #969395;
@@ -21,21 +22,21 @@ export const DivStyled = styled.div`
   }
 
   .react-calendar__month-view__weekdays {
-    height: 116px;
+    height: 76px;
 
     border: 1px solid #969395;
     background-color: #f3eff5;
   }
 
   .react-calendar__month-view__days {
-    height: 624px;
+    height: calc(76px * 6);
   }
 
   .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     text-transform: capitalize;
     color: var(--mainText);
@@ -46,9 +47,9 @@ export const DivStyled = styled.div`
     ${flexBox};
 
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     text-transform: uppercase;
     color: var(--mainText);
@@ -61,9 +62,9 @@ export const DivStyled = styled.div`
   .react-calendar__tile.react-calendar__month-view__days__day,
   .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
     font-family: var(--Raleway);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 42px;
     letter-spacing: 0em;
     color: var(--mainText);
 
@@ -98,7 +99,7 @@ export const DivStyled = styled.div`
 `;
 
 export const MainTitle = styled.h2`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   height: 48px;
   min-width: 471px;
 
@@ -108,8 +109,8 @@ export const MainTitle = styled.h2`
 `;
 
 export const SecondaryTitle = styled.h2`
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 24px;
+  margin-bottom: 20px;
   height: 48px;
   min-width: 471px;
 
@@ -120,9 +121,9 @@ export const SecondaryTitle = styled.h2`
 
 export const TimeList = styled.ul`
   display: flex;
-  gap: 47px;
+  gap: 40px;
   flex-wrap: wrap;
-  width: 692px;
+  width: 520px;
   margin-bottom: calc(72px - 52px);
 
   li {

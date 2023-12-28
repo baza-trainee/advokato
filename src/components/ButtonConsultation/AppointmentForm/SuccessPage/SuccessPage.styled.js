@@ -2,8 +2,12 @@ import styled from '@emotion/styled';
 import { fontSectionTitle } from '../../../../styles/mixins';
 
 export const DivStyled = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   h2 {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     height: 48px;
     min-width: 471px;
 
@@ -13,25 +17,23 @@ export const DivStyled = styled.div`
   }
 
   p {
-    font-family: var(--Raleway);
-    font-size: 32px;
+    font-family: var(--PTSans);
+    font-size: 22px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 35.2px;
     letter-spacing: 0em;
-    text-align: center;
     color: var(--mainText);
   }
 
   p:first-of-type {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
 
   p:last-of-type {
-    margin-bottom: 60px;
+    margin-bottom: 28px;
   }
 
   svg {
-    margin: 0 auto;
     fill: var(--trueText);
   }
 `;

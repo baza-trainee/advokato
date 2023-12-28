@@ -6,35 +6,46 @@ import {
 } from '../../../styles/mixins';
 
 export const FormWrp = styled.div`
-  padding-top: 124px;
-  padding-right: 54px;
-  padding-bottom: 60px;
-  padding-left: 54px;
-  width: 800px;
-  min-height: 1076px;
+  padding-top: 84px;
+  padding-right: 40px;
+  padding-bottom: 32px;
+  padding-left: 40px;
+  width: 600px;
+  min-height: 892px;
 
   background-color: white;
+`;
 
-  h2 {
-    height: 48px;
-    min-width: 471px;
+export const FirstPageTitle = styled.h2`
+  margin-bottom: -12px;
+  height: 48px;
+  width: 471px;
 
-    ${fontSectionTitle};
-    text-align: center;
-    color: var(--mainText);
-  }
+  ${fontSectionTitle};
+  text-align: center;
+  color: var(--mainText);
+`;
+
+export const SecondPageTitle = styled.h2`
+  margin-bottom: -12px;
+  height: 112px;
+  width: 356px;
+
+  ${fontSectionTitle};
+  text-align: center;
+  color: var(--mainText);
 `;
 
 export const FormStyled = styled.form`
   ${flexBox};
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 `;
 
 export const ButtonWrp = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 `;
 
 export const UpperButton = styled.button`

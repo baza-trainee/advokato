@@ -3,7 +3,7 @@ import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
-  width: 480px;
+  width: 440px;
 
   p {
     height: 36px;
@@ -11,7 +11,7 @@ export const LabelStyled = styled.label`
   }
 
   p:first-of-type {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     color: var(--mainText);
   }
 `;

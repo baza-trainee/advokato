@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 
 export const LiStyled = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 17px;
+  padding-bottom: 11px;
   max-width: 548px;
-  min-height: 64px;
+  height: 64px;
 
   font-family: var(--Raleway);
   font-size: 32px;
@@ -21,6 +20,7 @@ export const LiStyled = styled.li`
   p {
     display: flex;
     align-items: center;
+    height: 36px;
   }
 
   span {
