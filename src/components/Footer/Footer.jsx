@@ -16,6 +16,7 @@ import {
   PolicyText,
   Text,
   TextLink,
+  DivStyled,
 } from './Footer.styled';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
 import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
@@ -140,26 +141,30 @@ export const Footer = () => {
           )}
 
           <DocsWrp path={location.pathname}>
-            <PolicyText
-              to="#"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(privacyPolicy);
-              }}
-              aria-label="посилання на політику конфіденційності"
-            >
-              Політика конфіденційності
-            </PolicyText>
-            <PolicyText
-              to="#"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(termsUseSite);
-              }}
-              aria-label="посилання на умови користування сайтом"
-            >
-              Правила користування сайтом
-            </PolicyText>
+            <DivStyled>
+              <PolicyText
+                to="#"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(privacyPolicy);
+                }}
+                aria-label="посилання на політику конфіденційності"
+              >
+                Політика конфіденційності
+              </PolicyText>
+            </DivStyled>
+            <DivStyled>
+              <PolicyText
+                to="#"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(termsUseSite);
+                }}
+                aria-label="посилання на умови користування сайтом"
+              >
+                Правила користування сайтом
+              </PolicyText>
+            </DivStyled>
           </DocsWrp>
 
           {location.pathname !== '/contacts' && (
@@ -188,6 +193,7 @@ export const Footer = () => {
                   <TextLink
                     to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
                     aria-label="електронна пошта компанії"
+                    marginbottom="12px"
                   >
                     {contacts[0]?.contacts[1]?.mail}
                   </TextLink>
@@ -200,7 +206,7 @@ export const Footer = () => {
         </FlexWraper>
 
         <Line />
-        <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+        <Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
       </Container>
     </FooterStyled>
   );
