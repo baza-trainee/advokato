@@ -86,7 +86,7 @@ export const Practice = () => {
                 src={currentPractice?.specialization_photo}
                 width={456}
                 height={320}
-                alt="picture about practice"
+                alt="тематичне зображення до категорії"
               />
 
               <PracticeTitle>
