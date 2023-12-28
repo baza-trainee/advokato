@@ -196,13 +196,7 @@ export const Footer = () => {
 									>
 										{phone}
 									</TextLink>
-									<TextLink
-										to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
-										aria-label="електронна пошта компанії"
-										marginBottom="12px"
-									>
-										{contacts[0]?.contacts[1]?.mail}
-									</TextLink>
+									<Text marginBottom="12px">{contacts[0]?.contacts[1]?.mail}</Text>
 
 									<SocialList media={contacts[0]?.social} />
 								</>
