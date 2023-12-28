@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
+import parse from 'html-react-parser';
 
 import { isObjectEmpty } from '../../helpers';
 import { PracticeList } from './PracticeList';
@@ -57,7 +59,9 @@ export const Practice = () => {
     }
   }, [pathname, hash]);
 
-  const createMarkup = htmlString => ({ __html: htmlString });
+  const sanitizedMarkup = DOMPurify.sanitize(
+    currentPractice?.specialization_description_full
+  );
 
   const handleClickMoreButton = () => {
     setIsShowMoreDesc(prev => !prev);
@@ -99,11 +103,7 @@ export const Practice = () => {
                 </PracticeDesc>
 
                 {isShowMoreDesc && (
-                  <PracticeDescFull
-                    dangerouslySetInnerHTML={createMarkup(
-                      currentPractice?.specialization_description_full
-                    )}
-                  />
+                  <PracticeDescFull>{parse(sanitizedMarkup)}</PracticeDescFull>
                 )}
 
                 {currentPractice?.specialization_description_full && (
