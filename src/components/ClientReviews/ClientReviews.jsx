@@ -23,7 +23,7 @@ export const ClientReviews = () => {
 	return (
 		<SectionStyled>
 			<Container>
-			<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
+				<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
 			</Container>
 			{data?.length > 0 && (
 				<SliderWrapper>

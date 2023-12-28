@@ -28,21 +28,32 @@ export const BlockWrapper = styled.div`
 	width: 1120px;
 	height: 572px;
 	margin: 40px auto;
-	img {
-		border-radius: 24px;
-	}
 `;
 
 export const LeftSide = styled.div`
 	position: relative;
 	width: 500px;
 	height: 572px;
+	overflow: hidden;
+	img {
+		border-radius: 24px;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 `;
 
 export const RightSide = styled.div`
 	position: relative;
 	width: 500px;
 	height: 572px;
+	overflow: hidden;
+	img {
+		border-radius: 24px;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 `;
 
 export const TextWrapper = styled.div`
@@ -51,6 +62,10 @@ export const TextWrapper = styled.div`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+	ul {
+		list-style: disc;
+		margin-left: 22px;
+	}
 `;
 
 export const BonoHeader = styled.h2`
