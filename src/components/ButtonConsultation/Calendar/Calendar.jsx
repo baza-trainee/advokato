@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 
 import 'react-calendar/dist/Calendar.css';
+import { Icon } from '../../Icon';
 import {
   DivStyled,
   MainTitle,
@@ -91,6 +92,10 @@ export const Calendar = ({ schedule, setValue }) => {
             return checkDate(date);
           }
         }}
+        nextLabel={<Icon id="calendar-right-next" height={32} width={32} />}
+        next2Label={<Icon id="calendar-right-2next" height={32} width={32} />}
+        prevLabel={<Icon id="calendar-left-next" height={32} width={32} />}
+        prev2Label={<Icon id="calendar-left-2next" height={32} width={32} />}
       />
 
       {hours.length > 0 && (
