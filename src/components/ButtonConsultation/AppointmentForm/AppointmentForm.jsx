@@ -156,6 +156,8 @@ export const AppointmentForm = ({ setModalActive }) => {
       phone,
     } = formData;
 
+    const clientName = `${firstName} ${lastName}`;
+
     const data = {
       appointment: {
         appointment_date,
@@ -165,7 +167,7 @@ export const AppointmentForm = ({ setModalActive }) => {
       },
       visitor: {
         email: email || null,
-        name: `${firstName} ${lastName}`,
+        name: clientName !== ' ' ? clientName : null,
         phone_number: phone,
       },
     };
