@@ -90,12 +90,12 @@ export const FeedBackForm = () => {
 						</LabelWraper>
 
 						<LabelWraper>
-							<label htmlFor="tel">Ваш телефон</label>
+							<label htmlFor="tel">Ваш номер телефону</label>
 							<Input
 								{...register("tel")}
 								type="tel"
 								id="tel"
-								placeholder="Введіть телефон"
+								placeholder="+3 80 ХХ ХХХ ХХ ХХ"
 							/>
 
 							{errors.tel && dirtyFields.tel ? (
