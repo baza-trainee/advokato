@@ -19,6 +19,8 @@ import { FailurePage } from './FailurePage';
 import {
   FormWrp,
   FormStyled,
+  FirstPageTitle,
+  SecondPageTitle,
   ButtonWrp,
   UpperButton,
   LowerButton,
@@ -225,7 +227,7 @@ export const AppointmentForm = ({ setModalActive }) => {
         >
           {currentPartForm === 1 && (
             <>
-              <h2>{t('appointmentForm.firstTitle')}</h2>
+              <FirstPageTitle>{t('appointmentForm.firstTitle')}</FirstPageTitle>
 
               <Input
                 register={register}
@@ -283,7 +285,9 @@ export const AppointmentForm = ({ setModalActive }) => {
 
           {currentPartForm === 2 && (
             <>
-              <h2>{t('appointmentForm.secondTitle')}</h2>
+              <SecondPageTitle>
+                {t('appointmentForm.secondTitle')}
+              </SecondPageTitle>
 
               <Select
                 onChangeSelect={onChangeSelectSpec}
@@ -321,7 +325,8 @@ export const AppointmentForm = ({ setModalActive }) => {
               <UpperButton
                 onClick={onNextButton}
                 type="button"
-                aria-label="next step button"
+                aria-label="наступний крок"
+                disabled={currentPartForm === 2 && getValues('lawyer_id') === 0}
               >
                 {t('appointmentForm.nextButton')}
               </UpperButton>
@@ -331,14 +336,18 @@ export const AppointmentForm = ({ setModalActive }) => {
               <LowerButton
                 onClick={onSkipAllSteps}
                 type="button"
-                aria-label="skip button"
+                aria-label="пропустити"
               >
                 {t('appointmentForm.skipButton')}
               </LowerButton>
             )}
 
             {currentPartForm === 3 && (
-              <UpperButton type="submit" aria-label="submit button">
+              <UpperButton
+                type="submit"
+                aria-label="записатись на консультацію"
+                disabled={getValues('appointment_time') === ''}
+              >
                 {t('appointmentForm.submitButton')}
               </UpperButton>
             )}
@@ -347,7 +356,7 @@ export const AppointmentForm = ({ setModalActive }) => {
               <LowerButton
                 onClick={() => setModalActive(false)}
                 type="button"
-                aria-label="cancel button"
+                aria-label="відмінити"
               >
                 {t('appointmentForm.cancelButton')}
               </LowerButton>

@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import { fontSectionTitle } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  position: relative;
-  top: -0.2vh;
   padding: 132px 0;
   background-color: var(--darkBackground);
 `;
