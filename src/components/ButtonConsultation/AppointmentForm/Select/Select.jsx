@@ -20,7 +20,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
     const timerId = setTimeout(() => {
       setIsOpenList(prev => false);
       clearTimeout(timerId);
-    }, 3000);
+    }, 5000);
   }, [isOpenList]);
 
   const handleClickOption = ({ target }) => {
