@@ -186,10 +186,12 @@ export const AppointmentForm = ({ setModalActive }) => {
   const onSkipAllSteps = async () => {
     Loading.dots();
 
+    const clientName = `${getValues('firstName')} ${getValues('lastName')}`;
+
     const data = {
       email: getValues('email') || null,
       message: null,
-      name: `${getValues('firstName')} ${getValues('lastName')}` || null,
+      name: clientName !== ' ' ? clientName : null,
       phone_number: getValues('phone'),
     };
 
