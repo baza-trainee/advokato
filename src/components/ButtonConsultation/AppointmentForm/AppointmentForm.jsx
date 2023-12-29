@@ -30,7 +30,7 @@ import privacyPolicy from '../../../assets/documents/privacy-policy.pdf';
 const DEFAULT_VALUES = {
   firstName: '',
   lastName: '',
-  phone: '',
+  phone: '+380',
   email: '',
   isAccept: false,
   specialization_id: 0,
@@ -186,10 +186,12 @@ export const AppointmentForm = ({ setModalActive }) => {
   const onSkipAllSteps = async () => {
     Loading.dots();
 
+    const clientName = `${getValues('firstName')} ${getValues('lastName')}`;
+
     const data = {
       email: getValues('email') || null,
       message: null,
-      name: `${getValues('firstName')} ${getValues('lastName')}` || null,
+      name: clientName !== ' ' ? clientName : null,
       phone_number: getValues('phone'),
     };
 
