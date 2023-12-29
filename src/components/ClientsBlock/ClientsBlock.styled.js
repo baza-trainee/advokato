@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
-<<<<<<< HEAD
-import { container, flexBox, fontSectionTitle, sliderArrow } from "../../styles/mixins";
-=======
 import { flexBox, fontSectionTitle, sliderArrow } from "../../styles/mixins";
->>>>>>> dev
 
 export const SectionStyled = styled.section`
 	height: 512px;
@@ -37,7 +33,7 @@ export const SliderArrow = styled.div`
 export const ClientsSliderContainer = styled.div`
 	${flexBox};
 	max-width: 1440px;
-    margin: 0 auto;
+	margin: 0 auto;
 	gap: 32px;
 	overflow: hidden;
 	position: relative;
@@ -55,19 +51,6 @@ export const ClientsSliderContainer = styled.div`
 
 export const ClientCardWrapper = styled.div`
 	${flexBox};
-<<<<<<< HEAD
-	width: 302px;
-	height: 180px;
-	border-radius: 20px;
-	border: 1px solid var(--reviewText);
-	cursor: pointer;
-	overflow: hidden;
-	img {
-		width: 300px;
-		height: 180px;
-		&:hover {
-			transform: scale(1.2);
-=======
 	width: 300px;
 	height: 180px;
 	border-radius: 20px;
@@ -79,7 +62,6 @@ export const ClientCardWrapper = styled.div`
 		object-fit: cover;
 		&:hover {
 			transform: scale(1.1);
->>>>>>> dev
 			transition: 1s;
 		}
 	}

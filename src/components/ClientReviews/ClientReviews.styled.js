@@ -77,10 +77,6 @@ export const ImageWrapper = styled.div`
 		object-fit: cover;
 	}
 `;
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 export const CardRecvisits = styled.div`
 	width: 260px;
 `;

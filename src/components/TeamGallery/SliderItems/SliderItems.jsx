@@ -30,10 +30,6 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							>
 								<img
 									src={elem.slider_photo_path}
-<<<<<<< HEAD
-									height={652}
-=======
->>>>>>> dev
 									width={1120}
 									height={652}
 									alt={elem.name}

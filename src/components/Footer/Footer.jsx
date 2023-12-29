@@ -1,246 +1,219 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
-import { PdfViewer } from '../PdfViewer';
-import { Modal } from '../Modal';
-import { SocialList } from '../SocialList';
+import { PdfViewer } from "../PdfViewer";
+import { Modal } from "../Modal";
+import { SocialList } from "../SocialList";
 import {
-  Container,
-  FlexWraper,
-  FooterStyled,
-  DocsWrp,
-  Line,
-  LinkStyled,
-  List,
-  PolicyText,
-  Text,
-  TextLink,
-<<<<<<< HEAD
-=======
-  DivStyled,
->>>>>>> dev
-} from './Footer.styled';
-import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
-import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
-import { getContent } from '../../api/';
-import { isObjectEmpty } from '../../helpers';
+	Container,
+	FlexWraper,
+	FooterStyled,
+	DocsWrp,
+	Line,
+	LinkStyled,
+	List,
+	PolicyText,
+	Text,
+	TextLink,
+	DivStyled,
+} from "./Footer.styled";
+import privacyPolicy from "../../assets/documents/privacy-policy.pdf";
+import termsUseSite from "../../assets/documents/terms-of-use-site.pdf";
+import { getContent } from "../../api/";
+import { isObjectEmpty } from "../../helpers";
 
 const currentYear = new Date().getFullYear();
 
 export const Footer = () => {
-  const [t, i18n] = useTranslation('global');
-  const [modalActive, setModalActive] = useState(false);
-  const [active, setActive] = useState('home');
-  const [selectedPdfFile, setSelectedPdfFile] = useState(null);
-  const { pathname, hash } = useLocation();
+	const [t, i18n] = useTranslation("global");
+	const [modalActive, setModalActive] = useState(false);
+	const [active, setActive] = useState("home");
+	const [selectedPdfFile, setSelectedPdfFile] = useState(null);
+	const { pathname, hash } = useLocation();
 
-  const [contacts, setContacts] = useState([]);
-  const phone = contacts[0]?.contacts[0]?.phone;
-  const formattedPhone = phone ? phone.replace(/[^\d]/g, '') : '';
+	const [contacts, setContacts] = useState([]);
+	const phone = contacts[0]?.contacts[0]?.phone;
+	const formattedPhone = phone ? phone.replace(/[^\d]/g, "") : "";
 
-  const [cities, setCities] = useState([]);
-  const kyivCity = cities.find(city => city.city_name === 'Київ');
-  const googleMapsUrl = `https://www.google.com/maps?q=${kyivCity?.coords.lat},${kyivCity?.coords.lng}`;
+	const [cities, setCities] = useState([]);
+	const kyivCity = cities.find(city => city.city_name === "Київ");
+	const googleMapsUrl = `https://www.google.com/maps?q=${kyivCity?.coords.lat},${kyivCity?.coords.lng}`;
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getContent('contacts');
+	useEffect(() => {
+		const getData = async () => {
+			const data = await getContent("contacts");
 
-      if (!isObjectEmpty(data)) {
-        setCities(prev => data.cities);
-        setContacts(prev => data.contacts);
-      }
-    };
+			if (!isObjectEmpty(data)) {
+				setCities(prev => data.cities);
+				setContacts(prev => data.contacts);
+			}
+		};
 
-    getData();
-  }, []);
+		getData();
+	}, []);
 
-  useEffect(() => {
-    if (pathname === '/' && hash === '') {
-      return setActive(prev => 'home');
-    }
-    if (pathname === '/company') {
-      return setActive(prev => 'company');
-    }
-    if (hash === '#practice') {
-      return setActive(prev => 'practice');
-    }
-    if (hash === '#news') {
-      return setActive(prev => 'news');
-    }
-    if (pathname === '/contacts') {
-      return setActive(prev => 'contacts');
-    }
-  }, [pathname, hash]);
+	useEffect(() => {
+		if (pathname === "/" && hash === "") {
+			return setActive(prev => "home");
+		}
+		if (pathname === "/company") {
+			return setActive(prev => "company");
+		}
+		if (hash === "#practice") {
+			return setActive(prev => "practice");
+		}
+		if (hash === "#news") {
+			return setActive(prev => "news");
+		}
+		if (pathname === "/contacts") {
+			return setActive(prev => "contacts");
+		}
+	}, [pathname, hash]);
 
-  return (
-    <FooterStyled>
-      <Container>
-        <Modal active={modalActive} setActive={setModalActive}>
-          <PdfViewer pdfFile={selectedPdfFile} />
-        </Modal>
+	return (
+		<FooterStyled>
+			<Container>
+				<Modal
+					active={modalActive}
+					setActive={setModalActive}
+				>
+					<PdfViewer pdfFile={selectedPdfFile} />
+				</Modal>
 
-        <FlexWraper path={location.pathname}>
-          {location.pathname !== '/contacts' && (
-            <nav>
-              <List>
-                <li>
-                  <LinkStyled
-                    to="/"
-                    aria-label="посилання на головну сторінку"
-                    current="home"
-                    active={active}
-                  >
-                    {t('header.nav.home')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/company"
-                    aria-label="посилання на сторінку компанії"
-                    current="company"
-                    active={active}
-                  >
-                    {t('header.nav.company')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/#practice"
-                    aria-label="посилання на сторінку практики"
-                    current="practice"
-                    active={active}
-                  >
-                    {t('header.nav.practice')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/#news"
-                    aria-label="посилання на сторінку новин"
-                    current="news"
-                    active={active}
-                  >
-                    {t('header.nav.news')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/contacts"
-                    aria-label="посилання на сторінку контактів"
-                    current="contacts"
-                    active={active}
-                  >
-                    {t('header.nav.contacts')}
-                  </LinkStyled>
-                </li>
-              </List>
-            </nav>
-          )}
+				<FlexWraper path={location.pathname}>
+					{location.pathname !== "/contacts" && (
+						<nav>
+							<List>
+								<li>
+									<LinkStyled
+										to="/"
+										aria-label="посилання на головну сторінку"
+										current="home"
+										active={active}
+									>
+										{t("header.nav.home")}
+									</LinkStyled>
+								</li>
+								<li>
+									<LinkStyled
+										to="/company"
+										aria-label="посилання на сторінку компанії"
+										current="company"
+										active={active}
+									>
+										{t("header.nav.company")}
+									</LinkStyled>
+								</li>
+								<li>
+									<LinkStyled
+										to="/#practice"
+										aria-label="посилання на сторінку практики"
+										current="practice"
+										active={active}
+									>
+										{t("header.nav.practice")}
+									</LinkStyled>
+								</li>
+								<li>
+									<LinkStyled
+										to="/#news"
+										aria-label="посилання на сторінку новин"
+										current="news"
+										active={active}
+									>
+										{t("header.nav.news")}
+									</LinkStyled>
+								</li>
+								<li>
+									<LinkStyled
+										to="/contacts"
+										aria-label="посилання на сторінку контактів"
+										current="contacts"
+										active={active}
+									>
+										{t("header.nav.contacts")}
+									</LinkStyled>
+								</li>
+							</List>
+						</nav>
+					)}
 
-          {location.pathname === '/contacts' && (
-            <Text path={location.pathname}>ADVOCATE COMPANY «STATUS»</Text>
-          )}
+					{location.pathname === "/contacts" && (
+						<Text path={location.pathname}>ADVOCATE COMPANY «STATUS»</Text>
+					)}
 
-          <DocsWrp path={location.pathname}>
-<<<<<<< HEAD
-            <PolicyText
-              to="#"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(privacyPolicy);
-              }}
-              aria-label="посилання на політику конфіденційності"
-            >
-              Політика конфіденційності
-            </PolicyText>
-            <PolicyText
-              to="#"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(termsUseSite);
-              }}
-              aria-label="посилання на умови користування сайтом"
-            >
-              Правила користування сайтом
-            </PolicyText>
-=======
-            <DivStyled>
-              <PolicyText
-                to="#"
-                onClick={() => {
-                  setModalActive(true);
-                  setSelectedPdfFile(privacyPolicy);
-                }}
-                aria-label="посилання на політику конфіденційності"
-              >
-                Політика конфіденційності
-              </PolicyText>
-            </DivStyled>
-            <DivStyled>
-              <PolicyText
-                to="#"
-                onClick={() => {
-                  setModalActive(true);
-                  setSelectedPdfFile(termsUseSite);
-                }}
-                aria-label="посилання на умови користування сайтом"
-              >
-                Правила користування сайтом
-              </PolicyText>
-            </DivStyled>
->>>>>>> dev
-          </DocsWrp>
+					<DocsWrp path={location.pathname}>
+						<DivStyled>
+							<PolicyText
+								to="#"
+								onClick={() => {
+									setModalActive(true);
+									setSelectedPdfFile(privacyPolicy);
+								}}
+								aria-label="посилання на політику конфіденційності"
+							>
+								Політика конфіденційності
+							</PolicyText>
+						</DivStyled>
+						<DivStyled>
+							<PolicyText
+								to="#"
+								onClick={() => {
+									setModalActive(true);
+									setSelectedPdfFile(termsUseSite);
+								}}
+								aria-label="посилання на умови користування сайтом"
+							>
+								Правила користування сайтом
+							</PolicyText>
+						</DivStyled>
+					</DocsWrp>
 
-          {location.pathname !== '/contacts' && (
-            <FlexWraper flexDirection="column" gap="0">
-              <Text>ADVOCATE COMPANY «STATUS»</Text>
+					{location.pathname !== "/contacts" && (
+						<FlexWraper
+							flexDirection="column"
+							gap="0"
+						>
+							<Text>ADVOCATE COMPANY «STATUS»</Text>
 
-              {cities?.length > 0 && (
-                <TextLink
-                  to={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener nofollow noreferrer"
-                  aria-label="адреса компанії"
-                >
-                  {`${kyivCity?.address}`}
-                </TextLink>
-              )}
+							{cities?.length > 0 && (
+								<TextLink
+									to={googleMapsUrl}
+									target="_blank"
+									rel="noopener nofollow noreferrer"
+									aria-label="адреса компанії"
+								>
+									{`${kyivCity?.address}`}
+								</TextLink>
+							)}
 
-              {contacts?.length > 0 && (
-                <>
-                  <TextLink
-                    to={`tel:+${formattedPhone}`}
-                    aria-label="телефон компанії"
-                  >
-                    {phone}
-                  </TextLink>
-                  <TextLink
-                    to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
-                    aria-label="електронна пошта компанії"
-<<<<<<< HEAD
-=======
-                    marginbottom="12px"
->>>>>>> dev
-                  >
-                    {contacts[0]?.contacts[1]?.mail}
-                  </TextLink>
+							{contacts?.length > 0 && (
+								<>
+									<TextLink
+										to={`tel:+${formattedPhone}`}
+										aria-label="телефон компанії"
+									>
+										{phone}
+									</TextLink>
+									<TextLink
+										to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
+										aria-label="електронна пошта компанії"
+										marginbottom="12px"
+									>
+										{contacts[0]?.contacts[1]?.mail}
+									</TextLink>
 
-                  <SocialList media={contacts[0]?.social} />
-                </>
-              )}
-            </FlexWraper>
-          )}
-        </FlexWraper>
+									<SocialList media={contacts[0]?.social} />
+								</>
+							)}
+						</FlexWraper>
+					)}
+				</FlexWraper>
 
-        <Line />
-<<<<<<< HEAD
-        <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
-=======
-        <Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
->>>>>>> dev
-      </Container>
-    </FooterStyled>
-  );
+				<Line />
+				<Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+			</Container>
+		</FooterStyled>
+	);
 };

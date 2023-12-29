@@ -9,20 +9,12 @@ import {
 	TextWrapper,
 } from "./ProBono.styled";
 
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
-=======
 import React, { useEffect, useState } from "react";
->>>>>>> dev
 import { getContent } from "../../api/fetchContent";
 
 export const ProBono = () => {
 	const [data, setData] = useState();
 	const regex = /(.*)(?=<\/p>)/g;
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 	useEffect(() => {
 		getContent("https://advocato-backend.vercel.app/api/v1/pro_bono").then(
 			res => setData(res),
@@ -40,17 +32,9 @@ export const ProBono = () => {
 								<BlockWrapper key={elem.id}>
 									<LeftSide>
 										<TextWrapper>
-<<<<<<< HEAD
-											<BonoText>
-												{elem.description.split("<p>").map((el, index) => {
-													return <p key={index}>{el.match(regex)}</p>;
-												})}
-											</BonoText>
-=======
 											<BonoText
 												dangerouslySetInnerHTML={{ __html: elem.description }}
 											/>
->>>>>>> dev
 										</TextWrapper>
 									</LeftSide>
 									<RightSide>
@@ -72,17 +56,9 @@ export const ProBono = () => {
 									</LeftSide>
 									<RightSide>
 										<TextWrapper>
-<<<<<<< HEAD
-											<BonoText>
-												{elem.description.split("<p>").map((el, index) => {
-													return <p key={index}>{el.match(regex)}</p>;
-												})}
-											</BonoText>
-=======
 											<BonoText
 												dangerouslySetInnerHTML={{ __html: elem.description }}
 											/>
->>>>>>> dev
 										</TextWrapper>
 									</RightSide>
 								</BlockWrapper>
