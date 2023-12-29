@@ -1,40 +1,113 @@
 import styled from '@emotion/styled';
-import { fontSectionTitle, fontSectionText } from '../../styles/mixins';
+import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  padding: 132px;
-
   border-top: 88px solid var(--darkBackground);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    padding-top: 120px;
+    padding-bottom: 108px;
+  }
+
+  @media screen and (${device.desktop}) {
+    padding-top: 184px;
+    padding-bottom: 132px;
+  }
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: 1120px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    max-width: calc(1024px - 80px * 2);
+  }
+
+  @media screen and (${device.desktop}) {
+    max-width: calc(1440px - 160px * 2);
+  }
 `;
 
 export const TitleStyled = styled.h2`
   margin-bottom: 40px;
-  max-width: 660px;
-  height: 48px;
 
   ${fontSectionTitle};
   color: var(--mainText);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: 40px;
+    font-size: 32px;
+    line-height: calc(45 / 32);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-left: 0;
+    margin-right: 0;
+    width: 660px;
+    height: 48px;
+    font-size: 40px;
+    line-height: calc(56 / 40);
+  }
 `;
 
 export const CenterWrp = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 600px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 348px;
+  }
+
+  @media screen and (${device.desktop}) {
+    height: 600px;
+  }
 
   p {
-    min-height: 36px;
-
     ${fontSectionText};
+
+    @media screen and (min-width: 768px) {
+    }
+
+    @media screen and (${device.tablet}) {
+      min-height: 24px;
+      font-size: 16px;
+      line-height: 29px;
+    }
+
+    @media screen and (${device.desktop}) {
+      min-height: 36px;
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 `;
 
 export const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    gap: 28px;
+  }
+
+  @media screen and (${device.desktop}) {
+    gap: 40px;
+  }
 `;

@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
 
-export const containerStyle = {
+export const containerStyleDesktop = {
   width: '548px',
   height: '600px',
+};
+
+export const containerStyleTablet = {
+  width: '420px',
+  height: '348px',
 };
 
 export const MarkerWrp = styled.div`
