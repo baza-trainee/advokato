@@ -1,23 +1,58 @@
 import styled from '@emotion/styled';
-import { fontSectionTitle } from '../../styles/mixins';
+import { fontSectionTitle, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  padding: 132px 0;
   background-color: var(--darkBackground);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    padding: 120px 0;
+  }
+
+  @media screen and (${device.desktop}) {
+    padding: 132px 0;
+  }
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 1120px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    width: 864px;
+  }
+
+  @media screen and (${device.desktop}) {
+    width: 1120px;
+  }
 `;
 
 export const TitleStyled = styled.h2`
   margin-bottom: 40px;
-  max-width: 1116px;
-  min-height: 120px;
 
   ${fontSectionTitle};
   color: var(--lightText);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    max-width: 792px;
+    min-height: 72px;
+    font-size: 32px;
+    line-height: calc(45 / 32);
+  }
+
+  @media screen and (${device.desktop}) {
+    max-width: 1116px;
+    min-height: 120px;
+    font-size: 40px;
+    line-height: calc(56 / 40);
+  }
 `;
 
 export const PracticeDescWrp = styled.div`
@@ -31,26 +66,60 @@ export const PracticeWrp = styled.div`
 `;
 
 export const PracticeInfo = styled.div`
-  width: 456px;
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    width: 348px;
+  }
+
+  @media screen and (${device.desktop}) {
+    width: 456px;
+  }
 `;
 
 export const ImageStyled = styled.img`
-  margin-bottom: 60px;
-
   border-radius: 24px;
   background: linear-gradient(#0000002e, #00000099);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-bottom: 32px;
+    height: 272px;
+    width: 348px;
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-bottom: 60px;
+    height: 320px;
+    width: 456px;
+  }
 `;
 
 export const PracticeTitle = styled.h3`
   margin-bottom: 24px;
-  height: 36px;
 
   font-family: var(--Raleway);
-  font-size: 32px;
   font-weight: 400;
-  line-height: calc(45 / 32);
   letter-spacing: 0em;
   color: var(--lightText);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 32px;
+    font-size: 28px;
+    line-height: calc(40 / 28);
+  }
+
+  @media screen and (${device.desktop}) {
+    height: 36px;
+    font-size: 32px;
+    line-height: calc(45 / 32);
+  }
 `;
 
 export const PracticeDesc = styled.p`

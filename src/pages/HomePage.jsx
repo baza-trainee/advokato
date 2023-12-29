@@ -11,7 +11,6 @@ import { TeamGallery } from '../components/TeamGallery';
 const PracticeSection = lazy(() => import('../components/Practice'));
 const ResultsSection = lazy(() => import('../components/Results'));
 
-
 export const HomePage = () => {
   return (
     <Suspense>
