@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+<<<<<<< HEAD
+=======
+import DOMPurify from 'dompurify';
+import parse from 'html-react-parser';
+>>>>>>> dev
 
 import { isObjectEmpty } from '../../helpers';
 import { PracticeList } from './PracticeList';
@@ -57,7 +62,13 @@ export const Practice = () => {
     }
   }, [pathname, hash]);
 
+<<<<<<< HEAD
   const createMarkup = htmlString => ({ __html: htmlString });
+=======
+  const sanitizedMarkup = DOMPurify.sanitize(
+    currentPractice?.specialization_description_full
+  );
+>>>>>>> dev
 
   const handleClickMoreButton = () => {
     setIsShowMoreDesc(prev => !prev);
@@ -86,7 +97,7 @@ export const Practice = () => {
                 src={currentPractice?.specialization_photo}
                 width={456}
                 height={320}
-                alt="picture about practice"
+                alt="тематичне зображення до категорії"
               />
 
               <PracticeTitle>
@@ -99,11 +110,15 @@ export const Practice = () => {
                 </PracticeDesc>
 
                 {isShowMoreDesc && (
+<<<<<<< HEAD
                   <PracticeDescFull
                     dangerouslySetInnerHTML={createMarkup(
                       currentPractice?.specialization_description_full
                     )}
                   />
+=======
+                  <PracticeDescFull>{parse(sanitizedMarkup)}</PracticeDescFull>
+>>>>>>> dev
                 )}
 
                 {currentPractice?.specialization_description_full && (

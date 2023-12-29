@@ -8,6 +8,7 @@ import {
 	ClientName,
 	ClientReview,
 	ClientRole,
+	ImageWrapper,
 } from "../ClientReviews.styled";
 import "@splidejs/splide/css";
 import { options } from "../ClientsData/SliderSettings";
@@ -40,12 +41,23 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							onMouseLeave={() => setCloseReview(true)}
 						>
 							<CardHeader>
+<<<<<<< HEAD
 								<img
 									src={elem.photo_path}
 									width={80}
 									height={80}
 									alt={elem.name}
 								/>
+=======
+								<ImageWrapper>
+									<img
+										src={elem.photo_path}
+										width={80}
+										height={80}
+										alt={elem.name}
+									/>
+								</ImageWrapper>
+>>>>>>> dev
 								<CardRecvisits>
 									<ClientName>{elem.name}</ClientName>
 									<ClientRole>{elem.position}</ClientRole>
@@ -54,8 +66,13 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							<ClientReview>
 								{openReview === elem.id
 									? elem.description
+<<<<<<< HEAD
 									: elem.description.slice(0, 320)}
 								{elem.description.length > 320 ? (
+=======
+									: elem.description.slice(0, 325)}
+								{elem.description?.length > 325 ? (
+>>>>>>> dev
 									<button
 										onClick={() => {
 											openReview !== elem.id

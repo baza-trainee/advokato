@@ -18,7 +18,11 @@ export const SectionStyled = styled.section`
 	color: var(--lightText);
 	overflow: hidden;
 	position: relative;
+<<<<<<< HEAD
 	`;
+=======
+`;
+>>>>>>> dev
 
 export const Container = styled.div`
 	${container};
@@ -70,6 +74,10 @@ export const SliderArrow = styled.div`
 
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
+<<<<<<< HEAD
+=======
+	overflow: hidden;
+>>>>>>> dev
 	img {
 		width: 1120px;
 		height: 600px;

@@ -16,6 +16,10 @@ import {
   PolicyText,
   Text,
   TextLink,
+<<<<<<< HEAD
+=======
+  DivStyled,
+>>>>>>> dev
 } from './Footer.styled';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
 import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
@@ -140,6 +144,7 @@ export const Footer = () => {
           )}
 
           <DocsWrp path={location.pathname}>
+<<<<<<< HEAD
             <PolicyText
               to="#"
               onClick={() => {
@@ -160,6 +165,32 @@ export const Footer = () => {
             >
               Правила користування сайтом
             </PolicyText>
+=======
+            <DivStyled>
+              <PolicyText
+                to="#"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(privacyPolicy);
+                }}
+                aria-label="посилання на політику конфіденційності"
+              >
+                Політика конфіденційності
+              </PolicyText>
+            </DivStyled>
+            <DivStyled>
+              <PolicyText
+                to="#"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(termsUseSite);
+                }}
+                aria-label="посилання на умови користування сайтом"
+              >
+                Правила користування сайтом
+              </PolicyText>
+            </DivStyled>
+>>>>>>> dev
           </DocsWrp>
 
           {location.pathname !== '/contacts' && (
@@ -188,6 +219,10 @@ export const Footer = () => {
                   <TextLink
                     to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
                     aria-label="електронна пошта компанії"
+<<<<<<< HEAD
+=======
+                    marginbottom="12px"
+>>>>>>> dev
                   >
                     {contacts[0]?.contacts[1]?.mail}
                   </TextLink>
@@ -200,7 +235,11 @@ export const Footer = () => {
         </FlexWraper>
 
         <Line />
+<<<<<<< HEAD
         <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+=======
+        <Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+>>>>>>> dev
       </Container>
     </FooterStyled>
   );

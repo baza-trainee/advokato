@@ -3,7 +3,10 @@ import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
+<<<<<<< HEAD
   margin-bottom: -4px;
+=======
+>>>>>>> dev
 
   p {
     margin-bottom: 8px;
@@ -11,6 +14,13 @@ export const LabelStyled = styled.label`
     ${fontDesktop};
     color: var(--mainText);
   }
+<<<<<<< HEAD
+=======
+
+  &:last-of-type {
+    margin-bottom: -4px;
+  }
+>>>>>>> dev
 `;
 
 export const ButtonStyled = styled.button`

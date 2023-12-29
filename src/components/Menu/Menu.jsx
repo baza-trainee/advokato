@@ -3,7 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { NavLinkStyled, UlStyled } from './Menu.styled';
 import { useTranslation } from 'react-i18next';
 
+<<<<<<< HEAD
 export const Menu = ({ side }) => {
+=======
+export const Menu = ({ side,setIsOpen }) => {
+>>>>>>> dev
   const [t, i18n] = useTranslation('global');
   const [active, setActive] = useState('home');
   const { pathname, hash } = useLocation();
@@ -39,6 +43,10 @@ export const Menu = ({ side }) => {
             aria-label="home"
             current="home"
             active={active}
+<<<<<<< HEAD
+=======
+            onClick={()=>setIsOpen(false)}
+>>>>>>> dev
           >
             {t('header.nav.home')}
           </NavLinkStyled>
@@ -49,6 +57,10 @@ export const Menu = ({ side }) => {
             aria-label="company"
             current="company"
             active={active}
+<<<<<<< HEAD
+=======
+            onClick={()=>setIsOpen(false)}
+>>>>>>> dev
           >
             {t('header.nav.company')}
           </NavLinkStyled>
@@ -59,6 +71,10 @@ export const Menu = ({ side }) => {
             aria-label="practice"
             current="practice"
             active={active}
+<<<<<<< HEAD
+=======
+            onClick={()=>setIsOpen(false)}
+>>>>>>> dev
           >
             {t('header.nav.practice')}
           </NavLinkStyled>
@@ -69,6 +85,10 @@ export const Menu = ({ side }) => {
             aria-label="news"
             current="news"
             active={active}
+<<<<<<< HEAD
+=======
+            onClick={()=>setIsOpen(false)}
+>>>>>>> dev
           >
             {t('header.nav.news')}
           </NavLinkStyled>
@@ -79,6 +99,10 @@ export const Menu = ({ side }) => {
             aria-label="contacts"
             current="contacts"
             active={active}
+<<<<<<< HEAD
+=======
+            onClick={()=>setIsOpen(false)}
+>>>>>>> dev
           >
             {t('header.nav.contacts')}
           </NavLinkStyled>

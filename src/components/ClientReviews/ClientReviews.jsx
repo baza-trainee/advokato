@@ -23,7 +23,11 @@ export const ClientReviews = () => {
 	return (
 		<SectionStyled>
 			<Container>
+<<<<<<< HEAD
 			<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
+=======
+				<ClientsBlockHeader>Відгуки</ClientsBlockHeader>
+>>>>>>> dev
 			</Container>
 			{data?.length > 0 && (
 				<SliderWrapper>

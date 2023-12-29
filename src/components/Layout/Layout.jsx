@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Suspense, useState, useEffect } from "react";
+=======
+import { Suspense, useState, useEffect, useRef } from "react";
+>>>>>>> dev
 import { Outlet, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
@@ -80,7 +84,12 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						/>
 					</NavLink>
 
+<<<<<<< HEAD
 					<Menu />
+=======
+						
+					<Menu setIsOpen={setIsOpen}/>
+>>>>>>> dev
 
 					<div>
 						<LangButton
