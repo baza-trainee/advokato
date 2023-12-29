@@ -77,8 +77,7 @@ export const Calendar = ({ schedule, setValue }) => {
       return 'current';
     }
   };
-  console.log('dateList ', dateList[0]);
-  // console.log(new Date(dateList[0]));
+
   return (
     <DivStyled>
       <MainTitle>{t('appointmentForm.thirdTitle')}</MainTitle>
@@ -88,7 +87,6 @@ export const Calendar = ({ schedule, setValue }) => {
           <ReactCalendar
             onChange={handleChangeDate}
             value={new Date(dateList[0])}
-            // activeStartDate={new Date(dateList[0])}
             locale={'uk'}
             tileDisabled={({ activeStartDate, date, view }) => {
               if (view === 'month') {

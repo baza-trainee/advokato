@@ -33,21 +33,22 @@ export const DivStyled = styled.div`
   }
 
   .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
+    display: inline-block;
+
     font-family: var(--Raleway);
     font-size: 28px;
     font-weight: 400;
     line-height: 42px;
     letter-spacing: 0em;
-    text-transform: capitalize;
     color: var(--mainText);
 
-    span {
-      display: inline-block;
-
-      & :first-letter {
-        text-transform: uppercase;
-      }
+    &:first-letter {
+      text-transform: uppercase;
     }
+  }
+
+  .react-calendar__tile.react-calendar__tile--hasActive.react-calendar__year-view__months__month {
+    background-color: #e6e6e6;
   }
 
   .react-calendar__month-view__weekdays__weekday,
