@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import {
-	container,
 	flexBox,
 	fontReview,
 	fontReviewName,
@@ -9,46 +8,61 @@ import {
 } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
-	width: 100%;
-	height: 804px;
+	min-height: 864px;
+	height: fit-content;
 	background: var(--darkBackground);
 	position: relative;
 	top: -0.2vh;
 `;
 
 export const Container = styled.div`
-	${container};
-	padding: 132px 0;
+	max-width: 1440px;
+	margin: 0 auto;
 `;
 
 export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
+	padding: 132px 151px 40px;
 	color: var(--lightText);
-	margin-bottom: 40px;
 `;
 
 export const SliderWrapper = styled.div`
 	${flexBox};
-	width: 1132px;
-	height: 472px;
-	${sliderArrow};
+	gap: 32px;
+	max-width: 1440px;
+	margin: 0 auto;
+	height: fit-content;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 124px;
+	.splide__slide {
+		${flexBox}
+		opacity: 1;
+		transition: 1s;
+	}
+
+	.splide__slide.is-next + .splide__slide + .splide__slide,
+	.splide__slide.is-active {
+		opacity: 0.3;
+	}
 `;
 
 export const ClientCardWrapper = styled.div`
-	width: 440px;
-	height: 470px;
+	min-width: 440px;
+	height: ${props => (props.heightText ? "fit-content" : "512px")};
 	border-radius: 24px;
 	border: 1px solid var(--reviewText);
 	background-color: var(--darkGrey);
 	color: var(--reviewText);
-	padding: 60px 40px;
-	margin: 0 auto;
+	padding: 48px 40px;
 `;
 
 export const CardHeader = styled.div`
 	${flexBox}
-	width:360px;
-	height: 120px;
+	align-items: start;
+	justify-content: space-around;
+	width: 360px;
+	height: fit-content;
 	gap: 20px;
 	img {
 		width: 80px;
@@ -56,10 +70,14 @@ export const CardHeader = styled.div`
 	}
 `;
 
-export const CardRecvisits = styled.div``;
+export const CardRecvisits = styled.div`
+	width: 260px;
+`;
 
 export const ClientName = styled.p`
-	${fontReviewName}
+	${fontReviewName};
+	line-height: 32px;
+	margin-bottom: 16px;
 `;
 
 export const ClientRole = styled.p`
@@ -69,5 +87,19 @@ export const ClientRole = styled.p`
 export const ClientReview = styled.p`
 	${fontReview}
 	width:360px;
-	margin-top: 28px;
+	margin-top: 24px;
+	button {
+		opacity: 50%;
+	}
+`;
+
+export const SliderArrow = styled.div`
+	${sliderArrow};
+	position: absolute;
+	top: calc(50%-40px);
+	left: 5%;
+	z-index: 10;
+	&:last-of-type {
+		left: 92%;
+	}
 `;

@@ -1,29 +1,36 @@
 import { Suspense, useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Outlet, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 import "animate.css";
 
-import logoImg from "../../assets/images/layout-section/statusLogo.png";
+import logoImg from "../../assets/images/layout-section/Logo.png";
+import { ButtonConsultation } from "../ButtonConsultation";
 import { Icon } from "../Icon";
+import { Footer } from "../Footer/Footer";
+import { CookiesPanel } from "../CookiesPanel";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { Menu } from "../Menu";
+import { LoadingAnimated } from "../LoadingAnimated";
 import {
+	MainStyled,
 	HeaderStyled,
-	UlStyled,
-	NavLinkStyled,
 	LangButton,
-	ConsultButton,
 	ConsultElement,
 	PhonesDiv,
 	HamburgerMenu,
+	PhoneBurger,
+	Container,
 } from "./Layout.styled";
-import { Footer } from "../Footer/Footer";
-import { CookiesPanel } from "../CookiesPanel";
+import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
 	const [isOpen, setIsOpen] = useState(false);
 	const [top, setTop] = useState(true);
+	const location = useLocation();
+	const navigate = useNavigate();
+	
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -34,108 +41,100 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 			window.removeEventListener("scroll", scrollHandler);
 		};
 	}, []);
+
+	const handleClickLogoButton = () => {
+		if (location.pathname === "/" && location.hash === "") {
+			return window.location.reload();
+		}
+
+		if (location.pathname === "/" && location.hash !== "") {
+			navigate("/");
+			return window.location.reload();
+		}
+	};
+
 	return (
 		<>
 			<HeaderStyled top={top}>
-				<NavLink
-					to="/"
-					aria-label="home"
-				>
-					<img
-						src={logoImg}
-						alt="logoImage"
-					/>
-				</NavLink>
-
-				<nav>
-					<UlStyled>
-						<li>
-							<NavLinkStyled
-								to="/"
-								aria-label="home"
-							>
-								{t("header.nav.home")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="/company"
-								aria-label="company"
-							>
-								{t("header.nav.company")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="/practice"
-								aria-label="practice"
-							>
-								{t("header.nav.practice")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="#"
-								aria-label="news"
-							>
-								{t("header.nav.news")}
-							</NavLinkStyled>
-						</li>
-						<li>
-							<NavLinkStyled
-								to="#"
-								aria-label="contacts"
-							>
-								{t("header.nav.contacts")}
-							</NavLinkStyled>
-						</li>
-					</UlStyled>
-				</nav>
-				<div>
-					<LangButton
-						onClick={() =>
-							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
-						}
-						aria-label="lang-ua"
-						activeLang={activeLang}
-						currentLang="ua"
-					>
-						{activeLang.toUpperCase()}
-					</LangButton>
-				</div>
-				<HamburgerMenu
-					className={`${isOpen ? "open" : ""}`}
-					onClick={() => setIsOpen(!isOpen)}
-				>
-					<span className={`${isOpen ? "open" : ""}`}></span>
-				</HamburgerMenu>
-				<ConsultElement>
-					<ConsultButton
-						aria-label="Записатися на консультацію"
-						type="button"
-						onClick={() => alert("HelloWorld")}
-						className="animate__animated animate__pulse animate__infinite infinite
-          animate__slower	3s"
-					>
-						{t("header.btnAppoitment")}
+				<Container>
+					<PhoneBurger>
 						<Icon
-							id={"icon-header-arrow-right"}
-							width={16}
-							height={12}
+							id={"phoneButton"}
+							className="animate__animated animate__pulse animate__infinite infinite
+          animate__slower	3s"
+							width={56}
+							height={56}
 						/>
-					</ConsultButton>
-					<PhonesDiv>
-						<a href="tel:+38 (0512) 37 73 73">+38 (0512) 37 73 73</a>
-						<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
-					</PhonesDiv>
-				</ConsultElement>
+					</PhoneBurger>
+
+					<NavLink
+						to="/"
+						aria-label="home"
+					>
+						<img
+							onClick={handleClickLogoButton}
+							width={152}
+							height={60}
+							src={logoImg}
+							alt="logoImage"
+						/>
+					</NavLink>
+
+					<Menu />
+
+					<div>
+						<LangButton
+							onClick={() =>
+								activeLang === "ua"
+									? toggleLanguage("en")
+									: toggleLanguage("ua")
+							}
+							aria-label="lang-ua"
+							activeLang={activeLang}
+							currentLang="ua"
+							desktop="desktop"
+						>
+							{activeLang.toUpperCase()}
+						</LangButton>
+					</div>
+
+					<HamburgerMenu
+						className={`${isOpen ? "open" : ""}`}
+						onClick={() => setIsOpen(!isOpen)}
+					>
+						<span className={`${isOpen ? "open" : ""}`}></span>
+					</HamburgerMenu>
+
+					<BurgerMenu
+						isOpen={isOpen}
+						setIsOpen={setIsOpen}
+						top={top}
+						activeLang={activeLang}
+						toggleLanguage={toggleLanguage}
+					/>
+
+					<ConsultElement>
+						<ButtonConsultation
+							className={
+								"animate__animated animate__pulse animate__infinite infinite animate__slower	3s"
+							}
+						/>
+						<PhonesDiv>
+							<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>
+						</PhonesDiv>
+					</ConsultElement>
+				</Container>
 			</HeaderStyled>
-			<main>
-				<Suspense fallback={<p>{t("loading")}</p>}>
+
+			<MainStyled>
+				<Suspense fallback={<LoadingAnimated />}>
 					<Outlet />
 				</Suspense>
-			</main>
+			</MainStyled>
 			<Footer />
+
+			<ScrollUpButton />
+
 			<CookiesPanel />
 		</>
 	);

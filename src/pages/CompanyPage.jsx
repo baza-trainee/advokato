@@ -1,13 +1,11 @@
 const CompanyPage = () => {
   return (
     <>
-      <section>Hero section</section>
+      <section style={{ paddingTop: '300px' }}>Hero section</section>
 
       <section>Team section</section>
 
       <section>Partners section</section>
-
-      <section>Reviews section</section>
     </>
   );
 };

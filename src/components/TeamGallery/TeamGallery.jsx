@@ -1,15 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SliderItems } from "./SliderItems/SliderItems";
 import {
 	Container,
 	SectionStyled,
+	SliderArrow,
 	TeamBlockHeader,
 	TeamBlockSubTitle,
+	TeamSliderContainer,
 } from "./TeamGallery.styled";
 import { Icon } from "../Icon";
+import { getContent } from "../../api/fetchContent";
 
 export const TeamGallery = () => {
 	const arrowRef = useRef();
+	const [data, setData] = useState();
+
+	useEffect(() => {
+		getContent("https://advocato-backend.vercel.app/api/v1/our-team").then(
+			res => setData(res.team),
+		);
+	}, []);
+
 	return (
 		<SectionStyled>
 			<Container>
@@ -19,32 +30,40 @@ export const TeamGallery = () => {
 					висококваліфікована команда юристів.
 				</TeamBlockSubTitle>
 			</Container>
-
-			<SliderItems ref={arrowRef} />
-			<button
-				aria-label="Scroll slider left"
-				onClick={() => arrowRef.current.slickPrev()}
-				className="prev"
-				type="button"
-			>
-				<Icon
-					id={"icon-slider-arrow-left"}
-					width={60}
-					height={60}
-				/>
-			</button>
-			<button
-				aria-label="Scroll slider right"
-				onClick={() => arrowRef.current.slickNext()}
-				className="next"
-				type="button"
-			>
-				<Icon
-					id={"icon-slider-arrow-right"}
-					width={60}
-					height={60}
-				/>
-			</button>
+			{data?.length > 0 && (
+				<TeamSliderContainer>
+					<SliderArrow>
+						<button
+							aria-label="Перелистування слайдера вліво"
+							onClick={() => arrowRef.current.go("-1")}
+							type="button"
+						>
+							<Icon
+								id={"icon-slider-arrow-left"}
+								width={60}
+								height={60}
+							/>
+						</button>
+					</SliderArrow>
+					<SliderItems
+						ref={arrowRef}
+						data={data}
+					/>
+					<SliderArrow>
+						<button
+							aria-label="Перелистування слайдера вправо"
+							onClick={() => arrowRef.current.go("+1")}
+							type="button"
+						>
+							<Icon
+								id={"icon-slider-arrow-right"}
+								width={60}
+								height={60}
+							/>
+						</button>
+					</SliderArrow>
+				</TeamSliderContainer>
+			)}
 		</SectionStyled>
 	);
 };

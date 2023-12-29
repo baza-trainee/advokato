@@ -39,7 +39,9 @@ export const Information = () => {
 							/>
 							<img
 								src={ImgFstDefault}
-								alt="business conversation at the table"
+								width={548}
+								height={388}
+								alt="ділова розмова за столом"
 							/>
 						</picture>
 					</ImgWraper>
@@ -77,7 +79,9 @@ export const Information = () => {
 							/>
 							<img
 								src={ImgScnDefault}
-								alt="business conversation at the table"
+								width={548}
+								height={388}
+								alt="розмова з клієнтом"
 							/>
 						</picture>
 					</ImgWraper>
@@ -102,7 +106,9 @@ export const Information = () => {
 							/>
 							<img
 								src={ImgThdDefault}
-								alt="business conversation at the table"
+								width={548}
+								height={388}
+								alt="розмова з клієнтом після успішного результату"
 							/>
 						</picture>
 					</ImgWraper>

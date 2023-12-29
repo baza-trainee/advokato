@@ -1,28 +1,33 @@
-import React from "react";
-import { ClientsData } from "../ClientsData/ClientsData";
+import React, { useEffect, useState } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import { settings } from "../ClientsData/SliderSettings";
-import { SliderWrapper, StyledSlider } from "../ClientsBlock.styled";
+import { options } from "../ClientsData/SliderSettings";
+import "@splidejs/splide/css";
+import { ClientCardWrapper } from "../ClientsBlock.styled";
 
 export const SliderItems = React.forwardRef((props, ref) => {
+  const {data} = props;
 	return (
-		<SliderWrapper>
-			<StyledSlider
-				ref={ref}
-				{...settings}
-			>
-				{ClientsData.map(elem => {
-					return (
-						<img
-							key={elem.id}
-							height={180}
-							width={300}
-							src={elem.image}
-							alt={elem.title}
-						/>
-					);
-				})}
-			</StyledSlider>
-		</SliderWrapper>
+		<Splide
+			aria-label="Слайдер клієнтів"
+			ref={ref}
+			options={options}
+		>			
+			{data?.map(elem => {
+				return (
+					<SplideSlide key={elem.id}>
+						<ClientCardWrapper>
+							<img
+								height={182}
+								width={302}
+								onClick={() => window.open(`${elem.link}`)}
+								src={elem.photo_path}
+								alt={elem.id}
+							/>
+						</ClientCardWrapper>
+					</SplideSlide>
+				);
+			})}
+		</Splide>
 	);
 });

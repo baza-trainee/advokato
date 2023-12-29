@@ -1,38 +1,48 @@
 import React from "react";
-import TeamData from "../TeamData/TeamData";
-import { settings } from "../TeamData/SliderSettings";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
+import { options } from "../TeamData/SliderSettings";
 import {
 	CardName,
+	CardRecvisiteWrapper,
 	CardRole,
-	SliderWrapper,
-	StyledSlider,
 	TeamMateCardWrapper,
 } from "../TeamGallery.styled";
 
+import "@splidejs/splide/css";
+import { NavLink } from "react-router-dom";
+
 export const SliderItems = React.forwardRef((props, ref) => {
 	return (
-		<>
-			<SliderWrapper>
-				<StyledSlider
-					ref={ref}
-					{...settings}
-				>
-					{TeamData.map(elem => {
-						return (
-							<TeamMateCardWrapper key={elem.id}>
+		<Splide
+			aria-label="Слайдер працівників компанії"
+			ref={ref}
+			options={options}
+		>
+			{props.data?.map(elem => {
+				return (
+					<SplideSlide key={elem.id}>
+						<TeamMateCardWrapper>
+							<NavLink
+								to="/company"
+								aria-label="company"
+								state={elem.id}
+							>
 								<img
-									src={elem.image}
-									height={732}
+									src={elem.slider_photo_path}
+									height={652}
 									width={1120}
 									alt={elem.name}
 								/>
+							</NavLink>
+							<CardRecvisiteWrapper>
 								<CardName>{elem.name}</CardName>
-								<CardRole>{elem.role}</CardRole>
-							</TeamMateCardWrapper>
-						);
-					})}
-				</StyledSlider>
-			</SliderWrapper>
-		</>
+								<CardRole>{elem.position}</CardRole>
+							</CardRecvisiteWrapper>
+						</TeamMateCardWrapper>
+					</SplideSlide>
+				);
+			})}
+		</Splide>
 	);
 });

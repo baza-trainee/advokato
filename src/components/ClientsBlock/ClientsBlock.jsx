@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
 	ClientsBlockHeader,
 	ClientsSliderContainer,
@@ -7,20 +7,30 @@ import {
 	SliderArrow,
 } from "./ClientsBlock.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
+import { getContent } from "../../api";
 import { Icon } from "../Icon";
 
 export const ClientsBlock = () => {
 	const arrowRef = useRef();
+	const [data, setData] = useState();
+
+	useEffect(() => {
+		getContent("https://advocato-backend.vercel.app/api/v1/clients").then(res =>
+			setData(res),
+		);
+	}, []);
 
 	return (
 		<SectionStyled>
 			<Container>
-				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+			</Container>
+			{data?.length > 0 && (
 				<ClientsSliderContainer>
 					<SliderArrow>
 						<button
-							aria-label="Scroll slider left"
-							onClick={() => arrowRef.current.slickPrev()}
+							aria-label="Перелистування слайдера вліво"
+							onClick={() => arrowRef.current.go("-1")}
 							type="button"
 						>
 							<Icon
@@ -30,11 +40,14 @@ export const ClientsBlock = () => {
 							/>
 						</button>
 					</SliderArrow>
-					<SliderItems ref={arrowRef} />
+					<SliderItems
+						ref={arrowRef}
+						data={data}
+					/>
 					<SliderArrow>
 						<button
-							aria-label="Scroll slider right"
-							onClick={() => arrowRef.current.slickNext()}
+							aria-label="Перелистування слайдера вправо"
+							onClick={() => arrowRef.current.go("+1")}
 							type="button"
 						>
 							<Icon
@@ -45,7 +58,7 @@ export const ClientsBlock = () => {
 						</button>
 					</SliderArrow>
 				</ClientsSliderContainer>
-			</Container>
+			)}
 		</SectionStyled>
 	);
 };

@@ -1,12 +1,19 @@
-export const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  variableWidth: true,
-  autoplay: true,
-  speed: 500,
-  autoplaySpeed: 3000,
-  pauseOnHover: true,
+export const options = {
+	autoplay: true,
+	arrows: false,
+	pagination: false,
+	drag: "free",
+	type: "loop",
+	height: "180px",
+	width: "1640px",
+	gap: "32px",
+	perPage: 5,
+	perMove: 1,
+	speed: 1000,
+	interval: 4000,
+	breakpoints: {
+		320: {
+			perPage: 1,
+		},
+	},
 };

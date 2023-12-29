@@ -1,30 +1,31 @@
+import { useEffect, useState } from "react";
 import {
-  SectionStyled,
-  Container,
-  MainTitleStyled,
-  SubtitleStyled,
-} from './HomeHero.styled';
-import { useTranslation } from 'react-i18next';
+	SectionStyled,
+	Container,
+	MainTitleStyled,
+	SubtitleStyled,
+} from "./HomeHero.styled";
+import { getContent } from "../../api";
 
 export const HomeHero = () => {
-  const [t, i18n] = useTranslation('global');
+	const [data, setData] = useState();
 
-  return (
-    <SectionStyled>
-      <Container>
-        <MainTitleStyled>
-          <span>
-            {t('titleText1')},&nbsp;
-            {t('titleText2')},
-          </span>
-          {t('titleText3')}
-        </MainTitleStyled>
+	useEffect(() => {
+		getContent("https://advocato-backend.vercel.app/api/v1/hero").then(res =>
+			setData(res.hero),
+		);
+	}, []);
 
-        <div>
-          <SubtitleStyled>{t('subTitleText2')}</SubtitleStyled>
-          <SubtitleStyled>{t('subTitleText1')}</SubtitleStyled>
-        </div>
-      </Container>
-    </SectionStyled>
-  );
+	return (
+		<SectionStyled>
+			<Container>
+				<MainTitleStyled>{data?.slogan}</MainTitleStyled>
+
+				<div>
+					<SubtitleStyled>{data?.left_text}</SubtitleStyled>
+					<SubtitleStyled>{data?.right_text}</SubtitleStyled>
+				</div>
+			</Container>
+		</SectionStyled>
+	);
 };

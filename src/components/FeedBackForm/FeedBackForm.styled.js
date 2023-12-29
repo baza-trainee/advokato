@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import {
-  container,
   device,
   flexBox,
   fontSectionTitle,
@@ -9,25 +8,27 @@ import {
 } from '../../styles/mixins';
 
 export const Container = styled.div`
-  ${container};
-
   @media screen and (${device.desktop}) {
-    padding-top: 132px;
-    padding-bottom: 132px;
+    margin: 132px auto;
+    width: 1120px;
   }
 `;
 
 export const TitleStyled = styled.h2`
   @media screen and (${device.desktop}) {
     margin-bottom: 32px;
+
     ${fontSectionTitle};
   }
 `;
 
 export const Email = styled.h2`
+  display: inline-block;
+
   @media screen and (${device.desktop}) {
-    margin-bottom: 80px;
     position: relative;
+    margin-bottom: 80px;
+
     ${fontSectionTitle};
 
     &::after {
@@ -50,6 +51,10 @@ export const ButtonStyled = styled.button`
   transition: color var(--timing-function) var(--animation-duration),
     border var(--timing-function) var(--animation-duration),
     background-color var(--timing-function) var(--animation-duration);
+
+  svg {
+    fill: var(--lightText);
+  }
 
   &:hover,
   &:focus {
@@ -118,7 +123,7 @@ export const Input = styled.input`
 export const ErrorsStyled = styled.p`
   margin-top: 5px;
   height: 20px;
-  color: var(--accentText);
+  color: ${props => props.color || 'var(--accentText)'};
   ${fontDesktop};
   font-size: 16px;
   line-height: calc(20 / 16);

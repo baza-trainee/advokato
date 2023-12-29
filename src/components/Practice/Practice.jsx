@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import { practiceArray } from './practiceArray';
+import { isObjectEmpty } from '../../helpers';
 import { PracticeList } from './PracticeList';
+import { ButtonConsultation } from '../ButtonConsultation';
+import { getContent } from '../../api';
 import {
   SectionStyled,
   Container,
@@ -11,56 +14,128 @@ import {
   PracticeInfo,
   ImageStyled,
   PracticeTitle,
+  PracticeDescWrp,
   PracticeDesc,
-  ButtonStyled,
+  PracticeDescFull,
+  MoreButtonStyled,
 } from './Practice.styled';
-export const Practice = () => {
-  const [currentPractice, setCurrentPractice] = useState(practiceArray[0]);
-  const navigate = useNavigate();
 
-  const handleClickProductCard = () => {
-    navigate(`/practice#${currentPractice.key}`);
+export const Practice = () => {
+  const [t, i18n] = useTranslation('global');
+  const { pathname, hash } = useLocation();
+  const [isShowMoreDesc, setIsShowMoreDesc] = useState(false);
+  const ref = useRef();
+  const [practices, setPractices] = useState([]);
+  const [currentPractice, setCurrentPractice] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getContent('specializations');
+
+      if (!isObjectEmpty(data)) {
+        setPractices(prev => data);
+        setCurrentPractice(prev => data[0]);
+      }
+    };
+
+    getData();
+  }, []);
+
+  useEffect(() => {
+    if (hash === '') {
+      return window.scrollTo(0, 0);
+    }
+
+    if (hash === '#practice') {
+      setTimeout(() => {
+        ref.current.scrollIntoView({
+          block: 'start',
+          inline: 'nearest',
+          behavior: 'smooth',
+        });
+      }, 0);
+    }
+  }, [pathname, hash]);
+
+  const createMarkup = htmlString => ({ __html: htmlString });
+
+  const handleClickMoreButton = () => {
+    setIsShowMoreDesc(prev => !prev);
+
+    if (isShowMoreDesc) {
+      ref.current.scrollIntoView({
+        block: 'start',
+        inline: 'nearest',
+        behavior: 'smooth',
+      });
+    }
   };
 
-  if (practiceArray.length > 0) {
-    return (
-      <SectionStyled>
-        <Container>
-          <TitleStyled>
-            Злагоджена команда юристів Status здатна вирішувати складні завдання
-            у різних сферах.
-          </TitleStyled>
+  return (
+    <SectionStyled ref={ref}>
+      <Container>
+        <TitleStyled>
+          Злагоджена команда юристів Status здатна вирішувати складні завдання у
+          різних сферах.
+        </TitleStyled>
 
+        {practices.length > 0 && (
           <PracticeWrp>
             <PracticeInfo>
               <ImageStyled
-                src={currentPractice?.imageUrl}
+                src={currentPractice?.specialization_photo}
                 width={456}
                 height={320}
                 alt="picture about practice"
               />
 
-              <PracticeTitle>{currentPractice?.title}</PracticeTitle>
+              <PracticeTitle>
+                {currentPractice?.specialization_name}
+              </PracticeTitle>
 
-              <PracticeDesc>{currentPractice?.desc}</PracticeDesc>
+              <PracticeDescWrp>
+                <PracticeDesc isShowMoreDesc={isShowMoreDesc}>
+                  {currentPractice?.specialization_description}
+                </PracticeDesc>
 
-              <ButtonStyled
-                onClick={handleClickProductCard}
-                type="button"
-                aria-label="read more info"
-              >
-                Детальніше
-              </ButtonStyled>
+                {isShowMoreDesc && (
+                  <PracticeDescFull
+                    dangerouslySetInnerHTML={createMarkup(
+                      currentPractice?.specialization_description_full
+                    )}
+                  />
+                )}
+
+                {currentPractice?.specialization_description_full && (
+                  <MoreButtonStyled
+                    onClick={handleClickMoreButton}
+                    type="button"
+                    aria-label="прочитати більше інформації"
+                  >
+                    {isShowMoreDesc
+                      ? t('practiceSection.hideButton')
+                      : t('practiceSection.moreButton')}
+                  </MoreButtonStyled>
+                )}
+              </PracticeDescWrp>
+
+              <ButtonConsultation
+                customStyles={{
+                  padding: '16px 24px',
+                  width: '288px',
+                  height: '52px',
+                }}
+              />
             </PracticeInfo>
 
             <PracticeList
-              practiceArray={practiceArray}
+              practices={practices}
               currentPractice={currentPractice}
               setCurrentPractice={setCurrentPractice}
             />
           </PracticeWrp>
-        </Container>
-      </SectionStyled>
-    );
-  }
+        )}
+      </Container>
+    </SectionStyled>
+  );
 };

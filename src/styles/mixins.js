@@ -4,6 +4,12 @@ export const flexBox = () => {
         align-items: center;`;
 };
 
+export const flexColumn = () => {
+  return `flex-direction: column;
+	justify-content: space-between;
+	width: 100%;`;
+};
+
 export const container = () => {
   return `width: 100%;
         margin: 0 auto;
@@ -15,9 +21,13 @@ export const container = () => {
           padding-left: 40px;
           padding-right: 40px;
         }
+        
+        @media screen and (min-width: 1024px) {
+          padding-left: 120px;
+          padding-right: 120px;
+        }
 
         @media screen and (min-width: 1440px) {
-          max-width: 1440px;
           padding-left: 160px;
           padding-right: 160px;
         }
@@ -85,7 +95,7 @@ export const secondaryButton = () => {
         border: none;
         cursor: pointer;
 
-        font-family: inherit;
+        font-family: var(--Montserrat);
         font-size: 14px;
         font-weight: 500;
         line-height: calc(17 / 14);
@@ -219,6 +229,16 @@ export const fontReview = () => {
     `;
 };
 
+export const fontSliderCardName = () => {
+  return `     
+        font-family: var(--Raleway);
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 44.8px;  
+        letter-spacing: 0em;    
+    `;
+};
+
 export const sliderArrow = () => {
   return `
   button {
@@ -235,13 +255,14 @@ export const sliderArrow = () => {
 		stroke: var(--mainText);
 	}
   `;
-};  
+};
 
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '425px',
-  tablet: '768px',
+  tablet: '1024px',
+  burger: '1200px',
   laptop: '1280px',
   desktop: '1440px',
 };
@@ -251,6 +272,7 @@ export const device = {
   mobileM: `min-width: ${size.mobileM}`,
   mobileL: `min-width: ${size.mobileL}`,
   tablet: `min-width: ${size.tablet}`,
+  burger: `min-width: ${size.burger}`,
   laptop: `min-width: ${size.laptop}`,
   desktop: `min-width: ${size.desktop}`,
 };

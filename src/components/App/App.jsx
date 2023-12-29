@@ -1,13 +1,13 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
 const Layout = lazy(() => import('../Layout'));
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const CompanyPage = lazy(() => import('../../pages/CompanyPage'));
-const PracticePage = lazy(() => import('../../pages/PracticePage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
 
 export const App = () => {
   const [t, i18n] = useTranslation('global');
@@ -15,25 +15,9 @@ export const App = () => {
 
   useEffect(() => {
     NotiflixLoading.init({
-      backgroundColor: '#b8b8b84f',
       svgSize: '110px',
-      svgColor: '#A1232B',
+      svgColor: '#0b0c0c',
       clickToClose: false,
-    });
-
-    Notify.init({
-      clickToClose: true,
-      borderRadius: '8px',
-      useIcon: false,
-      plainText: false,
-      fontSize: '14px',
-      failure: {
-        background: '#A1232B',
-      },
-      success: {
-        background: '#b8b8b8',
-        textColor: '#202020',
-      },
     });
   }, []);
 
@@ -43,7 +27,7 @@ export const App = () => {
   };
 
   return (
-    <Suspense fallback={<p>{t('loading')}</p>}>
+    <Suspense>
       <Routes>
         <Route
           path="/"
@@ -53,7 +37,9 @@ export const App = () => {
         >
           <Route index element={<HomePage />} />
           <Route path="company" element={<CompanyPage />} />
-          <Route path="practice" element={<PracticePage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>
