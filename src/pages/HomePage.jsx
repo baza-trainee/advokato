@@ -11,20 +11,19 @@ import { TeamGallery } from '../components/TeamGallery';
 const PracticeSection = lazy(() => import('../components/Practice'));
 const ResultsSection = lazy(() => import('../components/Results'));
 
-
 export const HomePage = () => {
   return (
     <Suspense>
-      {/* <HomeHero /> */}
-      {/* <Owner /> */}
-      {/* <Information /> */}
-      {/* <TeamGallery /> */}
+      <HomeHero />
+      <Owner />
+      <Information />
+      <TeamGallery />
       <PracticeSection />
-      {/* <ProBono /> */}
-      {/* <ResultsSection /> */}
-      {/* <ClientsBlock /> */}
-      {/* <ClientReviews /> */}
-      {/* <FeedBackForm /> */}
+      <ProBono />
+      <ResultsSection />
+      <ClientsBlock />
+      <ClientReviews />
+      <FeedBackForm />
     </Suspense>
   );
 };
