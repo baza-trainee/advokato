@@ -46,7 +46,14 @@ const CompanyPage = () => {
 	useEffect(() => {
 		[...refCard.current.children].map(el => {
 			if (state === +el.id) {
-				setTimeout(() => el.scrollIntoView(), 1000);
+				setTimeout(
+					() =>
+						el.scrollIntoView({
+							behavior: "smooth",
+							block: "center",
+						}),
+					1000,
+				);
 			}
 		});
 	}, [state, team]);

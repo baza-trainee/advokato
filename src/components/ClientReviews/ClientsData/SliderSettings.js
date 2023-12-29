@@ -4,15 +4,23 @@ export const options = {
 	pagination: false,
 	drag: "free",
 	type: "loop",
-	width: "1856px",
+	// width: "1856px",
 	gap: "32px",
 	perPage: 4,
 	perMove: 2,
 	speed: 1000,
 	interval: 4000,
 	breakpoints: {
-		320: {
+		768: {
+			width: "426px",
 			perPage: 1,
+			perMove: 1,
+		},
+		1024: {
+			width: "1584px",
+		},
+		1440: {
+			width: "1856px",
 		},
 	},
 };
