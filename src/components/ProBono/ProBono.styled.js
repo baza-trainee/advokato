@@ -33,6 +33,7 @@ export const Container = styled.div`
 export const BlockWrapper = styled.div`
 	${flexBox};
 	justify-content: space-between;
+
 	margin: 40px auto 0;
 	@media screen and (${device.tablet}) {
 		width: 864px;
@@ -42,7 +43,8 @@ export const BlockWrapper = styled.div`
 		width: 1120px;
 		height: 572px;
 	}
-`;
+
+  `;
 
 export const LeftSide = styled.div`
 	position: relative;
@@ -55,6 +57,7 @@ export const LeftSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
+
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
@@ -69,6 +72,7 @@ export const RightSide = styled.div`
 	position: relative;
 	width: 500px;
 	height: 572px;
+
 	overflow: hidden;
 	img {
 		border-radius: 24px;
@@ -76,6 +80,7 @@ export const RightSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
+
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
@@ -92,6 +97,7 @@ export const TextWrapper = styled.div`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+
 	ul {
 		list-style: disc;
 		margin-left: 22px;

@@ -30,7 +30,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [top, setTop] = useState(true);
 	const location = useLocation();
 	const navigate = useNavigate();
-	
+
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -80,8 +80,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						/>
 					</NavLink>
 
-						
-					<Menu setIsOpen={setIsOpen}/>
+					<Menu setIsOpen={setIsOpen} />
 
 					<div>
 						<LangButton
