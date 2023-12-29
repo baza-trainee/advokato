@@ -30,7 +30,7 @@ import privacyPolicy from '../../../assets/documents/privacy-policy.pdf';
 const DEFAULT_VALUES = {
   firstName: '',
   lastName: '',
-  phone: '',
+  phone: '+380',
   email: '',
   isAccept: false,
   specialization_id: 0,
