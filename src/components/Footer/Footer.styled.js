@@ -21,7 +21,8 @@ export const FlexWraper = styled.div`
 	display: flex;
 	flex-direction: ${props => props.flexDirection || "row"};
 	gap: ${props => props.gap || "140px"};
-	justify-content: ${({ path }) => (path === "/contacts" ? "space-between" : "center")};
+	justify-content: ${({ path }) =>
+		path === "/contacts" ? "space-between" : "center"};
 `;
 
 export const List = styled.ul`

@@ -33,7 +33,7 @@ export const SliderArrow = styled.div`
 export const ClientsSliderContainer = styled.div`
 	${flexBox};
 	max-width: 1440px;
-    margin: 0 auto;
+	margin: 0 auto;
 	gap: 32px;
 	overflow: hidden;
 	position: relative;

@@ -28,12 +28,20 @@ export const BlockWrapper = styled.div`
 	width: 1120px;
 	height: 572px;
 	margin: 40px auto;
+<<<<<<< HEAD
+	img {
+		border-radius: 24px;
+	}
+=======
+>>>>>>> dev
 `;
 
 export const LeftSide = styled.div`
 	position: relative;
 	width: 500px;
 	height: 572px;
+<<<<<<< HEAD
+=======
 	overflow: hidden;
 	img {
 		border-radius: 24px;
@@ -41,12 +49,15 @@ export const LeftSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
+>>>>>>> dev
 `;
 
 export const RightSide = styled.div`
 	position: relative;
 	width: 500px;
 	height: 572px;
+<<<<<<< HEAD
+=======
 	overflow: hidden;
 	img {
 		border-radius: 24px;
@@ -54,6 +65,7 @@ export const RightSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
+>>>>>>> dev
 `;
 
 export const TextWrapper = styled.div`
@@ -62,10 +74,13 @@ export const TextWrapper = styled.div`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+<<<<<<< HEAD
+=======
 	ul {
 		list-style: disc;
 		margin-left: 22px;
 	}
+>>>>>>> dev
 `;
 
 export const BonoHeader = styled.h2`
