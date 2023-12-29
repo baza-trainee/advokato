@@ -9,6 +9,7 @@ export const CheckBoxWrp = styled.div`
   align-items: center;
   width: 508px;
   height: 56px;
+  margin-top: -12px;
   margin-bottom: -4px;
 `;
 
