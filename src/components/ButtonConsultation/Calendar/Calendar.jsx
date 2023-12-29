@@ -23,6 +23,10 @@ export const Calendar = ({ schedule, setValue }) => {
   useEffect(() => {
     const arr = schedule.map(item => item.date);
 
+    arr.sort((a, b) => {
+      return new Date(a) - new Date(b);
+    });
+
     setDateList(prev => arr);
   }, [schedule]);
 
@@ -73,46 +77,58 @@ export const Calendar = ({ schedule, setValue }) => {
       return 'current';
     }
   };
-
+  console.log('dateList ', dateList[0]);
+  // console.log(new Date(dateList[0]));
   return (
     <DivStyled>
       <MainTitle>{t('appointmentForm.thirdTitle')}</MainTitle>
 
-      <ReactCalendar
-        onChange={handleChangeDate}
-        value={new Date()}
-        locale={'uk'}
-        tileDisabled={({ activeStartDate, date, view }) => {
-          if (view === 'month') {
-            return hideDates(date);
-          }
-        }}
-        tileClassName={({ activeStartDate, date, view }) => {
-          if (view === 'month') {
-            return checkDate(date);
-          }
-        }}
-        nextLabel={<Icon id="calendar-right-next" height={32} width={32} />}
-        next2Label={<Icon id="calendar-right-2next" height={32} width={32} />}
-        prevLabel={<Icon id="calendar-left-next" height={32} width={32} />}
-        prev2Label={<Icon id="calendar-left-2next" height={32} width={32} />}
-      />
-
-      {hours.length > 0 && (
+      {dateList.length > 0 && (
         <>
-          <SecondaryTitle>{t('appointmentForm.fourthTitle')}</SecondaryTitle>
+          <ReactCalendar
+            onChange={handleChangeDate}
+            value={new Date(dateList[0])}
+            // activeStartDate={new Date(dateList[0])}
+            locale={'uk'}
+            tileDisabled={({ activeStartDate, date, view }) => {
+              if (view === 'month') {
+                return hideDates(date);
+              }
+            }}
+            tileClassName={({ activeStartDate, date, view }) => {
+              if (view === 'month') {
+                return checkDate(date);
+              }
+            }}
+            nextLabel={<Icon id="calendar-right-next" height={32} width={32} />}
+            next2Label={
+              <Icon id="calendar-right-2next" height={32} width={32} />
+            }
+            prevLabel={<Icon id="calendar-left-next" height={32} width={32} />}
+            prev2Label={
+              <Icon id="calendar-left-2next" height={32} width={32} />
+            }
+          />
 
-          <TimeList>
-            {hours.map((time, idx) => (
-              <li
-                key={idx}
-                onClick={() => handleClickTime(time)}
-                className={time === currentTime ? 'currentTime' : null}
-              >
-                {time}
-              </li>
-            ))}
-          </TimeList>
+          {hours.length > 0 && (
+            <>
+              <SecondaryTitle>
+                {t('appointmentForm.fourthTitle')}
+              </SecondaryTitle>
+
+              <TimeList>
+                {hours.map((time, idx) => (
+                  <li
+                    key={idx}
+                    onClick={() => handleClickTime(time)}
+                    className={time === currentTime ? 'currentTime' : null}
+                  >
+                    {time}
+                  </li>
+                ))}
+              </TimeList>
+            </>
+          )}
         </>
       )}
     </DivStyled>

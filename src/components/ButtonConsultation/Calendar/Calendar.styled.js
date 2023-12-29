@@ -18,14 +18,14 @@ export const DivStyled = styled.div`
     margin-bottom: 0;
 
     border: 1px solid #969395;
-    background-color: #f3eff5;
+    background-color: var(--headerBackground);
   }
 
   .react-calendar__month-view__weekdays {
     height: 76px;
 
     border: 1px solid #969395;
-    background-color: #f3eff5;
+    background-color: var(--headerBackground);
   }
 
   .react-calendar__month-view__days {
@@ -40,6 +40,14 @@ export const DivStyled = styled.div`
     letter-spacing: 0em;
     text-transform: capitalize;
     color: var(--mainText);
+
+    span {
+      display: inline-block;
+
+      & :first-letter {
+        text-transform: uppercase;
+      }
+    }
   }
 
   .react-calendar__month-view__weekdays__weekday,
@@ -63,12 +71,14 @@ export const DivStyled = styled.div`
   .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
     font-family: var(--Raleway);
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 42px;
     letter-spacing: 0em;
     color: var(--mainText);
+    cursor: pointer;
 
     &[disabled] {
+      font-weight: 400;
       background-color: var(--lightText);
       color: var(--greyText);
 
@@ -79,17 +89,60 @@ export const DivStyled = styled.div`
       }
     }
 
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      transition-property: background-color;
-      transition-duration: var(--animation-duration);
-      transition-timing-function: var(--timing-function);
-      background-color: var(--accentLink);
-    }
-
     &.current {
       color: var(--accentText);
+      background-color: var(--lightText);
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
+
+        background-color: #e6e6e6;
+      }
+    }
+
+    &.react-calendar__tile--now {
+      border: 1px solid #969395;
+      background-color: inherit;
+
+      &[disabled] {
+        font-weight: 400;
+        background-color: var(--lightText);
+        color: var(--greyText);
+
+        &:hover,
+        &:focus {
+          cursor: auto;
+          background-color: var(--lightText);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
+
+        background-color: #e6e6e6;
+      }
+    }
+
+    &.react-calendar__tile--rangeStart {
+      background-color: var(--lightText);
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--timing-function);
+
+        background-color: #e6e6e6;
+      }
     }
   }
 
@@ -145,7 +198,7 @@ export const TimeList = styled.ul`
       transition-duration: var(--animation-duration);
       transition-timing-function: var(--timing-function);
 
-      background-color: var(--accentLink);
+      background-color: #e6e6e6;
     }
   }
 

@@ -36,8 +36,8 @@ export const CheckBoxStyled = styled.input`
 `;
 
 export const DocLinkStyled = styled.p`
-  display: ${({ lang }) => (lang ? 'inline' : 'flex')};
-  flex-wrap: ${({ lang }) => (lang ? 'nowrap' : 'wrap')};
+  display: ${({ lang }) => (lang === 'en' ? 'inline' : 'flex')};
+  flex-wrap: ${({ lang }) => (lang === 'en' ? 'nowrap' : 'wrap')};
   width: 453px;
   height: 56px;
 
@@ -52,7 +52,7 @@ export const DocLinkStyled = styled.p`
     cursor: pointer;
     text-decoration: underline;
     color: #183ec6;
-    margin-left: ${({ lang }) => (lang ? '10px' : '0px')};
+    margin-left: ${({ lang }) => (lang === 'en' ? '10px' : '0px')};
   }
 `;
 
