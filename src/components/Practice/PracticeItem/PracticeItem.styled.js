@@ -1,40 +1,12 @@
 import styled from '@emotion/styled';
+import { device } from '../../../styles/mixins';
 
 export const LiStyled = styled.li`
-  padding-top: 17px;
-  padding-bottom: 11px;
-  max-width: 548px;
-  height: 64px;
-
-  font-family: var(--Raleway);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: calc(45 / 32);
-  word-spacing: -0.05ch;
-  letter-spacing: 0em;
-
   color: var(--greyText);
-  fill: var(--greyText);
   border-bottom: 1px solid #ffffff;
 
-  p {
-    display: flex;
-    align-items: center;
-    height: 36px;
-  }
-
-  span {
-    margin-right: 32px;
-
-    font-family: var(--Montserrat);
-    font-size: 16px;
-    line-height: calc(19 / 16);
-    letter-spacing: 2px;
-  }
-
-  svg {
-    margin: 5px;
-    height: 13px;
+  &.active {
+    color: var(--lightText);
   }
 
   &:hover,
@@ -44,8 +16,45 @@ export const LiStyled = styled.li`
     color: var(--lightText);
   }
 
-  &.active {
-    color: var(--lightText);
-    stroke: var(--lightText);
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    max-width: 420px;
+    height: 60px;
+  }
+
+  @media screen and (${device.desktop}) {
+    padding-top: 17px;
+    padding-bottom: 11px;
+    max-width: 548px;
+    height: 64px;
+  }
+`;
+
+export const SpecializationStyled = styled.p`
+  display: flex;
+  align-items: center;
+
+  font-family: var(--Raleway);
+  font-weight: 400;
+  word-spacing: -0.05ch;
+  letter-spacing: 0em;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 28px;
+    font-size: 22px;
+    line-height: calc(31 / 22);
+  }
+
+  @media screen and (${device.desktop}) {
+    height: 36px;
+    font-size: 32px;
+    line-height: calc(45 / 32);
   }
 `;
