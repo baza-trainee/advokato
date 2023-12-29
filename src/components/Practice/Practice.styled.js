@@ -110,13 +110,13 @@ export const PracticeTitle = styled.h3`
   }
 
   @media screen and (${device.tablet}) {
-    height: 32px;
+    min-height: 32px;
     font-size: 28px;
     line-height: calc(40 / 28);
   }
 
   @media screen and (${device.desktop}) {
-    height: 36px;
+    min-height: 36px;
     font-size: 32px;
     line-height: calc(45 / 32);
   }
