@@ -58,7 +58,7 @@ export const SliderItems = React.forwardRef((props, ref) => {
 								{openReview === elem.id
 									? elem.description
 									: elem.description.slice(0, 325)}
-								{elem.description.length > 325 ? (
+								{elem.description?.length > 325 ? (
 									<button
 										onClick={() => {
 											openReview !== elem.id

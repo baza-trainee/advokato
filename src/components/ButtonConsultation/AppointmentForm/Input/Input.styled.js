@@ -64,7 +64,7 @@ export const ErrorText = styled.p`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(95px);
+  transform: translateY(90px);
 
   color: var(--accentText);
 `;

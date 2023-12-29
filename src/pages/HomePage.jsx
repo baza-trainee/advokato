@@ -18,8 +18,8 @@ export const HomePage = () => {
       <HomeHero />
       <Owner />
       <Information />
-      <PracticeSection />
       <TeamGallery />
+      <PracticeSection />
       <ProBono />
       <ResultsSection />
       <ClientsBlock />

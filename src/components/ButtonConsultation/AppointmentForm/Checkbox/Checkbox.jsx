@@ -31,8 +31,8 @@ export const Checkbox = ({
         type="checkbox"
       />
 
-      <DocLinkStyled>
-        {t('appointmentForm.privacyTitle')} <br />
+      <DocLinkStyled lang={i18n.language === 'en'}>
+        {t('appointmentForm.privacyTitle')}
         <span onClick={handleClickCheckbox}>
           {t('appointmentForm.privacyButton')}
         </span>

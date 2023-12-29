@@ -3,13 +3,16 @@ import { fontDesktop } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
-  margin-bottom: -4px;
 
   p {
     margin-bottom: 8px;
     height: 36px;
     ${fontDesktop};
     color: var(--mainText);
+  }
+
+  &:last-of-type {
+    margin-bottom: -4px;
   }
 `;
 

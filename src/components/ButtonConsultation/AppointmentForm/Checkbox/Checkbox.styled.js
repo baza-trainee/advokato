@@ -9,6 +9,7 @@ export const CheckBoxWrp = styled.div`
   align-items: center;
   width: 508px;
   height: 56px;
+  margin-top: -12px;
   margin-bottom: -4px;
 `;
 
@@ -35,6 +36,11 @@ export const CheckBoxStyled = styled.input`
 `;
 
 export const DocLinkStyled = styled.p`
+  display: ${({ lang }) => (lang ? 'inline' : 'flex')};
+  flex-wrap: ${({ lang }) => (lang ? 'nowrap' : 'wrap')};
+  width: 453px;
+  height: 56px;
+
   font-family: var(--Montserrat);
   font-size: 18px;
   font-weight: 500;
@@ -46,6 +52,7 @@ export const DocLinkStyled = styled.p`
     cursor: pointer;
     text-decoration: underline;
     color: #183ec6;
+    margin-left: ${({ lang }) => (lang ? '10px' : '0px')};
   }
 `;
 
