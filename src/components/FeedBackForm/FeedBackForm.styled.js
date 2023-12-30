@@ -8,40 +8,55 @@ import {
 } from '../../styles/mixins';
 
 export const Container = styled.div`
+  margin: 132px auto;
+  width: 1120px;
+
   @media screen and (${device.desktop}) {
-    margin: 132px auto;
-    width: 1120px;
   }
 `;
 
 export const TitleStyled = styled.h2`
-  @media screen and (${device.desktop}) {
-    margin-bottom: 32px;
+  height: 28px;
+  width: 504px;
+  margin-bottom: 32px;
 
-    ${fontSectionTitle};
+  ${fontSectionTitle};
+  border: 1px solid var(--darkGrey);
+
+  @media screen and (${device.desktop}) {
   }
 `;
 
-export const Email = styled.h2`
-  display: inline-block;
+export const EmailStyled = styled.p`
+  /* padding-bottom: 8px; */
+  height: 28px;
+  margin-bottom: 72px;
+  width: 504px;
 
-  @media screen and (${device.desktop}) {
-    position: relative;
-    margin-bottom: 80px;
-
-    ${fontSectionTitle};
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 5px;
-      width: 504px;
-      height: 1px;
-      background-color: var(--mainText);
-    }
-  }
+  ${fontSectionTitle};
+  border: 1px solid red;
 `;
+
+// export const Email = styled.h2`
+//   display: inline-block;
+
+//   @media screen and (${device.desktop}) {
+//     position: relative;
+//     margin-bottom: 80px;
+
+//     ${fontSectionTitle};
+
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       bottom: 5px;
+//       width: 504px;
+//       height: 1px;
+//       background-color: var(--mainText);
+//     }
+//   }
+// `;
 
 export const ButtonStyled = styled.button`
   ${flexBox};
@@ -85,13 +100,13 @@ export const ButtonStyled = styled.button`
   }
 `;
 
-export const InputWraper = styled.div`
+export const InputWrapper = styled.div`
   width: 844px;
   display: flex;
   gap: 40px;
 `;
 
-export const LabelWraper = styled.div`
+export const LabelWrapper = styled.div`
   width: 844px;
   display: flex;
   flex-direction: column;

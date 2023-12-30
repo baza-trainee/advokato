@@ -1,140 +1,116 @@
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import {
-	ButtonStyled,
-	Container,
-	Email,
-	ErrorsStyled,
-	Input,
-	InputWraper,
-	LabelWraper,
-	TitleStyled,
-} from "./FeedBackForm.styled";
-import { Icon } from "../Icon";
+// import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslation } from 'react-i18next';
 
-const schema = yup.object({
-	name: yup
-		.string()
-		.required("Це поле є обов’язковим")
-		.min(2, "Має бути мінімум 2 символи")
-		.max(40, "Має бути не більше 40 символів"),
-	tel: yup
-		.string()
-		.required("Номер телефону обов'язковий")
-		.matches(
-			/^\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/,
-			"Введіть телефон в наступному форматі (066) 777-30-77",
-		)
-		.max(15, "Забагато символів"),
-	question: yup
-		.string()
-		.required("Це поле є обов’язковим")
-		.matches(
-			/^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ0-9\s',.:;-]+$/,
-			"Допускаються літери латиниці та кирилиці, цифри, символи: ' - : ; . ,",
-		)
-		.min(8, "Має бути мінімум 8 символів")
-		.max(700, "Має бути не більше 700 символів"),
-});
+import { SchemaUa } from './validationSchema';
+import {
+  Container,
+  EmailStyled,
+  ButtonStyled,
+//   Email,
+  ErrorsStyled,
+  Input,
+  InputWrapper,
+  LabelWrapper,
+  TitleStyled,
+} from './FeedBackForm.styled';
+
+const DEFAULT_VALUES = {
+  name: '',
+  phone: '+380',
+  email: '',
+  question: '',
+};
 
 export const FeedBackForm = () => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors, isValid, isDirty, dirtyFields },
-	} = useForm({
-		mode: "onChange",
-		resolver: yupResolver(schema),
-	});
+  const [t, i18n] = useTranslation('global');
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid, isDirty },
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: DEFAULT_VALUES,
+    resolver: yupResolver(i18n.language === 'en' ? SchemaUa : SchemaUa), //додати схему англ мовою
+  });
 
-	const onSubmit = data => {
-		const trimmedData = {
-			name: data.name.trim(),
-			tel: data.tel,
-			question: data.question.trim(),
-		};
+  const onSubmit = data => {
+    // const trimmedData = {
+    //   name: data.name.trim(),
+    //   phone: data.phone,
+    //   question: data.question.trim(),
+    // };
 
-		alert(JSON.stringify(trimmedData));
-		reset();
-	};
+    // alert(JSON.stringify(data));
+    // reset();
+    console.log(data);
+  };
 
-	return (
-		<section>
-			<Container>
-				<TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
-				<Link
-					to="mailto:acstatus.mk@gmail.com"
-					aria-label="електронна пошта компанії"
-				>
-					<Email>acstatus.mk@gmail.com</Email>
-				</Link>
+  return (
+    <section>
+      <Container>
+        <TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
+        <EmailStyled>acstatus.mk@gmail.com</EmailStyled>
 
-				<form
-					autoComplete="off"
-					onSubmit={handleSubmit(onSubmit)}
-				>
-					<InputWraper>
-						<LabelWraper>
-							<label htmlFor="name">Ваше ім’я</label>
-							<Input
-								{...register("name")}
-								type="text"
-								id="name"
-								placeholder="Введіть ім’я"
-								autoFocus
-							/>
-							<ErrorsStyled>{errors.name?.message}</ErrorsStyled>
-						</LabelWraper>
+        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+          <InputWrapper>
+            <LabelWrapper>
+              <label htmlFor="name">Ваше ім’я</label>
+              <Input
+                {...register('name')}
+                type="text"
+                id="name"
+                placeholder="Введіть ім’я"
+                autoFocus
+              />
+              <ErrorsStyled>{errors.name?.message}</ErrorsStyled>
+            </LabelWrapper>
 
-						<LabelWraper>
-							<label htmlFor="tel">Ваш номер телефону</label>
-							<Input
-								{...register("tel")}
-								type="tel"
-								id="tel"
-								placeholder="+3 80 ХХ ХХХ ХХ ХХ"
-							/>
+            <LabelWrapper>
+              <label htmlFor="tel">Ваш номер телефону</label>
+              <Input
+                {...register('phone')}
+                type="tel"
+                id="tel"
+                placeholder="+3 80 ХХ ХХХ ХХ ХХ"
+              />
+              <ErrorsStyled>{errors.phone?.message}</ErrorsStyled>
+            </LabelWrapper>
 
-							{errors.tel && dirtyFields.tel ? (
-								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
-							) : !errors.tel && dirtyFields.tel ? (
-								<ErrorsStyled color="#3cbc81">
-									Це правильний формат телефона
-								</ErrorsStyled>
-							) : (
-								""
-							)}
-						</LabelWraper>
-					</InputWraper>
+            <LabelWrapper>
+              <label htmlFor="email">Ваша електронна пошта</label>
+              <Input
+                {...register('email')}
+                type="text"
+                id="email"
+                placeholder="xxx@xxx"
+              />
+              <ErrorsStyled>{errors.email?.message}</ErrorsStyled>
+            </LabelWrapper>
+          </InputWrapper>
 
-					<LabelWraper>
-						<label htmlFor="question">Ваше питання</label>
-						<Input
-							{...register("question")}
-							type="text"
-							id="question"
-							placeholder="Введіть питання"
-						/>
-						<ErrorsStyled>{errors.question?.message}</ErrorsStyled>
-					</LabelWraper>
+          <LabelWrapper>
+            <label htmlFor="question">Ваше питання</label>
+            <Input
+              {...register('question')}
+              type="text"
+              id="question"
+              placeholder="Введіть питання"
+            />
+            <ErrorsStyled>{errors.question?.message}</ErrorsStyled>
+          </LabelWrapper>
 
-					<ButtonStyled
-						type="submit"
-						disabled={!isValid || !isDirty}
-						aria-label="Відправити данні форми"
-					>
-						Відправити
-						<Icon
-							id={"icon-arrow-right"}
-							width={16}
-							height={12}
-						/>
-					</ButtonStyled>
-				</form>
-			</Container>
-		</section>
-	);
+          <ButtonStyled
+            type="submit"
+            // disabled={!isValid || !isDirty}
+            aria-label="Відправити данні форми"
+          >
+            Відправити
+          </ButtonStyled>
+        </form>
+      </Container>
+    </section>
+  );
 };
