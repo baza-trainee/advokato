@@ -88,7 +88,10 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+<<<<<<< HEAD
+=======
 		z-index: 50;
+>>>>>>> dev
 	}
 
 	span:after {
@@ -102,7 +105,10 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+<<<<<<< HEAD
+=======
 		z-index: 50;
+>>>>>>> dev
 	}
 
 	span.open {

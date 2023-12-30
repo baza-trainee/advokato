@@ -101,7 +101,9 @@ export const FeedBackForm = () => {
 							{errors.tel && dirtyFields.tel ? (
 								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
 							) : !errors.tel && dirtyFields.tel ? (
-								<ErrorsStyled color="#3cbc81">Це правильний формат телефона</ErrorsStyled>
+								<ErrorsStyled color="#3cbc81">
+									Це правильний формат телефона
+								</ErrorsStyled>
 							) : (
 								""
 							)}
