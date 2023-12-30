@@ -1,5 +1,5 @@
 export const options = {
-	// autoplay: true,
+	autoplay: true,
 	arrows: false,
 	pagination: false,
 	drag: "free",
