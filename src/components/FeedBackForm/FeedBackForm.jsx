@@ -89,7 +89,7 @@ export const FeedBackForm = () => {
 
       <section>
         <Container>
-          <TitleStyled>Зв’яжіться з нами acstatus.mk@gmail.com</TitleStyled>
+          <TitleStyled>{t('feedBackForm.title')}</TitleStyled>
 
           <StyledForm
             autoComplete="off"
@@ -100,8 +100,8 @@ export const FeedBackForm = () => {
                 register={register}
                 name="name"
                 type="text"
-                label={'Ваше ім’я'}
-                placeholder={'Введіть ім’я'}
+                label={t('feedBackForm.labelName')}
+                placeholder={t('feedBackForm.placeholderName')}
                 errors={errors}
                 isValid={isValid}
                 touchedFields={touchedFields}
@@ -111,7 +111,7 @@ export const FeedBackForm = () => {
                 register={register}
                 name="phone"
                 type="text"
-                label={'Ваш номер телефону'}
+                label={t('feedBackForm.labelPhone')}
                 placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
                 errors={errors}
                 isValid={isValid}
@@ -122,7 +122,7 @@ export const FeedBackForm = () => {
                 register={register}
                 name="email"
                 type="text"
-                label={'Ваша електронна пошта'}
+                label={t('feedBackForm.labelEmail')}
                 placeholder={'xxx@xxx'}
                 errors={errors}
                 isValid={isValid}
@@ -134,8 +134,8 @@ export const FeedBackForm = () => {
               register={register}
               name="question"
               type="text"
-              label={'Ваше питання'}
-              placeholder={'Введіть питання'}
+              label={t('feedBackForm.labelQuestion')}
+              placeholder={t('feedBackForm.placeholderQuestion')}
               errors={errors}
               isValid={isValid}
               touchedFields={touchedFields}
@@ -147,7 +147,7 @@ export const FeedBackForm = () => {
               disabled={!isValid || !isDirty}
               aria-label="Відправити данні форми"
             >
-              Відправити
+              {t('feedBackForm.submitButton')}
             </ButtonStyled>
           </StyledForm>
         </Container>

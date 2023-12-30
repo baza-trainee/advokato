@@ -46,7 +46,14 @@
     "failureTextTwoFeedBack": "Будь ласка, спробуйте ще раз.",
     "returnButton": "Повернутись"
   },
-  "feedBackForm":{
-    
+  "feedBackForm": {
+    "title": "Зв'яжіться з нами acstatus.mk@gmail.com",
+    "labelName": "Ваше ім’я",
+    "placeholderName": "Введіть ім’я",
+    "labelPhone": "Ваш номер телефону",
+    "labelEmail": "Ваша електронна пошта",
+    "labelQuestion": "Ваше питання",
+    "placeholderQuestion": "Введіть питання",
+    "submitButton": "Відправити"
   }
 }

@@ -45,5 +45,15 @@
     "failureTextTwo": "Please choose another consultation date.",
     "failureTextTwoFeedBack": "Please try again.",
     "returnButton": "Come back"
+  },
+  "feedBackForm": {
+    "title": "Contact us acstatus.mk@gmail.com",
+    "labelName": "Your Name",
+    "placeholderName": "Enter a name",
+    "labelPhone": "Your phone number",
+    "labelEmail": "Your email",
+    "labelQuestion": "Your question",
+    "placeholderQuestion": "Enter question",
+    "submitButton": "Submit"
   }
 }
