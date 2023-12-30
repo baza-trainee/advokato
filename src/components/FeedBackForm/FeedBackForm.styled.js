@@ -5,7 +5,7 @@ import {
   secondaryButton,
 } from '../../styles/mixins';
 
-export const Container = styled.div`
+export const SectionStyled = styled.section`
   margin: 132px auto;
   width: 1120px;
 `;

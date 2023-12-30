@@ -3,9 +3,13 @@ import styled from '@emotion/styled';
 import { device, fontLayoutMenu } from '../../styles/mixins';
 
 export const FooterStyled = styled.footer`
+  position: relative;
+  z-index: 100;
   background-color: var(--darkBackground);
   border-radius: 24px 24px 0 0;
-  margin-top: -140px;
+  margin-top: -110px;
+
+  border-top: 1px solid var(--reviewText);
 `;
 
 export const Container = styled.div`
