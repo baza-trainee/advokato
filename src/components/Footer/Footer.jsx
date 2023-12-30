@@ -197,7 +197,7 @@ export const Footer = () => {
           )}
         </ContentWrp>
 
-        <Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+        <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
       </Container>
     </FooterStyled>
   );

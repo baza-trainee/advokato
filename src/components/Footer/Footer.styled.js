@@ -13,39 +13,82 @@ export const FooterStyled = styled.footer`
 `;
 
 export const Container = styled.div`
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    padding-top: 20px;
+    padding-bottom: 12px;
+    max-width: 864px;
+  }
+
   @media screen and (${device.desktop}) {
     padding-top: ${({ path }) => (path === '/contacts' ? '48px' : '72px')};
     padding-bottom: 28px;
     max-width: 1120px;
-    margin: 0 auto;
   }
 `;
 
 export const ContentWrp = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
-  justify-content: ${({ path }) =>
-    path === '/contacts' ? 'space-between' : 'center'};
-  gap: ${props => props.gap || '140px'};
-  padding: ${({ path }) => (path !== '/contacts' ? '0 60px 20px 100px' : '0')};
+  justify-content: space-between;
   margin-bottom: 28px;
   border-bottom: 1px solid #e0dfe0;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    padding: ${({ path }) => (path !== '/contacts' ? '0 14px 20px 72px' : '0')};
+    gap: 72px;
+  }
+
+  @media screen and (${device.desktop}) {
+    padding: ${({ path }) =>
+      path !== '/contacts' ? '0 60px 20px 100px' : '0'};
+    gap: 140px;
+  }
 `;
 
 export const ListStyled = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    gap: 20px;
+  }
+
+  @media screen and (${device.desktop}) {
+    gap: 24px;
+  }
 `;
 
 export const LinkStyled = styled(NavLink)`
-  font-family: var(--Montserrat);
-  font-size: 18px;
-  line-height: calc(32.4 / 18);
+  position: relative;
+
+  ${fontLayoutMenu};
   color: ${({ current, active }) =>
     current === active ? 'var(--accentLink)' : 'var(--lightText)'};
-  position: relative;
   transition: color 0.3s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 16px;
+    line-height: calc(29 / 16);
+  }
+
+  @media screen and (${device.desktop}) {
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
+  }
 
   &:hover,
   &:focus {
@@ -70,30 +113,58 @@ export const LinkStyled = styled(NavLink)`
 `;
 
 export const Text = styled.p`
-  margin-bottom: ${props => props.marginbottom || '16px'};
-  font-family: var(--Montserrat);
-  line-height: calc(32.4 / 18);
+  ${fontLayoutMenu};
   color: var(--lightText);
 
-  margin-left: ${({ path }) => (path === '/contacts' ? '100px' : null)};
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-left: ${({ path }) => (path === '/contacts' ? '40px' : null)};
+    font-size: 16px;
+    line-height: calc(29 / 16);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-left: ${({ path }) => (path === '/contacts' ? '100px' : null)};
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
+  }
 `;
 
 export const DocsWrp = styled.div`
-  margin-right: ${({ path }) => (path === '/contacts' ? '100px' : null)};
-  margin-bottom: ${({ path }) => (path === '/contacts' ? '48px' : null)};
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-right: ${({ path }) => (path === '/contacts' ? '40px' : null)};
+    margin-bottom: ${({ path }) => (path === '/contacts' ? '20px' : null)};
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-right: ${({ path }) => (path === '/contacts' ? '100px' : null)};
+    margin-bottom: ${({ path }) => (path === '/contacts' ? '48px' : null)};
+  }
 `;
 
 export const DocumentTitleStyled = styled.button`
   display: flex;
-  height: 32px;
-  min-width: 292px;
 
   ${fontLayoutMenu};
   text-decoration: underline;
   color: var(--lightText);
 
   &:first-of-type {
-    margin-bottom: 24px;
+    @media screen and (min-width: 768px) {
+    }
+
+    @media screen and (${device.tablet}) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (${device.desktop}) {
+      margin-bottom: 24px;
+    }
   }
 
   &:hover,
@@ -101,15 +172,44 @@ export const DocumentTitleStyled = styled.button`
     transition: color var(--timing-function) var(--animation-duration);
     color: var(--accentLink);
   }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 20px;
+    min-width: 260px;
+
+    font-size: 16px;
+    line-height: calc(29 / 16);
+  }
+
+  @media screen and (${device.desktop}) {
+    height: 32px;
+    min-width: 292px;
+
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
+  }
 `;
 
 export const AddressWrp = styled.address`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 352px;
 
   font-style: normal;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    width: 262px;
+  }
+
+  @media screen and (${device.desktop}) {
+    width: 352px;
+  }
 `;
 
 export const TextLink = styled(Link)`
@@ -121,9 +221,30 @@ export const TextLink = styled(Link)`
     transition: color var(--timing-function) var(--animation-duration);
     color: var(--accentLink);
   }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 16px;
+    line-height: calc(29 / 16);
+  }
+
+  @media screen and (${device.desktop}) {
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
+  }
 `;
 
 export const EmailStyled = styled.p`
   ${fontLayoutMenu};
   color: var(--lightText);
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
+  }
 `;
