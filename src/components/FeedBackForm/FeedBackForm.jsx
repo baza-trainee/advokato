@@ -11,7 +11,7 @@ import { ModalFromRoot } from '../ModalFromRoot';
 import { SuccessPage } from './SuccessPage';
 import { FailurePage } from './FailurePage';
 import {
-  Container,
+  SectionStyled,
   StyledForm,
   ButtonStyled,
   TitleStyled,
@@ -87,71 +87,69 @@ export const FeedBackForm = () => {
         </ModalFromRoot>
       )}
 
-      <section>
-        <Container>
-          <TitleStyled>{t('feedBackForm.title')}</TitleStyled>
+      <SectionStyled>
+        <TitleStyled>{t('feedBackForm.title')}</TitleStyled>
 
-          <StyledForm
-            autoComplete="off"
-            onSubmit={handleSubmit(onSubmit, onErrors)}
-          >
-            <div>
-              <Input
-                register={register}
-                name="name"
-                type="text"
-                label={t('feedBackForm.labelName')}
-                placeholder={t('feedBackForm.placeholderName')}
-                errors={errors}
-                isValid={isValid}
-                touchedFields={touchedFields}
-              />
-
-              <Input
-                register={register}
-                name="phone"
-                type="text"
-                label={t('feedBackForm.labelPhone')}
-                placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
-                errors={errors}
-                isValid={isValid}
-                touchedFields={touchedFields}
-              />
-
-              <Input
-                register={register}
-                name="email"
-                type="text"
-                label={t('feedBackForm.labelEmail')}
-                placeholder={'xxx@xxx'}
-                errors={errors}
-                isValid={isValid}
-                touchedFields={touchedFields}
-              />
-            </div>
-
+        <StyledForm
+          autoComplete="off"
+          onSubmit={handleSubmit(onSubmit, onErrors)}
+        >
+          <div>
             <Input
               register={register}
-              name="question"
+              name="name"
               type="text"
-              label={t('feedBackForm.labelQuestion')}
-              placeholder={t('feedBackForm.placeholderQuestion')}
+              label={t('feedBackForm.labelName')}
+              placeholder={t('feedBackForm.placeholderName')}
               errors={errors}
               isValid={isValid}
               touchedFields={touchedFields}
-              width={'1024px'}
             />
 
-            <ButtonStyled
-              type="submit"
-              disabled={!isValid || !isDirty}
-              aria-label="Відправити данні форми"
-            >
-              {t('feedBackForm.submitButton')}
-            </ButtonStyled>
-          </StyledForm>
-        </Container>
-      </section>
+            <Input
+              register={register}
+              name="phone"
+              type="text"
+              label={t('feedBackForm.labelPhone')}
+              placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
+              errors={errors}
+              isValid={isValid}
+              touchedFields={touchedFields}
+            />
+
+            <Input
+              register={register}
+              name="email"
+              type="text"
+              label={t('feedBackForm.labelEmail')}
+              placeholder={'xxx@xxx'}
+              errors={errors}
+              isValid={isValid}
+              touchedFields={touchedFields}
+            />
+          </div>
+
+          <Input
+            register={register}
+            name="question"
+            type="text"
+            label={t('feedBackForm.labelQuestion')}
+            placeholder={t('feedBackForm.placeholderQuestion')}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+            width={'1024px'}
+          />
+
+          <ButtonStyled
+            type="submit"
+            disabled={!isValid || !isDirty}
+            aria-label="Відправити данні форми"
+          >
+            {t('feedBackForm.submitButton')}
+          </ButtonStyled>
+        </StyledForm>
+      </SectionStyled>
     </>
   );
 };
