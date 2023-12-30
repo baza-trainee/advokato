@@ -1,7 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
+import { postContent } from '../../api';
 import { SchemaUa } from './validationSchema';
 import { Input } from './Input';
 import {
@@ -31,9 +33,32 @@ export const FeedBackForm = () => {
     resolver: yupResolver(i18n.language === 'en' ? SchemaUa : SchemaUa), //додати схему англ мовою
   });
 
-  const onSubmit = data => {
-    // reset();
-    console.log(data);
+  const onSubmit = async formData => {
+    console.log(formData);
+
+    Loading.dots();
+
+    const data = {
+      email: formData?.email || null,
+      message: formData?.question,
+      name: formData?.name || null,
+      phone_number: formData?.phone || null,
+    };
+
+    const result = await postContent('feedback', data);
+
+    if (result?.success) {
+      Loading.remove();
+      reset();
+      return console.log('success');
+    }
+
+    Loading.remove();
+    console.log('fail');
+  };
+
+  const onErrors = data => {
+    console.log('form onErrors', data);
   };
 
   return (
@@ -41,7 +66,10 @@ export const FeedBackForm = () => {
       <Container>
         <TitleStyled>Зв’яжіться з нами acstatus.mk@gmail.com</TitleStyled>
 
-        <StyledForm autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm
+          autoComplete="off"
+          onSubmit={handleSubmit(onSubmit, onErrors)}
+        >
           <div>
             <Input
               register={register}
