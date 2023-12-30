@@ -30,6 +30,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [top, setTop] = useState(true);
 	const location = useLocation();
 	const navigate = useNavigate();
+	const [modalActive, setModalActive] = useState(false);
 
 	useEffect(() => {
 		const scrollHandler = () => {
@@ -57,7 +58,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 		<>
 			<HeaderStyled top={top}>
 				<Container>
-					<PhoneBurger>
+					<PhoneBurger onClick={() => setModalActive(prev => !prev)}>
 						<Icon
 							id={"phoneButton"}
 							className="animate__animated animate__pulse animate__infinite infinite
@@ -111,6 +112,8 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 
 					<ConsultElement>
 						<ButtonConsultation
+							modalActive={modalActive}
+							setModalActive={setModalActive}
 							className={
 								"animate__animated animate__pulse animate__infinite infinite animate__slower	3s"
 							}

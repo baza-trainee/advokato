@@ -6,9 +6,8 @@ import { ModalFromRoot } from '../ModalFromRoot';
 import { AppointmentForm } from './AppointmentForm';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
-export const ButtonConsultation = ({ className, customStyles }) => {
+export const ButtonConsultation = ({ className, customStyles,modalActive, setModalActive }) => {
   const [t, i18n] = useTranslation('global');
-  const [modalActive, setModalActive] = useState(false);
 
   useEffect(() => {
     if (!modalActive) {
