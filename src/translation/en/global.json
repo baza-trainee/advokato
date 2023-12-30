@@ -37,9 +37,23 @@
     "thirdTitle": "Select Date",
     "fourthTitle": "Select time",
     "successTitle": "Congratulations!",
-    "successText": "You have successfully signed up for a consultation. We will contact you shortly.",
+    "successTextOne": "You have successfully signed up for a consultation.",
+    "successTextOneFeedBack": "Your message has been successfully delivered.",
+    "successTextTwo": "We will contact you shortly.",
     "failureTitle": "Sorry!",
-    "failureText": "There was an error. Please choose another consultation date.",
+    "failureTextOne": "There was an error.",
+    "failureTextTwo": "Please choose another consultation date.",
+    "failureTextTwoFeedBack": "Please try again.",
     "returnButton": "Come back"
+  },
+  "feedBackForm": {
+    "title": "Contact us acstatus.mk@gmail.com",
+    "labelName": "Your Name",
+    "placeholderName": "Enter a name",
+    "labelPhone": "Your phone number",
+    "labelEmail": "Your email",
+    "labelQuestion": "Your question",
+    "placeholderQuestion": "Enter question",
+    "submitButton": "Submit"
   }
 }

@@ -38,10 +38,22 @@
     "fourthTitle": "Обрати час",
     "successTitle": "Вітаємо!",
     "successTextOne": "Ви успішно записались на консультацію.",
+    "successTextOneFeedBack": "Ваше повідомлення успішно доставлене.",
     "successTextTwo": "Ми зв'яжемося з Вами найближчим часом.",
     "failureTitle": "Вибачте!",
     "failureTextOne": "Виникла помилка.",
     "failureTextTwo": "Будь ласка, оберіть іншу дату консультації.",
+    "failureTextTwoFeedBack": "Будь ласка, спробуйте ще раз.",
     "returnButton": "Повернутись"
+  },
+  "feedBackForm": {
+    "title": "Зв'яжіться з нами acstatus.mk@gmail.com",
+    "labelName": "Ваше ім’я",
+    "placeholderName": "Введіть ім’я",
+    "labelPhone": "Ваш номер телефону",
+    "labelEmail": "Ваша електронна пошта",
+    "labelQuestion": "Ваше питання",
+    "placeholderQuestion": "Введіть питання",
+    "submitButton": "Відправити"
   }
 }

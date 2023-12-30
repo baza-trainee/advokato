@@ -5,6 +5,7 @@ import {
 	fontLayoutMenu,
 	fontReview,
 	fontLayoutCall,
+	container,
 } from "../../styles/mixins";
 
 export const HeaderStyled = styled.header`
@@ -18,9 +19,20 @@ export const HeaderStyled = styled.header`
 	backdrop-filter: ${props => (props.top ? 0 : "blur(20px)")};
 	z-index: 20;
 	img {
-		margin: 0 334px;
 		width: 180px;
 		height: 80px;
+	}
+	@media screen and (${device.tablet}) {
+		${flexBox};
+		height: 76px;
+		img {
+			width: 152px;
+			height: 60px;
+		}
+		svg {
+			width: 52px;
+			height: 52px;
+		}
 	}
 	@media screen and (${device.burger}) {
 		height: 88px;
@@ -33,28 +45,38 @@ export const HeaderStyled = styled.header`
 `;
 export const Container = styled.div`
 	${flexBox};
-	justify-content: space-around;
+	justify-content: space-between;
+	width: 100%;
 	max-width: 1440px;
-	margin: 0 auto;
+	@media screen and (${device.tablet}) {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+	@media screen and (${device.desktop}) {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
 `;
 
 export const HamburgerMenu = styled.div`
-	display: block;
+	${flexBox}
 	position: relative;
-	top: 5vh;
 	width: 42px;
 	height: 10vh;
 	transition-duration: 1s;
 	cursor: pointer;
-
+	@media screen and (${device.tablet}) {
+		width: 52px;
+		height: 52px;
+	}
 	@media screen and (${device.burger}) {
 		display: none;
 	}
 
 	span {
 		position: absolute;
-		width: 42px;
-		height: 3px;
+		width: 39px;
+		height: 2px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
@@ -67,16 +89,12 @@ export const HamburgerMenu = styled.div`
 		position: absolute;
 		top: -10px;
 		left: 0;
-		width: 42px;
-		height: 3px;
+		width: 39px;
+		height: 2px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-<<<<<<< HEAD
-=======
-		z-index: 50;
->>>>>>> dev
 	}
 
 	span:after {
@@ -84,16 +102,12 @@ export const HamburgerMenu = styled.div`
 		position: absolute;
 		top: 10px;
 		left: 0;
-		width: 42px;
-		height: 3px;
+		width: 39px;
+		height: 2px;
 		background-color: var(--lightText);
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-<<<<<<< HEAD
-=======
-		z-index: 50;
->>>>>>> dev
 	}
 
 	span.open {
@@ -118,16 +132,22 @@ export const HamburgerMenu = styled.div`
 export const LangButton = styled.button`
 	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
 	${fontReview};
-	width: 48px;
-	height: 48px;
 	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
 	background-color: inherit;
 	border: 1px solid var(--lightText);
 	border-radius: 8px;
 	cursor: pointer;
+	@media screen and (${device.tablet}) {
+		width: 56px;
+		height: 60px;
+	}
 	@media screen and (${device.burger}) {
 		display: block;
+	}
+	@media screen and (${device.desktop}) {
+		width: 48px;
+		height: 48px;
 	}
 `;
 
@@ -145,7 +165,7 @@ export const ConsultElement = styled.div`
 			${fontLayoutCall}
 			width:260px;
 			height: 36px;
-			padding: 8px 12px;
+			padding: 8px 23px;
 			color: var(--lightText);
 			cursor: pointer;
 		}
@@ -162,6 +182,10 @@ export const PhoneBurger = styled.div`
 		fill: none;
 		stroke: var(--reviewText);
 		stroke-width: 2px;
+	}
+	@media screen and (${device.tablet}) {
+		width: 52px;
+		height: 52px;
 	}
 	@media screen and (${device.burger}) {
 		display: none;

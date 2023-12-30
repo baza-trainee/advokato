@@ -6,7 +6,7 @@ export const SectionStyled = styled.section`
 	top: 0;
 	right: 0;
 	height:100vh;
-	width: 216px;
+	width: 172px;
 	background:var(--darkGrey); 
 	border: none;
 	border-radius: 24px 0 0 24px;
