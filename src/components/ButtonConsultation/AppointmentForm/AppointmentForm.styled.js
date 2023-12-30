@@ -28,7 +28,6 @@ export const FirstPageTitle = styled.h2`
 
 export const SecondPageTitle = styled.h2`
   margin-bottom: -12px;
-  height: 112px;
   width: 356px;
 
   ${fontSectionTitle};
