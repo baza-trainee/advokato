@@ -82,21 +82,17 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 
 					<Menu setIsOpen={setIsOpen} />
 
-					<div>
-						<LangButton
-							onClick={() =>
-								activeLang === "ua"
-									? toggleLanguage("en")
-									: toggleLanguage("ua")
-							}
-							aria-label="lang-ua"
-							activeLang={activeLang}
-							currentLang="ua"
-							desktop="desktop"
-						>
-							{activeLang.toUpperCase()}
-						</LangButton>
-					</div>
+					<LangButton
+						onClick={() =>
+							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
+						}
+						aria-label="lang-ua"
+						activeLang={activeLang}
+						currentLang="ua"
+						desktop="desktop"
+					>
+						{activeLang.toUpperCase()}
+					</LangButton>
 
 					<HamburgerMenu
 						className={`${isOpen ? "open" : ""}`}

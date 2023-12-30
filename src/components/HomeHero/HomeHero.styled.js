@@ -11,8 +11,7 @@ export const SectionStyled = styled.section`
 	height: 100vh;
 	background-image: url(${bgImage});
 	background-size: cover;
-	@media screen and (${device.tablet}) {
-	}	
+	background-position: center;
 `;
 
 export const Container = styled.div`
