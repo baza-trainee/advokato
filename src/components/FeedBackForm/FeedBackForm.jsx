@@ -88,7 +88,10 @@ export const FeedBackForm = () => {
       )}
 
       <SectionStyled>
-        <TitleStyled>{t('feedBackForm.title')}</TitleStyled>
+        <TitleStyled>
+          {t('feedBackForm.title')}
+          <span>acstatus.mk@gmail.com</span>
+        </TitleStyled>
 
         <StyledForm
           autoComplete="off"
