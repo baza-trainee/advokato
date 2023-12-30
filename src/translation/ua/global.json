@@ -38,10 +38,15 @@
     "fourthTitle": "Обрати час",
     "successTitle": "Вітаємо!",
     "successTextOne": "Ви успішно записались на консультацію.",
+    "successTextOneFeedBack": "Ваше повідомлення успішно доставлене.",
     "successTextTwo": "Ми зв'яжемося з Вами найближчим часом.",
     "failureTitle": "Вибачте!",
     "failureTextOne": "Виникла помилка.",
     "failureTextTwo": "Будь ласка, оберіть іншу дату консультації.",
+    "failureTextTwoFeedBack": "Будь ласка, спробуйте ще раз.",
     "returnButton": "Повернутись"
+  },
+  "feedBackForm":{
+    
   }
 }

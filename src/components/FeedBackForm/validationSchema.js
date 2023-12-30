@@ -28,3 +28,31 @@ export const SchemaUa = yup.object({
     .max(300, 'Дозволено ввести 300 знаків')
     .required('Напишиіть запитання'),
 });
+
+export const SchemaEn = yup.object({
+  name: yup
+    .string()
+    .trim()
+    .min(2, 'Name must contain at least 2 characters')
+    .max(30, 'The name must contain no more than 30 characters')
+    .required('Enter a name'),
+
+  phone: yup
+    .string()
+    .matches(REGEX_PHONE, 'Invalid format')
+    .required('Enter a phone number'),
+
+  email: yup
+    .string()
+    .trim()
+    .max(50, 'Email must contain no more than 50 characters')
+    .matches(REGEX_EMAIL, 'Enter a valid email')
+    .required('Enter email'),
+
+  question: yup
+    .string()
+    .trim()
+    .min(8, 'Must contain at least 8 characters')
+    .max(300, '300 characters allowed')
+    .required('Write a question'),
+});
