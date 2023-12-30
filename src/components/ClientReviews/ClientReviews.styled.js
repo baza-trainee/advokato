@@ -76,6 +76,7 @@ export const ClientCardWrapper = styled.div`
 	@media screen and (${device.tablet}) {
 		width: 372px;
 		height: ${props => (props.heightText ? "fit-content" : "444px")};
+		min-height: 444px;
 		padding: 24px;
 	}
 	@media screen and (${device.desktop}) {

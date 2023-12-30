@@ -33,14 +33,14 @@ export const ClientsBlockHeader = styled.h2`
 	@media screen and (${device.tablet}) {
 		padding: 120px 80px 40px;
 		font-size: 32px;
-        font-weight: 400;
-        line-height: calc(44.8 / 32);  
+		font-weight: 400;
+		line-height: calc(44.8 / 32);
 	}
 	@media screen and (${device.desktop}) {
 		padding: 132px 160px 40px;
 		font-size: 40px;
-        font-weight: 500;
-        line-height: calc(56 / 40);   
+		font-weight: 500;
+		line-height: calc(56 / 40);
 	}
 `;
 
@@ -103,17 +103,18 @@ export const ClientsSliderContainer = styled.div`
 	.splide__slide.is-active {
 		opacity: 0.3;
 	}
-	@media screen and (${device.mobileL}) {
-		.splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
-	.splide__slide.is-active {
-		opacity: 1;
-	}
 	@media screen and (${device.tablet}) {
-		.splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
-	.splide__slide.is-active {
-		opacity: 0.3;
+		.splide__slide.is-active
+			+ .is-visible
+			+ .is-visible
+			+ .is-visible {
+			opacity: 0.3;
+		}
 	}
-	}
+	@media screen and (${device.desktop}) {
+	.splide__slide.is-active+.is-visible+.is-visible+.is-visible {
+			opacity: 1;
+		} 
 	}
 `;
 
