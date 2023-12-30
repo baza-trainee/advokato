@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { device } from '../../styles/mixins';
+import { device, fontLayoutMenu } from '../../styles/mixins';
 
 export const FooterStyled = styled.footer`
   background-color: var(--darkBackground);
@@ -10,23 +10,25 @@ export const FooterStyled = styled.footer`
 
 export const Container = styled.div`
   @media screen and (${device.desktop}) {
-    padding-top: 72px;
+    padding-top: ${({ path }) => (path === '/contacts' ? '48px' : '72px')};
     padding-bottom: 28px;
     max-width: 1120px;
     margin: 0 auto;
   }
 `;
 
-export const FlexWraper = styled.div`
+export const ContentWrp = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
-  gap: ${props => props.gap || '140px'};
   justify-content: ${({ path }) =>
     path === '/contacts' ? 'space-between' : 'center'};
-  margin-bottom: 20px;
+  gap: ${props => props.gap || '140px'};
+  padding: ${({ path }) => (path !== '/contacts' ? '0 60px 20px 100px' : '0')};
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e0dfe0;
 `;
 
-export const List = styled.ul`
+export const ListStyled = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -77,43 +79,47 @@ export const DocsWrp = styled.div`
   margin-bottom: ${({ path }) => (path === '/contacts' ? '48px' : null)};
 `;
 
-export const TextLink = styled(Link)`
-  margin-bottom: 16px;
-  width: 290px;
-  font-family: var(--Montserrat);
-  line-height: calc(32.4 / 18);
-  color: var(--lightText);
-  transition: color var(--timing-function) var(--animation-duration);
-
-  &:hover,
-  &:focus {
-    color: var(--accentLink);
-  }
-`;
-
-export const DivStyled = styled.div`
+export const DocumentTitleStyled = styled.button`
   display: flex;
-`;
+  height: 32px;
+  min-width: 292px;
 
-export const PolicyText = styled(Link)`
-  margin-bottom: 24px;
-  font-family: var(--Montserrat);
-  line-height: calc(32.4 / 18);
-  color: var(--lightText);
+  ${fontLayoutMenu};
   text-decoration: underline;
-  text-underline-offset: 3.5px;
-  transition: color var(--timing-function) var(--animation-duration);
+  color: var(--lightText);
+
+  &:first-of-type {
+    margin-bottom: 24px;
+  }
 
   &:hover,
   &:focus {
+    transition: color var(--timing-function) var(--animation-duration);
     color: var(--accentLink);
   }
 `;
 
-export const Line = styled.div`
-  margin-top: -10px;
-  margin-bottom: 28px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--lightText);
+export const AddressWrp = styled.address`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 352px;
+
+  font-style: normal;
+`;
+
+export const TextLink = styled(Link)`
+  ${fontLayoutMenu};
+  color: var(--lightText);
+
+  &:hover,
+  &:focus {
+    transition: color var(--timing-function) var(--animation-duration);
+    color: var(--accentLink);
+  }
+`;
+
+export const EmailStyled = styled.p`
+  ${fontLayoutMenu};
+  color: var(--lightText);
 `;

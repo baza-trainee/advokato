@@ -55,5 +55,9 @@
     "labelQuestion": "Ваше питання",
     "placeholderQuestion": "Введіть питання",
     "submitButton": "Відправити"
+  },
+  "footer": {
+    "privacyDocTitle": "Політика конфіденційності",
+    "termsUseSiteDocTitle": "Правила користування сайтом"
   }
 }
