@@ -31,7 +31,6 @@ export const Menu = ({ side,setIsOpen }) => {
   };
 
   return (
-    <nav>
       <UlStyled sideMenu={side} onClick={handleClickNavButton}>
         <li>
           <NavLinkStyled
@@ -89,6 +88,5 @@ export const Menu = ({ side,setIsOpen }) => {
           </NavLinkStyled>
         </li>
       </UlStyled>
-    </nav>
   );
 };

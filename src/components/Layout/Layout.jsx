@@ -30,7 +30,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [top, setTop] = useState(true);
 	const location = useLocation();
 	const navigate = useNavigate();
-	
+
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);
@@ -80,24 +80,19 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						/>
 					</NavLink>
 
-						
-					<Menu setIsOpen={setIsOpen}/>
+					<Menu setIsOpen={setIsOpen} />
 
-					<div>
-						<LangButton
-							onClick={() =>
-								activeLang === "ua"
-									? toggleLanguage("en")
-									: toggleLanguage("ua")
-							}
-							aria-label="lang-ua"
-							activeLang={activeLang}
-							currentLang="ua"
-							desktop="desktop"
-						>
-							{activeLang.toUpperCase()}
-						</LangButton>
-					</div>
+					<LangButton
+						onClick={() =>
+							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
+						}
+						aria-label="lang-ua"
+						activeLang={activeLang}
+						currentLang="ua"
+						desktop="desktop"
+					>
+						{activeLang.toUpperCase()}
+					</LangButton>
 
 					<HamburgerMenu
 						className={`${isOpen ? "open" : ""}`}
