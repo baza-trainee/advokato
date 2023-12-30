@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   GoogleMap as GMap,
   useJsApiLoader,
@@ -7,7 +7,12 @@ import {
 } from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
-import { containerStyle, MarkerWrp } from './GoogleMap.styled';
+import { useWindowDimensions } from '../../../hooks';
+import {
+  containerStyleDesktop,
+  containerStyleTablet,
+  MarkerWrp,
+} from './GoogleMap.styled';
 
 const { VITE_VERCEL_GOOGLE_MAP_API_KEY } = import.meta.env;
 const options = { closeBoxURL: '', enableEventPropagation: true };
@@ -18,11 +23,27 @@ const center = {
 };
 
 export const GoogleMap = ({ cities }) => {
+  const { height, width } = useWindowDimensions();
+  const [mapStyles, setMapStyles] = useState(containerStyleDesktop);
   const [activeMarker, setActiveMarker] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: VITE_VERCEL_GOOGLE_MAP_API_KEY,
   });
+
+  useEffect(() => {
+    if (!width) {
+      return;
+    }
+
+    if (width >= 1440) {
+      return setMapStyles(prev => containerStyleDesktop);
+    }
+
+    if (width >= 1024) {
+      return setMapStyles(prev => containerStyleTablet);
+    }
+  }, [width]);
 
   const handleOnLoad = map => {
     const bounds = new google.maps.LatLngBounds();
@@ -46,7 +67,7 @@ export const GoogleMap = ({ cities }) => {
     return (
       <GMap
         onLoad={handleOnLoad}
-        mapContainerStyle={containerStyle}
+        mapContainerStyle={mapStyles}
         zoom={10}
         onClick={() => setActiveMarker(null)}
         center={center}
