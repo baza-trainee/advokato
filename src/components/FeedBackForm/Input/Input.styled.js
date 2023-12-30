@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { fontDesktop } from '../../../../styles/mixins';
+import { fontDesktop } from '../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
-  width: 440px;
+  width: ${({ width }) => (width ? width : '300px')};
 
   p {
     height: 36px;
@@ -11,16 +11,20 @@ export const LabelStyled = styled.label`
   }
 
   p:first-of-type {
-    margin-bottom: 4px;
+    margin-bottom: 24px;
     color: var(--mainText);
+  }
+
+  p:last-of-type {
+    line-height: 1.2;
   }
 `;
 
 export const InputStyled = styled.input`
   position: relative;
-  padding: 15px 16px;
+  padding-bottom: 8px;
   width: 100%;
-  height: 56px;
+  height: 32px;
 
   font-family: var(--Montserrat);
   font-size: 18px;
@@ -29,9 +33,10 @@ export const InputStyled = styled.input`
   letter-spacing: 0em;
   color: var(--mainText);
   background-color: inherit;
-  border: 1px solid var(--greyText);
+  border: none;
+  border-bottom: 1px solid var(--darkGrey);
 
-  border-color: ${({ isValid, error, touch }) => {
+  border-bottom-color: ${({ isValid, error, touch }) => {
     if (!error && touch) {
       return 'var(--trueText);';
     }
@@ -47,16 +52,16 @@ export const InputStyled = styled.input`
   }
 
   &::placeholder {
-    font-family: var(--Montserrat);
+    font-family: var(--Raleway);
     font-size: 18px;
     font-weight: 500;
     line-height: 21.94px;
     letter-spacing: 0em;
-    color: var(--greyText);
+    color: #3f3f44;
   }
 
   &:focus {
-    outline: 2px solid var(--mainText);
+    outline: none;
   }
 `;
 
