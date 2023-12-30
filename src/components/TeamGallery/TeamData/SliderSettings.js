@@ -5,8 +5,8 @@ export const options = {
 	drag: "free",
 	type: "loop",
 	focus: "center",
-	height:"600px",
-	autoWidth:true,
+	height: "600px",
+	autoWidth: true,
 	perPage: 3,
 	perMove: 1,
 	speed: 1000,
@@ -14,6 +14,12 @@ export const options = {
 	breakpoints: {
 		320: {
 			perPage: 1,
+		},
+		1024: {
+			height: "452px",
+		},
+		1440: {
+			
 		},
 	},
 };

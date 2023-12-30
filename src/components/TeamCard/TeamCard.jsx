@@ -9,11 +9,11 @@ import {
 	PersonInfo,
 } from "./TeamCard.styled";
 
+
 const TeamCard = ({ teamMember, index }) => {
 	const { name, position, photo_path, description } = teamMember;
-
 	const sanitizedInfoMarkup = DOMPurify.sanitize(description);
-
+    
 	return (
 		<CardWrap index={index}>
 			<PersonPhoto

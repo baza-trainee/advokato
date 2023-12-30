@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { LiStyled } from './PracticeItem.styled';
+import { LiStyled, SpecializationStyled } from './PracticeItem.styled';
 
 export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
   return (
@@ -8,7 +8,7 @@ export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
       onMouseOver={() => setCurrentPractice(item)}
       className={item.id === currentPractice.id ? 'active' : null}
     >
-      <p>{item?.specialization_name}</p>
+      <SpecializationStyled>{item?.specialization_name}</SpecializationStyled>
     </LiStyled>
   );
 };

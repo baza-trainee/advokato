@@ -18,13 +18,13 @@ export const container = () => {
 
 
         @media screen and (min-width: 768px) {
-          padding-left: 40px;
-          padding-right: 40px;
+          padding-left: 60px;
+          padding-right: 60px;
         }
         
         @media screen and (min-width: 1024px) {
-          padding-left: 120px;
-          padding-right: 120px;
+          padding-left: 80px;
+          padding-right: 80px;
         }
 
         @media screen and (min-width: 1440px) {
@@ -260,7 +260,7 @@ export const sliderArrow = () => {
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
-  mobileL: '425px',
+  mobileL: '768px',
   tablet: '1024px',
   burger: '1200px',
   laptop: '1280px',

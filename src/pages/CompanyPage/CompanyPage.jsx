@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Loading as NotiflixLoading } from "notiflix/build/notiflix-loading-aio";
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
@@ -20,6 +21,8 @@ import {
 const CompanyPage = () => {
 	const [aboutCompany, setAboutCompany] = useState([]);
 	const [team, setTeam] = useState([]);
+	const { state } = useLocation();
+	const refCard = useRef();
 
 	useEffect(() => {
 		window.scrollTo({
@@ -39,6 +42,21 @@ const CompanyPage = () => {
 
 		getData();
 	}, []);
+
+	useEffect(() => {
+		[...refCard.current.children].map(el => {
+			if (state === +el.id) {
+				setTimeout(
+					() =>
+						el.scrollIntoView({
+							behavior: "smooth",
+							block: "center",
+						}),
+					1000,
+				);
+			}
+		});
+	}, [state, team]);
 
 	const sanitizedCompanyMarkup = DOMPurify.sanitize(
 		aboutCompany.our_team_page_description,
@@ -69,9 +87,12 @@ const CompanyPage = () => {
 
 				{team && (
 					<section>
-						<TeamList>
+						<TeamList ref={refCard}>
 							{team.map((teamMember, index) => (
-								<li key={teamMember.id}>
+								<li
+									id={teamMember.id}
+									key={teamMember.id}
+								>
 									<TeamCard
 										teamMember={teamMember}
 										index={index}
