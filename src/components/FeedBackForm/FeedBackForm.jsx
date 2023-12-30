@@ -138,7 +138,7 @@ export const FeedBackForm = () => {
             errors={errors}
             isValid={isValid}
             touchedFields={touchedFields}
-            width={'1024px'}
+            width={'100%'}
           />
 
           <ButtonStyled
