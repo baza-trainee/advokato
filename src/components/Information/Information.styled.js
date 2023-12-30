@@ -1,51 +1,48 @@
 import styled from '@emotion/styled';
-import { container, device, flexBox, fontDesktop } from '../../styles/mixins';
+import {
+  fontSectionTitle,
+  device,
+  flexBox,
+  fontDesktop,
+} from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   background-color: var(--lightBackground);
 `;
 
 export const Container = styled.div`
-  ${container};
-
-  @media screen and (${device.desktop}) {
-    padding-top: 132px;
-    padding-bottom: 64px;
-    max-width: 1440px;
-  }
+  margin: 0 auto;
+  padding: 132px 160px;
+  max-width: 1440px;
 `;
 
 export const TitleStyled = styled.h2`
-  @media screen and (${device.desktop}) {
-    width: 960px;
-    margin-bottom: 72px;
-    font-family: Montserrat, sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: calc(56 / 40);
-  }
+  width: 944px;
+  margin-bottom: 40px;
+
+  ${fontSectionTitle};
 `;
 
-export const CardWraper = styled.div`
-  position: relative;
+// export const CardWraper = styled.div`
+//   position: relative;
 
-  @media screen and (${device.desktop}) {
-    ${flexBox};
-    gap: 120px;
-    margin-bottom: 176px;
-  }
-`;
+//   @media screen and (${device.desktop}) {
+//     ${flexBox};
+//     gap: 120px;
+//     margin-bottom: 176px;
+//   }
+// `;
 
-export const ImgWraper = styled.div`
-  @media screen and (${device.desktop}) {
-    min-width: 548px;
-    border-radius: 24px;
-    overflow: hidden;
-  }
-`;
+// export const ImgWraper = styled.div`
+//   @media screen and (${device.desktop}) {
+//     min-width: 548px;
+//     border-radius: 24px;
+//     overflow: hidden;
+//   }
+// `;
 
-export const Text = styled.p`
-  @media screen and (${device.desktop}) {
-    ${fontDesktop};
-  }
-`;
+// export const Text = styled.p`
+//   @media screen and (${device.desktop}) {
+//     ${fontDesktop};
+//   }
+// `;

@@ -22,24 +22,30 @@ export const SectionStyled = styled.section`
 `;
 
 export const TitleStyled = styled.h2`
+  display: flex;
+  flex-direction: column;
+
   ${fontSectionTitle};
-  border-bottom: 1px solid var(--darkGrey);
+
+  span {
+    width: 504px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+  }
 
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (${device.tablet}) {
-    height: 96px;
-    width: 408px;
-    margin-bottom: 40px;
+    height: 112px;
+    width: 504px;
+    margin-bottom: 28px;
 
     font-size: 32px;
     line-height: calc(44 / 32);
   }
 
   @media screen and (${device.desktop}) {
-    height: 112px;
-    width: 504px;
     margin-bottom: 56px;
 
     font-size: 40px;
