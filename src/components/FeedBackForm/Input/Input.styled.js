@@ -1,13 +1,22 @@
 import styled from '@emotion/styled';
-import { fontDesktop } from '../../../styles/mixins';
+import { fontDesktop, device } from '../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
-  width: ${({ width }) => (width ? width : '300px')};
 
   p {
-    height: 36px;
     ${fontDesktop};
+
+    @media screen and (min-width: 768px) {
+    }
+
+    @media screen and (${device.tablet}) {
+      height: 24px;
+    }
+
+    @media screen and (${device.desktop}) {
+      height: 36px;
+    }
   }
 
   p:first-of-type {
@@ -17,6 +26,17 @@ export const LabelStyled = styled.label`
 
   p:last-of-type {
     line-height: 1.2;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    width: ${({ width }) => (width ? width : '276px')};
+  }
+
+  @media screen and (${device.desktop}) {
+    width: ${({ width }) => (width ? width : '300px')};
   }
 `;
 
