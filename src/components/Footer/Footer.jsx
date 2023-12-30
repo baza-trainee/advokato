@@ -7,16 +7,16 @@ import { Modal } from '../Modal';
 import { SocialList } from '../SocialList';
 import {
   Container,
-  FlexWraper,
+  ContentWrp,
+  AddressWrp,
   FooterStyled,
   DocsWrp,
-  Line,
+  DocumentTitleStyled,
   LinkStyled,
-  List,
-  PolicyText,
+  ListStyled,
   Text,
   TextLink,
-  DivStyled,
+  EmailStyled,
 } from './Footer.styled';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
 import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
@@ -73,15 +73,15 @@ export const Footer = () => {
 
   return (
     <FooterStyled>
-      <Container>
+      <Container path={location.pathname}>
         <Modal active={modalActive} setActive={setModalActive}>
           <PdfViewer pdfFile={selectedPdfFile} />
         </Modal>
 
-        <FlexWraper path={location.pathname}>
+        <ContentWrp path={location.pathname}>
           {location.pathname !== '/contacts' && (
             <nav>
-              <List>
+              <ListStyled>
                 <li>
                   <LinkStyled
                     to="/"
@@ -132,7 +132,7 @@ export const Footer = () => {
                     {t('header.nav.contacts')}
                   </LinkStyled>
                 </li>
-              </List>
+              </ListStyled>
             </nav>
           )}
 
@@ -141,34 +141,31 @@ export const Footer = () => {
           )}
 
           <DocsWrp path={location.pathname}>
-            <DivStyled>
-              <PolicyText
-                to="#"
-                onClick={() => {
-                  setModalActive(true);
-                  setSelectedPdfFile(privacyPolicy);
-                }}
-                aria-label="посилання на політику конфіденційності"
-              >
-                Політика конфіденційності
-              </PolicyText>
-            </DivStyled>
-            <DivStyled>
-              <PolicyText
-                to="#"
-                onClick={() => {
-                  setModalActive(true);
-                  setSelectedPdfFile(termsUseSite);
-                }}
-                aria-label="посилання на умови користування сайтом"
-              >
-                Правила користування сайтом
-              </PolicyText>
-            </DivStyled>
+            <DocumentTitleStyled
+              type="button"
+              onClick={() => {
+                setModalActive(true);
+                setSelectedPdfFile(privacyPolicy);
+              }}
+              aria-label="посилання на політику конфіденційності"
+            >
+              {t('footer.privacyDocTitle')}
+            </DocumentTitleStyled>
+
+            <DocumentTitleStyled
+              type="button"
+              onClick={() => {
+                setModalActive(true);
+                setSelectedPdfFile(termsUseSite);
+              }}
+              aria-label="посилання на умови користування сайтом"
+            >
+              {t('footer.termsUseSiteDocTitle')}
+            </DocumentTitleStyled>
           </DocsWrp>
 
           {location.pathname !== '/contacts' && (
-            <FlexWraper flexDirection="column" gap="0">
+            <AddressWrp>
               <Text>ADVOCATE COMPANY «STATUS»</Text>
 
               {cities?.length > 0 && (
@@ -190,22 +187,17 @@ export const Footer = () => {
                   >
                     {phone}
                   </TextLink>
-                  <TextLink
-                    to={`mailto:${contacts[0]?.contacts[1]?.mail}`}
-                    aria-label="електронна пошта компанії"
-                  >
-                    {contacts[0]?.contacts[1]?.mail}
-                  </TextLink>
+
+                  <EmailStyled>{contacts[0]?.contacts[1]?.mail}</EmailStyled>
 
                   <SocialList media={contacts[0]?.social} />
                 </>
               )}
-            </FlexWraper>
+            </AddressWrp>
           )}
-        </FlexWraper>
+        </ContentWrp>
 
-        <Line />
-        <Text marginbottom="0">{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+        <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
       </Container>
     </FooterStyled>
   );

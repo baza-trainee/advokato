@@ -8,6 +8,7 @@ export const options = {
 	width: "1640px",
 	gap: "32px",
 	perMove: 1,
+	perPage: 5,
 	speed: 1000,
 	interval: 4000,
 	breakpoints: {

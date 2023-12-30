@@ -55,5 +55,9 @@
     "labelQuestion": "Your question",
     "placeholderQuestion": "Enter question",
     "submitButton": "Submit"
+  },
+  "footer": {
+    "privacyDocTitle": "Privacy policy",
+    "termsUseSiteDocTitle": "Terms of use of the site"
   }
 }
