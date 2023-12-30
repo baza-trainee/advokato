@@ -45,10 +45,17 @@ export const HeaderStyled = styled.header`
 `;
 export const Container = styled.div`
 	${flexBox};
-	${container};
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1440px;
+	@media screen and (${device.tablet}) {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+	@media screen and (${device.desktop}) {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
 `;
 
 export const HamburgerMenu = styled.div`
@@ -88,10 +95,6 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-<<<<<<< HEAD
-=======
-		z-index: 50;
->>>>>>> dev
 	}
 
 	span:after {
@@ -105,10 +108,6 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-<<<<<<< HEAD
-=======
-		z-index: 50;
->>>>>>> dev
 	}
 
 	span.open {
@@ -133,8 +132,6 @@ export const HamburgerMenu = styled.div`
 export const LangButton = styled.button`
 	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
 	${fontReview};
-	width: 48px;
-	height: 48px;
 	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
 	background-color: inherit;
@@ -147,6 +144,10 @@ export const LangButton = styled.button`
 	}
 	@media screen and (${device.burger}) {
 		display: block;
+	}
+	@media screen and (${device.desktop}) {
+		width: 48px;
+		height: 48px;
 	}
 `;
 
@@ -164,7 +165,7 @@ export const ConsultElement = styled.div`
 			${fontLayoutCall}
 			width:260px;
 			height: 36px;
-			padding: 8px 12px;
+			padding: 8px 23px;
 			color: var(--lightText);
 			cursor: pointer;
 		}

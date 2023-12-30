@@ -30,7 +30,6 @@ export const Menu = ({ side, setIsOpen }) => {
 		setActive(prev => target.getAttribute("aria-label"));
 	};
 
-<<<<<<< HEAD
   return (
       <UlStyled sideMenu={side} onClick={handleClickNavButton}>
         <li>
@@ -90,70 +89,4 @@ export const Menu = ({ side, setIsOpen }) => {
         </li>
       </UlStyled>
   );
-=======
-	return (
-		<nav>
-			<UlStyled
-				sideMenu={side}
-				onClick={handleClickNavButton}
-			>
-				<li>
-					<NavLinkStyled
-						to="/"
-						aria-label="home"
-						current="home"
-						active={active}
-						onClick={() => setIsOpen(false)}
-					>
-						{t("header.nav.home")}
-					</NavLinkStyled>
-				</li>
-				<li>
-					<NavLinkStyled
-						to="/company"
-						aria-label="company"
-						current="company"
-						active={active}
-						onClick={() => setIsOpen(false)}
-					>
-						{t("header.nav.company")}
-					</NavLinkStyled>
-				</li>
-				<li>
-					<NavLinkStyled
-						to="/#practice"
-						aria-label="practice"
-						current="practice"
-						active={active}
-						onClick={() => setIsOpen(false)}
-					>
-						{t("header.nav.practice")}
-					</NavLinkStyled>
-				</li>
-				<li>
-					<NavLinkStyled
-						to="/#news"
-						aria-label="news"
-						current="news"
-						active={active}
-						onClick={() => setIsOpen(false)}
-					>
-						{t("header.nav.news")}
-					</NavLinkStyled>
-				</li>
-				<li>
-					<NavLinkStyled
-						to="/contacts"
-						aria-label="contacts"
-						current="contacts"
-						active={active}
-						onClick={() => setIsOpen(false)}
-					>
-						{t("header.nav.contacts")}
-					</NavLinkStyled>
-				</li>
-			</UlStyled>
-		</nav>
-	);
->>>>>>> c0ed8c962f0a49e2745e769e62608a5cf6bc4175
 };
