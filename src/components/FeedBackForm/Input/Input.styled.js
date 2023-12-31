@@ -74,8 +74,8 @@ export const InputStyled = styled.input`
   &::placeholder {
     font-family: var(--Raleway);
     font-size: 18px;
-    font-weight: 500;
-    line-height: 21.94px;
+    font-weight: 400;
+    line-height: 27px;
     letter-spacing: 0em;
     color: #3f3f44;
   }
