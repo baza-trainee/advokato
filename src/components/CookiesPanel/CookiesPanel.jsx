@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import { Modal } from '../Modal';
+import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
-
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
-
 import {
   Panel,
   IconClose,
@@ -17,6 +15,17 @@ const CookiesPanel = () => {
   const [showPanel, setShowPanel] = useState(false);
   const [modalActive, setModalActive] = useState(false);
   const [cookieConsent, setCookieConsent] = useState();
+
+  useEffect(() => {
+    if (!modalActive) {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [modalActive]);
+
+  const toggleModal = () => {
+    document.body.style.overflowY = 'hidden';
+    setModalActive(prev => !prev);
+  };
 
   const handleAccept = () => {
     document.cookie = 'cookiesAccepted=true; max-age=31536000;';
@@ -46,9 +55,11 @@ const CookiesPanel = () => {
 
   return (
     <>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <PdfViewer pdfFile={privacyPolicy} />
-      </Modal>
+      {modalActive && (
+        <ModalFromRoot toggleModal={toggleModal} align={'flex-start'}>
+          <PdfViewer pdfFile={privacyPolicy} />
+        </ModalFromRoot>
+      )}
 
       {showPanel && (
         <Panel>
@@ -64,7 +75,7 @@ const CookiesPanel = () => {
             <p>
               Цей сайт використовує файли cookies для правильної роботи і
               покращення сервісу. Якщо ви погоджуєтесь з їхнім використанням,
-              натисніть ОК. Більше інформації в{' '}
+              натисніть ОК. Більше інформації в
               <PolicyLink
                 href="#"
                 onClick={() => {

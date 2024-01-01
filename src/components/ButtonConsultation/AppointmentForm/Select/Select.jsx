@@ -40,7 +40,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
       <ButtonStyled
         onClick={() => setIsOpenList(prev => !prev)}
         type="button"
-        aria-label="select button"
+        aria-label="вибрати зі списку"
       >
         {value == '' ? (
           <>
