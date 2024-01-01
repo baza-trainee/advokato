@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
+import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
-import { Modal } from '../Modal';
 import { SocialList } from '../SocialList';
 import {
   Container,
@@ -71,134 +71,149 @@ export const Footer = () => {
     }
   }, [pathname, hash]);
 
+  useEffect(() => {
+    if (!modalActive) {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [modalActive]);
+
+  const toggleModal = () => {
+    document.body.style.overflowY = 'hidden';
+    setModalActive(prev => !prev);
+  };
+
   return (
-    <FooterStyled>
-      <Container path={location.pathname}>
-        <Modal active={modalActive} setActive={setModalActive}>
+    <>
+      {modalActive && (
+        <ModalFromRoot toggleModal={toggleModal} align={'flex-start'}>
           <PdfViewer pdfFile={selectedPdfFile} />
-        </Modal>
+        </ModalFromRoot>
+      )}
 
-        <ContentWrp path={location.pathname}>
-          {location.pathname !== '/contacts' && (
-            <nav>
-              <ListStyled>
-                <li>
-                  <LinkStyled
-                    to="/"
-                    aria-label="посилання на головну сторінку"
-                    current="home"
-                    active={active}
-                  >
-                    {t('header.nav.home')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/company"
-                    aria-label="посилання на сторінку компанії"
-                    current="company"
-                    active={active}
-                  >
-                    {t('header.nav.company')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/#practice"
-                    aria-label="посилання на сторінку практики"
-                    current="practice"
-                    active={active}
-                  >
-                    {t('header.nav.practice')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/#news"
-                    aria-label="посилання на сторінку новин"
-                    current="news"
-                    active={active}
-                  >
-                    {t('header.nav.news')}
-                  </LinkStyled>
-                </li>
-                <li>
-                  <LinkStyled
-                    to="/contacts"
-                    aria-label="посилання на сторінку контактів"
-                    current="contacts"
-                    active={active}
-                  >
-                    {t('header.nav.contacts')}
-                  </LinkStyled>
-                </li>
-              </ListStyled>
-            </nav>
-          )}
+      <FooterStyled>
+        <Container path={location.pathname}>
+          <ContentWrp path={location.pathname}>
+            {location.pathname !== '/contacts' && (
+              <nav>
+                <ListStyled>
+                  <li>
+                    <LinkStyled
+                      to="/"
+                      aria-label="посилання на головну сторінку"
+                      current="home"
+                      active={active}
+                    >
+                      {t('header.nav.home')}
+                    </LinkStyled>
+                  </li>
+                  <li>
+                    <LinkStyled
+                      to="/company"
+                      aria-label="посилання на сторінку компанії"
+                      current="company"
+                      active={active}
+                    >
+                      {t('header.nav.company')}
+                    </LinkStyled>
+                  </li>
+                  <li>
+                    <LinkStyled
+                      to="/#practice"
+                      aria-label="посилання на сторінку практики"
+                      current="practice"
+                      active={active}
+                    >
+                      {t('header.nav.practice')}
+                    </LinkStyled>
+                  </li>
+                  <li>
+                    <LinkStyled
+                      to="/#news"
+                      aria-label="посилання на сторінку новин"
+                      current="news"
+                      active={active}
+                    >
+                      {t('header.nav.news')}
+                    </LinkStyled>
+                  </li>
+                  <li>
+                    <LinkStyled
+                      to="/contacts"
+                      aria-label="посилання на сторінку контактів"
+                      current="contacts"
+                      active={active}
+                    >
+                      {t('header.nav.contacts')}
+                    </LinkStyled>
+                  </li>
+                </ListStyled>
+              </nav>
+            )}
 
-          {location.pathname === '/contacts' && (
-            <Text path={location.pathname}>ADVOCATE COMPANY «STATUS»</Text>
-          )}
+            {location.pathname === '/contacts' && (
+              <Text path={location.pathname}>ADVOCATE COMPANY «STATUS»</Text>
+            )}
 
-          <DocsWrp path={location.pathname}>
-            <DocumentTitleStyled
-              type="button"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(privacyPolicy);
-              }}
-              aria-label="посилання на політику конфіденційності"
-            >
-              {t('footer.privacyDocTitle')}
-            </DocumentTitleStyled>
+            <DocsWrp path={location.pathname}>
+              <DocumentTitleStyled
+                type="button"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(privacyPolicy);
+                }}
+                aria-label="посилання на політику конфіденційності"
+              >
+                {t('footer.privacyDocTitle')}
+              </DocumentTitleStyled>
 
-            <DocumentTitleStyled
-              type="button"
-              onClick={() => {
-                setModalActive(true);
-                setSelectedPdfFile(termsUseSite);
-              }}
-              aria-label="посилання на умови користування сайтом"
-            >
-              {t('footer.termsUseSiteDocTitle')}
-            </DocumentTitleStyled>
-          </DocsWrp>
+              <DocumentTitleStyled
+                type="button"
+                onClick={() => {
+                  setModalActive(true);
+                  setSelectedPdfFile(termsUseSite);
+                }}
+                aria-label="посилання на умови користування сайтом"
+              >
+                {t('footer.termsUseSiteDocTitle')}
+              </DocumentTitleStyled>
+            </DocsWrp>
 
-          {location.pathname !== '/contacts' && (
-            <AddressWrp>
-              <Text>ADVOCATE COMPANY «STATUS»</Text>
+            {location.pathname !== '/contacts' && (
+              <AddressWrp>
+                <Text>ADVOCATE COMPANY «STATUS»</Text>
 
-              {cities?.length > 0 && (
-                <TextLink
-                  to={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener nofollow noreferrer"
-                  aria-label="адреса компанії"
-                >
-                  {`${kyivCity?.address}`}
-                </TextLink>
-              )}
-
-              {contacts?.length > 0 && (
-                <>
+                {cities?.length > 0 && (
                   <TextLink
-                    to={`tel:+${formattedPhone}`}
-                    aria-label="телефон компанії"
+                    to={googleMapsUrl}
+                    target="_blank"
+                    rel="noopener nofollow noreferrer"
+                    aria-label="адреса компанії"
                   >
-                    {phone}
+                    {`${kyivCity?.address}`}
                   </TextLink>
+                )}
 
-                  <EmailStyled>{contacts[0]?.contacts[1]?.mail}</EmailStyled>
+                {contacts?.length > 0 && (
+                  <>
+                    <TextLink
+                      to={`tel:+${formattedPhone}`}
+                      aria-label="телефон компанії"
+                    >
+                      {phone}
+                    </TextLink>
 
-                  <SocialList media={contacts[0]?.social} />
-                </>
-              )}
-            </AddressWrp>
-          )}
-        </ContentWrp>
+                    <EmailStyled>{contacts[0]?.contacts[1]?.mail}</EmailStyled>
 
-        <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
-      </Container>
-    </FooterStyled>
+                    <SocialList media={contacts[0]?.social} />
+                  </>
+                )}
+              </AddressWrp>
+            )}
+          </ContentWrp>
+
+          <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+        </Container>
+      </FooterStyled>
+    </>
   );
 };
