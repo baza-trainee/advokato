@@ -14,8 +14,10 @@ import {
   DocumentTitleStyled,
   LinkStyled,
   ListStyled,
-  Text,
-  TextLink,
+  TitleCompany,
+  BottomSign,
+  MainOfficeStyled,
+  PhoneStyled,
   EmailStyled,
 } from './Footer.styled';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
@@ -151,7 +153,9 @@ export const Footer = () => {
             )}
 
             {location.pathname === '/contacts' && (
-              <Text path={location.pathname}>ADVOCATE COMPANY «STATUS»</Text>
+              <TitleCompany path={location.pathname}>
+                ADVOCATE COMPANY «STATUS»
+              </TitleCompany>
             )}
 
             <DocsWrp path={location.pathname}>
@@ -180,27 +184,27 @@ export const Footer = () => {
 
             {location.pathname !== '/contacts' && (
               <AddressWrp>
-                <Text>ADVOCATE COMPANY «STATUS»</Text>
+                <TitleCompany>ADVOCATE COMPANY «STATUS»</TitleCompany>
 
                 {cities?.length > 0 && (
-                  <TextLink
+                  <MainOfficeStyled
                     to={googleMapsUrl}
                     target="_blank"
                     rel="noopener nofollow noreferrer"
                     aria-label="адреса компанії"
                   >
                     {`${kyivCity?.address}`}
-                  </TextLink>
+                  </MainOfficeStyled>
                 )}
 
                 {contacts?.length > 0 && (
                   <>
-                    <TextLink
+                    <PhoneStyled
                       to={`tel:+${formattedPhone}`}
                       aria-label="телефон компанії"
                     >
                       {phone}
-                    </TextLink>
+                    </PhoneStyled>
 
                     <EmailStyled>{contacts[0]?.contacts[1]?.mail}</EmailStyled>
 
@@ -211,7 +215,7 @@ export const Footer = () => {
             )}
           </ContentWrp>
 
-          <Text>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</Text>
+          <BottomSign>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</BottomSign>
         </Container>
       </FooterStyled>
     </>
