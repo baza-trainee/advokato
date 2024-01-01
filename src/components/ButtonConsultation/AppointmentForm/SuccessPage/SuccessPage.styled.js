@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { fontSectionTitle } from '../../../../styles/mixins';
+import { fontSectionTitle, device } from '../../../../styles/mixins';
 
 export const DivStyled = styled.div`
   display: flex;
@@ -7,22 +7,44 @@ export const DivStyled = styled.div`
   flex-direction: column;
 
   h2 {
-    margin-bottom: 20px;
-    height: 48px;
-    min-width: 471px;
-
     ${fontSectionTitle};
     text-align: center;
     color: var(--mainText);
+
+    @media screen and (${device.tablet}) {
+      margin-bottom: 24px;
+      height: 40px;
+      min-width: 136px;
+
+      font-size: 28px;
+      line-height: calc(39 / 28);
+    }
+
+    @media screen and (${device.desktop}) {
+      margin-bottom: 20px;
+      height: 48px;
+      min-width: 180px;
+
+      font-size: 40px;
+      line-height: calc(56 / 40);
+    }
   }
 
   p {
     font-family: var(--PTSans);
-    font-size: 22px;
     font-weight: 400;
-    line-height: 35.2px;
     letter-spacing: 0em;
     color: var(--mainText);
+
+    @media screen and (${device.tablet}) {
+      font-size: 18px;
+      line-height: 28.8px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 
   p:first-of-type {
@@ -30,10 +52,26 @@ export const DivStyled = styled.div`
   }
 
   p:last-of-type {
-    margin-bottom: 28px;
+    @media screen and (${device.tablet}) {
+      margin-bottom: 24px;
+    }
+
+    @media screen and (${device.desktop}) {
+      margin-bottom: 28px;
+    }
   }
 
   svg {
     fill: var(--trueText);
+
+    @media screen and (${device.tablet}) {
+      width: 52px;
+      height: 52px;
+    }
+
+    @media screen and (${device.desktop}) {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;

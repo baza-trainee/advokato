@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { ButtonConsultation } from '../ButtonConsultation';
+
 import {
   SectionStyled,
   Container,
@@ -11,6 +13,7 @@ import {
 import imageOwner from '/src/assets/images/owner-section/photo-owner.webp';
 
 export const Owner = () => {
+  const [modalActive, setModalActive] = useState(false);
   return (
     <SectionStyled>
       <Container>
@@ -32,6 +35,8 @@ export const Owner = () => {
             </p>
 
             <ButtonConsultation
+              modalActive={modalActive}
+              setModalActive={setModalActive}
               customStyles={{
                 padding: '20px 32px',
                 width: '364px',

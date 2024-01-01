@@ -57,7 +57,7 @@ export const InputStyled = styled.input`
   border-bottom: 1px solid var(--darkGrey);
 
   border-bottom-color: ${({ isValid, error, touch }) => {
-    if (!error && touch) {
+    if (!error && touch && isValid) {
       return 'var(--trueText);';
     }
 
