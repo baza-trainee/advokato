@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,12 @@ import { ModalFromRoot } from '../ModalFromRoot';
 import { AppointmentForm } from './AppointmentForm';
 import { ButtonStyled } from './ButtonConsultation.styled';
 
-export const ButtonConsultation = ({ className, customStyles,modalActive, setModalActive }) => {
+export const ButtonConsultation = ({
+  className,
+  customStyles,
+  modalActive,
+  setModalActive,
+}) => {
   const [t, i18n] = useTranslation('global');
 
   useEffect(() => {
@@ -44,4 +49,6 @@ export const ButtonConsultation = ({ className, customStyles,modalActive, setMod
 ButtonConsultation.propTypes = {
   className: PropTypes.string,
   customStyles: PropTypes.object,
+  modalActive: PropTypes.bool.isRequired,
+  setModalActive: PropTypes.func.isRequired,
 };
