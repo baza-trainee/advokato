@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { flexBox, fontSectionTitle } from '../../../styles/mixins';
+import { flexBox, fontSectionTitle, device } from '../../../styles/mixins';
 
 export const DivStyled = styled.div`
   display: flex;
@@ -9,41 +9,75 @@ export const DivStyled = styled.div`
   margin-bottom: -4px;
 
   .react-calendar {
-    width: 520px;
     border: 1px solid #969395;
+
+    @media screen and (${device.tablet}) {
+      width: 464px;
+    }
+
+    @media screen and (${device.desktop}) {
+      width: 520px;
+    }
   }
 
   .react-calendar__navigation {
-    height: 76px;
     margin-bottom: 0;
 
     border: 1px solid #969395;
     background-color: var(--headerBackground);
+
+    @media screen and (${device.tablet}) {
+      height: 52px;
+    }
+
+    @media screen and (${device.desktop}) {
+      height: 76px;
+    }
   }
 
   .react-calendar__month-view__weekdays {
-    height: 76px;
-
     border: 1px solid #969395;
     background-color: var(--headerBackground);
+
+    @media screen and (${device.tablet}) {
+      height: 52px;
+    }
+
+    @media screen and (${device.desktop}) {
+      height: 76px;
+    }
   }
 
   .react-calendar__month-view__days {
-    height: calc(76px * 6);
+    @media screen and (${device.tablet}) {
+      height: calc(52px * 6);
+    }
+
+    @media screen and (${device.desktop}) {
+      height: calc(76px * 6);
+    }
   }
 
   .react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
     display: inline-block;
 
     font-family: var(--Raleway);
-    font-size: 28px;
     font-weight: 400;
-    line-height: 42px;
     letter-spacing: 0em;
     color: var(--mainText);
 
     &:first-letter {
       text-transform: uppercase;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 28px;
+      line-height: 42px;
     }
   }
 
@@ -56,9 +90,7 @@ export const DivStyled = styled.div`
     ${flexBox};
 
     font-family: var(--Raleway);
-    font-size: 28px;
     font-weight: 400;
-    line-height: 42px;
     letter-spacing: 0em;
     text-transform: uppercase;
     color: var(--mainText);
@@ -66,17 +98,35 @@ export const DivStyled = styled.div`
     abbr[title] {
       text-decoration: none;
     }
+
+    @media screen and (${device.tablet}) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 28px;
+      line-height: 42px;
+    }
   }
 
   .react-calendar__tile.react-calendar__month-view__days__day,
   .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
     font-family: var(--Raleway);
-    font-size: 28px;
     font-weight: 600;
-    line-height: 42px;
     letter-spacing: 0em;
     color: var(--mainText);
     cursor: pointer;
+
+    @media screen and (${device.tablet}) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 28px;
+      line-height: 42px;
+    }
 
     &[disabled] {
       font-weight: 400;
@@ -147,38 +197,83 @@ export const DivStyled = styled.div`
     }
   }
 
-  .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
-    width: 40px;
+  .react-calendar__navigation__arrow.react-calendar__navigation__next-button,
+  .react-calendar__navigation__arrow.react-calendar__navigation__next2-button,
+  .react-calendar__navigation__arrow.react-calendar__navigation__prev-button,
+  .react-calendar__navigation__arrow.react-calendar__navigation__prev2-button {
+    svg {
+      @media screen and (${device.tablet}) {
+        height: 24px;
+        width: 24px;
+      }
+
+      @media screen and (${device.desktop}) {
+        height: 32px;
+        width: 32px;
+      }
+    }
   }
 `;
 
 export const MainTitle = styled.h2`
-  margin-bottom: 20px;
-  height: 48px;
-  min-width: 471px;
-
   ${fontSectionTitle};
   text-align: center;
   color: var(--mainText);
+
+  @media screen and (${device.tablet}) {
+    margin-bottom: 20px;
+    height: 40px;
+    min-width: 188px;
+    font-size: 28px;
+    line-height: calc(39 / 28);
+  }
+
+  @media screen and (${device.desktop}) {
+    height: 48px;
+    min-width: 264px;
+    font-size: 40px;
+    line-height: calc(56 / 40);
+  }
 `;
 
 export const SecondaryTitle = styled.h2`
-  margin-top: 24px;
-  margin-bottom: 20px;
-  height: 48px;
-  min-width: 471px;
-
   ${fontSectionTitle};
   text-align: center;
   color: var(--mainText);
+
+  @media screen and (${device.tablet}) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    min-width: 180px;
+    font-size: 28px;
+    line-height: calc(39 / 28);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-top: 24px;
+    height: 48px;
+    min-width: 244px;
+    font-size: 40px;
+    line-height: calc(56 / 40);
+  }
 `;
 
 export const TimeList = styled.ul`
   display: flex;
-  gap: 40px;
   flex-wrap: wrap;
-  width: 520px;
-  margin-bottom: calc(72px - 52px);
+
+  @media screen and (${device.tablet}) {
+    gap: 20px;
+    width: 464px;
+    margin-bottom: 4px;
+  }
+
+  @media screen and (${device.desktop}) {
+    gap: 40px;
+    width: 520px;
+    margin-bottom: calc(72px - 52px);
+  }
 
   li {
     ${flexBox};
@@ -186,9 +281,7 @@ export const TimeList = styled.ul`
     height: 36px;
 
     font-family: var(--Raleway);
-    font-size: 32px;
     font-weight: 400;
-    line-height: 44.8px;
     letter-spacing: 0em;
     color: var(--mainText);
 
@@ -200,6 +293,16 @@ export const TimeList = styled.ul`
       transition-timing-function: var(--timing-function);
 
       background-color: #e6e6e6;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 24px;
+      line-height: 33.6px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 32px;
+      line-height: 44.8px;
     }
   }
 
