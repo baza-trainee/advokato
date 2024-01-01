@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { REGEX_EMAIL, REGEX_PHONE } from '../../constants';
+import { REGEX_EMAIL, REGEX_PHONE, REGEX_QUESTION } from '../../constants';
 
 export const SchemaUa = yup.object({
   name: yup
@@ -26,6 +26,7 @@ export const SchemaUa = yup.object({
     .trim()
     .min(8, 'Повинно містити не менше 8 знаків')
     .max(300, 'Дозволено ввести 300 знаків')
+    .matches(REGEX_QUESTION, 'Заборонені знаки')
     .required('Напишиіть запитання'),
 });
 
@@ -54,5 +55,6 @@ export const SchemaEn = yup.object({
     .trim()
     .min(8, 'Must contain at least 8 characters')
     .max(300, '300 characters allowed')
+    .matches(REGEX_QUESTION, 'Forbidden characters')
     .required('Write a question'),
 });
