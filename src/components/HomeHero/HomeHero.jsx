@@ -1,31 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
-	SectionStyled,
-	Container,
-	MainTitleStyled,
-	SubtitleStyled,
-} from "./HomeHero.styled";
-import { getContent } from "../../api";
+  SectionStyled,
+  Container,
+  MainTitleStyled,
+  SubtitleStyled,
+} from './HomeHero.styled';
+import { isObjectEmpty } from '../../helpers';
+import { getContent } from '../../api';
 
 export const HomeHero = () => {
-	const [data, setData] = useState();
+  const [data, setData] = useState({});
 
-	useEffect(() => {
-		getContent("https://advocato-backend.vercel.app/api/v1/hero").then(res =>
-			setData(res.hero),
-		);
-	}, []);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getContent('hero');
 
-	return (
-		<SectionStyled>
-			<Container>
-				<MainTitleStyled>{data?.slogan}</MainTitleStyled>
+      if (!isObjectEmpty(data)) {
+        setData(data.hero);
+      }
+    };
 
-				<div>
-					<SubtitleStyled>{data?.left_text}</SubtitleStyled>
-					<SubtitleStyled>{data?.right_text}</SubtitleStyled>
-				</div>
-			</Container>
-		</SectionStyled>
-	);
+    getData();
+  }, []);
+
+  return (
+    <SectionStyled>
+      <Container>
+        <MainTitleStyled>{data?.slogan}</MainTitleStyled>
+
+        <div>
+          <SubtitleStyled>{data?.left_text}</SubtitleStyled>
+          <SubtitleStyled>{data?.right_text}</SubtitleStyled>
+        </div>
+      </Container>
+    </SectionStyled>
+  );
 };
