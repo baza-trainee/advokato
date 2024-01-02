@@ -161,6 +161,7 @@ export const DocsWrp = styled.div`
 
 export const DocumentTitleStyled = styled.button`
   display: flex;
+  align-items: center;
 
   ${fontLayoutMenu};
   text-decoration: underline;
