@@ -110,6 +110,9 @@ export const LinkStyled = styled(NavLink)`
 `;
 
 export const TitleCompany = styled.p`
+  display: flex;
+  align-items: center;
+
   ${fontLayoutMenu};
   color: var(--lightText);
 
@@ -158,6 +161,7 @@ export const DocsWrp = styled.div`
 
 export const DocumentTitleStyled = styled.button`
   display: flex;
+  align-items: center;
 
   ${fontLayoutMenu};
   text-decoration: underline;
@@ -199,6 +203,7 @@ export const DocumentTitleStyled = styled.button`
 export const AddressWrp = styled.address`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
 
   font-style: normal;
@@ -213,6 +218,9 @@ export const AddressWrp = styled.address`
 `;
 
 export const MainOfficeStyled = styled(Link)`
+  display: flex;
+  align-items: center;
+
   ${fontLayoutMenu};
   color: var(--lightText);
 
@@ -236,22 +244,30 @@ export const MainOfficeStyled = styled(Link)`
 `;
 
 export const PhoneStyled = styled(Link)`
+  display: flex;
+  align-items: center;
   height: 32px;
+
   ${fontLayoutMenu};
   color: var(--lightText);
 
   @media screen and (${device.tablet}) {
     height: 20px;
-    font-size: 18px;
-    line-height: calc(32.4 / 18);
+    font-size: 16px;
+    line-height: calc(29 / 16);
   }
 
   @media screen and (${device.desktop}) {
     height: 32px;
+    font-size: 18px;
+    line-height: calc(32.4 / 18);
   }
 `;
 
 export const EmailStyled = styled.p`
+  display: flex;
+  align-items: center;
+
   ${fontLayoutMenu};
   color: var(--lightText);
 
