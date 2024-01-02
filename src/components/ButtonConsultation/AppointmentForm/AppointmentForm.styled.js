@@ -15,7 +15,7 @@ export const FormWrp = styled.div`
     padding-bottom: 28px;
     padding-left: 20px;
     width: 536px;
-    min-height: 748px;
+    /* min-height: 748px; */
   }
 
   @media screen and (${device.desktop}) {
@@ -24,7 +24,8 @@ export const FormWrp = styled.div`
     padding-bottom: 32px;
     padding-left: 40px;
     width: 600px;
-    min-height: 892px;
+    /* min-height: 892px; */
+    min-height: 336px;
   }
 `;
 
