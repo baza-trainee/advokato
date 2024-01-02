@@ -11,8 +11,8 @@ export const CheckBoxWrp = styled.div`
   @media screen and (${device.tablet}) {
     width: 496px;
     height: 52px;
-    /* margin-top: -12px;
-    margin-bottom: -4px; */
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   @media screen and (${device.desktop}) {

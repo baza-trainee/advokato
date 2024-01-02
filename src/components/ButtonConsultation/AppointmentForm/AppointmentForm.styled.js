@@ -88,6 +88,10 @@ export const ButtonWrp = styled.div`
   flex-direction: column;
 
   @media screen and (${device.tablet}) {
+    gap: 12px;
+  }
+
+  @media screen and (${device.desktop}) {
     gap: 20px;
   }
 `;
