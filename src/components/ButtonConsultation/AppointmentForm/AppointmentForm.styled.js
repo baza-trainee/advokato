@@ -15,7 +15,7 @@ export const FormWrp = styled.div`
     padding-bottom: 28px;
     padding-left: 20px;
     width: 536px;
-    min-height: 748px;
+    /* min-height: 748px; */
   }
 
   @media screen and (${device.desktop}) {
@@ -24,7 +24,8 @@ export const FormWrp = styled.div`
     padding-bottom: 32px;
     padding-left: 40px;
     width: 600px;
-    min-height: 892px;
+    /* min-height: 892px; */
+    min-height: 336px;
   }
 `;
 
@@ -75,11 +76,21 @@ export const FormStyled = styled.form`
   flex-direction: column;
 
   @media screen and (${device.tablet}) {
-    gap: 20px;
+    gap: ${({ currentPartForm }) =>
+      (currentPartForm === 1) |
+      (currentPartForm === 2) |
+      (currentPartForm === 3)
+        ? '20px'
+        : null};
   }
 
   @media screen and (${device.desktop}) {
-    gap: 32px;
+    gap: ${({ currentPartForm }) =>
+      (currentPartForm === 1) |
+      (currentPartForm === 2) |
+      (currentPartForm === 3)
+        ? '32px'
+        : null};
   }
 `;
 
@@ -88,6 +99,10 @@ export const ButtonWrp = styled.div`
   flex-direction: column;
 
   @media screen and (${device.tablet}) {
+    gap: 12px;
+  }
+
+  @media screen and (${device.desktop}) {
     gap: 20px;
   }
 `;

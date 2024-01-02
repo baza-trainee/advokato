@@ -141,6 +141,7 @@ export const DivStyled = styled.div`
     }
 
     &.current {
+      font-weight: 600;
       color: var(--accentText);
       background-color: var(--lightText);
 
@@ -307,6 +308,7 @@ export const TimeList = styled.ul`
   }
 
   li.currentTime {
+    font-weight: 600;
     color: var(--accentText);
   }
 `;

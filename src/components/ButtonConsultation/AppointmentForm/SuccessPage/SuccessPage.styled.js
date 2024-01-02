@@ -37,11 +37,13 @@ export const DivStyled = styled.div`
     color: var(--mainText);
 
     @media screen and (${device.tablet}) {
+      height: 32px;
       font-size: 18px;
       line-height: 28.8px;
     }
 
     @media screen and (${device.desktop}) {
+      height: 28px;
       font-size: 22px;
       line-height: 35.2px;
     }

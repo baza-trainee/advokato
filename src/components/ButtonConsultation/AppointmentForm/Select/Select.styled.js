@@ -17,7 +17,7 @@ export const LabelStyled = styled.label`
 
     @media screen and (${device.desktop}) {
       margin-bottom: 8px;
-      height: 36px;
+      height: 28px;
       font-size: 22px;
       line-height: calc(35 / 22);
     }
@@ -43,7 +43,8 @@ export const ButtonStyled = styled.button`
   color: var(--mainText);
   stroke: var(--mainText);
   border: 1px solid var(--greyText);
-  background-color: var(--lightBackground);
+  background-color: ${({ value }) =>
+    value ? 'var(--accentLink)' : 'var(--lightBackground)'};
 
   svg {
     width: 24px;
