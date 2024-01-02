@@ -76,11 +76,21 @@ export const FormStyled = styled.form`
   flex-direction: column;
 
   @media screen and (${device.tablet}) {
-    gap: 20px;
+    gap: ${({ currentPartForm }) =>
+      (currentPartForm === 1) |
+      (currentPartForm === 2) |
+      (currentPartForm === 3)
+        ? '20px'
+        : null};
   }
 
   @media screen and (${device.desktop}) {
-    gap: 32px;
+    gap: ${({ currentPartForm }) =>
+      (currentPartForm === 1) |
+      (currentPartForm === 2) |
+      (currentPartForm === 3)
+        ? '32px'
+        : null};
   }
 `;
 
