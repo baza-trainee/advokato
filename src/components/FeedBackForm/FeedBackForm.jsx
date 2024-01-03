@@ -1,140 +1,158 @@
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import {
-	ButtonStyled,
-	Container,
-	Email,
-	ErrorsStyled,
-	Input,
-	InputWraper,
-	LabelWraper,
-	TitleStyled,
-} from "./FeedBackForm.styled";
-import { Icon } from "../Icon";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslation } from 'react-i18next';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { useEffect, useState } from 'react';
 
-const schema = yup.object({
-	name: yup
-		.string()
-		.required("Це поле є обов’язковим")
-		.min(2, "Має бути мінімум 2 символи")
-		.max(40, "Має бути не більше 40 символів"),
-	tel: yup
-		.string()
-		.required("Номер телефону обов'язковий")
-		.matches(
-			/^\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/,
-			"Введіть телефон в наступному форматі (066) 777-30-77",
-		)
-		.max(15, "Забагато символів"),
-	question: yup
-		.string()
-		.required("Це поле є обов’язковим")
-		.matches(
-			/^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ0-9\s',.:;-]+$/,
-			"Допускаються літери латиниці та кирилиці, цифри, символи: ' - : ; . ,",
-		)
-		.min(8, "Має бути мінімум 8 символів")
-		.max(700, "Має бути не більше 700 символів"),
-});
+import { postContent } from '../../api';
+import { SchemaUa, SchemaEn } from './validationSchema';
+import { Input } from './Input';
+import { ModalFromRoot } from '../ModalFromRoot';
+import { SuccessPage } from './SuccessPage';
+import { FailurePage } from './FailurePage';
+import {
+  SectionStyled,
+  StyledForm,
+  ButtonStyled,
+  TitleStyled,
+} from './FeedBackForm.styled';
+
+const DEFAULT_VALUES = {
+  name: '',
+  phone: '+380',
+  email: '',
+  question: '',
+};
 
 export const FeedBackForm = () => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors, isValid, isDirty, dirtyFields },
-	} = useForm({
-		mode: "onChange",
-		resolver: yupResolver(schema),
-	});
+  const [t, i18n] = useTranslation('global');
+  const [modalActive, setModalActive] = useState(false);
+  const [sendStatus, setSendStatus] = useState(true);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid, isDirty, touchedFields },
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: DEFAULT_VALUES,
+    resolver: yupResolver(i18n.language === 'en' ? SchemaEn : SchemaUa),
+  });
 
-	const onSubmit = data => {
-		const trimmedData = {
-			name: data.name.trim(),
-			tel: data.tel,
-			question: data.question.trim(),
-		};
+  useEffect(() => {
+    if (!modalActive) {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [modalActive]);
 
-		alert(JSON.stringify(trimmedData));
-		reset();
-	};
+  const toggleModal = () => {
+    document.body.style.overflowY = 'hidden';
+    setModalActive(prev => !prev);
+  };
 
-	return (
-		<section>
-			<Container>
-				<TitleStyled>Зв&apos;яжіться з нами</TitleStyled>
-				<Link
-					to="mailto:acstatus.mk@gmail.com"
-					aria-label="електронна пошта компанії"
-				>
-					<Email>acstatus.mk@gmail.com</Email>
-				</Link>
+  const onSubmit = async formData => {
+    Loading.dots();
 
-				<form
-					autoComplete="off"
-					onSubmit={handleSubmit(onSubmit)}
-				>
-					<InputWraper>
-						<LabelWraper>
-							<label htmlFor="name">Ваше ім’я</label>
-							<Input
-								{...register("name")}
-								type="text"
-								id="name"
-								placeholder="Введіть ім’я"
-								autoFocus
-							/>
-							<ErrorsStyled>{errors.name?.message}</ErrorsStyled>
-						</LabelWraper>
+    const data = {
+      email: formData?.email || null,
+      message: formData?.question,
+      name: formData?.name || null,
+      phone_number: formData?.phone || null,
+    };
 
-						<LabelWraper>
-							<label htmlFor="tel">Ваш номер телефону</label>
-							<Input
-								{...register("tel")}
-								type="tel"
-								id="tel"
-								placeholder="+3 80 ХХ ХХХ ХХ ХХ"
-							/>
+    const result = await postContent('feedback', data);
 
-							{errors.tel && dirtyFields.tel ? (
-								<ErrorsStyled>{errors.tel?.message}</ErrorsStyled>
-							) : !errors.tel && dirtyFields.tel ? (
-								<ErrorsStyled color="#3cbc81">
-									Це правильний формат телефона
-								</ErrorsStyled>
-							) : (
-								""
-							)}
-						</LabelWraper>
-					</InputWraper>
+    if (result?.success) {
+      Loading.remove();
+      reset();
+      setSendStatus(prev => true);
+      setModalActive(prev => !prev);
+      return;
+    }
 
-					<LabelWraper>
-						<label htmlFor="question">Ваше питання</label>
-						<Input
-							{...register("question")}
-							type="text"
-							id="question"
-							placeholder="Введіть питання"
-						/>
-						<ErrorsStyled>{errors.question?.message}</ErrorsStyled>
-					</LabelWraper>
+    Loading.remove();
+    setSendStatus(prev => false);
+    setModalActive(prev => !prev);
+  };
 
-					<ButtonStyled
-						type="submit"
-						disabled={!isValid || !isDirty}
-						aria-label="Відправити данні форми"
-					>
-						Відправити
-						<Icon
-							id={"icon-arrow-right"}
-							width={16}
-							height={12}
-						/>
-					</ButtonStyled>
-				</form>
-			</Container>
-		</section>
-	);
+  const onErrors = data => {
+    console.log('form onErrors', data);
+  };
+
+  return (
+    <>
+      {modalActive && (
+        <ModalFromRoot toggleModal={toggleModal}>
+          {sendStatus ? <SuccessPage /> : <FailurePage />}
+        </ModalFromRoot>
+      )}
+
+      <SectionStyled>
+        <TitleStyled>
+          {t('feedBackForm.title')}
+          <span>acstatus.mk@gmail.com</span>
+        </TitleStyled>
+
+        <StyledForm
+          autoComplete="off"
+          onSubmit={handleSubmit(onSubmit, onErrors)}
+        >
+          <div>
+            <Input
+              register={register}
+              name="name"
+              type="text"
+              label={t('feedBackForm.labelName')}
+              placeholder={t('feedBackForm.placeholderName')}
+              errors={errors}
+              isValid={isValid}
+              touchedFields={touchedFields}
+            />
+
+            <Input
+              register={register}
+              name="phone"
+              type="text"
+              label={t('feedBackForm.labelPhone')}
+              placeholder={'+3 80 ХХ ХХХ ХХ ХХ'}
+              errors={errors}
+              isValid={isValid}
+              touchedFields={touchedFields}
+            />
+
+            <Input
+              register={register}
+              name="email"
+              type="text"
+              label={t('feedBackForm.labelEmail')}
+              placeholder={'xxx@xxx'}
+              errors={errors}
+              isValid={isValid}
+              touchedFields={touchedFields}
+            />
+          </div>
+
+          <Input
+            register={register}
+            name="question"
+            type="text"
+            label={t('feedBackForm.labelQuestion')}
+            placeholder={t('feedBackForm.placeholderQuestion')}
+            errors={errors}
+            isValid={isValid}
+            touchedFields={touchedFields}
+            width={'100%'}
+          />
+
+          <ButtonStyled
+            type="submit"
+            disabled={!isValid || !isDirty}
+            aria-label="Відправити данні форми"
+          >
+            {t('feedBackForm.submitButton')}
+          </ButtonStyled>
+        </StyledForm>
+      </SectionStyled>
+    </>
+  );
 };

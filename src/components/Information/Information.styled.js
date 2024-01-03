@@ -1,51 +1,40 @@
 import styled from '@emotion/styled';
-import { container, device, flexBox, fontDesktop } from '../../styles/mixins';
+import { fontSectionTitle, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   background-color: var(--lightBackground);
 `;
 
 export const Container = styled.div`
-  ${container};
+  margin: 0 auto;
+
+  @media screen and (${device.tablet}) {
+    padding: 120px 80px;
+  }
 
   @media screen and (${device.desktop}) {
-    padding-top: 132px;
-    padding-bottom: 64px;
+    padding: 132px 160px;
     max-width: 1440px;
   }
 `;
 
 export const TitleStyled = styled.h2`
+  margin-bottom: 40px;
+
+  ${fontSectionTitle};
+  color: var(--mainText);
+
+  @media screen and (${device.tablet}) {
+    width: 756px;
+
+    font-size: 32px;
+    line-height: calc(45 / 32);
+  }
+
   @media screen and (${device.desktop}) {
-    width: 960px;
-    margin-bottom: 72px;
-    font-family: Montserrat, sans-serif;
+    width: 944px;
+
     font-size: 40px;
-    font-weight: 500;
     line-height: calc(56 / 40);
-  }
-`;
-
-export const CardWraper = styled.div`
-  position: relative;
-
-  @media screen and (${device.desktop}) {
-    ${flexBox};
-    gap: 120px;
-    margin-bottom: 176px;
-  }
-`;
-
-export const ImgWraper = styled.div`
-  @media screen and (${device.desktop}) {
-    min-width: 548px;
-    border-radius: 24px;
-    overflow: hidden;
-  }
-`;
-
-export const Text = styled.p`
-  @media screen and (${device.desktop}) {
-    ${fontDesktop};
   }
 `;

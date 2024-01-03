@@ -2,17 +2,14 @@ import styled from '@emotion/styled';
 import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  border-top: 88px solid var(--darkBackground);
-
-  @media screen and (min-width: 768px) {
-  }
-
   @media screen and (${device.tablet}) {
+    border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
     padding-bottom: 108px;
   }
 
   @media screen and (${device.desktop}) {
+    border-top: 88px solid var(--darkBackground);
     padding-top: 184px;
     padding-bottom: 132px;
   }
@@ -20,9 +17,6 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   margin: 0 auto;
-
-  @media screen and (min-width: 768px) {
-  }
 
   @media screen and (${device.tablet}) {
     max-width: calc(1024px - 80px * 2);
@@ -38,9 +32,6 @@ export const TitleStyled = styled.h2`
 
   ${fontSectionTitle};
   color: var(--mainText);
-
-  @media screen and (min-width: 768px) {
-  }
 
   @media screen and (${device.tablet}) {
     margin-left: auto;
@@ -65,9 +56,6 @@ export const CenterWrp = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (min-width: 768px) {
-  }
-
   @media screen and (${device.tablet}) {
     height: 348px;
   }
@@ -78,9 +66,6 @@ export const CenterWrp = styled.div`
 
   p {
     ${fontSectionText};
-
-    @media screen and (min-width: 768px) {
-    }
 
     @media screen and (${device.tablet}) {
       min-height: 24px;
@@ -96,12 +81,10 @@ export const CenterWrp = styled.div`
   }
 `;
 
-export const LeftSide = styled.div`
+export const LeftSide = styled.address`
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 768px) {
-  }
+  font-style: normal;
 
   @media screen and (${device.tablet}) {
     gap: 28px;

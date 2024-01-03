@@ -20,7 +20,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
     const timerId = setTimeout(() => {
       setIsOpenList(prev => false);
       clearTimeout(timerId);
-    }, 5000);
+    }, 7000);
   }, [isOpenList]);
 
   const handleClickOption = ({ target }) => {
@@ -40,7 +40,8 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
       <ButtonStyled
         onClick={() => setIsOpenList(prev => !prev)}
         type="button"
-        aria-label="select button"
+        aria-label="вибрати зі списку"
+        value={value}
       >
         {value == '' ? (
           <>

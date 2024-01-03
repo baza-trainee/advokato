@@ -21,9 +21,26 @@ export const HeaderStyled = styled.header`
 		width: 180px;
 		height: 80px;
 	}
+	@media screen and (${device.mobileL}) {
+		${flexBox};
+		height: 68px;
+		font-size: 14px;
+		line-height: calc(25.2 / 14);
+		img {
+			width: 156px;
+			height: 52px;
+			object-fit: contain;
+		}
+		svg {
+			width: 44px;
+			height: 44px;
+		}
+	}
 	@media screen and (${device.tablet}) {
 		${flexBox};
 		height: 76px;
+		font-size: 18px;
+		line-height: calc(32.4 / 18);
 		img {
 			width: 152px;
 			height: 60px;
@@ -31,6 +48,13 @@ export const HeaderStyled = styled.header`
 		svg {
 			width: 52px;
 			height: 52px;
+		}
+	}
+	@media screen and (${device.preburger}) {
+		height: 80px;
+		img {
+			width: 160px;
+			height: 64px;
 		}
 	}
 	@media screen and (${device.burger}) {
@@ -47,10 +71,20 @@ export const Container = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1440px;
+	@media screen and (${device.mobileL}) {
+		height: 68px;
+		padding-left: 60px;
+		padding-right: 60px;
+	}
 	@media screen and (${device.tablet}) {
+		height: 76px;
 		padding-left: 80px;
 		padding-right: 80px;
-		height: 76px;
+	}
+	@media screen and (${device.preburger}) {
+		height: 80px;
+		padding-left: 120px;
+		padding-right: 120px;
 	}
 	@media screen and (${device.desktop}) {
 		padding-left: 60px;
@@ -65,9 +99,17 @@ export const HamburgerMenu = styled.div`
 	height: 10vh;
 	transition-duration: 1s;
 	cursor: pointer;
+	@media screen and (${device.mobileL}) {
+		width: 44px;
+		height: 44px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 52px;
 		height: 52px;
+	}
+	@media screen and (${device.preburger}) {
+		width: 56px;
+		height: 56px;
 	}
 	@media screen and (${device.burger}) {
 		display: none;
@@ -82,6 +124,15 @@ export const HamburgerMenu = styled.div`
 		transition-duration: 0.25s;
 		transition-delay: 0.25s;
 		z-index: 50;
+		@media screen and (${device.mobileL}) {
+			width: 33px;
+		}
+		@media screen and (${device.tablet}) {
+			width: 39px;
+		}
+		@media screen and (${device.preburger}) {
+			width: 42px;
+		}
 	}
 
 	span:before {
@@ -95,6 +146,15 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+		@media screen and (${device.mobileL}) {
+			width: 33px;
+		}
+		@media screen and (${device.tablet}) {
+			width: 39px;
+		}
+		@media screen and (${device.preburger}) {
+			width: 42px;
+		}
 	}
 
 	span:after {
@@ -108,6 +168,15 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+		@media screen and (${device.mobileL}) {
+			width: 33px;
+		}
+		@media screen and (${device.tablet}) {
+			width: 39px;
+		}
+		@media screen and (${device.preburger}) {
+			width: 42px;
+		}
 	}
 
 	span.open {
@@ -120,33 +189,61 @@ export const HamburgerMenu = styled.div`
 		top: 0;
 		transform: rotateZ(-45deg);
 		transition: top 0.25s, transform 0.25s 0.25s;
+		@media screen and (${device.mobileL}) {
+			width: 26px;
+		}
+		@media screen and (${device.tablet}) {
+			width: 38px;
+		}
+		@media screen and (${device.preburger}) {
+			width: 43px;
+		}
 	}
 
 	span.open:after {
 		top: 0;
 		transform: rotateZ(45deg);
 		transition: top 0.4s, transform 0.25s 0.25s;
+		@media screen and (${device.mobileL}) {
+			width: 26px;
+		}
+		@media screen and (${device.tablet}) {
+			width: 38px;
+		}
+		@media screen and (${device.preburger}) {
+			width: 43px;
+		}
 	}
 `;
 
 export const LangButton = styled.button`
 	display: ${props => (props.desktop === "desktop" ? "none" : "block")};
 	${fontReview};
-	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
 	background-color: inherit;
 	border: 1px solid var(--lightText);
 	border-radius: 8px;
 	cursor: pointer;
+	@media screen and (${device.mobileL}) {
+		width: 44px;
+		height: 40px;
+		margin: 80px 0 0 40px;
+		font-size: 16px;
+		line-height: calc(24 / 16);
+	}
 	@media screen and (${device.tablet}) {
 		width: 56px;
 		height: 60px;
+		margin: 136px 0 0 40px;
+		font-size: 18px;
+		line-height: calc(27 / 18);
 	}
 
 	@media screen and (${device.burger}) {
 		display: block;
 		width: 48px;
 		height: 48px;
+		margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	}
 `;
 
@@ -182,9 +279,17 @@ export const PhoneBurger = styled.div`
 		stroke: var(--reviewText);
 		stroke-width: 2px;
 	}
+	@media screen and (${device.mobileL}) {
+		width: 44px;
+		height: 44px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 52px;
 		height: 52px;
+	}
+	@media screen and (${device.preburger}) {
+		width: 56px;
+		height: 56px;
 	}
 	@media screen and (${device.burger}) {
 		display: none;

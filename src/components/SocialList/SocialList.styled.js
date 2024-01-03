@@ -11,7 +11,7 @@ export const SocialListStyled = styled.ul`
   }
 
   @media screen and (${device.tablet}) {
-    gap: 16px;
+    gap: 20px;
   }
 
   @media screen and (${device.desktop}) {
@@ -48,8 +48,8 @@ export const SocialLink = styled(Link)`
     }
 
     @media screen and (${device.tablet}) {
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
     }
 
     @media screen and (${device.desktop}) {

@@ -9,7 +9,15 @@ export const UlStyled = styled.ul`
 	display: ${props => (props.sideMenu ? "flex" : "none")};
 	margin: ${props => (props.sideMenu ? "144px 40px 0" : "0")};
 	gap: ${props => (props.sideMenu ? "20px" : "0")};
-
+	@media screen and (${device.mobileL}) {
+		margin: ${props => (props.sideMenu ? "96px 40px 0" : "0")};
+	}
+	@media screen and (${device.tablet}) {
+		margin: ${props => (props.sideMenu ? "144px 40px 0" : "0")};
+	}
+	@media screen and (${device.preburger}) {
+		margin: ${props => (props.sideMenu ? "156px 40px 0" : "0")};
+	}
 	@media screen and (${device.burger}) {
 		${flexBox};
 		gap: 44px;

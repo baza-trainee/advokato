@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
 import {
-  device,
   flexBox,
   fontSectionTitle,
-  fontDesktop,
   secondaryButton,
+  device,
 } from '../../styles/mixins';
 
-export const Container = styled.div`
+export const SectionStyled = styled.section`
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    margin: 100px auto;
+    width: 864px;
+  }
+
   @media screen and (${device.desktop}) {
     margin: 132px auto;
     width: 1120px;
@@ -15,116 +22,95 @@ export const Container = styled.div`
 `;
 
 export const TitleStyled = styled.h2`
-  @media screen and (${device.desktop}) {
-    margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
 
-    ${fontSectionTitle};
+  ${fontSectionTitle};
+
+  span {
+    width: 504px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 112px;
+    width: 504px;
+    margin-bottom: 28px;
+
+    font-size: 32px;
+    line-height: calc(44 / 32);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-bottom: 56px;
+
+    font-size: 40px;
+    line-height: calc(56 / 40);
   }
 `;
 
-export const Email = styled.h2`
-  display: inline-block;
+export const StyledForm = styled.form`
+  div {
+    display: flex;
+
+    @media screen and (min-width: 768px) {
+    }
+
+    @media screen and (${device.tablet}) {
+      margin-bottom: 48px;
+      gap: 48px;
+    }
+
+    @media screen and (${device.desktop}) {
+      gap: 62px;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (${device.tablet}) {
+    width: 864px;
+  }
 
   @media screen and (${device.desktop}) {
-    position: relative;
-    margin-bottom: 80px;
-
-    ${fontSectionTitle};
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 5px;
-      width: 504px;
-      height: 1px;
-      background-color: var(--mainText);
-    }
+    width: 1024px;
   }
 `;
 
 export const ButtonStyled = styled.button`
   ${flexBox};
-  gap: 12px;
   ${secondaryButton};
-  border: 1px solid #1c1c21;
-  transition: color var(--timing-function) var(--animation-duration),
-    border var(--timing-function) var(--animation-duration),
-    background-color var(--timing-function) var(--animation-duration);
-
-  svg {
-    fill: var(--lightText);
-  }
+  margin-top: 48px;
 
   &:hover,
   &:focus {
-    color: var(--mainText);
-    background-color: transparent;
-
-    transition: fill var(--timing-function) var(--animation-duration);
-
-    svg {
-      fill: var(--mainText);
-    }
+    border: 1px solid #1c1c21;
   }
 
-  &:active {
-    color: var(--mainText);
-    background-color: #e1e1e1;
+  @media screen and (min-width: 768px) {
   }
 
-  &[disabled] {
-    svg {
-      fill: var(--greyText);
-    }
+  @media screen and (${device.tablet}) {
+    width: 292px;
+    height: 52px;
+    font-size: 14px;
+    line-height: calc(17 / 14);
   }
 
-  svg {
-    transition: fill var(--timing-function) var(--animation-duration);
-    fill: currentColor;
+  @media screen and (${device.desktop}) {
+    width: 364px;
+    height: 64px;
+    font-size: 16px;
+    line-height: calc(22 / 16);
   }
-`;
-
-export const InputWraper = styled.div`
-  width: 844px;
-  display: flex;
-  gap: 40px;
-`;
-
-export const LabelWraper = styled.div`
-  width: 844px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin-bottom: 23px;
-  ${fontDesktop};
-`;
-
-export const Input = styled.input`
-  margin-top: 24px;
-  padding: 0 0 18px 0;
-  background-color: inherit;
-  border: none;
-  border-bottom: 1px solid #1c1c21;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 18px;
-  line-height: calc(27 / 18);
-
-  &::placeholder {
-    color: var(--greyText);
-    font-family: 'Raleway', sans-serif;
-  }
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-export const ErrorsStyled = styled.p`
-  margin-top: 5px;
-  height: 20px;
-  color: ${props => props.color || 'var(--accentText)'};
-  ${fontDesktop};
-  font-size: 16px;
-  line-height: calc(20 / 16);
 `;

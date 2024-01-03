@@ -16,13 +16,22 @@ export const Panel = styled.div`
 	line-height: 19px;
 	text-align: center;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (${device.mobileL}) {
 		bottom: 56px;
 		padding: 28px 32px;
 		max-width: 648px;
 
 		font-size: 14px;
 		line-height: 22px;
+		text-align: left;
+	}
+
+	@media screen and (${device.tablet}) {
+		padding: 46px 60px;
+		max-width: 864px;
+
+		font-size: 22px;
+		line-height: 35px;
 		text-align: left;
 	}
 
@@ -42,9 +51,14 @@ export const PolicyLink = styled.a`
 	line-height: 22px;
 	text-decoration: underline;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (${device.mobileL}) {
 		font-size: 14px;
 		line-height: 25px;
+	}
+
+	@media screen and (${device.tablet}) {
+		font-size: 16px;
+		line-height: 26px;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -59,9 +73,13 @@ export const BannerWrap = styled.div`
 	flex-direction: column;
 	gap: 16px;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (${device.mobileL}) {
 		flex-direction: row;
 		gap: 67px;
+	}
+
+	@media screen and (${device.tablet}) {
+		gap: 68px;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -78,18 +96,18 @@ export const IconClose = styled(Icon)`
 	cursor: pointer;
 	stroke: var(--lightText);
 
-	@media screen and (${device.desktop}) {
+	@media screen and (${device.tablet}) {
 		width: 24px;
 		height: 24px;
-		top: 27px;
-		right: 27px;
+		top: 24px;
+		right: 24px;
 	}
 `;
 
 export const ButtonOk = styled.button`
 	min-width: 120px;
 	height: 36px;
-	border: 2px solid #fff;
+	border: 2px solid var(--reviewText);
 	border-radius: 5px;
 
 	font-family: var(--Montserrat);
@@ -100,15 +118,19 @@ export const ButtonOk = styled.button`
 
 	&:hover,
 	&:focus {
-		background-color: #fff;
+		background-color: var(--btnBgHover);
 		color: var(--mainText);
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (${device.mobileL}) {
 		min-width: 180px;
 		height: 64px;
 		font-size: 28px;
 		line-height: 42px;
+	}
+
+	@media screen and (${device.tablet}) {
+		min-width: 184px;
 	}
 
 	@media screen and (${device.desktop}) {
