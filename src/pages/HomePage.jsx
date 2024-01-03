@@ -18,9 +18,9 @@ export const HomePage = () => {
       <Owner />
       <Information />
       <TeamGallery />
-      {/* <PracticeSection /> */}
+      <PracticeSection />
       <ProBono />
-      {/* <ResultsSection /> */}
+      <ResultsSection />
       <ClientsBlock />
       <ClientReviews />
       <FeedBackForm />
