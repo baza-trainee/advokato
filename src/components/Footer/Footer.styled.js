@@ -15,6 +15,13 @@ export const FooterStyled = styled.footer`
 export const Container = styled.div`
   margin: 0 auto;
 
+  @media screen and (${device.mobileL}) {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    height: ${({ path }) => (path === '/contacts' ? '100px' : '300px')};
+    max-width: 648px;
+  }
+
   @media screen and (${device.tablet}) {
     padding-top: 20px;
     padding-bottom: 12px;
@@ -37,6 +44,12 @@ export const ContentWrp = styled.div`
 
   border-bottom: 1px solid #e0dfe0;
 
+  @media screen and (${device.mobileL}) {
+    margin-bottom: 12px;
+    padding: ${({ path }) => (path !== '/contacts' ? '0 0 12px 0' : '0')};
+    gap: 56px;
+  }
+
   @media screen and (${device.tablet}) {
     margin-bottom: 12px;
     padding: ${({ path }) => (path !== '/contacts' ? '0 14px 20px 72px' : '0')};
@@ -55,6 +68,10 @@ export const ListStyled = styled.ul`
   display: flex;
   flex-direction: column;
 
+  @media screen and (${device.mobileL}) {
+    gap: 8px;
+  }
+
   @media screen and (${device.tablet}) {
     gap: 20px;
   }
@@ -63,8 +80,20 @@ export const ListStyled = styled.ul`
     gap: 24px;
     min-width: 92px;
   }
+`;
 
-  li {
+export const ListItemStyled = styled.li`
+  order: ${({ position }) => position};
+  
+  @media screen and (${device.mobileL}) {
+    height: 28px;
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 20px;
+  }
+
+  @media screen and (${device.desktop}) {
     height: 32px;
   }
 `;
@@ -76,6 +105,11 @@ export const LinkStyled = styled(NavLink)`
   color: ${({ current, active }) =>
     current === active ? 'var(--accentLink)' : 'var(--lightText)'};
   transition: color 0.3s ease-in-out;
+
+  @media screen and (${device.mobileL}) {
+    font-size: 14px;
+    line-height: calc(26 / 14);
+  }
 
   @media screen and (${device.tablet}) {
     font-size: 16px;
@@ -116,6 +150,13 @@ export const TitleCompany = styled.p`
   ${fontLayoutMenu};
   color: var(--lightText);
 
+  @media screen and (${device.mobileL}) {
+    margin-left: ${({ path }) => (path === '/contacts' ? '40px' : null)};
+    height: 28px;
+    font-size: 14px;
+    line-height: calc(25 / 14);
+  }
+
   @media screen and (${device.tablet}) {
     margin-left: ${({ path }) => (path === '/contacts' ? '40px' : null)};
     height: 20px;
@@ -135,6 +176,12 @@ export const BottomSign = styled.p`
   ${fontLayoutMenu};
   color: var(--lightText);
 
+  @media screen and (${device.mobileL}) {
+    height: 20px;
+    font-size: 14px;
+    line-height: calc(22 / 14);
+  }
+
   @media screen and (${device.tablet}) {
     height: 32px;
     font-size: 16px;
@@ -148,6 +195,9 @@ export const BottomSign = styled.p`
 `;
 
 export const DocsWrp = styled.div`
+  @media screen and (${device.mobileL}) {
+  }
+
   @media screen and (${device.tablet}) {
     margin-right: ${({ path }) => (path === '/contacts' ? '40px' : null)};
     margin-bottom: ${({ path }) => (path === '/contacts' ? '20px' : null)};
@@ -168,6 +218,10 @@ export const DocumentTitleStyled = styled.button`
   color: var(--lightText);
 
   &:first-of-type {
+    @media screen and (${device.mobileL}) {
+      margin-bottom: 8px;
+    }
+
     @media screen and (${device.tablet}) {
       margin-bottom: 20px;
     }
@@ -181,6 +235,14 @@ export const DocumentTitleStyled = styled.button`
   &:focus {
     transition: color var(--timing-function) var(--animation-duration);
     color: var(--accentLink);
+  }
+
+  @media screen and (${device.mobileL}) {
+    height: 28px;
+    min-width: 228px;
+
+    font-size: 14px;
+    line-height: calc(25 / 14);
   }
 
   @media screen and (${device.tablet}) {
@@ -204,12 +266,17 @@ export const AddressWrp = styled.address`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
 
   font-style: normal;
 
+  @media screen and (${device.mobileL}) {
+    width: 236px;
+    gap: 8px;
+  }
+
   @media screen and (${device.tablet}) {
     width: 262px;
+    gap: 16px;
   }
 
   @media screen and (${device.desktop}) {
@@ -228,6 +295,12 @@ export const MainOfficeStyled = styled(Link)`
   &:focus {
     transition: color var(--timing-function) var(--animation-duration);
     color: var(--accentLink);
+  }
+
+  @media screen and (${device.mobileL}) {
+    height: 80px;
+    font-size: 14px;
+    line-height: calc(25 / 14);
   }
 
   @media screen and (${device.tablet}) {
@@ -251,6 +324,12 @@ export const PhoneStyled = styled(Link)`
   ${fontLayoutMenu};
   color: var(--lightText);
 
+  @media screen and (${device.mobileL}) {
+    height: 28px;
+    font-size: 14px;
+    line-height: calc(25 / 14);
+  }
+
   @media screen and (${device.tablet}) {
     height: 20px;
     font-size: 16px;
@@ -270,6 +349,12 @@ export const EmailStyled = styled.p`
 
   ${fontLayoutMenu};
   color: var(--lightText);
+
+  @media screen and (${device.mobileL}) {
+    height: 28px;
+    font-size: 14px;
+    line-height: calc(25 / 14);
+  }
 
   @media screen and (${device.tablet}) {
     height: 20px;
