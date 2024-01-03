@@ -7,7 +7,7 @@ export const UlStyled = styled.ul`
 	flex-direction: ${props => (props.sideMenu ? "column" : "row")};
 	align-items: ${props => (props.sideMenu ? "flex-start;" : "center")};
 	display: ${props => (props.sideMenu ? "flex" : "none")};
-	margin: ${props => (props.sideMenu ? "156px 0 0 40px" : "0")};
+	margin: ${props => (props.sideMenu ? "144px 40px 0" : "0")};
 	gap: ${props => (props.sideMenu ? "20px" : "0")};
 
 	@media screen and (${device.burger}) {

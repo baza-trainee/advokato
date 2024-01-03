@@ -48,7 +48,6 @@ export const SliderWrapper = styled.div`
 	height: fit-content;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 124px;
 	.splide__slide {
 		${flexBox}
 		opacity: 1;
@@ -63,7 +62,7 @@ export const SliderWrapper = styled.div`
 		padding-bottom: 120px;
 	}
 	@media screen and (${device.desktop}) {
-		padding-bottom: 124px;
+		padding-bottom: 132px;
 	}
 `;
 

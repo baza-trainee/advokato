@@ -22,12 +22,7 @@ export const Container = styled.div`
 		display: flex;
 		justify-content: space-between;
 	}
-	${container};
-	padding-top: calc(132px + 120px);
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
+	
 	@media screen and (${device.mobileL}) {
 		padding-top: calc(60px + 80px);
 	}	
@@ -52,6 +47,7 @@ export const MainTitleStyled = styled.h1`
 		line-height: 58.51px;
 	}
 	@media screen and (${device.tablet}) {
+		width: 592px;
 		height: 180px;
 		margin-bottom: 52px;
 		font-size: 72px;
@@ -65,7 +61,14 @@ export const MainTitleStyled = styled.h1`
         line-height: 121.9px;  
 	}
 `;
-
+export const SubtitleWrapper = styled.div`
+	@media screen and (${device.tablet}) {
+		max-width: 860px;
+	}
+	@media screen and (${device.desktop}) {
+		max-width: 1120px;
+	}
+`
 export const SubtitleStyled = styled.h2`
 	${fontSectionText};
 	width: 412px;

@@ -262,7 +262,7 @@ export const size = {
   mobileM: '375px',
   mobileL: '768px',
   tablet: '1024px',
-  burger: '1200px',
+  burger: '1201px',
   laptop: '1280px',
   desktop: '1440px',
 };

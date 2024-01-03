@@ -5,7 +5,6 @@ import {
 	fontLayoutMenu,
 	fontReview,
 	fontLayoutCall,
-	container,
 } from "../../styles/mixins";
 
 export const HeaderStyled = styled.header`
@@ -51,6 +50,7 @@ export const Container = styled.div`
 	@media screen and (${device.tablet}) {
 		padding-left: 80px;
 		padding-right: 80px;
+		height: 76px;
 	}
 	@media screen and (${device.desktop}) {
 		padding-left: 60px;
@@ -130,7 +130,7 @@ export const HamburgerMenu = styled.div`
 `;
 
 export const LangButton = styled.button`
-	display: ${props => (props.desktop === "desktop" ? "none;" : "block")};
+	display: ${props => (props.desktop === "desktop" ? "none" : "block")};
 	${fontReview};
 	margin: ${props => (props.burger ? "136px 0 0 40px" : "0")};
 	color: var(--lightText);
@@ -142,10 +142,9 @@ export const LangButton = styled.button`
 		width: 56px;
 		height: 60px;
 	}
+
 	@media screen and (${device.burger}) {
 		display: block;
-	}
-	@media screen and (${device.desktop}) {
 		width: 48px;
 		height: 48px;
 	}

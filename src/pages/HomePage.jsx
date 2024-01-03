@@ -16,11 +16,11 @@ export const HomePage = () => {
 		<Suspense>
 			<HomeHero />
 			<Owner />
-			<Information />
+			{/* <Information /> */}
 			<TeamGallery />
 			<PracticeSection />
 			<ProBono />
-			<ResultsSection />
+			{/* <ResultsSection /> */}
 			<ClientsBlock />
 			<ClientReviews />
 			<FeedBackForm />
