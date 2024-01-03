@@ -55,7 +55,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 
   return (
     <>
-      <HeaderStyled top={top}>
+      {/* <HeaderStyled top={top}>
         <Container>
           <PhoneBurger onClick={() => setModalActive(prev => !prev)}>
             <Icon
@@ -119,14 +119,14 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
             </PhonesDiv>
           </ConsultElement>
         </Container>
-      </HeaderStyled>
+      </HeaderStyled> */}
 
       <MainStyled>
         <Suspense fallback={<LoadingAnimated />}>
           <Outlet />
         </Suspense>
       </MainStyled>
-      <Footer />
+      {/* <Footer /> */}
 
       <ScrollUpButton />
 
