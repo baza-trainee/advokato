@@ -10,10 +10,12 @@ export const Container = styled.div`
 
   @media screen and (${device.mobileL}) {
     padding: 60px 60px;
+    max-width: calc(312px + 54px + 280px + 120px);
   }
 
   @media screen and (${device.tablet}) {
     padding: 120px 80px;
+    max-width: calc(428px + 88px + 348px + 160px);
   }
 
   @media screen and (${device.desktop}) {

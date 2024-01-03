@@ -14,17 +14,16 @@ const ResultsSection = lazy(() => import('../components/Results'));
 export const HomePage = () => {
   return (
     <Suspense>
-      {/* <HomeHero />
-      <Owner /> */}
-      <div style={{ height: '100px', backgroundColor: 'black' }}></div>
+      <HomeHero />
+      <Owner />
       <Information />
-      {/* <TeamGallery />
+      <TeamGallery />
       <PracticeSection />
       <ProBono />
       <ResultsSection />
       <ClientsBlock />
       <ClientReviews />
-      <FeedBackForm /> */}
+      <FeedBackForm />
     </Suspense>
   );
 };

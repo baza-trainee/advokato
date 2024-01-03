@@ -6,6 +6,10 @@ export const LiStyled = styled.li`
   flex-direction: ${({ id }) => (id % 2 === 0 ? 'row-reverse' : 'row')};
   justify-content: space-between;
 
+  @media screen and (${device.mobileL}) {
+    min-height: 300px;
+  }
+
   @media screen and (${device.tablet}) {
     min-height: 430px;
   }
@@ -21,6 +25,11 @@ export const ImageWrp = styled.div`
 
 export const ImageStyled = styled.img`
   border-radius: 24px;
+
+  @media screen and (${device.mobileL}) {
+    width: 312px;
+    height: 208px;
+  }
 
   @media screen and (${device.tablet}) {
     width: 428px;
@@ -38,19 +47,29 @@ export const ShortTextStyled = styled.div`
   top: 0;
   left: 0;
 
-  border-radius: 24px;
   background-color: var(--lightText);
 
   h3 {
-    margin-bottom: 20px;
-    height: 28px;
-
     font-family: var(--Raleway);
-    font-size: 18px;
     font-weight: 600;
-    line-height: calc(27 / 18);
     letter-spacing: 0em;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      margin-bottom: 12px;
+      height: 24px;
+
+      font-size: 16px;
+      line-height: calc(24 / 16);
+    }
+
+    @media screen and (${device.tablet}) {
+      margin-bottom: 20px;
+      height: 28px;
+
+      font-size: 18px;
+      line-height: calc(27 / 18);
+    }
   }
 
   p {
@@ -59,6 +78,11 @@ export const ShortTextStyled = styled.div`
     letter-spacing: 0em;
     font-style: italic;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      font-size: 14px;
+      line-height: calc(21 / 14);
+    }
 
     @media screen and (${device.tablet}) {
       font-size: 16px;
@@ -69,6 +93,14 @@ export const ShortTextStyled = styled.div`
       font-size: 18px;
       line-height: calc(27 / 18);
     }
+  }
+
+  @media screen and (${device.mobileL}) {
+    transform: translate(-40px, 120px);
+    padding: 16px;
+    width: 280px;
+    min-height: 196px;
+    border-radius: 16px;
   }
 
   @media screen and (${device.tablet}) {
@@ -82,6 +114,7 @@ export const ShortTextStyled = styled.div`
     transform: translate(-72px, 250px);
     padding: 40px 24px;
     width: 520px;
+    border-radius: 24px;
   }
 `;
 
@@ -90,6 +123,12 @@ export const DescriptionStyled = styled.p`
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--mainText);
+
+  @media screen and (${device.mobileL}) {
+    width: 280px;
+    font-size: 16px;
+    line-height: calc(26 / 16);
+  }
 
   @media screen and (${device.tablet}) {
     width: 348px;
