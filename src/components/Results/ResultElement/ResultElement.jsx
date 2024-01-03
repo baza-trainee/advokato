@@ -1,79 +1,110 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { getContent } from "/src/api/fetchContent";
 
 import { ModalFromRoot } from "../../ModalFromRoot";
 import ResultsModal from "../ResultsModal/ResultsModal";
 
-import { resultsItems } from "../ResultItems.js";
 import {
 	ContentStyled,
 	WrapperStyled,
 	ResultItemStyled,
+	ImageBlock,
 	ImageStyled,
 	ResultText,
 	BubbleForm,
-	ButtonStyled,
+	BubbleFormText,
 	PublicationDate,
 	ArrowBlock,
 } from "./ResultElement.styled.js";
 
 import { Icon } from "../../Icon";
-import { useState } from "react";
 
 export const ResultElement = () => {
-	const [modalActive, setModalActive] = useState(false);
+	const [modalData, setModalData] = useState(null);
+	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		if (!modalActive) {
+		getContent("https://advocato-backend.vercel.app/api/v1/news").then(res =>
+			setData(res),
+		);
+	}, []);
+
+	useEffect(() => {
+		if (!modalData) {
 			document.body.style.overflowY = "auto";
 		}
-	}, [modalActive]);
+	}, [modalData]);
 
-	const toggleModal = () => {
+	const openModalWithSpecificData = selectedData => {
 		document.body.style.overflowY = "hidden";
-		setModalActive(prev => !prev);
+		setModalData(selectedData);
 	};
 
-	
+	const closeModal = () => {
+		document.body.style.overflowY = "auto";
+		setModalData(null);
+	};
+
 	return (
 		<>
-			{resultsItems.map(item => (
-				<ContentStyled key={item.id}>
-					<WrapperStyled>
-						<ResultItemStyled>
-							<ImageStyled
-								src={item.imageUrl}
-								width={464}
-								height={380}
-								alt="photo-result"
-							/>
+			{data?.length > 1 &&
+				data.map(
+					(
+						{
+							id,
+							photo_path,
+							name,
+							description,
+							specialization_name,
+							created_at,
+						},
+						index,
+					) => (
+						<ContentStyled key={id}>
+							<WrapperStyled>
+								<ResultItemStyled>
+									<ImageBlock
+										width={464}
+										height={312}
+									>
+										<ImageStyled
+											src={photo_path}
+											alt="photo-result"
+										/>
+									</ImageBlock>
 
-							<ResultText>
-								<h3>{item.title}</h3>
-								<p className="desc">{item.desc}</p>
-								<BubbleForm>
-									<ButtonStyled>Корпоративне право</ButtonStyled>
-									<PublicationDate>11/07/2022</PublicationDate>
-								</BubbleForm>
-							</ResultText>
-						</ResultItemStyled>
-					</WrapperStyled>
-					<ArrowBlock onClick={toggleModal}>
-						<Icon
-							id={"icon-arrow-up"}
-							width={14}
-							height={12}
-						/>
-					</ArrowBlock>
-					{modalActive && (
-						<ModalFromRoot
-							toggleModal={toggleModal}
-							align={"flex-start"}
-						>
-							<ResultsModal setModalActive={setModalActive} />
-						</ModalFromRoot>
-					)}
-				</ContentStyled>
-			))}
+									<ResultText>
+										<h3>{name}</h3>
+										<p className="desc">{description}</p>
+										<BubbleForm>
+											<BubbleFormText>{specialization_name}</BubbleFormText>
+											<PublicationDate>{created_at}</PublicationDate>
+										</BubbleForm>
+									</ResultText>
+								</ResultItemStyled>
+							</WrapperStyled>
+
+							<ArrowBlock onClick={() => openModalWithSpecificData(data[index])}>
+								<Icon
+									id={"icon-arrow-up"}
+									width={14}
+									height={12}
+								/>
+							</ArrowBlock>
+							{modalData && (
+								<ModalFromRoot
+									toggleModal={closeModal}
+									align={"flex-start"}
+								>
+									<ResultsModal
+										data={modalData}
+										setModalActive={closeModal}
+									/>
+								</ModalFromRoot>
+							)}
+						</ContentStyled>
+					),
+				)}
 		</>
 	);
 };
