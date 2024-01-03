@@ -46,7 +46,7 @@ export const ContentWrp = styled.div`
 
   @media screen and (${device.mobileL}) {
     margin-bottom: 12px;
-    padding: 0;
+    padding: ${({ path }) => (path !== '/contacts' ? '0 0 12px 0' : '0')};
     gap: 56px;
   }
 
@@ -80,19 +80,21 @@ export const ListStyled = styled.ul`
     gap: 24px;
     min-width: 92px;
   }
+`;
 
-  li {
-    @media screen and (${device.mobileL}) {
-      height: 28px;
-    }
+export const ListItemStyled = styled.li`
+  order: ${({ position }) => position};
+  
+  @media screen and (${device.mobileL}) {
+    height: 28px;
+  }
 
-    @media screen and (${device.tablet}) {
-      height: 20px;
-    }
+  @media screen and (${device.tablet}) {
+    height: 20px;
+  }
 
-    @media screen and (${device.desktop}) {
-      height: 32px;
-    }
+  @media screen and (${device.desktop}) {
+    height: 32px;
   }
 `;
 

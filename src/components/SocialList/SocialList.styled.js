@@ -7,7 +7,8 @@ export const SocialListStyled = styled.ul`
   ${flexBox};
   justify-content: start;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    gap: 16px;
   }
 
   @media screen and (${device.tablet}) {
@@ -23,10 +24,7 @@ export const ItemStyled = styled.li`
   ${flexBox};
   order: ${({ position }) => position};
 
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     width: 24px;
     height: 24px;
   }
@@ -44,10 +42,7 @@ export const SocialLink = styled(Link)`
     fill: var(--lightText);
     fill: ${({ currentfill }) => (currentfill ? currentfill : null)};
 
-    @media screen and (min-width: 768px) {
-    }
-
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       width: 24px;
       height: 24px;
     }

@@ -14,7 +14,7 @@ const ResultsSection = lazy(() => import('../components/Results'));
 export const HomePage = () => {
   return (
     <Suspense>
-      {/* <HomeHero />
+      <HomeHero />
       <Owner />
       <Information />
       <TeamGallery />
@@ -22,7 +22,7 @@ export const HomePage = () => {
       <ProBono />
       <ResultsSection />
       <ClientsBlock />
-      <ClientReviews /> */}
+      <ClientReviews />
       <FeedBackForm />
     </Suspense>
   );
