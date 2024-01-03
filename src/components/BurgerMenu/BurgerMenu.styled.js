@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { device } from "../../styles/mixins";
 
 export const SectionStyled = styled.section`
 	display: block;
@@ -19,6 +20,15 @@ export const SectionStyled = styled.section`
 	}
 	&.close {
 		display: none;
+	}
+	@media screen and (${device.mobileL}) {
+		width: 152px;
+	}
+	@media screen and (${device.tablet}) {
+		width: 172px;
+	}
+	@media screen and (${device.preburger}) {
+		width: 216px;
 	}
 	@keyframes appearMenu {
 	from{opacity:0};

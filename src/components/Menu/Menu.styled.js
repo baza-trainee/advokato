@@ -7,9 +7,17 @@ export const UlStyled = styled.ul`
 	flex-direction: ${props => (props.sideMenu ? "column" : "row")};
 	align-items: ${props => (props.sideMenu ? "flex-start;" : "center")};
 	display: ${props => (props.sideMenu ? "flex" : "none")};
-	margin: ${props => (props.sideMenu ? "156px 0 0 40px" : "0")};
+	margin: ${props => (props.sideMenu ? "144px 40px 0" : "0")};
 	gap: ${props => (props.sideMenu ? "20px" : "0")};
-
+	@media screen and (${device.mobileL}) {
+		margin: ${props => (props.sideMenu ? "96px 40px 0" : "0")};
+	}
+	@media screen and (${device.tablet}) {
+		margin: ${props => (props.sideMenu ? "144px 40px 0" : "0")};
+	}
+	@media screen and (${device.preburger}) {
+		margin: ${props => (props.sideMenu ? "156px 40px 0" : "0")};
+	}
 	@media screen and (${device.burger}) {
 		${flexBox};
 		gap: 44px;

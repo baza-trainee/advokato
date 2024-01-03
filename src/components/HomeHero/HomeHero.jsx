@@ -4,6 +4,7 @@ import {
   Container,
   MainTitleStyled,
   SubtitleStyled,
+  SubtitleWrapper,
 } from './HomeHero.styled';
 import { isObjectEmpty } from '../../helpers';
 import { getContent } from '../../api';
@@ -28,10 +29,10 @@ export const HomeHero = () => {
       <Container>
         <MainTitleStyled>{data?.slogan}</MainTitleStyled>
 
-        <div>
+        <SubtitleWrapper>
           <SubtitleStyled>{data?.left_text}</SubtitleStyled>
           <SubtitleStyled>{data?.right_text}</SubtitleStyled>
-        </div>
+        </SubtitleWrapper>
       </Container>
     </SectionStyled>
   );
