@@ -30,7 +30,7 @@ export const Panel = styled.div`
 		padding: 46px 60px;
 		max-width: 864px;
 
-		font-size: 22px;
+		font-size: 16px;
 		line-height: 35px;
 		text-align: left;
 	}
@@ -57,7 +57,7 @@ export const PolicyLink = styled.a`
 	}
 
 	@media screen and (${device.tablet}) {
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 26px;
 	}
 
