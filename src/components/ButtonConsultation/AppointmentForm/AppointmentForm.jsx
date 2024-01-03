@@ -228,6 +228,7 @@ export const AppointmentForm = ({ setModalActive }) => {
         <FormStyled
           onSubmit={handleSubmit(onSubmit, onErrors)}
           autoComplete="off"
+          currentPartForm={currentPartForm}
         >
           {currentPartForm === 1 && (
             <>

@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
-  border-top: 88px solid var(--darkBackground);
-
   @media screen and (${device.tablet}) {
+    border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
     padding-bottom: 108px;
   }
 
   @media screen and (${device.desktop}) {
+    border-top: 88px solid var(--darkBackground);
     padding-top: 184px;
     padding-bottom: 132px;
   }
