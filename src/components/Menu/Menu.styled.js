@@ -20,6 +20,12 @@ export const UlStyled = styled.ul`
 	}
 	@media screen and (${device.burger}) {
 		${flexBox};
+		gap: 15px;
+		width: 500px;
+		height: 24px;
+	}
+	@media screen and (${device.laptop}) {
+		${flexBox};
 		gap: 44px;
 		width: 600px;
 		height: 24px;

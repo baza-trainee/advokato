@@ -267,7 +267,7 @@ export const size = {
   tablet: '1024px',
   preburger:'1200px',
   burger: '1201px',
-  laptop: '1280px',
+  laptop: '1320px',
   desktop: '1440px',
 };
 

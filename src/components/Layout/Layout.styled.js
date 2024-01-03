@@ -85,6 +85,7 @@ export const Container = styled.div`
 		height: 80px;
 		padding-left: 120px;
 		padding-right: 120px;
+		gap:10px;
 	}
 	@media screen and (${device.desktop}) {
 		padding-left: 60px;
