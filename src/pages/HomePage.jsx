@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { HomeHero } from '../components/HomeHero';
 import { Information } from '../components/Information';
 import { Owner } from '../components/Owner';
@@ -7,24 +6,23 @@ import { ProBono } from '../components/ProBono/ProBono';
 import { ClientsBlock } from '../components/ClientsBlock';
 import { ClientReviews } from '../components/ClientReviews';
 import { TeamGallery } from '../components/TeamGallery';
-
-const PracticeSection = lazy(() => import('../components/Practice'));
-const ResultsSection = lazy(() => import('../components/Results'));
+import { Practice } from '../components/Practice';
+import { Results } from '../components/Results';
 
 export const HomePage = () => {
   return (
-    <Suspense>
+    <>
       <HomeHero />
       <Owner />
       <Information />
       <TeamGallery />
-      <PracticeSection />
+      <Practice />
       <ProBono />
-      <ResultsSection />
+      <Results />
       <ClientsBlock />
       <ClientReviews />
       <FeedBackForm />
-    </Suspense>
+    </>
   );
 };
 
