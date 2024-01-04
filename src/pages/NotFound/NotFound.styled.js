@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { flexBox, mainButton, device } from "../../styles/mixins";
+import { mainButton, device } from "../../styles/mixins";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -7,10 +7,11 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 26px;
+	padding: 0 56px;
 
 	background-color: var(--lightBackground);
-	@media screen and (min-width: 768px) {
+
+	@media screen and (${device.mobileL}) {
 		padding: 0 80px;
 	}
 	@media screen and (${device.tablet}) {
@@ -32,14 +33,14 @@ export const TopBackground = styled.div`
 
 	background-color: var(--darkBackground);
 
-	@media screen and (min-width: 768px) {
-		height: 80px;
+	@media screen and (${device.mobileL}) {
+		height: 68px;
 	}
 	@media screen and (${device.tablet}) {
-		height: 100px;
+		height: 76px;
 	}
 	@media screen and (${device.burger}) {
-		height: 120px;
+		height: 80px;
 	}
 	@media screen and (${device.desktop}) {
 		height: 88px;
@@ -55,22 +56,23 @@ export const Title = styled.p`
 	font-size: 100px;
 	line-height: 122px;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (${device.mobileL}) {
 		margin-top: 200px;
 		margin-bottom: 72px;
 	}
 
 	@media screen and (${device.tablet}) {
-		margin-top: 240px;
-		margin-bottom: 52px;
+		margin-top: 224px;
+		margin-bottom: 60px;
 		font-size: 140px;
 		line-height: 170px;
 	}
 
 	@media screen and (${device.desktop}) {
+		margin-top: 240px;
 		margin-bottom: 56px;
 		font-size: 300px;
-		line-height: 365px;
+		line-height: 366px;
 	}
 `;
 
@@ -83,13 +85,13 @@ export const Text = styled.p`
 	line-height: 19px;
 	text-align: center;
 
-	@media screen and (min-width: 768px) {
-		margin-bottom: 80px;
+	@media screen and (${device.mobileL}) {
+		margin-bottom: 84px;
 		font-size: 22px;
-		line-height: 35px;
+		line-height: 31px;
 	}
 	@media screen and (${device.tablet}) {
-		margin-bottom: 76px;
+		margin-bottom: 68px;
 	}
 	@media screen and (${device.desktop}) {
 		margin-bottom: 88px;
@@ -108,21 +110,20 @@ export const Button = styled(Link)`
 	font-size: 14px;
 	line-height: 21px;
 
-	${flexBox};
-	gap: 8px;
-
 	transition: all var(--timing-function) var(--animation-duration);
 
-	@media screen and (min-width: 768px) {
-		margin-bottom: 120px;
+	@media screen and (${device.mobileL}) {
+		margin-bottom: 168px;
 
-		font-size: 16px;
-		line-height: 24px;
-		gap: 12px;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 17px;
 	}
 
 	@media screen and (${device.tablet}) {
-		margin-bottom: 140px;
+		margin-bottom: 148px;
+		font-size: 16px;
+		line-height: 19px;
 	}
 
 	@media screen and (${device.desktop}) {
