@@ -18,7 +18,7 @@ export const Container = styled.div`
   @media screen and (${device.mobileL}) {
     padding-top: 24px;
     padding-bottom: 12px;
-    height: ${({ path }) => (path === '/contacts' ? '100px' : '300px')};
+    height: ${({ path }) => (path === '/contacts' ? '148px' : '300px')};
     max-width: 648px;
   }
 
@@ -84,7 +84,7 @@ export const ListStyled = styled.ul`
 
 export const ListItemStyled = styled.li`
   order: ${({ position }) => position};
-  
+
   @media screen and (${device.mobileL}) {
     height: 28px;
   }
@@ -151,7 +151,6 @@ export const TitleCompany = styled.p`
   color: var(--lightText);
 
   @media screen and (${device.mobileL}) {
-    margin-left: ${({ path }) => (path === '/contacts' ? '40px' : null)};
     height: 28px;
     font-size: 14px;
     line-height: calc(25 / 14);
@@ -196,6 +195,7 @@ export const BottomSign = styled.p`
 
 export const DocsWrp = styled.div`
   @media screen and (${device.mobileL}) {
+    margin-bottom: ${({ path }) => (path === '/contacts' ? '12px' : null)};
   }
 
   @media screen and (${device.tablet}) {
