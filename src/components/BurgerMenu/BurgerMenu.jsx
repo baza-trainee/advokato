@@ -19,7 +19,7 @@ export const BurgerMenu = ({
 				onClick={() =>
 					activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
 				}
-				aria-label="lang-ua"
+				aria-label="перемикач мови"
 				activeLang={activeLang}
 				currentLang="ua"
 				burger
