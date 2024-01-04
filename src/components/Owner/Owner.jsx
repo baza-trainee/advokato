@@ -34,16 +34,9 @@ export const Owner = () => {
               організаціям.
             </p>
 
-            <ButtonConsultation
+            <ButtonConsultation className="btn-owner"
               modalActive={modalActive}
               setModalActive={setModalActive}
-              customStyles={{
-                padding: '20px 32px',
-                width: '364px',
-                height: '64px',
-                fontSize: '18px',
-                lineHeight: 'calc(27 / 18)',
-              }}
             />
           </TextStyled>
         </CompanyBox>
