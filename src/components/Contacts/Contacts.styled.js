@@ -2,21 +2,30 @@ import styled from '@emotion/styled';
 import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
+  @media screen and (${device.mobileL}) {
+    border-top: 68px solid var(--darkBackground);
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   @media screen and (${device.tablet}) {
     border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
-    padding-bottom: 108px;
+    padding-bottom: 132px;
   }
 
   @media screen and (${device.desktop}) {
     border-top: 88px solid var(--darkBackground);
     padding-top: 184px;
-    padding-bottom: 132px;
   }
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
+
+  @media screen and (${device.mobileL}) {
+    max-width: calc(768px - 60px * 2);
+  }
 
   @media screen and (${device.tablet}) {
     max-width: calc(1024px - 80px * 2);
@@ -32,6 +41,15 @@ export const TitleStyled = styled.h2`
 
   ${fontSectionTitle};
   color: var(--mainText);
+
+  @media screen and (${device.mobileL}) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 472px;
+    height: 40px;
+    font-size: 28px;
+    line-height: calc(39 / 28);
+  }
 
   @media screen and (${device.tablet}) {
     margin-left: auto;
@@ -54,9 +72,15 @@ export const TitleStyled = styled.h2`
 
 export const CenterWrp = styled.div`
   display: flex;
-  justify-content: space-between;
+
+  @media screen and (${device.mobileL}) {
+    flex-direction: column;
+    /* height: 348px; */
+  }
 
   @media screen and (${device.tablet}) {
+    flex-direction: row;
+    justify-content: space-between;
     height: 348px;
   }
 
@@ -67,10 +91,14 @@ export const CenterWrp = styled.div`
   p {
     ${fontSectionText};
 
+    @media screen and (${device.mobileL}) {
+      min-height: 28px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
     @media screen and (${device.tablet}) {
       min-height: 24px;
-      font-size: 16px;
-      line-height: 29px;
     }
 
     @media screen and (${device.desktop}) {
@@ -83,8 +111,33 @@ export const CenterWrp = styled.div`
 
 export const LeftSide = styled.address`
   display: flex;
-  flex-direction: column;
   font-style: normal;
+
+  @media screen and (${device.mobileL}) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+
+  @media screen and (${device.tablet}) {
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (${device.desktop}) {
+    gap: 40px;
+  }
+`;
+
+export const ContactsWrp = styled.div`
+  display: flex;
+
+  @media screen and (${device.mobileL}) {
+    flex-direction: column;
+    gap: 24px;
+  }
 
   @media screen and (${device.tablet}) {
     gap: 28px;
@@ -92,5 +145,25 @@ export const LeftSide = styled.address`
 
   @media screen and (${device.desktop}) {
     gap: 40px;
+  }
+
+  p {
+    ${fontSectionText};
+
+    @media screen and (${device.mobileL}) {
+      min-height: 28px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @media screen and (${device.tablet}) {
+      min-height: 24px;
+    }
+
+    @media screen and (${device.desktop}) {
+      min-height: 36px;
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 `;
