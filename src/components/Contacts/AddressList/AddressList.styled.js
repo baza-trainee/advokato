@@ -7,7 +7,9 @@ export const UlStyled = styled.ul`
   margin-left: 20px;
   list-style: square;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    gap: 24px;
+    max-width: 328px;
   }
 
   @media screen and (${device.tablet}) {
@@ -27,13 +29,14 @@ export const ListItem = styled.li`
   p {
     ${fontSectionText};
 
-    @media screen and (min-width: 768px) {
+    @media screen and (${device.mobileL}) {
+      min-height: 28px;
+      font-size: 16px;
+      line-height: 29px;
     }
 
     @media screen and (${device.tablet}) {
       min-height: 24px;
-      font-size: 16px;
-      line-height: 29px;
     }
 
     @media screen and (${device.desktop}) {

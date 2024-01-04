@@ -5,11 +5,22 @@ import { device, fontLayoutMenu } from '../../styles/mixins';
 export const FooterStyled = styled.footer`
   position: relative;
   z-index: 100;
-  margin-top: -110px;
 
   border-radius: 24px 24px 0 0;
   border-top: 1px solid var(--reviewText);
   background-color: var(--darkBackground);
+
+  @media screen and (${device.mobileL}) {
+    margin-top: -68px;
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-top: calc(-76px - 24px);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-top: calc(-88px - 24px);
+  }
 `;
 
 export const Container = styled.div`
@@ -18,7 +29,7 @@ export const Container = styled.div`
   @media screen and (${device.mobileL}) {
     padding-top: 24px;
     padding-bottom: 12px;
-    height: ${({ path }) => (path === '/contacts' ? '100px' : '300px')};
+    height: ${({ path }) => (path === '/contacts' ? '148px' : '300px')};
     max-width: 648px;
   }
 
@@ -84,7 +95,7 @@ export const ListStyled = styled.ul`
 
 export const ListItemStyled = styled.li`
   order: ${({ position }) => position};
-  
+
   @media screen and (${device.mobileL}) {
     height: 28px;
   }
@@ -151,7 +162,6 @@ export const TitleCompany = styled.p`
   color: var(--lightText);
 
   @media screen and (${device.mobileL}) {
-    margin-left: ${({ path }) => (path === '/contacts' ? '40px' : null)};
     height: 28px;
     font-size: 14px;
     line-height: calc(25 / 14);
@@ -196,6 +206,7 @@ export const BottomSign = styled.p`
 
 export const DocsWrp = styled.div`
   @media screen and (${device.mobileL}) {
+    margin-bottom: ${({ path }) => (path === '/contacts' ? '12px' : null)};
   }
 
   @media screen and (${device.tablet}) {
