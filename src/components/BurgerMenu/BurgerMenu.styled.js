@@ -11,7 +11,7 @@ export const SectionStyled = styled.div`
 	background:var(--darkGrey); 
 	border: none;
 	border-radius: 24px 0 0 24px;
-	z-index: 3000;
+	z-index: 30;
 	transition: 1s;
 	animation:.7s ease-in-out appearMenu forwards;
 	nav {

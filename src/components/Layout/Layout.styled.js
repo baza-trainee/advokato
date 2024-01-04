@@ -153,6 +153,7 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+		z-index: 50;
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -175,6 +176,7 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
+		z-index: 50;
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -196,6 +198,7 @@ export const HamburgerMenu = styled.div`
 		top: 0;
 		transform: rotateZ(-45deg);
 		transition: top 0.25s, transform 0.25s 0.25s;
+		z-index: 50;
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}
@@ -211,6 +214,7 @@ export const HamburgerMenu = styled.div`
 		top: 0;
 		transform: rotateZ(45deg);
 		transition: top 0.4s, transform 0.25s 0.25s;
+		z-index: 50;
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}
