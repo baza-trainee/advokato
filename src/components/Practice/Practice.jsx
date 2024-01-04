@@ -4,11 +4,14 @@ import { useTranslation } from 'react-i18next';
 import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
 
+import { useWindowDimensions } from '../../hooks';
 import { isObjectEmpty } from '../../helpers';
 import { PracticeList } from './PracticeList';
 import { ButtonConsultation } from '../ButtonConsultation';
 import { getContent } from '../../api';
 import {
+  tabletAndDesktop,
+  mobileLAndTablet,
   SectionStyled,
   Container,
   TitleStyled,
@@ -30,6 +33,8 @@ export const Practice = () => {
   const [practices, setPractices] = useState([]);
   const [currentPractice, setCurrentPractice] = useState([]);
   const [modalActive, setModalActive] = useState(false);
+  const { height, width } = useWindowDimensions();
+  const [ButtonStyles, setButtonStyles] = useState(tabletAndDesktop);
 
   useEffect(() => {
     const getData = async () => {
@@ -59,6 +64,20 @@ export const Practice = () => {
       }, 0);
     }
   }, [pathname, hash]);
+
+  useEffect(() => {
+    if (!width) {
+      return;
+    }
+
+    if (width >= 1024) {
+      return setButtonStyles(prev => tabletAndDesktop);
+    }
+
+    if (width >= 768) {
+      return setButtonStyles(prev => mobileLAndTablet);
+    }
+  }, [width]);
 
   const sanitizedMarkup = DOMPurify.sanitize(
     currentPractice?.specialization_description_full
@@ -123,11 +142,7 @@ export const Practice = () => {
               <ButtonConsultation
                 modalActive={modalActive}
                 setModalActive={setModalActive}
-                customStyles={{
-                  padding: '16px 24px',
-                  width: '288px',
-                  height: '52px',
-                }}
+                customStyles={ButtonStyles}
               />
             </PracticeInfo>
 
