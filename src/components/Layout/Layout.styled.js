@@ -26,6 +26,9 @@ export const HeaderStyled = styled.header`
 		height: 68px;
 		font-size: 14px;
 		line-height: calc(25.2 / 14);
+		nav {
+			display: none;
+		}
 		img {
 			width: 156px;
 			height: 52px;
@@ -59,6 +62,9 @@ export const HeaderStyled = styled.header`
 	}
 	@media screen and (${device.burger}) {
 		height: 88px;
+		nav {
+			display: block;
+		}
 		img {
 			margin: 0;
 			width: 152px;
@@ -85,7 +91,7 @@ export const Container = styled.div`
 		height: 80px;
 		padding-left: 120px;
 		padding-right: 120px;
-		gap:10px;
+		gap: 10px;
 	}
 	@media screen and (${device.desktop}) {
 		padding-left: 60px;

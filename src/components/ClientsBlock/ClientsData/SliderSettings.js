@@ -13,10 +13,9 @@ export const options = {
 	interval: 4000,
 	breakpoints: {
 		768: {
-			perPage: 2,
-			width: "520px",
-			height: "148px",
-			gap: "24px",
+			perPage: 3,
+			width: "964px",
+			gap: "32px",
 		},
 		1024: {
 			perPage: 4,

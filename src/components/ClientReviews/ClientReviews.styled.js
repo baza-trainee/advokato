@@ -33,7 +33,7 @@ export const ClientsBlockHeader = styled.h2`
         line-height: calc(44.8 / 32);  
 	}
 	@media screen and (${device.desktop}) {
-		padding: 132px 151px 40px;
+		padding: 132px 160px 40px;
 		font-size: 40px;
         font-weight: 500;
         line-height: calc(56 / 40);  
