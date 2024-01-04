@@ -26,7 +26,10 @@ export const container = () => {
           padding-left: 80px;
           padding-right: 80px;
         }
-
+        @media screen and (min-width: 1200px) {
+          padding-left: 120px;
+          padding-right: 120px;
+        }
         @media screen and (min-width: 1440px) {
           padding-left: 160px;
           padding-right: 160px;
@@ -262,7 +265,8 @@ export const size = {
   mobileM: '375px',
   mobileL: '768px',
   tablet: '1024px',
-  burger: '1200px',
+  preburger:'1200px',
+  burger: '1201px',
   laptop: '1280px',
   desktop: '1440px',
 };
@@ -272,6 +276,7 @@ export const device = {
   mobileM: `min-width: ${size.mobileM}`,
   mobileL: `min-width: ${size.mobileL}`,
   tablet: `min-width: ${size.tablet}`,
+  preburger: `min-width: ${size.preburger}`,
   burger: `min-width: ${size.burger}`,
   laptop: `min-width: ${size.laptop}`,
   desktop: `min-width: ${size.desktop}`,

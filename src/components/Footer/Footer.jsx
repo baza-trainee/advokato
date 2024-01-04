@@ -14,6 +14,7 @@ import {
   DocumentTitleStyled,
   LinkStyled,
   ListStyled,
+  ListItemStyled,
   TitleCompany,
   BottomSign,
   MainOfficeStyled,
@@ -79,6 +80,44 @@ export const Footer = () => {
     }
   }, [modalActive]);
 
+  const navData = [
+    {
+      id: 1,
+      path: '/',
+      label: 'посилання на головну сторінку',
+      name: 'home',
+      title: t('header.nav.home'),
+    },
+    {
+      id: 2,
+      path: '/company',
+      label: 'посилання на сторінку компанії',
+      name: 'company',
+      title: t('header.nav.company'),
+    },
+    {
+      id: 3,
+      path: '/#practice',
+      label: 'посилання на сторінку практики',
+      name: 'practice',
+      title: t('header.nav.practice'),
+    },
+    {
+      id: 4,
+      path: '/#news',
+      label: 'посилання на сторінку новин',
+      name: 'news',
+      title: t('header.nav.news'),
+    },
+    {
+      id: 5,
+      path: '/contacts',
+      label: 'посилання на сторінку контактів',
+      name: 'contacts',
+      title: t('header.nav.contacts'),
+    },
+  ];
+
   const toggleModal = () => {
     document.body.style.overflowY = 'hidden';
     setModalActive(prev => !prev);
@@ -98,56 +137,18 @@ export const Footer = () => {
             {location.pathname !== '/contacts' && (
               <nav>
                 <ListStyled>
-                  <li>
-                    <LinkStyled
-                      to="/"
-                      aria-label="посилання на головну сторінку"
-                      current="home"
-                      active={active}
-                    >
-                      {t('header.nav.home')}
-                    </LinkStyled>
-                  </li>
-                  <li>
-                    <LinkStyled
-                      to="/company"
-                      aria-label="посилання на сторінку компанії"
-                      current="company"
-                      active={active}
-                    >
-                      {t('header.nav.company')}
-                    </LinkStyled>
-                  </li>
-                  <li>
-                    <LinkStyled
-                      to="/#practice"
-                      aria-label="посилання на сторінку практики"
-                      current="practice"
-                      active={active}
-                    >
-                      {t('header.nav.practice')}
-                    </LinkStyled>
-                  </li>
-                  <li>
-                    <LinkStyled
-                      to="/#news"
-                      aria-label="посилання на сторінку новин"
-                      current="news"
-                      active={active}
-                    >
-                      {t('header.nav.news')}
-                    </LinkStyled>
-                  </li>
-                  <li>
-                    <LinkStyled
-                      to="/contacts"
-                      aria-label="посилання на сторінку контактів"
-                      current="contacts"
-                      active={active}
-                    >
-                      {t('header.nav.contacts')}
-                    </LinkStyled>
-                  </li>
+                  {navData.map(({ id, path, label, name, title }) => (
+                    <ListItemStyled key={id} position={id}>
+                      <LinkStyled
+                        to={path}
+                        aria-label={label}
+                        current={name}
+                        active={active}
+                      >
+                        {title}
+                      </LinkStyled>
+                    </ListItemStyled>
+                  ))}
                 </ListStyled>
               </nav>
             )}

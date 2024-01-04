@@ -8,8 +8,14 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
   margin: 0 auto;
 
+  @media screen and (${device.mobileL}) {
+    padding: 60px 60px;
+    max-width: calc(312px + 54px + 280px + 120px);
+  }
+
   @media screen and (${device.tablet}) {
     padding: 120px 80px;
+    max-width: calc(428px + 88px + 348px + 160px);
   }
 
   @media screen and (${device.desktop}) {
@@ -19,12 +25,19 @@ export const Container = styled.div`
 `;
 
 export const TitleStyled = styled.h2`
-  margin-bottom: 40px;
-
   ${fontSectionTitle};
   color: var(--mainText);
 
+  @media screen and (${device.mobileL}) {
+    margin-bottom: 24px;
+    width: 574px;
+
+    font-size: 24px;
+    line-height: calc(34 / 24);
+  }
+
   @media screen and (${device.tablet}) {
+    margin-bottom: 40px;
     width: 756px;
 
     font-size: 32px;

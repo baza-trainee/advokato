@@ -22,21 +22,22 @@ export const Container = styled.div`
 		display: flex;
 		justify-content: space-between;
 	}
-	${container};
-	padding-top: calc(132px + 120px);
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
+
 	@media screen and (${device.mobileL}) {
-		padding-top: calc(60px + 80px);
-	}	
+		max-width:768px;
+		padding-top: calc(72px + 68px);
+	}
 	@media screen and (${device.tablet}) {
-		padding-top: calc(120px + 100px);
+		max-width: 1024px;
+		padding-top: calc(144px + 76px);
+	}
+	@media screen and (${device.preburger}) {
+		max-width: 1200px;
+		padding-top: calc(172px + 80px);
 	}
 	@media screen and (${device.desktop}) {
 		max-width: 1440px;
-		padding-top: calc(132px + 140px);
+		padding-top: calc(182px + 88px);
 	}
 `;
 
@@ -46,26 +47,41 @@ export const MainTitleStyled = styled.h1`
 	overflow: hidden;
 	@media screen and (${device.mobileL}) {
 		height: 120px;
-		margin-bottom: 60px;
+		width: 388px;
+		margin-bottom: 56px;
 		font-size: 48px;
-        font-weight: 600;
+		font-weight: 600;
 		line-height: 58.51px;
 	}
 	@media screen and (${device.tablet}) {
+		width: 592px;
 		height: 180px;
 		margin-bottom: 52px;
 		font-size: 72px;
 		line-height: 87.77px;
+	}
+	@media screen and (${device.tablet}) {
+		margin-bottom: 100px;
 	}
 	@media screen and (${device.desktop}) {
 		margin-bottom: 68px;
 		width: 820px;
 		height: 244px;
 		font-size: 100px;
-        line-height: 121.9px;  
+		line-height: 121.9px;
 	}
 `;
-
+export const SubtitleWrapper = styled.div`
+	@media screen and (${device.mobileL}) {
+		max-width: 648px;
+	}
+	@media screen and (${device.tablet}) {
+		max-width: 860px;
+	}
+	@media screen and (${device.desktop}) {
+		max-width: 1120px;
+	}
+`;
 export const SubtitleStyled = styled.h2`
 	${fontSectionText};
 	width: 412px;
@@ -79,9 +95,9 @@ export const SubtitleStyled = styled.h2`
 	overflow: hidden;
 	@media screen and (${device.mobileL}) {
 		width: 312px;
-		height: 100px;
+		height: 104px;
 		font-size: 16px;
-        font-weight: 400;
+		font-weight: 400;
 		line-height: 25.6px;
 		:last-of-type {
 			width: 258px;

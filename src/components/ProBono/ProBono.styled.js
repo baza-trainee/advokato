@@ -22,6 +22,9 @@ export const Container = styled.div`
 	max-width: 1440px;
 	padding: 132px 160px;
 	overflow: hidden;
+	@media screen and (${device.mobileL}) {
+		padding: 60px;
+	}
 	@media screen and (${device.tablet}) {
 		padding: 120px 80px;
 	}
@@ -35,6 +38,10 @@ export const BlockWrapper = styled.div`
 	justify-content: space-between;
 
 	margin: 40px auto 0;
+	@media screen and (${device.mobileL}) {
+		width: 648px;
+		height: 496px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 864px;
 		height: 552px;
@@ -43,8 +50,7 @@ export const BlockWrapper = styled.div`
 		width: 1120px;
 		height: 572px;
 	}
-
-  `;
+`;
 
 export const LeftSide = styled.div`
 	position: relative;
@@ -57,7 +63,10 @@ export const LeftSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
-
+	@media screen and (${device.mobileL}) {
+		width: 300px;
+		height: 496px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
@@ -80,7 +89,10 @@ export const RightSide = styled.div`
 		height: 100%;
 		object-fit: cover;
 	}
-
+	@media screen and (${device.mobileL}) {
+		width: 300px;
+		height: 496px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
@@ -105,14 +117,18 @@ export const TextWrapper = styled.div`
 `;
 
 export const BonoHeader = styled.h2`
-		${fontSectionTitle};
+	${fontSectionTitle};
+	@media screen and (${device.mobileL}) {
+		font-size: 24px;
+		line-height: calc(33.6 / 24);
+	}
 	@media screen and (${device.tablet}) {
 		font-size: 32px;
 		line-height: calc(44.8 / 32);
 	}
 	@media screen and (${device.desktop}) {
 		font-size: 40px;
-		line-height: calc(56 / 40);  
+		line-height: calc(56 / 40);
 	}
 `;
 
@@ -121,12 +137,16 @@ export const BonoText = styled.div`
 	p {
 		margin-top: 10px;
 	}
+	@media screen and (${device.mobileL}) {
+		font-size: 16px;
+		line-height: calc(25.6 / 20);
+	}
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
 		line-height: calc(32 / 20);
 	}
 	@media screen and (${device.desktop}) {
 		font-size: 22px;
-		line-height: 35.2px;  
+		line-height: 35.2px;
 	}
 `;
