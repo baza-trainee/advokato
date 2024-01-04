@@ -10,6 +10,11 @@ export const containerStyleTablet = {
   height: '348px',
 };
 
+export const containerStyleMobileL = {
+  width: '648px',
+  height: '408px',
+};
+
 export const MarkerWrp = styled.div`
   padding: 10px;
   width: clamp(200px, 40%, 300px);

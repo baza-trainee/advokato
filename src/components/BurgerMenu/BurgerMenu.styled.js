@@ -11,7 +11,7 @@ export const SectionStyled = styled.section`
 	background:var(--darkGrey); 
 	border: none;
 	border-radius: 24px 0 0 24px;
-	z-index: 30;
+	z-index: 3000;
 	transition: 1s;
 	animation:.7s ease-in-out appearMenu forwards;
 	svg {

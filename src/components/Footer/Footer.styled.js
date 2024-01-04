@@ -5,11 +5,22 @@ import { device, fontLayoutMenu } from '../../styles/mixins';
 export const FooterStyled = styled.footer`
   position: relative;
   z-index: 100;
-  margin-top: -110px;
 
   border-radius: 24px 24px 0 0;
   border-top: 1px solid var(--reviewText);
   background-color: var(--darkBackground);
+
+  @media screen and (${device.mobileL}) {
+    margin-top: -68px;
+  }
+
+  @media screen and (${device.tablet}) {
+    margin-top: calc(-76px - 24px);
+  }
+
+  @media screen and (${device.desktop}) {
+    margin-top: calc(-88px - 24px);
+  }
 `;
 
 export const Container = styled.div`
