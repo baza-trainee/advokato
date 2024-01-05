@@ -17,6 +17,10 @@ export const HeaderStyled = styled.header`
 	background-color: var(--headerBackground);
 	backdrop-filter: ${props => (props.top ? 0 : "blur(20px)")};
 	z-index: 20;
+
+	border-bottom: ${({ activePath }) =>
+		activePath === "/company" ? "1px solid var(--reviewText)" : "none"};
+
 	img {
 		width: 180px;
 		height: 80px;
