@@ -55,6 +55,20 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 		}
 	};
 
+	const screenSize = () => {
+		const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+		useEffect(() => {
+			const handleSize = e => {
+				setScreenWidth(e.target.innerWidth);
+			};
+			window.addEventListener("resize", handleSize);
+			return () => {
+				window.removeEventListener("resize", handleSize);
+			};
+		}, []);
+		return screenWidth;
+	};
+
 	return (
 		<>
 			<HeaderStyled
@@ -84,14 +98,14 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 							alt="logoImage"
 						/>
 					</NavLink>
-
-					<Menu setIsOpen={setIsOpen} />
-
+					<nav className={screenSize() > 1200 ? "" : "close"}>
+						<Menu setIsOpen={setIsOpen} />
+					</nav>
 					<LangButton
 						onClick={() =>
 							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
 						}
-						aria-label="lang-ua"
+						aria-label="перемикач мови"
 						activeLang={activeLang}
 						currentLang="ua"
 						desktop="desktop"

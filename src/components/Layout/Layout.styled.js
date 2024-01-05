@@ -25,14 +25,19 @@ export const HeaderStyled = styled.header`
 		width: 180px;
 		height: 80px;
 	}
+	nav {
+		&.close {
+			display: none;
+		}
+	}
+	&.close {
+		display: none;
+	}
 	@media screen and (${device.mobileL}) {
 		${flexBox};
 		height: 68px;
 		font-size: 14px;
 		line-height: calc(25.2 / 14);
-		nav {
-			display: none;
-		}
 		img {
 			width: 156px;
 			height: 52px;
@@ -65,10 +70,6 @@ export const HeaderStyled = styled.header`
 		}
 	}
 	@media screen and (${device.burger}) {
-		height: 88px;
-		nav {
-			display: block;
-		}
 		img {
 			margin: 0;
 			width: 152px;
