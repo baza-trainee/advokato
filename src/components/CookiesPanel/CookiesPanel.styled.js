@@ -7,6 +7,7 @@ export const Panel = styled.div`
 	bottom: 27px;
 	padding: 40px 30px 24px 30px;
 	max-width: 272px;
+	z-index: 101;
 
 	background: var(--darkBackground);
 

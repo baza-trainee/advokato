@@ -3,18 +3,21 @@ import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
   @media screen and (${device.mobileL}) {
+    min-height: calc(100dvh - 148px);
     border-top: 68px solid var(--darkBackground);
     padding-top: 60px;
     padding-bottom: 60px;
   }
 
   @media screen and (${device.tablet}) {
+    min-height: calc(100dvh - 156px);
     border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
     padding-bottom: 132px;
   }
 
   @media screen and (${device.desktop}) {
+    min-height: calc(100dvh - 272px);
     border-top: 88px solid var(--darkBackground);
     padding-top: 184px;
   }
@@ -122,6 +125,7 @@ export const LeftSide = styled.address`
 
   @media screen and (${device.tablet}) {
     flex-direction: column;
+    justify-content: normal;
     gap: 28px;
     margin-bottom: 0;
   }

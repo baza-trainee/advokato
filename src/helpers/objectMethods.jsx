@@ -1,3 +1,7 @@
 export const isObjectEmpty = obj => {
-  return Object.keys(obj).length === 0;
+  if (typeof obj === 'object') {
+    return Object.keys(obj).length === 0;
+  }
+
+  return false;
 };

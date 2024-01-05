@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { ResultElement } from './ResultElement/ResultElement';
+import { ResultElement } from './ResultElement';
 import {
   Container,
   SectionStyled,
