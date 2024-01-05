@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { device } from "../../styles/mixins";
 
-export const SectionStyled = styled.section`
+export const SectionStyled = styled.div`
 	display: block;
 	position: absolute;
 	top: 0;
@@ -14,6 +14,9 @@ export const SectionStyled = styled.section`
 	z-index: 30;
 	transition: 1s;
 	animation:.7s ease-in-out appearMenu forwards;
+	nav {
+			display: block;
+		}
 	svg {
 		margin: 120px 0 0 24px;
 		cursor: pointer;

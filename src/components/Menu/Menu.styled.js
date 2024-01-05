@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { flexBox, device } from "../../styles/mixins";
 import { NavLink } from "react-router-dom";
 
+
 export const UlStyled = styled.ul`
 	${flexBox};
 	flex-direction: ${props => (props.sideMenu ? "column" : "row")};
@@ -19,6 +20,12 @@ export const UlStyled = styled.ul`
 		margin: ${props => (props.sideMenu ? "156px 40px 0" : "0")};
 	}
 	@media screen and (${device.burger}) {
+		${flexBox};
+		gap: 15px;
+		width: 500px;
+		height: 24px;
+	}
+	@media screen and (${device.laptop}) {
 		${flexBox};
 		gap: 44px;
 		width: 600px;

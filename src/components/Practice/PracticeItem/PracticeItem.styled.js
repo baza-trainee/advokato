@@ -16,7 +16,11 @@ export const LiStyled = styled.li`
     color: var(--lightText);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    max-width: 300px;
+    min-height: 52px;
   }
 
   @media screen and (${device.tablet}) {
@@ -43,11 +47,13 @@ export const SpecializationStyled = styled.p`
   word-spacing: -0.05ch;
   letter-spacing: 0em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    /* height: 28px; */
+    font-size: 20px;
+    line-height: calc(28 / 20);
   }
 
   @media screen and (${device.tablet}) {
-    height: 28px;
     font-size: 22px;
     line-height: calc(31 / 22);
   }

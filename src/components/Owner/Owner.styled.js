@@ -1,99 +1,145 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import {
-  flexBox,
-  container,
-  device,
-  fontMobile,
-  fontTablet,
-  fontDesktop,
-} from '../../styles/mixins';
-import '../../index.css';
+	flexBox,
+	container,
+	device,
+	fontMobile,
+	fontTablet,
+	fontDesktop,
+} from "../../styles/mixins";
+import "../../index.css";
 
 export const SectionStyled = styled.section`
-  background-color: var(--darkBackground);
-  color: var(--lightText);
+	background-color: var(--darkBackground);
+	color: var(--lightText);
 `;
 
 export const Container = styled.div`
-  ${container};
-  display: flex;
-  justify-content: space-between;
-  max-width: 1440px;
+	${container};
+	display: flex;
+	justify-content: space-between;
+	max-width: 1440px;
 
-  @media screen and (${device.mobileL}) {
-    padding: 0;
-  }
+	@media screen and (${device.mobileL}) {
+		padding: 0;
+		${fontMobile}
+	}
+
+	@media screen and (${device.tablet}) {
+		${fontTablet}
+	}
+
+	@media screen and (${device.desktop}) {
+		${fontDesktop}
+		max-height: initial;
+	}
 `;
 
 export const TextStyled = styled.div`
-  width: 484px;
+	@media screen and (${device.tablet}) {
+		width: 422px;
+		padding: 120px 0 120px 0;
+	}
 
-  h3 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 52px;
+	@media screen and (${device.desktop}) {
+		width: 484px;
+		padding: 0;
+	}
 
-    font-family: var(--Raleway);
-    font-size: 32px;
-    font-weight: 400;
-    line-height: calc(45 / 32);
-    letter-spacing: 0em;
-    text-align: left;
-  }
+	h3 {
+		display: flex;
+		flex-wrap: wrap;
+		font-family: var(--Raleway);
+		font-weight: 400;
+		line-height: calc(45 / 32);
+		letter-spacing: 0em;
+		text-align: left;
 
-  span {
-    font-family: var(--Raleway);
-    font-size: 64px;
-    font-weight: 700;
-    line-height: calc(42 / 56);
-    letter-spacing: 0.006rem;
-    text-align: left;
-    margin-top: 32px;
-  }
+		@media screen and (${device.tablet}) {
+			margin-bottom: 30px;
+			font-size: 28px;
+		}
 
-  p {
-    margin-bottom: 72px;
+		@media screen and (${device.desktop}) {
+			margin-bottom: 52px;
+			font-size: 32px;
+		}
+	}
 
-    font-family: var(--PTSans);
-    font-size: 22px;
-    font-weight: 400;
-    line-height: calc(35 / 22);
-    letter-spacing: 0em;
-    text-align: left;
-  }
+	span {
+		font-family: var(--Raleway);
+		font-weight: 700;
+		line-height: calc(42 / 56);
+		letter-spacing: 0.006rem;
+		text-align: left;
 
-  @media screen and (${device.mobileS}) {
-    ${fontMobile};
-  }
+		@media screen and (${device.tablet}) {
+			font-size: 48px;
+			margin-top: 24px;
+		}
 
-  @media screen and (${device.tablet}) {
-    p {
-      ${fontTablet};
-    }
-    max-width: 484px;
-    width: 80%;
-  }
+		@media screen and (${device.desktop}) {
+			font-size: 64px;
+			margin-top: 32px;
+		}
+	}
 
-  @media screen and (${device.desktop}) {
-    p {
-      ${fontDesktop};
-    }
-  }
+	p {
+		font-family: var(--PTSans);
+		font-weight: 400;
+		line-height: calc(35 / 22);
+		letter-spacing: 0em;
+		text-align: left;
+
+		@media screen and (${device.tablet}) {
+			margin-bottom: 22px;
+			font-size: 20px;
+			max-width: 422px;
+		}
+
+		@media screen and (${device.desktop}) {
+			margin-bottom: 72px;
+			font-size: 22px;
+		}
+	}
+
+	.btn-owner {
+		@media screen and (${device.tablet}) {
+			padding: 20px;
+			width: 312px;
+      height: 60px;
+			font-size: 16px;
+		}
+
+		@media screen and (${device.desktop}) {
+			padding: 20px 32px;
+			width: 364px;
+			height: 64px;
+			font-size: 18px;
+			line-height: calc(27 / 18);
+		}
+	}
 `;
 
 export const CompanyBox = styled.div`
-  ${flexBox};
-  flex-direction: column;
-  width: 57.6%;
+	${flexBox};
+	flex-direction: column;
+	width: 57.6%;
 `;
 
 export const ImageBoxStyled = styled.div`
-  width: 42.4%;
+	@media screen and (${device.tablet}) {
+		width: 42.4%;
+	}
+
+	@media screen and (${device.desktop}) {
+		width: 42.4%;
+	}
 `;
 
 export const ImageStyled = styled.img`
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+	display: block;
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
 `;

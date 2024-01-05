@@ -12,6 +12,7 @@ import {
   TitleStyled,
   CenterWrp,
   LeftSide,
+  ContactsWrp
 } from './Contacts.styled';
 
 export const Contacts = () => {
@@ -47,14 +48,16 @@ export const Contacts = () => {
               <LeftSide>
                 <AddressList cities={cities} />
 
-                <p>{contacts[0]?.contacts[0]?.phone}</p>
+                <ContactsWrp>
+                  <p>{contacts[0]?.contacts[0]?.phone}</p>
 
-                <p>{contacts[0]?.contacts[1]?.mail}</p>
+                  <p>{contacts[0]?.contacts[1]?.mail}</p>
 
-                <SocialList
-                  currentfill={'#333333'}
-                  media={contacts[0]?.social}
-                />
+                  <SocialList
+                    currentfill={'#333333'}
+                    media={contacts[0]?.social}
+                  />
+                </ContactsWrp>
               </LeftSide>
 
               <GoogleMap cities={cities} />

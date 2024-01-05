@@ -9,7 +9,7 @@ import {
 export const SectionStyled = styled.section`
 	background: var(--darkBackground);
 	@media screen and (${device.mobileL}) {
-		height: 336px;
+		height: 368px;
 	}
 	@media screen and (${device.tablet}) {
 		height: 500px;
@@ -28,7 +28,10 @@ export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
 	color: var(--lightText);
 	@media screen and (${device.mobileL}) {
-		padding: 60px 0 40px;
+		padding: 60px 60px 40px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: calc(33.6 / 24);
 	}
 	@media screen and (${device.tablet}) {
 		padding: 120px 80px 40px;
@@ -99,21 +102,34 @@ export const ClientsSliderContainer = styled.div`
 		opacity: 1;
 		transition: 1s;
 	}
-	.splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
+	/* .splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
 	.splide__slide.is-active {
 		opacity: 0.3;
+	} */
+	@media screen and (${device.mobileL}) {
+		.splide__slide.is-active,.splide__slide.is-active+ .is-visible
+			+ .is-visible {
+			opacity: .3;
+		}
 	}
 	@media screen and (${device.tablet}) {
-		.splide__slide.is-active
-			+ .is-visible
-			+ .is-visible
+		.splide__slide.is-active,.splide__slide.is-active+ .is-visible
+			+ .is-visible {
+			opacity: 1;
+		}
+		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
 			+ .is-visible {
 			opacity: 0.3;
 		}
 	}
 	@media screen and (${device.desktop}) {
-	.splide__slide.is-active+.is-visible+.is-visible+.is-visible {
+		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
+			+ .is-visible {
 			opacity: 1;
+		}
+		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
+			+ .is-visible+ .is-visible {
+			opacity: .3;
 		} 
 	}
 `;

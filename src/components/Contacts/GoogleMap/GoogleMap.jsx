@@ -11,6 +11,7 @@ import { useWindowDimensions } from '../../../hooks';
 import {
   containerStyleDesktop,
   containerStyleTablet,
+  containerStyleMobileL,
   MarkerWrp,
 } from './GoogleMap.styled';
 
@@ -42,6 +43,10 @@ export const GoogleMap = ({ cities }) => {
 
     if (width >= 1024) {
       return setMapStyles(prev => containerStyleTablet);
+    }
+
+    if (width >= 768) {
+      return setMapStyles(prev => containerStyleMobileL);
     }
   }, [width]);
 

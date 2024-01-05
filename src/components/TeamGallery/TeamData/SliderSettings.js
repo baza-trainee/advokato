@@ -15,11 +15,15 @@ export const options = {
 		320: {
 			perPage: 1,
 		},
+		768: {
+			height: "324px",
+			perPage: 3,
+		},
 		1024: {
 			height: "452px",
 		},
 		1440: {
-			
+			height: "600px",
 		},
 	},
 };
