@@ -1,4 +1,4 @@
-import { SectionStyled } from "./BurgerMenu.styled";
+import { NavBurger, SectionStyled } from "./BurgerMenu.styled";
 import { Menu } from "../Menu";
 
 import { LangButton } from "../Layout/Layout.styled";
@@ -11,10 +11,12 @@ export const BurgerMenu = ({
 }) => {
 	return (
 		<SectionStyled className={`${!isOpen ? "close" : ""}`}>
-			<Menu
-				setIsOpen={setIsOpen}
-				side={true}
-			/>
+			<NavBurger>
+				<Menu
+					setIsOpen={setIsOpen}
+					side={true}
+				/>
+			</NavBurger>
 			<LangButton
 				onClick={() =>
 					activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
