@@ -6,6 +6,7 @@ import parse from "html-react-parser";
 
 import { getContent } from "../../api";
 import { TeamCard } from "../../components/TeamCard";
+import { isObjectEmpty } from "../../helpers";
 
 import {
 	Page,
@@ -19,7 +20,7 @@ import {
 } from "./CompanyPage.styled";
 
 const CompanyPage = () => {
-	const [aboutCompany, setAboutCompany] = useState([]);
+	const [aboutCompany, setAboutCompany] = useState({});
 	const [team, setTeam] = useState([]);
 	const { state } = useLocation();
 	const refCard = useRef();
@@ -37,6 +38,7 @@ const CompanyPage = () => {
 
 			setAboutCompany(prev => data.company);
 			setTeam(prev => data.team);
+
 			NotiflixLoading.remove();
 		};
 
@@ -71,7 +73,7 @@ const CompanyPage = () => {
 						Адвокатська компанія <br /> «STATUS» -
 					</SectionTitle>
 
-					{aboutCompany && (
+					{!isObjectEmpty(aboutCompany) && (
 						<CompanyWrap>
 							<CompanyDescription>
 								{parse(sanitizedCompanyMarkup)}
