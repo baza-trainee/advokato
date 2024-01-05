@@ -69,7 +69,10 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 
 	return (
 		<>
-			<HeaderStyled top={top}>
+			<HeaderStyled
+				top={top}
+				activePath={activePath}
+			>
 				<Container>
 					<PhoneBurger onClick={() => setModalActive(prev => !prev)}>
 						<Icon

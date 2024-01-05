@@ -1,10 +1,23 @@
 import styled from '@emotion/styled';
 import { fontSectionTitle, device } from '../../styles/mixins';
 
+export const tabletAndDesktop = {
+  padding: '16px 24px',
+  width: '288px',
+  height: '52px',
+};
+
+export const mobileLAndTablet = {
+  padding: '0',
+  width: '260px',
+  height: '44px',
+};
+
 export const SectionStyled = styled.section`
   background-color: var(--darkBackground);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    padding: 60px 0;
   }
 
   @media screen and (${device.tablet}) {
@@ -19,7 +32,8 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
   margin: 0 auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    width: 648px;
   }
 
   @media screen and (${device.tablet}) {
@@ -37,7 +51,11 @@ export const TitleStyled = styled.h2`
   ${fontSectionTitle};
   color: var(--lightText);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    max-width: 648px;
+    min-height: 68px;
+    font-size: 24px;
+    line-height: calc(34 / 24);
   }
 
   @media screen and (${device.tablet}) {
@@ -66,7 +84,8 @@ export const PracticeWrp = styled.div`
 `;
 
 export const PracticeInfo = styled.div`
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    width: 300px;
   }
 
   @media screen and (${device.tablet}) {
@@ -82,7 +101,10 @@ export const ImageStyled = styled.img`
   border-radius: 24px;
   background: linear-gradient(#0000002e, #00000099);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    margin-bottom: 28px;
+    height: 240px;
+    width: 300px;
   }
 
   @media screen and (${device.tablet}) {
@@ -106,7 +128,10 @@ export const PracticeTitle = styled.h3`
   letter-spacing: 0em;
   color: var(--lightText);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    min-height: 28px;
+    font-size: 20px;
+    line-height: calc(28 / 20);
   }
 
   @media screen and (${device.tablet}) {
@@ -123,25 +148,29 @@ export const PracticeTitle = styled.h3`
 `;
 
 export const PracticeDesc = styled.p`
+  display: ${({ isShowMoreDesc }) => (isShowMoreDesc ? 'block' : null)};
   margin-bottom: 12px;
 
   font-family: var(--Raleway);
-  font-size: 18px;
   font-weight: 400;
-  line-height: calc(27 / 18);
   letter-spacing: 0em;
   color: var(--lightText);
 
-  display: ${({ isShowMoreDesc }) => (isShowMoreDesc ? 'block' : null)};
+  @media screen and (${device.mobileL}) {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 18px;
+    line-height: calc(27 / 18);
+  }
 `;
 
 export const PracticeDescFull = styled.div`
   font-family: var(--Raleway);
-  font-size: 18px;
   font-weight: 400;
-  line-height: calc(27 / 18);
   letter-spacing: 0em;
-
   color: var(--lightText);
 
   p:not(:last-of-type) {
@@ -154,6 +183,16 @@ export const PracticeDescFull = styled.div`
     margin-left: 30px;
     margin-bottom: 12px;
   }
+
+  @media screen and (${device.mobileL}) {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 18px;
+    line-height: calc(27 / 18);
+  }
 `;
 
 export const MoreButtonStyled = styled.button`
@@ -162,14 +201,22 @@ export const MoreButtonStyled = styled.button`
   float: right;
 
   font-family: var(--Raleway);
-  font-size: 18px;
   font-weight: 400;
-  line-height: calc(27 / 18);
   letter-spacing: 0em;
   text-align: right;
   color: var(--greyText);
   border: none;
   background-color: inherit;
+
+  @media screen and (${device.mobileL}) {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  @media screen and (${device.tablet}) {
+    font-size: 18px;
+    line-height: calc(27 / 18);
+  }
 `;
 
 export const ExtraInfoWrpStyled = styled.div`
