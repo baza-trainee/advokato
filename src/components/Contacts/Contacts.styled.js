@@ -125,6 +125,7 @@ export const LeftSide = styled.address`
 
   @media screen and (${device.tablet}) {
     flex-direction: column;
+    justify-content: normal;
     gap: 28px;
     margin-bottom: 0;
   }
