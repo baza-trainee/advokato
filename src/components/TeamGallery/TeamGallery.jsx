@@ -9,6 +9,7 @@ import {
 	TeamSliderContainer,
 } from "./TeamGallery.styled";
 import { Icon } from "../Icon";
+import { isObjectEmpty } from "../../helpers";
 import { getContent } from "../../api/fetchContent";
 
 export const TeamGallery = () => {
@@ -16,9 +17,14 @@ export const TeamGallery = () => {
 	const [data, setData] = useState();
 
 	useEffect(() => {
-		getContent("https://advocato-backend.vercel.app/api/v1/our-team").then(
-			res => setData(res.team),
-		);
+		const getData = async () => {
+			const data = await getContent("our-team");
+			if (!isObjectEmpty(data)) {
+				setData(data.team);
+			}
+		};
+
+		getData();
 	}, []);
 
 	return (

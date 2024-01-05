@@ -8,6 +8,7 @@ import {
 } from "./ClientReviews.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
 import { Icon } from "../Icon";
+import { isObjectEmpty } from "../../helpers";
 import { getContent } from "../../api/fetchContent";
 
 export const ClientReviews = () => {
@@ -15,9 +16,15 @@ export const ClientReviews = () => {
 	const [data, setData] = useState();
 
 	useEffect(() => {
-		getContent("https://advocato-backend.vercel.app/api/v1/reviews").then(res =>
-			setData(res),
-		);
+		const getData = async () => {
+			const data = await getContent("reviews");
+			
+			if (!isObjectEmpty(data)) {
+				setData(data);
+			}
+		};
+
+		getData();
 	}, []);
 
 	return (
