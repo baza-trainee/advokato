@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { flexBox, device } from "../../styles/mixins";
 import { NavLink } from "react-router-dom";
 
-
 export const UlStyled = styled.ul`
 	${flexBox};
 	flex-direction: ${props => (props.sideMenu ? "column" : "row")};

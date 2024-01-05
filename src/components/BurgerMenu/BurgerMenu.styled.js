@@ -6,17 +6,15 @@ export const SectionStyled = styled.div`
 	position: absolute;
 	top: 0;
 	right: 0;
-	height:100vh;
+	height: 100vh;
 	width: 172px;
-	background:var(--darkGrey); 
+	background: var(--darkGrey);
 	border: none;
 	border-radius: 24px 0 0 24px;
 	z-index: 30;
 	transition: 1s;
-	animation:.7s ease-in-out appearMenu forwards;
-	nav {
-			display: block;
-		}
+	animation: 0.7s ease-in-out appearMenu forwards;
+
 	svg {
 		margin: 120px 0 0 24px;
 		cursor: pointer;
@@ -34,7 +32,13 @@ export const SectionStyled = styled.div`
 		width: 216px;
 	}
 	@keyframes appearMenu {
-	from{opacity:0};
-	to{opacity:1}
-}
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 `;
+
+export const NavBurger = styled.nav``;
