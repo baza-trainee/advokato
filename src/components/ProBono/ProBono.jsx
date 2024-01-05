@@ -10,15 +10,21 @@ import {
 } from "./ProBono.styled";
 
 import React, { useEffect, useState } from "react";
+import { isObjectEmpty } from "../../helpers";
 import { getContent } from "../../api/fetchContent";
 
 export const ProBono = () => {
 	const [data, setData] = useState();
-	const regex = /(.*)(?=<\/p>)/g;
+
 	useEffect(() => {
-		getContent("https://advocato-backend.vercel.app/api/v1/pro_bono").then(
-			res => setData(res),
-		);
+		const getData = async () => {
+			const data = await getContent("pro_bono");
+			if (!isObjectEmpty(data)) {
+				setData(data);
+			}
+		};
+
+		getData();
 	}, []);
 
 	return (
