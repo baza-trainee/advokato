@@ -46,6 +46,9 @@
 ## other
 
 - [disable contextmenu](https://stackoverflow.com/questions/53810524/disable-contextmenu-in-reactjs)
+- [Favicon Technical Reference Guide](https://www.favicongenerator.com/reference)
+- [favicon_checker](https://realfavicongenerator.net/favicon_checker)
+- [favicon-converter](https://favicon.io/favicon-converter/)
 
 ## firebase deploy
 
