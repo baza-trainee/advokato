@@ -31,6 +31,8 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 	const navigate = useNavigate();
 	const [modalActive, setModalActive] = useState(false);
 
+	const activePath = location.pathname;
+
 	useEffect(() => {
 		const scrollHandler = () => {
 			setTop(window.scrollY <= 200);

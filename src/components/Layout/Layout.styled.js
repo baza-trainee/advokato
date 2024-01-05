@@ -25,10 +25,10 @@ export const HeaderStyled = styled.header`
 		width: 180px;
 		height: 80px;
 	}
-	nav{
+	nav {
 		&.close {
-		display: none;
-	}
+			display: none;
+		}
 	}
 	&.close {
 		display: none;
