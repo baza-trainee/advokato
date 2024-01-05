@@ -7,11 +7,16 @@ export const LabelStyled = styled.label`
   p {
     ${fontDesktop};
 
-    @media screen and (min-width: 768px) {
+    @media screen and (${device.mobileL}) {
+      height: 28px;
+      font-size: 16px;
+      line-height: calc(26 / 16);
     }
 
     @media screen and (${device.tablet}) {
       height: 24px;
+      font-size: 22px;
+      line-height: calc(35 / 22);
     }
 
     @media screen and (${device.desktop}) {
@@ -20,15 +25,23 @@ export const LabelStyled = styled.label`
   }
 
   p:first-of-type {
-    margin-bottom: 24px;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (${device.tablet}) {
+      margin-bottom: 24px;
+    }
   }
 
   p:last-of-type {
     line-height: 1.2;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${device.mobileL}) {
+    width: ${({ width }) => (width ? width : '200px')};
   }
 
   @media screen and (${device.tablet}) {
@@ -42,14 +55,11 @@ export const LabelStyled = styled.label`
 
 export const InputStyled = styled.input`
   position: relative;
-  padding-bottom: 8px;
   width: 100%;
   height: 32px;
 
   font-family: var(--Montserrat);
-  font-size: 18px;
   font-weight: 500;
-  line-height: 21.94px;
   letter-spacing: 0em;
   color: var(--mainText);
   background-color: inherit;
@@ -73,15 +83,34 @@ export const InputStyled = styled.input`
 
   &::placeholder {
     font-family: var(--Raleway);
-    font-size: 18px;
     font-weight: 400;
-    line-height: 27px;
     letter-spacing: 0em;
     color: #3f3f44;
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (${device.mobileL}) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (${device.tablet}) {
+    padding-bottom: 8px;
+    font-size: 18px;
+    line-height: 21.94px;
   }
 `;
 
@@ -89,6 +118,13 @@ export const ErrorText = styled.p`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(90px);
   color: var(--accentText);
+
+  @media screen and (${device.mobileL}) {
+    transform: translateY(80px);
+  }
+
+  @media screen and (${device.tablet}) {
+    transform: translateY(90px);
+  }
 `;
