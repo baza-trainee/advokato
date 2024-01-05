@@ -76,6 +76,9 @@ export const HeaderStyled = styled.header`
 			height: 56px;
 		}
 	}
+	@media screen and (${device.desktop}) {
+		height: 88px;
+	}
 `;
 export const Container = styled.div`
 	${flexBox};
@@ -99,6 +102,7 @@ export const Container = styled.div`
 		gap: 10px;
 	}
 	@media screen and (${device.desktop}) {
+		height: 88px;
 		padding-left: 60px;
 		padding-right: 60px;
 	}
