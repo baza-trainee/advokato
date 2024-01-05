@@ -7,7 +7,7 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 56px;
+	padding: 0 26px;
 
 	background-color: var(--lightBackground);
 
@@ -104,6 +104,7 @@ export const Button = styled(Link)`
 	margin-bottom: 36px;
 
 	${mainButton};
+	padding: 16px 20px;
 
 	font-family: Raleway;
 	font-weight: 600;
@@ -115,7 +116,6 @@ export const Button = styled(Link)`
 	@media screen and (${device.mobileL}) {
 		margin-bottom: 168px;
 
-		font-size: 14px;
 		font-weight: 500;
 		line-height: 17px;
 	}
