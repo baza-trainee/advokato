@@ -11,7 +11,7 @@ export const DivStyled = styled.div`
     text-align: center;
     color: var(--mainText);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       margin-bottom: 24px;
       height: 40px;
       min-width: 136px;
@@ -36,7 +36,7 @@ export const DivStyled = styled.div`
     letter-spacing: 0em;
     color: var(--mainText);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       height: 32px;
       font-size: 18px;
       line-height: 28.8px;
@@ -54,7 +54,7 @@ export const DivStyled = styled.div`
   }
 
   p:last-of-type {
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       margin-bottom: 24px;
     }
 
@@ -66,7 +66,7 @@ export const DivStyled = styled.div`
   svg {
     fill: var(--trueText);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       width: 52px;
       height: 52px;
     }
