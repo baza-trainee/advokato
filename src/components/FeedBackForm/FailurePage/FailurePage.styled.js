@@ -1,31 +1,65 @@
 import styled from '@emotion/styled';
 
-import { flexBox, fontSectionTitle } from '../../../styles/mixins';
+import { flexBox, fontSectionTitle, device } from '../../../styles/mixins';
 
 export const DivStyled = styled.div`
   ${flexBox};
   flex-direction: column;
-  width: calc(98px * 2 + 404px);
+
   background-color: var(--lightBackground);
 
-  h2 {
-    margin-top: 84px;
-    margin-bottom: 20px;
-    height: 48px;
-    min-width: 471px;
+  @media screen and (${device.mobileL}) {
+    padding-top: 48px;
+    padding-bottom: 32px;
+    width: 400px;
+    height: 268px;
+  }
 
+  @media screen and (${device.tablet}) {
+    padding-top: 84px;
+    width: 600px;
+    height: 336px;
+  }
+
+  h2 {
     ${fontSectionTitle};
     text-align: center;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      margin-bottom: 20px;
+      height: 36px;
+      min-width: 120px;
+
+      font-size: 24px;
+      line-height: calc(34 / 24);
+    }
+
+    @media screen and (${device.tablet}) {
+      height: 48px;
+      min-width: 180px;
+
+      font-size: 40px;
+      line-height: calc(56 / 40);
+    }
   }
 
   p {
     font-family: var(--PTSans);
-    font-size: 22px;
     font-weight: 400;
-    line-height: 35.2px;
+
     letter-spacing: 0em;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 
   p:first-of-type {
@@ -37,7 +71,16 @@ export const DivStyled = styled.div`
   }
 
   svg {
-    margin-bottom: 32px;
     fill: var(--accentText);
+
+    @media screen and (${device.mobileL}) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (${device.tablet}) {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;

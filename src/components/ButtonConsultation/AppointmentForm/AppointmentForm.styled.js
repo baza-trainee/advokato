@@ -9,13 +9,12 @@ import {
 export const FormWrp = styled.div`
   background-color: white;
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     padding-top: 48px;
     padding-right: 20px;
     padding-bottom: 28px;
     padding-left: 20px;
     width: 536px;
-    /* min-height: 748px; */
   }
 
   @media screen and (${device.desktop}) {
@@ -24,7 +23,6 @@ export const FormWrp = styled.div`
     padding-bottom: 32px;
     padding-left: 40px;
     width: 600px;
-    /* min-height: 892px; */
     min-height: 336px;
   }
 `;
@@ -34,7 +32,7 @@ export const FirstPageTitle = styled.h2`
   text-align: center;
   color: var(--mainText);
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     height: 40px;
     width: 348px;
 
@@ -57,7 +55,7 @@ export const SecondPageTitle = styled.h2`
   text-align: center;
   color: var(--mainText);
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     width: 424px;
     font-size: 28px;
     line-height: calc(39 / 28);
@@ -75,7 +73,7 @@ export const FormStyled = styled.form`
   ${flexBox};
   flex-direction: column;
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     gap: ${({ currentPartForm }) =>
       (currentPartForm === 1) |
       (currentPartForm === 2) |
@@ -98,7 +96,7 @@ export const ButtonWrp = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     gap: 12px;
   }
 
@@ -115,7 +113,7 @@ export const UpperButton = styled.button`
     border: 1px solid var(--darkBackground);
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     width: 288px;
     height: 52px;
   }
@@ -134,7 +132,7 @@ export const LowerButton = styled.button`
     background-color: var(--darkBackground);
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     width: 288px;
     height: 52px;
   }
