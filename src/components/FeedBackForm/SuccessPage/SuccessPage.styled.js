@@ -12,11 +12,13 @@ export const DivStyled = styled.div`
     padding-top: 48px;
     padding-bottom: 32px;
     width: 400px;
+    height: 268px;
   }
 
   @media screen and (${device.tablet}) {
     padding-top: 84px;
     width: 600px;
+    height: 336px;
   }
 
   h2 {
@@ -44,11 +46,20 @@ export const DivStyled = styled.div`
 
   p {
     font-family: var(--PTSans);
-    font-size: 22px;
     font-weight: 400;
-    line-height: 35.2px;
+
     letter-spacing: 0em;
     color: var(--mainText);
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 
   p:first-of-type {
@@ -61,6 +72,15 @@ export const DivStyled = styled.div`
 
   svg {
     fill: var(--trueText);
-    /* margin-bottom: 32px; */
+
+    @media screen and (${device.mobileL}) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (${device.tablet}) {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;
