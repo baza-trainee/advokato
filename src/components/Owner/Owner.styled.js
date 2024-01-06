@@ -36,14 +36,22 @@ export const Container = styled.div`
 `;
 
 export const TextStyled = styled.div`
+	@media screen and (${device.mobileL}) {
+		width: 422px;
+		padding: 60px 0 60px 54px;
+		line-height: 25.6px;
+	}
+
 	@media screen and (${device.tablet}) {
 		width: 422px;
 		padding: 120px 0 120px 0;
+		line-height: 32px;
 	}
 
 	@media screen and (${device.desktop}) {
 		width: 484px;
 		padding: 0;
+		line-height: 35.2px;
 	}
 
 	h3 {
@@ -55,9 +63,16 @@ export const TextStyled = styled.div`
 		letter-spacing: 0em;
 		text-align: left;
 
+		@media screen and (${device.mobileL}) {
+			margin-bottom: 20px;
+			font-size: 24px;
+			width: 260px;
+		}
+
 		@media screen and (${device.tablet}) {
 			margin-bottom: 30px;
 			font-size: 28px;
+			width: auto;
 		}
 
 		@media screen and (${device.desktop}) {
@@ -72,6 +87,11 @@ export const TextStyled = styled.div`
 		line-height: calc(42 / 56);
 		letter-spacing: 0.006rem;
 		text-align: left;
+
+		@media screen and (${device.mobileL}) {
+			font-size: 32px;
+			margin-top: 13px;
+		}
 
 		@media screen and (${device.tablet}) {
 			font-size: 48px;
@@ -91,6 +111,12 @@ export const TextStyled = styled.div`
 		letter-spacing: 0em;
 		text-align: left;
 
+		@media screen and (${device.mobileL}) {
+			margin-bottom: 32px;
+			font-size: 16px;
+			max-width: 352px;
+		}
+
 		@media screen and (${device.tablet}) {
 			margin-bottom: 22px;
 			font-size: 20px;
@@ -104,10 +130,17 @@ export const TextStyled = styled.div`
 	}
 
 	.btn-owner {
+		@media screen and (${device.mobileL}) {
+			padding: 16px 20px;
+			width: 260px;
+			height: 44px;
+			font-size: 14px;
+		}
+
 		@media screen and (${device.tablet}) {
 			padding: 20px;
 			width: 312px;
-      height: 60px;
+			height: 60px;
 			font-size: 16px;
 		}
 
@@ -125,9 +158,25 @@ export const CompanyBox = styled.div`
 	${flexBox};
 	flex-direction: column;
 	width: 57.6%;
+
+	@media screen and (${device.mobileL}) {
+		width: 57.7%;
+	}
+
+	@media screen and (${device.tablet}) {
+		width: 57.6%;
+	}
+
+	@media screen and (${device.desktop}) {
+		width: 57.6%;
+	}
 `;
 
 export const ImageBoxStyled = styled.div`
+	@media screen and (${device.mobileL}) {
+		width: 42.3%;
+	}
+
 	@media screen and (${device.tablet}) {
 		width: 42.4%;
 	}
