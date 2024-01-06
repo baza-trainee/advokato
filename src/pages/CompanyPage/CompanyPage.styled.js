@@ -10,6 +10,7 @@ import {
 export const Page = styled.div`
 	background-color: var(--darkBackground);
 	color: var(--lightText);
+	min-height: calc(110dvh);
 `;
 
 export const Container = styled.div`

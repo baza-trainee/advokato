@@ -33,11 +33,13 @@ const CompanyPage = () => {
 		});
 
 		const getData = async () => {
-			NotiflixLoading.dots();
+			NotiflixLoading.dots({ svgColor: "#fefefe" });
 			const data = await getContent("/our-team?is_slider=false");
 
-			setAboutCompany(prev => data.company);
-			setTeam(prev => data.team);
+			if (!isObjectEmpty(data)) {
+				setAboutCompany(prev => data.company);
+				setTeam(prev => data.team);
+			}
 
 			NotiflixLoading.remove();
 		};

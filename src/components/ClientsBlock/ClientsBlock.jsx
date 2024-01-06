@@ -8,6 +8,7 @@ import {
 } from "./ClientsBlock.styled";
 import { SliderItems } from "./SliderItems/SliderItems";
 import { getContent } from "../../api";
+import { isObjectEmpty } from "../../helpers";
 import { Icon } from "../Icon";
 
 export const ClientsBlock = () => {
@@ -15,15 +16,21 @@ export const ClientsBlock = () => {
 	const [data, setData] = useState();
 
 	useEffect(() => {
-		getContent("https://advocato-backend.vercel.app/api/v1/clients").then(res =>
-			setData(res),
-		);
+		const getData = async () => {
+			const data = await getContent("clients");
+
+			if (!isObjectEmpty(data)) {
+				setData(data);
+			}
+		};
+
+		getData();
 	}, []);
 
 	return (
 		<SectionStyled>
 			<Container>
-			<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
+				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
 			</Container>
 			{data?.length > 0 && (
 				<ClientsSliderContainer>
