@@ -11,7 +11,7 @@ export const DivStyled = styled.div`
   .react-calendar {
     border: 1px solid #969395;
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       width: 464px;
     }
 
@@ -26,7 +26,7 @@ export const DivStyled = styled.div`
     border: 1px solid #969395;
     background-color: var(--headerBackground);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       height: 52px;
     }
 
@@ -39,7 +39,7 @@ export const DivStyled = styled.div`
     border: 1px solid #969395;
     background-color: var(--headerBackground);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       height: 52px;
     }
 
@@ -49,7 +49,7 @@ export const DivStyled = styled.div`
   }
 
   .react-calendar__month-view__days {
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       height: calc(52px * 6);
     }
 
@@ -70,7 +70,7 @@ export const DivStyled = styled.div`
       text-transform: uppercase;
     }
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       font-size: 24px;
       line-height: 36px;
     }
@@ -99,7 +99,7 @@ export const DivStyled = styled.div`
       text-decoration: none;
     }
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       font-size: 24px;
       line-height: 36px;
     }
@@ -118,7 +118,7 @@ export const DivStyled = styled.div`
     color: var(--mainText);
     cursor: pointer;
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       font-size: 24px;
       line-height: 36px;
     }
@@ -203,7 +203,7 @@ export const DivStyled = styled.div`
   .react-calendar__navigation__arrow.react-calendar__navigation__prev-button,
   .react-calendar__navigation__arrow.react-calendar__navigation__prev2-button {
     svg {
-      @media screen and (${device.tablet}) {
+      @media screen and (${device.mobileL}) {
         height: 24px;
         width: 24px;
       }
@@ -221,7 +221,7 @@ export const MainTitle = styled.h2`
   text-align: center;
   color: var(--mainText);
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     margin-bottom: 20px;
     height: 40px;
     min-width: 188px;
@@ -242,7 +242,7 @@ export const SecondaryTitle = styled.h2`
   text-align: center;
   color: var(--mainText);
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     margin-top: 20px;
     margin-bottom: 20px;
     height: 40px;
@@ -264,7 +264,7 @@ export const TimeList = styled.ul`
   display: flex;
   flex-wrap: wrap;
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     gap: 20px;
     width: 464px;
     margin-bottom: 4px;
@@ -296,7 +296,7 @@ export const TimeList = styled.ul`
       background-color: #e6e6e6;
     }
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       font-size: 24px;
       line-height: 33.6px;
     }

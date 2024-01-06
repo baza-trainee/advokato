@@ -7,7 +7,7 @@ export const LabelStyled = styled.label`
   p {
     ${fontDesktop};
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       height: 32px;
       font-size: 18px;
       line-height: calc(29 / 18);
@@ -25,7 +25,7 @@ export const LabelStyled = styled.label`
     color: var(--mainText);
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     width: 440px;
   }
 `;
@@ -63,7 +63,7 @@ export const InputStyled = styled.input`
     letter-spacing: 0em;
     color: var(--greyText);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       font-size: 16px;
       line-height: 19.5px;
     }
@@ -78,7 +78,7 @@ export const InputStyled = styled.input`
     outline: 2px solid var(--mainText);
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     height: 48px;
     font-size: 16px;
     line-height: 19.5px;
@@ -97,7 +97,7 @@ export const ErrorText = styled.p`
   left: 0;
   color: var(--accentText);
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     transform: translateY(80px);
   }
 
