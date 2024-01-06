@@ -37,12 +37,14 @@ export const Owner = ({ data }) => {
         </CompanyBox>
 
         <ImageBoxStyled>
-          <ImageStyled
-            src={data?.main_page_photo_path}
-            width={610}
-            height={900}
-            alt="фотографія засновника компанії"
-          />
+          {data?.main_page_photo_path && (
+            <ImageStyled
+              src={data?.main_page_photo_path}
+              width={610}
+              height={900}
+              alt="фотографія засновника компанії"
+            />
+          )}
         </ImageBoxStyled>
       </Container>
     </SectionStyled>
