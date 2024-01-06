@@ -86,5 +86,10 @@
   },
   "contactsPage": {
     "title": "ADVOCATE COMPANY «STATUS»"
+  },
+  "errorPage": {
+    "title": "404",
+    "subTitle": "На жаль, сторінка, яку ви шукаєте, видалена або не існує",
+    "button": "Повернутись на головну"
   }
 }
