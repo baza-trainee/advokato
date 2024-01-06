@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
@@ -34,6 +34,7 @@ export const Footer = () => {
   const [active, setActive] = useState('home');
   const [selectedPdfFile, setSelectedPdfFile] = useState(null);
   const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
 
   const [contacts, setContacts] = useState([]);
   const phone = contacts[0]?.contacts[0]?.phone;
@@ -71,6 +72,9 @@ export const Footer = () => {
     }
     if (pathname === '/contacts') {
       return setActive(prev => 'contacts');
+    }
+    if (hash !== '#practice' || hash !== '#news') {
+      navigate('*');
     }
   }, [pathname, hash]);
 
