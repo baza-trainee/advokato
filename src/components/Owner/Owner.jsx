@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { ButtonConsultation } from '../ButtonConsultation';
+import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
+import { ButtonConsultation } from '../ButtonConsultation';
 import {
   SectionStyled,
   Container,
@@ -10,31 +12,24 @@ import {
   TextStyled,
 } from './Owner.styled';
 
-import imageOwner from '/src/assets/images/owner-section/photo-owner.webp';
-
-export const Owner = () => {
+export const Owner = ({ data }) => {
+  const [t, i18n] = useTranslation('global');
   const [modalActive, setModalActive] = useState(false);
+
   return (
     <SectionStyled>
       <Container>
         <CompanyBox>
           <TextStyled>
             <h3>
-              Адвокатська компанія
-              <span>«STATUS»</span>
+              {t('owner.title')}
+              <span>{t('owner.subTitle')}</span>
             </h3>
 
-            <p>
-              Маючи надійну команду юристів і адвокатів, ми надаємо повний
-              спектр юридичних послуг у корпоративній, цивільно-правовій,
-              кримінальній та інших сферах. Також, маємо досвід захисту
-              інтелектуальної власності, надаємо нормативно-правові консультації
-              підприємницької діяльності широкого кола клієнтів, в тому числі
-              крупним компаніям, а також громадським та некомерційним
-              організаціям.
-            </p>
+            <p>{data?.main_page_description}</p>
 
-            <ButtonConsultation className="btn-owner"
+            <ButtonConsultation
+              className="btn-owner"
               modalActive={modalActive}
               setModalActive={setModalActive}
             />
@@ -43,13 +38,17 @@ export const Owner = () => {
 
         <ImageBoxStyled>
           <ImageStyled
-            src={imageOwner}
+            src={data?.main_page_photo_path}
             width={610}
             height={900}
-            alt="photo-owner"
+            alt="фотографія засновника компанії"
           />
         </ImageBoxStyled>
       </Container>
     </SectionStyled>
   );
+};
+
+Owner.propTypes = {
+  data: PropTypes.object.isRequired,
 };
