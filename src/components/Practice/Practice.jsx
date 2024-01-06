@@ -98,10 +98,7 @@ export const Practice = () => {
   return (
     <SectionStyled ref={ref}>
       <Container>
-        <TitleStyled>
-          Злагоджена команда юристів Status здатна вирішувати складні завдання у
-          різних сферах.
-        </TitleStyled>
+        <TitleStyled>{t('practiceSection.title')}</TitleStyled>
 
         {practices.length > 0 && (
           <PracticeWrp>

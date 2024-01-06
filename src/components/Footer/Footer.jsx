@@ -2,9 +2,13 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { getContent } from '../../api/';
+import { isObjectEmpty } from '../../helpers';
 import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
 import { SocialList } from '../SocialList';
+import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
+import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
 import {
   Container,
   ContentWrp,
@@ -21,10 +25,6 @@ import {
   PhoneStyled,
   EmailStyled,
 } from './Footer.styled';
-import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
-import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
-import { getContent } from '../../api/';
-import { isObjectEmpty } from '../../helpers';
 
 const currentYear = new Date().getFullYear();
 
@@ -159,7 +159,7 @@ export const Footer = () => {
 
             {location.pathname === '/contacts' && (
               <TitleCompany path={location.pathname}>
-                ADVOCATE COMPANY «STATUS»
+                {t('footer.titleCompany')}
               </TitleCompany>
             )}
 
@@ -189,7 +189,7 @@ export const Footer = () => {
 
             {location.pathname !== '/contacts' && (
               <AddressWrp>
-                <TitleCompany>ADVOCATE COMPANY «STATUS»</TitleCompany>
+                <TitleCompany>{t('footer.titleCompany')}</TitleCompany>
 
                 {cities?.length > 0 && (
                   <MainOfficeStyled
@@ -220,7 +220,7 @@ export const Footer = () => {
             )}
           </ContentWrp>
 
-          <BottomSign>{`${currentYear} ADVOCATE COMPANY «STATUS». All rights reserved.`}</BottomSign>
+          <BottomSign>{`${currentYear} ${t('footer.bottomSign')}`}</BottomSign>
         </Container>
       </FooterStyled>
     </>
