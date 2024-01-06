@@ -3,15 +3,14 @@ import { device } from "../../styles/mixins";
 
 export const SectionStyled = styled.div`
 	display: block;
-	position: absolute;
-	top: 0;
+	position: absolute;	top: 0;
 	right: 0;
 	height: 100vh;
 	width: 172px;
+	z-index: 120;
 	background: var(--darkGrey);
 	border: none;
 	border-radius: 24px 0 0 24px;
-	z-index: 30;
 	transition: 1s;
 	animation: 0.7s ease-in-out appearMenu forwards;
 
@@ -23,12 +22,15 @@ export const SectionStyled = styled.div`
 		display: none;
 	}
 	@media screen and (${device.mobileL}) {
+		z-index: 120;
 		width: 152px;
 	}
 	@media screen and (${device.tablet}) {
+		z-index: 120;
 		width: 172px;
 	}
 	@media screen and (${device.preburger}) {
+		z-index: 120;
 		width: 216px;
 	}
 	@keyframes appearMenu {
