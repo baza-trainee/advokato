@@ -102,10 +102,7 @@ export const ClientsSliderContainer = styled.div`
 		opacity: 1;
 		transition: 1s;
 	}
-	/* .splide__slide.is-next + .splide__slide + .splide__slide + .splide__slide,
-	.splide__slide.is-active {
-		opacity: 0.3;
-	} */
+	
 	@media screen and (${device.mobileL}) {
 		.splide__slide.is-active,.splide__slide.is-active+ .is-visible
 			+ .is-visible {

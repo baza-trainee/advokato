@@ -101,35 +101,50 @@ export const Text = styled.p`
 `;
 
 export const Button = styled(Link)`
-	margin-bottom: 36px;
-
 	${mainButton};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 36px;
+	min-width: 260px;
+	height: 44px;
+
 	padding: 16px 20px;
 
-	font-family: Raleway;
-	font-weight: 600;
+	font-family: var(--Montserrat);
+	font-weight: 500;
 	font-size: 14px;
 	line-height: 21px;
 
 	transition: all var(--timing-function) var(--animation-duration);
 
 	@media screen and (${device.mobileL}) {
-		margin-bottom: 168px;
+		margin-bottom: calc(168px + 24px);
+		min-width: 260px;
+		height: 44px;
 
 		font-weight: 500;
 		line-height: 17px;
 	}
 
 	@media screen and (${device.tablet}) {
-		margin-bottom: 148px;
+		margin-bottom: calc(148px + 24px);
+		min-width: 312px;
+		height: 60px;
+		padding: 20px;
+
 		font-size: 16px;
-		line-height: 19px;
+		line-height: 20px;
 	}
 
 	@media screen and (${device.desktop}) {
-		margin-bottom: 100px;
+		margin-bottom: calc(100px + 24px);
+		min-width: 364px;
+		height: 64px;
+		padding: 20px 32px;
 
 		font-size: 18px;
-		line-height: 27px;
+		line-height: 22px;
 	}
 `;

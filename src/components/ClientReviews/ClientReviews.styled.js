@@ -24,7 +24,10 @@ export const ClientsBlockHeader = styled.h2`
 	${fontSectionTitle};
 	color: var(--lightText);
 	@media screen and (${device.mobileL}) {
-		padding: 60px 60px 40px 60px;
+		padding: 60px 60px 20px 60px;
+		font-size: 24px;
+        font-weight: 500;
+        line-height: calc(33.6 / 24);  
 	}
 	@media screen and (${device.tablet}) {
 		padding: 120px 80px 40px;
@@ -58,8 +61,23 @@ export const SliderWrapper = styled.div`
 	.splide__slide.is-active {
 		opacity: 0.3;
 	}
+	@media screen and (${device.mobileL}) {
+		padding-bottom: 16px;
+		.splide__slide.is-next + .splide__slide 
+	 {
+		opacity: 0.3;
+	}
+	}
 	@media screen and (${device.tablet}) {
 		padding-bottom: 120px;
+		.splide__slide.is-next + .splide__slide 
+	 {
+		opacity: 1;
+	}
+	.splide__slide.is-next + .splide__slide + .splide__slide,
+	.splide__slide.is-active {
+		opacity: 0.3;
+	}
 	}
 	@media screen and (${device.desktop}) {
 		padding-bottom: 132px;
@@ -72,6 +90,12 @@ export const ClientCardWrapper = styled.div`
 	border: 1px solid var(--reviewText);
 	background-color: var(--darkGrey);
 	color: var(--reviewText);
+	@media screen and (${device.mobileL}) {
+		width: 364px;
+		height: ${props => (props.heightText ? "fit-content" : "380px")};
+		min-height: 380px;
+		padding: 20px 16px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 372px;
 		height: ${props => (props.heightText ? "fit-content" : "444px")};
@@ -92,6 +116,9 @@ export const CardHeader = styled.div`
 	height: fit-content;
 	gap: 20px;
 	overflow: hidden;
+	@media screen and (${device.mobileL}) {
+		width: 332px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 324px;
 	}
@@ -112,6 +139,9 @@ export const ImageWrapper = styled.div`
 `;
 export const CardRecvisits = styled.div`
 	overflow: hidden;
+	@media screen and (${device.mobileL}) {
+		width: 232px;
+	}
 	@media screen and (${device.tablet}) {
 		width: 224px;
 	}
@@ -123,6 +153,11 @@ export const CardRecvisits = styled.div`
 export const ClientName = styled.p`
 	${fontReviewName};
 	line-height: 32px;
+	@media screen and (${device.mobileL}) {
+	margin-bottom: 8px;
+		font-size: 20px;
+		line-height: calc(32 / 20);
+	}
 	@media screen and (${device.tablet}) {
 	margin-bottom: 8px;
 		font-size: 22px;
@@ -136,6 +171,10 @@ export const ClientName = styled.p`
 
 export const ClientRole = styled.p`
 	${fontReview}
+	@media screen and (${device.mobileL}) {
+		font-size: 14px;
+		line-height: calc(21 / 14);
+	}
 	@media screen and (${device.tablet}) {
 		font-size: 14px;
 		line-height: calc(21 / 14);
@@ -148,17 +187,24 @@ export const ClientRole = styled.p`
 
 export const ClientReview = styled.p`
 	${fontReview}
-	margin-top: 24px;
 	button {
 		opacity: 50%;
 	}
+	@media screen and (${device.mobileL}) {
+		width: 332px;
+		margin-top: 16px;
+		font-size: 14px;
+		line-height: calc(21 / 14);
+	}
 	@media screen and (${device.tablet}) {
 		width: 324px;
+		margin-top: 20px;
 		font-size: 14px;
 		line-height: calc(21 / 14);
 	}
 	@media screen and (${device.desktop}) {
 		width: 360px;
+		margin-top: 24px;
 		font-size: 18px;
 		line-height: calc(27 / 18);
 	}
@@ -172,6 +218,16 @@ export const SliderArrow = styled.div`
 	z-index: 10;
 	&:last-of-type {
 		left: 92%;
+	}
+	@media screen and (${device.mobileL}) {
+		left: 8%;
+		&:last-of-type {
+			left: 87%;
+		}
+		svg {
+			width: 40px;
+			height: 40px;
+		}
 	}
 	@media screen and (${device.tablet}) {
 		left: 2%;
