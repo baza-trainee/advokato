@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { ResultElement } from './ResultElement';
 import {
@@ -12,6 +13,7 @@ import {
 } from './Results.styled';
 
 export const Results = () => {
+  const [t, i18n] = useTranslation('global');
   const { pathname, hash } = useLocation();
   const ref = useRef();
 
@@ -35,18 +37,10 @@ export const Results = () => {
     <SectionStyled ref={ref}>
       <Container>
         <TitleBlock>
-          <TitleStyled>
-            Нашій адвокатській компанії доручено розв'язувати найскладніші
-            правові питання для наших клієнтів
-          </TitleStyled>
-          <SubheadingStyled>
-            Ми пишаємося нашими успіхами і вражаючими рішеннями, які ми досягли
-            для наших клієнтів протягом років нашої роботи. Наші адвокати
-            володіють багаторічним досвідом у різних сферах права і завжди
-            готові захищати ваші інтереси з великою ретельністю та
-            професіоналізмом.
-          </SubheadingStyled>
+          <TitleStyled>{t('results.title')}</TitleStyled>
+          <SubheadingStyled>{t('results.subTitle')}</SubheadingStyled>
         </TitleBlock>
+
         <ResultBlock>
           <ResultElement />
         </ResultBlock>
