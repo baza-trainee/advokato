@@ -3,11 +3,12 @@ import { flexBox, device } from "../../styles/mixins";
 
 export const CardWrap = styled.div`
 	${flexBox};
+	flex-direction: column-reverse;
 	gap: 20px;
-	flex-direction: ${({ index }) =>
-		index === 0 || index % 2 === 0 ? "row" : "row-reverse"};
 
 	@media screen and (${device.tablet}) {
+		flex-direction: ${({ index }) =>
+			index === 0 || index % 2 === 0 ? "row" : "row-reverse"};
 		gap: 24px;
 	}
 	@media screen and (${device.desktop}) {
@@ -17,6 +18,11 @@ export const CardWrap = styled.div`
 
 export const PersonPhoto = styled.img`
 	object-fit: cover;
+
+	@media screen and (${device.mobileL}) {
+		width: 648px;
+		height: 384px;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 420px;
@@ -32,7 +38,7 @@ export const Name = styled.h3`
 	font-family: var(--Raleway);
 	font-weight: 400;
 
-	@media screen and (${device.tablet}) {
+	@media screen and (${device.mobileL}) {
 		margin-bottom: 20px;
 		font-size: 28px;
 		line-height: 39px;
@@ -48,7 +54,7 @@ export const Position = styled.h4`
 	font-family: var(--Montserrat);
 	font-weight: 400;
 
-	@media screen and (${device.tablet}) {
+	@media screen and (${device.mobileL}) {
 		margin-bottom: 20px;
 		font-size: 22px;
 		line-height: 33px;
@@ -70,7 +76,7 @@ export const PersonInfo = styled.div`
 	font-family: var(--Raleway);
 	font-weight: 400;
 
-	@media screen and (${device.tablet}) {
+	@media screen and (${device.mobileL}) {
 		font-size: 16px;
 		line-height: 24px;
 	}
