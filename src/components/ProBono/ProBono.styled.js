@@ -139,7 +139,7 @@ export const BonoText = styled.div`
 	}
 	@media screen and (${device.mobileL}) {
 		font-size: 16px;
-		line-height: calc(25.6 / 20);
+		line-height: calc(25.6 / 16);
 	}
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
