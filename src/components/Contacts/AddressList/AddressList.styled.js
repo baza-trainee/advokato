@@ -4,6 +4,8 @@ import { fontSectionText, device } from '../../../styles/mixins';
 export const UlStyled = styled.ul`
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  max-width: 272px;
   margin-left: 20px;
   list-style: square;
 
@@ -27,7 +29,11 @@ export const ListItem = styled.li`
   order: ${({ position }) => position};
 
   p {
+    min-height: 24px;
+
     ${fontSectionText};
+    font-size: 14px;
+    line-height: 22.4px;
 
     @media screen and (${device.mobileL}) {
       min-height: 28px;

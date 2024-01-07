@@ -15,6 +15,21 @@ export const containerStyleMobileL = {
   height: '408px',
 };
 
+export const containerStyleMobileM = {
+  width: '400px',
+  height: '300px',
+};
+
+export const containerStyleMobileS = {
+  width: '272px',
+  height: '140px',
+};
+
+export const containerStyleMobileSPlus = {
+  width: '327px',
+  height: '200px',
+};
+
 export const MarkerWrp = styled.div`
   padding: 10px;
   width: clamp(200px, 40%, 300px);
