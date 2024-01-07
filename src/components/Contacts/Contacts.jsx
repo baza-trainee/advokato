@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
 
 import { isObjectEmpty } from '../../helpers';
@@ -12,10 +13,11 @@ import {
   TitleStyled,
   CenterWrp,
   LeftSide,
-  ContactsWrp
+  ContactsWrp,
 } from './Contacts.styled';
 
 export const Contacts = () => {
+  const [t, i18n] = useTranslation('global');
   const [cities, setCities] = useState([]);
   const [contacts, setContacts] = useState([]);
 
@@ -40,7 +42,7 @@ export const Contacts = () => {
   return (
     <SectionStyled>
       <Container>
-        <TitleStyled>ADVOCATE COMPANY «STATUS»</TitleStyled>
+        <TitleStyled>{t('contactsPage.title')}</TitleStyled>
 
         <CenterWrp>
           {contacts?.length > 0 && (

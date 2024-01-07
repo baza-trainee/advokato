@@ -10,12 +10,50 @@
     },
     "btnAppoitment": "Make an appointment"
   },
-  "titleText": "Trust,expertise, result",
-  "subTitleText2": "We help private clients, state-owned companies, small and large businesses to decide legal issues of any complexity.",
-  "subTitleText1": "We help to anticipate the necessary changes and thus avoid difficult situations in the future.",
+  "owner": {
+    "title": "Адвокатська компанія",
+    "subTitle": "«STATUS»"
+  },
+  "information": {
+    "title": "Ми самостійно здійснюємо представництво ваших інтересів"
+  },
+  "team": {
+    "title": "Наша професійна команда",
+    "subTitle": "Ключовим активом нашої адвокатської компанії є наша досвідчена та висококваліфікована команда юристів."
+  },
   "practiceSection": {
+    "title": "Злагоджена команда юристів Status здатна вирішувати складні завдання у різних сферах.",
     "moreButton": "Read more",
     "hideButton": "Collapse"
+  },
+  "proBono": {
+    "title": "ProBono"
+  },
+  "results": {
+    "title": "Нашій адвокатській компанії доручено розв'язувати найскладніші правові питання для наших клієнтів",
+    "subTitle": "Ми пишаємося нашими успіхами і вражаючими рішеннями, які ми досягли для наших клієнтів протягом років нашої роботи. Наші адвокати володіють багаторічним досвідом у різних сферах права і завжди готові захищати ваші інтереси з великою ретельністю та"
+  },
+  "clients": {
+    "title": "Наші клієнти"
+  },
+  "clientsReviews": {
+    "title": "Відгуки"
+  },
+  "feedBackForm": {
+    "title": "Contact us",
+    "labelName": "Your Name",
+    "placeholderName": "Enter a name",
+    "labelPhone": "Your phone number",
+    "labelEmail": "Your email",
+    "labelQuestion": "Your question",
+    "placeholderQuestion": "Enter question",
+    "submitButton": "Submit"
+  },
+  "footer": {
+    "titleCompany": "ADVOCATE COMPANY «STATUS»",
+    "bottomSign": "ADVOCATE COMPANY «STATUS». All rights reserved.",
+    "privacyDocTitle": "Privacy policy",
+    "termsUseSiteDocTitle": "Terms of use of the site"
   },
   "appointmentForm": {
     "firstTitle": "Contact Information",
@@ -46,18 +84,16 @@
     "failureTextTwoFeedBack": "Please try again.",
     "returnButton": "Come back"
   },
-  "feedBackForm": {
-    "title": "Contact us",
-    "labelName": "Your Name",
-    "placeholderName": "Enter a name",
-    "labelPhone": "Your phone number",
-    "labelEmail": "Your email",
-    "labelQuestion": "Your question",
-    "placeholderQuestion": "Enter question",
-    "submitButton": "Submit"
+  "companyPage": {
+    "title": "Про нашу компанію",
+    "subTitle": "Адвокатська компанія «STATUS»"
   },
-  "footer": {
-    "privacyDocTitle": "Privacy policy",
-    "termsUseSiteDocTitle": "Terms of use of the site"
+  "contactsPage": {
+    "title": "ADVOCATE COMPANY «STATUS»"
+  },
+  "errorPage": {
+    "title": "404",
+    "subTitle": "На жаль, сторінка, яку ви шукаєте, видалена або не існує",
+    "button": "Повернутись на головну"
   }
 }

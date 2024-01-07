@@ -1,71 +1,66 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { getContent } from '../../api';
+import { isObjectEmpty } from '../../helpers';
+import { SliderItems } from './SliderItems/SliderItems';
+import { Icon } from '../Icon';
 import {
-	ClientsBlockHeader,
-	ClientsSliderContainer,
-	Container,
-	SectionStyled,
-	SliderArrow,
-} from "./ClientsBlock.styled";
-import { SliderItems } from "./SliderItems/SliderItems";
-import { getContent } from "../../api";
-import { isObjectEmpty } from "../../helpers";
-import { Icon } from "../Icon";
+  ClientsBlockHeader,
+  ClientsSliderContainer,
+  Container,
+  SectionStyled,
+  SliderArrow,
+} from './ClientsBlock.styled';
 
 export const ClientsBlock = () => {
-	const arrowRef = useRef();
-	const [data, setData] = useState();
+  const [t, i18n] = useTranslation('global');
+  const arrowRef = useRef();
+  const [data, setData] = useState();
 
-	useEffect(() => {
-		const getData = async () => {
-			const data = await getContent("clients");
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getContent('clients');
 
-			if (!isObjectEmpty(data)) {
-				setData(data);
-			}
-		};
+      if (!isObjectEmpty(data)) {
+        setData(data);
+      }
+    };
 
-		getData();
-	}, []);
+    getData();
+  }, []);
 
-	return (
-		<SectionStyled>
-			<Container>
-				<ClientsBlockHeader>Наші клієнти</ClientsBlockHeader>
-			</Container>
-			{data?.length > 0 && (
-				<ClientsSliderContainer>
-					<SliderArrow>
-						<button
-							aria-label="Перелистування слайдера вліво"
-							onClick={() => arrowRef.current.go("-1")}
-							type="button"
-						>
-							<Icon
-								id={"icon-slider-arrow-left"}
-								width={60}
-								height={60}
-							/>
-						</button>
-					</SliderArrow>
-					<SliderItems
-						ref={arrowRef}
-						data={data}
-					/>
-					<SliderArrow>
-						<button
-							aria-label="Перелистування слайдера вправо"
-							onClick={() => arrowRef.current.go("+1")}
-							type="button"
-						>
-							<Icon
-								id={"icon-slider-arrow-right"}
-								width={60}
-								height={60}
-							/>
-						</button>
-					</SliderArrow>
-				</ClientsSliderContainer>
-			)}
-		</SectionStyled>
-	);
+  return (
+    <SectionStyled>
+      <Container>
+        <ClientsBlockHeader>{t('clients.title')}</ClientsBlockHeader>
+      </Container>
+
+      {data?.length > 0 && (
+        <ClientsSliderContainer>
+          <SliderArrow>
+            <button
+              aria-label="Перелистування слайдера вліво"
+              onClick={() => arrowRef.current.go('-1')}
+              type="button"
+            >
+              <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
+            </button>
+          </SliderArrow>
+
+          <SliderItems ref={arrowRef} data={data} />
+
+          <SliderArrow>
+            <button
+              aria-label="Перелистування слайдера вправо"
+              onClick={() => arrowRef.current.go('+1')}
+              type="button"
+            >
+              <Icon id={'icon-slider-arrow-right'} width={60} height={60} />
+            </button>
+          </SliderArrow>
+        </ClientsSliderContainer>
+      )}
+    </SectionStyled>
+  );
 };

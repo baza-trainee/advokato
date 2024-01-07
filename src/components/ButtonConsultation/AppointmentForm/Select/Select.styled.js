@@ -8,7 +8,7 @@ export const LabelStyled = styled.label`
     ${fontDesktop};
     color: var(--mainText);
 
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       margin-bottom: 4px;
       height: 32px;
       font-size: 18px;
@@ -24,7 +24,7 @@ export const LabelStyled = styled.label`
   }
 
   &:last-of-type {
-    @media screen and (${device.tablet}) {
+    @media screen and (${device.mobileL}) {
       margin-bottom: 4px;
     }
 
@@ -51,7 +51,7 @@ export const ButtonStyled = styled.button`
     height: 24px;
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     padding: 18px 28px;
     width: 440px;
     height: 60px;
@@ -86,7 +86,7 @@ export const OptionsItem = styled.li`
     background-color: var(--accentLink);
   }
 
-  @media screen and (${device.tablet}) {
+  @media screen and (${device.mobileL}) {
     padding: 18px 28px;
     width: 440px;
     height: 60px;

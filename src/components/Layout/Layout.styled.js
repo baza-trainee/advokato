@@ -16,7 +16,7 @@ export const HeaderStyled = styled.header`
 	color: var(--lightText);
 	background-color: var(--headerBackground);
 	backdrop-filter: ${props => (props.top ? 0 : "blur(20px)")};
-	z-index: 20;
+	z-index: 120;
 
 	border-bottom: ${({ activePath }) =>
 		activePath === "/company" ? "1px solid var(--reviewText)" : "none"};
@@ -139,7 +139,7 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition-delay: 0.25s;
-		z-index: 50;
+		z-index: 125;
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -162,7 +162,7 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-		z-index: 50;
+		z-index: 125;
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -185,7 +185,7 @@ export const HamburgerMenu = styled.div`
 		border-radius: 20px;
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
-		z-index: 50;
+		z-index: 125;
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -207,7 +207,7 @@ export const HamburgerMenu = styled.div`
 		top: 0;
 		transform: rotateZ(-45deg);
 		transition: top 0.25s, transform 0.25s 0.25s;
-		z-index: 50;
+		z-index: 125;
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}
@@ -223,7 +223,7 @@ export const HamburgerMenu = styled.div`
 		top: 0;
 		transform: rotateZ(45deg);
 		transition: top 0.4s, transform 0.25s 0.25s;
-		z-index: 50;
+		z-index: 125;
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}

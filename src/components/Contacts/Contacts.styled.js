@@ -6,14 +6,14 @@ export const SectionStyled = styled.section`
     min-height: calc(100dvh - 148px);
     border-top: 68px solid var(--darkBackground);
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: calc(60px + 24px);
   }
 
   @media screen and (${device.tablet}) {
     min-height: calc(100dvh - 156px);
     border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
-    padding-bottom: 132px;
+    padding-bottom: calc(132px + 24px);
   }
 
   @media screen and (${device.desktop}) {
