@@ -3,10 +3,11 @@ import { device } from '../../../styles/mixins';
 
 export const LiStyled = styled.li`
   display: flex;
-  flex-direction: ${({ id }) => (id % 2 === 0 ? 'row-reverse' : 'row')};
   justify-content: space-between;
+  flex-direction: column;
 
   @media screen and (${device.mobileL}) {
+    flex-direction: ${({ id }) => (id % 2 === 0 ? 'row-reverse' : 'row')};
     min-height: 300px;
   }
 
@@ -24,9 +25,15 @@ export const ImageWrp = styled.div`
 `;
 
 export const ImageStyled = styled.img`
+  margin-left: ${({ id }) => (id % 2 === 0 ? 'auto' : '0')};
+  margin-right: ${({ id }) => (id % 2 === 0 ? '0' : 'auto')};
+  width: 236px;
+  height: 160px;
   border-radius: 24px;
 
   @media screen and (${device.mobileL}) {
+    margin-left: 0;
+    margin-right: 0;
     width: 312px;
     height: 208px;
   }
@@ -46,19 +53,27 @@ export const ShortTextStyled = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  transform: ${({ id }) =>
+    id % 2 === 0 ? 'translate(-5px, 120px)' : 'translate(40px, 120px)'};
 
+  padding: 16px;
+  width: 224px;
+  min-height: 196px;
+  border-radius: 16px;
   background-color: var(--lightText);
 
   h3 {
+    margin-bottom: 12px;
+    height: 24px;
+
     font-family: var(--Raleway);
+    font-size: 14px;
+    line-height: calc(21 / 14);
     font-weight: 600;
     letter-spacing: 0em;
     color: var(--mainText);
 
     @media screen and (${device.mobileL}) {
-      margin-bottom: 12px;
-      height: 24px;
-
       font-size: 16px;
       line-height: calc(24 / 16);
     }
@@ -74,6 +89,8 @@ export const ShortTextStyled = styled.div`
 
   p {
     font-family: var(--Raleway);
+    font-size: 12px;
+    line-height: calc(18 / 12);
     font-weight: 400;
     letter-spacing: 0em;
     font-style: italic;
@@ -97,10 +114,7 @@ export const ShortTextStyled = styled.div`
 
   @media screen and (${device.mobileL}) {
     transform: translate(-40px, 120px);
-    padding: 16px;
     width: 280px;
-    min-height: 196px;
-    border-radius: 16px;
   }
 
   @media screen and (${device.tablet}) {
@@ -119,12 +133,18 @@ export const ShortTextStyled = styled.div`
 `;
 
 export const DescriptionStyled = styled.p`
+  margin-top: 170px;
+  width: 272px;
+
   font-family: var(--PTSans);
+  font-size: 14px;
+  line-height: calc(22 / 14);
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--mainText);
 
   @media screen and (${device.mobileL}) {
+    margin-top: 0;
     width: 280px;
     font-size: 16px;
     line-height: calc(26 / 16);
