@@ -7,7 +7,7 @@ export const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 26px;
+	padding: 0 24px;
 
 	background-color: var(--lightBackground);
 
@@ -27,8 +27,7 @@ export const TopBackground = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
-
-	height: 52px;
+	height: 48px;
 	width: 100%;
 
 	background-color: var(--darkBackground);
@@ -77,16 +76,18 @@ export const Title = styled.p`
 `;
 
 export const Text = styled.p`
-	margin-bottom: 36px;
+	margin-bottom: 28px;
+	max-width: 200px;
 
 	font-family: var(--Raleway);
 	font-weight: 400;
 	font-size: 12px;
-	line-height: 19px;
+	line-height: 17px;
 	text-align: center;
 
 	@media screen and (${device.mobileL}) {
 		margin-bottom: 84px;
+		max-width: 100%;
 		font-size: 22px;
 		line-height: 31px;
 	}
@@ -106,8 +107,8 @@ export const Button = styled(Link)`
 	justify-content: center;
 	align-items: center;
 
-	margin-bottom: 36px;
-	min-width: 260px;
+	margin-bottom: calc(44px + 24px);
+	min-width: 272px;
 	height: 44px;
 
 	padding: 16px 20px;
@@ -115,7 +116,7 @@ export const Button = styled(Link)`
 	font-family: var(--Montserrat);
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 21px;
+	line-height: 17px;
 
 	transition: all var(--timing-function) var(--animation-duration);
 
