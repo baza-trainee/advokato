@@ -11,15 +11,21 @@ import "../../../index.css";
 export const MainModalResult = styled.div`
 	${flexBox};
 	width: 1080px;
-	gap: 24px;
-	padding: 64px;
 	flex-direction: column;
 	overflow: hidden;
 	background: linear-gradient(0deg, #f1f2f4, #f1f2f4),
 		linear-gradient(0deg, #98a5b1, #98a5b1);
 
+	@media screen and (${device.mobileL}) {
+		width: 648px;
+		padding: 48px;
+		gap: 20px;
+	}
+
 	@media screen and (${device.tablet}) {
 		width: 844px;
+		padding: 64px;
+		gap: 24px;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -34,6 +40,10 @@ export const TitleModal = styled.h4`
 	text-align: center;
 	color: var(--mainText);
 
+	@media screen and (${device.mobileL}) {
+		font-size: 16px;
+	}
+
 	@media screen and (${device.tablet}) {
 		font-size: 18px;
 	}
@@ -46,10 +56,15 @@ export const TitleModal = styled.h4`
 
 export const ImageModal = styled.img`
 	border-radius: 24px;
-	height: auto;
+
+	@media screen and (${device.mobileL}) {
+		width: 312px;
+		height: 344px;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 348px;
+		height: auto;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -62,8 +77,14 @@ export const TextModal = styled.div`
 	${fontReview};
 	color: #000000;
 
+	@media screen and (${device.mobileL}) {
+		font-size: 14px;
+		padding: 40px 0;
+	}
+
 	@media screen and (${device.tablet}) {
 		font-size: 16px;
+		padding: 0;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -77,6 +98,14 @@ export const CtaBox = styled.div`
 	gap: 24px;
 	color: #969395;
 
+	@media screen and (${device.mobileL}) {
+		font-size: 14px;
+	}
+
+	@media screen and (${device.tablet}) {
+		font-size: 14px;
+	}
+	
 	@media screen and (${device.desktop}) {
 		font-size: 14px;
 	}
