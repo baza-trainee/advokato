@@ -126,6 +126,7 @@ export const TextStyled = styled.div`
 		@media screen and (${device.desktop}) {
 			margin-bottom: 72px;
 			font-size: 22px;
+			max-width: 484px;
 		}
 	}
 
@@ -157,38 +158,37 @@ export const TextStyled = styled.div`
 export const CompanyBox = styled.div`
 	${flexBox};
 	flex-direction: column;
-	width: 57.6%;
 
 	@media screen and (${device.mobileL}) {
-		width: 57.7%;
+		width: 450px;
 	}
 
 	@media screen and (${device.tablet}) {
-		width: 57.6%;
+		width: 526px;
 	}
 
 	@media screen and (${device.desktop}) {
-		width: 57.6%;
+		width: 824px;
 	}
 `;
 
 export const ImageBoxStyled = styled.div`
 	@media screen and (${device.mobileL}) {
-		width: 42.3%;
+		width: 318px;
 	}
 
 	@media screen and (${device.tablet}) {
-		width: 42.4%;
+		width: 498px;
 	}
 
 	@media screen and (${device.desktop}) {
-		width: 42.4%;
+		width: 616px;
 	}
 `;
 
 export const ImageStyled = styled.img`
 	display: block;
-	max-width: 100%;
+	width: 100%;
 	height: 100%;
 	object-fit: cover;
 `;

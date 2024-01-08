@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   MainModalResult,
   TitleModal,
+  ImageBox,
   ImageModal,
   TextModal,
   CtaBox,
@@ -14,7 +15,10 @@ export const ResultsModal = ({ data }) => {
       {data && (
         <MainModalResult key={data.id}>
           <TitleModal>{data.name}</TitleModal>
-          <ImageModal src={data.photo_path} />
+          <ImageBox>
+            <ImageModal src={data.photo_path} />
+          </ImageBox>
+          
           <TextModal>
             {/* {data.description} */}
             У лютому 2021 року до нас звернулося фермерське підприємство, яке

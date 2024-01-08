@@ -9,9 +9,16 @@ import {
 import "../../index.css";
 
 export const SectionStyled = styled.section`
-	padding: 132px 160px;
 	background-color: var(--lightBackground);
 	color: var(--lightText);
+
+	@media screen and (${device.mobileS}) {
+		padding: 60px 24px;
+	}
+
+	@media screen and (${device.mobileL}) {
+		padding: 60px;
+	}
 
 	@media screen and (${device.tablet}) {
 		padding: 120px 80px;
@@ -29,20 +36,37 @@ export const Container = styled.div`
 	height: auto;
 	padding: 0 !important;
 
+	@media screen and (${device.mobileS}) {
+		gap: 28px;
+		min-width: 272px;
+	}
+
+	@media screen and (${device.mobileL}) {
+		gap: 40px;
+		min-width: 648px;
+	}
+
 	@media screen and (${device.tablet}) {
 		gap: 40px;
 		min-width: 864px;
+		padding: 0;
 	}
 
 	@media screen and (${device.desktop}) {
 		gap: 40px;
 		width: 1120px;
+		padding: 0;
 	}
 `;
 
 export const TitleBlock = styled.div`
 	${flexBox};
 	flex-direction: column;
+
+	@media screen and (${device.mobileL}) {
+		gap: 20px;
+		width: 648px;
+	}
 
 	@media screen and (${device.tablet}) {
 		gap: 24px;
@@ -59,9 +83,22 @@ export const TitleStyled = styled.h2`
 	${fontSectionTitle};
 	color: var(--mainText);
 
+	@media screen and (${device.mobileS}) {
+		font-size: 20px;
+		line-height: 28px;
+		padding-bottom: 28px;
+	}
+
+	@media screen and (${device.mobileL}) {
+		font-size: 24px;
+		line-height: 33.6px;
+		padding-bottom: 20px;
+	}
+
 	@media screen and (${device.tablet}) {
 		font-size: 32px;
 		line-height: 44.8px;
+		padding-bottom: 0;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -74,9 +111,22 @@ export const SubheadingStyled = styled.p`
 	${fontSectionText};
 	color: var(--mainText);
 
+	@media screen and (${device.mobileS}) {
+		font-size: 14px;
+		line-height: 22.4px;
+		padding-bottom: 0;
+	}
+
+	@media screen and (${device.mobileL}) {
+		font-size: 16px;
+		line-height: 25.6px;
+		padding-bottom: 40px;
+	}
+
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
 		line-height: 32px;
+		padding-bottom: 0;
 	}
 
 	@media screen and (${device.desktop}) {
