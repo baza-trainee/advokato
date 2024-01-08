@@ -13,7 +13,14 @@ export const ContentStyled = styled.div`
 	width: 100%;
 	justify-content: space-between;
 	position: relative;
-	border-top: 1px solid #98a5b1;
+
+	@media screen and (${device.mobileL}) {
+		border-top: none;
+	}
+
+	@media screen and (${device.tablet}) {
+		border-top: 1px solid #98a5b1;
+	}
 `;
 
 export const ResultItemStyled = styled.div`
@@ -21,6 +28,15 @@ export const ResultItemStyled = styled.div`
 	align-items: flex-end;
 	justify-content: space-between;
 	width: 1036px;
+
+	@media screen and (${device.mobileS}) {
+		flex-direction: column;
+	}
+
+	@media screen and (${device.mobileL}) {
+		flex-direction: row;
+		width: 616px;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 788px;
@@ -46,9 +62,17 @@ export const WrapperStyled = styled.div`
 `;
 
 export const ImageBlock = styled.div`
-	border-radius: 24px;
-	width: 464px;
-	height: 312px;
+	@media screen and (${device.mobileS}) {
+		width: 272px;
+		height: 200px;
+		margin-bottom: 28px;
+	}
+
+	@media screen and (${device.mobileL}) {
+		width: 312px;
+		height: 344px;
+		margin-bottom: 0;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 348px;
@@ -73,13 +97,18 @@ export const ResultText = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 
+	@media screen and (${device.mobileL}) {
+		gap: 20px;
+		width: 288px;
+	}
+
 	@media screen and (${device.tablet}) {
-		gap: 23px;
+		gap: 24px;
 		width: 344px;
 	}
 
 	@media screen and (${device.desktop}) {
-		gap: 23px;
+		gap: 20px;
 		width: 512px;
 	}
 
@@ -87,14 +116,28 @@ export const ResultText = styled.div`
 		${fontReviewName};
 		color: var(--mainText);
 
+		@media screen and (${device.mobileS}) {
+			font-size: 16px;
+			line-height: 24px;
+			width: 272px;
+		}
+
+		@media screen and (${device.mobileL}) {
+			font-size: 20px;
+			line-height: 30px;
+			width: 288px;
+		}
+
 		@media screen and (${device.tablet}) {
 			font-size: 18px;
-			line-height: 28px;
+			line-height: 27px;
+			width: 344px;
 		}
 
 		@media screen and (${device.desktop}) {
 			font-size: 28px;
 			line-height: 42px;
+			width: 496px;
 		}
 	}
 
@@ -102,16 +145,32 @@ export const ResultText = styled.div`
 		${fontReview};
 		color: var(--mainText);
 
+		@media screen and (${device.mobileS}) {
+			font-size: 14px;
+			line-height: 21px;
+			width: 272px;
+			padding: 28px 0;
+		}
+
+		@media screen and (${device.mobileL}) {
+			font-size: 16px;
+			line-height: 24px;
+			width: 288px;
+			padding: 3px 0;
+		}
+
 		@media screen and (${device.tablet}) {
 			font-size: 16px;
 			line-height: 24px;
 			width: 344px;
+			padding: 3px 0;
 		}
 
 		@media screen and (${device.desktop}) {
 			font-size: 18px;
 			line-height: 27px;
 			width: 456px;
+			padding: 16.5px 0;
 		}
 	}
 `;
@@ -121,11 +180,11 @@ export const BubbleForm = styled.div`
 	gap: 24px;
 
 	@media screen and (${device.tablet}) {
-		min-width: 256px;
+		width: 256px;
 	}
 
 	@media screen and (${device.desktop}) {
-		min-width: 268px;
+		width: 268px;
 	}
 `;
 
@@ -152,15 +211,23 @@ export const PublicationDate = styled.p`
 	min-height: 20px;
 `;
 
-export const ArrowBlock = styled.div`
+export const ArrowBlock = styled.button`
 	${flexBox};
 	position: absolute;
 	right: 0;
-	top: 58px;
 	cursor: pointer;
 
 	svg {
 		fill: #969395;
+	}
+
+	@media screen and (${device.mobileS}) {
+		display:none;
+	}
+
+	@media screen and (${device.mobileL}) {
+		display: block;
+		top: 0;
 	}
 
 	@media screen and (${device.tablet}) {
@@ -168,6 +235,6 @@ export const ArrowBlock = styled.div`
 	}
 
 	@media screen and (${device.desktop}) {
-		top: 58px;
+		top: 48px;
 	}
 `;
