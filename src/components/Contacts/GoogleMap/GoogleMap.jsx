@@ -12,6 +12,9 @@ import {
   containerStyleDesktop,
   containerStyleTablet,
   containerStyleMobileL,
+  containerStyleMobileM,
+  containerStyleMobileS,
+  containerStyleMobileSPlus,
   MarkerWrp,
 } from './GoogleMap.styled';
 
@@ -47,6 +50,18 @@ export const GoogleMap = ({ cities }) => {
 
     if (width >= 768) {
       return setMapStyles(prev => containerStyleMobileL);
+    }
+
+    if (width <= 500 && width > 425) {
+      return setMapStyles(prev => containerStyleMobileM);
+    }
+
+    if (width <= 425 && width >= 375) {
+      return setMapStyles(prev => containerStyleMobileSPlus);
+    }
+
+    if (width < 375 && width >= 320) {
+      return setMapStyles(prev => containerStyleMobileS);
     }
   }, [width]);
 

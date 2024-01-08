@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { getContent } from '../../api/';
 import { isObjectEmpty } from '../../helpers';
+import { useWindowDimensions } from '../../hooks';
 import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
 import { SocialList } from '../SocialList';
@@ -34,6 +35,7 @@ export const Footer = () => {
   const [active, setActive] = useState('home');
   const [selectedPdfFile, setSelectedPdfFile] = useState(null);
   const { pathname, hash } = useLocation();
+  const { height, width } = useWindowDimensions();
   const navigate = useNavigate();
 
   const [contacts, setContacts] = useState([]);
@@ -138,7 +140,7 @@ export const Footer = () => {
       <FooterStyled>
         <Container path={location.pathname}>
           <ContentWrp path={location.pathname}>
-            {location.pathname !== '/contacts' && (
+            {(location.pathname !== '/contacts' || width < 768) && (
               <nav>
                 <ListStyled>
                   {navData.map(({ id, path, label, name, title }) => (
@@ -157,7 +159,7 @@ export const Footer = () => {
               </nav>
             )}
 
-            {location.pathname === '/contacts' && (
+            {location.pathname === '/contacts' && width >= 768 && (
               <TitleCompany path={location.pathname}>
                 {t('footer.titleCompany')}
               </TitleCompany>
