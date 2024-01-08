@@ -6,10 +6,7 @@ import { flexBox, device } from '../../styles/mixins';
 export const SocialListStyled = styled.ul`
   ${flexBox};
   justify-content: start;
-
-  @media screen and (${device.mobileL}) {
-    gap: 16px;
-  }
+  gap: 16px;
 
   @media screen and (${device.tablet}) {
     gap: 20px;
@@ -22,12 +19,9 @@ export const SocialListStyled = styled.ul`
 
 export const ItemStyled = styled.li`
   ${flexBox};
+  width: 24px;
+  height: 24px;
   order: ${({ position }) => position};
-
-  @media screen and (${device.mobileL}) {
-    width: 24px;
-    height: 24px;
-  }
 
   @media screen and (${device.desktop}) {
     width: 40px;
@@ -42,10 +36,8 @@ export const SocialLink = styled(Link)`
     fill: var(--lightText);
     fill: ${({ currentfill }) => (currentfill ? currentfill : null)};
 
-    @media screen and (${device.mobileL}) {
-      width: 24px;
-      height: 24px;
-    }
+    width: 24px;
+    height: 24px;
 
     @media screen and (${device.desktop}) {
       width: 30px;
