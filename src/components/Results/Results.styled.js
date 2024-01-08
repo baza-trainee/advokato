@@ -49,17 +49,24 @@ export const Container = styled.div`
 	@media screen and (${device.tablet}) {
 		gap: 40px;
 		min-width: 864px;
+		padding: 0;
 	}
 
 	@media screen and (${device.desktop}) {
 		gap: 40px;
 		width: 1120px;
+		padding: 0;
 	}
 `;
 
 export const TitleBlock = styled.div`
 	${flexBox};
 	flex-direction: column;
+
+	@media screen and (${device.mobileL}) {
+		gap: 20px;
+		width: 648px;
+	}
 
 	@media screen and (${device.tablet}) {
 		gap: 24px;

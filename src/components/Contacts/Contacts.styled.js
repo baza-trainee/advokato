@@ -2,18 +2,23 @@ import styled from '@emotion/styled';
 import { fontSectionTitle, fontSectionText, device } from '../../styles/mixins';
 
 export const SectionStyled = styled.section`
+  min-height: calc(100dvh - 176px);
+  border-top: 48px solid var(--darkBackground);
+  padding-top: 28px;
+  padding-bottom: calc(34px + 24px);
+
   @media screen and (${device.mobileL}) {
     min-height: calc(100dvh - 148px);
     border-top: 68px solid var(--darkBackground);
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: calc(60px + 24px);
   }
 
   @media screen and (${device.tablet}) {
     min-height: calc(100dvh - 156px);
     border-top: 76px solid var(--darkBackground);
     padding-top: 120px;
-    padding-bottom: 132px;
+    padding-bottom: calc(132px + 24px);
   }
 
   @media screen and (${device.desktop}) {
@@ -25,9 +30,14 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 500px;
 
   @media screen and (${device.mobileL}) {
     max-width: calc(768px - 60px * 2);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @media screen and (${device.tablet}) {
@@ -40,14 +50,20 @@ export const Container = styled.div`
 `;
 
 export const TitleStyled = styled.h2`
-  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 232px;
+  height: 56px;
 
   ${fontSectionTitle};
+  font-size: 20px;
+  line-height: calc(28 / 20);
+  text-align: center;
   color: var(--mainText);
 
   @media screen and (${device.mobileL}) {
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 40px;
     width: 472px;
     height: 40px;
     font-size: 28px;
@@ -55,8 +71,6 @@ export const TitleStyled = styled.h2`
   }
 
   @media screen and (${device.tablet}) {
-    margin-left: auto;
-    margin-right: auto;
     width: 550px;
     height: 40px;
     font-size: 32px;
@@ -75,10 +89,12 @@ export const TitleStyled = styled.h2`
 
 export const CenterWrp = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (${device.mobileL}) {
     flex-direction: column;
-    /* height: 348px; */
+    align-items: normal;
   }
 
   @media screen and (${device.tablet}) {
@@ -114,6 +130,8 @@ export const CenterWrp = styled.div`
 
 export const LeftSide = styled.address`
   display: flex;
+  flex-direction: column;
+  gap: 12px;
   font-style: normal;
 
   @media screen and (${device.mobileL}) {
@@ -137,10 +155,14 @@ export const LeftSide = styled.address`
 
 export const ContactsWrp = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
 
   @media screen and (${device.mobileL}) {
     flex-direction: column;
     gap: 24px;
+    margin-bottom: 0;
   }
 
   @media screen and (${device.tablet}) {
@@ -152,7 +174,11 @@ export const ContactsWrp = styled.div`
   }
 
   p {
+    min-height: 24px;
+
     ${fontSectionText};
+    font-size: 14px;
+    line-height: 22.4px;
 
     @media screen and (${device.mobileL}) {
       min-height: 28px;

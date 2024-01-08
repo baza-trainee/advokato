@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getContent } from '../../api';
 import { InformationList } from './InformationList';
 import { SectionStyled, Container, TitleStyled } from './Information.styled';
 
 export const Information = () => {
+  const [t, i18n] = useTranslation('global');
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -22,9 +24,7 @@ export const Information = () => {
   return (
     <SectionStyled>
       <Container>
-        <TitleStyled>
-          Ми самостійно здійснюємо представництво ваших інтересів
-        </TitleStyled>
+        <TitleStyled>{t('information.title')}</TitleStyled>
 
         {data?.length > 0 && <InformationList data={data} />}
       </Container>

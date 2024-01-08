@@ -110,6 +110,14 @@ export const CtaBox = styled.div`
 	gap: 24px;
 	color: #969395;
 
+	@media screen and (${device.mobileL}) {
+		font-size: 14px;
+	}
+
+	@media screen and (${device.tablet}) {
+		font-size: 14px;
+	}
+	
 	@media screen and (${device.desktop}) {
 		font-size: 14px;
 	}

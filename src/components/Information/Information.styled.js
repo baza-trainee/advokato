@@ -7,6 +7,8 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   margin: 0 auto;
+  padding: 28px 24px;
+  max-width: 350px;
 
   @media screen and (${device.mobileL}) {
     padding: 60px 60px;
@@ -25,7 +27,12 @@ export const Container = styled.div`
 `;
 
 export const TitleStyled = styled.h2`
+  margin-bottom: 20px;
+  min-width: 272px;
+
   ${fontSectionTitle};
+  font-size: 20px;
+  line-height: calc(28 / 20);
   color: var(--mainText);
 
   @media screen and (${device.mobileL}) {

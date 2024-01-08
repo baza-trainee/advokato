@@ -5,13 +5,14 @@ import { device, fontLayoutMenu } from '../../styles/mixins';
 export const FooterStyled = styled.footer`
   position: relative;
   z-index: 100;
+  margin-top: calc(-52px - 24px);
 
   border-radius: 24px 24px 0 0;
   border-top: 1px solid var(--reviewText);
   background-color: var(--darkBackground);
 
   @media screen and (${device.mobileL}) {
-    margin-top: -68px;
+    margin-top: calc(-68px - 24px);
   }
 
   @media screen and (${device.tablet}) {
@@ -25,6 +26,17 @@ export const FooterStyled = styled.footer`
 
 export const Container = styled.div`
   margin: 0 auto;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  height: 176px;
+  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (${device.mobileM}) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
   @media screen and (${device.mobileL}) {
     padding-top: 24px;
@@ -52,7 +64,8 @@ export const ContentWrp = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || 'row'};
   justify-content: space-between;
-
+  margin-bottom: 4px;
+  padding: 0 0 8px 0;
   border-bottom: 1px solid #e0dfe0;
 
   @media screen and (${device.mobileL}) {
@@ -78,6 +91,7 @@ export const ContentWrp = styled.div`
 export const ListStyled = styled.ul`
   display: flex;
   flex-direction: column;
+  gap: 4px;
 
   @media screen and (${device.mobileL}) {
     gap: 8px;
@@ -95,6 +109,7 @@ export const ListStyled = styled.ul`
 
 export const ListItemStyled = styled.li`
   order: ${({ position }) => position};
+  height: 24px;
 
   @media screen and (${device.mobileL}) {
     height: 28px;
@@ -116,6 +131,8 @@ export const LinkStyled = styled(NavLink)`
   color: ${({ current, active }) =>
     current === active ? 'var(--accentLink)' : 'var(--lightText)'};
   transition: color 0.3s ease-in-out;
+  font-size: 12px;
+  line-height: calc(22 / 12);
 
   @media screen and (${device.mobileL}) {
     font-size: 14px;
@@ -183,7 +200,11 @@ export const TitleCompany = styled.p`
 `;
 
 export const BottomSign = styled.p`
+  height: 16px;
+
   ${fontLayoutMenu};
+  font-size: 8px;
+  line-height: calc(14 / 8);
   color: var(--lightText);
 
   @media screen and (${device.mobileL}) {
@@ -223,12 +244,18 @@ export const DocsWrp = styled.div`
 export const DocumentTitleStyled = styled.button`
   display: flex;
   align-items: center;
+  height: 24px;
+  min-width: 172px;
 
   ${fontLayoutMenu};
+  font-size: 12px;
+  line-height: calc(22 / 12);
   text-decoration: underline;
   color: var(--lightText);
 
   &:first-of-type {
+    margin-bottom: 4px;
+
     @media screen and (${device.mobileL}) {
       margin-bottom: 8px;
     }
@@ -274,13 +301,14 @@ export const DocumentTitleStyled = styled.button`
 `;
 
 export const AddressWrp = styled.address`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  font-style: normal;
+  display: none;
 
   @media screen and (${device.mobileL}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-style: normal;
     width: 236px;
     gap: 8px;
   }

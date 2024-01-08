@@ -1,20 +1,19 @@
 import styled from "@emotion/styled";
-import {
-	container,
-	fontSectionTitle,
-	device,
-	flexBox,
-	flexColumn,
-} from "../../styles/mixins";
+import { container, device, flexBox, flexColumn } from "../../styles/mixins";
 
 export const Page = styled.div`
 	background-color: var(--darkBackground);
 	color: var(--lightText);
-	min-height: calc(110dvh);
+	min-height: 110dvh;
 `;
 
 export const Container = styled.div`
 	${container};
+
+	@media screen and (${device.mobileL}) {
+		padding-top: calc(60px + 68px);
+		padding-bottom: calc(60px + 24px);
+	}
 
 	@media screen and (${device.tablet}) {
 		padding-top: calc(120px + 76px);
@@ -28,26 +27,55 @@ export const Container = styled.div`
 `;
 
 export const PageTitle = styled.h1`
-	${fontSectionTitle};
+	font-family: var(--Montserrat);
+	font-weight: 500;
+
 	color: var(--lightText);
-	margin-bottom: 40px;
+
+	@media screen and (${device.mobileL}) {
+		margin-bottom: 24px;
+
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	@media screen and (${device.tablet}) {
+		margin-bottom: 40px;
+
+		font-size: 40px;
+		line-height: 56px;
+	}
 `;
 
 export const SectionTitle = styled.h2`
-	margin-bottom: 40px;
-
 	font-family: var(--Raleway);
 	font-weight: 400;
-	font-size: 32px;
-	line-height: calc(44.8 / 32);
+
+	@media screen and (${device.mobileL}) {
+		margin-bottom: 20px;
+
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	@media screen and (${device.tablet}) {
+		margin-bottom: 40px;
+
+		font-size: 32px;
+		line-height: 45px;
+	}
 `;
 
 export const CompanyWrap = styled.div`
 	@media screen and (${device.mobileL}) {
 		${flexBox}
+		flex-direction: column;
+		gap: 20px;
+		margin-bottom: 24px;
 	}
 
 	@media screen and (${device.tablet}) {
+		flex-direction: row;
 		gap: 24px;
 		margin-bottom: 120px;
 	}
@@ -74,19 +102,24 @@ export const CompanyDescription = styled.div`
 		padding-left: 1em;
 	}
 
-	@media screen and (${device.tablet}) {
+	@media screen and (${device.mobileL}) {
 		font-size: 16px;
-		line-height: calc(24 / 16);
+		line-height: 24px;
 	}
 
 	@media screen and (${device.desktop}) {
 		font-size: 18px;
-		line-height: calc(27 / 18);
+		line-height: 27px;
 	}
 `;
 
 export const CompanyImage = styled.img`
 	object-fit: cover;
+
+	@media screen and (${device.mobileL}) {
+		width: 648px;
+		height: 360px;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 420px;
@@ -102,6 +135,10 @@ export const CompanyImage = styled.img`
 export const TeamList = styled.ul`
 	${flexBox};
 	${flexColumn};
+
+	@media screen and (${device.mobileL}) {
+		gap: 24px;
+	}
 
 	@media screen and (${device.tablet}) {
 		gap: 40px;
