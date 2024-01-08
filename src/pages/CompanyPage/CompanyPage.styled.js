@@ -9,6 +9,10 @@ export const Page = styled.div`
 
 export const Container = styled.div`
 	${container};
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: calc(40px + 48px);
+	padding-bottom: calc(60px + 24px);
 
 	@media screen and (${device.mobileL}) {
 		padding-top: calc(60px + 68px);
@@ -27,8 +31,12 @@ export const Container = styled.div`
 `;
 
 export const PageTitle = styled.h1`
+	margin-bottom: 20px;
+
 	font-family: var(--Montserrat);
 	font-weight: 500;
+	font-size: 20px;
+	line-height: 28px;
 
 	color: var(--lightText);
 
@@ -50,13 +58,9 @@ export const PageTitle = styled.h1`
 export const SectionTitle = styled.h2`
 	font-family: var(--Raleway);
 	font-weight: 400;
-
-	@media screen and (${device.mobileL}) {
-		margin-bottom: 20px;
-
-		font-size: 20px;
-		line-height: 30px;
-	}
+	font-size: 20px;
+	line-height: 28px;
+	margin-bottom: 20px;
 
 	@media screen and (${device.tablet}) {
 		margin-bottom: 40px;
@@ -67,10 +71,12 @@ export const SectionTitle = styled.h2`
 `;
 
 export const CompanyWrap = styled.div`
+	${flexBox}
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 102px;
+
 	@media screen and (${device.mobileL}) {
-		${flexBox}
-		flex-direction: column;
-		gap: 20px;
 		margin-bottom: 24px;
 	}
 
@@ -87,10 +93,10 @@ export const CompanyWrap = styled.div`
 `;
 
 export const CompanyDescription = styled.div`
-	flex-grow: 1;
-
 	font-family: var(--Raleway);
 	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
 
 	p {
 		margin-bottom: 0.5em;
@@ -114,6 +120,8 @@ export const CompanyDescription = styled.div`
 `;
 
 export const CompanyImage = styled.img`
+	width: 272px;
+	height: 360px;
 	object-fit: cover;
 
 	@media screen and (${device.mobileL}) {
@@ -135,6 +143,7 @@ export const CompanyImage = styled.img`
 export const TeamList = styled.ul`
 	${flexBox};
 	${flexColumn};
+	gap: 40px;
 
 	@media screen and (${device.mobileL}) {
 		gap: 24px;
