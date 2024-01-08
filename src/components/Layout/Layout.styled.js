@@ -33,6 +33,21 @@ export const HeaderStyled = styled.header`
 	&.close {
 		display: none;
 	}
+	@media screen and (${device.mobileS}) {
+		${flexBox};
+		height: 48px;
+		font-size: 14px;
+		line-height: calc(25.2 / 14);
+		img {
+			width: 80px;
+			height: 32px;
+			object-fit: contain;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
 	@media screen and (${device.mobileL}) {
 		${flexBox};
 		height: 68px;
@@ -85,6 +100,11 @@ export const Container = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1440px;
+	@media screen and (${device.mobileS}) {
+		height: 48px;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
 	@media screen and (${device.mobileL}) {
 		height: 68px;
 		padding-left: 60px;
@@ -115,6 +135,10 @@ export const HamburgerMenu = styled.div`
 	height: 10vh;
 	transition-duration: 1s;
 	cursor: pointer;
+	@media screen and (${device.mobileS}) {
+		width: 24px;
+		height: 24px;
+	}
 	@media screen and (${device.mobileL}) {
 		width: 44px;
 		height: 44px;
@@ -140,6 +164,9 @@ export const HamburgerMenu = styled.div`
 		transition-duration: 0.25s;
 		transition-delay: 0.25s;
 		z-index: 125;
+		@media screen and (${device.mobileS}) {
+			width: 20px;
+		}
 		@media screen and (${device.mobileL}) {
 			width: 33px;
 		}
@@ -163,8 +190,13 @@ export const HamburgerMenu = styled.div`
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
 		z-index: 125;
+		@media screen and (${device.mobileS}) {
+			width: 20px;
+			top: -6px;
+		}
 		@media screen and (${device.mobileL}) {
 			width: 33px;
+			top: -10px;
 		}
 		@media screen and (${device.tablet}) {
 			width: 39px;
@@ -186,8 +218,13 @@ export const HamburgerMenu = styled.div`
 		transition-duration: 0.25s;
 		transition: transform 0.25s, top 0.25s 0.25s;
 		z-index: 125;
+		@media screen and (${device.mobileS}) {
+			width: 20px;
+			top: 6px;
+		}
 		@media screen and (${device.mobileL}) {
 			width: 33px;
+			top: 10px;
 		}
 		@media screen and (${device.tablet}) {
 			width: 39px;
@@ -208,6 +245,9 @@ export const HamburgerMenu = styled.div`
 		transform: rotateZ(-45deg);
 		transition: top 0.25s, transform 0.25s 0.25s;
 		z-index: 125;
+		@media screen and (${device.mobileS}) {
+			width: 23.5px;
+		}
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}
@@ -224,6 +264,9 @@ export const HamburgerMenu = styled.div`
 		transform: rotateZ(45deg);
 		transition: top 0.4s, transform 0.25s 0.25s;
 		z-index: 125;
+		@media screen and (${device.mobileS}) {
+			width: 23.5px;
+		}
 		@media screen and (${device.mobileL}) {
 			width: 26px;
 		}
@@ -244,6 +287,13 @@ export const LangButton = styled.button`
 	border: 1px solid var(--lightText);
 	border-radius: 8px;
 	cursor: pointer;
+	@media screen and (${device.mobileS}) {
+		width: 44px;
+		height: 40px;
+		margin: 80px 0 0 40px;
+		font-size: 16px;
+		line-height: calc(24 / 16);
+	}
 	@media screen and (${device.mobileL}) {
 		width: 44px;
 		height: 40px;
@@ -298,6 +348,10 @@ export const PhoneBurger = styled.div`
 		fill: none;
 		stroke: var(--reviewText);
 		stroke-width: 2px;
+	}
+	@media screen and (${device.mobileS}) {
+		width: 24px;
+		height: 24px;
 	}
 	@media screen and (${device.mobileL}) {
 		width: 44px;

@@ -53,7 +53,10 @@ body {
 
 main {
 	position: relative;
-	top: -52px;
+
+	@media screen and (min-width: 320px) {
+		top: -48px;
+	}
 
 	@media screen and (min-width: 768px) {
 		top: -68px;
@@ -62,9 +65,11 @@ main {
 	@media screen and (min-width: 1024px) {
 		top: -76px;
 	}
+
 	@media screen and (min-width: 1200px) {
 		top: -80px;
 	}
+
 	@media screen and (min-width: 1440px) {
 		top: -88px;
 	}

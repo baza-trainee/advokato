@@ -21,6 +21,10 @@ export const SectionStyled = styled.div`
 	&.close {
 		display: none;
 	}
+	@media screen and (${device.mobileS}) {
+		z-index: 120;
+		width: 152px;
+	}
 	@media screen and (${device.mobileL}) {
 		z-index: 120;
 		width: 152px;
