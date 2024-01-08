@@ -13,14 +13,24 @@ export const ContentStyled = styled.div`
 	width: 100%;
 	justify-content: space-between;
 	position: relative;
-	border-top: 1px solid #98a5b1;
+
+	@media screen and (${device.mobileL}) {
+		border-top: none;
+	}
+
+	@media screen and (${device.tablet}) {
+		border-top: 1px solid #98a5b1;
+	}
 `;
 
 export const ResultItemStyled = styled.div`
 	${flexBox};
 	align-items: flex-end;
 	justify-content: space-between;
-	width: 1036px;
+
+	@media screen and (${device.mobileL}) {
+		width: 616px;
+	}
 
 	@media screen and (${device.tablet}) {
 		width: 788px;
@@ -50,6 +60,11 @@ export const ImageBlock = styled.div`
 	width: 464px;
 	height: 312px;
 
+	@media screen and (${device.mobileL}) {
+		width: 312px;
+		height: 344px;
+	}
+
 	@media screen and (${device.tablet}) {
 		width: 348px;
 		height: 272px;
@@ -73,6 +88,11 @@ export const ResultText = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 
+	@media screen and (${device.mobileL}) {
+		gap: 20px;
+		width: 288px;
+	}
+
 	@media screen and (${device.tablet}) {
 		gap: 23px;
 		width: 344px;
@@ -86,6 +106,11 @@ export const ResultText = styled.div`
 	h3 {
 		${fontReviewName};
 		color: var(--mainText);
+
+		@media screen and (${device.mobileL}) {
+			font-size: 20px;
+			line-height: 30px;
+		}
 
 		@media screen and (${device.tablet}) {
 			font-size: 18px;
@@ -101,6 +126,12 @@ export const ResultText = styled.div`
 	p.desc {
 		${fontReview};
 		color: var(--mainText);
+
+		@media screen and (${device.mobileL}) {
+			font-size: 16px;
+			line-height: 24px;
+			width: 100%;
+		}
 
 		@media screen and (${device.tablet}) {
 			font-size: 16px;
@@ -161,6 +192,10 @@ export const ArrowBlock = styled.div`
 
 	svg {
 		fill: #969395;
+	}
+
+	@media screen and (${device.mobileL}) {
+		top: 5px;
 	}
 
 	@media screen and (${device.tablet}) {
