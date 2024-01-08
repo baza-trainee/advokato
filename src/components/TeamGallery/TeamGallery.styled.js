@@ -146,26 +146,24 @@ export const SliderArrow = styled.div`
 
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
-	overflow: hidden;
-	object-fit: cover;
 	
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		overflow: hidden;
+	}
 	@media screen and (${device.mobileL}) {
-		img {
-			width: 648px;
-			height: 324px;
-		}
+		width: 648px;
+		height: 324px;
 	}
 	@media screen and (${device.tablet}) {
-		img {
-			width: 864px;
-			height: 452px;
-		}
+		width: 864px;
+		height: 452px;
 	}
 	@media screen and (${device.desktop}) {
-		img {
-			width: 1120px;
-			height: 600px;
-		}
+		width: 1120px;
+		height: 600px;
 	}
 `;
 
@@ -201,7 +199,7 @@ export const CardName = styled.h3`
 	width: 100%;
 	letter-spacing: 0em;
 	@media screen and (${device.mobileL}) {
-		height:32px;
+		height: 32px;
 		font-size: 22px;
 		line-height: calc(30.8 / 22);
 	}
@@ -210,7 +208,7 @@ export const CardName = styled.h3`
 		line-height: calc(39.2 / 28);
 	}
 	@media screen and (${device.desktop}) {
-		height:36px;
+		height: 36px;
 		font-size: 32px;
 		line-height: calc(44.8 / 32);
 	}

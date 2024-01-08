@@ -18,6 +18,7 @@ export const InformationItem = ({ item }) => {
           width={548}
           height={388}
           alt="тематичне зображення"
+          id={id}
         />
 
         <ShortTextStyled id={id}>
