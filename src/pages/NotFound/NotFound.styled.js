@@ -77,6 +77,7 @@ export const Title = styled.p`
 
 export const Text = styled.p`
 	margin-bottom: 28px;
+	max-width: 200px;
 
 	font-family: var(--Raleway);
 	font-weight: 400;
@@ -86,6 +87,7 @@ export const Text = styled.p`
 
 	@media screen and (${device.mobileL}) {
 		margin-bottom: 84px;
+		max-width: 100%;
 		font-size: 22px;
 		line-height: 31px;
 	}
