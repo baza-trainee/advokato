@@ -10,26 +10,27 @@ import "../../../index.css";
 
 export const MainModalResult = styled.div`
 	${flexBox};
-	width: 1080px;
 	flex-direction: column;
 	overflow: hidden;
 	background: linear-gradient(0deg, #f1f2f4, #f1f2f4),
 		linear-gradient(0deg, #98a5b1, #98a5b1);
 
 	@media screen and (${device.mobileL}) {
-		width: 648px;
-		padding: 48px;
+		width: 552px;
 		gap: 20px;
+		padding: 48px;
 	}
 
 	@media screen and (${device.tablet}) {
-		width: 844px;
-		padding: 64px;
-		gap: 24px;
+		width: 748px;
+		gap: 20px;
+		padding: 48px;
 	}
 
 	@media screen and (${device.desktop}) {
-		width: 1080px;
+		width: 952px;
+		gap: 24px;
+		padding: 64px;
 	}
 `;
 
@@ -42,10 +43,12 @@ export const TitleModal = styled.h4`
 
 	@media screen and (${device.mobileL}) {
 		font-size: 16px;
+		line-height: 24px;
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 18px;
+		line-height: 27px;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -54,9 +57,7 @@ export const TitleModal = styled.h4`
 	}
 `;
 
-export const ImageModal = styled.img`
-	border-radius: 24px;
-
+export const ImageBox = styled.div`
 	@media screen and (${device.mobileL}) {
 		width: 312px;
 		height: 344px;
@@ -64,12 +65,20 @@ export const ImageModal = styled.img`
 
 	@media screen and (${device.tablet}) {
 		width: 348px;
-		height: auto;
+		height: 272px;
 	}
 
 	@media screen and (${device.desktop}) {
 		width: 464px;
+		height: 312px;
 	}
+`;
+
+export const ImageModal = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 24px;
 `;
 
 export const TextModal = styled.div`
@@ -79,16 +88,19 @@ export const TextModal = styled.div`
 
 	@media screen and (${device.mobileL}) {
 		font-size: 14px;
+		line-height: 21px;
 		padding: 40px 0;
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 16px;
+		line-height: 24px;
 		padding: 0;
 	}
 
 	@media screen and (${device.desktop}) {
 		font-size: 18px;
+		line-height: 27px;
 	}
 `;
 

@@ -9,12 +9,15 @@ import {
 import "../../index.css";
 
 export const SectionStyled = styled.section`
-	padding: 132px 160px;
 	background-color: var(--lightBackground);
 	color: var(--lightText);
 
+	@media screen and (${device.mobileS}) {
+		padding: 60px 24px;
+	}
+
 	@media screen and (${device.mobileL}) {
-		padding: 60px 55px;
+		padding: 60px;
 	}
 
 	@media screen and (${device.tablet}) {
@@ -31,11 +34,16 @@ export const Container = styled.div`
 	${flexBox};
 	flex-direction: column;
 	height: auto;
+	padding: 0 !important;
+
+	@media screen and (${device.mobileS}) {
+		gap: 28px;
+		min-width: 272px;
+	}
 
 	@media screen and (${device.mobileL}) {
 		gap: 40px;
 		min-width: 648px;
-		padding: 0;
 	}
 
 	@media screen and (${device.tablet}) {
@@ -75,16 +83,22 @@ export const TitleStyled = styled.h2`
 	${fontSectionTitle};
 	color: var(--mainText);
 
+	@media screen and (${device.mobileS}) {
+		font-size: 20px;
+		line-height: 28px;
+		padding-bottom: 28px;
+	}
+
 	@media screen and (${device.mobileL}) {
 		font-size: 24px;
 		line-height: 33.6px;
-		width: 648px;
+		padding-bottom: 20px;
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 32px;
 		line-height: 44.8px;
-		width: auto;
+		padding-bottom: 0;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -97,15 +111,22 @@ export const SubheadingStyled = styled.p`
 	${fontSectionText};
 	color: var(--mainText);
 
+	@media screen and (${device.mobileS}) {
+		font-size: 14px;
+		line-height: 22.4px;
+		padding-bottom: 0;
+	}
+
 	@media screen and (${device.mobileL}) {
 		font-size: 16px;
 		line-height: 25.6px;
-		
+		padding-bottom: 40px;
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
 		line-height: 32px;
+		padding-bottom: 0;
 	}
 
 	@media screen and (${device.desktop}) {
