@@ -25,6 +25,7 @@ export const BurgerMenu = ({
 				activeLang={activeLang}
 				currentLang="ua"
 				burger
+				disabled
 			>
 				{activeLang.toUpperCase()}
 			</LangButton>

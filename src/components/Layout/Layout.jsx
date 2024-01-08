@@ -109,6 +109,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						activeLang={activeLang}
 						currentLang="ua"
 						desktop="desktop"
+						disabled
 					>
 						{activeLang.toUpperCase()}
 					</LangButton>

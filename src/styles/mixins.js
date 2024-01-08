@@ -16,7 +16,10 @@ export const container = () => {
         padding-left: 20px;
         padding-right: 20px;
 
-
+        @media screen and (min-width: 320px) {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
         @media screen and (min-width: 768px) {
           padding-left: 60px;
           padding-right: 60px;
