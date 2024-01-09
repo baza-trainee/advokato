@@ -37,20 +37,20 @@ export const Container = styled.div`
 
 export const TextStyled = styled.div`
 	@media screen and (${device.mobileL}) {
-		width: 422px;
-		padding: 60px 0 60px 54px;
+		width: 352px;
+		margin: 60px 38px 60px 60px;
 		line-height: 25.6px;
 	}
 
 	@media screen and (${device.tablet}) {
 		width: 422px;
-		padding: 120px 0 120px 0;
+		margin: 120px 24px 120px 80px;
 		line-height: 32px;
 	}
 
 	@media screen and (${device.desktop}) {
 		width: 484px;
-		padding: 0;
+		margin: 0;
 		line-height: 35.2px;
 	}
 
