@@ -4,6 +4,7 @@ import {
 	fontHeroTitle,
 	fontSectionText,
 	device,
+	flexBox,
 } from "../../styles/mixins";
 import bgImage from "../../assets/images/homeHero-section/hero-bg.jpg";
 
@@ -22,9 +23,12 @@ export const Container = styled.div`
 		display: flex;
 		justify-content: space-between;
 	}
-
+	@media screen and (${device.mobileS}) {
+		max-width: 320px;
+		padding-top: calc(40px + 48px);
+	}
 	@media screen and (${device.mobileL}) {
-		max-width:768px;
+		max-width: 768px;
 		padding-top: calc(72px + 68px);
 	}
 	@media screen and (${device.tablet}) {
@@ -45,12 +49,19 @@ export const MainTitleStyled = styled.h1`
 	${fontHeroTitle};
 	color: var(--lightText);
 	overflow: hidden;
+	@media screen and (${device.mobileS}) {
+		width: 260px;
+		height: 152px;
+		margin-bottom: 36px;
+		font-size: 40px;
+		line-height: 48.76px;
+	}
 	@media screen and (${device.mobileL}) {
 		height: 120px;
 		width: 388px;
 		margin-bottom: 56px;
 		font-size: 48px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 58.51px;
 	}
 	@media screen and (${device.tablet}) {
@@ -60,11 +71,11 @@ export const MainTitleStyled = styled.h1`
 		font-size: 72px;
 		line-height: 87.77px;
 	}
-	@media screen and (${device.tablet}) {
+	@media screen and (${device.preburger}) {
 		margin-bottom: 100px;
 	}
 	@media screen and (${device.desktop}) {
-		margin-bottom: 68px;
+		margin-bottom: 70px;
 		width: 820px;
 		height: 244px;
 		font-size: 100px;
@@ -72,11 +83,23 @@ export const MainTitleStyled = styled.h1`
 	}
 `;
 export const SubtitleWrapper = styled.div`
+	@media screen and (${device.mobileS}) {
+		${flexBox};
+		flex-direction: column-reverse;
+		gap: 20px;
+		max-width: 200px;
+	}
 	@media screen and (${device.mobileL}) {
+		flex-direction: row;
+		align-items: flex-start;
 		max-width: 648px;
+		flex-direction: row;
 	}
 	@media screen and (${device.tablet}) {
 		max-width: 860px;
+	}
+	@media screen and (${device.preburger}) {
+		max-width: 930px;
 	}
 	@media screen and (${device.desktop}) {
 		max-width: 1120px;
@@ -93,6 +116,17 @@ export const SubtitleStyled = styled.h2`
 	}
 	color: var(--lightText);
 	overflow: hidden;
+	@media screen and (${device.mobileS}) {
+		width: 200px;
+		height: 120px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 22.4px;
+		:last-of-type {
+			width: 200px;
+			height: 92px;
+		}
+	}
 	@media screen and (${device.mobileL}) {
 		width: 312px;
 		height: 104px;
@@ -101,6 +135,7 @@ export const SubtitleStyled = styled.h2`
 		line-height: 25.6px;
 		:last-of-type {
 			width: 258px;
+			height: 104px;
 		}
 	}
 	@media screen and (${device.tablet}) {
@@ -110,6 +145,7 @@ export const SubtitleStyled = styled.h2`
 		line-height: 32px;
 		:last-of-type {
 			width: 344px;
+			height:96px;
 		}
 	}
 	@media screen and (${device.desktop}) {
@@ -117,6 +153,7 @@ export const SubtitleStyled = styled.h2`
 		height: 108px;
 		:last-of-type {
 			width: 480px;
+			height:108px;
 		}
 		${fontSectionText};
 	}

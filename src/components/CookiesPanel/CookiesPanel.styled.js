@@ -4,7 +4,7 @@ import { device } from "../../styles/mixins";
 
 export const Panel = styled.div`
 	position: fixed;
-	bottom: 27px;
+	bottom: 24px;
 	padding: 40px 30px 24px 30px;
 	max-width: 272px;
 	z-index: 101;
@@ -47,12 +47,15 @@ export const Panel = styled.div`
 `;
 
 export const PolicyLink = styled.a`
+	display: inline-block;
+
 	font-family: var(--Montserrat);
 	font-size: 12px;
 	line-height: 22px;
 	text-decoration: underline;
 
 	@media screen and (${device.mobileL}) {
+		display: inline;
 		font-size: 14px;
 		line-height: 25px;
 	}
