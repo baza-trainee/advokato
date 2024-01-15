@@ -8,7 +8,8 @@ export const PracticeList = ({
   currentPractice,
   setCurrentPractice,
 }) => {
-  return (
+
+	return (
     <ListStyled>
       {practices.map((item, idx) => (
         <PracticeItem
@@ -18,6 +19,7 @@ export const PracticeList = ({
           setCurrentPractice={setCurrentPractice}
         />
       ))}
+
     </ListStyled>
   );
 };

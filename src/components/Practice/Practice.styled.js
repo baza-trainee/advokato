@@ -13,6 +13,12 @@ export const mobileLAndTablet = {
   height: '44px',
 };
 
+export const mobile = {
+	padding: '16px 20px',
+	width: '100%',
+	height: '44px',
+};
+
 export const SectionStyled = styled.section`
   background-color: var(--darkBackground);
 
@@ -78,7 +84,7 @@ export const TitleStyled = styled.h2`
 `;
 
 export const PracticeDescWrp = styled.div`
-  margin-bottom: 12px;
+  //margin-bottom: 12px;
   overflow: hidden;
 `;
 
@@ -88,14 +94,23 @@ export const PracticeWrp = styled.div`
 `;
 
 export const PracticeInfo = styled.div`
+	padding-bottom: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 700px;
+	
 
-  @media screen and (${device.mobileS}) {
-    display: none;
+  button{
+    width: 100%;
   }
 	
+	
   @media screen and (${device.mobileL}) {
+    max-width: 300px;
     width: 300px;
-		display: block;
+    padding-bottom: 0;
+
   }
 
   @media screen and (${device.tablet}) {
@@ -105,11 +120,14 @@ export const PracticeInfo = styled.div`
   @media screen and (${device.desktop}) {
     width: 456px;
   }
+	
+
 `;
 
 export const ImageStyled = styled.img`
   border-radius: 24px;
   background: linear-gradient(#0000002e, #00000099);
+  width: 100%;
 
   @media screen and (${device.mobileL}) {
     margin-bottom: 28px;
@@ -131,14 +149,15 @@ export const ImageStyled = styled.img`
 `;
 
 export const PracticeTitle = styled.h3`
-  margin-bottom: 24px;
-
+	display: none;
   font-family: var(--Raleway);
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--lightText);
 
   @media screen and (${device.mobileL}) {
+    display: block;
+    margin-bottom: 24px;
     min-height: 28px;
     font-size: 20px;
     line-height: calc(28 / 20);
@@ -159,14 +178,15 @@ export const PracticeTitle = styled.h3`
 
 export const PracticeDesc = styled.p`
   display: ${({ isShowMoreDesc }) => (isShowMoreDesc ? 'block' : null)};
-  margin-bottom: 12px;
-
+  font-size: 16px;
   font-family: var(--Raleway);
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--lightText);
+  line-height: 150%;
 
   @media screen and (${device.mobileL}) {
+    margin-bottom: 12px;
     font-size: 16px;
     line-height: calc(24 / 16);
   }
@@ -182,6 +202,9 @@ export const PracticeDescFull = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--lightText);
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+  margin-top: 12px;
 
   p:not(:last-of-type) {
     margin-bottom: 12px;
@@ -209,7 +232,7 @@ export const MoreButtonStyled = styled.button`
   width: 100px;
   height: 24px;
   float: right;
-
+  margin-top: 12px;
   font-family: var(--Raleway);
   font-weight: 400;
   letter-spacing: 0em;
@@ -217,10 +240,12 @@ export const MoreButtonStyled = styled.button`
   color: var(--greyText);
   border: none;
   background-color: inherit;
+  font-size: 16px;
 
   @media screen and (${device.mobileL}) {
-    font-size: 16px;
+   
     line-height: calc(24 / 16);
+    margin-top: 0;
   }
 
   @media screen and (${device.tablet}) {
@@ -236,4 +261,30 @@ export const ExtraInfoWrpStyled = styled.div`
     text-align: justify;
     color: red;
   }
+`;
+
+export const PracticeDesktopWrapper = styled.div`
+  @media screen and (${device.mobileS}) {
+    display: none;
+
+  }
+	
+  @media screen and (${device.mobileL}) {
+    display: block;
+  }
+	
+`;
+
+export const PracticeMobileWrapper = styled.div`
+  @media screen and (${device.mobileS}) {
+    display: flex;
+		justify-content: center;
+    align-items: center;
+		width: 100%;
+  }
+	
+  @media screen and (${device.mobileL}) {
+    display: none;
+  }
+	
 `;

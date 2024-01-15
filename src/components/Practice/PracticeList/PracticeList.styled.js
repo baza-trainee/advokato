@@ -4,6 +4,9 @@ import { device } from '../../../styles/mixins';
 export const ListStyled = styled.ul`
   display: flex;
   flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
 
   @media screen and (${device.mobileL}) {
     gap: 16px;
