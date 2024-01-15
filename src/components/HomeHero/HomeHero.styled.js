@@ -24,11 +24,9 @@ export const Container = styled.div`
 		justify-content: space-between;
 	}
 	@media screen and (${device.mobileS}) {
-		max-width: 320px;
 		padding-top: calc(40px + 48px);
 	}
 	@media screen and (${device.mobileL}) {
-		max-width: 768px;
 		padding-top: calc(72px + 68px);
 	}
 	@media screen and (${device.tablet}) {
@@ -50,8 +48,8 @@ export const MainTitleStyled = styled.h1`
 	color: var(--lightText);
 	overflow: hidden;
 	@media screen and (${device.mobileS}) {
-		width: 260px;
-		height: 152px;
+		max-width: 70vw;
+		height: auto;
 		margin-bottom: 36px;
 		font-size: 40px;
 		line-height: 48.76px;
@@ -86,14 +84,14 @@ export const SubtitleWrapper = styled.div`
 	@media screen and (${device.mobileS}) {
 		${flexBox};
 		flex-direction: column-reverse;
+		align-items: flex-start;
 		gap: 20px;
-		max-width: 200px;
+    max-width: 50vw;
 	}
 	@media screen and (${device.mobileL}) {
 		flex-direction: row;
 		align-items: flex-start;
 		max-width: 648px;
-		flex-direction: row;
 	}
 	@media screen and (${device.tablet}) {
 		max-width: 860px;
@@ -107,24 +105,24 @@ export const SubtitleWrapper = styled.div`
 `;
 export const SubtitleStyled = styled.h2`
 	${fontSectionText};
-	width: 412px;
+  max-width: 60vw;
 	height: 128px;
 	font-size: 20px;
 	line-height: 32px;
 	:last-of-type {
-		width: 344px;
+    max-width: 60vw;
 	}
 	color: var(--lightText);
 	overflow: hidden;
 	@media screen and (${device.mobileS}) {
-		width: 200px;
+    max-width: 60vw;
 		height: 120px;
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 22.4px;
 		:last-of-type {
-			width: 200px;
-			height: 92px;
+      max-width: 60vw;
+			height: auto;
 		}
 	}
 	@media screen and (${device.mobileL}) {

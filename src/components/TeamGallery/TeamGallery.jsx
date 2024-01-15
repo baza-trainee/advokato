@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { isObjectEmpty } from '../../helpers';
-import { getContent } from '../../api/fetchContent';
+import { getContent } from "../../api/index.js";
 import { SliderItems } from './SliderItems/SliderItems';
 import { Icon } from '../Icon';
 import {
@@ -46,7 +46,7 @@ export const TeamGallery = () => {
               onClick={() => arrowRef.current.go('-1')}
               type="button"
             >
-              <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
+              <Icon id={'icon-slider-arrow-left'} width='20px' height="20px"/>
             </button>
           </SliderArrow>
 

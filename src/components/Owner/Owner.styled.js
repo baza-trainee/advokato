@@ -17,25 +17,41 @@ export const SectionStyled = styled.section`
 export const Container = styled.div`
 	${container};
 	display: flex;
-	justify-content: space-between;
-	max-width: 1440px;
+	justify-content: space-evenly;
+	
+
+  @media screen and (${device.mobileS}) {
+    padding: 28px 24px;
+    ${fontMobile}
+  }
 
 	@media screen and (${device.mobileL}) {
 		padding: 0;
-		${fontMobile}
+		${fontMobile};
+    max-width: 768px;
 	}
 
 	@media screen and (${device.tablet}) {
-		${fontTablet}
+		${fontTablet};
+    max-width: 1024px;
 	}
 
 	@media screen and (${device.desktop}) {
-		${fontDesktop}
+		${fontDesktop};
+    max-width: 1440px;
 		max-height: initial;
 	}
 `;
 
 export const TextStyled = styled.div`
+
+  @media screen and (${device.mobileS}) {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+    
+  }
+	
 	@media screen and (${device.mobileL}) {
 		width: 352px;
 		margin: 60px 38px 60px 60px;
@@ -54,7 +70,7 @@ export const TextStyled = styled.div`
 		line-height: 35.2px;
 	}
 
-	h3 {
+	h2 {
 		display: flex;
 		flex-wrap: wrap;
 		font-family: var(--Raleway);
@@ -62,6 +78,11 @@ export const TextStyled = styled.div`
 		line-height: calc(45 / 32);
 		letter-spacing: 0em;
 		text-align: left;
+
+    @media screen and (${device.mobileS}) {
+			display: block;
+      font-size: 20px;
+    }
 
 		@media screen and (${device.mobileL}) {
 			margin-bottom: 20px;
@@ -87,6 +108,11 @@ export const TextStyled = styled.div`
 		line-height: calc(42 / 56);
 		letter-spacing: 0.006rem;
 		text-align: left;
+
+    @media screen and (${device.mobileS}) {
+      font-size: 24px;
+      margin-top: 8px;
+    }
 
 		@media screen and (${device.mobileL}) {
 			font-size: 32px;
@@ -130,7 +156,15 @@ export const TextStyled = styled.div`
 		}
 	}
 
-	.btn-owner {
+	button {
+
+    @media screen and (${device.mobileS}) {
+      padding: 16px 20px;
+      width: 260px;
+      height: 44px;
+      font-size: 14px;
+    }
+		
 		@media screen and (${device.mobileL}) {
 			padding: 16px 20px;
 			width: 260px;
@@ -159,6 +193,10 @@ export const CompanyBox = styled.div`
 	${flexBox};
 	flex-direction: column;
 
+  @media screen and (${device.mobileS}) {
+    width: 100%;
+  }
+
 	@media screen and (${device.mobileL}) {
 		width: 450px;
 	}
@@ -173,7 +211,13 @@ export const CompanyBox = styled.div`
 `;
 
 export const ImageBoxStyled = styled.div`
+
+  @media screen and (${device.mobileS}) {
+   display: none;
+  }
+	
 	@media screen and (${device.mobileL}) {
+		display: block;
 		width: 318px;
 	}
 
@@ -191,4 +235,16 @@ export const ImageStyled = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+`;
+
+
+export const ImageBoxMobStyled = styled.div`
+
+  @media screen and (${device.mobileS}) {
+    width: 100%;
+  }
+	
+	@media screen and (${device.mobileL}) {
+		display: none;
+	}
 `;

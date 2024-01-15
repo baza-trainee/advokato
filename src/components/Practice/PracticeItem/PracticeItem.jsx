@@ -9,6 +9,7 @@ export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
       className={item.id === currentPractice.id ? 'active' : null}
     >
       <SpecializationStyled>{item?.specialization_name}</SpecializationStyled>
+
     </LiStyled>
   );
 };

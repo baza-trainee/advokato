@@ -6,6 +6,12 @@ export const LiStyled = styled.li`
   justify-content: space-between;
   flex-direction: column;
 
+  @media screen and (min-width: 600px) {
+    flex-direction: ${({ id }) => (id % 2 === 0 ? 'row-reverse' : 'row')};
+		gap: 40px;
+    min-height: 300px;
+  }
+
   @media screen and (${device.mobileL}) {
     flex-direction: ${({ id }) => (id % 2 === 0 ? 'row-reverse' : 'row')};
     min-height: 300px;
@@ -22,6 +28,9 @@ export const LiStyled = styled.li`
 
 export const ImageWrp = styled.div`
   position: relative;
+
+
+	
 `;
 
 export const ImageStyled = styled.img`
@@ -30,6 +39,14 @@ export const ImageStyled = styled.img`
   width: 236px;
   height: 160px;
   border-radius: 24px;
+
+  @media screen and (min-width: 600px) {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+  }
+	
 
   @media screen and (${device.mobileL}) {
     margin-left: 0;
@@ -62,7 +79,7 @@ export const ShortTextStyled = styled.div`
   border-radius: 16px;
   background-color: var(--lightText);
 
-  h3 {
+  h2 {
     margin-bottom: 12px;
     height: 24px;
 
@@ -72,6 +89,11 @@ export const ShortTextStyled = styled.div`
     font-weight: 600;
     letter-spacing: 0em;
     color: var(--mainText);
+
+    @media screen and (min-width: 600px) {
+      font-size: 16px;
+      line-height: calc(24 / 16);
+    }
 
     @media screen and (${device.mobileL}) {
       font-size: 16px;
@@ -96,6 +118,12 @@ export const ShortTextStyled = styled.div`
     font-style: italic;
     color: var(--mainText);
 
+    @media screen and (min-width: 600px) {
+      font-size: 12px;
+      line-height: calc(18 / 12);
+      
+    }
+
     @media screen and (${device.mobileL}) {
       font-size: 14px;
       line-height: calc(21 / 14);
@@ -112,6 +140,13 @@ export const ShortTextStyled = styled.div`
     }
   }
 
+  @media screen and (min-width: 600px) {
+    transform: translate(-15px, 120px);
+		width: 100%;
+    max-width: 280px;
+    min-height: 106px;
+  }
+
   @media screen and (${device.mobileL}) {
     transform: translate(-40px, 120px);
     width: 280px;
@@ -120,14 +155,14 @@ export const ShortTextStyled = styled.div`
   @media screen and (${device.tablet}) {
     transform: translate(-40px, 170px);
     padding: 20px 24px;
-    width: 320px;
+    min-width: 365px;
     min-height: 224px;
   }
 
   @media screen and (${device.desktop}) {
     transform: translate(-72px, 250px);
     padding: 40px 24px;
-    width: 520px;
+    min-width: 530px;
     border-radius: 24px;
   }
 `;
@@ -142,6 +177,14 @@ export const DescriptionStyled = styled.p`
   font-weight: 400;
   letter-spacing: 0em;
   color: var(--mainText);
+
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+		width: 100%;
+    max-width: 371px;
+    font-size: 14px;
+    line-height: calc(26 / 16);
+  }
 
   @media screen and (${device.mobileL}) {
     margin-top: 0;

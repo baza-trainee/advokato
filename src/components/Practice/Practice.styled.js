@@ -16,6 +16,10 @@ export const mobileLAndTablet = {
 export const SectionStyled = styled.section`
   background-color: var(--darkBackground);
 
+  @media screen and (${device.mobileS}) {
+    padding: 28px 24px;
+  }
+
   @media screen and (${device.mobileL}) {
     padding: 60px 0;
   }
@@ -47,9 +51,9 @@ export const Container = styled.div`
 
 export const TitleStyled = styled.h2`
   margin-bottom: 40px;
-
   ${fontSectionTitle};
   color: var(--lightText);
+	font-size: 20px;
 
   @media screen and (${device.mobileL}) {
     max-width: 648px;
@@ -84,8 +88,14 @@ export const PracticeWrp = styled.div`
 `;
 
 export const PracticeInfo = styled.div`
+
+  @media screen and (${device.mobileS}) {
+    display: none;
+  }
+	
   @media screen and (${device.mobileL}) {
     width: 300px;
+		display: block;
   }
 
   @media screen and (${device.tablet}) {

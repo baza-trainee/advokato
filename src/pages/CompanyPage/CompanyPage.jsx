@@ -92,7 +92,7 @@ const CompanyPage = () => {
         {team && (
           <section>
             <TeamList ref={refCard}>
-              {team.map((teamMember, index) => (
+              {team?.map((teamMember, index) => (
                 <li id={teamMember.id} key={teamMember.id}>
                   <TeamCard teamMember={teamMember} index={index} />
                 </li>

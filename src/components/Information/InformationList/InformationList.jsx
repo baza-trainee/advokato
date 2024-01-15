@@ -4,7 +4,8 @@ import { InformationItem } from '../InformationItem';
 import { UlStyled } from './InformationList.styled';
 
 export const InformationList = ({ data }) => {
-  return (
+
+	return (
     <UlStyled>
       {data.map((item, idx) => (
         <InformationItem key={idx} item={item} />
