@@ -125,19 +125,25 @@ export const TeamSliderContainer = styled.div`
 
   @media screen and (${device.mobileL}) {
 		gap: 10px;
+		max-width: 768px;
   }
 
   @media screen and (${device.tablet}) {
     gap: 20px;
+    max-width: 1024px;
   }
 
   @media screen and (${device.desktop}) {
     gap: 50px;
+    max-width: 1440px;
   }
 `;
 
 export const SliderArrow = styled.div`
 	${sliderArrow};
+	position: absolute;
+	z-index: 10;
+	
 	
   svg {
     width: 20px;
@@ -167,6 +173,34 @@ export const SliderArrow = styled.div`
 	}
 `;
 
+export const LeftSliderArrow = styled(SliderArrow) `
+	left: 24px;
+
+  @media screen and (${device.mobileL}) {
+    left: 10px;
+  }
+  @media screen and (${device.tablet}) {
+    left: 20px;
+  }
+  @media screen and (${device.desktop}) {
+    left: 50px;
+  }
+	
+`
+
+export const RightSliderArrow = styled(SliderArrow) `
+	right:  24px;
+  @media screen and (${device.mobileL}) {
+    right: 10px;
+  }
+  @media screen and (${device.tablet}) {
+    right: 20px;
+  }
+  @media screen and (${device.desktop}) {
+    right: 50px;
+  }
+	
+`
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
 	height: 100%;

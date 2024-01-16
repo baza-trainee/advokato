@@ -33,12 +33,12 @@ export const HomePage = () => {
   return (
     <>
       <HomeHero data={hero} />
-      <Owner data={company} />
-      <Information />
+      {/*<Owner data={company} />*/}
+      {/*<Information />*/}
       <TeamGallery />
-      <Practice />
-      <ProBono />
-      <Results />
+      {/*<Practice />*/}
+      {/*<ProBono />*/}
+      {/*<Results />*/}
       <ClientsBlock />
       <ClientReviews />
       <FeedBackForm />

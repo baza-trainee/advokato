@@ -6,13 +6,13 @@ import { getContent } from "../../api/index.js";
 import { SliderItems } from './SliderItems/SliderItems';
 import { Icon } from '../Icon';
 import {
-  Container,
-  SectionStyled,
-  SliderArrow,
-  TeamBlockHeader,
-  TeamBlockSubTitle,
-  TeamSliderContainer,
-} from './TeamGallery.styled';
+	Container, LeftSliderArrow, RightSliderArrow,
+	SectionStyled,
+	SliderArrow,
+	TeamBlockHeader,
+	TeamBlockSubTitle,
+	TeamSliderContainer,
+} from "./TeamGallery.styled";
 
 export const TeamGallery = () => {
   const [t, i18n] = useTranslation('global');
@@ -40,7 +40,7 @@ export const TeamGallery = () => {
 
       {data?.length > 0 && (
         <TeamSliderContainer>
-          <SliderArrow>
+          <LeftSliderArrow>
             <button
               aria-label="Перелистування слайдера вліво"
               onClick={() => arrowRef.current.go('-1')}
@@ -48,11 +48,11 @@ export const TeamGallery = () => {
             >
               <Icon id={'icon-slider-arrow-left'} width='20px' height="20px"/>
             </button>
-          </SliderArrow>
+          </LeftSliderArrow>
 
           <SliderItems ref={arrowRef} data={data} />
 
-          <SliderArrow>
+          <RightSliderArrow>
             <button
               aria-label="Перелистування слайдера вправо"
               onClick={() => arrowRef.current.go('+1')}
@@ -60,7 +60,7 @@ export const TeamGallery = () => {
             >
               <Icon id={'icon-slider-arrow-right'} width={60} height={60} />
             </button>
-          </SliderArrow>
+          </RightSliderArrow>
         </TeamSliderContainer>
       )}
     </SectionStyled>
