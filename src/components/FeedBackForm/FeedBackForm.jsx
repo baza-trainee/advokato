@@ -65,13 +65,13 @@ export const FeedBackForm = () => {
     if (result?.success) {
       Loading.remove();
       reset();
-      setSendStatus(prev => true);
+      setSendStatus(() => true);
       setModalActive(prev => !prev);
       return;
     }
 
     Loading.remove();
-    setSendStatus(prev => false);
+    setSendStatus(() => false);
     setModalActive(prev => !prev);
   };
 
@@ -90,14 +90,13 @@ export const FeedBackForm = () => {
       <SectionStyled>
         <TitleStyled>
           {t('feedBackForm.title')}
-          <span>acstatus.mk@gmail.com</span>
         </TitleStyled>
 
         <StyledForm
           autoComplete="off"
           onSubmit={handleSubmit(onSubmit, onErrors)}
         >
-          <div>
+
             <Input
               register={register}
               name="name"
@@ -130,9 +129,9 @@ export const FeedBackForm = () => {
               isValid={isValid}
               touchedFields={touchedFields}
             />
-          </div>
 
-          <Input
+
+          <Input  className='message'
             register={register}
             name="question"
             type="text"
@@ -142,6 +141,7 @@ export const FeedBackForm = () => {
             isValid={isValid}
             touchedFields={touchedFields}
             width={'100%'}
+
           />
 
           <ButtonStyled

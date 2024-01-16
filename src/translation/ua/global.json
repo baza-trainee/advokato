@@ -40,14 +40,14 @@
     "title": "Відгуки"
   },
   "feedBackForm": {
-    "title": "Зв'яжіться з нами",
+    "title": "Зв'яжіться з acstatus.mk@gmail.com",
     "labelName": "Ваше ім’я",
     "placeholderName": "Введіть ім’я",
     "labelPhone": "Ваш номер телефону",
     "labelEmail": "Ваша електронна пошта",
     "labelQuestion": "Ваше питання",
     "placeholderQuestion": "Введіть питання",
-    "submitButton": "Відправити"
+    "submitButton": "Надіслати інформацію"
   },
   "footer": {
     "titleCompany": "ADVOCATE COMPANY «STATUS»",
