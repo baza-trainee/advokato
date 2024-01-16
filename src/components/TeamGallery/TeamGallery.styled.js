@@ -12,17 +12,19 @@ import {
 import "@splidejs/react-splide/css";
 
 export const SectionStyled = styled.section`
-	height: 100vh;
-	padding-top: 132px;
-	background: var(--darkBackground);
+	//height: 100vh;
+	padding: 28px 0;
+  background: var(--darkBackground);
 	color: var(--lightText);
 	overflow: hidden;
 	position: relative;
+	
+	
 	@media screen and (${device.mobileL}) {
-		padding: 60px 0 0px;
+		padding: 60px 0 0;
 	}
 	@media screen and (${device.tablet}) {
-		padding: 120px 0 0px;
+		padding: 120px 0 0;
 	}
 	@media screen and (${device.desktop}) {
 		padding-top: 132px;
@@ -31,26 +33,41 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
 	${container};
-	max-width: 1440px;
+
+  @media screen and (${device.mobileL}) {
+    max-width: 768px;
+  }
+
+  @media screen and (${device.tablet}) {
+    max-width: 1024px;
+  }
+
+  @media screen and (${device.desktop}) {
+    max-width: 1440px;
+  }
 `;
 
-export const TeamBlockHeader = styled.h1`
+export const TeamBlockHeader = styled.h2`
 	${fontSectionTitle};
 	max-width: 572px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%; 
+	
 	@media screen and (${device.mobileL}) {
 		font-size: 24px;
 		line-height: calc(33.6 / 24);
-		letter-spacing: 0em;
+		letter-spacing: 0;
 	}
 	@media screen and (${device.tablet}) {
 		font-size: 32px;
 		line-height: calc(44.8 / 32);
-		letter-spacing: 0em;
+		letter-spacing: 0;
 	}
 	@media screen and (${device.desktop}) {
 		font-size: 40px;
 		line-height: calc(56 / 40);
-		letter-spacing: 0em;
+		letter-spacing: 0;
 	}
 `;
 
@@ -58,6 +75,11 @@ export const TeamBlockSubTitle = styled.p`
 	${fontSectionText};
 	max-width: 552px;
 	margin: 24px 0 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; 
+	
 	@media screen and (${device.mobileL}) {
 		margin: 20px 0;
 		font-size: 16px;
@@ -86,8 +108,10 @@ export const TeamSliderContainer = styled.div`
 	height: fit-content;
 	overflow: hidden;
 	position: relative;
+	gap: 4px;
+	
 	.splide__slide {
-		${flexBox}
+		${flexBox};
 		opacity: 1;
 		transition: 1s;
 	}
@@ -98,45 +122,50 @@ export const TeamSliderContainer = styled.div`
 	.splide__slide.is-prev {
 		opacity: 0.3;
 	}
+
+  @media screen and (${device.mobileL}) {
+		gap: 10px;
+		max-width: 768px;
+  }
+
+  @media screen and (${device.tablet}) {
+    gap: 20px;
+    max-width: 1024px;
+  }
+
+  @media screen and (${device.desktop}) {
+    gap: 50px;
+    max-width: 1440px;
+  }
 `;
 
 export const SliderArrow = styled.div`
 	${sliderArrow};
 	position: absolute;
-	top: 45%;
-	left: 3%;
 	z-index: 10;
-	&:last-of-type {
-		left: 93%;
-	}
+	
+	
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+	
 	@media screen and (${device.mobileL}) {
-		left: 1.5%;
-		&:last-of-type {
-			left: 93.5%;
-		}
+
 		svg {
 			width: 40px;
 			height: 40px;
 		}
 	}
 	@media screen and (${device.tablet}) {
-		left: 2%;
-		&:last-of-type {
-			left: 94.5%;
-		}
+		
 		svg {
 			width: 40px;
 			height: 40px;
 		}
 	}
 	@media screen and (${device.desktop}) {
-		position: absolute;
-		top: 45%;
-		left: 3%;
-		z-index: 10;
-		&:last-of-type {
-			left: 93%;
-		}
+
 		svg {
 			width: 60px;
 			height: 60px;
@@ -144,14 +173,44 @@ export const SliderArrow = styled.div`
 	}
 `;
 
+export const LeftSliderArrow = styled(SliderArrow) `
+	left: 24px;
+
+  @media screen and (${device.mobileL}) {
+    left: 10px;
+  }
+  @media screen and (${device.tablet}) {
+    left: 20px;
+  }
+  @media screen and (${device.desktop}) {
+    left: 50px;
+  }
+	
+`
+
+export const RightSliderArrow = styled(SliderArrow) `
+	right:  24px;
+  @media screen and (${device.mobileL}) {
+    right: 10px;
+  }
+  @media screen and (${device.tablet}) {
+    right: 20px;
+  }
+  @media screen and (${device.desktop}) {
+    right: 50px;
+  }
+	
+`
 export const TeamMateCardWrapper = styled.div`
 	position: relative;
+	height: 100%;
 	
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		overflow: hidden;
+		
 	}
 	@media screen and (${device.mobileL}) {
 		width: 648px;
@@ -168,28 +227,32 @@ export const TeamMateCardWrapper = styled.div`
 `;
 
 export const CardRecvisiteWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 	position: absolute;
-	left: 60px;
-	bottom: 96px;
+	left: 6px;
+	bottom: 20px;
 	width: 367px;
-	height: 108px;
+	height: auto;
+	
 	@media screen and (${device.mobileL}) {
 		width: 284px;
-		height: 74px;
 		left: 24px;
 		bottom: 24px;
 	}
+	
 	@media screen and (${device.tablet}) {
 		width: 294px;
-		height: 92px;
 		left: 32px;
-		bottom: 30px;
+		bottom: 42px;
+    gap: 16px;
 	}
 	@media screen and (${device.desktop}) {
 		width: 320px;
-		height: 88px;
 		left: 60px;
 		bottom: 96px;
+    gap: 12px;
 	}
 `;
 
@@ -197,7 +260,11 @@ export const CardName = styled.h3`
 	${fontSliderCardName};
 	color: var(--lightText);
 	width: 100%;
-	letter-spacing: 0em;
+	letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+	
 	@media screen and (${device.mobileL}) {
 		height: 32px;
 		font-size: 22px;
@@ -218,43 +285,52 @@ export const CardRole = styled.div`
 	${fontReview};
 	color: var(--lightText);
 	letter-spacing: 0em;
-	&::after {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 150%;
+	font-variant-numeric: lining-nums proportional-nums;
+	
+  &::after {
 		content: "";
 		width: 80px;
+    height: 2px;
 		border: 2px solid var(--accentLink);
 		border-radius: 10px;
 		position: absolute;
 		left: 0;
-		top: 84px;
+		bottom: -8px;
 	}
+	
+	
 	@media screen and (${device.mobileL}) {
-		margin: 8px 0;
 		font-size: 16px;
 		font-weight: 600;
 		line-height: calc(24 / 16);
 		&::after {
 			content: "";
 			border: 1px solid var(--accentLink);
-			top: 72px;
+      bottom: -8px;
 		}
 	}
 	@media screen and (${device.tablet}) {
-		margin: 16px 0;
 		font-size: 16px;
 		font-weight: 400;
 		line-height: calc(24 / 16);
+		
 		&::after {
 			content: "";
 			border: 2px solid var(--accentLink);
-			top: 88px;
+      bottom: -16px;
+      height: 2px;
 		}
 	}
 	@media screen and (${device.desktop}) {
-		margin: 12px 0;
 		font-size: 18px;
 		line-height: calc(27 / 18);
+		
 		&::after {
-			top: 84px;
+      bottom: -12px;
+			
 		}
 	}
 `;

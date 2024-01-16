@@ -4,9 +4,22 @@ import { fontDesktop, device } from '../../../styles/mixins';
 export const LabelStyled = styled.label`
   position: relative;
 
+
+  &.message {
+
+    @media screen and (${device.mobileL}) {
+      grid-column: 1 / span 3;
+    }
+
+  }
+	
   p {
     ${fontDesktop};
-
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+		margin-bottom: 12px;
+		
     @media screen and (${device.mobileL}) {
       height: 28px;
       font-size: 16px;
@@ -39,25 +52,13 @@ export const LabelStyled = styled.label`
   p:last-of-type {
     line-height: 1.2;
   }
-
-  @media screen and (${device.mobileL}) {
-    width: ${({ width }) => (width ? width : '200px')};
-  }
-
-  @media screen and (${device.tablet}) {
-    width: ${({ width }) => (width ? width : '276px')};
-  }
-
-  @media screen and (${device.desktop}) {
-    width: ${({ width }) => (width ? width : '300px')};
-  }
+	
 `;
 
 export const InputStyled = styled.input`
   position: relative;
   width: 100%;
   height: 32px;
-
   font-family: var(--Montserrat);
   font-weight: 500;
   letter-spacing: 0em;
@@ -65,6 +66,7 @@ export const InputStyled = styled.input`
   background-color: inherit;
   border: none;
   border-bottom: 1px solid var(--darkGrey);
+	
 
   border-bottom-color: ${({ isValid, error, touch }) => {
     if (!error && touch && isValid) {
@@ -77,9 +79,11 @@ export const InputStyled = styled.input`
   }};
 
   border-radius: 0;
+
   &[type='search'] {
     -webkit-appearance: none;
   }
+
 
   &::placeholder {
     font-family: var(--Raleway);
@@ -115,16 +119,6 @@ export const InputStyled = styled.input`
 `;
 
 export const ErrorText = styled.p`
-  position: absolute;
-  top: 0;
-  left: 0;
   color: var(--accentText);
 
-  @media screen and (${device.mobileL}) {
-    transform: translateY(80px);
-  }
-
-  @media screen and (${device.tablet}) {
-    transform: translateY(90px);
-  }
 `;

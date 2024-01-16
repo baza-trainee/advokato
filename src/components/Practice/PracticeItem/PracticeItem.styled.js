@@ -4,6 +4,8 @@ import { device } from '../../../styles/mixins';
 export const LiStyled = styled.li`
   color: var(--greyText);
   border-bottom: 1px solid #ffffff;
+	width: 100%;
+
 
   &.active {
     color: var(--lightText);
@@ -41,16 +43,18 @@ export const LiStyled = styled.li`
 export const SpecializationStyled = styled.p`
   display: flex;
   align-items: center;
-
   font-family: var(--Raleway);
   font-weight: 400;
+	line-height: 140%;
   word-spacing: -0.05ch;
   letter-spacing: 0em;
+	margin-bottom: 12px;
 
   @media screen and (${device.mobileL}) {
     /* height: 28px; */
     font-size: 20px;
     line-height: calc(28 / 20);
+    margin-bottom: 0;
   }
 
   @media screen and (${device.tablet}) {

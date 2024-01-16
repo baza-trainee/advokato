@@ -13,7 +13,7 @@ export const SectionStyled = styled.section`
 	color: var(--lightText);
 
 	@media screen and (${device.mobileS}) {
-		padding: 60px 24px;
+		padding: 28px 24px;
 	}
 
 	@media screen and (${device.mobileL}) {
@@ -37,31 +37,33 @@ export const Container = styled.div`
 	padding: 0 !important;
 
 	@media screen and (${device.mobileS}) {
-		gap: 28px;
+		gap: 20px;
 		min-width: 272px;
 	}
 
 	@media screen and (${device.mobileL}) {
 		gap: 40px;
 		min-width: 648px;
+    max-width: 768px;
 	}
 
 	@media screen and (${device.tablet}) {
 		gap: 40px;
 		min-width: 864px;
-		padding: 0;
+		max-width: 1024px;
 	}
 
 	@media screen and (${device.desktop}) {
 		gap: 40px;
 		width: 1120px;
-		padding: 0;
+    max-width: 1440px;
 	}
 `;
 
 export const TitleBlock = styled.div`
 	${flexBox};
 	flex-direction: column;
+  gap: 20px;
 
 	@media screen and (${device.mobileL}) {
 		gap: 20px;
@@ -86,19 +88,18 @@ export const TitleStyled = styled.h2`
 	@media screen and (${device.mobileS}) {
 		font-size: 20px;
 		line-height: 28px;
-		padding-bottom: 28px;
 	}
 
 	@media screen and (${device.mobileL}) {
 		font-size: 24px;
 		line-height: 33.6px;
-		padding-bottom: 20px;
+	
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 32px;
 		line-height: 44.8px;
-		padding-bottom: 0;
+		
 	}
 
 	@media screen and (${device.desktop}) {
@@ -114,19 +115,19 @@ export const SubheadingStyled = styled.p`
 	@media screen and (${device.mobileS}) {
 		font-size: 14px;
 		line-height: 22.4px;
-		padding-bottom: 0;
+
 	}
 
 	@media screen and (${device.mobileL}) {
 		font-size: 16px;
 		line-height: 25.6px;
-		padding-bottom: 40px;
+
 	}
 
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
 		line-height: 32px;
-		padding-bottom: 0;
+
 	}
 
 	@media screen and (${device.desktop}) {
@@ -137,7 +138,22 @@ export const SubheadingStyled = styled.p`
 
 export const ResultBlock = styled.div`
 	${flexBox};
-	gap: 40px;
+	gap: 20px;
 	flex-direction: column;
 	width: 100%;
+
+  @media screen and (${device.mobileL}) {
+    gap: 40px;
+		max-width: 648px;
+  }
+
+  @media screen and (${device.tablet}) {
+    max-width: 857px;
+  }
+  @media screen and (${device.desktop}) {
+    max-width: 1120px;
+  }
+	
+	
+ 
 `;

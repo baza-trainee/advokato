@@ -6,20 +6,27 @@ export const options = {
 	type: "loop",
 	height: "180px",
 	width: "1640px",
-	gap: "32px",
+	// gap: "32px",
 	perMove: 1,
 	perPage: 5,
 	speed: 1000,
 	interval: 4000,
 	breakpoints: {
-		768: {
-			perPage: 3,
-			width: "964px",
+		700: {
+			perPage: 1,
+			width: "216px",
+			height: "116px",
 			gap: "32px",
 		},
+		768: {
+			perPage: 2,
+			width: "550px",
+			height: "116px",
+			gap: "10px",
+		},
 		1024: {
-			perPage: 4,
-			width: "1296px",
+			perPage: 3,
+			width: "900px",
 			gap: "32px",
 		},
 		1440: {

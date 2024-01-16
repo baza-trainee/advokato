@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { isObjectEmpty } from '../../helpers';
-import { getContent } from '../../api/fetchContent';
+import { getContent } from "../../api/index.js";
 import {
   BlockWrapper,
   BonoHeader,
@@ -49,7 +49,6 @@ export const ProBono = () => {
 
                   <RightSide>
                     <img
-                      height={572}
                       src={elem.photo_path}
                       alt="Зображення ProBono"
                     />
@@ -59,7 +58,6 @@ export const ProBono = () => {
                 <BlockWrapper key={elem.id}>
                   <LeftSide>
                     <img
-                      height={572}
                       src={elem.photo_path}
                       alt="Зображення ProBono"
                     />

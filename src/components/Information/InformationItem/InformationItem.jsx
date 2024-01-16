@@ -22,7 +22,7 @@ export const InformationItem = ({ item }) => {
         />
 
         <ShortTextStyled id={id}>
-          <h3>{title}</h3>
+          <h2>{title}</h2>
           <p>{short_text}</p>
         </ShortTextStyled>
       </ImageWrp>

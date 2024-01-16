@@ -14,10 +14,10 @@ export const Input = ({
   children,
   isValid,
   touchedFields,
-  width,
+  width,className
 }) => {
   return (
-    <LabelStyled width={width}>
+    <LabelStyled width={width} className={className}>
       {label && <p>{label}</p>}
 
       <InputStyled
@@ -49,4 +49,5 @@ Input.propTypes = {
   children: PropTypes.node,
   isValid: PropTypes.bool,
   width: PropTypes.string,
+	className: PropTypes.string,
 };

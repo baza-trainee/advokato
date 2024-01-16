@@ -19,95 +19,137 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
 	${container};
-	max-width: 1440px;
-	padding: 132px 160px;
+  max-width: 768px;
+	padding: 28px 24px;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	
 	@media screen and (${device.mobileL}) {
 		padding: 60px;
+    gap: 40px;
 	}
 	@media screen and (${device.tablet}) {
+    max-width: 1024px;
 		padding: 120px 80px;
 	}
 	@media screen and (${device.desktop}) {
 		padding: 132px 160px;
+    max-width: 1440px;
 	}
 `;
 
 export const BlockWrapper = styled.div`
-	${flexBox};
-	justify-content: space-between;
+  ${flexBox};
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 496px;
 
-	margin: 40px auto 0;
-	@media screen and (${device.mobileL}) {
-		width: 648px;
-		height: 496px;
-	}
-	@media screen and (${device.tablet}) {
-		width: 864px;
-		height: 552px;
-	}
-	@media screen and (${device.desktop}) {
-		width: 1120px;
-		height: 572px;
-	}
+  :last-child {
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (${device.mobileL}) {
+    flex-direction: row;
+    gap: 48px;
+    width: 648px;
+
+    :last-child {
+      flex-direction: row;
+    }
+  }
+  @media screen and (${device.tablet}) {
+    width: 864px;
+    justify-content: space-between;
+    gap: 0;
+
+  }
+  @media screen and (${device.desktop}) {
+    width: 1120px;
+  }
 `;
 
 export const LeftSide = styled.div`
-	position: relative;
-	width: 500px;
-	height: 572px;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
+	
 	img {
 		border-radius: 24px;
 		width: 100%;
-		height: 100%;
+    aspect-ratio: 272 / 250;
 		object-fit: cover;
+		object-position: center top;
 	}
+	
 	@media screen and (${device.mobileL}) {
 		width: 300px;
 		height: 496px;
+
+    img {
+      aspect-ratio: 300 / 496;
+    }
 	}
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
+
+    img {
+      aspect-ratio: 400 / 552;
+    }
 	}
 	@media screen and (${device.desktop}) {
 		width: 500px;
 		height: 572px;
+
+    img {
+      aspect-ratio: 500 / 572;
+    }
 	}
 `;
 
 export const RightSide = styled.div`
 	position: relative;
-	width: 500px;
-	height: 572px;
-
+	width: 100%;
+  height: 100%;
 	overflow: hidden;
+	
 	img {
 		border-radius: 24px;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+    object-fit: cover;
+    aspect-ratio: 272 / 250;
+    object-position: center top;
 	}
 	@media screen and (${device.mobileL}) {
 		width: 300px;
-		height: 496px;
+		
+    img {
+      aspect-ratio: 300 / 496;
+    }
 	}
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
+
+    img {
+      aspect-ratio: 400 / 552;
+    }
 	}
 	@media screen and (${device.desktop}) {
 		width: 500px;
 		height: 572px;
+
+    img {
+      aspect-ratio: 500 / 572;
+    }
 	}
 `;
 
 export const TextWrapper = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 100%;
 
 	ul {
@@ -118,6 +160,10 @@ export const TextWrapper = styled.div`
 
 export const BonoHeader = styled.h2`
 	${fontSectionTitle};
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+	
 	@media screen and (${device.mobileL}) {
 		font-size: 24px;
 		line-height: calc(33.6 / 24);
@@ -134,19 +180,18 @@ export const BonoHeader = styled.h2`
 
 export const BonoText = styled.div`
 	${fontSectionText};
-	p {
-		margin-top: 10px;
-	}
+  font-size: 16px;
+
 	@media screen and (${device.mobileL}) {
-		font-size: 16px;
-		line-height: calc(25.6 / 16);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
 	}
 	@media screen and (${device.tablet}) {
 		font-size: 20px;
-		line-height: calc(32 / 20);
+    line-height: 160%;
 	}
 	@media screen and (${device.desktop}) {
 		font-size: 22px;
-		line-height: 35.2px;
 	}
 `;

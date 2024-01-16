@@ -6,12 +6,12 @@ import { isObjectEmpty } from '../../helpers';
 import { SliderItems } from './SliderItems/SliderItems';
 import { Icon } from '../Icon';
 import {
-  ClientsBlockHeader,
-  ClientsSliderContainer,
-  Container,
-  SectionStyled,
-  SliderArrow,
-} from './ClientsBlock.styled';
+	ClientsBlockHeader,
+	ClientsSliderContainer,
+	Container, LeftSliderArrow, RightSliderArrow,
+	SectionStyled,
+	SliderArrow,
+} from "./ClientsBlock.styled";
 
 export const ClientsBlock = () => {
   const [t, i18n] = useTranslation('global');
@@ -38,7 +38,7 @@ export const ClientsBlock = () => {
 
       {data?.length > 0 && (
         <ClientsSliderContainer>
-          <SliderArrow>
+          <LeftSliderArrow>
             <button
               aria-label="Перелистування слайдера вліво"
               onClick={() => arrowRef.current.go('-1')}
@@ -46,11 +46,11 @@ export const ClientsBlock = () => {
             >
               <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
             </button>
-          </SliderArrow>
+          </LeftSliderArrow>
 
           <SliderItems ref={arrowRef} data={data} />
 
-          <SliderArrow>
+          <RightSliderArrow>
             <button
               aria-label="Перелистування слайдера вправо"
               onClick={() => arrowRef.current.go('+1')}
@@ -58,7 +58,7 @@ export const ClientsBlock = () => {
             >
               <Icon id={'icon-slider-arrow-right'} width={60} height={60} />
             </button>
-          </SliderArrow>
+          </RightSliderArrow>
         </ClientsSliderContainer>
       )}
     </SectionStyled>

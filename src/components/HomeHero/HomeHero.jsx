@@ -13,7 +13,6 @@ export const HomeHero = ({ data }) => {
     <SectionStyled>
       <Container>
         <MainTitleStyled>{data?.slogan}</MainTitleStyled>
-
         <SubtitleWrapper>
           <SubtitleStyled>{data?.left_text}</SubtitleStyled>
           <SubtitleStyled>{data?.right_text}</SubtitleStyled>

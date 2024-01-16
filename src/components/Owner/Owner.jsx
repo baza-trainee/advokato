@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import { ButtonConsultation } from '../ButtonConsultation';
 import {
-  SectionStyled,
-  Container,
-  CompanyBox,
-  ImageBoxStyled,
-  ImageStyled,
-  TextStyled,
-} from './Owner.styled';
+	SectionStyled,
+	Container,
+	CompanyBox,
+	ImageBoxStyled,
+	ImageStyled,
+	TextStyled, ImageBoxMobStyled,
+} from "./Owner.styled";
 
 export const Owner = ({ data }) => {
   const [t, i18n] = useTranslation('global');
@@ -21,10 +21,21 @@ export const Owner = ({ data }) => {
       <Container>
         <CompanyBox>
           <TextStyled>
-            <h3>
+            <h2>
               {t('owner.title')}
-              <span>{t('owner.subTitle')}</span>
-            </h3>
+              <span> {t('owner.subTitle')}</span>
+            </h2>
+
+						<ImageBoxMobStyled>
+							{data?.main_page_photo_path && (
+								<ImageStyled
+									src={data?.main_page_photo_path}
+									width={272}
+									height={340}
+									alt="фотографія засновника компанії"
+								/>
+							)}
+						</ImageBoxMobStyled>
 
             <p>{data?.main_page_description}</p>
 

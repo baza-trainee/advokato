@@ -7,6 +7,7 @@ import {
 	device,
 } from "../../../styles/mixins";
 import "../../../index.css";
+import { containerStyleMobileS } from "../../Contacts/GoogleMap/GoogleMap.styled.js";
 
 export const ContentStyled = styled.div`
 	${flexBox};
@@ -31,6 +32,7 @@ export const ResultItemStyled = styled.div`
 
 	@media screen and (${device.mobileS}) {
 		flex-direction: column;
+    align-items: flex-start;
 	}
 
 	@media screen and (${device.mobileL}) {
@@ -43,7 +45,7 @@ export const ResultItemStyled = styled.div`
 	}
 
 	@media screen and (${device.desktop}) {
-		width: 1036px;
+    width: 1036px;
 	}
 `;
 
@@ -51,6 +53,7 @@ export const WrapperStyled = styled.div`
 	${flexBox};
 	justify-content: flex-start;
 	width: 100%;
+
 
 	@media screen and (${device.tablet}) {
 		padding: 24px 0;
@@ -63,8 +66,8 @@ export const WrapperStyled = styled.div`
 
 export const ImageBlock = styled.div`
 	@media screen and (${device.mobileS}) {
-		width: 272px;
-		height: 200px;
+    width: 100%;
+		height: auto;
 		margin-bottom: 28px;
 	}
 
@@ -96,15 +99,20 @@ export const ResultText = styled.div`
 	${flexBox};
 	flex-direction: column;
 	align-items: flex-start;
+  gap: 16px;
+	width: 100%;
 
 	@media screen and (${device.mobileL}) {
-		gap: 20px;
+		height: 344px;
+		gap: 0;
 		width: 288px;
+		justify-content: space-between;
 	}
 
 	@media screen and (${device.tablet}) {
-		gap: 24px;
+		gap: 0;
 		width: 344px;
+		height: 272px;
 	}
 
 	@media screen and (${device.desktop}) {
@@ -119,7 +127,7 @@ export const ResultText = styled.div`
 		@media screen and (${device.mobileS}) {
 			font-size: 16px;
 			line-height: 24px;
-			width: 272px;
+      width: 100%;
 		}
 
 		@media screen and (${device.mobileL}) {
@@ -141,46 +149,84 @@ export const ResultText = styled.div`
 		}
 	}
 
-	p.desc {
-		${fontReview};
-		color: var(--mainText);
-
-		@media screen and (${device.mobileS}) {
-			font-size: 14px;
-			line-height: 21px;
-			width: 272px;
-			padding: 28px 0;
-		}
-
-		@media screen and (${device.mobileL}) {
-			font-size: 16px;
-			line-height: 24px;
-			width: 288px;
-			padding: 3px 0;
-		}
-
-		@media screen and (${device.tablet}) {
-			font-size: 16px;
-			line-height: 24px;
-			width: 344px;
-			padding: 3px 0;
-		}
-
-		@media screen and (${device.desktop}) {
-			font-size: 18px;
-			line-height: 27px;
-			width: 456px;
-			padding: 16.5px 0;
-		}
-	}
+	
 `;
+
+export const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  p.desc {
+    ${fontReview};
+    color: var(--mainText);
+		
+    @media screen and (${device.mobileS}) {
+      font-size: 14px;
+      line-height: 21px;
+      width: 100%;
+    }
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+      line-height: 24px;
+      width: 288px;
+			height: 192px;
+    }
+
+    @media screen and (${device.tablet}) {
+      font-size: 16px;
+      line-height: 24px;
+      width: 344px;
+      height: 144px;
+    }
+
+    @media screen and (${device.desktop}) {
+      font-size: 18px;
+      line-height: 27px;
+      width: 456px;
+      height: 168px;
+    }
+  }
+
+  .hidden{
+    margin: 0;
+    -webkit-line-clamp: 8;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @media screen and (${device.tablet}) {
+      -webkit-line-clamp: 6;
+    }
+  }
+
+  p.more {
+    color: #969395;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+		align-self: flex-end;
+
+    @media screen and (${device.mobileL}) {
+      display: none;
+    }
+  }
+;
+
+`
 
 export const BubbleForm = styled.div`
 	${flexBox};
-	gap: 24px;
+	justify-content: space-between;
+  width: 100%;
 
 	@media screen and (${device.tablet}) {
+		gap: 24px;
 		width: 256px;
+    
 	}
 
 	@media screen and (${device.desktop}) {
