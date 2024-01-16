@@ -91,6 +91,7 @@ export const PracticeDescWrp = styled.div`
 export const PracticeWrp = styled.div`
   display: flex;
   justify-content: space-between;
+	width: 100%;
 `;
 
 export const PracticeInfo = styled.div`
@@ -100,11 +101,9 @@ export const PracticeInfo = styled.div`
 	gap: 12px;
 	max-width: 700px;
 	
-
   button{
     width: 100%;
   }
-	
 	
   @media screen and (${device.mobileL}) {
     max-width: 300px;
@@ -115,10 +114,12 @@ export const PracticeInfo = styled.div`
 
   @media screen and (${device.tablet}) {
     width: 348px;
+    max-width: 348px;
   }
 
   @media screen and (${device.desktop}) {
     width: 456px;
+    max-width: 456px;
   }
 	
 
@@ -272,6 +273,8 @@ export const PracticeDesktopWrapper = styled.div`
   @media screen and (${device.mobileL}) {
     display: block;
   }
+
+
 	
 `;
 

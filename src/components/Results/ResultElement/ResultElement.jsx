@@ -15,12 +15,13 @@ import {
 	BubbleForm,
 	BubbleFormText,
 	PublicationDate,
-	ArrowBlock,
+	ArrowBlock, DescriptionWrapper,
 } from "./ResultElement.styled.js";
 
 export const ResultElement = () => {
 	const [modalData, setModalData] = useState(null);
 	const [data, setData] = useState([]);
+	const [isShowMore, setIsShowMore] = useState(false)
 
 	useEffect(() => {
 		const getData = async () => {
@@ -49,6 +50,9 @@ export const ResultElement = () => {
 		document.body.style.overflowY = "auto";
 		setModalData(null);
 	};
+	const showMoreHandler = () => {
+		setIsShowMore(!isShowMore)
+	}
 
 	return (
 		<>
@@ -65,7 +69,7 @@ export const ResultElement = () => {
 						},
 						index,
 					) => (
-						<ContentStyled key={id}>
+						<ContentStyled key={id} style={{width: '100%'}}>
 							<WrapperStyled>
 								<ResultItemStyled>
 									<ImageBlock
@@ -80,7 +84,10 @@ export const ResultElement = () => {
 
 									<ResultText>
 										<h3>{name}</h3>
-										<p className="desc">{description}</p>
+										<DescriptionWrapper>
+											<p className={`${isShowMore ? "desc" : "desc hidden"}`}>{description}</p>
+											<p className="more" onClick={showMoreHandler}>{isShowMore ? "Згорнути" : "Читати далі"}</p>
+										</DescriptionWrapper>
 										<BubbleForm>
 											<BubbleFormText>{specialization_name}</BubbleFormText>
 											<PublicationDate>{created_at}</PublicationDate>
