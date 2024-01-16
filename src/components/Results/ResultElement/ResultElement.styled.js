@@ -66,8 +66,8 @@ export const WrapperStyled = styled.div`
 
 export const ImageBlock = styled.div`
 	@media screen and (${device.mobileS}) {
-		width: 272px;
-		height: 200px;
+    width: 100%;
+		height: auto;
 		margin-bottom: 28px;
 	}
 
@@ -100,6 +100,7 @@ export const ResultText = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
   gap: 16px;
+	width: 100%;
 
 	@media screen and (${device.mobileL}) {
 		height: 344px;
@@ -126,7 +127,7 @@ export const ResultText = styled.div`
 		@media screen and (${device.mobileS}) {
 			font-size: 16px;
 			line-height: 24px;
-			width: 272px;
+      width: 100%;
 		}
 
 		@media screen and (${device.mobileL}) {
@@ -155,6 +156,7 @@ export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 
   p.desc {
     ${fontReview};
@@ -163,7 +165,7 @@ export const DescriptionWrapper = styled.div`
     @media screen and (${device.mobileS}) {
       font-size: 14px;
       line-height: 21px;
-      width: 272px;
+      width: 100%;
     }
 
     @media screen and (${device.mobileL}) {
@@ -218,10 +220,13 @@ export const DescriptionWrapper = styled.div`
 
 export const BubbleForm = styled.div`
 	${flexBox};
-	gap: 24px;
+	justify-content: space-between;
+  width: 100%;
 
 	@media screen and (${device.tablet}) {
+		gap: 24px;
 		width: 256px;
+    
 	}
 
 	@media screen and (${device.desktop}) {
