@@ -18,7 +18,7 @@ export const SliderItems = React.forwardRef((props, ref) => {
 	const [openReview, setOpenReview] = useState();
 	const [closeReview, setCloseReview] = useState(false);
 	const {width} = useWindowDimensions()
-	const [reviewLength, setReviewLength] = useState(0)
+	const [reviewLength, setReviewLength] = useState(345)
 
 	useEffect(() => {
 		if (width < 768) {
@@ -77,7 +77,7 @@ export const SliderItems = React.forwardRef((props, ref) => {
 									? elem.description
 									: elem.description.slice(0, reviewLength)
 								}
-								{elem.description.length > reviewLength ? (
+								{elem.description?.length > reviewLength ? (
 									<button
 										onClick={() => {
 											if (openReview !== elem.id) {
