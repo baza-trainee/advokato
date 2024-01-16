@@ -6,12 +6,12 @@ import { getContent } from '../../api/fetchContent';
 import { SliderItems } from './SliderItems/SliderItems';
 import { Icon } from '../Icon';
 import {
-  ClientsBlockHeader,
-  Container,
-  SectionStyled,
-  SliderArrow,
-  SliderWrapper,
-} from './ClientReviews.styled';
+	ClientsBlockHeader,
+	Container, LeftSliderArrow, RightSliderArrow,
+	SectionStyled,
+	SliderArrow,
+	SliderWrapper,
+} from "./ClientReviews.styled";
 
 export const ClientReviews = () => {
   const [t, i18n] = useTranslation('global');
@@ -38,7 +38,7 @@ export const ClientReviews = () => {
 
       {data?.length > 0 && (
         <SliderWrapper>
-          <SliderArrow>
+          <LeftSliderArrow>
             <button
               aria-label="Перелистування слайдера вліво"
               type="button"
@@ -46,11 +46,11 @@ export const ClientReviews = () => {
             >
               <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
             </button>
-          </SliderArrow>
+          </LeftSliderArrow>
 
           <SliderItems ref={ref} data={data} />
 
-          <SliderArrow>
+          <RightSliderArrow>
             <button
               aria-label="Перелистування слайдера вправо"
               type="button"
@@ -58,7 +58,7 @@ export const ClientReviews = () => {
             >
               <Icon id={'icon-slider-arrow-right'} width={60} height={60} />
             </button>
-          </SliderArrow>
+          </RightSliderArrow>
         </SliderWrapper>
       )}
     </SectionStyled>

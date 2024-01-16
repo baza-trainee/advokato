@@ -41,7 +41,7 @@ export const HomePage = () => {
       {/*<Results />*/}
       <ClientsBlock />
       <ClientReviews />
-      <FeedBackForm />
+      {/*<FeedBackForm />*/}
     </>
   );
 };

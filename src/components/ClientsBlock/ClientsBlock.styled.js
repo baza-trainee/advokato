@@ -26,8 +26,19 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-	max-width: 1440px;
+
 	margin: 0 auto;
+
+  @media screen and (${device.mobileL}) {
+    max-width: 768px;
+  }
+
+  @media screen and (${device.tablet}) {
+    max-width: 1024px;
+  }
+  @media screen and (${device.desktop}) {
+    max-width: 1440px;
+  }
 `;
 
 export const ClientsBlockHeader = styled.h2`

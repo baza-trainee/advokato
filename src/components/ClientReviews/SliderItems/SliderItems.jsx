@@ -12,11 +12,28 @@ import {
 } from "../ClientReviews.styled";
 import "@splidejs/splide/css";
 import { options } from "../ClientsData/SliderSettings";
+import { useWindowDimensions } from "../../../hooks/index.js";
 
 export const SliderItems = React.forwardRef((props, ref) => {
 	const [openReview, setOpenReview] = useState();
 	const [closeReview, setCloseReview] = useState(false);
+	const {width} = useWindowDimensions()
+	const [reviewLength, setReviewLength] = useState(0)
+
+	useEffect(() => {
+		if (width < 768) {
+			setReviewLength(547)
+		} else if (768 <= width && width < 1024) {
+			setReviewLength(450)
+		} else if (1024 <= width && width < 1440) {
+			setReviewLength(650)
+		} else {
+			setReviewLength(345)
+		}
+	}, [width]);
+
 	const { data } = props;
+
 	useEffect(() => {
 		let timer = null;
 		if (closeReview === true) {
@@ -34,10 +51,11 @@ export const SliderItems = React.forwardRef((props, ref) => {
 			options={options}
 		>
 			{data?.map(elem => {
+
 				return (
 					<SplideSlide key={elem.id}>
 						<ClientCardWrapper
-							heightText={openReview === elem.id ? true : false}
+							heightText={openReview === elem.id}
 							onMouseLeave={() => setCloseReview(true)}
 						>
 							<CardHeader>
@@ -57,13 +75,17 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							<ClientReview>
 								{openReview === elem.id
 									? elem.description
-									: elem.description.slice(0, 325)}
-								{elem.description?.length > 325 ? (
+									: elem.description.slice(0, reviewLength)
+								}
+								{elem.description.length > reviewLength ? (
 									<button
 										onClick={() => {
-											openReview !== elem.id
-												? setOpenReview(elem.id) & setCloseReview(false)
-												: setOpenReview(null);
+											if (openReview !== elem.id) {
+												setOpenReview(elem.id);
+												setCloseReview(false);
+											} else {
+												setOpenReview(null);
+											}
 										}}
 									>
 										&nbsp;
