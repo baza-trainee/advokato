@@ -56,19 +56,20 @@ export const BlockWrapper = styled.div`
     flex-direction: row;
     gap: 48px;
     width: 648px;
-
+		
     :last-child {
       flex-direction: row;
     }
   }
   @media screen and (${device.tablet}) {
     width: 864px;
-    justify-content: space-between;
+    align-items: center;
     gap: 0;
 
   }
   @media screen and (${device.desktop}) {
     width: 1120px;
+    align-items: center;
   }
 `;
 
@@ -76,6 +77,7 @@ export const LeftSide = styled.div`
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	display: flex;
 	
 	img {
 		border-radius: 24px;
@@ -88,7 +90,9 @@ export const LeftSide = styled.div`
 	@media screen and (${device.mobileL}) {
 		width: 300px;
 		height: 496px;
-
+    justify-content: center;
+    align-items: center;
+		
     img {
       aspect-ratio: 300 / 496;
     }
@@ -116,6 +120,9 @@ export const RightSide = styled.div`
 	width: 100%;
   height: 100%;
 	overflow: hidden;
+  display: flex;
+
+
 	
 	img {
 		border-radius: 24px;
@@ -125,7 +132,10 @@ export const RightSide = styled.div`
     object-position: center top;
 	}
 	@media screen and (${device.mobileL}) {
-		width: 300px;
+    width: 300px;
+    height: 496px;
+    justify-content: center;
+    align-items: center;
 		
     img {
       aspect-ratio: 300 / 496;
@@ -134,6 +144,7 @@ export const RightSide = styled.div`
 	@media screen and (${device.tablet}) {
 		width: 400px;
 		height: 552px;
+
 
     img {
       aspect-ratio: 400 / 552;
@@ -151,6 +162,8 @@ export const RightSide = styled.div`
 
 export const TextWrapper = styled.div`
 	width: 100%;
+
+	
 
 	ul {
 		list-style: disc;

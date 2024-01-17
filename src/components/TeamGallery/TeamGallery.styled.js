@@ -32,18 +32,18 @@ export const SectionStyled = styled.section`
 `;
 
 export const Container = styled.div`
-	${container};
+margin: 0 auto;
 
   @media screen and (${device.mobileL}) {
-    max-width: 768px;
+    max-width: 648px;
   }
 
   @media screen and (${device.tablet}) {
-    max-width: 1024px;
+    max-width: 864px;
   }
 
   @media screen and (${device.desktop}) {
-    max-width: 1440px;
+    max-width: 1120px;
   }
 `;
 

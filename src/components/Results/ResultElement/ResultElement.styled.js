@@ -209,6 +209,7 @@ export const DescriptionWrapper = styled.div`
     font-weight: 400;
     line-height: 150%;
 		align-self: flex-end;
+		cursor: pointer;
 
     @media screen and (${device.mobileL}) {
       display: none;
