@@ -1,27 +1,28 @@
-import { Suspense, useState, useEffect, useRef } from "react";
-import { Outlet, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import "animate.css";
 
-import logoImg from "../../assets/images/layout-section/Logo.png";
-import { ButtonConsultation } from "../ButtonConsultation";
-import { Icon } from "../Icon";
-import { Footer } from "../Footer/Footer";
-import { CookiesPanel } from "../CookiesPanel";
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
-import { Menu } from "../Menu";
-import { LoadingAnimated } from "../LoadingAnimated";
 import {
-	MainStyled,
+	ConsultElement,
+	Container,
+	HamburgerMenu,
 	HeaderStyled,
 	LangButton,
-	ConsultElement,
-	PhonesDiv,
-	HamburgerMenu,
+	MainStyled,
 	PhoneBurger,
-	Container,
+	PhonesDiv,
 } from "./Layout.styled";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Suspense, useEffect, useRef, useState } from "react";
+
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { ButtonConsultation } from "../ButtonConsultation";
+import { CookiesPanel } from "../CookiesPanel";
+import { Footer } from "../Footer/Footer";
+import { Icon } from "../Icon";
+import { LoadingAnimated } from "../LoadingAnimated";
+import { Menu } from "../Menu";
 import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
+import logoImg from "../../assets/images/layout-section/Logo.png";
+import { useTranslation } from "react-i18next";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
 	const [t, i18n] = useTranslation("global");
@@ -79,8 +80,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 					<PhoneBurger onClick={() => setModalActive(prev => !prev)}>
 						<Icon
 							id={"phoneButton"}
-							className="animate__animated animate__pulse animate__infinite infinite
-          animate__slower	3s"
+							className="animate__animated animate__pulse animate__infinite infinite animate__slower 3s"
 							width={56}
 							height={56}
 						/>
@@ -101,7 +101,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 					<nav className={screenSize() > 1200 ? "" : "close"}>
 						<Menu setIsOpen={setIsOpen} />
 					</nav>
-					<LangButton
+					{/* <LangButton
 						onClick={() =>
 							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
 						}
@@ -112,7 +112,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						disabled
 					>
 						{activeLang.toUpperCase()}
-					</LangButton>
+					</LangButton> */}
 
 					<HamburgerMenu
 						className={`${isOpen ? "open" : ""}`}
@@ -134,7 +134,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 							modalActive={modalActive}
 							setModalActive={setModalActive}
 							className={
-								"animate__animated animate__pulse animate__infinite infinite animate__slower	3s"
+								"animate__animated animate__fadeIn animate__infinite infinite animate__slower	3s"
 							}
 						/>
 						<PhonesDiv>

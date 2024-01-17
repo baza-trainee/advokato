@@ -8,7 +8,7 @@
       "news": "Новини",
       "contacts": "Контакти"
     },
-    "btnAppoitment": "Записатися на консультацію"
+    "btnAppoitment": "Записатись на консультацію"
   },
   "owner": {
     "title": "Адвокатська компанія",
@@ -61,8 +61,8 @@
     "inputLastName": "Прізвище",
     "inputPhone": "Телефон *",
     "inputEmail": "E-mail",
-    "privacyTitle": "Надаю дозвіл на обробку персональних даних.",
-    "privacyButton": "Політика конфіденційності.",
+    "privacyTitle": "Надаю дозвіл на обробку персональних даних",
+    "privacyButton": "Політика конфіденційності",
     "nextButton": "Продовжити",
     "cancelButton": "Скасувати",
     "skipButton": "Пропустити",

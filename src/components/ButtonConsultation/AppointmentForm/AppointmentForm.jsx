@@ -1,31 +1,32 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
-import PropTypes from 'prop-types';
-
-import { getContent, postContent } from '../../../api';
-import { SchemaEn, SchemaUa } from './validationSchema';
 import * as Constants from '../../../constants';
-import { Input } from './Input';
-import { Checkbox } from './Checkbox';
-import { Select } from './Select';
+
+import {
+  ButtonWrp,
+  FirstPageTitle,
+  FormStyled,
+  FormWrp,
+  LowerButton,
+  SecondPageTitle,
+  UpperButton,
+} from './AppointmentForm.styled';
+import { SchemaEn, SchemaUa } from './validationSchema';
+import { getContent, postContent } from '../../../api';
+import { useEffect, useState } from 'react';
+
 import { Calendar } from '../Calendar';
+import { Checkbox } from './Checkbox';
+import { FailurePage } from './FailurePage';
+import { Input } from './Input';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { ModalFromRoot } from '../../ModalFromRoot';
 import { PdfViewer } from '../../PdfViewer';
+import PropTypes from 'prop-types';
+import { Select } from './Select';
 import { SuccessPage } from './SuccessPage';
-import { FailurePage } from './FailurePage';
-import {
-  FormWrp,
-  FormStyled,
-  FirstPageTitle,
-  SecondPageTitle,
-  ButtonWrp,
-  UpperButton,
-  LowerButton,
-} from './AppointmentForm.styled';
 import privacyPolicy from '../../../assets/documents/privacy-policy.pdf';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const DEFAULT_VALUES = {
   firstName: '',
@@ -218,7 +219,7 @@ export const AppointmentForm = ({ setModalActive }) => {
           root="root-docs"
           overlayId=""
           padding="20px"
-          align="flex-start"
+          align={'flex-start'}
         >
           <PdfViewer pdfFile={privacyPolicy} />
         </ModalFromRoot>
@@ -316,7 +317,8 @@ export const AppointmentForm = ({ setModalActive }) => {
             </>
           )}
 
-          {currentPartForm === 4 && <SuccessPage />}
+          {/* {currentPartForm === 4 && <SuccessPage />} */}
+          {currentPartForm === 4 && <FailurePage />}
 
           {currentPartForm === 5 && (
             <FailurePage

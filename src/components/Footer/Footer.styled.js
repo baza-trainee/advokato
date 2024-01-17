@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-import styled from '@emotion/styled';
 import { device, fontLayoutMenu } from '../../styles/mixins';
+
+import styled from '@emotion/styled';
 
 export const FooterStyled = styled.footer`
   position: relative;
@@ -71,20 +72,23 @@ export const ContentWrp = styled.div`
   @media screen and (${device.mobileL}) {
     margin-bottom: 12px;
     padding: ${({ path }) => (path !== '/contacts' ? '0 0 12px 0' : '0')};
-    gap: 56px;
+    /* gap: 56px; */
+    gap: 30px;
   }
 
   @media screen and (${device.tablet}) {
     margin-bottom: 12px;
     padding: ${({ path }) => (path !== '/contacts' ? '0 14px 20px 72px' : '0')};
-    gap: 72px;
+    /* gap: 72px; */
+    gap: 60px;
   }
 
   @media screen and (${device.desktop}) {
     margin-bottom: 28px;
     padding: ${({ path }) =>
       path !== '/contacts' ? '0 60px 20px 100px' : '0'};
-    gap: 140px;
+    /* gap: 140px; */
+    gap: 110px;
   }
 `;
 
@@ -340,18 +344,21 @@ export const MainOfficeStyled = styled(Link)`
     height: 80px;
     font-size: 14px;
     line-height: calc(25 / 14);
+    max-width: 220px;
   }
 
   @media screen and (${device.tablet}) {
     height: 84px;
     font-size: 16px;
     line-height: calc(29 / 16);
+      max-width: 250px;
   }
 
   @media screen and (${device.desktop}) {
     height: 96px;
     font-size: 18px;
     line-height: calc(32.4 / 18);
+    max-width: 280px;
   }
 `;
 

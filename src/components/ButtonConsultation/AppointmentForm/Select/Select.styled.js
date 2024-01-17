@@ -1,35 +1,37 @@
+import { device, fontDesktop } from '../../../../styles/mixins';
+
 import styled from '@emotion/styled';
-import { fontDesktop, device } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
 
   p {
-    ${fontDesktop};
+    /* ${fontDesktop}; */
     color: var(--mainText);
+    font-weight: 600;
 
     @media screen and (${device.mobileL}) {
-      margin-bottom: 4px;
-      height: 32px;
+      /* margin-bottom: 4px;
+      height: 32px; */
       font-size: 18px;
-      line-height: calc(29 / 18);
+      /* line-height: calc(29 / 18); */
     }
 
     @media screen and (${device.desktop}) {
-      margin-bottom: 8px;
-      height: 28px;
-      font-size: 22px;
-      line-height: calc(35 / 22);
+      /* margin-bottom: 8px;
+      height: 28px; */
+      font-size: 20px;
+      /* line-height: calc(35 / 22); */
     }
   }
 
   &:last-of-type {
     @media screen and (${device.mobileL}) {
-      margin-bottom: 4px;
+      /* margin-bottom: 4px; */
     }
 
     @media screen and (${device.desktop}) {
-      margin-bottom: -4px;
+      /* margin-bottom: -4px; */
     }
   }
 `;
@@ -38,8 +40,10 @@ export const ButtonStyled = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 5px;
 
-  ${fontDesktop};
+  /* ${fontDesktop}; */
+  font-weight: 600;
   color: var(--mainText);
   stroke: var(--mainText);
   border: 1px solid var(--greyText);
@@ -52,19 +56,21 @@ export const ButtonStyled = styled.button`
   }
 
   @media screen and (${device.mobileL}) {
-    padding: 18px 28px;
-    width: 440px;
-    height: 60px;
+    /* padding: 18px 28px; */
+    padding: 20px 30px;
+    width: 450px;
+    /* height: 60px; */
     font-size: 16px;
-    line-height: calc(26 / 16);
+    /* line-height: calc(26 / 16); */
   }
 
   @media screen and (${device.desktop}) {
-    padding: 20px 28px;
-    width: 488px;
-    height: 76px;
-    font-size: 22px;
-    line-height: calc(35 / 22);
+    padding: 20px 30px;
+    width: 450px;
+    /* width: 488px; */
+    /* height: 76px; */
+    font-size: 20px;
+    /* line-height: calc(35 / 22); */
   }
 `;
 
@@ -87,18 +93,21 @@ export const OptionsItem = styled.li`
   }
 
   @media screen and (${device.mobileL}) {
-    padding: 18px 28px;
+    /* padding: 18px 28px;
     width: 440px;
     height: 60px;
     font-size: 18px;
-    line-height: calc(29 / 18);
+    line-height: calc(29 / 18); */
   }
 
   @media screen and (${device.desktop}) {
-    padding: 20px 28px;
+    /* padding: 20px 28px;
     width: 488px;
     height: 76px;
     font-size: 22px;
-    line-height: calc(35 / 22);
+    line-height: calc(35 / 22); */
+    padding: 20px 30px;
+    width: 450px;
+    font-size: 20px;
   }
 `;

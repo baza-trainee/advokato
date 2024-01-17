@@ -1,11 +1,12 @@
+import { device, fontDesktop } from '../../../../styles/mixins';
+
 import styled from '@emotion/styled';
-import { fontDesktop, device } from '../../../../styles/mixins';
 
 export const LabelStyled = styled.label`
   position: relative;
 
   p {
-    ${fontDesktop};
+    /* ${fontDesktop}; */
 
     @media screen and (${device.mobileL}) {
       height: 32px;
@@ -14,9 +15,10 @@ export const LabelStyled = styled.label`
     }
 
     @media screen and (${device.desktop}) {
-      height: 36px;
+      /* height: 36px;
       font-size: 22px;
-      line-height: calc(35 / 22);
+      line-height: calc(35 / 22); */
+      font-weight: 600;
     }
   }
 
@@ -26,7 +28,8 @@ export const LabelStyled = styled.label`
   }
 
   @media screen and (${device.mobileL}) {
-    width: 440px;
+    /* width: 440px; */
+    width: 400px;
   }
 `;
 
@@ -52,7 +55,7 @@ export const InputStyled = styled.input`
     }
   }};
 
-  border-radius: 0;
+border-radius: 5px;
   &[type='search'] {
     -webkit-appearance: none;
   }
@@ -70,7 +73,7 @@ export const InputStyled = styled.input`
 
     @media screen and (${device.desktop}) {
       font-size: 18px;
-      line-height: 21.94px;
+      /* line-height: 21.94px; */
     }
   }
 
@@ -85,9 +88,9 @@ export const InputStyled = styled.input`
   }
 
   @media screen and (${device.desktop}) {
-    height: 56px;
+    /* height: 56px; */
     font-size: 18px;
-    line-height: 21.94px;
+    /* line-height: 21.94px; */
   }
 `;
 
@@ -99,9 +102,13 @@ export const ErrorText = styled.p`
 
   @media screen and (${device.mobileL}) {
     transform: translateY(80px);
+    width: 100%;
+    text-align: center;
   }
 
   @media screen and (${device.desktop}) {
-    transform: translateY(90px);
+    transform: translateY(85px);
+    width: 100%;
+    text-align: center;
   }
 `;

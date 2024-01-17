@@ -1,7 +1,8 @@
-import styled from '@emotion/styled';
+import { device, flexBox, fontDesktop } from '../../../../styles/mixins';
+
 import checkboxFalse from '../../../../assets/icons/checkboxFalse.svg';
 import checkboxTrue from '../../../../assets/icons/checkboxTrue.svg';
-import { flexBox, fontDesktop, device } from '../../../../styles/mixins';
+import styled from '@emotion/styled';
 
 export const CheckBoxWrp = styled.div`
   display: flex;
@@ -9,17 +10,17 @@ export const CheckBoxWrp = styled.div`
   align-items: center;
 
   @media screen and (${device.tablet}) {
-    width: 496px;
+    /* width: 496px;
     height: 52px;
     margin-top: 4px;
-    margin-bottom: 4px;
+    margin-bottom: 4px; */
   }
 
   @media screen and (${device.desktop}) {
-    width: 508px;
+    /* width: 508px;
     height: 56px;
     margin-top: -12px;
-    margin-bottom: -4px;
+    margin-bottom: -4px; */
   }
 `;
 
@@ -59,37 +60,42 @@ export const CheckBoxStyled = styled.input`
   }
 
   @media screen and (${device.tablet}) {
-    margin-right: 20px;
+    margin-right: 10px;
   }
 `;
 
 export const DocLinkStyled = styled.p`
-  display: ${({ lang }) => (lang === 'en' ? 'inline' : 'flex')};
-  flex-wrap: ${({ lang }) => (lang === 'en' ? 'nowrap' : 'wrap')};
+  /* display: ${({ lang }) => (lang === 'en' ? 'inline' : 'flex')};
+  flex-wrap: ${({ lang }) => (lang === 'en' ? 'nowrap' : 'wrap')}; */
 
-  font-family: var(--Montserrat);
+  /* font-family: var(--Montserrat);
   font-weight: 500;
   letter-spacing: 0em;
-  color: var(--mainText);
+  color: var(--mainText); */
+  font-weight: 600;
+  max-width: 370px;
+  text-align: center;
+  /* line-height: normal; */
 
   span {
     cursor: pointer;
     text-decoration: underline;
     color: #183ec6;
-    margin-left: ${({ lang }) => (lang === 'en' ? '10px' : '0px')};
+    margin-left: 20px;
+    /* margin-left: ${({ lang }) => (lang === 'en' ? '10px' : '0px')}; */
   }
 
   @media screen and (${device.tablet}) {
-    width: 452px;
+    /* width: 452px;
     height: 52px;
     font-size: 18px;
-    line-height: 21.94px;
+    line-height: 21.94px; */
   }
 
   @media screen and (${device.desktop}) {
-    width: 453px;
+    /* width: 453px;
     height: 56px;
-    line-height: 32.4px;
+    line-height: 32.4px; */
   }
 `;
 
@@ -98,8 +104,9 @@ export const ErrorText = styled.p`
   top: 0;
   left: 0;
 
-  ${fontDesktop};
+  /* ${fontDesktop}; */
   color: var(--accentText);
+  font-weight: 600;
 
   @media screen and (${device.tablet}) {
     height: 32px;
@@ -109,9 +116,12 @@ export const ErrorText = styled.p`
   }
 
   @media screen and (${device.desktop}) {
-    height: 36px;
-    transform: translateY(50px);
-    font-size: 22px;
-    line-height: calc(35 / 22);
+    /* height: 36px; */
+    /* transform: translateY(50px); */
+    /* font-size: 22px; */
+    /* line-height: calc(35 / 22); */
+    transform: translateY(45px);
+    text-align: center;
+    width: 100%;
   }
 `;

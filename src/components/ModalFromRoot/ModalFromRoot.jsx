@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
+import { CloseBtn, ModalDiv } from './ModalFromRoot.styled';
 
 import { Icon } from '../Icon';
-import { ModalDiv, CloseBtn } from './ModalFromRoot.styled';
+import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 
 export const ModalFromRoot = ({
   root = 'root-modal',

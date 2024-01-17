@@ -1,22 +1,23 @@
+import { device, flexBox, fontSectionTitle } from '../../../styles/mixins';
+
 import styled from '@emotion/styled';
-import { flexBox, fontSectionTitle, device } from '../../../styles/mixins';
 
 export const DivStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: -4px;
+  /* margin-bottom: -4px; */
 
   .react-calendar {
     border: 1px solid #969395;
 
     @media screen and (${device.mobileL}) {
-      width: 464px;
+      width: 450px;
     }
 
     @media screen and (${device.desktop}) {
-      width: 520px;
+      width: 450px;
     }
   }
 
@@ -26,35 +27,36 @@ export const DivStyled = styled.div`
     border: 1px solid #969395;
     background-color: var(--headerBackground);
 
-    @media screen and (${device.mobileL}) {
+    /* @media screen and (${device.mobileL}) {
       height: 52px;
-    }
+    } */
 
-    @media screen and (${device.desktop}) {
+    /* @media screen and (${device.desktop}) {
       height: 76px;
-    }
+    } */
   }
 
   .react-calendar__month-view__weekdays {
     border: 1px solid #969395;
     background-color: var(--headerBackground);
 
-    @media screen and (${device.mobileL}) {
+    /* @media screen and (${device.mobileL}) {
       height: 52px;
     }
 
     @media screen and (${device.desktop}) {
       height: 76px;
-    }
+    } */
   }
 
   .react-calendar__month-view__days {
     @media screen and (${device.mobileL}) {
-      height: calc(52px * 6);
+      height: calc(40px * 6);
     }
 
     @media screen and (${device.desktop}) {
-      height: calc(76px * 6);
+      /* height: calc(76px * 6); */
+      height: calc(40px * 6);
     }
   }
 
@@ -63,7 +65,7 @@ export const DivStyled = styled.div`
 
     font-family: var(--Raleway);
     font-weight: 400;
-    letter-spacing: 0em;
+    /* letter-spacing: 0em; */
     color: var(--mainText);
 
     &:first-letter {
@@ -71,13 +73,15 @@ export const DivStyled = styled.div`
     }
 
     @media screen and (${device.mobileL}) {
-      font-size: 24px;
-      line-height: 36px;
+      /* font-size: 24px;
+      line-height: 36px; */
+      font-size: 20px;
     }
 
     @media screen and (${device.desktop}) {
-      font-size: 28px;
-      line-height: 42px;
+      /* font-size: 28px;
+      line-height: 42px; */
+      font-size: 24px;
     }
   }
 
@@ -91,7 +95,7 @@ export const DivStyled = styled.div`
 
     font-family: var(--Raleway);
     font-weight: 400;
-    letter-spacing: 0em;
+    /* letter-spacing: 0em; */
     text-transform: uppercase;
     color: var(--mainText);
 
@@ -100,13 +104,14 @@ export const DivStyled = styled.div`
     }
 
     @media screen and (${device.mobileL}) {
-      font-size: 24px;
-      line-height: 36px;
+      font-size: 18px;
+      /* line-height: 36px; */
     }
 
     @media screen and (${device.desktop}) {
-      font-size: 28px;
-      line-height: 42px;
+      /* font-size: 24px;
+      line-height: 42px; */
+      font-size: 20px;
     }
   }
 
@@ -114,18 +119,18 @@ export const DivStyled = styled.div`
   .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
     font-family: var(--Raleway);
     font-weight: 600;
-    letter-spacing: 0em;
+    /* letter-spacing: 0em; */
     color: var(--mainText);
     cursor: pointer;
 
     @media screen and (${device.mobileL}) {
-      font-size: 24px;
-      line-height: 36px;
+      font-size: 18px;
+      /* line-height: 36px; */
     }
 
     @media screen and (${device.desktop}) {
-      font-size: 28px;
-      line-height: 42px;
+      font-size: 22px;
+      /* line-height: 42px; */
     }
 
     &[disabled] {
@@ -209,8 +214,10 @@ export const DivStyled = styled.div`
       }
 
       @media screen and (${device.desktop}) {
-        height: 32px;
-        width: 32px;
+        /* height: 32px;
+        width: 32px; */
+        height: 24px;
+        width: 24px;
       }
     }
   }
@@ -223,17 +230,17 @@ export const MainTitle = styled.h2`
 
   @media screen and (${device.mobileL}) {
     margin-bottom: 20px;
-    height: 40px;
-    min-width: 188px;
-    font-size: 28px;
-    line-height: calc(39 / 28);
+    /* height: 40px; */
+    /* min-width: 188px; */
+    font-size: 22px;
+    /* line-height: calc(39 / 28); */
   }
 
   @media screen and (${device.desktop}) {
-    height: 48px;
-    min-width: 264px;
-    font-size: 40px;
-    line-height: calc(56 / 40);
+    /* height: 48px; */
+    /* min-width: 264px; */
+    font-size: 32px;
+    /* line-height: calc(56 / 40); */
   }
 `;
 
@@ -243,47 +250,50 @@ export const SecondaryTitle = styled.h2`
   color: var(--mainText);
 
   @media screen and (${device.mobileL}) {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 16px;
+    /* margin-bottom: 20px;
     height: 40px;
-    min-width: 180px;
-    font-size: 28px;
-    line-height: calc(39 / 28);
+    min-width: 180px; */
+    font-size: 22px;
+    /* line-height: calc(39 / 28); */
   }
 
   @media screen and (${device.desktop}) {
-    margin-top: 24px;
-    height: 48px;
-    min-width: 244px;
-    font-size: 40px;
-    line-height: calc(56 / 40);
+    margin-top: 20px;
+    /* height: 48px;
+    min-width: 244px; */
+    font-size: 32px;
+    /* line-height: calc(56 / 40); */
   }
 `;
 
 export const TimeList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   @media screen and (${device.mobileL}) {
-    gap: 20px;
-    width: 464px;
-    margin-bottom: 4px;
+    column-gap: 30px;
+    row-gap: 10px;
+    width: 450px;
   }
 
   @media screen and (${device.desktop}) {
-    gap: 40px;
+    /* gap: 40px;
     width: 520px;
-    margin-bottom: calc(72px - 52px);
+    margin-bottom: calc(72px - 52px); */
   }
 
   li {
     ${flexBox};
-    width: 100px;
-    height: 36px;
+    /* width: 100px;
+    height: 36px; */
+    /* width: calc(100% / 5);
+    margin: auto; */
 
     font-family: var(--Raleway);
     font-weight: 400;
-    letter-spacing: 0em;
+    /* letter-spacing: 0em; */
     color: var(--mainText);
 
     &:hover,
@@ -297,13 +307,13 @@ export const TimeList = styled.ul`
     }
 
     @media screen and (${device.mobileL}) {
-      font-size: 24px;
-      line-height: 33.6px;
+      font-size: 18px;
+      /* line-height: 33.6px; */
     }
 
     @media screen and (${device.desktop}) {
-      font-size: 32px;
-      line-height: 44.8px;
+      font-size: 24px;
+      /* line-height: 44.8px; */
     }
   }
 
