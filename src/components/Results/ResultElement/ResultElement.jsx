@@ -86,7 +86,8 @@ export const ResultElement = () => {
 										<h3>{name}</h3>
 										<DescriptionWrapper>
 											<p className={`${isShowMore ? "desc" : "desc hidden"}`}>{description}</p>
-											<p className="more" onClick={showMoreHandler}>{isShowMore ? "Згорнути" : "Читати далі"}</p>
+											{description.length > 565 &&
+												<p className="more" onClick={showMoreHandler}>{isShowMore ? "Згорнути" : "Читати далі"}</p>}
 										</DescriptionWrapper>
 										<BubbleForm>
 											<BubbleFormText>{specialization_name}</BubbleFormText>
