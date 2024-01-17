@@ -81,7 +81,6 @@ export const ClientsBlockHeader = styled.h2`
 export const SliderWrapper = styled.div`
   ${flexBox};
   gap: 32px;
-  max-width: 1440px;
   margin: 0 auto;
   height: fit-content;
   overflow: hidden;
@@ -193,7 +192,7 @@ export const ImageWrapper = styled.div`
 	}
 `;
 export const CardRecvisits = styled.div`
-	overflow: hidden;
+
 	width: 112px;
 	
 	@media screen and (${device.mobileL}) {

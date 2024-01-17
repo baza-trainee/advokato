@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import { options } from "../ClientsData/SliderSettings";
@@ -20,7 +20,7 @@ export const SliderItems = React.forwardRef((props, ref) => {
 							<img
 								height={182}
 								width={302}
-								onClick={() => window.open(`${elem.link}`)}
+								onClick={() => elem.link ? window.open(elem.link) : null}
 								src={elem.photo_path}
 								alt={elem.id}
 							/>
