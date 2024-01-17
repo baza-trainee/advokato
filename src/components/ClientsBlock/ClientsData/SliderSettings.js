@@ -42,7 +42,7 @@ export const options = {
 		2000: {
 			perPage: 6,
 			width: "100%",
-			gap: "0",
+			gap: "32px",
 		},
 
 
