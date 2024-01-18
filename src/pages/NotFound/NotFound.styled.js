@@ -107,7 +107,7 @@ export const Button = styled(Link)`
 	justify-content: center;
 	align-items: center;
 
-	margin-bottom: calc(44px + 24px);
+	margin-bottom: calc(100vh - 65%);
 	min-width: 272px;
 	height: 44px;
 
