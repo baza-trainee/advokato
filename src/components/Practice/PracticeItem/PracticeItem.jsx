@@ -19,8 +19,6 @@ export const PracticeItem = ({ item, currentPractice, setCurrentPractice }) => {
 					</PracticeMobileWrapper>
 				}
 			</LiStyled>
-
-
 		</>
 	);
 };

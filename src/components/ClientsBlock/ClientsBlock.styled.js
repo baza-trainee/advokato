@@ -151,7 +151,7 @@ export const ClientsSliderContainer = styled.div`
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
-  max-width: 1440px;
+  max-width: 100%;
 	
 	.splide__slide {
 		${flexBox}

@@ -5,10 +5,10 @@ export const options = {
 	drag: "free",
 	type: "loop",
 	height: "180px",
-	width: "1640px",
+	width: "100%",
 	// gap: "32px",
 	perMove: 1,
-	perPage: 5,
+	perPage: 6,
 	speed: 1000,
 	interval: 4000,
 	breakpoints: {
@@ -31,8 +31,20 @@ export const options = {
 		},
 		1440: {
 			perPage: 5,
-			width: "1628px",
+			width: "1640px",
 			gap: "32px",
 		},
+		1670: {
+			perPage: 5,
+			width: "1640px",
+			gap: "32px",
+		},
+		2000: {
+			perPage: 6,
+			width: "100%",
+			gap: "32px",
+		},
+
+
 	},
 };

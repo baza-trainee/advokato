@@ -29,15 +29,15 @@ import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 const DEFAULT_VALUES = {
-  firstName: '',
-  lastName: '',
-  phone: '+380',
-  email: '',
-  isAccept: false,
-  specialization_id: 0,
-  lawyer_id: 0,
-  appointment_date: '',
-  appointment_time: '',
+	firstName: "",
+	lastName: "",
+	phone: "+380",
+	email: "",
+	isAccept: false,
+	specialization_id: 0,
+	lawyer_id: 0,
+	appointment_date: "",
+	appointment_time: "",
 };
 
 export const AppointmentForm = ({ setModalActive }) => {
@@ -375,5 +375,5 @@ export const AppointmentForm = ({ setModalActive }) => {
 };
 
 AppointmentForm.propTypes = {
-  setModalActive: PropTypes.func.isRequired,
+	setModalActive: PropTypes.func.isRequired,
 };

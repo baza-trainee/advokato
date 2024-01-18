@@ -26,6 +26,7 @@
     "dompurify": "^3.0.6",
     "gsap": "^3.12.2",
     "html-react-parser": "^5.0.11",
+    "leaflet": "^1.9.4",
     "notiflix": "^3.2.6",
     "prop-types": "^15.8.1",
     "react": "18.2.0",

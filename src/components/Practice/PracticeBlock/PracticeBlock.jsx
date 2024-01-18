@@ -45,6 +45,10 @@ const PracticeBlock = ({currentPractice}) => {
 		}
 	}, [width]);
 
+	useEffect(() => {
+		setIsShowMoreDesc(false);
+	}, [currentPractice]);
+
 	const handleClickMoreButton = () => {
 		setIsShowMoreDesc(prev => !prev);
 

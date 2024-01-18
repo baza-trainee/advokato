@@ -9,8 +9,7 @@ import {
 	ClientsBlockHeader,
 	ClientsSliderContainer,
 	Container, LeftSliderArrow, RightSliderArrow,
-	SectionStyled,
-	SliderArrow,
+	SectionStyled
 } from "./ClientsBlock.styled";
 
 export const ClientsBlock = () => {

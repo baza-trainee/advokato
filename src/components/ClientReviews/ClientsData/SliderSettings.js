@@ -4,7 +4,7 @@ export const options = {
 	pagination: false,
 	drag: "free",
 	type: "loop",
-	width: "1856px",
+	width: "100%",
 	gap: "32px",
 	perPage: 4,
 	perMove: 2,
@@ -26,5 +26,9 @@ export const options = {
 			width: "1556px",
 			perPage: 4,
 		},
+		1856:{
+			width: "1856px",
+			perPage: 4,
+		}
 	},
 };
