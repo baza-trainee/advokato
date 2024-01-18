@@ -1,12 +1,13 @@
-import { useTranslation } from "react-i18next";
-import PropTypes from "prop-types";
-import { isObjectEmpty } from "../../../../helpers";
 import {
-	CheckBoxWrp,
 	CheckBoxStyled,
+	CheckBoxWrp,
 	DocLinkStyled,
 	ErrorText,
 } from "./Checkbox.styled";
+
+import PropTypes from "prop-types";
+import { isObjectEmpty } from "../../../../helpers";
+import { useTranslation } from "react-i18next";
 
 export const Checkbox = ({
 	register,

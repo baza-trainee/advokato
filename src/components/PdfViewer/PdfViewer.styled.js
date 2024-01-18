@@ -1,5 +1,6 @@
-import styled from "@emotion/styled";
 import { Document, Page } from "react-pdf";
+
+import styled from "@emotion/styled";
 
 export const DocumentContainer = styled(Document)`
 	padding: 10px;

@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { flexBox } from '../../styles/mixins';
+import styled from '@emotion/styled';
 
 export const ModalDiv = styled.div`
   ${flexBox};
@@ -45,7 +45,7 @@ export const CloseBtn = styled.button`
   top: 0;
   right: 0;
   z-index: 400;
-  transform: translate(-23px, 23px);
+  transform: translate(-20px, 20px);
 
   width: 30px;
   height: 30px;
@@ -53,9 +53,14 @@ export const CloseBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 
   stroke: var(--darkBackground);
   border: none;
   cursor: pointer;
   background-color: inherit;
+  &:hover {
+    stroke: var(--accentText);
+  }
+  
 `;

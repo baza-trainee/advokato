@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
-
-import { useWindowDimensions } from '../../hooks';
-import { ModalFromRoot } from '../ModalFromRoot';
 import { AppointmentForm } from './AppointmentForm';
 import { ButtonStyled } from './ButtonConsultation.styled';
+import { ModalFromRoot } from '../ModalFromRoot';
+import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useWindowDimensions } from '../../hooks';
 
 export const ButtonConsultation = ({
   className,
@@ -32,7 +31,7 @@ export const ButtonConsultation = ({
       {modalActive && (
         <ModalFromRoot
           toggleModal={toggleModal}
-          align={'flex-start'}
+          align={'center'}
           padding={width < 1024 ? '90px 0' : null}
         >
           <AppointmentForm setModalActive={setModalActive} />

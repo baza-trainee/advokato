@@ -1,24 +1,25 @@
 import * as yup from "yup";
-import { REGEX_EMAIL, REGEX_PHONE, REGEX_NAME } from "../../../constants";
+
+import { REGEX_EMAIL, REGEX_NAME, REGEX_PHONE } from "../../../constants";
 
 export const SchemaUa = yup
 	.object({
 		firstName: yup
 			.string("Має бути текстовим")
 			.trim()
-			.max(30, "Надто довге імʼя! Максимум 30 символів")
+			.max(30, "Надто довге ім'я! Максимум 30 символів")
 			.matches(REGEX_NAME, "Не менше 2 символи"),
 
 		lastName: yup
 			.string("Має бути текстовим")
 			.trim()
-			.max(30, "Надто довге прізвищє! Максимум 30 символів")
+			.max(30, "Надто довге прізвище! Максимум 30 символів")
 			.matches(REGEX_NAME, "Не менше 2 символи"),
 
 		phone: yup
 			.string("Має бути текстовим")
 			.matches(REGEX_PHONE, "Невалідний формат")
-			.required("Обов`язкове поле"),
+			.required("Обов'язкове поле"),
 
 		email: yup
 			.string("Має бути текстовим")
@@ -29,7 +30,7 @@ export const SchemaUa = yup
 		isAccept: yup
 			.bool()
 			.oneOf([true], "Має бути погоджено")
-			.required("Обов`язкове поле"),
+			.required("Обов'язкове поле"),
 
 		specialization_id: yup.number(),
 
@@ -54,7 +55,7 @@ export const SchemaEn = yup
 		phone: yup
 			.string("Must be text")
 			.matches(REGEX_PHONE, "Invalid format")
-			.required("Обов`язкове поле"),
+			.required("Обов'язкове поле"),
 
 		email: yup
 			.string("Must be text")

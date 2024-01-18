@@ -1,31 +1,31 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import {
+  AddressWrp,
+  BottomSign,
+  Container,
+  ContentWrp,
+  DocsWrp,
+  DocumentTitleStyled,
+  EmailStyled,
+  FooterStyled,
+  LinkStyled,
+  ListItemStyled,
+  ListStyled,
+  MainOfficeStyled,
+  PhoneStyled,
+  TitleCompany,
+} from './Footer.styled';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { getContent } from '../../api/';
-import { isObjectEmpty } from '../../helpers';
-import { useWindowDimensions } from '../../hooks';
 import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
 import { SocialList } from '../SocialList';
+import { getContent } from '../../api/';
+import { isObjectEmpty } from '../../helpers';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
 import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
-import {
-  Container,
-  ContentWrp,
-  AddressWrp,
-  FooterStyled,
-  DocsWrp,
-  DocumentTitleStyled,
-  LinkStyled,
-  ListStyled,
-  ListItemStyled,
-  TitleCompany,
-  BottomSign,
-  MainOfficeStyled,
-  PhoneStyled,
-  EmailStyled,
-} from './Footer.styled';
+import { useTranslation } from 'react-i18next';
+import { useWindowDimensions } from '../../hooks';
 
 const currentYear = new Date().getFullYear();
 

@@ -1,11 +1,12 @@
-import styled from "@emotion/styled";
 import {
-	flexBox,
 	device,
+	flexBox,
+	fontLayoutCall,
 	fontLayoutMenu,
 	fontReview,
-	fontLayoutCall,
 } from "../../styles/mixins";
+
+import styled from "@emotion/styled";
 
 export const HeaderStyled = styled.header`
 	position: sticky;
@@ -286,7 +287,7 @@ export const LangButton = styled.button`
 	background-color: inherit;
 	border: 1px solid var(--lightText);
 	border-radius: 8px;
-	cursor: pointer;
+	cursor: default;
 	@media screen and (${device.mobileS}) {
 		width: 44px;
 		height: 40px;

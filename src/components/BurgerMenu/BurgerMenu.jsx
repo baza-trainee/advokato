@@ -1,7 +1,7 @@
 import { NavBurger, SectionStyled } from "./BurgerMenu.styled";
-import { Menu } from "../Menu";
 
 import { LangButton } from "../Layout/Layout.styled";
+import { Menu } from "../Menu";
 
 export const BurgerMenu = ({
 	activeLang,
@@ -17,7 +17,7 @@ export const BurgerMenu = ({
 					side={true}
 				/>
 			</NavBurger>
-			<LangButton
+			{/* <LangButton
 				onClick={() =>
 					activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
 				}
@@ -28,7 +28,7 @@ export const BurgerMenu = ({
 				disabled
 			>
 				{activeLang.toUpperCase()}
-			</LangButton>
+			</LangButton> */}
 		</SectionStyled>
 	);
 };
