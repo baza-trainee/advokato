@@ -10,7 +10,7 @@ import styled from '@emotion/styled';
 export const DivStyled = styled.div`
   ${flexBox};
   flex-direction: column;
-  padding: 30px;
+  padding: 25px;
 
   h2 {
     ${fontSectionTitle};
@@ -61,7 +61,7 @@ export const DivStyled = styled.div`
   }
 
   p:first-of-type {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   p:last-of-type {
@@ -76,11 +76,12 @@ export const DivStyled = styled.div`
 
   button {
     ${secondaryButton};
+    border: 1px solid var(--darkBackground);
 
-    &:hover,
+    /* &:hover,
     &:focus {
       border: 1px solid var(--darkBackground);
-    }
+    } */
 
     @media screen and (${device.mobileL}) {
       width: 288px;

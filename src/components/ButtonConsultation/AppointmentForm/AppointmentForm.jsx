@@ -317,8 +317,7 @@ export const AppointmentForm = ({ setModalActive }) => {
             </>
           )}
 
-          {/* {currentPartForm === 4 && <SuccessPage />} */}
-          {currentPartForm === 4 && <FailurePage />}
+          {currentPartForm === 4 && <SuccessPage />}
 
           {currentPartForm === 5 && (
             <FailurePage

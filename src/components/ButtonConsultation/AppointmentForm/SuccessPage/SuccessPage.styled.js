@@ -7,11 +7,17 @@ export const DivStyled = styled.div`
 	align-items: center;
 	flex-direction: column;
 	padding: 25px;
+	text-align: center;
 
 	h2 {
 		${fontSectionTitle};
 		/* text-align: center; */
 		color: var(--mainText);
+
+		@media screen and (${device.mobileS}) {
+			margin-bottom: 10px;
+			font-size: 24px;
+		}
 
 		@media screen and (${device.mobileL}) {
 			margin-bottom: 20px;
@@ -25,9 +31,9 @@ export const DivStyled = styled.div`
 		@media screen and (${device.desktop}) {
 			margin-bottom: 20px;
 			/* height: 48px; */
-			min-width: 180px;
+			/* min-width: 180px; */
 
-			font-size: 40px;
+			font-size: 32px;
 			/* line-height: calc(56 / 40); */
 		}
 	}
@@ -37,10 +43,11 @@ export const DivStyled = styled.div`
 		font-weight: 400;
 		/* letter-spacing: 0em; */
 		color: var(--mainText);
+		margin-bottom: 12px;
 
 		@media screen and (${device.mobileL}) {
 			/* height: 32px; */
-			font-size: 18px;
+			font-size: 20px;
 			/* line-height: 28.8px; */
 		}
 
@@ -52,7 +59,7 @@ export const DivStyled = styled.div`
 	}
 
 	p:first-of-type {
-		margin-bottom: 8px;
+		margin-bottom: 12px;
 	}
 
 	p:last-of-type {
@@ -67,15 +74,17 @@ export const DivStyled = styled.div`
 
 	svg {
 		fill: var(--trueText);
+		width: 32px;
+		height: 32px;
 
 		@media screen and (${device.mobileL}) {
-			width: 52px;
-			height: 52px;
+			width: 42px;
+			height: 42px;
 		}
 
 		@media screen and (${device.desktop}) {
-			width: 60px;
-			height: 60px;
+			width: 52px;
+			height: 52px;
 		}
 	}
 `;

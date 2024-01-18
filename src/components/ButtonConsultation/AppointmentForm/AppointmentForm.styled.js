@@ -9,11 +9,9 @@ import styled from "@emotion/styled";
 
 export const FormWrp = styled.div`
 	background-color: white;
-
-	@media screen and (${device.mobileS}) {
-		width: 300px;
-		border-radius: 10px;
-	}
+	width: 300px;
+	border-radius: 10px;
+	padding: 50px 20px 30px 20px;
 
 	@media screen and (${device.mobileL}) {
 		/* padding-top: 48px;
@@ -33,10 +31,7 @@ export const FormWrp = styled.div`
     padding-bottom: 32px;
     padding-left: 40px;
     width: 600px; */
-		padding: 20px;
-		width: 500px;
 		/* min-height: 336px; */
-		border-radius: 10px;
 	}
 `;
 
@@ -44,20 +39,21 @@ export const FirstPageTitle = styled.h2`
 	/* ${fontSectionTitle}; */
 	text-align: center;
 	color: var(--mainText);
+	font-size: 20px;
 
 	@media screen and (${device.mobileL}) {
-		height: 40px;
-		width: 348px;
+		/* height: 40px;
+		width: 348px; */
 
-		font-size: 22px;
-		line-height: calc(39 / 28);
+		font-size: 24px;
+		/* line-height: calc(39 / 28); */
 	}
 
 	@media screen and (${device.desktop}) {
 		/* margin-bottom: -12px; */
 		/* height: 48px; */
 		/* width: 471px; */
-		min-width: 400px;
+		/* min-width: 400px; */
 
 		font-size: 32px;
 		/* line-height: calc(56 / 40); */
@@ -68,24 +64,26 @@ export const SecondPageTitle = styled.h2`
 	${fontSectionTitle};
 	text-align: center;
 	color: var(--mainText);
+	font-size: 20px;
 
 	@media screen and (${device.mobileL}) {
-		width: 424px;
-		font-size: 22px;
-		line-height: calc(39 / 28);
+		/* width: 424px; */
+		/* line-height: calc(39 / 28); */
+		font-size: 24px;
 	}
 
 	@media screen and (${device.desktop}) {
-		margin-bottom: -12px;
+		/* margin-bottom: -12px;
 		width: 356px;
+		line-height: calc(56 / 40); */
 		font-size: 32px;
-		line-height: calc(56 / 40);
 	}
 `;
 
 export const FormStyled = styled.form`
 	${flexBox};
 	flex-direction: column;
+	gap: 12px;
 
 	@media screen and (${device.mobileL}) {
 		gap: ${({ currentPartForm }) =>
@@ -110,6 +108,7 @@ export const FormStyled = styled.form`
 export const ButtonWrp = styled.div`
 	display: flex;
 	flex-direction: column;
+	gap: 12px;
 
 	@media screen and (${device.mobileL}) {
 		gap: 12px;
