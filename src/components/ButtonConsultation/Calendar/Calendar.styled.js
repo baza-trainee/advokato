@@ -232,8 +232,8 @@ export const MainTitle = styled.h2`
 	${fontSectionTitle};
 	text-align: center;
 	color: var(--mainText);
-  font-size: 20px;
-  margin-bottom: 15px;
+	font-size: 20px;
+	margin-bottom: 15px;
 
 	@media screen and (${device.mobileL}) {
 		margin-bottom: 20px;
@@ -255,6 +255,8 @@ export const SecondaryTitle = styled.h2`
 	${fontSectionTitle};
 	text-align: center;
 	color: var(--mainText);
+	font-size: 22px;
+	margin-top: 16px;
 
 	@media screen and (${device.mobileL}) {
 		margin-top: 16px;
@@ -278,11 +280,13 @@ export const TimeList = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	column-gap: 20px;
+	row-gap: 10px;
 
 	@media screen and (${device.mobileL}) {
 		column-gap: 30px;
 		row-gap: 10px;
-		width: 450px;
+		/* width: 450px; */
 	}
 
 	@media screen and (${device.desktop}) {

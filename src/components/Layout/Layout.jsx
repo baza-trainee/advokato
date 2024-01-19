@@ -15,7 +15,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { ButtonConsultation } from "../ButtonConsultation";
-import { CookiesPanel } from "../CookiesPanel";
+// import { CookiesPanel } from "../CookiesPanel";
 import { Footer } from "../Footer/Footer";
 import { Icon } from "../Icon";
 import { LoadingAnimated } from "../LoadingAnimated";
@@ -153,7 +153,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 
 			<ScrollUpButton />
 
-			<CookiesPanel />
+			{/* <CookiesPanel /> */}
 		</>
 	);
 };
