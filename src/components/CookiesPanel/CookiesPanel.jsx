@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import {
+	BannerWrap,
+	ButtonOk,
+	IconClose,
+	Panel,
+	PolicyLink,
+} from "./CookiesPanel.styled";
+import { useEffect, useState } from "react";
 
 import { ModalFromRoot } from "../ModalFromRoot";
 import { PdfViewer } from "../PdfViewer";
 import privacyPolicy from "../../assets/documents/privacy-policy.pdf";
-import {
-	Panel,
-	IconClose,
-	ButtonOk,
-	BannerWrap,
-	PolicyLink,
-} from "./CookiesPanel.styled";
 
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false);

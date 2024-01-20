@@ -94,13 +94,12 @@ export const mainButton = () => {
 export const secondaryButton = () => {
   return `  
         padding: 12px 24px;
-
         color: var(--lightText);
         fill: var(--lightText);
         background-color: var(--darkGrey);
         border: none;
         cursor: pointer;
-
+        border: 1px solid var(--darkGrey);
         font-family: var(--Montserrat);
         font-size: 14px;
         font-weight: 500;

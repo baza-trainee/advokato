@@ -72,7 +72,8 @@ export const AppointmentForm = ({ setModalActive }) => {
         setSpecialization(prev => [
           ...dataSpec,
           {
-            id: dataSpec.length + 1,
+            // id: dataSpec.length + 1,
+            id: '',
             specialization_name: 'Інше',
           },
         ]);
