@@ -146,7 +146,7 @@ export const AppointmentForm = ({ setModalActive }) => {
 
   const onSubmit = async formData => {
     Loading.dots();
-		console.log(formData);
+
 		const {
       appointment_date,
       appointment_time,
