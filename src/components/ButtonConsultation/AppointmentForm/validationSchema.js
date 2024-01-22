@@ -32,7 +32,8 @@ export const SchemaUa = yup
 			.oneOf([true], "Має бути погоджено")
 			.required("Обов'язкове поле"),
 
-		specialization_id: yup.number(),
+		specialization_id: yup.number().nullable().transform((value, originalValue) =>
+			String(originalValue).trim() === "" ? null : value),
 
 		lawyer_id: yup.number(),
 	})
@@ -69,7 +70,8 @@ export const SchemaEn = yup
 			.oneOf([true], "Must be agreed")
 			.required("Required field"),
 
-		specialization_id: yup.number(),
+		specialization_id: yup.number().nullable().transform((value, originalValue) =>
+			String(originalValue).trim() === "" ? null : value),
 
 		lawyer_id: yup.number(),
 	})
