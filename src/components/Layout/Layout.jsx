@@ -21,7 +21,7 @@ import { Icon } from "../Icon";
 import { LoadingAnimated } from "../LoadingAnimated";
 import { Menu } from "../Menu";
 import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
-import logoImg from "../../assets/images/layout-section/Logo.png";
+import logoImg from "../../assets/images/layout-section/Logo.svg";
 import { useTranslation } from "react-i18next";
 
 export const Layout = ({ activeLang, toggleLanguage }) => {
