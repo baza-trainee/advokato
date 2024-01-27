@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import {
-	container,
 	device,
 	flexBox,
 	fontReview,
@@ -24,10 +23,10 @@ export const SectionStyled = styled.section`
     padding: 60px 0 0;
   }
   @media screen and (${device.tablet}) {
-    padding: 120px 0 0;
+    padding: 100px 0 0;
   }
   @media screen and (${device.desktop}) {
-    padding-top: 132px;
+    padding-top: 100px;
   }
 `;
 

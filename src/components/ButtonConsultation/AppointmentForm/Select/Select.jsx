@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Icon } from '../../../Icon';
-import { LabelStyled, ButtonStyled, OptionsItem } from './Select.styled';
+import { LabelStyled, ButtonStyled, OptionsItem, OptionsList } from "./Select.styled";
 
 export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
   const [isOpenList, setIsOpenList] = useState(false);
@@ -43,7 +43,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
         aria-label="вибрати зі списку"
         value={value}
       >
-        {value == '' ? (
+        {value === '' ? (
           <>
             {defaultValue}
             <Icon
@@ -58,7 +58,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
       </ButtonStyled>
 
       {isOpenList && (
-        <ul onClick={handleClickOption}>
+        <OptionsList onClick={handleClickOption}>
           {options.map(({ id, specialization_name, name }) => (
             <OptionsItem
               key={id}
@@ -72,7 +72,7 @@ export const Select = ({ label, defaultValue, onChangeSelect, options }) => {
               {specialization_name || name}
             </OptionsItem>
           ))}
-        </ul>
+        </OptionsList>
       )}
     </LabelStyled>
   );

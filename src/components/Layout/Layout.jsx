@@ -1,26 +1,23 @@
-import "animate.css";
 
 import {
 	ConsultElement,
 	Container,
 	HamburgerMenu,
 	HeaderStyled,
-	LangButton,
 	MainStyled,
 	PhoneBurger,
 	PhonesDiv,
 } from "./Layout.styled";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { BurgerMenu } from "../BurgerMenu/index.jsx";
 import { ButtonConsultation } from "../ButtonConsultation";
-// import { CookiesPanel } from "../CookiesPanel";
 import { Footer } from "../Footer/Footer";
 import { Icon } from "../Icon";
 import { LoadingAnimated } from "../LoadingAnimated";
 import { Menu } from "../Menu";
-import { ScrollUpButton } from "../ScrollUpButton/ScrollUpButton";
+import { ScrollUpButton } from "../ScrollUpButton/index.js";
 import logoImg from "../../assets/images/layout-section/Logo.svg";
 import { useTranslation } from "react-i18next";
 
@@ -133,9 +130,7 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 						<ButtonConsultation
 							modalActive={modalActive}
 							setModalActive={setModalActive}
-							className={
-								"animate__animated animate__fadeIn animate__infinite infinite animate__slower	3s"
-							}
+							className={'animated'}
 						/>
 						<PhonesDiv>
 							<a href="tel:+38 (093) 373 73 03">+38 (093) 373 73 03</a>

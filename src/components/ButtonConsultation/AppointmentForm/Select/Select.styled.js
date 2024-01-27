@@ -83,6 +83,25 @@ export const ButtonStyled = styled.button`
 	}
 `;
 
+export const OptionsList = styled.ul`
+	position: absolute;
+  height: 143px;
+	z-index: 999;
+	top: 100%;
+	background: white;
+	overflow-x: hidden;
+	overflow-y: auto;
+ 
+  @media screen and (${device.mobileL}) {
+    height: 150px;
+  }
+
+  @media screen and (${device.tablet}) {
+    height: 150px;
+  }
+
+`
+
 export const OptionsItem = styled.li`
 	${fontDesktop};
 	color: var(--mainText);
@@ -123,3 +142,4 @@ export const OptionsItem = styled.li`
     line-height: calc(35 / 22); */
 	}
 `;
+

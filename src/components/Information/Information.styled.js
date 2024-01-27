@@ -20,12 +20,12 @@ export const Container = styled.div`
   }
 
   @media screen and (${device.tablet}) {
-    padding: 120px 80px;
+    padding: 100px 80px;
     max-width: 1024px;
   }
 
   @media screen and (${device.desktop}) {
-    padding: 132px 160px;
+    padding: 100px 160px;
     max-width: 1440px;
   }
 `;

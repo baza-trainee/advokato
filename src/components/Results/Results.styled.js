@@ -21,11 +21,11 @@ export const SectionStyled = styled.section`
 	}
 
 	@media screen and (${device.tablet}) {
-		padding: 120px 80px;
+		padding: 100px 80px;
 	}
 
 	@media screen and (${device.desktop}) {
-		padding: 132px 160px;
+		padding: 100px 160px;
 	}
 `;
 
