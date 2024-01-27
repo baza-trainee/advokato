@@ -27,7 +27,7 @@ export const SectionStyled = styled.section`
   }
 
   @media screen and (${device.desktop}) {
-    margin: 132px auto;
+    margin: 100px auto;
     width: 1120px;
     gap: 56px;
   }

@@ -11,4 +11,20 @@ export const ButtonStyled = styled.button`
   background: none;
   border: 1px solid var(--reviewText);
   border-radius: 48px;
+
+
+  &.animated {
+    animation: fadeInOut 4s infinite;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+	
 `;
+
+
+
+
+
+

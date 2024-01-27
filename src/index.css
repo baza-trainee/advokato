@@ -111,3 +111,9 @@ picture {
 	max-width: 100%;
 	height: auto;
 }
+
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

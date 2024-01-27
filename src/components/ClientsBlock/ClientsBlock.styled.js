@@ -17,11 +17,11 @@ export const SectionStyled = styled.section`
 	}
 	@media screen and (${device.tablet}) {
 		height: 500px;
-    padding: 120px 0px;
+    padding: 100px 0px;
 	}
 	@media screen and (${device.desktop}) {
 		height: 512px;
-    padding: 132px 0px;
+    padding: 100px 0px;
 	}
 `;
 

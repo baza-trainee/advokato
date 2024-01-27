@@ -22,11 +22,11 @@ export const SectionStyled = styled.section`
   }
 
   @media screen and (${device.tablet}) {
-    padding: 120px 0;
+    padding: 40px 0;
   }
 
-  @media screen and (${device.tablet}) {
-    padding: 132px 0;
+  @media screen and (${device.laptop}) {
+    padding: 60px 0;
   }
 `;
 
@@ -104,7 +104,7 @@ export const SliderWrapper = styled.div`
     }
   }
   @media screen and (${device.tablet}) {
-    padding-bottom: 120px;
+    padding-bottom: 100px;
 
     .splide__slide.is-active, .splide__slide.is-active+.is-visible+.is-visible {
       opacity: 1;
@@ -120,7 +120,7 @@ export const SliderWrapper = styled.div`
     }
   }
   @media screen and (${device.desktop}) {
-    padding-bottom: 132px;
+    padding-bottom: 60px;
   }
 `;
 
