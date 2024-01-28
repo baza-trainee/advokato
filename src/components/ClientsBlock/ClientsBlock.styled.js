@@ -171,20 +171,10 @@ export const ClientsSliderContainer = styled.div`
 			+ .is-visible {
 			opacity: 1;
 		}
-		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
-			+ .is-visible {
-			opacity: 0.3;
-		}
 	}
 	@media screen and (${device.desktop}) {
-		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
-			+ .is-visible {
-			opacity: 1;
-		}
-		.splide__slide.is-active,.splide__slide.is-next+ .is-visible
-			+ .is-visible+ .is-visible {
-			opacity: .3;
-		} 
+		
+		
 	}
 `;
 

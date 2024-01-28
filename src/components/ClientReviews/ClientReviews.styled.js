@@ -116,7 +116,7 @@ export const SliderWrapper = styled.div`
 
     .splide__slide.is-next + .splide__slide + .splide__slide,
     .splide__slide.is-active {
-      opacity: 0.3;
+      opacity: 1;
     }
   }
   @media screen and (${device.desktop}) {
