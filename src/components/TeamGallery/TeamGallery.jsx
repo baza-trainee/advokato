@@ -8,7 +8,6 @@ import { Icon } from '../Icon';
 import {
 	Container, LeftSliderArrow, RightSliderArrow,
 	SectionStyled,
-	SliderArrow,
 	TeamBlockHeader,
 	TeamBlockSubTitle,
 	TeamSliderContainer,

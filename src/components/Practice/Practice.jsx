@@ -33,21 +33,20 @@ export const Practice = () => {
     getData();
   }, []);
 
-  useEffect(() => {
-    if (hash === '') {
-      return window.scrollTo(0, 0);
-    }
+	useEffect(() => {
+		if (hash === '') {
+			window.scrollTo(0, 0);
+			return;
+		}
 
-    if (hash === '#practice') {
-      setTimeout(() => {
-        ref.current.scrollIntoView({
-          block: 'start',
-          inline: 'nearest',
-          behavior: 'smooth',
-        });
-      }, 0);
-    }
-  }, [pathname, hash]);
+		if (hash === '#practice' && ref.current) {
+			requestAnimationFrame(() => {
+				setTimeout(() => {
+					ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}, 600);
+			});
+		}
+	}, [pathname, hash]);
 
 
   return (

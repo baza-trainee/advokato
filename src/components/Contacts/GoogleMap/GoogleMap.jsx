@@ -40,14 +40,8 @@ const customMarkerIcon = new L.Icon({
 });
 
 export const GoogleMap = ({ cities }) => {
-	const { height, width } = useWindowDimensions();
+	const {  width } = useWindowDimensions();
 	const [mapStyles, setMapStyles] = useState(containerStyleDesktop);
-	// const [activeMarker, setActiveMarker] = useState(null);
-	// const { isLoaded } = useJsApiLoader({
-	//   id: 'google-map-script',
-	//   googleMapsApiKey: VITE_VERCEL_GOOGLE_MAP_API_KEY,
-	// });
-
 	useEffect(() => {
 		if (!width) {
 			return;
@@ -78,26 +72,8 @@ export const GoogleMap = ({ cities }) => {
 		}
 	}, [width]);
 
-	// const handleOnLoad = map => {
-	//   const bounds = new google.maps.LatLngBounds();
-
-	//   cities.forEach(({ coords }) => {
-	//     if (coords.lat && coords.lng) {
-	//       bounds.extend(coords);
-	//       map.fitBounds(bounds);
-	//     }
-	//   });
-	// };
-
-	// const handleActiveMarker = marker => {
-	//   if (marker === activeMarker) {
-	//     return setActiveMarker(null);
-	//   }
-	//   setActiveMarker(marker);
-	// };
 
 	if (cities.length > 0 && mapStyles) {
-		console.log(mapStyles);
 		return (
 			<LeafletContainer>
 				<MapContainer

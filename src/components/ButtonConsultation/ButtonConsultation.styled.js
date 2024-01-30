@@ -18,7 +18,7 @@ export const ButtonStyled = styled.button`
   }
 
   &:hover {
-    animation-play-state: paused;
+    animation: none;
   }
 	
 `;

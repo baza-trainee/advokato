@@ -12,7 +12,7 @@ import "@splidejs/react-splide/css";
 
 export const SectionStyled = styled.section`
   //height: 100vh;
-  padding: 28px 24px;
+  padding: 28px 0 0;
   background: var(--darkBackground);
   color: var(--lightText);
   overflow: hidden;
@@ -32,9 +32,11 @@ export const SectionStyled = styled.section`
 
 export const Container = styled.div`
   margin: 0 auto;
+	padding: 0 24px;
 
   @media screen and (${device.mobileL}) {
     max-width: 648px;
+    padding: 0;
   }
 
   @media screen and (${device.tablet}) {
@@ -206,8 +208,9 @@ export const TeamMateCardWrapper = styled.div`
   position: relative;
   height: 100%;
 
+
   img {
-    width: 100%;
+    //width: 100%;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
@@ -233,7 +236,7 @@ export const CardRecvisiteWrapper = styled.div`
   flex-direction: column;
   gap: 8px;
   position: absolute;
-  left: 6px;
+  left: 26px;
   bottom: 20px;
   width: 367px;
   height: auto;
@@ -251,7 +254,7 @@ export const CardRecvisiteWrapper = styled.div`
     gap: 16px;
   }
   @media screen and (${device.desktop}) {
-    width: 320px;
+    width: 360px;
     left: 60px;
     bottom: 96px;
     gap: 12px;
