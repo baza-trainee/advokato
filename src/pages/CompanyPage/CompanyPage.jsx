@@ -48,20 +48,21 @@ const CompanyPage = () => {
     getData();
   }, []);
 
-  useEffect(() => {
-    [...refCard.current.children].map(el => {
-      if (state === +el.id) {
-        setTimeout(
-          () =>
-            el.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            }),
-          1000
-        );
-      }
-    });
-  }, [state, team]);
+	useEffect(() => {
+		if (refCard.current) {
+			[...refCard.current.children].forEach(el => {
+				if (state === +el.id) {
+					requestAnimationFrame(() => {
+						el.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+						});
+					});
+				}
+			});
+		}
+	}, [state, team]);
+
 
   const sanitizedCompanyMarkup = DOMPurify.sanitize(
     aboutCompany.our_team_page_description

@@ -22,16 +22,15 @@ export const Results = () => {
       return window.scrollTo(0, 0);
     }
 
-    if (hash === '#news') {
-      setTimeout(() => {
-        ref.current.scrollIntoView({
-          block: 'start',
-          inline: 'nearest',
-          behavior: 'smooth',
-        });
-      }, 0);
+    if (hash === '#news' && ref.current) {
+			requestAnimationFrame(() => {
+				setTimeout(() => {
+					ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}, 600);
+			});
     }
   }, [pathname, hash]);
+
 
   return (
     <SectionStyled ref={ref}>

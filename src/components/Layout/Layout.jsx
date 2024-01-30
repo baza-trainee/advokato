@@ -98,18 +98,6 @@ export const Layout = ({ activeLang, toggleLanguage }) => {
 					<nav className={screenSize() > 1200 ? "" : "close"}>
 						<Menu setIsOpen={setIsOpen} />
 					</nav>
-					{/* <LangButton
-						onClick={() =>
-							activeLang === "ua" ? toggleLanguage("en") : toggleLanguage("ua")
-						}
-						aria-label="перемикач мови"
-						activeLang={activeLang}
-						currentLang="ua"
-						desktop="desktop"
-						disabled
-					>
-						{activeLang.toUpperCase()}
-					</LangButton> */}
 
 					<HamburgerMenu
 						className={`${isOpen ? "open" : ""}`}

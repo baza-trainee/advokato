@@ -1,5 +1,5 @@
 export const options = {
-	autoplay: true,
+	autoplay: false,
 	arrows: false,
 	pagination: false,
 	drag: "free",
@@ -11,8 +11,8 @@ export const options = {
 	interval: 4000,
 	breakpoints: {
 		767: {
-			height: "220px",
-			width:"70%",
+			height: "300px",
+			width:"100%",
 			perPage: 1,
 		},
 		1024: {

@@ -29,8 +29,8 @@ export const Contacts = () => {
       const data = await getContent('contacts');
 
       if (!isObjectEmpty(data)) {
-        setCities(prev => data.cities);
-        setContacts(prev => data.contacts);
+        setCities(() => data.cities);
+        setContacts(() => data.contacts);
       }
 
       NotiflixLoading.remove();

@@ -130,7 +130,7 @@ export const Container = styled.div`
 `;
 
 export const HamburgerMenu = styled.div`
-	${flexBox}
+	${flexBox};
 	position: relative;
 	width: 42px;
 	height: 10vh;
@@ -329,8 +329,8 @@ export const ConsultElement = styled.div`
 
 		button,
 		a {
-			${fontLayoutCall}
-			width:260px;
+			${fontLayoutCall};
+			width: 260px;
 			height: 36px;
 			padding: 8px 23px;
 			color: var(--lightText);
