@@ -81,9 +81,12 @@ export const MainTitleStyled = styled.h1`
 	}
 `;
 export const SubtitleWrapper = styled.div`
+	
+	
+	
 	@media screen and (${device.mobileS}) {
 		${flexBox};
-		flex-direction: column-reverse;
+		flex-direction: column;
 		align-items: flex-start;
 		gap: 20px;
     max-width: 50vw;

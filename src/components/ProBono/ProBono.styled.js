@@ -75,14 +75,14 @@ export const BlockWrapper = styled.div`
 
 export const LeftSide = styled.div`
 	width: 100%;
-	height: 100%;
+  height: auto;
 	overflow: hidden;
 	display: flex;
 	
 	img {
 		border-radius: 24px;
 		width: 100%;
-    aspect-ratio: 272 / 250;
+    aspect-ratio: 272 / 330;
 		object-fit: cover;
 		object-position: center top;
 	}
@@ -118,17 +118,15 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
 	position: relative;
 	width: 100%;
-  height: 100%;
+  height: auto;
 	overflow: hidden;
   display: flex;
-
-
 	
 	img {
 		border-radius: 24px;
 		width: 100%;
     object-fit: cover;
-    aspect-ratio: 272 / 250;
+    aspect-ratio: 272 / 330;
     object-position: center top;
 	}
 	@media screen and (${device.mobileL}) {
