@@ -9,7 +9,7 @@ import {
 import bgImage from "../../assets/images/homeHero-section/hero-bg.jpg";
 
 export const SectionStyled = styled.section`
-	height: 100vh;
+	min-height: 100vh;
 	background-image: url(${bgImage});
 	background-size: cover;
 	background-position: center;
@@ -98,6 +98,7 @@ export const SubtitleWrapper = styled.div`
 	}
 	@media screen and (${device.tablet}) {
 		max-width: 860px;
+		padding-bottom: 20px;
 	}
 	@media screen and (${device.preburger}) {
 		max-width: 930px;
