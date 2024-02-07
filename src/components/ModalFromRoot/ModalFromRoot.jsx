@@ -19,14 +19,16 @@ export const ModalFromRoot = ({
     document.body.style.overflowY = 'hidden';
     document.addEventListener('keydown', closeModal);
     return () => document.removeEventListener('keydown', closeModal);
-  });
+  }, []);
 
-  const closeModal = ({ target, code }) => {
+  const closeModal = (e) => {
+
     if (root === 'root-docs') {
       return;
     }
 
-    if (target.id === overlayId || code === 'Escape') {
+    if (e.target.id === overlayId || e.code === 'Escape') {
+			e.stopPropagation()
       document.body.style.overflowY = 'auto';
       toggleModal();
     }

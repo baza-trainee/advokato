@@ -48,7 +48,9 @@ export const ResultElement = () => {
 	};
 
 	const closeModal = (e) => {
-		e.stopPropagation();
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		}
 		document.body.style.overflowY = "auto";
 		setModalData(null);
 	};
@@ -129,7 +131,6 @@ export const ResultElement = () => {
 								>
 									<ResultsModal
 										data={modalData}
-										setModalActive={closeModal}
 									/>
 								</ModalFromRoot>
 							)}
