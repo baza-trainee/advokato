@@ -2,7 +2,7 @@ export const options = {
 	autoplay: false,
 	arrows: false,
 	pagination: false,
-	drag: "free",
+	// drag: "free",
 	type: "loop",
 	width: "100%",
 	gap: "32px",
