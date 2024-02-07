@@ -1,16 +1,16 @@
-import React from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/css";
 
-import { options } from "../TeamData/SliderSettings";
 import {
 	CardName,
 	CardRecvisiteWrapper,
 	CardRole,
 	TeamMateCardWrapper,
 } from "../TeamGallery.styled";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import "@splidejs/splide/css";
 import { NavLink } from "react-router-dom";
+import React from "react";
+import { options } from "../TeamData/SliderSettings";
 
 export const SliderItems = React.forwardRef((props, ref) => {
 	return (

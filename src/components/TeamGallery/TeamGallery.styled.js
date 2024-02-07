@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import "@splidejs/react-splide/css";
+
 import {
 	device,
 	flexBox,
@@ -8,7 +9,8 @@ import {
 	fontSliderCardName,
 	sliderArrow,
 } from "../../styles/mixins";
-import "@splidejs/react-splide/css";
+
+import styled from "@emotion/styled";
 
 export const SectionStyled = styled.section`
   //height: 100vh;
@@ -296,7 +298,7 @@ export const CardRole = styled.div`
   line-height: 150%;
   font-variant-numeric: lining-nums proportional-nums;
 
-  &::after {
+  &:not(:empty)::after {
     content: "";
     width: 80px;
     height: 2px;
@@ -312,7 +314,7 @@ export const CardRole = styled.div`
     font-size: 16px;
     font-weight: 600;
     line-height: calc(24 / 16);
-    &::after {
+    &:not(:empty)::after {
       content: "";
       border: 1px solid var(--accentLink);
       bottom: -8px;
@@ -323,7 +325,7 @@ export const CardRole = styled.div`
     font-weight: 400;
     line-height: calc(24 / 16);
 
-    &::after {
+    &:not(:empty)::after {
       content: "";
       border: 2px solid var(--accentLink);
       bottom: -16px;
@@ -334,7 +336,7 @@ export const CardRole = styled.div`
     font-size: 18px;
     line-height: calc(27 / 18);
 
-    &::after {
+    &:not(:empty)::after {
       bottom: -12px;
 
     }

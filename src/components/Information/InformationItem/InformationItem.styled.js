@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { device } from '../../../styles/mixins';
+import styled from '@emotion/styled';
 
 export const LiStyled = styled.li`
   display: flex;
@@ -78,10 +78,13 @@ export const ShortTextStyled = styled.div`
   min-height: 196px;
   border-radius: 16px;
   background-color: var(--lightText);
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
 
   h2 {
     margin-bottom: 12px;
-    height: 24px;
+    /* height: 24px; */
 
     font-family: var(--Raleway);
     font-size: 14px;
@@ -154,14 +157,17 @@ export const ShortTextStyled = styled.div`
 
   @media screen and (${device.tablet}) {
     transform: translate(-40px, 170px);
-    padding: 20px 24px;
+    padding: 10px 24px;
     min-width: 365px;
-    min-height: 224px;
+    /* min-height: 224px; */
+    min-height: 196px;
   }
 
   @media screen and (${device.desktop}) {
-    transform: translate(-72px, 250px);
-    padding: 40px 24px;
+    /* transform: translate(-72px, 250px);
+    padding: 40px 24px; */
+    transform: translate(-72px, 300px);
+    padding: 20px 24px;
     min-width: 530px;
     border-radius: 24px;
   }

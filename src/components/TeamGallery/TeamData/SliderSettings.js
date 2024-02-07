@@ -8,7 +8,7 @@ export const options = {
 	// height: "600px",
 	perMove: 1,
 	speed: 1000,
-	interval: 4000,
+	interval: 8000,
 	breakpoints: {
 		767: {
 			height: "300px",

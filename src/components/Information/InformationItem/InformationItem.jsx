@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
 import {
-  LiStyled,
-  ImageWrp,
-  ImageStyled,
-  ShortTextStyled,
   DescriptionStyled,
+  ImageStyled,
+  ImageWrp,
+  LiStyled,
+  ShortTextStyled,
 } from './InformationItem.styled';
+
+import PropTypes from 'prop-types';
 
 export const InformationItem = ({ item }) => {
   const { id, title, short_text, description, photo_path } = item;

@@ -1,25 +1,26 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
-
-import { isObjectEmpty } from '../../helpers';
-import { GoogleMap } from './GoogleMap';
-import { getContent } from '../../api/';
-import { SocialList } from '../SocialList';
-import { AddressList } from './AddressList';
 import {
-  SectionStyled,
-  Container,
-  TitleStyled,
   CenterWrp,
-  LeftSide,
   ContactsWrp,
+  Container,
+  LeftSide,
+  SectionStyled,
+  TitleStyled
 } from './Contacts.styled';
+import { useEffect, useState } from 'react';
+
+import { AddressList } from './AddressList';
+import { GoogleMap } from './GoogleMap';
+import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
+import { SocialList } from '../SocialList';
+import { getContent } from '../../api/';
+import { isObjectEmpty } from '../../helpers';
+import { useTranslation } from 'react-i18next';
 
 export const Contacts = () => {
   const [t, i18n] = useTranslation('global');
   const [cities, setCities] = useState([]);
   const [contacts, setContacts] = useState([]);
+  const isVisible = window.innerWidth <= 768;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,7 +52,10 @@ export const Contacts = () => {
                 <AddressList cities={cities} />
 
                 <ContactsWrp>
-                  <p>{contacts[0]?.contacts[0]?.phone}</p>
+                  {!isVisible && <p>{contacts[0]?.contacts[0]?.phone}</p>}
+                  {isVisible && <a href={`tel:${contacts[0]?.contacts[0]?.phone}`}>
+                    {contacts[0]?.contacts[0]?.phone}
+                  </a>}
 
                   <p>{contacts[0]?.contacts[1]?.mail}</p>
 
