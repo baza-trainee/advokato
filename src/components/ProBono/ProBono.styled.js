@@ -15,6 +15,11 @@ export const SectionStyled = styled.section`
 	color: var(--lightText);
 	position: relative;
 	top: -0.2vh;
+  padding: 60px 0 0;
+
+  @media screen and (${device.mobileL}) {
+    padding: 60px 0 0;
+  }
 `;
 
 export const Container = styled.div`

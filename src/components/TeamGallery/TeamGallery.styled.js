@@ -20,13 +20,14 @@ export const SectionStyled = styled.section`
 
 
   @media screen and (${device.mobileL}) {
-    padding: 60px 0 0;
+    padding: 60px 0 60px;
   }
   @media screen and (${device.tablet}) {
-    padding: 100px 0 0;
+    padding: 60px 0 60px;
   }
   @media screen and (${device.desktop}) {
-    padding-top: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 `;
 
