@@ -7,7 +7,7 @@ import {
 	device,
 } from "../../../styles/mixins";
 import "../../../index.css";
-import { containerStyleMobileS } from "../../Contacts/GoogleMap/GoogleMap.styled.js";
+
 
 export const ContentStyled = styled.div`
 	${flexBox};
@@ -17,6 +17,7 @@ export const ContentStyled = styled.div`
 
 	@media screen and (${device.mobileL}) {
 		border-top: none;
+		cursor: pointer;
 	}
 
 	@media screen and (${device.tablet}) {
@@ -158,7 +159,7 @@ export const DescriptionWrapper = styled.div`
   gap: 16px;
   width: 100%;
 
-  p.desc {
+  div.desc {
     ${fontReview};
     color: var(--mainText);
 		
@@ -259,29 +260,51 @@ export const PublicationDate = styled.p`
 `;
 
 export const ArrowBlock = styled.button`
-	${flexBox};
-	position: absolute;
-	right: 0;
-	cursor: pointer;
+  ${flexBox};
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  padding-left: 10px;
 
-	svg {
-		fill: #969395;
-	}
+  svg {
+    fill: #969395;
+  }
 
-	@media screen and (${device.mobileS}) {
-		display:none;
-	}
+  @media screen and (${device.mobileS}) {
+    display: none;
+  }
 
-	@media screen and (${device.mobileL}) {
-		display: block;
-		top: 0;
-	}
+  @media screen and (${device.mobileL}) {
+    display: block;
+    bottom: 50%;
+    animation: animateButton 2s ease-in-out infinite;
+    &:hover{
+      animation-play-state: paused;
+    }
+    svg {
+      fill: #969395;
+      transform: rotate(45deg);
+    }
+  }
 
-	@media screen and (${device.tablet}) {
-		top: 26px;
-	}
+  @media screen and (${device.tablet}) {
+    bottom: 50%;
+  }
 
-	@media screen and (${device.desktop}) {
-		top: 48px;
-	}
+  @media screen and (${device.desktop}) {
+    bottom: 50%;
+  }
+
+  @keyframes animateButton {
+    0% {
+       right: 0;
+    }
+    50% {
+      right: -10px;
+    }
+		100% {
+      right: 0;
+		}
+		
+  }
 `;

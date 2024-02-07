@@ -85,6 +85,12 @@ export const TextModal = styled.div`
 	${flexBox};
 	${fontReview};
 	color: #000000;
+	
+	
+	& p{
+    text-indent: 30px;
+		margin-bottom: 10px;
+	}
 
 	@media screen and (${device.mobileL}) {
 		font-size: 14px;

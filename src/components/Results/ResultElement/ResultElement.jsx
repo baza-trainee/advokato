@@ -17,21 +17,23 @@ import {
 	PublicationDate,
 	ArrowBlock, DescriptionWrapper,
 } from "./ResultElement.styled.js";
+import { useWindowDimensions } from "../../../hooks/index.js";
+import parse from "html-react-parser";
+
 
 export const ResultElement = () => {
 	const [modalData, setModalData] = useState(null);
 	const [data, setData] = useState([]);
-	const [isShowMore, setIsShowMore] = useState(false)
+	const [isShowMore, setIsShowMore] = useState(false);
+	const { width } = useWindowDimensions();
 
 	useEffect(() => {
 		const getData = async () => {
 			const data = await getContent("news");
-
 			if (data?.length > 0) {
 				setData(data);
 			}
 		};
-
 		getData();
 	}, []);
 
@@ -40,19 +42,20 @@ export const ResultElement = () => {
 			document.body.style.overflowY = "auto";
 		}
 	}, [modalData]);
-
 	const openModalWithSpecificData = selectedData => {
 		document.body.style.overflowY = "hidden";
 		setModalData(selectedData);
 	};
 
-	const closeModal = () => {
+	const closeModal = (e) => {
+		e.stopPropagation();
 		document.body.style.overflowY = "auto";
 		setModalData(null);
 	};
 	const showMoreHandler = () => {
-		setIsShowMore(!isShowMore)
-	}
+		setIsShowMore(!isShowMore);
+	};
+
 
 	return (
 		<>
@@ -69,7 +72,13 @@ export const ResultElement = () => {
 						},
 						index,
 					) => (
-						<ContentStyled key={id} style={{width: '100%'}}>
+						<ContentStyled
+							key={id} style={{ width: "100%" }}
+							onClick={() => {
+								if (width > 768) {
+									openModalWithSpecificData(data[index]);
+								}
+							}}>
 							<WrapperStyled>
 								<ResultItemStyled>
 									<ImageBlock
@@ -85,9 +94,10 @@ export const ResultElement = () => {
 									<ResultText>
 										<h3>{name}</h3>
 										<DescriptionWrapper>
-											<p className={`${isShowMore ? "desc" : "desc hidden"}`}>{description}</p>
+											<div className={`${isShowMore ? "desc" : "desc hidden"}`}>{parse(description)}</div>
 											{description.length > 565 &&
-												<p className="more" onClick={showMoreHandler}>{isShowMore ? "Згорнути" : "Читати далі"}</p>}
+												<p className="more" onClick={showMoreHandler}>{isShowMore ? "Згорнути" : "Читати далі"}</p>
+											}
 										</DescriptionWrapper>
 										<BubbleForm>
 											<BubbleFormText>{specialization_name}</BubbleFormText>
@@ -100,8 +110,11 @@ export const ResultElement = () => {
 							<ArrowBlock
 								aria-label="Open"
 								type="button"
-								style={{ paddingLeft: "10px", paddingBottom: "10px" }}
-								onClick={() => openModalWithSpecificData(data[index])}
+								onClick={() => {
+									if (width < 768) {
+										openModalWithSpecificData(data[index]);
+									}
+								}}
 							>
 								<Icon
 									id={"icon-arrow-up"}
