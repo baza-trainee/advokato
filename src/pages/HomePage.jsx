@@ -34,9 +34,9 @@ export const HomePage = () => {
     <>
       <HomeHero data={hero} />
       <Owner data={company} />
+			<Practice />
+			<TeamGallery />
       <Information />
-      <TeamGallery />
-      <Practice />
       <ProBono />
       <Results />
       <ClientsBlock />
