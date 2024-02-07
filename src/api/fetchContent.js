@@ -9,7 +9,7 @@ export const getContent = async path => {
     .then(response => {
       return response.data;
     })
-    .catch(error => {});
+    .catch(error => console.log(error));
 };
 
 export const postContent = async (path, data) => {
@@ -26,5 +26,5 @@ export const postContent = async (path, data) => {
     .then(response => {
       return response.data;
     })
-    .catch(error => {});
+    .catch(error => console.log(error));
 };

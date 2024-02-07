@@ -1,17 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-
-import { isObjectEmpty } from '../../helpers';
-import { getContent } from "../../api/index.js";
-import { SliderItems } from './SliderItems/SliderItems';
-import { Icon } from '../Icon';
 import {
-	Container, LeftSliderArrow, RightSliderArrow,
+	Container,
+	LeftSliderArrow,
+	RightSliderArrow,
 	SectionStyled,
 	TeamBlockHeader,
 	TeamBlockSubTitle,
 	TeamSliderContainer,
 } from "./TeamGallery.styled";
+import { useEffect, useRef, useState } from 'react';
+
+import { Icon } from '../Icon';
+import { SliderItems } from './SliderItems/SliderItems';
+import { getContent } from "../../api/index.js";
+import { isObjectEmpty } from '../../helpers';
+import { useTranslation } from 'react-i18next';
 
 export const TeamGallery = () => {
   const [t, i18n] = useTranslation('global');
@@ -20,14 +22,16 @@ export const TeamGallery = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getContent('our-team');
+      const data = await getContent('/our-team?is_slider=true');
       if (!isObjectEmpty(data)) {
-        setData(data.team);
+        setData(data);
       }
     };
 
     getData();
   }, []);
+console.log(data)
+  
 
   return (
     <SectionStyled>

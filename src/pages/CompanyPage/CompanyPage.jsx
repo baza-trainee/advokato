@@ -1,23 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
-import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
-import DOMPurify from 'dompurify';
-import parse from 'html-react-parser';
-
-import { getContent } from '../../api';
-import { isObjectEmpty } from '../../helpers';
-import { TeamCard } from '../../components/TeamCard';
 import {
-  Page,
-  Container,
-  PageTitle,
-  SectionTitle,
-  CompanyWrap,
   CompanyDescription,
   CompanyImage,
+  CompanyWrap,
+  Container,
+  Page,
+  PageTitle,
+  SectionTitle,
   TeamList,
 } from './CompanyPage.styled';
+import { useEffect, useRef, useState } from 'react';
+
+import DOMPurify from 'dompurify';
+import { Loading as NotiflixLoading } from 'notiflix/build/notiflix-loading-aio';
+import { TeamCard } from '../../components/TeamCard';
+import { getContent } from '../../api';
+import { isObjectEmpty } from '../../helpers';
+import parse from 'html-react-parser';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const CompanyPage = () => {
   const [t, i18n] = useTranslation('global');
