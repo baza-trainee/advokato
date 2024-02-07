@@ -30,8 +30,6 @@ export const TeamGallery = () => {
 
     getData();
   }, []);
-console.log(data)
-  
 
   return (
     <SectionStyled>
