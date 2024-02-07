@@ -276,7 +276,7 @@ export const ArrowBlock = styled.button`
 
   @media screen and (${device.mobileL}) {
     display: block;
-    bottom: 0;
+    bottom: 50%;
     animation: animateButton 2s ease-in-out infinite;
     &:hover{
       animation-play-state: paused;
@@ -284,8 +284,6 @@ export const ArrowBlock = styled.button`
     svg {
       fill: #969395;
       transform: rotate(45deg);
-			
-			
     }
   }
 
