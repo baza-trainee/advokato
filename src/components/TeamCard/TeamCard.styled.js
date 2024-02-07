@@ -36,17 +36,20 @@ export const MobileCardWrap = styled.div`
 export const PersonPhoto = styled.img`
 	width: 272px;
 	height: 384px;
-
 	object-fit: cover;
+	align-self: center;
+	
 
 	@media screen and (${device.mobileL}) {
 		width: 648px;
 		height: 384px;
+		object-position: top;
 	}
 
 	@media screen and (${device.tablet}) {
 		width: 420px;
 		height: 612px;
+    object-position: center;
 	}
 	@media screen and (${device.desktop}) {
 		width: 524px;
