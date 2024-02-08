@@ -119,6 +119,7 @@ export const ResultText = styled.div`
 	@media screen and (${device.desktop}) {
 		gap: 20px;
 		width: 512px;
+    height: 311px;
 	}
 
 	h3 {
