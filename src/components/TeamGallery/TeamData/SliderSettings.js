@@ -2,7 +2,6 @@ export const options = {
 	autoplay: true,
 	arrows: false,
 	pagination: false,
-	// drag: "free",
 	type: "loop",
 	focus: "center",
 	perMove: 1,
@@ -10,23 +9,26 @@ export const options = {
 	interval: 8000,
 	breakpoints: {
 		767: {
-			height: "300px",
+			// height: "300px",
 			width:"100%",
 			perPage: 1,
 		},
-		1024: {
-			height: "324px",
+		1023: {
+			// height: "324px",
 			width:"648px",
+			fixedWidth: '648px',
 			perPage: 1,
 		},
-		1440: {
-			height: "452px",
-			width: "864px",
+		1439: {
+			// height: "452px",
+			width: "100%",
+			fixedWidth: '864px',
 			perPage: 1,
 		},
-		2560: {
-			height: "600px",
+		2559: {
+			// height: "600px",
 			width: "1116px",
+			fixedWidth: '1116px',
 			perPage: 1,
 		}
 	},
