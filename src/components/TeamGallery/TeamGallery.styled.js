@@ -222,11 +222,11 @@ export const TeamMateCardWrapper = styled.div`
 
   @media screen and (${device.mobileL}) {
     width: 648px;
-    height: 324px;
+    height: 364px;
   }
   @media screen and (${device.tablet}) {
     width: 864px;
-    height: 452px;
+    height: 496px;
   }
   @media screen and (${device.desktop}) {
     width: 1120px;
