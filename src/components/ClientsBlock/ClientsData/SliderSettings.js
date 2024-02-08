@@ -4,7 +4,6 @@ export const options = {
 	pagination: false,
 	// drag: "free",
 	type: "loop",
-	height: "180px",
 	width: "100%",
 	// gap: "32px",
 	perMove: 1,
@@ -15,13 +14,11 @@ export const options = {
 		700: {
 			perPage: 1,
 			width: "216px",
-			height: "116px",
 			gap: "32px",
 		},
-		768: {
+		767: {
 			perPage: 2,
 			width: "550px",
-			height: "116px",
 			gap: "10px",
 		},
 		1024: {

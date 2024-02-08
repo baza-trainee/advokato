@@ -13,7 +13,8 @@ export const options = {
 	interval: 4000,
 	breakpoints: {
 		768: {
-			gap: "30px",
+			width: "100%",
+			gap: "1px",
 			perPage: 1,
 			perMove: 1,
 		},
