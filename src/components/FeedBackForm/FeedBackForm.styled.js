@@ -6,7 +6,7 @@ import {
   device,
 } from '../../styles/mixins';
 
-export const SectionStyled = styled.section`
+export const SectionStyled = styled.div`
   background: #F1F2F4;
   padding: 28px 24px;
 	display: flex;
@@ -15,23 +15,40 @@ export const SectionStyled = styled.section`
 	
   @media screen and (${device.mobileL}) {
 		padding: 0;
-		margin: 60px auto;
+		//margin: 60px auto;
     width: 648px;
     gap: 40px;
+		margin: auto;
   }
 
   @media screen and (${device.tablet}) {
-    margin: 100px auto;
+    //margin: 100px auto;
     width: 864px;
     gap: 28px;
   }
 
   @media screen and (${device.desktop}) {
-    margin: 100px auto;
+    //margin: 100px auto;
     width: 1120px;
     gap: 56px;
   }
 `;
+
+export const Wrapper = styled.section`
+  background-color: #F1F2F4;
+	
+  @media screen and (${device.mobileL}) {
+    padding: 60px 0;
+  }
+
+  @media screen and (${device.tablet}) {
+    padding: 100px 0;
+  }
+
+  @media screen and (${device.desktop}) {
+		padding: 100px 0;
+  }
+`
 
 export const TitleStyled = styled.h2`
   display: flex;

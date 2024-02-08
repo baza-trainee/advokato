@@ -14,7 +14,7 @@ import {
 	SectionStyled,
 	StyledForm,
 	ButtonStyled,
-	TitleStyled,
+	TitleStyled, Wrapper,
 } from "./FeedBackForm.styled";
 
 const DEFAULT_VALUES = {
@@ -86,7 +86,7 @@ export const FeedBackForm = () => {
 					{sendStatus ? <SuccessPage /> : <FailurePage />}
 				</ModalFromRoot>
 			)}
-
+<Wrapper>
 			<SectionStyled>
 				<TitleStyled>
 					{t("feedBackForm.title")}
@@ -153,6 +153,7 @@ export const FeedBackForm = () => {
 					</ButtonStyled>
 				</StyledForm>
 			</SectionStyled>
+</Wrapper>
 		</>
 	);
 };
