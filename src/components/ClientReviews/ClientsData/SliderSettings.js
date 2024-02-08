@@ -4,30 +4,36 @@ export const options = {
 	pagination: false,
 	// drag: "free",
 	type: "loop",
-	width: "100%",
+	width: "150%",
+	fixedWidth: '440px',
 	gap: "32px",
-	perPage: 4,
+	perPage: 5,
 	perMove: 2,
 	speed: 1000,
 	interval: 4000,
 	breakpoints: {
 		768: {
-			width: "220px",
 			height: "348",
-			gap: "1px",
+			gap: "30px",
 			perPage: 1,
 			perMove: 1,
 		},
 		1024: {
-			width: "1164px",
+			width: "150%",
+			gap: "30px",
 			perPage: 3,
+			fixedWidth: '364px',
+			focus: 'center'
 		},
 		1440: {
-			width: "1556px",
+			width: "150%",
+			gap: "20px",
+			fixedWidth: '372px',
 			perPage: 4,
 		},
 		1856:{
-			width: "1856px",
+			width: "150%",
+			fixedWidth: '440px',
 			perPage: 4,
 		}
 	},

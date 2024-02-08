@@ -1,6 +1,4 @@
 import { NavBurger, SectionStyled } from "./BurgerMenu.styled";
-
-import { LangButton } from "../Layout/Layout.styled";
 import { Menu } from "../Menu";
 
 export const BurgerMenu = ({

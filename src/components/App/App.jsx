@@ -2,6 +2,7 @@ import { lazy, Suspense, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Loading as NotiflixLoading } from "notiflix/build/notiflix-loading-aio";
+import { LoadingAnimated } from "../LoadingAnimated/index.jsx";
 
 const Layout = lazy(() => import("../Layout"));
 const HomePage = lazy(() => import("../../pages/HomePage"));
@@ -23,32 +24,33 @@ export const App = () => {
 
 	const toggleLanguage = async lang => {
 		i18n.changeLanguage(lang);
-		setActiveLang(prev => lang);
+		setActiveLang( () => lang);
 	};
 
 	return (
-		<Suspense>
 			<Routes>
 				<Route
 					path="/"
 					element={
+						<Suspense fallback={<LoadingAnimated />}>
 						<Layout
 							activeLang={activeLang}
 							toggleLanguage={toggleLanguage}
 						/>
+						</Suspense>
 					}
 				>
 					<Route
 						index
-						element={<HomePage />}
+						element={<Suspense fallback={<LoadingAnimated />}><HomePage /></Suspense>}
 					/>
 					<Route
 						path="company"
-						element={<CompanyPage />}
+						element={<Suspense fallback={<LoadingAnimated />}><CompanyPage /></Suspense>}
 					/>
 					<Route
 						path="contacts"
-						element={<ContactsPage />}
+						element={<Suspense fallback={<LoadingAnimated />}><ContactsPage /></Suspense>}
 					/>
 
 					<Route
@@ -57,6 +59,6 @@ export const App = () => {
 					/>
 				</Route>
 			</Routes>
-		</Suspense>
+
 	);
 };
