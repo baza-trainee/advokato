@@ -32,8 +32,6 @@ export const SliderItems = React.forwardRef(({ data }, ref) => {
 		}
 	}, [width]);
 
-
-
 	useEffect(() => {
 		let timer = null;
 		if (closeReview === true) {
@@ -44,9 +42,7 @@ export const SliderItems = React.forwardRef(({ data }, ref) => {
 		return () => clearTimeout(timer);
 	}, [openReview, closeReview]);
 
-	useEffect(() => {
-		console.log('rerender')
-	});
+
 	return (
 		<Splide
 			aria-label="Слайдер відгуків клієнтів"
