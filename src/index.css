@@ -44,7 +44,9 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	color: var(--mainText);
-	background-color: var(--lightBackground);
+	/*background-color: var(--lightBackground);*/
+	background-color: var(--darkBackground);
+
 	font-family: Raleway, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
