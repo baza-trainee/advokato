@@ -14,25 +14,23 @@ import "@splidejs/splide/css";
 import { options } from "../ClientsData/SliderSettings";
 import { useWindowDimensions } from "../../../hooks/index.js";
 
-export const SliderItems = React.forwardRef((props, ref) => {
-	const [openReview, setOpenReview] = useState();
+export const SliderItems = React.forwardRef(({ data }, ref) => {
+	const [openReview, setOpenReview] = useState(null);
 	const [closeReview, setCloseReview] = useState(false);
 	const {width} = useWindowDimensions()
 	const [reviewLength, setReviewLength] = useState(345)
 
 	useEffect(() => {
 		if (width < 768) {
-			setReviewLength(547)
-		} else if (768 <= width && width < 1024) {
-			setReviewLength(450)
-		} else if (1024 <= width && width < 1440) {
-			setReviewLength(650)
+			setReviewLength(547);
+		} else if (width < 1024) {
+			setReviewLength(450);
+		} else if (width < 1440) {
+			setReviewLength(650);
 		} else {
-			setReviewLength(345)
+			setReviewLength(345);
 		}
 	}, [width]);
-
-	const { data } = props;
 
 	useEffect(() => {
 		let timer = null;
@@ -49,11 +47,11 @@ export const SliderItems = React.forwardRef((props, ref) => {
 			aria-label="Слайдер відгуків клієнтів"
 			ref={ref}
 			options={options}
+
 		>
 			{data?.map(elem => {
-
 				return (
-					<SplideSlide key={elem.id}>
+					<SplideSlide key={elem.id} >
 						<ClientCardWrapper
 							heightText={openReview === elem.id}
 							onMouseLeave={() => setCloseReview(true)}

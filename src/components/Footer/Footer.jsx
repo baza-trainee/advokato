@@ -15,114 +15,37 @@ import {
   TitleCompany,
 } from './Footer.styled';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-
 import { ModalFromRoot } from '../ModalFromRoot';
 import { PdfViewer } from '../PdfViewer';
 import { SocialList } from '../SocialList';
-import { getContent } from '../../api/';
-import { isObjectEmpty } from '../../helpers';
 import privacyPolicy from '../../assets/documents/privacy-policy.pdf';
 import termsUseSite from '../../assets/documents/terms-of-use-site.pdf';
 import { useTranslation } from 'react-i18next';
 import { useWindowDimensions } from '../../hooks';
+import { useActiveLink } from "../../hooks/useActiveLink.js";
+import { useNavData } from "../../hooks/useNavData.js";
+import { useGetContacts } from "../../hooks/useGetContacts.js";
 
 const currentYear = new Date().getFullYear();
 
-export const Footer = () => {
-  const [t, i18n] = useTranslation('global');
+const Footer = () => {
+  const [t] = useTranslation('global');
+	const active = useActiveLink()
+	const navData= useNavData()
+	const {cities, contacts} = useGetContacts();
   const [modalActive, setModalActive] = useState(false);
-  const [active, setActive] = useState('home');
   const [selectedPdfFile, setSelectedPdfFile] = useState(null);
-  const { pathname, hash } = useLocation();
-  const { height, width } = useWindowDimensions();
-  const navigate = useNavigate();
-
-  const [contacts, setContacts] = useState([]);
+  const { width } = useWindowDimensions();
   const phone = contacts[0]?.contacts[0]?.phone;
   const formattedPhone = phone ? phone.replace(/[^\d]/g, '') : '';
-
-  const [cities, setCities] = useState([]);
   const kyivCity = cities.find(city => city.city_name === 'Київ');
   const googleMapsUrl = `https://www.google.com/maps?q=${kyivCity?.coords.lat},${kyivCity?.coords.lng}`;
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getContent('contacts');
-
-      if (!isObjectEmpty(data)) {
-        setCities(prev => data.cities);
-        setContacts(prev => data.contacts);
-      }
-    };
-
-    getData();
-  }, []);
-
-  useEffect(() => {
-    if (pathname === '/' && hash === '') {
-      return setActive(prev => 'home');
-    }
-    if (pathname === '/company') {
-      return setActive(prev => 'company');
-    }
-    if (hash === '#practice') {
-      return setActive(prev => 'practice');
-    }
-    if (hash === '#news') {
-      return setActive(prev => 'news');
-    }
-    if (pathname === '/contacts') {
-      return setActive(prev => 'contacts');
-    }
-    if (hash !== '#practice' || hash !== '#news') {
-      navigate('*');
-    }
-  }, [pathname, hash]);
 
   useEffect(() => {
     if (!modalActive) {
       document.body.style.overflowY = 'auto';
     }
   }, [modalActive]);
-
-  const navData = [
-    {
-      id: 1,
-      path: '/',
-      label: 'посилання на головну сторінку',
-      name: 'home',
-      title: t('header.nav.home'),
-    },
-    {
-      id: 2,
-      path: '/company',
-      label: 'посилання на сторінку компанії',
-      name: 'company',
-      title: t('header.nav.company'),
-    },
-    {
-      id: 3,
-      path: '/#practice',
-      label: 'посилання на сторінку практики',
-      name: 'practice',
-      title: t('header.nav.practice'),
-    },
-    {
-      id: 4,
-      path: '/#news',
-      label: 'посилання на сторінку новин',
-      name: 'news',
-      title: t('header.nav.news'),
-    },
-    {
-      id: 5,
-      path: '/contacts',
-      label: 'посилання на сторінку контактів',
-      name: 'contacts',
-      title: t('header.nav.contacts'),
-    },
-  ];
 
   const toggleModal = () => {
     document.body.style.overflowY = 'hidden';
@@ -228,3 +151,5 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer

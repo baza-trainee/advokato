@@ -2,18 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { isObjectEmpty } from '../../helpers';
-import { getContent } from '../../api/fetchContent';
+import { getContent } from "../../api/index.js";
 import { SliderItems } from './SliderItems/SliderItems';
 import { Icon } from '../Icon';
 import {
 	ClientsBlockHeader,
 	Container, LeftSliderArrow, RightSliderArrow,
 	SectionStyled,
-	SliderArrow,
 	SliderWrapper,
 } from "./ClientReviews.styled";
 
-export const ClientReviews = () => {
+const ClientReviews = () => {
   const [t, i18n] = useTranslation('global');
   const ref = useRef();
   const [data, setData] = useState();
@@ -36,13 +35,13 @@ export const ClientReviews = () => {
         <ClientsBlockHeader>{t('clientsReviews.title')}</ClientsBlockHeader>
       </Container>
 
-      {data?.length > 0 && (
+      {data && data?.length > 0 && (
         <SliderWrapper>
           <LeftSliderArrow>
             <button
               aria-label="Перелистування слайдера вліво"
               type="button"
-              onClick={e => ref.current.go('-1')}
+              onClick={() => ref.current.go('-1')}
             >
               <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
             </button>
@@ -54,7 +53,7 @@ export const ClientReviews = () => {
             <button
               aria-label="Перелистування слайдера вправо"
               type="button"
-              onClick={e => ref.current.go('+1')}
+              onClick={() => ref.current.go('+1')}
             >
               <Icon id={'icon-slider-arrow-right'} width={60} height={60} />
             </button>
@@ -64,3 +63,6 @@ export const ClientReviews = () => {
     </SectionStyled>
   );
 };
+
+
+export default ClientReviews

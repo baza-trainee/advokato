@@ -12,7 +12,7 @@ import {
 	SectionStyled
 } from "./ClientsBlock.styled";
 
-export const ClientsBlock = () => {
+const ClientsBlock = () => {
   const [t, i18n] = useTranslation('global');
   const arrowRef = useRef();
   const [data, setData] = useState();
@@ -63,3 +63,5 @@ export const ClientsBlock = () => {
     </SectionStyled>
   );
 };
+
+export default ClientsBlock

@@ -90,10 +90,12 @@ export const SliderWrapper = styled.div`
     ${flexBox};
     opacity: 1;
     transition: 1s;
+		
   }
 
   @media screen and (${device.mobileL}) {
     padding-bottom: 16px;
+		
 		
     .splide__slide.is-next + .splide__slide {
       opacity: 0.3;
@@ -125,7 +127,6 @@ export const SliderWrapper = styled.div`
 `;
 
 export const ClientCardWrapper = styled.div`
-	
 	border-radius: 24px;
 	border: 1px solid var(--reviewText);
 	background-color: var(--darkGrey);

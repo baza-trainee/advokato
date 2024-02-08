@@ -7,6 +7,7 @@ export const SectionStyled = styled.section`
 	border-top: 48px solid var(--darkBackground);
 	padding-top: 28px;
 	padding-bottom: calc(34px + 24px);
+	background-color: #F1F2F4;
 
 	@media screen and (${device.mobileL}) {
 		min-height: calc(100dvh - 148px);
