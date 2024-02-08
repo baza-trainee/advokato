@@ -46,9 +46,7 @@ const ClientReviews = () => {
               <Icon id={'icon-slider-arrow-left'} width={60} height={60} />
             </button>
           </LeftSliderArrow>
-
-          <SliderItems ref={ref} data={data} />
-
+						<SliderItems ref={ref} data={data} />
           <RightSliderArrow>
             <button
               aria-label="Перелистування слайдера вправо"

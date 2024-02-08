@@ -13,22 +13,21 @@ export const options = {
 	interval: 4000,
 	breakpoints: {
 		768: {
-			height: "348",
+
 			gap: "30px",
 			perPage: 1,
 			perMove: 1,
 		},
 		1024: {
 			width: "150%",
+			fixedHeight: "348px",
 			gap: "30px",
 			perPage: 3,
 			fixedWidth: '364px',
-			focus: 'center'
 		},
-		1440: {
+		1439: {
 			width: "150%",
 			gap: "20px",
-			fixedWidth: '372px',
 			perPage: 4,
 		},
 		1856:{
