@@ -21,7 +21,7 @@ export const options = {
 		},
 		1439: {
 			// height: "452px",
-			width: "100%",
+			width: "864px",
 			fixedWidth: '864px',
 			perPage: 1,
 		},
