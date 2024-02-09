@@ -33,14 +33,14 @@ const HomePage = () => {
 
   return (
     <>
-      {/*<HomeHero data={hero} />*/}
-      {/*<Owner data={company} />*/}
-			{/*<Practice />*/}
-			{/*<TeamGallery />*/}
-      {/*<Information />*/}
-      {/*<ProBono />*/}
-      {/*<Results />*/}
-      {/*<ClientsBlock />*/}
+      <HomeHero data={hero} />
+      <Owner data={company} />
+			<Practice />
+			<TeamGallery />
+      <Information />
+      <ProBono />
+      <Results />
+      <ClientsBlock />
       <ClientReviews />
       <FeedBackForm />
     </>
