@@ -5,12 +5,14 @@ import { flexBox, fontSectionTitle, device } from '../../../styles/mixins';
 export const DivStyled = styled.div`
   ${flexBox};
   flex-direction: column;
-
+	justify-content: flex-start;
+  width: 220px;
+  height: 280px;
   background-color: var(--lightBackground);
+  padding: 45px 24px 0;
 
   @media screen and (${device.mobileL}) {
-    padding-top: 48px;
-    padding-bottom: 32px;
+    padding: 48px 0 32px;
     width: 400px;
     height: 268px;
   }
@@ -22,9 +24,15 @@ export const DivStyled = styled.div`
   }
 
   h2 {
-    ${fontSectionTitle};
+		font-family: var(--Montserrat);
+    line-height: 140%;
+    letter-spacing: 0;
     text-align: center;
     color: var(--mainText);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+		
 
     @media screen and (${device.mobileL}) {
       margin-bottom: 20px;
@@ -47,8 +55,7 @@ export const DivStyled = styled.div`
   p {
     font-family: var(--PTSans);
     font-weight: 400;
-
-    letter-spacing: 0em;
+    letter-spacing: 0;
     color: var(--mainText);
 
     @media screen and (${device.mobileL}) {
@@ -64,19 +71,35 @@ export const DivStyled = styled.div`
 
   p:first-of-type {
     margin-bottom: 8px;
+    font-size: 14px;
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+    }
+    @media screen and (${device.tablet}) {
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 
   p:last-of-type {
     margin-bottom: 28px;
+    font-size: 12px;
+
+    @media screen and (${device.mobileL}) {
+      font-size: 16px;
+    }
+    @media screen and (${device.tablet}) {
+      font-size: 22px;
+      line-height: 35.2px;
+    }
   }
 
   svg {
     fill: var(--accentText);
-
-    @media screen and (${device.mobileL}) {
-      width: 40px;
-      height: 40px;
-    }
+    width: 40px;
+    height: 40px;
+		
 
     @media screen and (${device.tablet}) {
       width: 60px;

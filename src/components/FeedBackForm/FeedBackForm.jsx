@@ -86,74 +86,75 @@ export const FeedBackForm = () => {
 					{sendStatus ? <SuccessPage /> : <FailurePage />}
 				</ModalFromRoot>
 			)}
-<Wrapper>
-			<SectionStyled>
-				<TitleStyled>
-					{t("feedBackForm.title")}
-				</TitleStyled>
+			<Wrapper>
+				<SectionStyled>
+					<TitleStyled>
+						{t("feedBackForm.title")}
+					</TitleStyled>
 
-				<StyledForm
-					autoComplete="off"
-					onSubmit={handleSubmit(onSubmit, onErrors)}
-				>
-
-					<Input
-						register={register}
-						name="name"
-						type="text"
-						label={t("feedBackForm.labelName")}
-						placeholder={t("feedBackForm.placeholderName")}
-						errors={errors}
-						isValid={isValid}
-						touchedFields={touchedFields}
-					/>
-
-					<Input
-						register={register}
-						name="phone"
-						type="text"
-						label={t("feedBackForm.labelPhone")}
-						placeholder={"+3 80 ХХ ХХХ ХХ ХХ"}
-						errors={errors}
-						isValid={isValid}
-						touchedFields={touchedFields}
-					/>
-
-					<Input
-						register={register}
-						name="email"
-						type="text"
-						label={t("feedBackForm.labelEmail")}
-						placeholder={"xxx@xxx"}
-						errors={errors}
-						isValid={isValid}
-						touchedFields={touchedFields}
-					/>
-
-
-					<Input className="message"
-								 register={register}
-								 name="question"
-								 type="text"
-								 label={t("feedBackForm.labelQuestion")}
-								 placeholder={t("feedBackForm.placeholderQuestion")}
-								 errors={errors}
-								 isValid={isValid}
-								 touchedFields={touchedFields}
-								 width={"100%"}
-
-					/>
-
-					<ButtonStyled
-						type="submit"
-						disabled={!isValid || !isDirty}
-						aria-label="Відправити данні форми"
+					<StyledForm
+						autoComplete="off"
+						onSubmit={handleSubmit(onSubmit, onErrors)}
 					>
-						{t("feedBackForm.submitButton")}
-					</ButtonStyled>
-				</StyledForm>
-			</SectionStyled>
-</Wrapper>
+
+						<Input
+							register={register}
+							name="name"
+							type="text"
+							label={t("feedBackForm.labelName")}
+							placeholder={t("feedBackForm.placeholderName")}
+							errors={errors}
+							isValid={isValid}
+							touchedFields={touchedFields}
+						/>
+
+						<Input
+							register={register}
+							name="phone"
+							type="text"
+							label={t("feedBackForm.labelPhone")}
+							placeholder={"+3 80 ХХ ХХХ ХХ ХХ"}
+							errors={errors}
+							isValid={isValid}
+							touchedFields={touchedFields}
+						/>
+
+						<Input
+							register={register}
+							name="email"
+							type="text"
+							label={t("feedBackForm.labelEmail")}
+							placeholder={"xxx@xxx"}
+							errors={errors}
+							isValid={isValid}
+							touchedFields={touchedFields}
+						/>
+
+
+						<Input
+							className="message"
+							register={register}
+							name="question"
+							type="text"
+							label={t("feedBackForm.labelQuestion")}
+							placeholder={t("feedBackForm.placeholderQuestion")}
+							errors={errors}
+							isValid={isValid}
+							touchedFields={touchedFields}
+							width={"100%"}
+
+						/>
+
+						<ButtonStyled
+							type="submit"
+							disabled={!isValid || !isDirty}
+							aria-label="Відправити данні форми"
+						>
+							{t("feedBackForm.submitButton")}
+						</ButtonStyled>
+					</StyledForm>
+				</SectionStyled>
+			</Wrapper>
 		</>
 	);
 };
