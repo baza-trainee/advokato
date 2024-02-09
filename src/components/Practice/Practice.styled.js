@@ -84,7 +84,6 @@ export const TitleStyled = styled.h2`
 `;
 
 export const PracticeDescWrp = styled.div`
-  //margin-bottom: 12px;
   overflow: hidden;
 `;
 
@@ -129,6 +128,8 @@ export const ImageStyled = styled.img`
   border-radius: 24px;
   background: linear-gradient(#0000002e, #00000099);
   width: 100%;
+	object-fit: cover;
+
 
   @media screen and (${device.mobileL}) {
     margin-bottom: 28px;
