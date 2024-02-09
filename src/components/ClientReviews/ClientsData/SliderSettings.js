@@ -1,5 +1,5 @@
 export const options = {
-	autoplay: true,
+	autoplay: false,
 	arrows: false,
 	pagination: false,
 	type: "loop",
@@ -26,13 +26,15 @@ export const options = {
 		},
 		1439: {
 			width: "150%",
-			gap: "20px",
+			fixedWidth: '377px',
+			gap: "10px",
 			perPage: 4,
 		},
 		1856:{
-			width: "150%",
+			width: "130%",
 			fixedWidth: '440px',
 			perPage: 4,
+			gap: "20px",
 		}
 	},
 };

@@ -97,33 +97,73 @@ export const SliderWrapper = styled.div`
     padding-bottom: 16px;
 		
 		
-    .splide__slide.is-next + .splide__slide {
-      opacity: 0.3;
-    }
-
-    .splide__slide.is-active, .splide__slide.is-active+.is-visible+.is-visible {
+    //.splide__slide.is-next + .splide__slide {
+    //  opacity: 0.3;
+    //}
+    //
+    //.splide__slide.is-active, .splide__slide.is-active+.is-visible+.is-visible {
+    //  opacity: .3;
+    //}
+		
+		.splide__slide.is-visible {
       opacity: .3;
-    }
+		}
+
+    //.splide__slide.is-visible  + .splide__slide.is-visible:nth-child(3) {
+    //  opacity: 1;
+    //}
+    .splide__slide.is-visible + .splide__slide.is-next{
+      opacity: 1;
+		}
+		
   }
   @media screen and (${device.tablet}) {
     padding-bottom: 100px;
 
-    .splide__slide.is-active, .splide__slide.is-active+.is-visible+.is-visible {
+    //.splide__slide.is-active, .splide__slide.is-active+.is-visible {
+    //  opacity: 1;
+    //}
+		//
+    //.splide__slide.is-next + .splide__slide {
+    //  opacity: 1;
+    //}
+    //
+    //.splide__slide.is-next + .splide__slide + .splide__slide,
+    //.splide__slide.is-active {
+    //  opacity: 1;
+    //}
+		
+
+    .splide__slide.is-visible{
+      opacity: .4;
+    }
+		
+    .splide__slide.is-visible.is-next, .splide__slide.is-visible.is-next + .splide__slide.is-visible{
       opacity: 1;
     }
 		
-    .splide__slide.is-next + .splide__slide {
-      opacity: 1;
-    }
-
-    .splide__slide.is-next + .splide__slide + .splide__slide,
-    .splide__slide.is-active {
-      opacity: 1;
-    }
   }
   @media screen and (${device.desktop}) {
     padding-bottom: 60px;
+
+    .splide__slide{
+      opacity: .4;
+		}
+
+    //.splide__slide.is-active, .splide__slide.is-active+.is-visible {
+    //  opacity: .4;
+    //}
   }
+
+  @media screen and (min-width: 1700px) {
+    .splide__slide.is-visible{
+      opacity: 1;
+    }
+    .splide__slide{
+      opacity: 1;
+    }
+  }
+	
 `;
 
 export const ClientCardWrapper = styled.div`
@@ -318,12 +358,6 @@ export const LeftSliderArrow = styled(SliderArrow)`
   @media screen and (${device.mobileL}) {
     left: 56px;
   }
-  @media screen and (${device.tablet}) {
-
-  }
-  @media screen and (${device.desktop}) {
-   
-  }
 
 `
 
@@ -332,12 +366,6 @@ export const RightSliderArrow = styled(SliderArrow)`
 
   @media screen and (${device.mobileL}) {
     right: 56px;
-  }
-  @media screen and (${device.tablet}) {
-
-  }
-  @media screen and (${device.desktop}) {
-
   }
 
 `
