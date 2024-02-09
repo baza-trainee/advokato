@@ -1,6 +1,6 @@
 
 export const options = {
-	autoplay: false,
+	autoplay: true,
 	arrows: false,
 	pagination: false,
 	type: "loop",
