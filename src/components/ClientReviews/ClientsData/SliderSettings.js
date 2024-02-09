@@ -2,7 +2,6 @@ export const options = {
 	autoplay: true,
 	arrows: false,
 	pagination: false,
-	// drag: "free",
 	type: "loop",
 	width: "150%",
 	fixedWidth: '440px',
@@ -13,8 +12,9 @@ export const options = {
 	interval: 4000,
 	breakpoints: {
 		767: {
-			width: "100%",
-			gap: "1px",
+			width: "216px",
+			fixedWidth: '216px',
+			gap: "30px",
 			perPage: 1,
 			perMove: 1,
 		},
