@@ -5,12 +5,14 @@ export const DivStyled = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 220px;
+  height: 280px;
+  padding: 40px 24px;
 
   background-color: var(--lightBackground);
 
   @media screen and (${device.mobileL}) {
-    padding-top: 48px;
-    padding-bottom: 32px;
+    padding: 48px 0 32px ;
     width: 400px;
     height: 268px;
   }
@@ -25,6 +27,10 @@ export const DivStyled = styled.div`
     ${fontSectionTitle};
     text-align: center;
     color: var(--mainText);
+    font-size: 18px;
+    font-weight: 500;
+		margin-bottom: 16px;
+		
 
     @media screen and (${device.mobileL}) {
       margin-bottom: 20px;
@@ -47,7 +53,8 @@ export const DivStyled = styled.div`
   p {
     font-family: var(--PTSans);
     font-weight: 400;
-
+    text-align: center;
+    font-size: 14px;
     letter-spacing: 0em;
     color: var(--mainText);
 
