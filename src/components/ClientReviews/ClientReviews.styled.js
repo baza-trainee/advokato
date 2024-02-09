@@ -146,16 +146,6 @@ export const SliderWrapper = styled.div`
   @media screen and (${device.desktop}) {
     padding-bottom: 60px;
 
-    .splide__slide{
-      opacity: .4;
-		}
-
-    //.splide__slide.is-active, .splide__slide.is-active+.is-visible {
-    //  opacity: .4;
-    //}
-  }
-
-  @media screen and (min-width: 1700px) {
     .splide__slide.is-visible{
       opacity: 1;
     }
@@ -163,6 +153,7 @@ export const SliderWrapper = styled.div`
       opacity: 1;
     }
   }
+	
 	
 `;
 
@@ -319,7 +310,7 @@ export const ClientReview = styled.p`
 export const SliderArrow = styled.div`
 	${sliderArrow};
 	position: absolute;
-	top: calc(50%-40px);
+	top: calc(50% - 40px);
 	z-index: 10;
   width: 22px;
   height: 22px;
