@@ -1,5 +1,6 @@
+
 export const options = {
-	autoplay: true,
+	autoplay: false,
 	arrows: false,
 	pagination: false,
 	type: "loop",
@@ -10,7 +11,8 @@ export const options = {
 	breakpoints: {
 		767: {
 			// height: "300px",
-			width:"100%",
+			// width:"100%",
+			fixedWidth: '100vw',
 			perPage: 1,
 		},
 		1023: {
