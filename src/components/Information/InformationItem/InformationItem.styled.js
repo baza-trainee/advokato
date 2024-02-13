@@ -59,11 +59,13 @@ export const ImageStyled = styled.img`
   @media screen and (${device.tablet}) {
     width: 428px;
     height: 292px;
+		
   }
 
   @media screen and (${device.desktop}) {
     width: 548px;
     height: 388px;
+    object-fit: none;
   }
 `;
 
